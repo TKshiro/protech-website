@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- 此处Head内容完全一致 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTECH | Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --tech-blue: #001A33; }
+        body { font-family: 'Noto Sans JP', sans-serif; padding-top: 80px; }
+        .serif { font-family: 'Noto Serif JP', serif; }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- 导航栏同上 -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter text-001A33">PROTECH</a>
+            <div class="hidden md:flex space-x-10 text-xs font-bold tracking-widest">
+                <a href="index.html" class="hover:text-blue-600">TOP</a>
+                <a href="services.html" class="hover:text-blue-600">SERVICES</a>
+                <a href="company.html" class="text-blue-600">COMPANY</a>
+                <a href="news.html" class="hover:text-blue-600">NEWS</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-24 px-8 max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold mb-20 serif text-center" data-aos="fade-up">Company</h1>
+        
+        <!-- 代表致辞 -->
+        <div class="mb-32" data-aos="fade-up">
+            <h2 class="text-blue-600 font-bold text-xs tracking-widest uppercase mb-6">CEO Message</h2>
+            <p class="text-2xl serif mb-8 leading-relaxed">「テクノロジーとマーケティングで、<br>境界を越える価値を創造する。」</p>
+            <p class="text-gray-600 leading-loose mb-8">PROTECH株式会社の代表として、私たちが目指すのは情報の非対称性を解消し、新たなビジネスの懸け橋となることです。日本と中国、両市場の強みを活かし、クライアントと共に未来を創ります。</p>
+            <p class="text-right font-bold tracking-widest">代表取締役 陳　紅</p>
+        </div>
+
+        <!-- 会社概要表格 -->
+        <div class="bg-slate-50 p-10 rounded-2xl" data-aos="fade-up">
+            <h2 class="text-blue-600 font-bold text-xs tracking-widest uppercase mb-10 text-center">Profile</h2>
+            <dl class="grid grid-cols-1 gap-6 text-sm">
+                <div class="flex border-b border-slate-200 pb-4"><dt class="w-32 text-slate-400">社名</dt><dd class="font-bold">PROTECH株式会社</dd></div>
+                <div class="flex border-b border-slate-200 pb-4"><dt class="w-32 text-slate-400">代表者</dt><dd>陳　紅</dd></div>
+                <div class="flex"><dt class="w-32 text-slate-400">事業内容</dt><dd>店舗支援事業・インバウンド支援事業、Web・アプリ開発</dd></div>
+            </dl>
+        </div>
+    </section>
+
+    <!-- Footer 同上 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>PROTECH株式会社 | 境界を越え、価値を加速させる。</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --tech-blue: #001A33; --accent-blue: #0055FF; }
+        body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; }
+        .serif { font-family: 'Noto Serif JP', serif; }
+        .bg-tech-blue { background-color: var(--tech-blue); }
+        .text-tech-blue { color: var(--tech-blue); }
+        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); }
+        
+        /* 装饰背景：流体科技感 */
+        .tech-gradient {
+            background: radial-gradient(circle at 10% 20%, rgba(0, 85, 255, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 90% 80%, rgba(0, 26, 51, 0.05) 0%, transparent 50%);
+        }
+
+        /* 移除AI干扰字符的黑科技样式 */
+        [asc_slot] { display: none !important; }
+    </style>
+</head>
+<body class="bg-white text-slate-900 leading-relaxed overflow-x-hidden tech-gradient">
+
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter text-tech-blue">PROTECH</a>
+            <div class="hidden md:flex space-x-12 text-[10px] font-bold tracking-[0.2em] uppercase">
+                <a href="index.html" class="text-blue-600">TOP</a>
+                <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
+                <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
+                <a href="news.html" class="hover:text-blue-600 transition">NEWS</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section (强化视觉冲击) -->
+    <section class="h-screen flex items-center justify-center bg-tech-blue text-white relative">
+        <div class="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]"></div>
+        <div class="text-center relative z-10 px-6" data-aos="fade-up" data-aos-duration="1500">
+            <p class="text-blue-400 tracking-[0.4em] uppercase text-[10px] mb-8 font-bold">Bridge the Gap with Tech & Marketing</p>
+            <h1 class="text-5xl md:text-8xl font-light mb-10 serif leading-tight" translate="no">
+                境界を越え、<br><span class="font-bold">価値を加速させる。</span>
+            </h1>
+            <div class="w-px h-24 bg-gradient-to-b from-blue-500 to-transparent mx-auto mt-12 animate-bounce"></div>
+        </div>
+    </section>
+
+    <!-- 2. Core Philosophy (融入Notion核心观点) -->
+    <section class="py-32 px-8 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+            <span class="text-blue-600 font-bold tracking-widest text-xs uppercase block mb-6">Mission</span>
+            <h2 class="text-3xl md:text-5xl font-bold mb-12 serif leading-relaxed text-tech-blue" translate="no">
+                情報の非対称性を解消し、<br>
+                新たなビジネスの懸け橋となる。
+            </h2>
+            <p class="text-gray-500 max-w-2xl mx-auto leading-loose text-lg font-light" translate="no">
+                日本と中国、二つの市場の間に存在する「情報の壁」。<br>
+                PROTECHは、最先端のデジタル技術と深い市場洞察により、その境界を透明にします。
+                私たちが提供するのは、単なるサービスではなく、未来へ続く確かな「道」です。
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. Expertise / Strategy (新增：体现专业厚度) -->
+    <section class="py-24 bg-tech-blue text-white px-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div data-aos="fade-right">
+                <h3 class="text-3xl font-bold mb-8 serif">Global Native Expertise</h3>
+                <div class="space-y-8">
+                    <div class="border-l-2 border-blue-500 pl-6">
+                        <h4 class="font-bold mb-2 text-blue-400">中日両市場への深い理解</h4>
+                        <p class="text-sm text-blue-100/60 leading-relaxed">両国の商習慣を熟知したネイティブチームが、文化の壁を越えるローカライズ戦略を策定します。</p>
+                    </div>
+                    <div class="border-l-2 border-blue-500 pl-6">
+                        <h4 class="font-bold mb-2 text-blue-400">データ駆動型の意思決定</h4>
+                        <p class="text-sm text-blue-100/60 leading-relaxed">直感に頼らない、緻密なデータ分析に基づくマーケティングと開発プロセスを実現します。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative" data-aos="fade-left">
+                <div class="bg-blue-600/20 absolute inset-0 rounded-full blur-3xl animate-pulse"></div>
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1000" class="rounded-2xl relative z-10 grayscale hover:grayscale-0 transition duration-700">
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Services (可视化排版) -->
+    <section class="py-32 px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-24" data-aos="fade-up">
+            <h3 class="text-3xl font-bold serif text-tech-blue uppercase tracking-widest">Our Services</h3>
+            <p class="text-gray-400 text-xs mt-4">提供サービス</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- 小红书 -->
+            <a href="services.html" class="group bg-slate-50 p-1 rounded-3xl block overflow-hidden" data-aos="fade-up">
+                <div class="overflow-hidden rounded-3xl aspect-[16/9]">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1000" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-10">
+                    <h4 class="text-2xl font-bold mb-4">小紅書（RED）進出支援</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">戦略立案、KOL起用、アカウント運用まで。中国市場でのブランド価値を最大化します。</p>
+                    <span class="text-blue-600 text-xs font-bold tracking-widest border-b border-blue-600 pb-1 uppercase">Learn More</span>
+                </div>
+            </a>
+            <!-- 开发 -->
+            <a href="services.html" class="group bg-slate-50 p-1 rounded-3xl block overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <div class="overflow-hidden rounded-3xl aspect-[16/9]">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-10">
+                    <h4 class="text-2xl font-bold mb-4">Web & App 開発</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">最新技術を用いた高品質な開発。UX/UIデザインを軸に、ビジネスの基盤を構築します。</p>
+                    <span class="text-blue-600 text-xs font-bold tracking-widest border-b border-blue-600 pb-1 uppercase">Learn More</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 5. Case Study Pick Up -->
+    <section class="py-32 bg-slate-50 px-8 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <span class="text-blue-600 font-bold text-xs tracking-[0.2em] uppercase mb-4 block">Case Study</span>
+                    <h3 class="text-3xl font-bold mb-8 serif text-tech-blue leading-tight">花雕酔鶏鍋<br>日本進出プロモーション支援</h3>
+                    <p class="text-gray-500 leading-loose mb-10" translate="no">
+                        小紅書を活用した戦略的なマーケティングにより、日本市場での認知拡大を短期間で実現。ターゲット選定から実店舗への送客まで、ブランドの日本上陸をトータルでプロデュースしました。
+                    </p>
+                    <a href="services.html" class="inline-block px-12 py-4 bg-tech-blue text-white text-xs font-bold tracking-widest hover:opacity-90 transition">VIEW DETAILS</a>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="absolute -inset-4 border border-blue-100 rounded-2xl"></div>
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000" class="rounded-xl shadow-xl relative z-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer (保持简约高产) -->
+    <footer class="py-20 text-center bg-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-tech-blue font-bold text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
+            <div class="flex justify-center space-x-8 mb-12 text-[10px] font-bold tracking-widest text-gray-400">
+                <a href="services.html" class="hover:text-blue-600">SERVICES</a>
+                <a href="company.html" class="hover:text-blue-600">COMPANY</a>
+                <a href="news.html" class="hover:text-blue-600">NEWS</a>
+            </div>
+            <p class="text-[10px] text-gray-300">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // 初始化动效
+        AOS.init({ duration: 1000, once: true });
+
+        // 【终极黑科技：Slot-Killer】
+        // 实时监控并移除所有包含 asc_slot 的异常 DOM 节点
+        const slotKiller = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                mutation.addedNodes.forEach((node) => {
+                    if (node.nodeType === 1) { // 元素节点
+                        if (node.hasAttribute('asc_slot') || (node.textContent && node.textContent.includes('asc_slot'))) {
+                            node.remove();
+                            console.log('Interference blocked.');
+                        }
+                    }
+                });
+            });
+        });
+        slotKiller.observe(document.body, { child_list: true, subtree: true });
+
+        // 处理现有的乱码字符
+        window.addEventListener('load', () => {
+            document.body.innerHTML = document.body.innerHTML.replace(/\[\.\.\.\]\(asc_slot:\/\/.*?\)/g, '');
+        });
+    </script>
+</body>
+</html>

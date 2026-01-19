@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- 此处Head内容完全一致 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTECH | News</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --tech-blue: #001A33; }
+        body { font-family: 'Noto Sans JP', sans-serif; padding-top: 80px; }
+    </style>
+</head>
+<body>
+    <!-- 导航栏同上 -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter text-001A33">PROTECH</a>
+            <div class="hidden md:flex space-x-10 text-xs font-bold tracking-widest">
+                <a href="index.html" class="hover:text-blue-600">TOP</a>
+                <a href="services.html" class="hover:text-blue-600">SERVICES</a>
+                <a href="company.html" class="hover:text-blue-600">COMPANY</a>
+                <a href="news.html" class="text-blue-600">NEWS</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-24 px-8 max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold mb-20 serif text-center" data-aos="fade-up">News</h1>
+        <div class="space-y-12">
+            <div class="flex items-start gap-8 border-b border-slate-100 pb-8 hover:bg-slate-50 transition p-4 cursor-pointer" data-aos="fade-up">
+                <span class="text-slate-400 text-sm">2026.01.19</span>
+                <span class="font-bold">PROTECH株式会社の公式サイトをリニューアルしました。</span>
+            </div>
+            <div class="flex items-start gap-8 border-b border-slate-100 pb-8 hover:bg-slate-50 transition p-4 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                <span class="text-slate-400 text-sm">2025.12.10</span>
+                <span class="font-bold">「花雕酔鶏鍋」日本進出プロモーションを開始しました。</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer 同上 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>
