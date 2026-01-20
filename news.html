@@ -1,48 +1,134 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" translate="no">
 <head>
-    <!-- 此处Head内容完全一致 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROTECH | News</title>
+    <title>PROTECH株式会社 | NEWS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root { --tech-blue: #001A33; }
-        body { font-family: 'Noto Sans JP', sans-serif; padding-top: 80px; }
+        body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; }
+        .serif { font-family: 'Noto Serif JP', serif; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); }
+        
+        /* フィルターボタンのカスタムスタイル */
+        .filter-btn {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #94a3b8; /* text-slate-400 */
+        }
+        .filter-btn.active {
+            color: var(--tech-blue);
+            font-weight: 700;
+        }
+        .filter-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--tech-blue);
+        }
     </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'tech-blue': '#001A33' }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <!-- 导航栏同上 -->
-    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold tracking-tighter text-001A33">PROTECH</a>
-            <div class="hidden md:flex space-x-10 text-xs font-bold tracking-widest">
-                <a href="index.html" class="hover:text-blue-600">TOP</a>
-                <a href="services.html" class="hover:text-blue-600">SERVICES</a>
-                <a href="company.html" class="hover:text-blue-600">COMPANY</a>
+<body class="bg-white text-slate-900 overflow-x-hidden">
+
+    <!-- 1. 导航栏 -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
+            <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue">PROTECH</a>
+            <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest uppercase">
+                <a href="index.html" class="hover:text-blue-600 transition">TOP</a>
+                <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
+                <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
                 <a href="news.html" class="text-blue-600">NEWS</a>
             </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </div>
     </nav>
 
-    <section class="py-24 px-8 max-w-4xl mx-auto">
-        <h1 class="text-4xl font-bold mb-20 serif text-center" data-aos="fade-up">News</h1>
-        <div class="space-y-12">
-            <div class="flex items-start gap-8 border-b border-slate-100 pb-8 hover:bg-slate-50 transition p-4 cursor-pointer" data-aos="fade-up">
-                <span class="text-slate-400 text-sm">2026.01.19</span>
-                <span class="font-bold">PROTECH株式会社の公式サイトをリニューアルしました。</span>
-            </div>
-            <div class="flex items-start gap-8 border-b border-slate-100 pb-8 hover:bg-slate-50 transition p-4 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-                <span class="text-slate-400 text-sm">2025.12.10</span>
-                <span class="font-bold">「花雕酔鶏鍋」日本進出プロモーションを開始しました。</span>
-            </div>
-        </div>
-    </section>
+    <!-- メインコンテンツ領域 -->
+    <!-- pt-48 で上部の余白（赤枠部分）を確保し、border-t でトップの線を追加 -->
+    <main class="max-w-6xl mx-auto px-8 pt-48 pb-20 border-t border-gray-100 mt-0">
+        
+        <header class="mb-16" data-aos="fade-up">
+            <!-- 小さな見出し（図2のスタイル） -->
+            <p class="text-tech-blue text-[10px] font-bold tracking-[0.3em] uppercase mb-4">News</p>
+            <h1 class="text-4xl md:text-5xl font-bold serif text-tech-blue mb-6 uppercase tracking-widest">Latest Updates</h1>
+            <p class="text-gray-400 text-xs tracking-[0.2em] font-light">最新情報・プレスリリース</p>
+        </header>
 
-    <!-- Footer 同上 -->
+        <!-- 筛选标签 (デザインを図2に合わせ軽量化) -->
+        <div class="flex gap-10 text-[10px] tracking-[0.2em] uppercase mb-12 border-b border-gray-100 pb-4" data-aos="fade-up">
+            <div class="filter-btn active" onclick="filterNews('all', this)">All</div>
+            <div class="filter-btn" onclick="filterNews('news', this)">News</div>
+            <div class="filter-btn" onclick="filterNews('service', this)">Service</div>
+            <div class="filter-btn" onclick="filterNews('case', this)">Case Study</div>
+        </div>
+
+        <!-- 新闻列表 -->
+        <div id="news-container" class="divide-y divide-gray-100">
+            <!-- 条目 1 -->
+            <a href="news-detail.html" class="news-row flex flex-col md:flex-row md:items-center py-10 gap-6 group hover:bg-slate-50/50 transition-colors px-4 -mx-4" data-category="case" data-aos="fade-up">
+                <span class="text-xs text-gray-400 font-mono w-32 tracking-tighter">2026.01.10</span>
+                <span class="text-[9px] font-bold bg-blue-50 text-blue-600 px-3 py-1 rounded w-fit uppercase tracking-widest">Case Study</span>
+                <h3 class="flex-1 font-bold text-[15px] group-hover:text-blue-600 transition">【実績】花雕酔鶏鍋 日本進出PR支援。SNS戦略で初月から満席を達成。</h3>
+                <span class="hidden md:block text-slate-200 group-hover:text-blue-600 transition translate-x-0 group-hover:translate-x-2">→</span>
+            </a>
+
+            <!-- 条目 2 -->
+            <a href="#" class="news-row flex flex-col md:flex-row md:items-center py-10 gap-6 group hover:bg-slate-50/50 transition-colors px-4 -mx-4" data-category="news" data-aos="fade-up">
+                <span class="text-xs text-gray-400 font-mono w-32 tracking-tighter">2026.01.20</span>
+                <span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded w-fit uppercase tracking-widest">News</span>
+                <h3 class="flex-1 font-bold text-[15px] group-hover:text-blue-600 transition">PROTECH株式会社のコーポレートサイトをリニューアルしました。</h3>
+                <span class="hidden md:block text-slate-200 group-hover:text-blue-600 transition translate-x-0 group-hover:translate-x-2">→</span>
+            </a>
+        </div>
+    </main>
+
+    <footer class="py-20 text-center border-t border-gray-100 bg-white">
+        <div class="text-tech-blue font-bold text-2xl mb-4 tracking-tighter uppercase">PROTECH</div>
+        <p class="text-[10px] text-gray-400 tracking-widest">© 2026 PROTECH Inc. All Rights Reserved.</p>
+    </footer>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        function filterNews(cat, el) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            el.classList.add('active');
+            document.querySelectorAll('.news-row').forEach(item => {
+                if (cat === 'all' || item.getAttribute('data-category') === cat) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            AOS.refresh();
+        }
+
+        // モバイルメニューの開閉
+        const btn = document.getElementById('menu-btn');
+        const menu = document.createElement('div'); // 簡易的な実装
+        btn.addEventListener('click', () => {
+            // モバイルメニューのロジックをここに追加
+        });
+    </script>
 </body>
 </html>
