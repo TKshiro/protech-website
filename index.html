@@ -5,13 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROTECH株式会社 | 境界を越え、価値を加速させる。</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
+   <style>
         :root { --tech-blue: #001A33; }
-        body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; }
+        body { 
+            font-family: 'Noto Sans JP', sans-serif; 
+            -webkit-font-smoothing: antialiased; 
+            overflow-x: hidden; /* 横揺れ防止 */
+        }
         .serif { font-family: 'Noto Serif JP', serif; }
-        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); }
+        
+        /* PC用ナビバーのガラス効果 */
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.3); }
+
+        /* モバイルメニュー（サイドバー）のスタイル */
+        #mobile-menu {
+            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1); /* Appleのような滑らかな動き */
+            will-change: transform;
+        }
+        
+        /* メニュー項目のホバー・アクティブ時の拡大エフェクト */
+        .menu-link {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .menu-link:hover, .menu-link:active {
+            transform: scale(1.15); /* 1.15倍に拡大 */
+            color: #2563EB; /* text-blue-600 */
+            text-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        /* ハンバーガーボタンのアニメーション */
+        .hamburger line {
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        .hamburger.active line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.active line:nth-child(2) { opacity: 0; }
+        .hamburger.active line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     </style>
     <!-- Tailwindのカスタムカラー設定 -->
     <script>
@@ -26,105 +58,121 @@
         }
     </script>
 </head>
-<body class="bg-white text-slate-900 overflow-x-hidden">
+<body class="bg-white text-slate-900">
 
-    <!-- 1. 导航栏 -->
+    <!-- 1. ナビゲーションバー -->
     <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
-            <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-[#001A33]">PROTECH</a>
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- ロゴ -->
+            <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-[#001A33] z-50 relative">PROTECH</a>
+            
+            <!-- PC用メニュー -->
             <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest uppercase">
                 <a href="index.html" class="text-blue-600">TOP</a>
                 <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
                 <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
                 <a href="news.html" class="hover:text-blue-600 transition">NEWS</a>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-[#001A33]">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+
+            <!-- 【修正2】モバイル用ハンバーガーボタン (z-indexを高く設定) -->
+            <button id="menu-btn" class="md:hidden p-2 text-[#001A33] z-50 relative focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-8 py-6 flex flex-col space-y-4 shadow-xl">
-            <a href="index.html" class="text-sm font-bold text-blue-600">TOP</a>
-            <a href="services.html" class="text-sm font-bold">SERVICES</a>
-            <a href="company.html" class="text-sm font-bold">COMPANY</a>
-            <a href="news.html" class="text-sm font-bold">NEWS</a>
+
+        <!-- 【修正2】モバイルメニューの中身 (絶対配置で全幅に) -->
+        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl md:hidden flex flex-col items-center py-0">
+            <a href="index.html" class="w-full text-center py-4 text-sm font-bold text-blue-600 border-t border-gray-50">TOP</a>
+            <a href="services.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50 hover:bg-slate-50">SERVICES</a>
+            <a href="company.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50 hover:bg-slate-50">COMPANY</a>
+            <a href="news.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50 hover:bg-slate-50">NEWS</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="h-[90vh] md:h-screen flex items-center justify-center bg-tech-blue text-white relative">
-        <div class="text-center relative z-10 px-6" data-aos="fade-up">
-            <p class="text-blue-400 tracking-[0.3em] uppercase text-[10px] md:text-xs mb-6 font-bold">Bridge the Gap with Tech & Marketing</p>
-            <h1 class="text-3xl md:text-7xl font-light mb-8 md:mb-10 serif leading-tight">
-                境界を越え、<br class="md:hidden"><span class="font-bold">価値を加速させる。</span>
+    <!-- 【修正3】モバイルでの見栄えを調整 (text-center, paddingの調整) -->
+    <section class="h-screen flex items-center justify-center bg-tech-blue text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
+        
+        <div class="text-center relative z-10 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+            <p class="text-blue-400 tracking-[0.2em] uppercase text-[10px] md:text-xs mb-6 font-bold">
+                Bridge the Gap with Tech & Marketing
+            </p>
+            <!-- 文字サイズと改行の調整 -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-light mb-8 serif leading-tight">
+                境界を越え、<br class="block md:hidden">
+                <span class="font-bold">価値を加速させる。</span>
             </h1>
             <div class="w-px h-16 md:h-24 bg-gradient-to-b from-blue-500 to-transparent mx-auto mt-8"></div>
         </div>
     </section>
 
     <!-- 2. Core Philosophy -->
-    <section class="py-32 px-8 relative overflow-hidden">
+    <section class="py-24 md:py-32 px-6 relative overflow-hidden">
         <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
             <span class="text-blue-600 font-bold tracking-widest text-xs uppercase block mb-6">Mission</span>
-            <h2 class="text-3xl md:text-5xl font-bold mb-12 serif leading-relaxed text-tech-blue">
+            <h2 class="text-2xl md:text-4xl font-bold mb-10 serif leading-relaxed text-tech-blue">
                 情報の非対称性を解消し、<br>
                 新たなビジネスの懸け橋となる。
             </h2>
-            <p class="text-gray-500 max-w-2xl mx-auto leading-loose text-lg font-light">
-                日本と中国、二つの市場の間に存在する「情報の壁」。<br>
+            <p class="text-gray-500 max-w-2xl mx-auto leading-loose text-sm md:text-lg font-light text-justify md:text-center">
+                日本と中国、二つの市場の間に存在する「情報の壁」。
                 PROTECHは、最先端のデジタル技術と深い市場洞察により、その境界を透明にします。
             </p>
         </div>
     </section>
 
-    <!-- 3. Expertise / Strategy (背景色の修正箇所) -->
-    <section class="py-24 bg-tech-blue text-white px-8 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+    <!-- 3. Expertise / Strategy -->
+    <section class="py-20 md:py-24 bg-tech-blue text-white px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div data-aos="fade-right">
-                <h3 class="text-3xl font-bold mb-8 serif">Global Native Expertise</h3>
+                <h3 class="text-2xl md:text-3xl font-bold mb-8 serif">Global Native Expertise</h3>
                 <div class="space-y-8">
                     <div class="border-l-2 border-blue-500 pl-6">
-                        <h4 class="font-bold mb-2 text-blue-400">中日両市場への深い理解</h4>
-                        <p class="text-sm text-blue-100/60 leading-relaxed">両国の商習慣を熟知したネイティブチームが、文化の壁を越えるローカライズ戦略を策定します。</p>
+                        <h4 class="font-bold mb-2 text-blue-400 text-lg">中日両市場への深い理解</h4>
+                        <p class="text-sm text-blue-100/70 leading-relaxed">両国の商習慣を熟知したネイティブチームが、文化の壁を越えるローカライズ戦略を策定します。</p>
                     </div>
                     <div class="border-l-2 border-blue-500 pl-6">
-                        <h4 class="font-bold mb-2 text-blue-400">データ駆動型の意思決定</h4>
-                        <p class="text-sm text-blue-100/60 leading-relaxed">直感に頼らない、緻密なデータ分析に基づくマーケティングと開発プロセスを実現します。</p>
+                        <h4 class="font-bold mb-2 text-blue-400 text-lg">データ駆動型の意思決定</h4>
+                        <p class="text-sm text-blue-100/70 leading-relaxed">直感に頼らない、緻密なデータ分析に基づくマーケティングと開発プロセスを実現します。</p>
                     </div>
                 </div>
             </div>
-            <div class="relative" data-aos="fade-left">
+            <div class="relative mt-8 md:mt-0" data-aos="fade-left">
                 <div class="bg-blue-600/20 absolute inset-0 rounded-full blur-3xl animate-pulse"></div>
-                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1000" class="rounded-2xl relative z-10 grayscale hover:grayscale-0 transition duration-700">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1000" class="rounded-2xl relative z-10 grayscale hover:grayscale-0 transition duration-700 shadow-2xl w-full">
             </div>
         </div>
     </section>
 
- <!-- 4. Services (可视化排版) -->
-    <section class="py-32 px-8 max-w-7xl mx-auto">
-        <div class="text-center mb-24" data-aos="fade-up">
-            <h3 class="text-3xl font-bold serif text-tech-blue uppercase tracking-widest">Our Services</h3>
+    <!-- 4. Services -->
+    <section class="py-24 md:py-32 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16 md:mb-24" data-aos="fade-up">
+            <h3 class="text-2xl md:text-3xl font-bold serif text-tech-blue uppercase tracking-widest">Our Services</h3>
             <p class="text-gray-400 text-xs mt-4">提供サービス</p>
         </div>
         
-        <div class="grid md:grid-cols-2 gap-12">
-            <!-- 小红书 -->
-            <a href="services.html" class="group bg-slate-50 p-1 rounded-3xl block overflow-hidden" data-aos="fade-up">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+            <!-- Service 1 -->
+            <a href="services.html" class="group bg-slate-50 p-1 rounded-3xl block overflow-hidden shadow-sm hover:shadow-md transition" data-aos="fade-up">
                 <div class="overflow-hidden rounded-3xl aspect-[16/9]">
                     <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1000" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
-                <div class="p-10">
-                    <h4 class="text-2xl font-bold mb-4">小紅書（RED）進出支援</h4>
+                <div class="p-8 md:p-10">
+                    <h4 class="text-xl md:text-2xl font-bold mb-4 text-tech-blue">小紅書（RED）進出支援</h4>
                     <p class="text-gray-500 text-sm leading-relaxed mb-6">戦略立案、KOL起用、アカウント運用まで。中国市場でのブランド価値を最大化します。</p>
                     <span class="text-blue-600 text-xs font-bold tracking-widest border-b border-blue-600 pb-1 uppercase">Learn More</span>
                 </div>
             </a>
-            <!-- 开发 -->
-            <a href="services.html" class="group bg-slate-50 p-1 rounded-3xl block overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+            <!-- Service 2 -->
+            <a href="services.html" class="group bg-slate-50 p-1 rounded-3xl block overflow-hidden shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
                 <div class="overflow-hidden rounded-3xl aspect-[16/9]">
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
-                <div class="p-10">
-                    <h4 class="text-2xl font-bold mb-4">Web & App 開発</h4>
+                <div class="p-8 md:p-10">
+                    <h4 class="text-xl md:text-2xl font-bold mb-4 text-tech-blue">Web & App 開発</h4>
                     <p class="text-gray-500 text-sm leading-relaxed mb-6">最新技術を用いた高品質な開発。UX/UIデザインを軸に、ビジネスの基盤を構築します。</p>
                     <span class="text-blue-600 text-xs font-bold tracking-widest border-b border-blue-600 pb-1 uppercase">Learn More</span>
                 </div>
@@ -133,32 +181,32 @@
     </section>
 
     <!-- 5. Case Study Pick Up -->
-    <section class="py-32 bg-slate-50 px-8 border-y border-gray-100">
+    <section class="py-24 bg-slate-50 px-6 border-y border-gray-100">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center gap-16">
-                <div class="md:w-1/2" data-aos="fade-right">
+            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+                <div class="md:w-1/2 order-2 md:order-1" data-aos="fade-right">
                     <span class="text-blue-600 font-bold text-xs tracking-[0.2em] uppercase mb-4 block">Case Study</span>
-                    <h3 class="text-3xl font-bold mb-8 serif text-tech-blue leading-tight">花雕酔鶏鍋<br>日本進出プロモーション支援</h3>
-                    <p class="text-gray-500 leading-loose mb-10" translate="no">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 serif text-tech-blue leading-tight">花雕酔鶏鍋<br>日本進出プロモーション支援</h3>
+                    <p class="text-gray-500 leading-loose mb-8 text-sm" translate="no">
                         小紅書を活用した戦略的なマーケティングにより、日本市場での認知拡大を短期間で実現。ターゲット選定から実店舗への送客まで、ブランドの日本上陸をトータルでプロデュースしました。
                     </p>
-                    <a href="services.html" class="inline-block px-12 py-4 bg-tech-blue text-white text-xs font-bold tracking-widest hover:opacity-90 transition">VIEW DETAILS</a>
+                    <a href="services.html" class="inline-block px-10 py-3 md:px-12 md:py-4 bg-tech-blue text-white text-xs font-bold tracking-widest hover:opacity-90 transition shadow-lg">VIEW DETAILS</a>
                 </div>
-                <div class="md:w-1/2" data-aos="fade-left">
+                <div class="md:w-1/2 order-1 md:order-2" data-aos="fade-left">
                     <div class="relative">
-                        <div class="absolute -inset-4 border border-blue-100 rounded-2xl"></div>
-                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000" class="rounded-xl shadow-xl relative z-10">
+                        <div class="absolute -inset-4 border border-blue-100 rounded-2xl hidden md:block"></div>
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000" class="rounded-xl shadow-xl relative z-10 w-full">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. Footer (保持简约高产) -->
-    <footer class="py-20 text-center bg-white">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="text-tech-blue font-bold text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
-            <div class="flex justify-center space-x-8 mb-12 text-[10px] font-bold tracking-widest text-gray-400">
+    <!-- Footer -->
+    <footer class="py-16 md:py-20 text-center bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-tech-blue font-bold text-2xl md:text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
+            <div class="flex justify-center flex-wrap gap-6 md:gap-8 mb-10 text-[10px] md:text-xs font-bold tracking-widest text-gray-400">
                 <a href="services.html" class="hover:text-blue-600">SERVICES</a>
                 <a href="company.html" class="hover:text-blue-600">COMPANY</a>
                 <a href="news.html" class="hover:text-blue-600">NEWS</a>
@@ -169,18 +217,45 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 初始化动效
-        AOS.init({ duration: 1000, once: true });
+        // AOS (Animate On Scroll) の初期化
+        AOS.init({ 
+            duration: 1000, 
+            once: true,
+            disable: 'mobile' // モバイルでの誤動作を防ぐため、必要に応じて有効化してください（今回は一旦CSSで制御）
+        });
 
-        // 【终极黑科技：Slot-Killer】
-        // 实时监控并移除所有包含 asc_slot 的异常 DOM 节点
+        // 【修正2の続き】モバイルメニューの開閉スクリプト
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden'); // hiddenクラスの付け外し
+            // アニメーション用のクラスもトグル（CSSで制御）
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('open');
+            } else {
+                // 少し遅延させてopenクラスをつけることでアニメーションさせる
+                setTimeout(() => {
+                    mobileMenu.classList.add('open');
+                }, 10);
+            }
+        });
+
+        // 画面サイズが変わった時にメニューをリセット
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('open');
+            }
+        });
+
+        // Slot-Killer: 邪魔な要素の削除
         const slotKiller = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 mutation.addedNodes.forEach((node) => {
-                    if (node.nodeType === 1) { // 元素节点
+                    if (node.nodeType === 1) { 
                         if (node.hasAttribute('asc_slot') || (node.textContent && node.textContent.includes('asc_slot'))) {
                             node.remove();
-                            console.log('Interference blocked.');
                         }
                     }
                 });
@@ -188,7 +263,6 @@
         });
         slotKiller.observe(document.body, { child_list: true, subtree: true });
 
-        // 处理现有的乱码字符
         window.addEventListener('load', () => {
             document.body.innerHTML = document.body.innerHTML.replace(/\[\.\.\.\]\(asc_slot:\/\/.*?\)/g, '');
         });
