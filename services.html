@@ -28,27 +28,33 @@
 </head>
 <body class="bg-white text-slate-900 overflow-x-hidden">
 
-    <!-- 1. 导航栏 -->
-    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
-            <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-[#001A33]">PROTECH</a>
-            <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest uppercase">
-                <a href="index.html" class="text-blue-600">TOP</a>
-                <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
-                <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
-                <a href="news.html" class="hover:text-blue-600 transition">NEWS</a>
-            </div>
-            <button id="menu-btn" class="md:hidden p-2 text-[#001A33]">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
+<!-- 导航栏 -->
+<nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
+        <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-[#001A33] z-50 relative">PROTECH</a>
+        
+        <!-- PC菜单 -->
+        <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest uppercase">
+            <a href="index.html" class="nav-link hover:text-blue-600 transition">TOP</a>
+            <a href="services.html" class="nav-link hover:text-blue-600 transition">SERVICES</a>
+            <a href="company.html" class="nav-link hover:text-blue-600 transition">COMPANY</a>
+            <a href="news.html" class="nav-link hover:text-blue-600 transition">NEWS</a>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-8 py-6 flex flex-col space-y-4 shadow-xl">
-            <a href="index.html" class="text-sm font-bold text-blue-600">TOP</a>
-            <a href="services.html" class="text-sm font-bold">SERVICES</a>
-            <a href="company.html" class="text-sm font-bold">COMPANY</a>
-            <a href="news.html" class="text-sm font-bold">NEWS</a>
-        </div>
-    </nav>
+
+        <!-- 汉堡按钮 -->
+        <button id="menu-btn" class="md:hidden p-2 text-[#001A33] z-50 relative focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+    </div>
+
+    <!-- 移动端菜单：务必加上 hidden -->
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl md:hidden flex flex-col items-center py-4">
+        <a href="index.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">TOP</a>
+        <a href="services.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">SERVICES</a>
+        <a href="company.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">COMPANY</a>
+        <a href="news.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">NEWS</a>
+    </div>
+</nav>
 
     <!-- 1. 小红书推广 Section -->
     <section class="pt-48 pb-24 px-8 max-w-7xl mx-auto">
@@ -60,14 +66,14 @@
                     「情報の非対称性を解消する」という理念のもと、中国最大のライフスタイル共有プラットフォーム「小紅書」におけるブランド構築を支援します。現地の商習慣と最新トレンドを熟知したチームが、日本企業の魅力を正しく届けます。
                 </p>
             </div>
-            <div class="md:w-1/2 grid grid-cols-2 gap-6" data-aos="fade-left">
+           <div class="md:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-left">
                 <div class="p-6 bg-slate-50 rounded-2xl"><h4 class="font-bold mb-2">戦略策定</h4><p class="text-xs text-gray-400">市場調査からターゲット選定、ブランドのポジショニングを明確化。</p></div>
                 <div class="p-6 bg-slate-50 rounded-2xl"><h4 class="font-bold mb-2">KOL/KOC</h4><p class="text-xs text-gray-400">影響力のあるクリエイターを起用し、質の高い「口コミ」を創出。</p></div>
             </div>
         </div>
 
         <!-- 初始显示的3个案例 -->
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="case-card bg-white rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                 <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800" class="w-full h-full object-cover">
@@ -104,7 +110,7 @@
         <div id="more-cases" class="expand-content">
             <div class="bg-slate-50 rounded-[3rem] p-12 mt-12 overflow-hidden">
                 <h3 class="text-2xl font-bold serif text-tech-blue mb-12 text-center">PROTECHの支援プロセス</h3>
-                <div class="grid md:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div class="relative pt-8">
                         <span class="step-bg">01</span>
                         <h4 class="font-bold mb-4 relative z-10">戦略策定</h4>
@@ -172,7 +178,7 @@
 
             <!-- 展开内容：未来规划 -->
             <div id="more-products" class="expand-content">
-                <div class="grid md:grid-cols-3 gap-8 mt-12">
+               <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                     <div class="bg-white p-8 rounded-2xl border border-gray-100">
                         <h4 class="font-bold text-sm mb-3 uppercase tracking-widest">Gaming LP</h4>
                         <p class="text-xs text-gray-400 leading-relaxed">没入感を高めるゲーム特化型ランディングページ。</p>
@@ -197,10 +203,17 @@
     </section>
 
     <!-- 统一页脚 -->
-    <footer class="py-20 text-center bg-white border-t border-gray-100">
-        <div class="text-tech-blue font-bold text-2xl mb-4 tracking-tighter uppercase">PROTECH</div>
-        <p class="text-[10px] text-gray-400 uppercase tracking-[0.2em]">© 2026 PROTECH Inc. All Rights Reserved.</p>
-    </footer>
+<footer class="py-16 md:py-20 text-center bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-tech-blue font-bold text-2xl md:text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
+        <div class="flex justify-center flex-wrap gap-6 md:gap-8 mb-10 text-[10px] md:text-xs font-bold tracking-widest text-gray-400">
+            <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
+            <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
+            <a href="news.html" class="hover:text-blue-600 transition">NEWS</a>
+        </div>
+        <p class="text-[10px] text-gray-400 tracking-widest">© 2026 PROTECH Inc. All Rights Reserved.</p>
+    </div>
+</footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -230,6 +243,23 @@
             // 展开后刷新 AOS 探测新元素
             setTimeout(() => { AOS.refresh(); }, 600);
         }
+    document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (!menuBtn || !mobileMenu) return;
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // 切回 PC 时自动关闭
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+});
     </script>
 </body>
 </html>
