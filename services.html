@@ -92,7 +92,7 @@
             </div>
         </div>
 
-        <!-- 展开内容：Notion 里的策略流程 -->
+        <!-- 展开内容：支援流程 -->
         <div id="more-cases" class="expand-content">
             <div class="bg-slate-50 rounded-[3rem] p-12 mt-12 overflow-hidden">
                 <h3 class="text-2xl font-bold serif text-tech-blue mb-12 text-center">PROTECHの支援プロセス</h3>
@@ -146,13 +146,14 @@
                     <div class="w-24 h-24 bg-tech-blue rounded-2xl flex items-center justify-center text-white text-3xl font-bold shadow-xl transition group-hover:scale-110">漢</div>
                     <div class="flex-1">
                         <h3 class="text-2xl font-bold mb-2">Kanji Practice JP</h3>
-                        <p class="text-sm text-gray-400 mb-6">日本語学習者向けの漢字練習ツール。最新のWeb技術を用いたインタラクティブな体験。</p>
+                        <p class="text-sm text-gray-400 mb-6">日本語学習者向けの漢字练习ツール。最新のWeb技術を用いたインタラクティブな体験。</p>
                         <div class="flex gap-4">
                             <a href="https://kanji-practice-jp.vercel.app/" target="_blank" class="bg-tech-blue text-white px-8 py-2 rounded-full text-[10px] font-bold hover:opacity-80 transition tracking-widest">Launch Web</a>
                             <div class="bg-slate-100 text-slate-300 px-8 py-2 rounded-full text-[10px] font-bold cursor-not-allowed tracking-widest">iOS App</div>
                         </div>
                     </div>
                 </div>
+
                 <!-- 占位符 -->
                 <div class="bg-white/50 border border-dashed border-gray-300 rounded-3xl flex items-center justify-center p-10 group" data-aos="fade-up" data-aos-delay="100">
                     <div class="text-center">
@@ -195,25 +196,32 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        // 初始化动画
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ 
+                duration: 1000, 
+                once: true,
+                offset: 100
+            });
+        });
 
+        // 展开/收起函数
         function toggleExpand(id, btn) {
             const content = document.getElementById(id);
             if (content.classList.contains('active')) {
                 content.classList.remove('active');
                 btn.innerText = btn.innerText.replace('CLOSE', 'VIEW MORE');
-                btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // 延迟滚动，确保动画顺滑
+                setTimeout(() => {
+                    btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
             } else {
                 content.classList.add('active');
                 btn.innerText = btn.innerText.replace('VIEW MORE', 'CLOSE');
             }
+            // 展开后刷新 AOS 探测新元素
             setTimeout(() => { AOS.refresh(); }, 600);
         }
-
-        // 防乱码拦截
-        window.addEventListener('load', () => {
-            document.body.innerHTML = document.body.innerHTML.replace(/\[\.\.\.\]\(asc_slot:\/\/.*?\)/g, '');
-        });
     </script>
 </body>
 </html>
