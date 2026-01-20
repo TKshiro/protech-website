@@ -3,76 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google" content="notranslate">
     <title>PROTECH株式会社 | 境界を越え、価値を加速させる。</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <meta name="description" content="PROTECHは中国SNSマーケティングの専門企業です。 3年以上にわたって中国SNSを利用した日本情報発信を毎日続けて参ります。">
-    <meta name="keywords" content="PROTECH, 小紅書, RED, 中国マーケティング, アプリ開発, 日本進出支援">
-    <link rel="icon" href="img/PROTECH.jpg"> <!-- 您需要一个Logo图标 -->
     <style>
-        :root { --tech-blue: #001A33; --accent-blue: #0055FF; }
+        :root { --tech-blue: #001A33; }
         body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; }
         .serif { font-family: 'Noto Serif JP', serif; }
-        .bg-tech-blue { background-color: var(--tech-blue); }
-        .text-tech-blue { color: var(--tech-blue); }
-        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); }
-        
-        /* 装饰背景：流体科技感 */
-        .tech-gradient {
-            background: radial-gradient(circle at 10% 20%, rgba(0, 85, 255, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 90% 80%, rgba(0, 26, 51, 0.05) 0%, transparent 50%);
-        }
-
-        /* 移除AI干扰字符的黑科技样式 */
-        [asc_slot] { display: none !important; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); }
     </style>
+    <!-- Tailwindのカスタムカラー設定 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-blue': '#001A33',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-white text-slate-900 leading-relaxed overflow-x-hidden tech-gradient">
+<body class="bg-white text-slate-900 overflow-x-hidden">
 
-    <!-- 导航栏 -->
+    <!-- 1. 导航栏 -->
     <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold tracking-tighter text-tech-blue">PROTECH</a>
-            <div class="hidden md:flex space-x-12 text-[10px] font-bold tracking-[0.2em] uppercase">
+        <div class="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
+            <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-[#001A33]">PROTECH</a>
+            <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest uppercase">
                 <a href="index.html" class="text-blue-600">TOP</a>
                 <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
                 <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
                 <a href="news.html" class="hover:text-blue-600 transition">NEWS</a>
             </div>
+            <button id="menu-btn" class="md:hidden p-2 text-[#001A33]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-8 py-6 flex flex-col space-y-4 shadow-xl">
+            <a href="index.html" class="text-sm font-bold text-blue-600">TOP</a>
+            <a href="services.html" class="text-sm font-bold">SERVICES</a>
+            <a href="company.html" class="text-sm font-bold">COMPANY</a>
+            <a href="news.html" class="text-sm font-bold">NEWS</a>
         </div>
     </nav>
 
-    <!-- 1. Hero Section (强化视觉冲击) -->
-    <section class="h-screen flex items-center justify-center bg-tech-blue text-white relative">
-        <div class="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]"></div>
-        <div class="text-center relative z-10 px-6" data-aos="fade-up" data-aos-duration="1500">
-            <p class="text-blue-400 tracking-[0.4em] uppercase text-[10px] mb-8 font-bold">Bridge the Gap with Tech & Marketing</p>
-            <h1 class="text-5xl md:text-8xl font-light mb-10 serif leading-tight" translate="no">
-                境界を越え、<br><span class="font-bold">価値を加速させる。</span>
+    <!-- Hero Section -->
+    <section class="h-[90vh] md:h-screen flex items-center justify-center bg-tech-blue text-white relative">
+        <div class="text-center relative z-10 px-6" data-aos="fade-up">
+            <p class="text-blue-400 tracking-[0.3em] uppercase text-[10px] md:text-xs mb-6 font-bold">Bridge the Gap with Tech & Marketing</p>
+            <h1 class="text-3xl md:text-7xl font-light mb-8 md:mb-10 serif leading-tight">
+                境界を越え、<br class="md:hidden"><span class="font-bold">価値を加速させる。</span>
             </h1>
-            <div class="w-px h-24 bg-gradient-to-b from-blue-500 to-transparent mx-auto mt-12 animate-bounce"></div>
+            <div class="w-px h-16 md:h-24 bg-gradient-to-b from-blue-500 to-transparent mx-auto mt-8"></div>
         </div>
     </section>
 
-    <!-- 2. Core Philosophy (融入Notion核心观点) -->
+    <!-- 2. Core Philosophy -->
     <section class="py-32 px-8 relative overflow-hidden">
         <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
             <span class="text-blue-600 font-bold tracking-widest text-xs uppercase block mb-6">Mission</span>
-            <h2 class="text-3xl md:text-5xl font-bold mb-12 serif leading-relaxed text-tech-blue" translate="no">
+            <h2 class="text-3xl md:text-5xl font-bold mb-12 serif leading-relaxed text-tech-blue">
                 情報の非対称性を解消し、<br>
                 新たなビジネスの懸け橋となる。
             </h2>
-            <p class="text-gray-500 max-w-2xl mx-auto leading-loose text-lg font-light" translate="no">
+            <p class="text-gray-500 max-w-2xl mx-auto leading-loose text-lg font-light">
                 日本と中国、二つの市場の間に存在する「情報の壁」。<br>
                 PROTECHは、最先端のデジタル技術と深い市場洞察により、その境界を透明にします。
-                私たちが提供するのは、単なるサービスではなく、未来へ続く確かな「道」です。
             </p>
         </div>
     </section>
 
-    <!-- 3. Expertise / Strategy (新增：体现专业厚度) -->
+    <!-- 3. Expertise / Strategy (背景色の修正箇所) -->
     <section class="py-24 bg-tech-blue text-white px-8 overflow-hidden">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
             <div data-aos="fade-right">
@@ -90,12 +94,12 @@
             </div>
             <div class="relative" data-aos="fade-left">
                 <div class="bg-blue-600/20 absolute inset-0 rounded-full blur-3xl animate-pulse"></div>
-                <img src="img/22-46-00.jpg" class="rounded-2xl relative z-10 grayscale hover:grayscale-0 transition duration-700">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1000" class="rounded-2xl relative z-10 grayscale hover:grayscale-0 transition duration-700">
             </div>
         </div>
     </section>
 
-    <!-- 4. Services (可视化排版) -->
+ <!-- 4. Services (可视化排版) -->
     <section class="py-32 px-8 max-w-7xl mx-auto">
         <div class="text-center mb-24" data-aos="fade-up">
             <h3 class="text-3xl font-bold serif text-tech-blue uppercase tracking-widest">Our Services</h3>
@@ -106,7 +110,7 @@
             <!-- 小红书 -->
             <a href="services.html" class="group bg-slate-50 p-1 rounded-3xl block overflow-hidden" data-aos="fade-up">
                 <div class="overflow-hidden rounded-3xl aspect-[16/9]">
-                    <img src="img/22-46-01.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1000" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="p-10">
                     <h4 class="text-2xl font-bold mb-4">小紅書（RED）進出支援</h4>
@@ -117,7 +121,7 @@
             <!-- 开发 -->
             <a href="services.html" class="group bg-slate-50 p-1 rounded-3xl block overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                 <div class="overflow-hidden rounded-3xl aspect-[16/9]">
-                    <img src="img/00-09-07.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="p-10">
                     <h4 class="text-2xl font-bold mb-4">Web & App 開発</h4>
