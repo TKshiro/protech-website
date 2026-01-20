@@ -60,36 +60,33 @@
 </head>
 <body class="bg-white text-slate-900">
 
-    <!-- 1. ナビゲーションバー -->
-    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- ロゴ -->
-            <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-[#001A33] z-50 relative">PROTECH</a>
-            
-            <!-- PC用メニュー -->
-            <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest uppercase">
-                <a href="index.html" class="text-blue-600">TOP</a>
-                <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
-                <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
-                <a href="news.html" class="hover:text-blue-600 transition">NEWS</a>
-            </div>
-
-            <!-- 【修正2】モバイル用ハンバーガーボタン (z-indexを高く設定) -->
-            <button id="menu-btn" class="md:hidden p-2 text-[#001A33] z-50 relative focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
+    <!-- 导航栏 -->
+<nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
+        <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-[#001A33] z-50 relative">PROTECH</a>
+        
+        <!-- PC菜单 -->
+        <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest uppercase">
+            <a href="index.html" class="nav-link hover:text-blue-600 transition">TOP</a>
+            <a href="services.html" class="nav-link hover:text-blue-600 transition">SERVICES</a>
+            <a href="company.html" class="nav-link hover:text-blue-600 transition">COMPANY</a>
+            <a href="news.html" class="nav-link hover:text-blue-600 transition">NEWS</a>
         </div>
 
-        <!-- 【修正2】モバイルメニューの中身 (絶対配置で全幅に) -->
-        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl md:hidden flex flex-col items-center py-0">
-            <a href="index.html" class="w-full text-center py-4 text-sm font-bold text-blue-600 border-t border-gray-50">TOP</a>
-            <a href="services.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50 hover:bg-slate-50">SERVICES</a>
-            <a href="company.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50 hover:bg-slate-50">COMPANY</a>
-            <a href="news.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50 hover:bg-slate-50">NEWS</a>
-        </div>
-    </nav>
+        <!-- 汉堡按钮 -->
+        <button id="menu-btn" class="md:hidden p-2 text-[#001A33] z-50 relative focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+    </div>
+
+    <!-- 移动端菜单：务必加上 hidden -->
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl md:hidden flex flex-col items-center py-4">
+        <a href="index.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">TOP</a>
+        <a href="services.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">SERVICES</a>
+        <a href="company.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">COMPANY</a>
+        <a href="news.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">NEWS</a>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <!-- 【修正3】モバイルでの見栄えを調整 (text-center, paddingの調整) -->
