@@ -3,37 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ページが見つかりません - PROTECH</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="robots" content="noindex, follow">
+    <title>404 ページが見つかりません - PROTECH</title>
+    
     <style>
-        .error-container {
-            text-align: center;
-            padding: 5rem 2rem;
-            min-height: 70vh;
+        :root {
+            --primary-color: #0066cc;
+            --hover-color: #0052a3;
+            --text-dark: #001a33;
+            --text-gray: #666;
+            --error-red: #d9534f;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* ヘッダー */
+        header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 1rem 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        #menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* モバイルメニュー */
+        #mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #f9f9f9;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        #mobile-menu a {
+            padding: 0.8rem 0;
+            text-decoration: none;
+            color: var(--text-dark);
+            border-bottom: 1px solid #eee;
+        }
+
+        /* エラーコンテンツ */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 600px;
         }
 
         .error-code {
-            font-size: 5rem;
-            font-weight: bold;
-            color: #d9534f;
-            margin-bottom: 1rem;
+            font-size: clamp(4rem, 10vw, 6rem);
+            font-weight: 900;
+            color: var(--error-red);
+            margin: 0;
+            line-height: 1;
         }
 
         .error-message {
             font-size: 1.5rem;
-            color: #001a33;
-            margin-bottom: 2rem;
+            margin: 1rem 0 1.5rem;
+            font-weight: bold;
         }
 
         .error-description {
             font-size: 1rem;
-            color: #666;
-            margin-bottom: 2rem;
-            max-width: 500px;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
         }
 
         .error-actions {
@@ -43,63 +127,112 @@
             flex-wrap: wrap;
         }
 
-        .error-actions a {
+        .btn {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background-color: #0066cc;
-            color: #fff;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-color);
+            color: #fff !important;
             text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
         }
 
-        .error-actions a:hover {
-            background-color: #0052a3;
+        .btn:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #fff;
+            color: var(--primary-color) !important;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f7ff;
+        }
+
+        /* フッター */
+        footer {
+            background: #f4f4f4;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--text-gray);
+            text-decoration: none;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            #menu-btn { display: block; }
+            .error-actions { flex-direction: column; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <nav>
-            <div class="logo">PROTECH</div>
+            <a href="/" class="logo">PROTECH</a>
             <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="services.html">サービス</a></li>
-                <li><a href="company.html">企業情報</a></li>
-                <li><a href="news.html">ニュース</a></li>
-                <li><a href="contact.html">お問い合わせ</a></li>
+                <li><a href="/">ホーム</a></li>
+                <li><a href="/services">サービス</a></li>
+                <li><a href="/company">企業情報</a></li>
+                <li><a href="/contact">お問い合わせ</a></li>
             </ul>
-            <button id="menu-btn">☰</button>
+            <button id="menu-btn" aria-label="メニューを開く">☰</button>
         </nav>
-        <div id="mobile-menu">
-            <a href="index.html">ホーム</a>
-            <a href="services.html">サービス</a>
-            <a href="company.html">企業情報</a>
-            <a href="news.html">ニュース</a>
-            <a href="contact.html">お問い合わせ</a>
-        </div>
     </header>
 
+    <div id="mobile-menu">
+        <a href="/">HOME</a>
+        <a href="/services">SERVICES</a>
+        <a href="/company">COMPANY</a>
+        <a href="/news">NEWS</a>
+        <a href="/contact">CONTACT</a>
+    </div>
+
     <main>
-        <div class="error-container">
-            <div class="error-code">404</div>
-            <div class="error-message">ページが見つかりません</div>
-            <div class="error-description">
-                申し訳ありません。お探しのページは見つかりませんでした。<br>
-                URL が正しいか、もう一度ご確認ください。
-            </div>
+        <section class="error-container">
+            <h1 class="error-code">404</h1>
+            <p class="error-message">ページが見つかりません</p>
+            <p class="error-description">
+                お探しのページは、移動または削除されたか、URLが間違っている可能性があります。<br>
+                ブラウザの再読み込みを試すか、以下のボタンから移動してください。
+            </p>
             <div class="error-actions">
-                <a href="index.html">ホームページに戻る</a>
-                <a href="contact.html">お問い合わせ</a>
+                <a href="/" class="btn">トップページへ戻る</a>
+                <a href="/contact" class="btn btn-secondary">お問い合わせ</a>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 PROTECH. All rights reserved.</p>
-        <p><a href="contact.html">お問い合わせ</a></p>
+        <p><a href="/privacy-policy">プライバシーポリシー</a></p>
     </footer>
 
-    <script src="main.js"></script>
+    <script>
+        // 简单的菜单开关逻辑
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            const isVisible = mobileMenu.style.display === 'flex';
+            mobileMenu.style.display = isVisible ? 'none' : 'flex';
+        });
+
+        // 点击页面其他地方关闭菜单
+        window.onclick = function(event) {
+            if (!event.target.matches('#menu-btn')) {
+                mobileMenu.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>

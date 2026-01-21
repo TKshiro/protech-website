@@ -3,37 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROTECH株式会社 | NEWS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-        <title>ニュース - PROTECH</title>
-    
-    <!-- SEO メタタグ -->
+    <title>ニュース - PROTECH株式会社</title>
+
+    <!-- SEO Meta Tags -->
     <meta name="description" content="PROTECHの最新ニュースとアップデート。業界情報、製品リリース、イベント情報など。">
     <meta name="keywords" content="ニュース, アップデート, 業界情報, PROTECH, イベント">
-    
-    <!-- Open Graph メタタグ -->
+    <link rel="canonical" href="https://www.pro-tech.jp/news.html">
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="ニュース - PROTECH">
     <meta property="og:description" content="PROTECHの最新ニュースとアップデート。業界情報、製品リリース、イベント情報など。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pro-tech.jp/news.html">
     <meta property="og:image" content="https://www.pro-tech.jp/img/og-image.jpg">
+
+    <!-- Fonts & Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- キャノニカルURL -->
-    <link rel="canonical" href="https://www.pro-tech.jp/news.html">
-    
-    <link rel="stylesheet" href="styles.css">
-    <!-- ...existing code... -->
     <style>
         :root { --tech-blue: #001A33; }
-        body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         .serif { font-family: 'Noto Serif JP', serif; }
         .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); }
-        
-        /* フィルターボタンのカスタムスタイル */
+
+        /* 筛选按钮的自定义样式 */
         .filter-btn {
             position: relative;
             cursor: pointer;
@@ -47,13 +42,20 @@
         .filter-btn.active::after {
             content: '';
             position: absolute;
-            bottom: -17px;
+            bottom: -17px; /* 匹配父元素的 pb-4 */
             left: 0;
             width: 100%;
             height: 2px;
             background: var(--tech-blue);
         }
+        
+        /* 汉堡菜单按钮的动画 */
+        .hamburger line { transition: all 0.3s ease; transform-origin: center; }
+        .hamburger.active #line1 { transform: translateY(7px) rotate(45deg); }
+        .hamburger.active #line2 { opacity: 0; }
+        .hamburger.active #line3 { transform: translateY(-7px) rotate(-45deg); }
     </style>
+
     <script>
         tailwind.config = {
             theme: {
@@ -64,77 +66,75 @@
         }
     </script>
 </head>
-<body class="bg-white text-slate-900 overflow-x-hidden">
+
+<body class="bg-white text-slate-900">
 
 <!-- 导航栏 -->
 <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
-        <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-[#001A33] z-50 relative">PROTECH</a>
-        
-        <!-- PC菜单 -->
+        <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
         <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest uppercase">
-            <a href="index.html" class="nav-link hover:text-blue-600 transition">TOP</a>
-            <a href="services.html" class="nav-link hover:text-blue-600 transition">SERVICES</a>
-            <a href="company.html" class="nav-link hover:text-blue-600 transition">COMPANY</a>
-            <a href="news.html" class="nav-link hover:text-blue-600 transition">NEWS</a>
-            <a href="contact.html" class="nav-link hover:text-blue-600 transition">CONTACT</a>
+            <a href="index.html" class="hover:text-blue-600 transition">TOP</a>
+            <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
+            <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
+            <a href="news.html" class="text-blue-600 font-bold">NEWS</a>
+            <a href="contact.html" class="hover:text-blue-600 transition">CONTACT</a>
         </div>
-
-        <!-- 汉堡按钮 -->
-        <button id="menu-btn" class="md:hidden p-2 text-[#001A33] z-50 relative focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
         </button>
-    </div>
-
-    <!-- 移动端菜单：务必加上 hidden -->
-    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl md:hidden flex flex-col items-center py-4">
-        <a href="index.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">TOP</a>
-        <a href="services.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">SERVICES</a>
-        <a href="company.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">COMPANY</a>
-        <a href="news.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">NEWS</a>
-        <a href="contact.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50">CONTACT</a>
     </div>
 </nav>
 
+<!-- 移动端侧滑菜单 -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
+        <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
+        <a href="services.html" class="text-lg font-bold text-slate-700">SERVICES</a>
+        <a href="company.html" class="text-lg font-bold text-slate-700">COMPANY</a>
+        <a href="news.html" class="text-lg font-bold text-blue-600">NEWS</a>
+        <a href="contact.html" class="text-lg font-bold text-slate-700">CONTACT</a>
+    </div>
+</div>
 
-    <!-- メインコンテンツ領域 -->
-    <!-- pt-48 で上部の余白（赤枠部分）を確保し、border-t でトップの線を追加 -->
-    <main class="max-w-6xl mx-auto px-8 pt-48 pb-20 border-t border-gray-100 mt-0">
-        
-        <header class="mb-16" data-aos="fade-up">
-            <!-- 小さな見出し（図2のスタイル） -->
-            <p class="text-tech-blue text-[10px] font-bold tracking-[0.3em] uppercase mb-4">News</p>
-            <h1 class="text-4xl md:text-5xl font-bold serif text-tech-blue mb-6 uppercase tracking-widest">Latest Updates</h1>
-            <p class="text-gray-400 text-xs tracking-[0.2em] font-light">最新情報・プレスリリース</p>
-        </header>
+<!-- メインコンテンツ領域 -->
+<main class="max-w-6xl mx-auto px-8 pt-40 md:pt-48 pb-20">
+    <header class="mb-16 border-b border-gray-100 pb-16" data-aos="fade-up">
+        <p class="text-tech-blue text-[10px] font-bold tracking-[0.3em] uppercase mb-4">News</p>
+        <h1 class="text-4xl md:text-5xl font-bold serif text-tech-blue mb-6 uppercase tracking-widest">Latest Updates</h1>
+        <p class="text-gray-400 text-xs tracking-[0.2em] font-light">最新情報・プレスリリース</p>
+    </header>
 
-        <!-- 筛选标签 (デザインを図2に合わせ軽量化) -->
-        <div class="flex gap-10 text-[10px] tracking-[0.2em] uppercase mb-12 border-b border-gray-100 pb-4" data-aos="fade-up">
-            <div class="filter-btn active" onclick="filterNews('all', this)">All</div>
-            <div class="filter-btn" onclick="filterNews('news', this)">News</div>
-            <div class="filter-btn" onclick="filterNews('service', this)">Service</div>
-            <div class="filter-btn" onclick="filterNews('case', this)">Case Study</div>
-        </div>
+    <!-- 筛选标签 -->
+    <div id="filter-controls" class="flex gap-10 text-[10px] tracking-[0.2em] uppercase mb-12 border-b border-gray-100 pb-4" data-aos="fade-up">
+        <button data-filter="all" class="filter-btn active">All</button>
+        <button data-filter="news" class="filter-btn">News</button>
+        <button data-filter="service" class="filter-btn">Service</button>
+        <button data-filter="case" class="filter-btn">Case Study</button>
+    </div>
 
-        <!-- 新闻列表 -->
-        <div id="news-container" class="divide-y divide-gray-100">
-            <!-- 条目 1 -->
-            <a href="news-detail.html" class="news-row flex flex-col md:flex-row md:items-center py-10 gap-6 group hover:bg-slate-50/50 transition-colors px-4 -mx-4" data-category="case" data-aos="fade-up">
-                <span class="text-xs text-gray-400 font-mono w-32 tracking-tighter">2026.01.10</span>
-                <span class="text-[9px] font-bold bg-blue-50 text-blue-600 px-3 py-1 rounded w-fit uppercase tracking-widest">Case Study</span>
-                <h3 class="flex-1 font-bold text-[15px] group-hover:text-blue-600 transition">【実績】花雕酔鶏鍋 日本進出PR支援。SNS戦略で初月から満席を達成。</h3>
-                <span class="hidden md:block text-slate-200 group-hover:text-blue-600 transition translate-x-0 group-hover:translate-x-2">→</span>
-            </a>
-
-            <!-- 条目 2 -->
-            <a href="#" class="news-row flex flex-col md:flex-row md:items-center py-10 gap-6 group hover:bg-slate-50/50 transition-colors px-4 -mx-4" data-category="news" data-aos="fade-up">
-                <span class="text-xs text-gray-400 font-mono w-32 tracking-tighter">2026.01.20</span>
-                <span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded w-fit uppercase tracking-widest">News</span>
-                <h3 class="flex-1 font-bold text-[15px] group-hover:text-blue-600 transition">PROTECH株式会社のコーポレートサイトをリニューアルしました。</h3>
-                <span class="hidden md:block text-slate-200 group-hover:text-blue-600 transition translate-x-0 group-hover:translate-x-2">→</span>
-            </a>
-        </div>
-    </main>
+    <!-- 新闻列表 -->
+    <div id="news-container" class="divide-y divide-gray-100">
+        <!-- 条目 1 -->
+        <a href="news-detail.html" class="news-item flex flex-col md:flex-row md:items-center py-10 gap-6 group hover:bg-slate-50/50 transition-colors px-4 -mx-4" data-category="case" data-aos="fade-up">
+            <span class="text-xs text-gray-400 font-mono w-32 tracking-tighter flex-shrink-0">2026.01.10</span>
+            <span class="text-[9px] font-bold bg-blue-50 text-blue-600 px-3 py-1 rounded w-fit uppercase tracking-widest">Case Study</span>
+            <h3 class="flex-1 font-bold text-[15px] group-hover:text-blue-600 transition">【実績】花雕酔鶏鍋 日本進出PR支援。SNS戦略で初月から満席を達成。</h3>
+            <span class="hidden md:block text-slate-200 group-hover:text-blue-600 transition translate-x-0 group-hover:translate-x-2">→</span>
+        </a>
+        <!-- 条目 2 -->
+        <a href="#" class="news-item flex flex-col md:flex-row md:items-center py-10 gap-6 group hover:bg-slate-50/50 transition-colors px-4 -mx-4" data-category="news" data-aos="fade-up">
+            <span class="text-xs text-gray-400 font-mono w-32 tracking-tighter flex-shrink-0">2026.01.20</span>
+            <span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded w-fit uppercase tracking-widest">News</span>
+            <h3 class="flex-1 font-bold text-[15px] group-hover:text-blue-600 transition">PROTECH株式会社のコーポレートサイトをリニューアルしました。</h3>
+            <span class="hidden md:block text-slate-200 group-hover:text-blue-600 transition translate-x-0 group-hover:translate-x-2">→</span>
+        </a>
+    </div>
+</main>
 
 <footer class="py-16 md:py-20 text-center bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-6">
@@ -148,49 +148,64 @@
     </div>
 </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. AOS (Animate On Scroll) 初始化
+    AOS.init({ duration: 1000, once: true });
 
-        function filterNews(cat, el) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            el.classList.add('active');
-            document.querySelectorAll('.news-row').forEach(item => {
-                if (cat === 'all' || item.getAttribute('data-category') === cat) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-            AOS.refresh();
-        }
-
-        // モバイルメニューの開閉
-        const btn = document.getElementById('menu-btn');
-        const menu = document.createElement('div'); // 簡易的な実装
-        btn.addEventListener('click', () => {
-            // モバイルメニューのロジックをここに追加
-        });
-        document.addEventListener('DOMContentLoaded', () => {
+    // 2. 移动端侧滑菜单逻辑
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+    }
 
-    if (!menuBtn || !mobileMenu) return;
+    // 3. 新闻筛选逻辑
+    const filterButtons = document.querySelectorAll('#filter-controls .filter-btn');
+    const newsItems = document.querySelectorAll('#news-container .news-item');
 
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 移除所有按钮的 active 状态
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // 给当前点击的按钮添加 active 状态
+            button.classList.add('active');
 
-    // 切回 PC 时自动关闭
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) {
-            mobileMenu.classList.add('hidden');
-        }
+            const filterValue = button.getAttribute('data-filter');
+
+            newsItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                // 判断是否显示
+                if (filterValue === 'all' || filterValue === itemCategory) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+            
+            // 重新触发 AOS 动画
+            AOS.refresh();
+        });
     });
 });
-    </script>
-        <!-- ...existing code... -->
-    
-    <script src="main.js"></script>
+</script>
+
 </body>
 </html>
