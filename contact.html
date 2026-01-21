@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
     
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
     <style>
         :root { --tech-blue: #001A33; }
         body { 
@@ -106,7 +108,7 @@
             <div class="lg:col-span-5">
                 <h2 class="text-3xl font-bold text-tech-blue mb-8 serif">ご連絡ください</h2>
                 <p class="text-gray-500 leading-loose mb-12 text-sm md:text-base">
-                    ご質問、お見積もり、その他のご相談など、お気軽にお問い合わせください。通常24時間以内にご返信いたします。
+                    ご質問、お見積もり、その他のご相談など、お気軽にお問い合わせください。通常24小时以内にご返信いたします。
                 </p>
                 
                 <div class="space-y-6">
@@ -114,7 +116,7 @@
                         <span class="text-2xl mr-4">📧</span>
                         <div>
                             <h4 class="font-bold text-tech-blue text-sm mb-1">メール</h4>
-                            <p class="text-gray-600 text-sm font-mono">info@pro-tech.jp</p>
+                            <p class="text-gray-600 text-sm font-mono">support@pro-tech.jp</p>
                         </div>
                     </div>
                     <div class="flex items-start p-6 bg-slate-50 rounded-2xl border border-gray-100">
@@ -137,23 +139,23 @@
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-xs font-bold text-tech-blue mb-2 uppercase tracking-widest">Name / お名前 *</label>
-                                <input type="text" id="name" required class="w-full px-5 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition text-sm">
+                                <input type="text" id="name" name="name" required class="w-full px-5 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition text-sm">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-tech-blue mb-2 uppercase tracking-widest">Company / 会社名 *</label>
-                                <input type="text" id="company" required class="w-full px-5 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition text-sm">
+                                <input type="text" id="company" name="company" required class="w-full px-5 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition text-sm">
                             </div>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-tech-blue mb-2 uppercase tracking-widest">Email / メールアドレス *</label>
-                            <input type="email" id="email" required class="w-full px-5 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition text-sm">
+                            <input type="email" id="email" name="email" required class="w-full px-5 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition text-sm">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-tech-blue mb-2 uppercase tracking-widest">Message / 内容 *</label>
-                            <textarea id="message" rows="6" required class="w-full px-5 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition text-sm resize-none"></textarea>
+                            <textarea id="message" name="message" rows="6" required class="w-full px-5 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition text-sm resize-none"></textarea>
                         </div>
                         
-                        <button type="submit" class="w-full py-5 bg-tech-blue text-white font-bold rounded-xl hover:bg-blue-600 transition duration-300 shadow-lg tracking-[0.2em] text-xs uppercase">
+                        <button type="submit" id="submitBtn" class="w-full py-5 bg-tech-blue text-white font-bold rounded-xl hover:bg-blue-600 transition duration-300 shadow-lg tracking-[0.2em] text-xs uppercase">
                             Send Message / 送信する
                         </button>
                         
@@ -181,6 +183,11 @@
 </footer>
 
 <script>
+    // 1. 初始化 EmailJS (在此处填入您的 Public Key)
+    (function(){
+        emailjs.init("Oa3PmeXJ7kwYjIls0"); 
+    })();
+
     // 移动端菜单控制
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -198,12 +205,43 @@
         }
     });
 
-    // 表单提交模拟
+    // 2. 表单提交 EmailJS 处理
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        document.getElementById('successMessage').classList.remove('hidden');
-        this.reset();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        const btn = document.getElementById('submitBtn');
+        const originalBtnText = btn.innerText;
+        
+        // 按钮状态反馈
+        btn.innerText = '送信中...';
+        btn.disabled = true;
+
+        // 获取表单数据
+        const templateParams = {
+            name: document.getElementById('name').value,
+            company: document.getElementById('company').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
+
+        // 发送邮件 (在此处填入您的 Service ID 和 Template ID)
+        emailjs.send('service_zg0cj56', 'template_9wqf6sc', templateParams)
+            .then(function() {
+                // 成功处理
+                document.getElementById('successMessage').classList.remove('hidden');
+                document.getElementById('contactForm').reset();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                btn.innerText = originalBtnText;
+                btn.disabled = false;
+            }, function(error) {
+                // 失败处理
+                alert('送信に失敗しました。後でもう一度お試しください。');
+                console.error('EmailJS Error:', error);
+                
+                btn.innerText = originalBtnText;
+                btn.disabled = false;
+            });
     });
 </script>
 
