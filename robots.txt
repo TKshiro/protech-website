@@ -1,0 +1,41 @@
+
+# 更新所有 HTML 文件
+git add *.html
+
+# 一起提交
+git commit -m "重构: 提取共享 JavaScript 代码到 main.js"
+zsh: command not found: #
+zsh: command not found: #
+zsh: command not found: #
+[main f021747] 重构: 提取共享 JavaScript 代码到 main.js
+ 6 files changed, 84 insertions(+)
+ create mode 100644 main.js
+charles@charuzunoMacBook-Air protech-website-1 % cd /Users/charles/Downloads/自己/PROTECH/protech-website-1/
+
+# 添加新的 CSS 文件
+git add styles.css
+
+# 更新所有 HTML 文件
+git add *.html
+
+# 一起提交
+git commit -m "新增: 创建统一的 styles.css，整合公共样式"
+zsh: command not found: #
+zsh: command not found: #
+zsh: command not found: #
+[main 350915d] 新增: 创建统一的 styles.css，整合公共样式
+ 6 files changed, 205 insertions(+)
+ create mode 100644 styles.css
+charles@charuzunoMacBook-Air protech-website-1 % cd /Users/charles/Downloads/自己/PROTECH/protech-website-1/
+
+# 添加新文件和更新
+git add contact.html sitemap.xml *.html
+
+# 提交
+git commit -m "新增: 创建联系表单页面 (contact.html)"
+zsh: command not found: #
+zsh: command not found: #
+[main edd5cf1] 新增: 创建联系表单页面 (contact.html)
+ 7 files changed, 407 insertions(+)
+ create mode 100644 contact.html
+charles@charuzunoMacBook-Air protech-website-1 % 

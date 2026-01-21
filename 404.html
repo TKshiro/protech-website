@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ページが見つかりません - PROTECH</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 5rem 2rem;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .error-code {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #d9534f;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            color: #001a33;
+            margin-bottom: 2rem;
+        }
+
+        .error-description {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .error-actions a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #0066cc;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .error-actions a:hover {
+            background-color: #0052a3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">PROTECH</div>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="services.html">サービス</a></li>
+                <li><a href="company.html">企業情報</a></li>
+                <li><a href="news.html">ニュース</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+            <button id="menu-btn">☰</button>
+        </nav>
+        <div id="mobile-menu">
+            <a href="index.html">ホーム</a>
+            <a href="services.html">サービス</a>
+            <a href="company.html">企業情報</a>
+            <a href="news.html">ニュース</a>
+            <a href="contact.html">お問い合わせ</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <div class="error-message">ページが見つかりません</div>
+            <div class="error-description">
+                申し訳ありません。お探しのページは見つかりませんでした。<br>
+                URL が正しいか、もう一度ご確認ください。
+            </div>
+            <div class="error-actions">
+                <a href="index.html">ホームページに戻る</a>
+                <a href="contact.html">お問い合わせ</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PROTECH. All rights reserved.</p>
+        <p><a href="contact.html">お問い合わせ</a></p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

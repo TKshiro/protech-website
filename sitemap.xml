@@ -37,5 +37,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+    </url>
+  <url>
+    <loc>https://www.pro-tech.jp/404.html</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
