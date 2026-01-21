@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ - PROTECH</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ========================================
+           コンタクトフォーム固有のスタイル
+           ======================================== */
+        .contact-container {
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-container h1 {
+            color: #001a33;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #001a33;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .form-group label .required {
+            color: #d9534f;
+            margin-left: 0.3rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Arial', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #0066cc;
+            box-shadow: 0 0 5px rgba(0, 102, 204, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-group .error {
+            color: #d9534f;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        .form-group input.invalid,
+        .form-group textarea.invalid {
+            border-color: #d9534f;
+        }
+
+        .form-group input.invalid ~ .error,
+        .form-group textarea.invalid ~ .error {
+            display: block;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .form-actions button {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-actions .submit-btn {
+            background-color: #0066cc;
+            color: #fff;
+        }
+
+        .form-actions .submit-btn:hover {
+            background-color: #0052a3;
+        }
+
+        .form-actions .reset-btn {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+        .form-actions .reset-btn:hover {
+            background-color: #5a6268;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border: 1px solid #c3e6cb;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .contact-container {
+                margin: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .contact-container h1 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .form-actions button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         ヘッダー
+         ======================================== -->
+    <header>
+        <nav>
+            <div class="logo">PROTECH</div>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="services.html">サービス</a></li>
+                <li><a href="company.html">企業情報</a></li>
+                <li><a href="news.html">ニュース</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+            <button id="menu-btn">☰</button>
+        </nav>
+        <div id="mobile-menu">
+            <a href="index.html">ホーム</a>
+            <a href="services.html">サービス</a>
+            <a href="company.html">企業情報</a>
+            <a href="news.html">ニュース</a>
+            <a href="contact.html">お問い合わせ</a>
+        </div>
+    </header>
+
+    <!-- ========================================
+         メインコンテンツ
+         ======================================== -->
+    <main>
+        <div class="contact-container">
+            <h1>お問い合わせ</h1>
+            
+            <!-- 成功メッセージ -->
+            <div class="success-message" id="successMessage">
+                ✅ ご送信ありがとうございます！<br>
+                確認のため、ご入力いただいたメールアドレスにメールを送付いたします。
+            </div>
+
+            <!-- お問い合わせフォーム -->
+            <form id="contactForm">
+                <!-- お名前 -->
+                <div class="form-group">
+                    <label for="name">
+                        お名前
+                        <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="山田 太郎"
+                        required
+                    >
+                    <span class="error">お名前を入力してください</span>
+                </div>
+
+                <!-- 会社名 -->
+                <div class="form-group">
+                    <label for="company">
+                        会社名
+                        <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="company" 
+                        name="company" 
+                        placeholder="例：株式会社 PROTECH"
+                        required
+                    >
+                    <span class="error">会社名を入力してください</span>
+                </div>
+
+                <!-- メールアドレス -->
+                <div class="form-group">
+                    <label for="email">
+                        メールアドレス
+                        <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="example@protech.jp"
+                        required
+                    >
+                    <span class="error">有効なメールアドレスを入力してください</span>
+                </div>
+
+                <!-- 電話番号 -->
+                <div class="form-group">
+                    <label for="phone">
+                        電話番号
+                        <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="090-1234-5678"
+                        required
+                    >
+                    <span class="error">有効な電話番号を入力してください</span>
+                </div>
+
+                <!-- お問い合わせ内容 -->
+                <div class="form-group">
+                    <label for="message">
+                        お問い合わせ内容
+                        <span class="required">*</span>
+                    </label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        placeholder="お気軽にお問い合わせください。"
+                        required
+                    ></textarea>
+                    <span class="error">お問い合わせ内容を入力してください</span>
+                </div>
+
+                <!-- 送信ボタン -->
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">送信</button>
+                    <button type="reset" class="reset-btn">リセット</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- ========================================
+         フッター
+         ======================================== -->
+    <footer>
+        <p>&copy; 2026 PROTECH. All rights reserved.</p>
+        <p><a href="contact.html">お問い合わせ</a></p>
+    </footer>
+
+    <!-- ========================================
+         JavaScript
+         ======================================== -->
+    <script src="main.js"></script>
+    <script>
+        // フォーム検証と送信処理
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // フォームデータ取得
+            const name = document.getElementById('name').value.trim();
+            const company = document.getElementById('company').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // バリデーション
+            let isValid = true;
+            
+            // お名前チェック
+            if (!name) {
+                document.getElementById('name').classList.add('invalid');
+                isValid = false;
+            } else {
+                document.getElementById('name').classList.remove('invalid');
+            }
+            
+            // 会社名チェック
+            if (!company) {
+                document.getElementById('company').classList.add('invalid');
+                isValid = false;
+            } else {
+                document.getElementById('company').classList.remove('invalid');
+            }
+            
+            // メールアドレスチェック
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                document.getElementById('email').classList.add('invalid');
+                isValid = false;
+            } else {
+                document.getElementById('email').classList.remove('invalid');
+            }
+            
+            // 電話番号チェック（基本的な検証）
+            const phoneRegex = /^[\d\-\+\(\)\s]+$/;
+            if (!phone || !phoneRegex.test(phone)) {
+                document.getElementById('phone').classList.add('invalid');
+                isValid = false;
+            } else {
+                document.getElementById('phone').classList.remove('invalid');
+            }
+            
+            // お問い合わせ内容チェック
+            if (!message) {
+                document.getElementById('message').classList.add('invalid');
+                isValid = false;
+            } else {
+                document.getElementById('message').classList.remove('invalid');
+            }
+            
+            // バリデーション成功時
+            if (isValid) {
+                // ここでサーバーに送信する処理を入れることができます
+                console.log({
+                    name: name,
+                    company: company,
+                    email: email,
+                    phone: phone,
+                    message: message,
+                    timestamp: new Date().toISOString()
+                });
+                
+                // 成功メッセージを表示
+                document.getElementById('successMessage').classList.add('show');
+                
+                // フォームをリセット
+                this.reset();
+                
+                // 3秒後にメッセージを非表示
+                setTimeout(() => {
+                    document.getElementById('successMessage').classList.remove('show');
+                }, 3000);
+                
+                // ここでメールを送信するAPIを呼び出せます
+                // 例：sendEmailViaAPI(name, company, email, phone, message);
+            }
+        });
+        
+        // 入力時にエラーを消す
+        document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(field => {
+            field.addEventListener('input', function() {
+                this.classList.remove('invalid');
+            });
+        });
+    </script>
+</body>
+</html>
