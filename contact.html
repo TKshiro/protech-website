@@ -1,207 +1,209 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ - PROTECH</title>
+    <title>お問い合わせ | PROTECH株式会社</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    
     <style>
         :root { --tech-blue: #001A33; }
-        body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; }
-        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); }
+        body { 
+            font-family: 'Noto Sans JP', sans-serif; 
+            -webkit-font-smoothing: antialiased; 
+            overflow-x: hidden;
+        }
+        .serif { font-family: 'Noto Serif JP', serif; }
+
+        .glass-nav { 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(12px); 
+            border-bottom: 1px solid rgba(0,0,0,0.05); 
+        }
+        
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .nav-link {
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+        .nav-link:hover {
+            transform: scale(1.1);
+            color: #2563EB;
+        }
+
+        /* 汉堡按钮动画 */
+        .hamburger line {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-origin: center;
+        }
+        .hamburger.active #line1 { transform: translateY(7px) rotate(45deg); }
+        .hamburger.active #line2 { opacity: 0; transform: translateX(-10px); }
+        .hamburger.active #line3 { transform: translateY(-7px) rotate(-45deg); }
     </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'tech-blue': '#001A33' }
+                }
+            }
+        }
+    </script>
 </head>
+
 <body class="bg-white text-slate-900">
 
-<!-- ========================================
-     ナビゲーションバー（上部固定）
-     ======================================== -->
-<nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
-        <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-[#001A33]">PROTECH</a>
-        <div class="hidden md:flex space-x-8 text-sm font-bold tracking-widest uppercase">
-            <a href="index.html" class="hover:text-blue-600 transition">TOP</a>
-            <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
-            <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
-            <a href="news.html" class="hover:text-blue-600 transition">NEWS</a>
-            <a href="contact.html" class="text-blue-600 font-bold">CONTACT</a>
+<nav class="fixed w-full z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+        <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative uppercase">PROTECH</a>
+        
+        <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase">
+            <a href="index.html" class="nav-link">TOP</a>
+            <a href="services.html" class="nav-link">SERVICES</a>
+            <a href="company.html" class="nav-link">COMPANY</a>
+            <a href="news.html" class="nav-link">NEWS</a>
+            <a href="contact.html" class="nav-link text-blue-600 font-bold border-b-2 border-blue-600">CONTACT</a>
         </div>
-        <button id="menu-btn" class="md:hidden p-2 text-[#001A33] focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        
+        <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
         </button>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl flex flex-col">
-        <a href="index.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50 hover:bg-blue-50">TOP</a>
-        <a href="services.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50 hover:bg-blue-50">SERVICES</a>
-        <a href="company.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50 hover:bg-blue-50">COMPANY</a>
-        <a href="news.html" class="w-full text-center py-4 text-sm font-bold text-slate-700 border-t border-gray-50 hover:bg-blue-50">NEWS</a>
-        <a href="contact.html" class="w-full text-center py-4 text-sm font-bold text-blue-600 border-t border-gray-50 bg-blue-50">CONTACT</a>
     </div>
 </nav>
 
-<!-- ページヘッダー -->
-<!-- 
-  [修正点]: 
-  1. 删除了之前的 <div class="h-20 md:h-24"></div>
-  2. 修改了 padding: 
-     - 之前的 class: "py-16 md:py-20"
-     - 现在的 class: "pt-36 pb-16 md:pt-44 md:pb-20" 
-     (将导航栏的高度加到了 header 的上内边距中)
--->
-<header class="pb-16 pt-36 md:pb-20 md:pt-44 px-8 text-center bg-gradient-to-br from-[#001A33] via-[#001A33] to-blue-900 text-white">
-    <div class="max-w-7xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-bold tracking-widest uppercase mb-4">Contact</h1>
-        <p class="text-blue-300 text-sm tracking-[0.3em] uppercase font-light">お気軽にお問い合わせください</p>
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-40 transform translate-x-full md:hidden">
+    <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
+        <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
+        <a href="services.html" class="text-lg font-bold text-slate-700">SERVICES</a>
+        <a href="company.html" class="text-lg font-bold text-slate-700">COMPANY</a>
+        <a href="news.html" class="text-lg font-bold text-slate-700">NEWS</a>
+        <a href="contact.html" class="text-lg font-bold text-blue-600">CONTACT</a>
+    </div>
+</div>
+
+<header class="pt-32 pb-16 md:pt-48 md:pb-24 px-6 text-center bg-tech-blue text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-widest uppercase mb-4 serif">Contact</h1>
+        <p class="text-blue-400 text-xs md:text-sm tracking-[0.3em] uppercase font-bold">お問い合わせ</p>
     </div>
 </header>
 
-<!-- メインコンテンツ -->
-<main class="py-20 px-8 bg-white">
-    <div class="max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12">
+<main class="py-20 md:py-32 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
             
-            <!-- 【左側】連絡先情報 -->
-            <div>
-                <h2 class="text-3xl font-bold text-[#001A33] mb-6">ご連絡ください</h2>
-                <p class="text-gray-600 leading-relaxed font-light mb-10">
-                    ご質問、お見積もり、その他のご相談など、<br>
-                    お気軽にお問い合わせください。<br>
-                    通常24時間以内にご返信いたします。
+            <div class="lg:col-span-5">
+                <h2 class="text-3xl font-bold text-tech-blue mb-8 serif">ご連絡ください</h2>
+                <p class="text-gray-500 leading-loose mb-12 text-sm md:text-base">
+                    ご質問、お見積もり、その他のご相談など、お気軽にお問い合わせください。通常24時間以内にご返信いたします。
                 </p>
+                
                 <div class="space-y-6">
-                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border border-blue-200 hover:shadow-lg transition">
-                        <h3 class="font-bold text-[#001A33] mb-3 flex items-center gap-3"><span class="text-2xl">📧</span> メール</h3>
-                        <p class="text-gray-700 font-mono text-sm">info@pro-tech.jp</p>
+                    <div class="flex items-start p-6 bg-slate-50 rounded-2xl border border-gray-100">
+                        <span class="text-2xl mr-4">📧</span>
+                        <div>
+                            <h4 class="font-bold text-tech-blue text-sm mb-1">メール</h4>
+                            <p class="text-gray-600 text-sm font-mono">info@pro-tech.jp</p>
+                        </div>
                     </div>
-                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border border-blue-200 hover:shadow-lg transition">
-                        <h3 class="font-bold text-[#001A33] mb-3 flex items-center gap-3"><span class="text-2xl">📍</span> 所在地</h3>
-                        <p class="text-gray-700 text-sm leading-relaxed">東京都文京区本郷1-5-17<br>三洋ビル48</p>
-                    </div>
-                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border border-blue-200 hover:shadow-lg transition">
-                        <h3 class="font-bold text-[#001A33] mb-3 flex items-center gap-3"><span class="text-2xl">⏰</span> 営業時間</h3>
-                        <p class="text-gray-700 text-sm">平日 09:00 - 18:00<br>(土日祝日は休業)</p>
+                    <div class="flex items-start p-6 bg-slate-50 rounded-2xl border border-gray-100">
+                        <span class="text-2xl mr-4">📍</span>
+                        <div>
+                            <h4 class="font-bold text-tech-blue text-sm mb-1">所在地</h4>
+                            <p class="text-gray-600 text-sm">東京都文京区本郷1-5-17 三洋ビル48</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 【右側】お問い合わせフォーム -->
-            <div>
-                <div class="bg-white rounded-3xl shadow-2xl border border-gray-200 p-8 md:p-12">
-                    <div id="successMessage" class="hidden mb-6 bg-green-50 border border-green-200 text-green-700 px-6 py-4 rounded-xl animate-pulse">
-                        <p class="font-bold mb-1">✅ 送信完了！</p>
-                        <p class="text-sm">ご送信ありがとうございます。確認のためメールを送付いたします。</p>
+            <div class="lg:col-span-7">
+                <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12">
+                    <div id="successMessage" class="hidden mb-8 bg-green-50 border border-green-200 text-green-700 px-6 py-4 rounded-xl">
+                        <p class="font-bold text-sm">✅ 送信が完了しました。担当者よりご連絡いたします。</p>
                     </div>
+
                     <form id="contactForm" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-bold text-[#001A33] mb-3">お名前 <span class="text-red-500">*</span></label>
-                            <input type="text" id="name" name="name" placeholder="山田 太郎" class="w-full px-6 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-white" required>
-                            <span class="error hidden text-red-500 text-xs mt-2 block">お名前を入力してください</span>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-tech-blue mb-2 uppercase tracking-widest">Name / お名前 *</label>
+                                <input type="text" id="name" required class="w-full px-5 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-tech-blue mb-2 uppercase tracking-widest">Company / 会社名 *</label>
+                                <input type="text" id="company" required class="w-full px-5 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition text-sm">
+                            </div>
                         </div>
                         <div>
-                            <label for="company" class="block text-sm font-bold text-[#001A33] mb-3">会社名 <span class="text-red-500">*</span></label>
-                            <input type="text" id="company" name="company" placeholder="株式会社 PROTECH" class="w-full px-6 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-white" required>
-                            <span class="error hidden text-red-500 text-xs mt-2 block">会社名を入力してください</span>
+                            <label class="block text-xs font-bold text-tech-blue mb-2 uppercase tracking-widest">Email / メールアドレス *</label>
+                            <input type="email" id="email" required class="w-full px-5 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition text-sm">
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-bold text-[#001A33] mb-3">メールアドレス <span class="text-red-500">*</span></label>
-                            <input type="email" id="email" name="email" placeholder="example@protech.jp" class="w-full px-6 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-white" required>
-                            <span class="error hidden text-red-500 text-xs mt-2 block">有効なメールアドレスを入力してください</span>
+                            <label class="block text-xs font-bold text-tech-blue mb-2 uppercase tracking-widest">Message / 内容 *</label>
+                            <textarea id="message" rows="6" required class="w-full px-5 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition text-sm resize-none"></textarea>
                         </div>
-                        <div>
-                            <label for="phone" class="block text-sm font-bold text-[#001A33] mb-3">電話番号 <span class="text-red-500">*</span></label>
-                            <input type="tel" id="phone" name="phone" placeholder="090-1234-5678" class="w-full px-6 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-white" required>
-                            <span class="error hidden text-red-500 text-xs mt-2 block">有効な電話番号を入力してください</span>
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-bold text-[#001A33] mb-3">お問い合わせ内容 <span class="text-red-500">*</span></label>
-                            <textarea id="message" name="message" placeholder="ご質問やご相談をご記入ください..." rows="5" class="w-full px-6 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-white resize-none" required></textarea>
-                            <span class="error hidden text-red-500 text-xs mt-2 block">お問い合わせ内容を入力してください</span>
-                        </div>
-                        <div class="flex gap-4 pt-6">
-                            <button type="submit" class="flex-1 bg-gradient-to-r from-[#001A33] to-blue-700 text-white font-bold py-4 px-6 rounded-xl hover:shadow-lg hover:scale-105 transition duration-300 uppercase tracking-widest text-sm">送信</button>
-                            <button type="reset" class="flex-1 bg-gray-200 text-gray-700 font-bold py-4 px-6 rounded-xl hover:bg-gray-300 transition duration-300 uppercase tracking-widest text-sm">クリア</button>
-                        </div>
-                        <p class="text-[11px] text-gray-400 text-center pt-4">送信することで<a href="#" class="underline hover:text-gray-600">プライバシーポリシー</a>に同意いたします。</p>
+                        
+                        <button type="submit" class="w-full py-5 bg-tech-blue text-white font-bold rounded-xl hover:bg-blue-600 transition duration-300 shadow-lg tracking-[0.2em] text-xs uppercase">
+                            Send Message / 送信する
+                        </button>
+                        
+                        <p class="text-center text-[10px] text-gray-400 mt-6">
+                            送信することで、当社の<a href="#" class="underline">プライバシーポリシー</a>に同意したものとみなされます。
+                        </p>
                     </form>
                 </div>
             </div>
+            
         </div>
     </div>
 </main>
 
-<!-- フッター -->
-<footer class="py-16 md:py-20 text-center bg-white border-t border-gray-100">
+<footer class="py-16 md:py-24 bg-white border-t border-gray-100 text-center">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-[#001A33] font-bold text-2xl md:text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
-        <div class="flex justify-center flex-wrap gap-6 md:gap-8 mb-10 text-[10px] md:text-xs font-bold tracking-widest text-gray-400">
-            <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
-            <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
-            <a href="news.html" class="hover:text-blue-600 transition">NEWS</a>
+        <div class="text-tech-blue font-bold text-2xl mb-8 tracking-tighter uppercase">PROTECH</div>
+        <div class="flex justify-center space-x-8 mb-10 text-[10px] md:text-xs font-bold tracking-widest text-gray-400">
+            <a href="services.html" class="hover:text-blue-600">SERVICES</a>
+            <a href="company.html" class="hover:text-blue-600">COMPANY</a>
+            <a href="news.html" class="hover:text-blue-600">NEWS</a>
         </div>
-        <p class="text-[10px] text-gray-400 tracking-widest">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        <p class="text-[10px] text-gray-300">© 2026 PROTECH Inc. All Rights Reserved.</p>
     </div>
 </footer>
 
-<!-- JavaScript -->
 <script>
-    // フォーム送信イベント
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const form = this;
-        const fields = ['name', 'company', 'email', 'phone', 'message'];
-        let isValid = true;
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phoneRegex = /^[\d\-\+\(\)\s]+$/;
+    // 移动端菜单控制
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-        fields.forEach(field => {
-            const input = document.getElementById(field);
-            const error = input.parentElement.querySelector('.error');
-            let fieldIsValid = true;
-            if (field === 'email' && !emailRegex.test(input.value)) {
-                fieldIsValid = false;
-            } else if (field === 'phone' && !phoneRegex.test(input.value)) {
-                fieldIsValid = false;
-            } else if (!input.value.trim()) {
-                fieldIsValid = false;
-            }
-            if (!fieldIsValid) {
-                input.classList.add('ring-2', 'ring-red-500');
-                error.classList.remove('hidden');
-                isValid = false;
-            } else {
-                input.classList.remove('ring-2', 'ring-red-500');
-                error.classList.add('hidden');
-            }
-        });
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menuBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('translate-x-full');
+    });
 
-        if (isValid) {
-            document.getElementById('successMessage').classList.remove('hidden');
-            form.reset();
-            setTimeout(() => {
-                document.getElementById('successMessage').classList.add('hidden');
-            }, 3000);
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+            menuBtn.classList.remove('active');
+            mobileMenu.classList.add('translate-x-full');
         }
     });
 
-    // モバイルメニュー機能
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (!menuBtn || !mobileMenu) return;
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
+    // 表单提交模拟
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('successMessage').classList.remove('hidden');
+        this.reset();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 </script>
 
