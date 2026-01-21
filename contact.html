@@ -232,6 +232,10 @@
                 document.getElementById('contactForm').reset();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 
+                setTimeout(() => {
+                document.getElementById('successMessage').classList.add('hidden');
+                }, 5000);
+
                 btn.innerText = originalBtnText;
                 btn.disabled = false;
             }, function(error) {
