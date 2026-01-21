@@ -1,5 +1,5 @@
 /* ========================================
-   全局样式
+   1. 全局初始化 (Reset & Base)
    ======================================== */
 * {
     margin: 0;
@@ -7,28 +7,45 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #0066cc;
+    --primary-dark: #0052a3;
+    --navy-blue: #001a33;
+    --text-color: #333;
+    --bg-light: #fff;
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth; /* 启用全屏平滑滚动 */
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 /* ========================================
-   导航栏样式
+   2. 导航栏样式 (Header & Nav)
    ======================================== */
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-light);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000; /* 确保在所有元素之上 */
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
+    height: 70px; /* 固定高度方便计算 */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -36,99 +53,148 @@ nav {
 nav .logo {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #001a33;
+    color: var(--navy-blue);
+    text-decoration: none;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
 }
 
-nav a:hover {
-    color: #0066cc;
+nav a:hover, nav a:focus {
+    color: var(--primary-color);
+    outline: none;
+}
+
+/* 焦点状态优化 */
+nav a:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
 }
 
 /* ========================================
-   移动菜单样式
+   3. 移动端菜单 (Mobile Menu)
    ======================================== */
 #menu-btn {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--navy-blue);
+    padding: 0.5rem;
 }
 
 #mobile-menu {
-    display: none;
+    display: none; /* 默认隐藏 */
     position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #fff;
+    top: 70px;
+    left: 0;
     width: 100%;
+    background-color: var(--bg-light);
     flex-direction: column;
-    gap: 1rem;
     padding: 1rem 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    border-top: 1px solid #eee;
+    overflow-y: auto;
+    max-height: calc(100vh - 70px);
 }
 
 #mobile-menu.active {
-    display: flex;
+    display: flex; /* JS 切换此类名 */
+    animation: slideDown 0.3s ease-out;
 }
 
-#menu-btn.active {
-    color: #0066cc;
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ========================================
-   展开内容动画样式
+   4. 组件样式 (Components)
    ======================================== */
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.btn:active {
+    transform: scale(0.96); /* 点击时的物理反馈 */
+}
+
+/* 展开折叠动画 */
 .expand-content {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: all 0.6s ease-out;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease;
 }
 
 .expand-content.active {
     max-height: 2000px;
     opacity: 1;
+    transition: max-height 0.8s ease-in-out, opacity 0.5s ease;
 }
 
-/* ========================================
-   步骤背景数字样式
-   ======================================== */
+/* 步骤背景数字 (需父级设置 position: relative) */
+.step-container {
+    position: relative;
+    padding: 2rem;
+    z-index: 1;
+}
+
 .step-bg {
     position: absolute;
-    top: 0;
+    top: -10px;
     left: 0;
-    font-size: 4rem;
-    color: rgba(0, 26, 51, 0.05);
-    font-weight: bold;
-    z-index: 0;
+    font-size: 5rem;
+    color: rgba(0, 26, 51, 0.06);
+    font-weight: 800;
+    z-index: -1; /* 确保在文字下方 */
+    pointer-events: none; /* 重要：防止数字遮挡文字点击/选择 */
+    user-select: none;
 }
 
 /* ========================================
-   页脚样式
+   5. 页脚样式 (Footer)
    ======================================== */
 footer {
-    background-color: #001a33;
+    background-color: var(--navy-blue);
     color: #fff;
     text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
+    padding: 3rem 1rem;
+    margin-top: 4rem;
 }
 
 footer a {
-    color: #0066cc;
+    color: var(--primary-color);
     text-decoration: none;
+    margin: 0 0.5rem;
 }
 
 footer a:hover {
@@ -136,54 +202,40 @@ footer a:hover {
 }
 
 /* ========================================
-   按钮样式
+   6. 响应式适配 (Responsive)
    ======================================== */
-.btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #0066cc;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
-.btn:hover {
-    background-color: #0052a3;
-}
-
-/* ========================================
-   响应式设计 - 平板
-   ======================================== */
+/* 平板及以下 */
 @media (max-width: 768px) {
     nav ul {
-        display: none;
+        display: none; /* 隐藏桌面菜单 */
     }
     
     #menu-btn {
-        display: block;
+        display: block; /* 显示汉堡按钮 */
     }
     
     nav {
-        padding: 1rem;
+        padding: 0 1.5rem;
+    }
+
+    .step-bg {
+        font-size: 3.5rem; /* 缩小装饰文字 */
     }
 }
 
-/* ========================================
-   响应式设计 - 手机
-   ======================================== */
+/* 手机端微调 */
 @media (max-width: 480px) {
     nav .logo {
         font-size: 1.2rem;
     }
     
-    #mobile-menu {
-        top: 50px;
+    .btn {
+        width: 100%; /* 移动端按钮通常建议撑满 */
+        padding: 1rem;
     }
     
-    .step-bg {
-        font-size: 2rem;
+    #mobile-menu {
+        padding: 1rem;
     }
 }
