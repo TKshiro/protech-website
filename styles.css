@@ -1,6 +1,4 @@
-/* ========================================
-   1. 全局初始化 (Reset & Base)
-   ======================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +15,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* 启用全屏平滑滚动 */
+    scroll-behavior: smooth; 
 }
 
 body {
@@ -29,15 +27,12 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-/* ========================================
-   2. 导航栏样式 (Header & Nav)
-   ======================================== */
 header {
     background-color: var(--bg-light);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 1000; /* 确保在所有元素之上 */
+    z-index: 1000; 
 }
 
 nav {
@@ -45,7 +40,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    height: 70px; /* 固定高度方便计算 */
+    height: 70px; 
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -81,9 +76,7 @@ nav a:focus-visible {
     outline-offset: 4px;
 }
 
-/* ========================================
-   3. 移动端菜单 (Mobile Menu)
-   ======================================== */
+
 #menu-btn {
     display: none;
     background: none;
@@ -95,7 +88,7 @@ nav a:focus-visible {
 }
 
 #mobile-menu {
-    display: none; /* 默认隐藏 */
+    display: none;
     position: absolute;
     top: 70px;
     left: 0;
@@ -110,7 +103,7 @@ nav a:focus-visible {
 }
 
 #mobile-menu.active {
-    display: flex; /* JS 切换此类名 */
+    display: flex; 
     animation: slideDown 0.3s ease-out;
 }
 
@@ -119,11 +112,7 @@ nav a:focus-visible {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ========================================
-   4. 组件样式 (Components)
-   ======================================== */
 
-/* 按钮样式 */
 .btn {
     display: inline-block;
     padding: 0.8rem 1.8rem;
@@ -144,10 +133,9 @@ nav a:focus-visible {
 }
 
 .btn:active {
-    transform: scale(0.96); /* 点击时的物理反馈 */
+    transform: scale(0.96); 
 }
 
-/* 展开折叠动画 */
 .expand-content {
     max-height: 0;
     overflow: hidden;
@@ -161,7 +149,6 @@ nav a:focus-visible {
     transition: max-height 0.8s ease-in-out, opacity 0.5s ease;
 }
 
-/* 步骤背景数字 (需父级设置 position: relative) */
 .step-container {
     position: relative;
     padding: 2rem;
@@ -175,14 +162,11 @@ nav a:focus-visible {
     font-size: 5rem;
     color: rgba(0, 26, 51, 0.06);
     font-weight: 800;
-    z-index: -1; /* 确保在文字下方 */
-    pointer-events: none; /* 重要：防止数字遮挡文字点击/选择 */
+    z-index: -1;
+    pointer-events: none; 
     user-select: none;
 }
 
-/* ========================================
-   5. 页脚样式 (Footer)
-   ======================================== */
 footer {
     background-color: var(--navy-blue);
     color: #fff;
@@ -201,18 +185,13 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ========================================
-   6. 响应式适配 (Responsive)
-   ======================================== */
-
-/* 平板及以下 */
 @media (max-width: 768px) {
     nav ul {
-        display: none; /* 隐藏桌面菜单 */
+        display: none; 
     }
     
     #menu-btn {
-        display: block; /* 显示汉堡按钮 */
+        display: block;
     }
     
     nav {
@@ -220,18 +199,17 @@ footer a:hover {
     }
 
     .step-bg {
-        font-size: 3.5rem; /* 缩小装饰文字 */
+        font-size: 3.5rem; 
     }
 }
 
-/* 手机端微调 */
 @media (max-width: 480px) {
     nav .logo {
         font-size: 1.2rem;
     }
     
     .btn {
-        width: 100%; /* 移动端按钮通常建议撑满 */
+        width: 100%; 
         padding: 1rem;
     }
     

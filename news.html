@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ニュース - PROTECH株式会社</title>
 
-    <!-- SEO Meta Tags -->
     <meta name="description" content="PROTECHの最新ニュースとアップデート。業界情報、製品リリース、イベント情報など。">
     <meta name="keywords" content="ニュース, アップデート, 業界情報, PROTECH, イベント">
     <link rel="canonical" href="https://www.pro-tech.jp/news.html">
 
-    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="ニュース - PROTECH">
     <meta property="og:description" content="PROTECHの最新ニュースとアップデート。業界情報、製品リリース、イベント情報など。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pro-tech.jp/news.html">
     <meta property="og:image" content="https://www.pro-tech.jp/img/og-image.jpg">
 
-    <!-- Fonts & Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -28,7 +25,6 @@
         .serif { font-family: 'Noto Serif JP', serif; }
         .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); }
 
-        /* 筛选按钮的自定义样式 */
         .filter-btn {
             position: relative;
             cursor: pointer;
@@ -42,14 +38,13 @@
         .filter-btn.active::after {
             content: '';
             position: absolute;
-            bottom: -17px; /* 匹配父元素的 pb-4 */
+            bottom: -17px; 
             left: 0;
             width: 100%;
             height: 2px;
             background: var(--tech-blue);
         }
         
-        /* 汉堡菜单按钮的动画 */
         .hamburger line { transition: all 0.3s ease; transform-origin: center; }
         .hamburger.active #line1 { transform: translateY(7px) rotate(45deg); }
         .hamburger.active #line2 { opacity: 0; }
@@ -69,7 +64,6 @@
 
 <body class="bg-white text-slate-900">
 
-<!-- 导航栏 -->
 <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
         <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
@@ -90,7 +84,6 @@
     </div>
 </nav>
 
-<!-- 移动端侧滑菜单 -->
 <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
     <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
         <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
@@ -101,7 +94,6 @@
     </div>
 </div>
 
-<!-- メインコンテンツ領域 -->
 <main class="max-w-6xl mx-auto px-8 pt-40 md:pt-48 pb-20">
     <header class="mb-16 border-b border-gray-100 pb-16" data-aos="fade-up">
         <p class="text-tech-blue text-[10px] font-bold tracking-[0.3em] uppercase mb-4">News</p>
@@ -109,7 +101,6 @@
         <p class="text-gray-400 text-xs tracking-[0.2em] font-light">最新情報・プレスリリース</p>
     </header>
 
-    <!-- 筛选标签 -->
     <div id="filter-controls" class="flex gap-10 text-[10px] tracking-[0.2em] uppercase mb-12 border-b border-gray-100 pb-4" data-aos="fade-up">
         <button data-filter="all" class="filter-btn active">All</button>
         <button data-filter="news" class="filter-btn">News</button>
@@ -117,7 +108,6 @@
         <button data-filter="case" class="filter-btn">Case Study</button>
     </div>
 
-    <!-- 新闻列表 -->
     <div id="news-container" class="divide-y divide-gray-100">
         <!-- 条目 1 -->
         <a href="news-detail.html" class="news-item flex flex-col md:flex-row md:items-center py-10 gap-6 group hover:bg-slate-50/50 transition-colors px-4 -mx-4" data-category="case" data-aos="fade-up">
@@ -126,7 +116,7 @@
             <h3 class="flex-1 font-bold text-[15px] group-hover:text-blue-600 transition">【実績】花雕酔鶏鍋 日本進出PR支援。SNS戦略で初月から満席を達成。</h3>
             <span class="hidden md:block text-slate-200 group-hover:text-blue-600 transition translate-x-0 group-hover:translate-x-2">→</span>
         </a>
-        <!-- 条目 2 -->
+
         <a href="#" class="news-item flex flex-col md:flex-row md:items-center py-10 gap-6 group hover:bg-slate-50/50 transition-colors px-4 -mx-4" data-category="news" data-aos="fade-up">
             <span class="text-xs text-gray-400 font-mono w-32 tracking-tighter flex-shrink-0">2026.01.20</span>
             <span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded w-fit uppercase tracking-widest">News</span>
@@ -154,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. AOS (Animate On Scroll) 初始化
     AOS.init({ duration: 1000, once: true });
 
-    // 2. 移动端侧滑菜单逻辑
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     if (menuBtn && mobileMenu) {
@@ -177,15 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. 新闻筛选逻辑
     const filterButtons = document.querySelectorAll('#filter-controls .filter-btn');
     const newsItems = document.querySelectorAll('#news-container .news-item');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // 移除所有按钮的 active 状态
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // 给当前点击的按钮添加 active 状态
             button.classList.add('active');
 
             const filterValue = button.getAttribute('data-filter');
@@ -200,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
-            // 重新触发 AOS 动画
             AOS.refresh();
         });
     });
