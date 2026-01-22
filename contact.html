@@ -183,12 +183,10 @@
 </footer>
 
 <script>
-    // 1. 初始化 EmailJS (在此处填入您的 Public Key)
     (function(){
         emailjs.init("Oa3PmeXJ7kwYjIls0"); 
     })();
 
-    // 移动端菜单控制
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -205,18 +203,15 @@
         }
     });
 
-    // 2. 表单提交 EmailJS 处理
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
 
         const btn = document.getElementById('submitBtn');
         const originalBtnText = btn.innerText;
         
-        // 按钮状态反馈
         btn.innerText = '送信中...';
         btn.disabled = true;
 
-        // 获取表单数据
         const templateParams = {
             name: document.getElementById('name').value,
             company: document.getElementById('company').value,
@@ -224,10 +219,8 @@
             message: document.getElementById('message').value
         };
 
-        // 发送邮件 (在此处填入您的 Service ID 和 Template ID)
         emailjs.send('service_zg0cj56', 'template_9wqf6sc', templateParams)
             .then(function() {
-                // 成功处理
                 document.getElementById('successMessage').classList.remove('hidden');
                 document.getElementById('contactForm').reset();
                 window.scrollTo({ top: 0, behavior: 'smooth' });

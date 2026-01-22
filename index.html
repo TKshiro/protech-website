@@ -5,27 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROTECH株式会社 | 境界を越え、価値を加速させる。</title>
 
-    <!-- SEO Meta Tags -->
     <meta name="description" content="PROTECHは、最先端の技術とサービスで、ビジネスソリューションを提供します。">
     <meta name="keywords" content="PROTECH, ソリューション, イノベーション, テクノロジー, サービス">
     <meta name="author" content="PROTECH">
     <link rel="canonical" href="https://www.pro-tech.jp/">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
-    <!-- Open Graph (for Social Sharing) -->
     <meta property="og:title" content="PROTECH - イノベーティブなソリューション">
     <meta property="og:description" content="PROTECHは、最先端の技術とサービスで、ビジネスソリューションを提供します。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pro-tech.jp/">
     <meta property="og:image" content="https://www.pro-tech.jp/img/og-image.jpg">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PROTECH - イノベーティブなソリューション">
     <meta name="twitter:description" content="PROTECHは、最先端の技術とサービスで、ビジネスソリューションを提供します。">
     <meta name="twitter:image" content="https://www.pro-tech.jp/img/og-image.jpg">
 
-    <!-- Fonts & Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -82,7 +78,6 @@
 
 <body class="bg-white text-slate-900">
 
-<!-- 导航栏 -->
 <nav class="fixed w-full z-50 glass-nav">
     <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
         <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
@@ -105,7 +100,6 @@
     </div>
 </nav>
 
-<!-- 移动端侧滑菜单 -->
 <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden">
     <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
         <a href="index.html" class="text-lg font-bold text-blue-600">TOP</a>
@@ -116,7 +110,6 @@
     </div>
 </div>
 
-<!-- Hero Section -->
 <section class="h-screen flex items-center justify-center bg-tech-blue text-white relative overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
     <div class="text-center relative z-10 px-6 max-w-4xl mx-auto" data-aos="fade-up">
@@ -131,7 +124,6 @@
     </div>
 </section>
 
-<!-- Core Philosophy -->
 <section class="py-24 md:py-32 px-6 relative overflow-hidden">
     <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
         <span class="text-blue-600 font-bold tracking-widest text-xs uppercase block mb-6">Mission</span>
@@ -146,7 +138,6 @@
     </div>
 </section>
 
-<!-- Expertise / Strategy -->
 <section class="py-20 md:py-24 bg-tech-blue text-white px-6 overflow-hidden">
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div data-aos="fade-right">
@@ -169,7 +160,6 @@
     </div>
 </section>
 
-<!-- Services -->
 <section class="py-24 md:py-32 px-6 max-w-7xl mx-auto">
     <div class="text-center mb-16 md:mb-24" data-aos="fade-up">
         <h3 class="text-2xl md:text-3xl font-bold serif text-tech-blue uppercase tracking-widest">Our Services</h3>
@@ -201,7 +191,6 @@
     </div>
 </section>
 
-<!-- Case Study Pick Up -->
 <section class="py-24 bg-slate-50 px-6 border-y border-gray-100">
     <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
@@ -238,13 +227,11 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // AOS (Animate On Scroll) の初期化
     AOS.init({ 
         duration: 800, 
         once: true 
     });
 
-    // 移动菜单的开闭脚本
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -254,7 +241,6 @@
         mobileMenu.classList.toggle('translate-x-full');
     });
 
-    // 点击菜单外部区域关闭菜单
     document.addEventListener('click', (e) => {
         if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
             menuBtn.classList.remove('active');
@@ -262,7 +248,6 @@
         }
     });
 
-    // 屏幕尺寸变化时重置菜单
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
             menuBtn.classList.remove('active');

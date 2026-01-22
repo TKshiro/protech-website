@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
 
-    <!-- SEO & SNS OGP -->
     <title>【実績】花雕酔鶏鍋 日本進出PR支援 | PROTECH株式会社</title>
     <meta name="description" content="PROTECH株式会社による小紅書を活用した「花雕酔鶏鍋」の日本進出プロモーション支援の実績をご紹介します。">
     <link rel="canonical" href="https://www.pro-tech.jp/news-detail.html">
@@ -15,7 +14,6 @@
     <meta property="og:url" content="https://www.pro-tech.jp/news-detail.html">
     <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200">
 
-    <!-- Fonts & Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -58,7 +56,6 @@
 
 <body class="bg-white">
 
-<!-- 导航栏 -->
 <nav class="fixed w-full z-50 glass-nav">
     <div class="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
         <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
@@ -79,7 +76,6 @@
     </div>
 </nav>
 
-<!-- 移动端侧滑菜单 -->
 <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
     <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
         <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
@@ -90,7 +86,6 @@
     </div>
 </div>
 
-<!-- 文章主体 -->
 <article class="pt-40 pb-32">
     <header class="max-w-4xl mx-auto px-8 mb-20 text-center">
         <div class="flex items-center justify-center gap-4 mb-8" data-aos="fade-up">
@@ -146,12 +141,10 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // 统一的页面加载后执行的脚本
     document.addEventListener('DOMContentLoaded', () => {
         // 1. AOS (Animate On Scroll) 初始化
         AOS.init({ duration: 1000, once: true });
 
-        // 2. 移动端侧滑菜单逻辑
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         if (menuBtn && mobileMenu) {
@@ -174,7 +167,7 @@
             });
         }
         
-        // 3. 自动生成社交分享链接
+        // sns
         const currentUrl = encodeURIComponent(window.location.href);
         const pageTitle = encodeURIComponent(document.title);
         

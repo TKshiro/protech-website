@@ -133,13 +133,11 @@
     </div>
 </section>
 
-<!-- [修正] Profile Table (使用 <dl> 标签重构) -->
 <section class="py-32 px-8 max-w-4xl mx-auto">
     <div class="mb-16" data-aos="fade-right">
         <h3 class="text-3xl font-bold serif text-tech-blue">Profile</h3>
         <p class="text-gray-400 text-xs mt-2 uppercase tracking-widest">企業情報</p>
     </div>
-    <!-- 使用 <dl> 标签来创建定义列表，这是正确的语义化结构 -->
     <dl class="space-y-6 border-t border-gray-100 pt-10" data-aos="fade-up">
         <div class="flex border-b border-gray-100 pb-6"><dt class="w-32 md:w-48 text-gray-400 text-sm uppercase flex-shrink-0">社名</dt><dd class="font-bold text-tech-blue">PROTECH株式会社</dd></div>
         <div class="flex border-b border-gray-100 pb-6"><dt class="w-32 md:w-48 text-gray-400 text-sm uppercase flex-shrink-0">代表者</dt><dd class="font-bold text-tech-blue">代表取締役 陳 紅</dd></div>
@@ -168,14 +166,13 @@
         </iframe>
     </div>
     <div class="mt-10 flex justify-end" data-aos="fade-up">
-        <!-- [修正] 删除了 target 属性中多余的反斜杠 -->
         <a href="https://maps.google.com/?q=東京都文京区本郷1丁目5-17" target="_blank" class="text-blue-600 font-bold border-b border-blue-600 pb-1 text-sm hover:text-blue-800 transition">
             Google Mapで開く →
         </a>
     </div>
 </section>
 
-<!-- 统一页脚 -->
+<!-- 页脚 -->
 <footer class="py-16 md:py-20 text-center bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-tech-blue font-bold text-2xl md:text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
@@ -192,7 +189,6 @@
 <script>
     AOS.init({ duration: 1000, once: true });
 
-    // 统一使用侧滑菜单的脚本
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     menuBtn.addEventListener('click', (e) => {
