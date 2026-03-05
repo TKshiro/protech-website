@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PROTECH株式会社 ブログ</title>
+    <link>https://www.pro-tech.jp</link>
+    <description>PROTECHの最新ニュース、マーケティング情報、事例紹介</description>
+    <language>ja</language>
+    <lastBuildDate>Wed, 04 Mar 2026 11:15:07 GMT</lastBuildDate>
+    <atom:link href="https://www.pro-tech.jp/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title><![CDATA[小紅書マーケティング2026年最新トレンド：日本企業が知るべき5つのポイント]]></title>
+      <link>https://www.pro-tech.jp/blog/red-marketing-trends-2026</link>
+      <guid isPermaLink="true">https://www.pro-tech.jp/blog/red-marketing-trends-2026</guid>
+      <description><![CDATA[2026年の小紅書（RED）マーケティング最新トレンドを解説。日本企業が中国市場で成功するために押さえるべき5つの重要ポイントをPROTECHが詳しくご紹介します。]]></description>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Service</category>
+    </item>
+  </channel>
+</rss>

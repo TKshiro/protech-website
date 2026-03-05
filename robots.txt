@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /scripts/
+Disallow: /blog/posts/
+
+Sitemap: https://www.pro-tech.jp/sitemap.xml

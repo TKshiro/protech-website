@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企業情報 - PROTECH株式会社</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+    <meta name="description" content="PROTECH株式会社の企業情報。ビジョン、ミッション、事業内容、アクセス情報をご覧ください。">
+    <meta name="keywords" content="企業情報, 会社概要, PROTECH, ビジョン, ミッション">
+    <link rel="canonical" href="https://www.pro-tech.jp/company.html">
+
+    <meta property="og:title" content="企業情報 - PROTECH">
+    <meta property="og:description" content="PROTECH企業情報。テクノロジーとマーケティングで、ビジネスの境界を越える。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pro-tech.jp/company.html">
+    <meta property="og:image" content="https://www.pro-tech.jp/img/og-image.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@600&family=Inter:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-blue': '#001A33',
+                        'coral': '#E86B7A',
+                        'coral-light': '#FFF0F1',
+                        'warm-gray': '#F8F6F3',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --tech-blue: #001A33;
+            --coral: #E86B7A;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .serif {
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--coral);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--coral);
+        }
+
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hamburger line {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-origin: center;
+        }
+
+        .hamburger.active #line1 {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.active #line2 {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .hamburger.active #line3 {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .seigaiha-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 C20 40 20 20 40 20 C60 20 60 40 80 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M-40 40 C-20 40 -20 20 0 20 C20 20 20 40 40 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M40 40 C60 40 60 20 80 20 C100 20 100 40 120 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3C/svg%3E");
+            background-size: 80px 40px;
+        }
+
+        .btn-coral {
+            background: var(--coral);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-coral:hover {
+            background: #d15b6a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(232, 107, 122, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900">
+
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="index.html"
+                class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div
+                class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="index.html" class="nav-link">TOP</a>
+                <a href="services.html" class="nav-link">SERVICES</a>
+                <a href="company.html" class="nav-link text-coral">COMPANY</a>
+                <a href="news.html" class="nav-link">NEWS</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="contact.html"
+                    class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
+            <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
+            <a href="services.html" class="text-lg font-bold text-slate-700">SERVICES</a>
+            <a href="company.html" class="text-lg font-bold text-coral">COMPANY</a>
+            <a href="news.html" class="text-lg font-bold text-slate-700">NEWS</a>
+            <a href="blog.html" class="text-lg font-bold text-slate-700">BLOG</a>
+            <a href="contact.html" class="text-lg font-bold text-slate-700">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section
+        class="pt-32 md:pt-40 pb-20 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
+            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">COMPANY</span>
+            <h1 class="text-4xl md:text-6xl font-bold serif text-tech-blue mb-6">会社概要</h1>
+            <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+                テクノロジーとマーケティングで、<br>ビジネスの境界を越える。
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-24 px-8 max-w-4xl mx-auto text-center">
+        <div data-aos="fade-up">
+            <span class="text-coral font-bold text-[10px] tracking-[0.2em] uppercase mb-6 block">Our Values</span>
+            <h2 class="text-2xl md:text-3xl font-bold mb-10 serif text-tech-blue leading-relaxed">
+                「情報の非対称性を解消し、<br>新たなビジネスの懸け橋となる。」
+            </h2>
+            <p class="text-gray-500 leading-loose font-light text-sm md:text-base">
+                PROTECHは、日本と中国の市場をつなぐデジタルパートナーです。<br class="hidden md:block">
+                最新のテクノロジーと小紅書（RED）をはじめとする深い市場洞察を融合させ、<br class="hidden md:block">
+                国境を越えた新しい価値の創造をワンストップで支援します。
+            </p>
+        </div>
+    </section>
+
+    <!-- CEO Message -->
+    <section class="py-24 bg-warm-gray px-8 seigaiha-pattern">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white p-12 md:p-20 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up">
+                <span class="text-coral font-bold text-[10px] tracking-[0.2em] uppercase mb-10 block">Message</span>
+                <p class="text-2xl serif mb-10 leading-relaxed text-tech-blue">
+                    「テクノロジーとマーケティングで、<br>境界を越える価値を創造する。」
+                </p>
+                <div class="space-y-6 text-gray-500 leading-loose font-light text-sm">
+                    <p>PROTECH株式会社の代表として、私たちが目指すのは情報の非対称性を解消し、新たなビジネスの懸け橋となることです。</p>
+                    <p>現在、日本と中国の市場はかつてないほど密接に繋がっています。私たちは、小紅書（RED）を通じた戦略的なマーケティングと、最新のテクノロジーを駆使したデジタル開発を軸に、お客様の挑戦を成功へと導きます。
+                    </p>
+                    <p>単なる制作会社ではなく、共に未来を創るプロフェッショナルとして、最高品質のソリューションを提供し続けることをお約束いたします。</p>
+                </div>
+                <div class="mt-16 text-right">
+                    <p class="text-tech-blue font-bold text-lg tracking-widest">PROTECH株式会社</p>
+                    <p class="text-gray-400 text-sm">代表取締役</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Profile -->
+    <section class="py-24 md:py-32 px-8 max-w-4xl mx-auto">
+        <div class="mb-16" data-aos="fade-right">
+            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">PROFILE</span>
+            <h3 class="text-3xl font-bold serif text-tech-blue">企業情報</h3>
+        </div>
+        <dl class="space-y-0 border-t border-gray-100" data-aos="fade-up">
+            <div class="flex border-b border-gray-100 py-6">
+                <dt class="w-32 md:w-48 text-gray-400 text-sm flex-shrink-0">社名</dt>
+                <dd class="font-bold text-tech-blue">PROTECH株式会社</dd>
+            </div>
+            <div class="flex border-b border-gray-100 py-6">
+                <dt class="w-32 md:w-48 text-gray-400 text-sm flex-shrink-0">代表者</dt>
+                <dd class="font-bold text-tech-blue">代表取締役 陳 紅</dd>
+            </div>
+            <div class="flex border-b border-gray-100 py-6">
+                <dt class="w-32 md:w-48 text-gray-400 text-sm flex-shrink-0">所在地</dt>
+                <dd class="font-bold text-tech-blue">東京都文京区本郷1-5-17 三洋ビル48</dd>
+            </div>
+            <div class="flex items-start border-b border-gray-100 py-6">
+                <dt class="w-32 md:w-48 text-gray-400 text-sm flex-shrink-0">事業内容</dt>
+                <dd class="font-bold text-tech-blue">
+                    マーケティング<br>
+                    Web・アプリ開発<br>
+                    UI・UXデザイン
+                </dd>
+            </div>
+        </dl>
+    </section>
+
+    <!-- Access -->
+    <section class="py-24 px-8 max-w-5xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-coral font-bold text-[10px] tracking-[0.2em] uppercase block mb-3">ACCESS</span>
+            <h3 class="text-2xl serif text-tech-blue">アクセス</h3>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100" data-aos="zoom-in-up"
+            data-aos-duration="1000">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6479.807824257475!2d139.75640959999998!3d35.7039821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c3ebfb5021f%3A0x64bab2fe807417fc!2z44CSMTEzLTAwMzMg5p2x5Lqs6YO95paH5Lqs5Yy65pys6YO377yR5LiB55uu77yV4oiS77yR77yXIOS4iea0i-ODk-ODqw!5e0!3m2!1sja!2sjp!4v1748767880491!5m2!1sja!2sjp"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        <div class="mt-8 flex justify-end" data-aos="fade-up">
+            <a href="https://maps.google.com/?q=東京都文京区本郷1丁目5-17" target="_blank"
+                class="text-coral font-bold text-sm hover:underline inline-flex items-center gap-1">
+                Google Mapで開く
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 md:py-32 bg-tech-blue px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-coral/10 rounded-full blur-[120px]"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase block mb-4">CONTACT</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 serif">お気軽にご相談ください</h2>
+            <p class="text-white/40 text-sm mb-10 max-w-lg mx-auto leading-relaxed">
+                サービスに関するご質問・お見積もり・資料請求など、何でもお気軽にご連絡ください。
+            </p>
+            <a href="contact.html"
+                class="btn-coral px-10 py-4 text-sm font-bold tracking-widest rounded-full inline-flex items-center gap-2">
+                お問合せ
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="services.html" class="hover:text-coral transition">Web・App開発</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="company.html" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="news.html" class="hover:text-coral transition">ニュース</a></li>
+                        <li><a href="blog.html" class="hover:text-coral transition">ブログ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Contact</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="contact.html" class="hover:text-coral transition">お問合せ</a></li>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 80 });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

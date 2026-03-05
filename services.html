@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービス - PROTECH株式会社</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+    <meta name="description" content="PROTECHのサービス一覧。小紅書(RED)マーケティング運用代行、Web・App開発、UI/UXデザインなど。">
+    <meta name="keywords" content="サービス, 小紅書, RED, マーケティング, Web開発, App開発, PROTECH">
+    <link rel="canonical" href="https://www.pro-tech.jp/services.html">
+
+    <meta property="og:title" content="サービス - PROTECH">
+    <meta property="og:description" content="PROTECHのサービス一覧。マーケティングから開発まで、ワンストップでご支援。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pro-tech.jp/services.html">
+    <meta property="og:image" content="https://www.pro-tech.jp/img/og-image.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@600&family=Inter:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-blue': '#001A33',
+                        'coral': '#E86B7A',
+                        'coral-light': '#FFF0F1',
+                        'warm-gray': '#F8F6F3',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --tech-blue: #001A33;
+            --coral: #E86B7A;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .serif {
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--coral);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--coral);
+        }
+
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hamburger line {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-origin: center;
+        }
+
+        .hamburger.active #line1 {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.active #line2 {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .hamburger.active #line3 {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .seigaiha-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 C20 40 20 20 40 20 C60 20 60 40 80 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M-40 40 C-20 40 -20 20 0 20 C20 20 20 40 40 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M40 40 C60 40 60 20 80 20 C100 20 100 40 120 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3C/svg%3E");
+            background-size: 80px 40px;
+        }
+
+        .btn-coral {
+            background: var(--coral);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-coral:hover {
+            background: #d15b6a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(232, 107, 122, 0.3);
+        }
+
+        .service-img {
+            transition: transform 0.6s ease;
+        }
+
+        .service-img:hover {
+            transform: scale(1.03);
+        }
+
+        .expand-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.6s ease-out;
+        }
+
+        .expand-content.active {
+            max-height: 2000px;
+            opacity: 1;
+        }
+
+        .case-card {
+            transition: all 0.4s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900">
+
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="index.html"
+                class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div
+                class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="index.html" class="nav-link">TOP</a>
+                <a href="services.html" class="nav-link text-coral">SERVICES</a>
+                <a href="company.html" class="nav-link">COMPANY</a>
+                <a href="news.html" class="nav-link">NEWS</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="contact.html"
+                    class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
+            <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
+            <a href="services.html" class="text-lg font-bold text-coral">SERVICES</a>
+            <a href="company.html" class="text-lg font-bold text-slate-700">COMPANY</a>
+            <a href="news.html" class="text-lg font-bold text-slate-700">NEWS</a>
+            <a href="blog.html" class="text-lg font-bold text-slate-700">BLOG</a>
+            <a href="contact.html" class="text-lg font-bold text-slate-700">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section
+        class="pt-32 md:pt-40 pb-20 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
+            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">OUR SERVICES</span>
+            <h1 class="text-4xl md:text-6xl font-bold serif text-tech-blue mb-6">サービス</h1>
+            <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+                中国市場進出からデジタル開発まで。PROTECHが提供する<br class="hidden md:block">
+                2つのコアサービスをご紹介します。
+            </p>
+        </div>
+    </section>
+
+    <!-- SERVICE 01: RED Marketing -->
+    <section class="py-20 md:py-28 px-8 bg-white relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-48 h-48 seigaiha-pattern opacity-20"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="mb-8">
+                        <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase inter">SERVICE 01</span>
+                        <div class="w-10 h-0.5 bg-coral mt-2"></div>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-tech-blue leading-tight mb-6 serif">
+                        小紅書（RED）<br>マーケティング支援
+                    </h2>
+                    <p class="text-gray-500 text-sm leading-loose mb-6 font-light">
+                        「情報の非対称性を解消する」という理念のもと、中国最大のライフスタイル共有プラットフォーム「小紅書」におけるブランド構築を支援します。現地の商習慣と最新トレンドを熟知したチームが、日本企業の魅力を正しく届けます。
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="p-5 bg-warm-gray rounded-xl">
+                            <h4 class="font-bold text-sm mb-1">戦略策定</h4>
+                            <p class="text-[11px] text-gray-400">市場調査からターゲット選定、ブランドのポジショニングを明確化。</p>
+                        </div>
+                        <div class="p-5 bg-warm-gray rounded-xl">
+                            <h4 class="font-bold text-sm mb-1">KOL/KOC</h4>
+                            <p class="text-[11px] text-gray-400">影響力のあるクリエイターを起用し、質の高い「口コミ」を創出。</p>
+                        </div>
+                        <div class="p-5 bg-warm-gray rounded-xl">
+                            <h4 class="font-bold text-sm mb-1">運用代行</h4>
+                            <p class="text-[11px] text-gray-400">アカウント開設からネイティブによる質の高い投稿制作まで。</p>
+                        </div>
+                        <div class="p-5 bg-warm-gray rounded-xl">
+                            <h4 class="font-bold text-sm mb-1">効果測定</h4>
+                            <p class="text-[11px] text-gray-400">データ分析を基に施策を改善し、ファンを構築します。</p>
+                        </div>
+                    </div>
+
+                    <a href="red.html"
+                        class="btn-coral px-8 py-3 text-xs font-bold tracking-widest rounded-full inline-flex items-center gap-2">
+                        RED マーケティング詳細
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+                                class="service-img w-full h-full object-cover" alt="小紅書マーケティング">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400"
+                                class="service-img w-full h-full object-cover" alt="KOL">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400"
+                                class="service-img w-full h-full object-cover" alt="チーム">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="py-20 md:py-24 px-8 bg-warm-gray seigaiha-pattern">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">CASES</span>
+                <h2 class="text-2xl md:text-3xl font-bold serif text-tech-blue">実績紹介</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="case-card bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <span class="text-[10px] text-coral font-bold uppercase tracking-widest block mb-2">Food &
+                            Beverage</span>
+                        <h3 class="font-bold text-lg mb-3 text-tech-blue">花雕酔鶏鍋 日本進出PR</h3>
+                        <p class="text-xs text-gray-400 leading-loose">SNS戦略から実店舗への送客まで。開店初月から行列を作るブランディングに成功。</p>
+                    </div>
+                </div>
+                <div class="case-card bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=800"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <span
+                            class="text-[10px] text-coral font-bold uppercase tracking-widest block mb-2">Lifestyle</span>
+                        <h3 class="font-bold text-lg mb-3 text-tech-blue">国内ブランド 中国市場展開</h3>
+                        <p class="text-xs text-gray-400 leading-loose">KOL/KOCマーケティングによる認知拡大と、EC売上の最大化を支援します。</p>
+                    </div>
+                </div>
+                <div class="case-card bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <span
+                            class="text-[10px] text-coral font-bold uppercase tracking-widest block mb-2">Inbound</span>
+                        <h3 class="font-bold text-lg mb-3 text-tech-blue">観光施設 集客支援</h3>
+                        <p class="text-xs text-gray-400 leading-loose">訪日中国人観光客をターゲットとした、位置情報連動型のSNSプロモーション。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE 02: Web & App -->
+    <section class="py-20 md:py-28 px-8 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-48 h-48 seigaiha-pattern opacity-20"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="mb-8">
+                        <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase inter">SERVICE 02</span>
+                        <div class="w-10 h-0.5 bg-coral mt-2"></div>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-tech-blue leading-tight mb-6 serif">
+                        Web & App 制作<br>デジタルソリューション
+                    </h2>
+                    <p class="text-gray-500 text-sm leading-loose mb-8 font-light">
+                        私たちは単に「動くもの」を作るのではありません。UX/UIを核とし、ビジネスの目的を達成するための「価値あるプロダクト」を構築します。
+                        企業サイト・ECサイト・業務システム・モバイルアプリまで幅広く対応。
+                    </p>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+                                class="service-img w-full h-full object-cover" alt="Web開発">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400"
+                                class="service-img w-full h-full object-cover" alt="開発チーム">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400"
+                                class="service-img w-full h-full object-cover" alt="テクノロジー">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="py-20 md:py-24 px-8 bg-warm-gray">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">PRODUCTS</span>
+                <h2 class="text-2xl md:text-3xl font-bold serif text-tech-blue">プロダクト</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-8 items-center group"
+                    data-aos="fade-up">
+                    <div
+                        class="w-24 h-24 bg-tech-blue rounded-2xl flex-shrink-0 flex items-center justify-center text-white text-3xl font-bold shadow-xl transition group-hover:scale-110">
+                        漢</div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-2 text-tech-blue">Kanji Practice JP</h3>
+                        <p class="text-sm text-gray-400 mb-6">日本語学習者向けの漢字練習ツール。最新のWeb技術を用いたインタラクティブな体験。</p>
+                        <div class="flex gap-4">
+                            <a href="https://kanji-practice-jp.vercel.app/" target="_blank"
+                                class="btn-coral px-8 py-2 rounded-full text-[10px] font-bold tracking-widest">LAUNCH
+                                WEB</a>
+                            <div
+                                class="bg-slate-100 text-slate-300 px-8 py-2 rounded-full text-[10px] font-bold cursor-not-allowed tracking-widest">
+                                iOS APP</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/50 border border-dashed border-gray-300 rounded-2xl flex items-center justify-center p-10"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-gray-300 font-bold uppercase text-[10px] tracking-[0.2em] italic">Next Product Coming
+                        Soon</p>
+                </div>
+            </div>
+
+            <div id="more-products" class="expand-content">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100">
+                        <h4 class="font-bold text-sm mb-3 uppercase tracking-widest text-tech-blue">Gaming LP</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">没入感を高めるゲーム特化型ランディングページ。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100">
+                        <h4 class="font-bold text-sm mb-3 uppercase tracking-widest text-tech-blue">SaaS App</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">業務効率を最大化するビジネスアプリケーション。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100">
+                        <h4 class="font-bold text-sm mb-3 uppercase tracking-widest text-tech-blue">EC Solutions</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">越境ECに特化したシームレスな購入体験の構築。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <button
+                    class="expand-btn inline-block px-12 py-4 border-2 border-coral/20 text-coral text-[10px] font-bold tracking-[0.3em] hover:bg-coral hover:text-white transition duration-300 uppercase rounded-full"
+                    data-target="more-products" data-open-text="CLOSE" data-close-text="VIEW MORE">
+                    VIEW MORE
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 md:py-32 bg-tech-blue px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-coral/10 rounded-full blur-[120px]"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase block mb-4">CONTACT</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 serif">お気軽にご相談ください</h2>
+            <p class="text-white/40 text-sm mb-10 max-w-lg mx-auto leading-relaxed">
+                サービスに関するご質問・お見積もり・資料請求など、何でもお気軽にご連絡ください。
+            </p>
+            <a href="contact.html"
+                class="btn-coral px-10 py-4 text-sm font-bold tracking-widest rounded-full inline-flex items-center gap-2">
+                お問合せ
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="services.html" class="hover:text-coral transition">Web・App開発</a></li>
+                        <li><a href="services.html" class="hover:text-coral transition">UI/UXデザイン</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="company.html" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="news.html" class="hover:text-coral transition">ニュース</a></li>
+                        <li><a href="blog.html" class="hover:text-coral transition">ブログ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Contact</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="contact.html" class="hover:text-coral transition">お問合せ</a></li>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 80 });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        document.querySelectorAll('.expand-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = document.getElementById(button.dataset.target);
+                if (content) {
+                    const isOpen = content.classList.contains('active');
+                    content.classList.toggle('active');
+                    button.textContent = isOpen ? button.dataset.closeText : button.dataset.openText;
+                    setTimeout(() => AOS.refresh(), 600);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

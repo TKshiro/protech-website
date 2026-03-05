@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTECH株式会社 | 境界を越え、価値を加速させる。</title>
+
+    <meta name="description" content="PROTECHは、小紅書(RED)マーケティングとWeb・App開発で、日本企業の中国市場進出とデジタル変革をワンストップで支援します。">
+    <meta name="keywords" content="PROTECH, 小紅書, RED, マーケティング, Web開発, App開発, 中国市場, インバウンド">
+    <meta name="author" content="PROTECH">
+    <link rel="canonical" href="https://www.pro-tech.jp/">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+    <meta property="og:title" content="PROTECH - 境界を越え、価値を加速させる。">
+    <meta property="og:description" content="PROTECHは、小紅書(RED)マーケティングとWeb・App開発で、ビジネスソリューションを提供します。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pro-tech.jp/">
+    <meta property="og:image" content="https://www.pro-tech.jp/img/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PROTECH - 境界を越え、価値を加速させる。">
+    <meta name="twitter:description" content="小紅書(RED)マーケティングとWeb・App開発のワンストップソリューション。">
+    <meta name="twitter:image" content="https://www.pro-tech.jp/img/og-image.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@600&family=Inter:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-blue': '#001A33',
+                        'coral': '#E86B7A',
+                        'coral-light': '#FFF0F1',
+                        'warm-gray': '#F8F6F3',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --tech-blue: #001A33;
+            --coral: #E86B7A;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .serif {
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Nav */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--coral);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--coral);
+        }
+
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hamburger line {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-origin: center;
+        }
+
+        .hamburger.active #line1 {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.active #line2 {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .hamburger.active #line3 {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Seigaiha (青海波) pattern */
+        .seigaiha-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 C20 40 20 20 40 20 C60 20 60 40 80 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M-40 40 C-20 40 -20 20 0 20 C20 20 20 40 40 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M40 40 C60 40 60 20 80 20 C100 20 100 40 120 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3C/svg%3E");
+            background-size: 80px 40px;
+        }
+
+        /* Wave divider */
+        .wave-divider {
+            position: relative;
+        }
+
+        .wave-divider::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23ffffff' d='M0,30 C360,60 720,0 1080,30 C1260,45 1350,40 1440,30 L1440,60 L0,60 Z'/%3E%3C/svg%3E") no-repeat;
+            background-size: cover;
+        }
+
+        /* Hero photo collage */
+        .hero-collage {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 6px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-collage img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-collage .col-span-2 {
+            grid-column: span 2;
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #E86B7A, #c94e5c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* News card scroll */
+        .news-scroll {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding-bottom: 16px;
+        }
+
+        .news-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .news-card {
+            flex: 0 0 320px;
+            scroll-snap-align: start;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Service section */
+        .service-img {
+            transition: transform 0.6s ease;
+        }
+
+        .service-img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Logo wall */
+        .logo-wall img {
+            filter: grayscale(100%);
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .logo-wall img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* CTA btn */
+        .btn-coral {
+            background: var(--coral);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-coral:hover {
+            background: #d15b6a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(232, 107, 122, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--tech-blue);
+            color: var(--tech-blue);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--tech-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Subtle float animation */
+        @keyframes gentle-float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .float-anim {
+            animation: gentle-float 4s ease-in-out infinite;
+        }
+
+        /* Category badge */
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900">
+
+    <!-- ═══════════════════════ NAV ═══════════════════════ -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="index.html"
+                class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+
+            <div
+                class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="index.html" class="nav-link text-coral">TOP</a>
+                <a href="services.html" class="nav-link">SERVICES</a>
+                <a href="company.html" class="nav-link">COMPANY</a>
+                <a href="news.html" class="nav-link">NEWS</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="contact.html"
+                    class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
+            <a href="index.html" class="text-lg font-bold text-coral">TOP</a>
+            <a href="services.html" class="text-lg font-bold text-slate-700">SERVICES</a>
+            <a href="company.html" class="text-lg font-bold text-slate-700">COMPANY</a>
+            <a href="news.html" class="text-lg font-bold text-slate-700">NEWS</a>
+            <a href="blog.html" class="text-lg font-bold text-slate-700">BLOG</a>
+            <a href="contact.html" class="text-lg font-bold text-slate-700">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section class="relative min-h-screen overflow-hidden wave-divider">
+        <!-- Photo collage background -->
+        <div class="absolute inset-0">
+            <div class="grid grid-cols-4 grid-rows-2 h-full gap-1">
+                <div class="col-span-2 row-span-1 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?w=800&q=80" alt="富士山"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80" alt="日本の街並み"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=600&q=80" alt="東京タワー"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="レストラン"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=80" alt="日本の風景"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="col-span-2 row-span-1 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="データ分析"
+                        class="w-full h-full object-cover">
+                </div>
+            </div>
+            <!-- Gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-tech-blue/70 via-tech-blue/60 to-tech-blue/80"></div>
+        </div>
+
+        <!-- Hero content -->
+        <div class="relative z-10 flex items-center min-h-screen px-6">
+            <div class="max-w-5xl mx-auto text-center pt-20" data-aos="fade-up">
+                <p class="text-white/60 tracking-[0.3em] uppercase text-[10px] md:text-xs mb-8 font-bold">
+                    Bridge the Gap with Tech & Marketing
+                </p>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 serif leading-tight">
+                    テクノロジーとマーケティングで、<br>
+                    <span class="text-coral">境界を越える。</span>
+                </h1>
+                <p class="text-white/50 text-sm md:text-base max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+                    小紅書(RED)マーケティングからWeb・App開発まで。<br class="hidden md:block">
+                    PROTECHは、日本と中国の市場をつなぐビジネスパートナーです。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html"
+                        class="btn-coral px-10 py-4 text-sm font-bold tracking-widest rounded-full inline-flex items-center justify-center gap-2">
+                        お問合せ・ご相談
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="services.html"
+                        class="px-10 py-4 border border-white/30 text-white text-sm font-bold tracking-widest rounded-full hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2">
+                        サービス一覧
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ NEWS ═══════════════════════ -->
+    <section class="py-20 md:py-28 px-6 bg-coral-light seigaiha-pattern relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-end justify-between mb-12" data-aos="fade-up">
+                <div>
+                    <span class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase block mb-2">NEWS</span>
+                    <h2 class="text-2xl md:text-3xl font-bold serif text-tech-blue">最新情報</h2>
+                </div>
+                <a href="news.html"
+                    class="text-coral text-xs font-bold tracking-wider hover:underline inline-flex items-center gap-1">
+                    すべて見る
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="news-scroll" data-aos="fade-up" data-aos-delay="100">
+                <a href="blog/seo-and-red-marketing-synergy.html"
+                    class="news-card bg-white rounded-2xl overflow-hidden shadow-sm block">
+                    <div class="aspect-[16/9] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-[10px] text-gray-400 inter">2026.03.04</span>
+                            <span class="badge bg-coral/10 text-coral">ブログ</span>
+                        </div>
+                        <h3 class="font-bold text-sm text-tech-blue leading-relaxed">SEOと小紅書マーケティングの相乗効果</h3>
+                    </div>
+                </a>
+                <a href="news.html" class="news-card bg-white rounded-2xl overflow-hidden shadow-sm block">
+                    <div class="aspect-[16/9] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-[10px] text-gray-400 inter">2026.03.01</span>
+                            <span class="badge bg-blue-50 text-blue-500">お知らせ</span>
+                        </div>
+                        <h3 class="font-bold text-sm text-tech-blue leading-relaxed">小紅書(RED)運用代行サービスを開始しました</h3>
+                    </div>
+                </a>
+                <a href="news.html" class="news-card bg-white rounded-2xl overflow-hidden shadow-sm block">
+                    <div class="aspect-[16/9] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-[10px] text-gray-400 inter">2026.02.15</span>
+                            <span class="badge bg-emerald-50 text-emerald-600">プレスリリース</span>
+                        </div>
+                        <h3 class="font-bold text-sm text-tech-blue leading-relaxed">花雕酔鶏鍋の日本進出プロモーション支援を開始</h3>
+                    </div>
+                </a>
+                <a href="news.html" class="news-card bg-white rounded-2xl overflow-hidden shadow-sm block">
+                    <div class="aspect-[16/9] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-[10px] text-gray-400 inter">2026.01.20</span>
+                            <span class="badge bg-blue-50 text-blue-500">お知らせ</span>
+                        </div>
+                        <h3 class="font-bold text-sm text-tech-blue leading-relaxed">PROTECH公式サイトをリニューアルしました</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ TRUST LOGOS (hidden until logos ready) ═══════════════════════ -->
+    <!--
+    <section class="py-16 md:py-20 bg-white border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <p class="text-gray-400 text-xs font-bold tracking-wider mb-10" data-aos="fade-up">
+                マーケティング・開発など様々な企業様にご利用いただいています</p>
+            <div class="logo-wall flex flex-wrap items-center justify-center gap-8 md:gap-14" data-aos="fade-up"
+                data-aos-delay="100">
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- ═══════════════════════ MISSION ═══════════════════════ -->
+    <section class="py-24 md:py-32 px-6 relative overflow-hidden">
+        <!-- Decorative seigaiha on right -->
+        <div class="absolute top-0 right-0 w-64 h-64 seigaiha-pattern opacity-40"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
+            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-6">ABOUT PROTECH</span>
+            <h2 class="text-2xl md:text-4xl font-bold mb-10 serif leading-relaxed text-tech-blue">
+                情報の非対称性を解消し、<br>
+                新たなビジネスの懸け橋となる。
+            </h2>
+            <p class="text-gray-500 max-w-2xl mx-auto leading-loose text-sm md:text-lg font-light">
+                日本と中国、二つの市場の間に存在する「情報の壁」。
+                PROTECHは、最先端のデジタル技術と深い市場洞察により、その境界を透明にします。
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ SERVICE 01 ═══════════════════════ -->
+    <section class="py-20 md:py-28 px-6 bg-warm-gray relative overflow-hidden">
+        <!-- Decorative seigaiha on left -->
+        <div class="absolute top-10 left-0 w-48 h-full seigaiha-pattern opacity-30"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 md:mb-20" data-aos="fade-up">
+                <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">SERVICE</span>
+                <h2 class="text-2xl md:text-4xl font-bold serif text-tech-blue">PROTECHのサービス</h2>
+                <p class="text-gray-400 text-sm mt-4 max-w-xl mx-auto">
+                    中国市場進出からデジタル開発まで。<br>PROTECHが提供する2つのコアサービスをご紹介します。
+                </p>
+            </div>
+
+            <!-- Service 01: RED Marketing -->
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20 mb-24 md:mb-32">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="mb-8">
+                        <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase inter">SERVICE 01</span>
+                        <div class="w-10 h-0.5 bg-coral mt-2"></div>
+                    </div>
+                    <h3 class="text-2xl md:text-4xl font-bold text-coral leading-tight mb-6">
+                        小紅書(RED)<br>マーケティング支援
+                    </h3>
+                    <p class="text-gray-500 text-sm leading-loose mb-6">
+                        中国最大級のSNS「小紅書(RED)」を活用し、日本企業の中国市場進出をワンストップで支援します。
+                    </p>
+                    <p class="text-gray-600 text-sm leading-loose mb-8 font-medium">
+                        アカウント開設から戦略設計・コンテンツ制作・広告運用・KOL施策まで、中国語ネイティブチームがトータルでサポート。
+                        訪日中国人の旅マエから旅ナカまで、最適なプロモーションを実現します。
+                    </p>
+                    <a href="red.html"
+                        class="btn-coral px-8 py-3 text-xs font-bold tracking-widest rounded-full inline-flex items-center gap-2">
+                        詳しく見る
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+                                class="service-img w-full h-full object-cover" alt="小紅書マーケティング">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400"
+                                class="service-img w-full h-full object-cover" alt="ショッピング">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400"
+                                class="service-img w-full h-full object-cover" alt="チーム">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 02: Web & App -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="mb-8">
+                        <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase inter">SERVICE 02</span>
+                        <div class="w-10 h-0.5 bg-coral mt-2"></div>
+                    </div>
+                    <h3 class="text-2xl md:text-4xl font-bold text-coral leading-tight mb-6">
+                        Web・App開発<br>デジタルソリューション
+                    </h3>
+                    <p class="text-gray-500 text-sm leading-loose mb-6">
+                        最新技術を用いた高品質なWebサイト・アプリケーション開発。UX/UIデザインを軸に、ビジネスの基盤を構築します。
+                    </p>
+                    <p class="text-gray-600 text-sm leading-loose mb-8 font-medium">
+                        企業サイト・ECサイト・業務システム・モバイルアプリまで幅広く対応。
+                        データ分析・自動化ツールの導入で、マーケティングと開発の両面から事業成長をサポートします。
+                    </p>
+                    <a href="services.html"
+                        class="btn-coral px-8 py-3 text-xs font-bold tracking-widest rounded-full inline-flex items-center gap-2">
+                        詳しく見る
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+                                class="service-img w-full h-full object-cover" alt="Web開発">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400"
+                                class="service-img w-full h-full object-cover" alt="開発チーム">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400"
+                                class="service-img w-full h-full object-cover" alt="テクノロジー">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ STRENGTHS ═══════════════════════ -->
+    <section class="py-24 md:py-32 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 md:mb-20" data-aos="fade-up">
+                <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">STRENGTHS</span>
+                <h2 class="text-2xl md:text-4xl font-bold serif text-tech-blue">PROTECHの強み</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-8" data-aos="fade-up">
+                    <div
+                        class="w-16 h-16 bg-coral-light rounded-2xl flex items-center justify-center text-coral text-2xl mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-tech-blue text-lg mb-3">中日ネイティブ<br>チーム</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">日中両言語のバイリンガルスタッフが、文化の壁を越えた最適な戦略を策定します。</p>
+                </div>
+                <div class="text-center p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 bg-coral-light rounded-2xl flex items-center justify-center text-coral text-2xl mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-tech-blue text-lg mb-3">Tech×Marketing<br>融合</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">IT企業ならではのデータ分析・自動化ツールで、他社にはない精度の高い運用を実現。</p>
+                </div>
+                <div class="text-center p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-16 h-16 bg-coral-light rounded-2xl flex items-center justify-center text-coral text-2xl mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-tech-blue text-lg mb-3">ワンストップ<br>対応</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">戦略立案から実行・分析まで、すべてを一社で完結。複数外注の必要がありません。</p>
+                </div>
+                <div class="text-center p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-16 h-16 bg-coral-light rounded-2xl flex items-center justify-center text-coral text-2xl mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-tech-blue text-lg mb-3">データ駆動型<br>改善</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">直感に頼らない、緻密なデータ分析に基づくPDCA運用で成果を最大化します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CASE STUDY ═══════════════════════ -->
+    <section class="py-24 md:py-32 bg-warm-gray px-6 relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-80 h-80 seigaiha-pattern opacity-20"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                <div class="md:w-1/2 order-2 md:order-1" data-aos="fade-right">
+                    <span class="text-coral font-bold text-[10px] tracking-[0.3em] uppercase mb-4 block">Case
+                        Study</span>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 serif text-tech-blue leading-tight">
+                        花雕酔鶏鍋<br>日本進出プロモーション支援
+                    </h3>
+                    <p class="text-gray-500 leading-loose mb-8 text-sm">
+                        小紅書を活用した戦略的なマーケティングにより、日本市場での認知拡大を短期間で実現。ターゲット選定から実店舗への送客まで、ブランドの日本上陸をトータルでプロデュースしました。
+                    </p>
+                    <a href="services.html"
+                        class="btn-coral px-8 py-3 text-xs font-bold tracking-widest rounded-full inline-flex items-center gap-2">
+                        詳しく見る
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="absolute -inset-4 border border-coral/20 rounded-2xl hidden md:block"></div>
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000"
+                            class="rounded-xl shadow-xl relative z-10 w-full" alt="花雕酔鶏鍋">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CTA ═══════════════════════ -->
+    <section class="py-24 md:py-32 bg-tech-blue px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-coral/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase block mb-4">CONTACT</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 serif">お問合せ</h2>
+                <p class="text-white/50 text-sm">「PROTECH」導入についてのご相談や資料請求はこちらから</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="100">
+                <div
+                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10 text-center hover:bg-white/10 transition">
+                    <div class="text-4xl mb-6">💬</div>
+                    <h3 class="text-white font-bold text-xl mb-3">オンライン相談</h3>
+                    <p class="text-white/40 text-sm leading-relaxed mb-8">
+                        全国どこからでも、対面と変わりなくご相談可能です。お気軽にご活用ください。
+                    </p>
+                    <a href="contact.html"
+                        class="btn-coral px-8 py-3 text-xs font-bold tracking-widest rounded-full inline-block">
+                        相談を予約する
+                    </a>
+                </div>
+                <div
+                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10 text-center hover:bg-white/10 transition">
+                    <div class="text-4xl mb-6">📄</div>
+                    <h3 class="text-white font-bold text-xl mb-3">資料請求</h3>
+                    <p class="text-white/40 text-sm leading-relaxed mb-8">
+                        サービス概要をわかりやすくまとめた資料をご用意しています。導入検討にご活用ください。
+                    </p>
+                    <a href="contact.html"
+                        class="px-8 py-3 border border-coral text-coral text-xs font-bold tracking-widest rounded-full inline-block hover:bg-coral hover:text-white transition">
+                        資料請求する
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="200">
+                <a href="contact.html"
+                    class="text-white/40 text-xs font-bold tracking-wider hover:text-white transition inline-flex items-center gap-2">
+                    その他のお問合せはこちら
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">
+                        テクノロジーとマーケティングで、<br>ビジネスの境界を越える。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="services.html" class="hover:text-coral transition">Web・App開発</a></li>
+                        <li><a href="services.html" class="hover:text-coral transition">UI/UXデザイン</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="company.html" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="news.html" class="hover:text-coral transition">ニュース</a></li>
+                        <li><a href="blog.html" class="hover:text-coral transition">ブログ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Contact</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="contact.html" class="hover:text-coral transition">お問合せ</a></li>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 80
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+    <title>小紅書(RED)マーケティング運用代行 - PROTECH株式会社</title>
+    <meta name="description"
+        content="PROTECHの小紅書(RED)マーケティング運用代行サービス。アカウント開設から戦略設計・コンテンツ制作・広告運用・KOL施策まで、中国市場向けのマーケティングをワンストップで支援します。">
+    <meta name="keywords" content="小紅書, RED, レッド, マーケティング, 運用代行, 中国, インバウンド, KOL, PROTECH">
+    <link rel="canonical" href="https://www.pro-tech.jp/red">
+
+    <meta property="og:title" content="小紅書(RED)マーケティング運用代行 - PROTECH">
+    <meta property="og:description" content="中国2.6億ユーザーの巨大SNS「小紅書」を活用し、日本企業の中国市場進出をワンストップで支援。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pro-tech.jp/red">
+    <meta property="og:image" content="https://www.pro-tech.jp/img/og-image.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@600&family=Inter:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-blue': '#001A33',
+                        'red-brand': '#FF2442',
+                        'red-dark': '#D91E36',
+                        'red-light': '#FF6B81',
+                        'coral': '#E86B7A',
+                        'coral-light': '#FFF0F1',
+                        'warm-gray': '#F8F6F3',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --tech-blue: #001A33;
+            --red-brand: #FF2442;
+            --coral: #E86B7A;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .serif {
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Nav */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--red-brand);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--red-brand);
+        }
+
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hamburger line {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-origin: center;
+        }
+
+        .hamburger.active #line1 {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.active #line2 {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .hamburger.active #line3 {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Seigaiha pattern */
+        .seigaiha-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 C20 40 20 20 40 20 C60 20 60 40 80 40' fill='none' stroke='%23FF2442' stroke-width='0.5' opacity='0.08'/%3E%3Cpath d='M-40 40 C-20 40 -20 20 0 20 C20 20 20 40 40 40' fill='none' stroke='%23FF2442' stroke-width='0.5' opacity='0.08'/%3E%3Cpath d='M40 40 C60 40 60 20 80 20 C100 20 100 40 120 40' fill='none' stroke='%23FF2442' stroke-width='0.5' opacity='0.08'/%3E%3C/svg%3E");
+            background-size: 80px 40px;
+        }
+
+        /* Counter */
+        .counter-value {
+            background: linear-gradient(135deg, #FF2442, #FF6B81);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Service cards - bright */
+        .service-card {
+            background: white;
+            border: 1px solid #f1f5f9;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .service-card:hover {
+            border-color: rgba(255, 36, 66, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(255, 36, 66, 0.08);
+        }
+
+        .service-card .card-icon {
+            transition: all 0.5s ease;
+        }
+
+        .service-card:hover .card-icon {
+            transform: scale(1.1);
+        }
+
+        /* Strength cards */
+        .strength-card {
+            background: white;
+            transition: all 0.4s ease;
+        }
+
+        .strength-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .strength-number {
+            background: linear-gradient(135deg, #FF2442, #FF6B81);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            background: #fafbfc;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            opacity: 1;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-chevron {
+            transition: transform 0.3s ease;
+        }
+
+        /* CTA */
+        .cta-gradient {
+            background: linear-gradient(135deg, #FF2442 0%, #FF6B81 50%, #FF2442 100%);
+            background-size: 200% 200%;
+            animation: gradient-shift 6s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Buttons */
+        .btn-red {
+            background: var(--red-brand);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-red:hover {
+            background: var(--coral);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 36, 66, 0.3);
+        }
+
+        /* Pain point icon */
+        .pain-icon {
+            background: linear-gradient(135deg, #FFF0F1, #FFE8EA);
+        }
+
+        /* Wave divider */
+        .wave-top {
+            position: relative;
+        }
+
+        .wave-top::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath fill='%23ffffff' d='M0,20 C360,50 720,0 1080,20 C1260,30 1350,25 1440,20 L1440,0 L0,0 Z'/%3E%3C/svg%3E") no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900">
+
+    <!-- ═══════════════════════ NAV ═══════════════════════ -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="index.html"
+                class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div
+                class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="index.html" class="nav-link">TOP</a>
+                <a href="services.html" class="nav-link">SERVICES</a>
+                <a href="company.html" class="nav-link">COMPANY</a>
+                <a href="news.html" class="nav-link">NEWS</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="contact.html"
+                    class="btn-red px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
+            <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
+            <a href="services.html" class="text-lg font-bold text-slate-700">SERVICES</a>
+            <a href="company.html" class="text-lg font-bold text-slate-700">COMPANY</a>
+            <a href="news.html" class="text-lg font-bold text-slate-700">NEWS</a>
+            <a href="blog.html" class="text-lg font-bold text-slate-700">BLOG</a>
+            <a href="contact.html" class="text-lg font-bold text-red-brand">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section
+        class="relative pt-28 md:pt-36 pb-20 md:pb-28 bg-gradient-to-br from-white via-red-50/30 to-white overflow-hidden">
+        <!-- Subtle decorative circles -->
+        <div class="absolute top-20 right-0 w-96 h-96 bg-red-brand/5 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 left-10 w-64 h-64 bg-red-light/5 rounded-full blur-[80px]"></div>
+        <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-60"></div>
+
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div
+                        class="inline-flex items-center gap-3 bg-red-brand/5 border border-red-brand/10 rounded-full px-5 py-2 mb-8">
+                        <div class="w-2 h-2 bg-red-brand rounded-full animate-pulse"></div>
+                        <span class="text-[10px] font-bold tracking-[0.2em] text-red-brand/80 uppercase">小紅書(RED)
+                            Marketing</span>
+                    </div>
+
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-black text-tech-blue mb-6 leading-[1.1] tracking-tight">
+                        中国<span class="text-red-brand">2.6億</span>ユーザーの<br>
+                        心を掴む<span class="text-red-brand">。</span>
+                    </h1>
+
+                    <p class="text-gray-500 text-sm md:text-base max-w-lg mb-10 leading-relaxed font-light">
+                        中国版Instagramと呼ばれる「小紅書(RED)」を活用し、<br class="hidden md:block">
+                        日本企業の中国市場進出をアカウント開設から<br class="hidden md:block">
+                        KOL施策までワンストップで支援します。
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact"
+                            class="btn-red px-10 py-4 text-sm font-bold tracking-widest rounded-full inline-flex items-center justify-center gap-2">
+                            無料相談する
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#services"
+                            class="px-10 py-4 border-2 border-tech-blue/10 text-tech-blue text-sm font-bold tracking-widest rounded-full hover:bg-tech-blue hover:text-white transition-all inline-flex items-center justify-center gap-2">
+                            サービス詳細
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="absolute -inset-6 bg-red-brand/5 rounded-3xl hidden md:block"></div>
+                        <div class="grid grid-cols-2 gap-3 relative z-10">
+                            <div class="rounded-2xl overflow-hidden shadow-lg aspect-[3/4]">
+                                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&q=80"
+                                    class="w-full h-full object-cover" alt="小紅書">
+                            </div>
+                            <div class="space-y-3">
+                                <div class="rounded-2xl overflow-hidden shadow-md aspect-square">
+                                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80"
+                                        class="w-full h-full object-cover" alt="マーケティング">
+                                </div>
+                                <div class="rounded-2xl overflow-hidden shadow-md aspect-[4/3]">
+                                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80"
+                                        class="w-full h-full object-cover" alt="チーム">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ WHY RED? ═══════════════════════ -->
+    <section class="py-24 md:py-32 bg-warm-gray seigaiha-pattern" id="why-red">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <p class="text-red-brand text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Why RED?</p>
+                <h2 class="text-3xl md:text-5xl font-bold serif text-tech-blue mb-6">
+                    なぜ今、小紅書なのか
+                </h2>
+                <p class="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">
+                    「小紅書」はすでに"売れるSNS"として中国市場の中核に。<br>
+                    訪日中国人の70%以上が旅行情報の収集に利用しています。
+                </p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center p-8 bg-white rounded-2xl shadow-sm border border-gray-50">
+                    <div class="counter-value text-4xl md:text-5xl font-black inter mb-2">2.6億+</div>
+                    <p class="text-xs text-gray-400 tracking-wider">月間アクティブユーザー</p>
+                </div>
+                <div class="text-center p-8 bg-white rounded-2xl shadow-sm border border-gray-50">
+                    <div class="counter-value text-4xl md:text-5xl font-black inter mb-2">70%</div>
+                    <p class="text-xs text-gray-400 tracking-wider">訪日中国人の利用率</p>
+                </div>
+                <div class="text-center p-8 bg-white rounded-2xl shadow-sm border border-gray-50">
+                    <div class="counter-value text-4xl md:text-5xl font-black inter mb-2">54万+</div>
+                    <p class="text-xs text-gray-400 tracking-wider">月間「日本旅行」検索数</p>
+                </div>
+                <div class="text-center p-8 bg-white rounded-2xl shadow-sm border border-gray-50">
+                    <div class="counter-value text-4xl md:text-5xl font-black inter mb-2">1兆円</div>
+                    <p class="text-xs text-gray-400 tracking-wider">年間取引総額(GMV)</p>
+                </div>
+            </div>
+
+            <!-- 3 Merits -->
+            <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white p-10 rounded-2xl shadow-sm border border-gray-50">
+                    <div
+                        class="w-12 h-12 bg-red-brand/10 rounded-xl flex items-center justify-center text-red-brand text-xl font-black mb-6">
+                        01</div>
+                    <h3 class="font-bold text-lg text-tech-blue mb-3">アプリ内で予約が完結</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        予約リンクを投稿に直接埋め込み可能。外部サイトへの離脱を防ぎ、「見つけた瞬間に予約」を実現します。
+                    </p>
+                </div>
+                <div class="bg-white p-10 rounded-2xl shadow-sm border border-gray-50">
+                    <div
+                        class="w-12 h-12 bg-red-brand/10 rounded-xl flex items-center justify-center text-red-brand text-xl font-black mb-6">
+                        02</div>
+                    <h3 class="font-bold text-lg text-tech-blue mb-3">検索×共感の独自エコシステム</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        ユーザーの検索行動とUGC（口コミ）が融合。信頼性の高い情報が自然に拡散され、購買意欲を高めます。
+                    </p>
+                </div>
+                <div class="bg-white p-10 rounded-2xl shadow-sm border border-gray-50">
+                    <div
+                        class="w-12 h-12 bg-red-brand/10 rounded-xl flex items-center justify-center text-red-brand text-xl font-black mb-6">
+                        03</div>
+                    <h3 class="font-bold text-lg text-tech-blue mb-3">グローバルに拡大中</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        中国本土だけでなく、台湾・香港・シンガポール・東南アジアの若年層にも急速に普及。今が参入の好機です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ PAIN POINTS ═══════════════════════ -->
+    <section class="py-24 md:py-32 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-48 h-full seigaiha-pattern opacity-30"></div>
+
+        <div class="max-w-5xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-red-brand text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Common Challenges</p>
+                <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue mb-4">
+                    こんなお悩みありませんか？
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-start gap-5 bg-warm-gray rounded-2xl p-8">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-red-brand text-xl">✕</span>
+                    </div>
+                    <div>
+                        <h4 class="text-tech-blue font-bold mb-2">中国市場に進出したいが方法がわからない</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">言語の壁、文化の違い、プラットフォームの仕組み…何から始めればいいか見当がつかない。</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-5 bg-warm-gray rounded-2xl p-8">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-red-brand text-xl">✕</span>
+                    </div>
+                    <div>
+                        <h4 class="text-tech-blue font-bold mb-2">小紅書のアカウント開設が複雑すぎる</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">申請・審査プロセスが複雑で、自社だけでの対応が困難。正規ルートでの開設方法がわからない。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-5 bg-warm-gray rounded-2xl p-8">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-red-brand text-xl">✕</span>
+                    </div>
+                    <div>
+                        <h4 class="text-tech-blue font-bold mb-2">中国語でのコンテンツ制作ができない</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">翻訳するだけでは現地ユーザーに響かない。中国のトレンドを押さえた発信が必要。</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-5 bg-warm-gray rounded-2xl p-8">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-red-brand text-xl">✕</span>
+                    </div>
+                    <div>
+                        <h4 class="text-tech-blue font-bold mb-2">限られた予算で成果を出したい</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">認知拡大も集客もしたいが、広告費が限られている。効率的な運用戦略が見つからない。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="200">
+                <div class="inline-block bg-coral-light border border-red-brand/10 rounded-2xl px-12 py-8">
+                    <p class="text-gray-500 text-sm mb-3">PROTECHなら、これらすべてを解決できます。</p>
+                    <p class="text-tech-blue font-bold text-xl">小紅書マーケティングを<span
+                            class="text-red-brand">ワンストップ</span>でご支援</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ SERVICES ═══════════════════════ -->
+    <section class="py-24 md:py-32 bg-warm-gray" id="services">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <p class="text-red-brand text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Our Services</p>
+                <h2 class="text-3xl md:text-5xl font-bold serif text-tech-blue mb-6">
+                    PROTECHの小紅書運用サービス
+                </h2>
+                <p class="text-gray-400 text-sm max-w-2xl mx-auto">
+                    アカウント開設からKOL施策まで。中国市場を知り尽くした専門チームが、成果に直結するソリューションを提供します。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card rounded-2xl p-8 group" data-aos="fade-up">
+                    <div
+                        class="card-icon w-14 h-14 bg-red-brand/10 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        🔑</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">アカウント開設<br>サポート</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        小紅書公式の正規ルートを通じた企業アカウント開設。複雑な審査プロセスも完全代行します。
+                    </p>
+                </div>
+                <div class="service-card rounded-2xl p-8 group" data-aos="fade-up" data-aos-delay="50">
+                    <div
+                        class="card-icon w-14 h-14 bg-red-brand/10 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        📊</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">戦略設計・<br>コンテンツ企画</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        中国トレンド分析に基づく戦略立案。ターゲットに刺さるコンテンツプランを設計します。
+                    </p>
+                </div>
+                <div class="service-card rounded-2xl p-8 group" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="card-icon w-14 h-14 bg-red-brand/10 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        ✍️</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">投稿運用・<br>クリエイティブ制作</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        ネイティブスタッフが現地ユーザーに共感される投稿を作成。定期投稿で継続的な認知拡大。
+                    </p>
+                </div>
+                <div class="service-card rounded-2xl p-8 group" data-aos="fade-up" data-aos-delay="150">
+                    <div
+                        class="card-icon w-14 h-14 bg-red-brand/10 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        📢</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">広告運用・<br>プロモーション</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        オーガニック投稿と有料広告を組み合わせ、集客効果を最大化。ROIを意識した運用を行います。
+                    </p>
+                </div>
+                <div class="service-card rounded-2xl p-8 group" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="card-icon w-14 h-14 bg-red-brand/10 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        🌟</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">KOL/KOC<br>インフルエンサー施策</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        影響力のあるインフルエンサーと連携し、ブランドの認知拡大とコンバージョン向上を実現。
+                    </p>
+                </div>
+                <div class="service-card rounded-2xl p-8 group" data-aos="fade-up" data-aos-delay="250">
+                    <div
+                        class="card-icon w-14 h-14 bg-red-brand/10 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        📈</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">データ分析・<br>PDCA改善</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        エンゲージメント分析をもとにコンテンツを継続改善。データドリブンな運用で成果を最大化。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ STRENGTHS ═══════════════════════ -->
+    <section class="py-24 md:py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <p class="text-red-brand text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Our Strengths</p>
+                <h2 class="text-3xl md:text-5xl font-bold serif text-tech-blue mb-6">
+                    PROTECHが選ばれる理由
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="strength-card rounded-2xl p-10 border border-gray-100" data-aos="fade-up">
+                    <div class="strength-number text-6xl font-black inter mb-6">01</div>
+                    <h3 class="font-bold text-xl text-tech-blue mb-4">中国ネイティブの<br>スペシャリストが在籍</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        日本語・中国語のバイリンガルスタッフが在籍。現地で共感・拡散される投稿を設計し、文化の壁を超えた最適な発信を実現します。
+                    </p>
+                </div>
+                <div class="strength-card rounded-2xl p-10 border border-gray-100" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="strength-number text-6xl font-black inter mb-6">02</div>
+                    <h3 class="font-bold text-xl text-tech-blue mb-4">テクノロジー × マーケティングの<br>融合アプローチ</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        PROTECHはIT企業でもあります。データ分析・自動化ツール・Web技術を駆使し、他社にはない精度の高いマーケティング運用を提供します。
+                    </p>
+                </div>
+                <div class="strength-card rounded-2xl p-10 border border-gray-100" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="strength-number text-6xl font-black inter mb-6">03</div>
+                    <h3 class="font-bold text-xl text-tech-blue mb-4">戦略立案から実行まで<br>ワンストップ対応</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        アカウント開設・コンテンツ制作・広告運用・KOL連携・データ分析まで。複数の外注先を使い分ける必要はありません。
+                    </p>
+                </div>
+                <div class="strength-card rounded-2xl p-10 border border-gray-100" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <div class="strength-number text-6xl font-black inter mb-6">04</div>
+                    <h3 class="font-bold text-xl text-tech-blue mb-4">中国トレンドに基づく<br>戦略的コンテンツ設計</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        検索ボリューム分析・トレンドウォッチ・競合分析に基づき、データドリブンな戦略でコンテンツを設計。感覚ではなくファクトで勝負します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FLOW ═══════════════════════ -->
+    <section class="py-24 md:py-32 bg-warm-gray relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-64 h-full seigaiha-pattern opacity-30"></div>
+
+        <div class="max-w-5xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <p class="text-red-brand text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Flow</p>
+                <h2 class="text-3xl md:text-5xl font-bold serif text-tech-blue mb-6">ご利用の流れ</h2>
+            </div>
+
+            <div class="space-y-0">
+                <!-- Step 1 -->
+                <div class="flex gap-6 md:gap-10 mb-12" data-aos="fade-up">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-12 h-12 bg-red-brand rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 shadow-lg shadow-red-brand/20">
+                            1</div>
+                        <div class="w-0.5 h-full bg-gradient-to-b from-red-brand/30 to-transparent mt-3"></div>
+                    </div>
+                    <div class="pb-12">
+                        <span
+                            class="inline-block bg-red-brand/10 text-red-brand text-[10px] font-bold px-4 py-1 rounded-full tracking-widest mb-3">STEP
+                            01</span>
+                        <h3 class="font-bold text-xl text-tech-blue mb-2">無料ヒアリング</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">貴社の課題・目標・ターゲットをヒアリング。最適なプランをご提案します。</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex gap-6 md:gap-10 mb-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-12 h-12 bg-red-brand rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 shadow-lg shadow-red-brand/20">
+                            2</div>
+                        <div class="w-0.5 h-full bg-gradient-to-b from-red-brand/30 to-transparent mt-3"></div>
+                    </div>
+                    <div class="pb-12">
+                        <span
+                            class="inline-block bg-red-brand/10 text-red-brand text-[10px] font-bold px-4 py-1 rounded-full tracking-widest mb-3">STEP
+                            02</span>
+                        <h3 class="font-bold text-xl text-tech-blue mb-2">戦略設計・アカウント開設</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">市場分析に基づく戦略を策定。企業アカウントの開設を代行します。</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex gap-6 md:gap-10 mb-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-12 h-12 bg-red-brand rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 shadow-lg shadow-red-brand/20">
+                            3</div>
+                        <div class="w-0.5 h-full bg-gradient-to-b from-red-brand/30 to-transparent mt-3"></div>
+                    </div>
+                    <div class="pb-12">
+                        <span
+                            class="inline-block bg-red-brand/10 text-red-brand text-[10px] font-bold px-4 py-1 rounded-full tracking-widest mb-3">STEP
+                            03</span>
+                        <h3 class="font-bold text-xl text-tech-blue mb-2">コンテンツ制作・投稿開始</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">ネイティブスタッフがコンテンツを制作。定期的な投稿運用を開始します。</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex gap-6 md:gap-10" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-12 h-12 bg-red-brand rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 shadow-lg shadow-red-brand/20">
+                            4</div>
+                    </div>
+                    <div>
+                        <span
+                            class="inline-block bg-red-brand/10 text-red-brand text-[10px] font-bold px-4 py-1 rounded-full tracking-widest mb-3">STEP
+                            04</span>
+                        <h3 class="font-bold text-xl text-tech-blue mb-2">分析・改善・拡大</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">データ分析に基づくPDCA運用で成果を最大化。KOL施策や広告運用も展開。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FAQ ═══════════════════════ -->
+    <section class="py-24 md:py-32 bg-white">
+        <div class="max-w-3xl mx-auto px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-red-brand text-[10px] font-bold tracking-[0.3em] uppercase mb-4">FAQ</p>
+                <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue">よくある質問</h2>
+            </div>
+
+            <div class="space-y-0" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">どんな業種に向いていますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-red-brand/40 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            飲食店、観光施設、ホテル、体験コンテンツ、小売・メーカー・商業施設など幅広い業種でご活用いただけます。特に「予約型」の業態には効果的です。
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">どのくらいの期間で成果が出ますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-red-brand/40 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            目安は3〜6ヶ月程度です。小紅書は継続的に信頼を積み上げるSNSのため、長期的な運用と分析・改善が成果の鍵となります。
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">中国語がわからなくても大丈夫ですか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-red-brand/40 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            もちろん大丈夫です！すべて日本語でご対応可能です。中国語ネイティブスタッフが在籍しており、現地ユーザーに刺さる投稿を設計・運用代行いたします。
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">アカウントは自社で開設できますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-red-brand/40 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            技術的には可能ですが、審査プロセスが複雑かつ時間がかかるため、外部サポートを利用される企業がほとんどです。PROTECHでは正規ルートを通じたアカウント開設を完全サポートしています。
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">KOL（インフルエンサー）の活用は可能ですか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-red-brand/40 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            はい、可能です。PROTECHはインフルエンサーとの連携ネットワークを保有しています。ターゲット層に適したKOL/KOCのアサインから投稿拡散まで一貫してサポートいたします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CTA ═══════════════════════ -->
+    <section class="py-24 md:py-32 cta-gradient relative overflow-hidden" id="contact">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-white/5 rounded-full blur-[80px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up">
+                小紅書マーケティング、<br>まずは無料でご相談ください。
+            </h2>
+            <p class="text-white/60 text-sm md:text-base mb-12 max-w-xl mx-auto leading-relaxed" data-aos="fade-up"
+                data-aos-delay="100">
+                中国市場への進出に関するお悩み、小紅書運用に関するご質問、<br class="hidden md:block">
+                何でもお気軽にご相談ください。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="contact.html"
+                    class="px-10 py-4 bg-white text-red-brand text-sm font-bold tracking-widest rounded-full hover:bg-white/90 transition-all shadow-lg inline-flex items-center justify-center gap-2">
+                    無料相談を予約
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="contact.html"
+                    class="px-10 py-4 border-2 border-white/40 text-white text-sm font-bold tracking-widest rounded-full hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2">
+                    資料請求
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">
+                        テクノロジーとマーケティングで、<br>ビジネスの境界を越える。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="red.html" class="hover:text-red-brand transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="services.html" class="hover:text-red-brand transition">Web・App開発</a></li>
+                        <li><a href="services.html" class="hover:text-red-brand transition">UI/UXデザイン</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="company.html" class="hover:text-red-brand transition">会社概要</a></li>
+                        <li><a href="news.html" class="hover:text-red-brand transition">ニュース</a></li>
+                        <li><a href="blog.html" class="hover:text-red-brand transition">ブログ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Contact</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="contact.html" class="hover:text-red-brand transition">お問合せ</a></li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="contact.html"
+                            class="bg-red-brand px-6 py-2 text-xs font-bold tracking-widest rounded-full inline-block hover:bg-red-dark transition">
+                            お問合せ
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 80 });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
