@@ -6,27 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
     <title>404 ページが見つかりません - PROTECH</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --tech-blue: #001A33;
+            --font-h1: 48px;
+            --font-h2: 24px;
+            --font-body: 15px;
+            --font-button: 12px;
         }
 
         body {
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'M PLUS 1p', sans-serif;
+            font-size: var(--font-body);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
         .serif {
-            font-family: 'Noto Serif JP', serif;
+            font-family: 'M PLUS 1p', sans-serif;
         }
+
+        h1 { font-size: var(--font-h1); }
+        h2 { font-size: var(--font-h2); }
+        p, body { font-size: var(--font-body); }
 
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
@@ -74,12 +81,12 @@
             <a href="index.html"
                 class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
             <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase">
-                <a href="index.html" class="hover:text-blue-600 transition">TOP</a>
-                <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
-                <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
-                <a href="news.html" class="hover:text-blue-600 transition">NEWS</a>
-                <a href="blog.html" class="hover:text-blue-600 transition">BLOG</a>
-                <a href="contact.html" class="hover:text-blue-600 transition">CONTACT</a>
+                <a href="index.html" class="hover:text-blue-600 transition">トップ</a>
+                <a href="services.html" class="hover:text-blue-600 transition">サービス</a>
+                <a href="company.html" class="hover:text-blue-600 transition">会社概要</a>
+                <a href="cases.html" class="hover:text-blue-600 transition">導入事例</a>
+                <a href="blog.html" class="hover:text-blue-600 transition">ブログ</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">お問合せ</a>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -94,12 +101,12 @@
     <div id="mobile-menu"
         class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
-            <a href="services.html" class="text-lg font-bold text-slate-700">SERVICES</a>
-            <a href="company.html" class="text-lg font-bold text-slate-700">COMPANY</a>
-            <a href="news.html" class="text-lg font-bold text-slate-700">NEWS</a>
-            <a href="blog.html" class="text-lg font-bold text-slate-700">BLOG</a>
-            <a href="contact.html" class="text-lg font-bold text-slate-700">CONTACT</a>
+            <a href="index.html" class="text-lg font-bold text-slate-700">トップ</a>
+            <a href="services.html" class="text-lg font-bold text-slate-700">サービス</a>
+            <a href="company.html" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="cases.html" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="blog.html" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="contact.html" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
     </div>
 
@@ -126,10 +133,10 @@
             <div class="text-tech-blue font-bold text-2xl md:text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
             <div
                 class="flex justify-center flex-wrap gap-6 md:gap-8 mb-10 text-[10px] md:text-xs font-bold tracking-widest text-gray-400">
-                <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
-                <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
-                <a href="news.html" class="hover:text-blue-600 transition">NEWS</a>
-                <a href="blog.html" class="hover:text-blue-600 transition">BLOG</a>
+                <a href="services.html" class="hover:text-blue-600 transition">サービス</a>
+                <a href="company.html" class="hover:text-blue-600 transition">会社概要</a>
+                <a href="cases.html" class="hover:text-blue-600 transition">導入事例</a>
+                <a href="blog.html" class="hover:text-blue-600 transition">ブログ</a>
             </div>
             <p class="text-[10px] text-gray-400 tracking-widest">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>

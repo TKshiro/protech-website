@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
 
     <title>【実績】花雕酔鶏鍋 日本進出PR支援 | PROTECH株式会社</title>
     <meta name="description" content="PROTECH株式会社による小紅書を活用した「花雕酔鶏鍋」の日本進出プロモーション支援の実績をご紹介します。">
@@ -18,24 +18,33 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
             --tech-blue: #001A33;
+            --font-h1: 48px;
+            --font-h2: 24px;
+            --font-body: 15px;
+            --font-button: 12px;
         }
 
         body {
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'M PLUS 1p', sans-serif;
+            font-size: var(--font-body);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
         .serif {
-            font-family: 'Noto Serif JP', serif;
+            font-family: 'M PLUS 1p', sans-serif;
         }
+
+        h1 { font-size: var(--font-h1); }
+        h2 { font-size: var(--font-h2); }
+        p, body { font-size: var(--font-body); }
 
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
@@ -108,11 +117,11 @@
 
             <div
                 class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="index.html" class="nav-link">TOP</a>
-                <a href="services.html" class="nav-link">SERVICES</a>
-                <a href="company.html" class="nav-link">COMPANY</a>
-                <a href="news.html" class="nav-link text-coral">NEWS</a>
-                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="index.html" class="nav-link">トップ</a>
+                <a href="services.html" class="nav-link">サービス</a>
+                <a href="company.html" class="nav-link">会社概要</a>
+                <a href="cases.html" class="nav-link text-coral">導入事例</a>
+                <a href="blog.html" class="nav-link">ブログ</a>
                 <a href="contact.html"
                     class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>
@@ -130,12 +139,12 @@
     <div id="mobile-menu"
         class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden transition-transform duration-300 ease-in-out">
         <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="index.html" class="text-lg font-bold text-coral">TOP</a>
-            <a href="services.html" class="text-lg font-bold text-slate-700">SERVICES</a>
-            <a href="company.html" class="text-lg font-bold text-slate-700">COMPANY</a>
-            <a href="news.html" class="text-lg font-bold text-slate-700">NEWS</a>
-            <a href="blog.html" class="text-lg font-bold text-slate-700">BLOG</a>
-            <a href="contact.html" class="text-lg font-bold text-slate-700">CONTACT</a>
+            <a href="index.html" class="text-lg font-bold text-coral">トップ</a>
+            <a href="services.html" class="text-lg font-bold text-slate-700">サービス</a>
+            <a href="company.html" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="cases.html" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="blog.html" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="contact.html" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
     </div>
 
@@ -153,7 +162,7 @@
             </h1>
             <div class="rounded-3xl overflow-hidden shadow-2xl aspect-video" data-aos="zoom-in"
                 data-aos-duration="1200">
-                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600"
+                <img src="../assets/images/case-restaurant.jpg"
                     class="w-full h-full object-cover">
             </div>
         </header>
@@ -173,11 +182,11 @@
 
         <footer
             class="max-w-4xl mx-auto px-8 mt-32 pt-12 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-12">
-            <a href="news.html"
+            <a href="cases.html"
                 class="group flex items-center gap-4 text-xs font-bold tracking-[0.2em] uppercase transition">
                 <span
                     class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-tech-blue group-hover:text-white transition">←</span>
-                Back to News
+                Back to Cases
             </a>
             <div class="flex items-center gap-8">
                 <span class="text-[10px] font-bold tracking-[0.3em] text-slate-300 uppercase">Share</span>
@@ -209,23 +218,23 @@
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
-                        <li><a href="services.html" class="hover:text-coral transition">Web・App開発</a></li>
+                        
                         <li><a href="services.html" class="hover:text-coral transition">UI/UXデザイン</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="company.html" class="hover:text-coral transition">会社概要</a></li>
-                        <li><a href="news.html" class="hover:text-coral transition">ニュース</a></li>
+                        <li><a href="cases.html" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="blog.html" class="hover:text-coral transition">ブログ</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Contact</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">お問合せ</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="contact.html" class="hover:text-coral transition">お問合せ</a></li>
                 </div>

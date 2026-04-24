@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTECH Admin Panel</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-blue': '#001A33',
+                        'coral': '#E86B7A'
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        .modal-scrollbar::-webkit-scrollbar, .table-scrollbar::-webkit-scrollbar { width: 8px; height: 8px; }
+        .modal-scrollbar::-webkit-scrollbar-track, .table-scrollbar::-webkit-scrollbar-track { background: #0f172a; }
+        .modal-scrollbar::-webkit-scrollbar-thumb, .table-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 9999px; }
+        .sidebar-transition { transition: transform 0.25s ease; }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-900 antialiased">
+    <div id="app"></div>
+
+    <script>
+        const AUTH_KEY = 'protech_admin_auth';
+        const CASES_KEY = 'protech_cases';
+        const BLOGS_KEY = 'protech_blogs';
+        const VALID_USER = 'admin';
+        const VALID_PASS = 'protech2026';
+
+        const sampleCases = [
+            {
+                id: crypto.randomUUID(),
+                title: '日本進出初月から満席達成。小紅書で中国人観光客を集客',
+                client: '花雕酔鶏鍋',
+                category: '飲食',
+                summary: '日本進出初月からSNS戦略とインフルエンサー施策を組み合わせ、訪日中国人の来店を最大化。',
+                services: ['SNS戦略', 'インフルエンサー'],
+                date: '2026-01-15'
+            },
+            {
+                id: crypto.randomUUID(),
+                title: '新規顧客獲得数が3.2倍に。越境ECと小紅書導線を最適化',
+                client: '日本コスメブランド',
+                category: '美容',
+                summary: 'ライブコマースとEC連携で購買導線を改善し、指名検索とCV数の両方を強化。',
+                services: ['EC連携', 'ライブコマース'],
+                date: '2026-02-03'
+            },
+            {
+                id: crypto.randomUUID(),
+                title: '中国人観光客の来訪数が前年比250%増。地方施設の成功事例',
+                client: '某地方観光施設',
+                category: '観光',
+                summary: '地方創生とインバウンド訴求を両立し、観光予約数と現地回遊率の向上を実現。',
+                services: ['インバウンド', '地方創生'],
+                date: '2026-02-21'
+            },
+            {
+                id: crypto.randomUUID(),
+                title: '来店予約数180%増。ブランド世界観を保ったまま販路を拡大',
+                client: '日本アパレルブランド',
+                category: '小売',
+                summary: 'ブランド訴求を損なわない形で小紅書展開を行い、来店と購買双方の導線を整備。',
+                services: ['ブランディング', '販路拡大'],
+                date: '2026-03-10'
+            }
+        ];
+
+        const sampleBlogs = [
+            {
+                id: crypto.randomUUID(),
+                title: '小紅書マーケティング2026年最新トレンド：日本企業が知るべき5つのポイント',
+                category: '小紅書運用',
+                content: '2026年の小紅書運用で重要になるUGC設計、検索導線、ライブ配信、地域連携、CV計測の5点を解説します。',
+                imageUrl: '../img/red-blog-banner.png',
+                date: '2026-03-05',
+                status: '公開'
+            },
+            {
+                id: crypto.randomUUID(),
+                title: '訪日中国人向けインバウンド施策で成果を出す導線設計の基本',
+                category: 'インバウンド',
+                content: '認知から来店予約までの導線設計を、SNS・LP・店舗オペレーションの視点から整理します。',
+                imageUrl: '',
+                date: '2026-03-14',
+                status: '公開'
+            },
+            {
+                id: crypto.randomUUID(),
+                title: '成果につながるマーケティングKPI設計とレポーティングの実務',
+                category: 'マーケティング',
+                content: 'KGI/KPIの切り分けと、経営陣・現場双方に伝わるレポート設計のポイントをまとめました。',
+                imageUrl: '',
+                date: '2026-03-22',
+                status: '下書き'
+            },
+            {
+                id: crypto.randomUUID(),
+                title: '運営ノウハウ：少人数チームでも回るコンテンツ運用フローの作り方',
+                category: '運営ノウハウ',
+                content: '企画、制作、レビュー、公開までを属人化させないためのフローとテンプレート活用法を紹介します。',
+                imageUrl: '',
+                date: '2026-04-01',
+                status: '公開'
+            }
+        ];
+
+        const state = {
+            user: null,
+            currentSection: 'dashboard',
+            sidebarOpen: false,
+            modal: {
+                open: false,
+                type: null,
+                mode: 'create',
+                itemId: null,
+                error: ''
+            }
+        };
+
+        function initializeStorage() {
+            if (!localStorage.getItem(CASES_KEY)) {
+                localStorage.setItem(CASES_KEY, JSON.stringify(sampleCases));
+            }
+            if (!localStorage.getItem(BLOGS_KEY)) {
+                localStorage.setItem(BLOGS_KEY, JSON.stringify(sampleBlogs));
+            }
+        }
+
+        function getCases() {
+            return JSON.parse(localStorage.getItem(CASES_KEY) || '[]');
+        }
+
+        function getBlogs() {
+            return JSON.parse(localStorage.getItem(BLOGS_KEY) || '[]');
+        }
+
+        function setCases(items) {
+            localStorage.setItem(CASES_KEY, JSON.stringify(items));
+        }
+
+        function setBlogs(items) {
+            localStorage.setItem(BLOGS_KEY, JSON.stringify(items));
+        }
+
+        function escapeHtml(value) {
+            return String(value ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function formatDate(dateString) {
+            if (!dateString) return '未設定';
+            const date = new Date(dateString);
+            if (Number.isNaN(date.getTime())) return dateString;
+            return new Intl.DateTimeFormat('ja-JP', {
+                year: 'numeric', month: '2-digit', day: '2-digit'
+            }).format(date);
+        }
+
+        function getSectionTitle() {
+            return {
+                dashboard: 'ダッシュボード',
+                cases: '導入事例',
+                blogs: 'ブログ記事'
+            }[state.currentSection] || 'ダッシュボード';
+        }
+
+        function getStatCards() {
+            return [
+                { label: '導入事例数', value: getCases().length, note: '公開データ' },
+                { label: 'ブログ記事数', value: getBlogs().length, note: '管理中の記事' },
+                { label: '今月のお問い合わせ', value: '12', note: 'placeholder' }
+            ];
+        }
+
+        function openModal(type, mode = 'create', itemId = null) {
+            state.modal = { open: true, type, mode, itemId, error: '' };
+            render();
+        }
+
+        function closeModal() {
+            state.modal = { open: false, type: null, mode: 'create', itemId: null, error: '' };
+            render();
+        }
+
+        function login(username, password) {
+            if (username === VALID_USER && password === VALID_PASS) {
+                sessionStorage.setItem(AUTH_KEY, JSON.stringify({ username }));
+                state.user = { username };
+                render();
+                return true;
+            }
+            return false;
+        }
+
+        function logout() {
+            sessionStorage.removeItem(AUTH_KEY);
+            state.user = null;
+            state.currentSection = 'dashboard';
+            state.sidebarOpen = false;
+            closeModal();
+        }
+
+        function restoreSession() {
+            try {
+                const saved = JSON.parse(sessionStorage.getItem(AUTH_KEY) || 'null');
+                if (saved?.username) state.user = saved;
+            } catch (_) {
+                sessionStorage.removeItem(AUTH_KEY);
+            }
+        }
+
+        function renderLogin() {
+            return `
+                <div class="min-h-screen bg-gradient-to-br from-slate-950 via-tech-blue to-slate-900 flex items-center justify-center p-6">
+                    <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 md:p-10">
+                        <div class="text-center mb-8">
+                            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-tech-blue text-white text-2xl font-black tracking-widest mb-4">P</div>
+                            <p class="text-sm font-bold tracking-[0.35em] text-coral uppercase mb-2">PROTECH</p>
+                            <h1 class="text-2xl font-bold text-slate-900">管理パネル ログイン</h1>
+                            <p class="text-sm text-slate-500 mt-2">社内用ダッシュボードへアクセス</p>
+                        </div>
+                        <form id="login-form" class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">ユーザー名</label>
+                                <input name="username" type="text" class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="admin" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">パスワード</label>
+                                <input name="password" type="password" class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="protech2026" required>
+                            </div>
+                            <p id="login-error" class="hidden text-sm text-rose-600 bg-rose-50 border border-rose-200 rounded-xl px-4 py-3"></p>
+                            <button type="submit" class="w-full bg-tech-blue hover:bg-slate-900 text-white rounded-xl py-3 font-bold transition">ログイン</button>
+                            <div class="text-xs text-slate-400 bg-slate-50 rounded-xl p-3 leading-6">
+                                テスト用認証情報: admin / protech2026
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderSidebar() {
+            const navItems = [
+                ['dashboard', 'ダッシュボード'],
+                ['cases', '導入事例'],
+                ['blogs', 'ブログ記事']
+            ];
+
+            return `
+                <aside class="fixed inset-y-0 left-0 z-40 w-64 bg-tech-blue text-white shadow-2xl sidebar-transition ${state.sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0">
+                    <div class="h-full flex flex-col">
+                        <div class="px-6 py-6 border-b border-white/10">
+                            <div class="flex items-center justify-between lg:block">
+                                <div>
+                                    <p class="text-xs font-bold tracking-[0.35em] text-coral uppercase">PROTECH</p>
+                                    <h2 class="mt-2 text-xl font-bold">Admin Panel</h2>
+                                </div>
+                                <button id="close-sidebar" class="lg:hidden rounded-lg border border-white/15 p-2 hover:bg-white/10" aria-label="Close sidebar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <nav class="flex-1 px-4 py-6 space-y-2">
+                            ${navItems.map(([key, label]) => `
+                                <button data-nav="${key}" class="nav-btn w-full text-left px-4 py-3 rounded-xl font-medium transition ${state.currentSection === key ? 'bg-white text-tech-blue shadow-lg' : 'text-white/80 hover:bg-white/10 hover:text-white'}">${label}</button>
+                            `).join('')}
+                            <button id="logout-btn" class="w-full text-left px-4 py-3 rounded-xl font-medium text-white/80 hover:bg-white/10 hover:text-white transition">ログアウト</button>
+                        </nav>
+                        <div class="px-6 py-5 border-t border-white/10 text-sm text-white/70">
+                            <p class="font-medium">ログイン中</p>
+                            <p>${escapeHtml(state.user.username)}</p>
+                        </div>
+                    </div>
+                </aside>
+                <div id="sidebar-backdrop" class="fixed inset-0 bg-slate-950/50 z-30 lg:hidden ${state.sidebarOpen ? '' : 'hidden'}"></div>
+            `;
+        }
+
+        function renderDashboardHome() {
+            const stats = getStatCards();
+            return `
+                <section class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                        ${stats.map(stat => `
+                            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                                <p class="text-sm text-slate-500 mb-3">${stat.label}</p>
+                                <div class="flex items-end justify-between gap-4">
+                                    <p class="text-3xl font-bold text-slate-900">${stat.value}</p>
+                                    <span class="text-xs font-medium text-coral bg-rose-50 px-3 py-1 rounded-full">${stat.note}</span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900">クイックアクション</h3>
+                                <p class="text-sm text-slate-500 mt-1">主要コンテンツをすぐに追加できます。</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <button data-quick="case" class="quick-action rounded-2xl border border-slate-200 p-5 text-left hover:border-coral hover:ring-2 hover:ring-coral/10 transition">
+                                <p class="text-base font-bold text-slate-900">新規導入事例を追加</p>
+                                <p class="text-sm text-slate-500 mt-2">成果事例を登録して一覧へ反映</p>
+                            </button>
+                            <button data-quick="blog" class="quick-action rounded-2xl border border-slate-200 p-5 text-left hover:border-coral hover:ring-2 hover:ring-coral/10 transition">
+                                <p class="text-base font-bold text-slate-900">新規ブログ記事を追加</p>
+                                <p class="text-sm text-slate-500 mt-2">公開・下書き状態を含めて管理</p>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderCasesSection() {
+            const cases = getCases().sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+            return `
+                <section class="space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">導入事例一覧</h3>
+                            <p class="text-sm text-slate-500 mt-1">ローカル保存された導入事例を管理します。</p>
+                        </div>
+                        <button id="add-case-btn" class="inline-flex items-center justify-center bg-coral hover:bg-rose-500 text-white rounded-xl px-5 py-3 font-bold transition">新規追加</button>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="overflow-x-auto table-scrollbar">
+                            <table class="min-w-full text-sm">
+                                <thead class="bg-slate-50 text-slate-500">
+                                    <tr>
+                                        <th class="text-left px-6 py-4 font-semibold">タイトル</th>
+                                        <th class="text-left px-6 py-4 font-semibold">カテゴリー</th>
+                                        <th class="text-left px-6 py-4 font-semibold">公開日</th>
+                                        <th class="text-left px-6 py-4 font-semibold">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200">
+                                    ${cases.map(item => `
+                                        <tr>
+                                            <td class="px-6 py-4 align-top">
+                                                <p class="font-semibold text-slate-900">${escapeHtml(item.title)}</p>
+                                                <p class="text-slate-500 mt-1">${escapeHtml(item.client)}</p>
+                                            </td>
+                                            <td class="px-6 py-4 align-top"><span class="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-medium">${escapeHtml(item.category)}</span></td>
+                                            <td class="px-6 py-4 align-top text-slate-600">${formatDate(item.date)}</td>
+                                            <td class="px-6 py-4 align-top">
+                                                <div class="flex flex-wrap gap-2">
+                                                    <button data-edit-case="${item.id}" class="rounded-lg border border-slate-200 px-3 py-2 hover:border-coral hover:text-coral transition">編集</button>
+                                                    <button data-delete-case="${item.id}" class="rounded-lg border border-rose-200 text-rose-600 px-3 py-2 hover:bg-rose-50 transition">削除</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderBlogsSection() {
+            const blogs = getBlogs().sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+            return `
+                <section class="space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">ブログ記事一覧</h3>
+                            <p class="text-sm text-slate-500 mt-1">公開状態を含めてローカル管理します。</p>
+                        </div>
+                        <button id="add-blog-btn" class="inline-flex items-center justify-center bg-coral hover:bg-rose-500 text-white rounded-xl px-5 py-3 font-bold transition">新規追加</button>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="overflow-x-auto table-scrollbar">
+                            <table class="min-w-full text-sm">
+                                <thead class="bg-slate-50 text-slate-500">
+                                    <tr>
+                                        <th class="text-left px-6 py-4 font-semibold">タイトル</th>
+                                        <th class="text-left px-6 py-4 font-semibold">カテゴリー</th>
+                                        <th class="text-left px-6 py-4 font-semibold">公開日</th>
+                                        <th class="text-left px-6 py-4 font-semibold">ステータス</th>
+                                        <th class="text-left px-6 py-4 font-semibold">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200">
+                                    ${blogs.map(item => `
+                                        <tr>
+                                            <td class="px-6 py-4 align-top">
+                                                <p class="font-semibold text-slate-900">${escapeHtml(item.title)}</p>
+                                                <p class="text-slate-500 mt-1 truncate max-w-xs">${escapeHtml(item.content)}</p>
+                                            </td>
+                                            <td class="px-6 py-4 align-top"><span class="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-medium">${escapeHtml(item.category)}</span></td>
+                                            <td class="px-6 py-4 align-top text-slate-600">${formatDate(item.date)}</td>
+                                            <td class="px-6 py-4 align-top">
+                                                <span class="inline-flex px-3 py-1 rounded-full font-medium ${item.status === '公開' ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700'}">${escapeHtml(item.status)}</span>
+                                            </td>
+                                            <td class="px-6 py-4 align-top">
+                                                <div class="flex flex-wrap gap-2">
+                                                    <button data-edit-blog="${item.id}" class="rounded-lg border border-slate-200 px-3 py-2 hover:border-coral hover:text-coral transition">編集</button>
+                                                    <button data-delete-blog="${item.id}" class="rounded-lg border border-rose-200 text-rose-600 px-3 py-2 hover:bg-rose-50 transition">削除</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        // ── Image compression via Canvas API ──────────────────────────────
+        async function compressImage(file, maxSizeMB = 3) {
+            return new Promise((resolve, reject) => {
+                const maxBytes = maxSizeMB * 1024 * 1024;
+                if (file.size <= maxBytes) {
+                    const reader = new FileReader();
+                    reader.onload = e => resolve(e.target.result);
+                    reader.onerror = reject;
+                    reader.readAsDataURL(file);
+                    return;
+                }
+                const img = new Image();
+                const url = URL.createObjectURL(file);
+                img.onload = () => {
+                    URL.revokeObjectURL(url);
+                    const canvas = document.createElement('canvas');
+                    let { width, height } = img;
+                    // Scale down proportionally until estimated size fits
+                    let quality = file.type === 'image/png' ? 0.9 : 0.85;
+                    const ratio = Math.sqrt(maxBytes / file.size);
+                    width = Math.round(width * ratio);
+                    height = Math.round(height * ratio);
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+                    const mimeType = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
+                    const dataUrl = canvas.toDataURL(mimeType, quality);
+                    resolve(dataUrl);
+                };
+                img.onerror = reject;
+                img.src = url;
+            });
+        }
+
+        // ── Google Docs HTML → clean HTML ─────────────────────────────────
+        function stripGoogleDocsHtml(html) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const allowed = new Set(['H1','H2','H3','H4','H5','H6','P','STRONG','B','EM','I','UL','OL','LI','A','BR']);
+            function clean(node) {
+                if (node.nodeType === Node.TEXT_NODE) return node.cloneNode();
+                if (node.nodeType !== Node.ELEMENT_NODE) return null;
+                const tag = node.tagName.toUpperCase();
+                if (!allowed.has(tag)) {
+                    // unwrap: keep children
+                    const frag = document.createDocumentFragment();
+                    node.childNodes.forEach(child => {
+                        const cleaned = clean(child);
+                        if (cleaned) frag.appendChild(cleaned);
+                    });
+                    return frag;
+                }
+                const el = document.createElement(tag === 'B' ? 'STRONG' : tag === 'I' ? 'EM' : tag);
+                if (tag === 'A') {
+                    const href = node.getAttribute('href');
+                    if (href) el.setAttribute('href', href);
+                }
+                node.childNodes.forEach(child => {
+                    const cleaned = clean(child);
+                    if (cleaned) el.appendChild(cleaned);
+                });
+                return el;
+            }
+            const out = document.createElement('div');
+            doc.body.childNodes.forEach(child => {
+                const cleaned = clean(child);
+                if (cleaned) out.appendChild(cleaned);
+            });
+            return out.innerHTML.trim();
+        }
+
+        function getModalData() {
+            if (!state.modal.open) return null;
+            if (state.modal.type === 'case') {
+                const cases = getCases();
+                return state.modal.mode === 'edit'
+                    ? cases.find(item => item.id === state.modal.itemId)
+                    : { title: '', client: '', category: '飲食', summary: '', services: [], date: '', imageUrl: '' };
+            }
+            const blogs = getBlogs();
+            return state.modal.mode === 'edit'
+                ? blogs.find(item => item.id === state.modal.itemId)
+                : { title: '', category: '小紅書運用', content: '', imageUrl: '', date: '', status: '公開' };
+        }
+
+        function renderModal() {
+            if (!state.modal.open) return '';
+            const data = getModalData();
+            if (!data) return '';
+            const isCase = state.modal.type === 'case';
+            return `
+                <div id="modal-backdrop" class="fixed inset-0 z-50 bg-slate-950/60 flex items-center justify-center p-4">
+                    <div class="w-full max-w-3xl bg-slate-900 text-white rounded-3xl shadow-2xl max-h-[90vh] overflow-hidden border border-white/10">
+                        <div class="flex items-center justify-between px-6 py-5 border-b border-white/10">
+                            <div>
+                                <p class="text-xs font-bold tracking-[0.3em] text-coral uppercase">PROTECH</p>
+                                <h3 class="text-xl font-bold mt-1">${isCase ? (state.modal.mode === 'edit' ? '導入事例を編集' : '導入事例を追加') : (state.modal.mode === 'edit' ? 'ブログ記事を編集' : 'ブログ記事を追加')}</h3>
+                            </div>
+                            <button id="modal-close" class="rounded-xl border border-white/10 p-2 hover:bg-white/10 transition" aria-label="Close modal">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <form id="modal-form" data-type="${isCase ? 'case' : 'blog'}" class="modal-scrollbar overflow-y-auto max-h-[calc(90vh-84px)] px-6 py-6 space-y-5">
+                            <input type="hidden" name="itemId" value="${escapeHtml(state.modal.itemId || '')}">
+                            ${isCase ? `
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div class="md:col-span-2">
+                                        <label class="block text-sm font-medium text-white/80 mb-2">タイトル</label>
+                                        <input name="title" type="text" value="${escapeHtml(data.title)}" class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-2">クライアント名</label>
+                                        <input name="client" type="text" value="${escapeHtml(data.client)}" class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-2">業種</label>
+                                        <select name="category" class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral">
+                                            ${['飲食', '小売', '美容', '観光', 'その他'].map(option => `<option value="${option}" ${data.category === option ? 'selected' : ''}>${option}</option>`).join('')}
+                                        </select>
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <label class="block text-sm font-medium text-white/80">成果サマリー</label>
+                                            <button type="button" id="gdoc-paste-case" class="text-xs bg-white/10 hover:bg-white/20 text-white/80 hover:text-white px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                                Google Docから貼り付け
+                                            </button>
+                                        </div>
+                                        <textarea name="summary" id="case-summary" rows="4" class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral">${escapeHtml(data.summary)}</textarea>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-2">使用サービス tags</label>
+                                        <input name="services" type="text" value="${escapeHtml((data.services || []).join(', '))}" placeholder="SNS戦略, インフルエンサー" class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-2">公開日</label>
+                                        <input name="date" type="date" value="${escapeHtml(data.date)}" class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label class="block text-sm font-medium text-white/80 mb-2">画像URL（クラウドホスト）</label>
+                                        <input name="imageUrl" id="case-image-url" type="text" value="${escapeHtml(data.imageUrl || '')}" placeholder="https://..." class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label class="block text-sm font-medium text-white/80 mb-2">画像アップロード（JPG / PNG / WebP）</label>
+                                        <div class="flex items-center gap-3">
+                                            <label class="cursor-pointer inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white/80 hover:text-white px-4 py-2.5 rounded-xl transition text-sm font-medium">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                                画像アップロード
+                                                <input type="file" id="case-image-file" accept="image/jpeg,image/png,image/webp" class="hidden">
+                                            </label>
+                                            <span id="case-image-filename" class="text-xs text-white/50 truncate max-w-xs"></span>
+                                        </div>
+                                        <div id="case-image-preview" class="${data.imageUrl ? '' : 'hidden'} mt-3">
+                                            <img id="case-image-preview-img" src="${escapeHtml(data.imageUrl || '')}" alt="プレビュー" class="max-h-40 rounded-xl border border-white/10 object-cover">
+                                        </div>
+                                    </div>
+                                </div>
+                            ` : `
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div class="md:col-span-2">
+                                        <label class="block text-sm font-medium text-white/80 mb-2">タイトル</label>
+                                        <input name="title" type="text" value="${escapeHtml(data.title)}" class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-2">カテゴリ</label>
+                                        <select name="category" class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral">
+                                            ${['小紅書運用', 'インバウンド', 'マーケティング', '運営ノウハウ'].map(option => `<option value="${option}" ${data.category === option ? 'selected' : ''}>${option}</option>`).join('')}
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-2">公開日</label>
+                                        <input name="date" type="date" value="${escapeHtml(data.date)}" class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <label class="block text-sm font-medium text-white/80">本文</label>
+                                            <button type="button" id="gdoc-paste-blog" class="text-xs bg-white/10 hover:bg-white/20 text-white/80 hover:text-white px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                                Google Docから貼り付け
+                                            </button>
+                                        </div>
+                                        <textarea name="content" id="blog-content" rows="10" class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" required>${escapeHtml(data.content)}</textarea>
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label class="block text-sm font-medium text-white/80 mb-2">画像URL（クラウドホスト）</label>
+                                        <input name="imageUrl" id="blog-image-url" type="text" value="${escapeHtml(data.imageUrl)}" placeholder="https://..." class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label class="block text-sm font-medium text-white/80 mb-2">画像アップロード（JPG / PNG / WebP）</label>
+                                        <div class="flex items-center gap-3">
+                                            <label class="cursor-pointer inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white/80 hover:text-white px-4 py-2.5 rounded-xl transition text-sm font-medium">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                                画像アップロード
+                                                <input type="file" id="blog-image-file" accept="image/jpeg,image/png,image/webp" class="hidden">
+                                            </label>
+                                            <span id="blog-image-filename" class="text-xs text-white/50 truncate max-w-xs"></span>
+                                        </div>
+                                        <div id="blog-image-preview" class="${data.imageUrl ? '' : 'hidden'} mt-3">
+                                            <img id="blog-image-preview-img" src="${escapeHtml(data.imageUrl)}" alt="プレビュー" class="max-h-40 rounded-xl border border-white/10 object-cover">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-2">ステータス</label>
+                                        <select name="status" class="w-full rounded-xl border border-white/10 bg-slate-800 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral">
+                                            ${['公開', '下書き'].map(option => `<option value="${option}" ${data.status === option ? 'selected' : ''}>${option}</option>`).join('')}
+                                        </select>
+                                    </div>
+                                </div>
+                            `}
+                            ${state.modal.error ? `<p class="text-sm text-rose-300 bg-rose-500/10 border border-rose-500/20 rounded-xl px-4 py-3">${escapeHtml(state.modal.error)}</p>` : ''}
+                            <div class="flex flex-col-reverse sm:flex-row sm:justify-end gap-3 pt-2">
+                                <button type="button" id="modal-cancel" class="rounded-xl border border-white/10 px-5 py-3 font-medium hover:bg-white/10 transition">キャンセル</button>
+                                <button type="submit" class="rounded-xl bg-coral hover:bg-rose-500 px-5 py-3 font-bold transition">保存する</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderAuthenticatedApp() {
+            const content = state.currentSection === 'cases'
+                ? renderCasesSection()
+                : state.currentSection === 'blogs'
+                    ? renderBlogsSection()
+                    : renderDashboardHome();
+
+            return `
+                <div class="min-h-screen bg-slate-100">
+                    ${renderSidebar()}
+                    <div class="lg:pl-64 min-h-screen">
+                        <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-slate-200 px-4 md:px-8 py-4">
+                            <div class="flex items-center justify-between gap-4">
+                                <div class="flex items-center gap-3">
+                                    <button id="open-sidebar" class="lg:hidden rounded-xl border border-slate-200 bg-white p-2.5 shadow-sm" aria-label="Open sidebar">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+                                        </svg>
+                                    </button>
+                                    <div>
+                                        <p class="text-xs font-bold tracking-[0.3em] text-coral uppercase">Admin</p>
+                                        <h1 class="text-xl md:text-2xl font-bold text-slate-900">${getSectionTitle()}</h1>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xs text-slate-500">ログインユーザー</p>
+                                    <p class="font-semibold text-slate-900">${escapeHtml(state.user.username)}</p>
+                                </div>
+                            </div>
+                        </header>
+                        <main class="p-4 md:p-8">${content}</main>
+                    </div>
+                    ${renderModal()}
+                </div>
+            `;
+        }
+
+        function render() {
+            const app = document.getElementById('app');
+            app.innerHTML = state.user ? renderAuthenticatedApp() : renderLogin();
+            bindEvents();
+        }
+
+        function bindEvents() {
+            const loginForm = document.getElementById('login-form');
+            if (loginForm) {
+                loginForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const form = new FormData(loginForm);
+                    const errorEl = document.getElementById('login-error');
+                    const ok = login(form.get('username')?.toString().trim(), form.get('password')?.toString());
+                    if (!ok) {
+                        errorEl.textContent = 'ユーザー名またはパスワードが正しくありません。';
+                        errorEl.classList.remove('hidden');
+                    }
+                });
+            }
+
+            document.querySelectorAll('[data-nav]').forEach(button => {
+                button.addEventListener('click', () => {
+                    state.currentSection = button.dataset.nav;
+                    state.sidebarOpen = false;
+                    render();
+                });
+            });
+
+            document.getElementById('logout-btn')?.addEventListener('click', logout);
+            document.getElementById('open-sidebar')?.addEventListener('click', () => {
+                state.sidebarOpen = true;
+                render();
+            });
+            document.getElementById('close-sidebar')?.addEventListener('click', () => {
+                state.sidebarOpen = false;
+                render();
+            });
+            document.getElementById('sidebar-backdrop')?.addEventListener('click', () => {
+                state.sidebarOpen = false;
+                render();
+            });
+
+            document.querySelectorAll('.quick-action').forEach(button => {
+                button.addEventListener('click', () => {
+                    const type = button.dataset.quick === 'case' ? 'case' : 'blog';
+                    state.currentSection = type === 'case' ? 'cases' : 'blogs';
+                    openModal(type, 'create');
+                });
+            });
+
+            document.getElementById('add-case-btn')?.addEventListener('click', () => openModal('case', 'create'));
+            document.getElementById('add-blog-btn')?.addEventListener('click', () => openModal('blog', 'create'));
+
+            document.querySelectorAll('[data-edit-case]').forEach(button => {
+                button.addEventListener('click', () => openModal('case', 'edit', button.dataset.editCase));
+            });
+            document.querySelectorAll('[data-edit-blog]').forEach(button => {
+                button.addEventListener('click', () => openModal('blog', 'edit', button.dataset.editBlog));
+            });
+
+            document.querySelectorAll('[data-delete-case]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const items = getCases().filter(item => item.id !== button.dataset.deleteCase);
+                    setCases(items);
+                    render();
+                });
+            });
+            document.querySelectorAll('[data-delete-blog]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const items = getBlogs().filter(item => item.id !== button.dataset.deleteBlog);
+                    setBlogs(items);
+                    render();
+                });
+            });
+
+            document.getElementById('modal-close')?.addEventListener('click', closeModal);
+            document.getElementById('modal-cancel')?.addEventListener('click', closeModal);
+            document.getElementById('modal-backdrop')?.addEventListener('click', (event) => {
+                if (event.target.id === 'modal-backdrop') closeModal();
+            });
+
+            const modalForm = document.getElementById('modal-form');
+            if (modalForm) {
+                modalForm.addEventListener('submit', handleModalSubmit);
+            }
+
+            // ── Google Doc paste: case summary ────────────────────────────
+            document.getElementById('gdoc-paste-case')?.addEventListener('click', async () => {
+                try {
+                    const items = await navigator.clipboard.read();
+                    let html = '';
+                    for (const item of items) {
+                        if (item.types.includes('text/html')) {
+                            const blob = await item.getType('text/html');
+                            html = await blob.text();
+                            break;
+                        }
+                    }
+                    if (!html) {
+                        // fallback: plain text
+                        html = await navigator.clipboard.readText();
+                    }
+                    const clean = stripGoogleDocsHtml(html);
+                    const ta = document.getElementById('case-summary');
+                    if (ta) ta.value = clean;
+                } catch (err) {
+                    alert('クリップボードへのアクセスが拒否されました。ブラウザの権限設定を確認してください。');
+                }
+            });
+
+            // ── Google Doc paste: blog content ────────────────────────────
+            document.getElementById('gdoc-paste-blog')?.addEventListener('click', async () => {
+                try {
+                    const items = await navigator.clipboard.read();
+                    let html = '';
+                    for (const item of items) {
+                        if (item.types.includes('text/html')) {
+                            const blob = await item.getType('text/html');
+                            html = await blob.text();
+                            break;
+                        }
+                    }
+                    if (!html) {
+                        html = await navigator.clipboard.readText();
+                    }
+                    const clean = stripGoogleDocsHtml(html);
+                    const ta = document.getElementById('blog-content');
+                    if (ta) ta.value = clean;
+                } catch (err) {
+                    alert('クリップボードへのアクセスが拒否されました。ブラウザの権限設定を確認してください。');
+                }
+            });
+
+            // ── Image upload: case ────────────────────────────────────────
+            document.getElementById('case-image-file')?.addEventListener('change', async (e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                const filenameEl = document.getElementById('case-image-filename');
+                const previewWrap = document.getElementById('case-image-preview');
+                const previewImg = document.getElementById('case-image-preview-img');
+                const urlInput = document.getElementById('case-image-url');
+                if (filenameEl) filenameEl.textContent = `処理中... (${(file.size / 1024 / 1024).toFixed(1)} MB)`;
+                try {
+                    const dataUrl = await compressImage(file, 3);
+                    if (urlInput) urlInput.value = dataUrl;
+                    if (previewImg) previewImg.src = dataUrl;
+                    if (previewWrap) previewWrap.classList.remove('hidden');
+                    if (filenameEl) filenameEl.textContent = file.name;
+                } catch (err) {
+                    if (filenameEl) filenameEl.textContent = 'エラーが発生しました';
+                }
+            });
+
+            // ── Image upload: blog ────────────────────────────────────────
+            document.getElementById('blog-image-file')?.addEventListener('change', async (e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                const filenameEl = document.getElementById('blog-image-filename');
+                const previewWrap = document.getElementById('blog-image-preview');
+                const previewImg = document.getElementById('blog-image-preview-img');
+                const urlInput = document.getElementById('blog-image-url');
+                if (filenameEl) filenameEl.textContent = `処理中... (${(file.size / 1024 / 1024).toFixed(1)} MB)`;
+                try {
+                    const dataUrl = await compressImage(file, 3);
+                    if (urlInput) urlInput.value = dataUrl;
+                    if (previewImg) previewImg.src = dataUrl;
+                    if (previewWrap) previewWrap.classList.remove('hidden');
+                    if (filenameEl) filenameEl.textContent = file.name;
+                } catch (err) {
+                    if (filenameEl) filenameEl.textContent = 'エラーが発生しました';
+                }
+            });
+
+            // ── Live URL preview: case ────────────────────────────────────
+            document.getElementById('case-image-url')?.addEventListener('input', (e) => {
+                const val = e.target.value.trim();
+                const previewWrap = document.getElementById('case-image-preview');
+                const previewImg = document.getElementById('case-image-preview-img');
+                if (val && previewImg && previewWrap) {
+                    previewImg.src = val;
+                    previewWrap.classList.remove('hidden');
+                } else if (previewWrap) {
+                    previewWrap.classList.add('hidden');
+                }
+            });
+
+            // ── Live URL preview: blog ────────────────────────────────────
+            document.getElementById('blog-image-url')?.addEventListener('input', (e) => {
+                const val = e.target.value.trim();
+                const previewWrap = document.getElementById('blog-image-preview');
+                const previewImg = document.getElementById('blog-image-preview-img');
+                if (val && previewImg && previewWrap) {
+                    previewImg.src = val;
+                    previewWrap.classList.remove('hidden');
+                } else if (previewWrap) {
+                    previewWrap.classList.add('hidden');
+                }
+            });
+        }
+
+        function handleModalSubmit(event) {
+            event.preventDefault();
+            const formEl = event.currentTarget;
+            const form = new FormData(formEl);
+            const type = formEl.dataset.type;
+
+            if (type === 'case') {
+                const title = form.get('title')?.toString().trim();
+                const client = form.get('client')?.toString().trim();
+                if (!title || !client) {
+                    state.modal.error = 'タイトルとクライアント名は必須です。';
+                    render();
+                    return;
+                }
+                const item = {
+                    id: form.get('itemId')?.toString() || crypto.randomUUID(),
+                    title,
+                    client,
+                    category: form.get('category')?.toString() || 'その他',
+                    summary: form.get('summary')?.toString().trim() || '',
+                    services: form.get('services')?.toString().split(',').map(tag => tag.trim()).filter(Boolean),
+                    date: form.get('date')?.toString() || '',
+                    imageUrl: form.get('imageUrl')?.toString().trim() || ''
+                };
+                const items = getCases();
+                const index = items.findIndex(existing => existing.id === item.id);
+                if (index >= 0) items[index] = item; else items.push(item);
+                setCases(items);
+                closeModal();
+                state.currentSection = 'cases';
+                render();
+                return;
+            }
+
+            const title = form.get('title')?.toString().trim();
+            const content = form.get('content')?.toString().trim();
+            if (!title || !content) {
+                state.modal.error = 'タイトルと本文は必須です。';
+                render();
+                return;
+            }
+            const item = {
+                id: form.get('itemId')?.toString() || crypto.randomUUID(),
+                title,
+                category: form.get('category')?.toString() || 'マーケティング',
+                content,
+                imageUrl: form.get('imageUrl')?.toString().trim() || '',
+                date: form.get('date')?.toString() || '',
+                status: form.get('status')?.toString() || '下書き'
+            };
+            const items = getBlogs();
+            const index = items.findIndex(existing => existing.id === item.id);
+            if (index >= 0) items[index] = item; else items.push(item);
+            setBlogs(items);
+            closeModal();
+            state.currentSection = 'blogs';
+            render();
+        }
+
+        initializeStorage();
+        restoreSession();
+        render();
+    </script>
+</body>
+</html>

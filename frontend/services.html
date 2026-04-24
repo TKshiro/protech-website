@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>サービス - PROTECH株式会社</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
 
-    <meta name="description" content="PROTECHのサービス一覧。小紅書(RED)マーケティング運用代行、Web・App開発、UI/UXデザインなど。">
-    <meta name="keywords" content="サービス, 小紅書, RED, マーケティング, Web開発, App開発, PROTECH">
+    <meta name="description" content="PROTECHのサービス一覧。小紅書(RED)マーケティング運用代行で、日本企業の中国市場進出・インバウンド集客をワンストップで支援します。">
+    <meta name="keywords" content="サービス, 小紅書, RED, マーケティング, インバウンド, KOL, 中国市場, PROTECH">
     <link rel="canonical" href="https://www.pro-tech.jp/services.html">
 
     <meta property="og:title" content="サービス - PROTECH">
@@ -19,7 +19,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@600&family=Inter:wght@300;400;600;700;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -42,21 +42,30 @@
         :root {
             --tech-blue: #001A33;
             --coral: #E86B7A;
+            --font-h1: 48px;
+            --font-h2: 24px;
+            --font-body: 15px;
+            --font-button: 12px;
         }
 
         body {
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'M PLUS 1p', sans-serif;
+            font-size: var(--font-body);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
         .serif {
-            font-family: 'Noto Serif JP', serif;
+            font-family: 'M PLUS 1p', sans-serif;
         }
 
         .inter {
-            font-family: 'Inter', sans-serif;
+            font-family: 'M PLUS 1p', sans-serif;
         }
+
+        h1 { font-size: var(--font-h1); }
+        h2 { font-size: var(--font-h2); }
+        p, body { font-size: var(--font-body); }
 
         .glass-nav {
             background: rgba(255, 255, 255, 0.92);
@@ -167,11 +176,12 @@
                 class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
             <div
                 class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="index.html" class="nav-link">TOP</a>
-                <a href="services.html" class="nav-link text-coral">SERVICES</a>
-                <a href="company.html" class="nav-link">COMPANY</a>
-                <a href="news.html" class="nav-link">NEWS</a>
-                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="index.html" class="nav-link">トップ</a>
+                <a href="red.html" class="nav-link">小紅書</a>
+                <a href="services.html" class="nav-link text-coral">サービス</a>
+                <a href="company.html" class="nav-link">会社概要</a>
+                <a href="cases.html" class="nav-link">導入事例</a>
+                <a href="blog.html" class="nav-link">ブログ</a>
                 <a href="contact.html"
                     class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>
@@ -188,12 +198,13 @@
     <div id="mobile-menu"
         class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
-            <a href="services.html" class="text-lg font-bold text-coral">SERVICES</a>
-            <a href="company.html" class="text-lg font-bold text-slate-700">COMPANY</a>
-            <a href="news.html" class="text-lg font-bold text-slate-700">NEWS</a>
-            <a href="blog.html" class="text-lg font-bold text-slate-700">BLOG</a>
-            <a href="contact.html" class="text-lg font-bold text-slate-700">CONTACT</a>
+            <a href="index.html" class="text-lg font-bold text-slate-700">トップ</a>
+            <a href="red.html" class="text-lg font-bold text-slate-700">小紅書</a>
+            <a href="services.html" class="text-lg font-bold text-coral">サービス</a>
+            <a href="company.html" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="cases.html" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="blog.html" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="contact.html" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
     </div>
 
@@ -202,11 +213,11 @@
         class="pt-32 md:pt-40 pb-20 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
         <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
-            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">OUR SERVICES</span>
+            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">サービス</span>
             <h1 class="text-4xl md:text-6xl font-bold serif text-tech-blue mb-6">サービス</h1>
             <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-                中国市場進出からデジタル開発まで。PROTECHが提供する<br class="hidden md:block">
-                2つのコアサービスをご紹介します。
+                小紅書(RED)マーケティングを核に、中国市場進出・インバウンド集客を<br class="hidden md:block">
+                トータルでご支援します。
             </p>
         </div>
     </section>
@@ -258,15 +269,15 @@
                 <div class="md:w-1/2" data-aos="fade-left">
                     <div class="grid grid-cols-3 gap-3">
                         <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+                            <img src="../assets/images/red-marketing.jpg"
                                 class="service-img w-full h-full object-cover" alt="小紅書マーケティング">
                         </div>
                         <div class="rounded-2xl overflow-hidden shadow-md">
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400"
+                            <img src="../assets/images/case-restaurant.jpg"
                                 class="service-img w-full h-full object-cover" alt="KOL">
                         </div>
                         <div class="rounded-2xl overflow-hidden shadow-md">
-                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400"
+                            <img src="../assets/images/office.jpg"
                                 class="service-img w-full h-full object-cover" alt="チーム">
                         </div>
                     </div>
@@ -286,7 +297,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="case-card bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                     <div class="aspect-[16/10] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+                        <img src="../assets/images/case-restaurant.jpg"
                             class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
@@ -298,7 +309,7 @@
                 </div>
                 <div class="case-card bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
                     <div class="aspect-[16/10] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=800"
+                        <img src="../assets/images/office.jpg"
                             class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
@@ -310,7 +321,7 @@
                 </div>
                 <div class="case-card bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
                     <div class="aspect-[16/10] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+                        <img src="../assets/images/hero-data.jpg"
                             class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
@@ -324,102 +335,13 @@
         </div>
     </section>
 
-    <!-- SERVICE 02: Web & App -->
-    <section class="py-20 md:py-28 px-8 bg-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-48 h-48 seigaiha-pattern opacity-20"></div>
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
-                <div class="md:w-1/2" data-aos="fade-left">
-                    <div class="mb-8">
-                        <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase inter">SERVICE 02</span>
-                        <div class="w-10 h-0.5 bg-coral mt-2"></div>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-tech-blue leading-tight mb-6 serif">
-                        Web & App 制作<br>デジタルソリューション
-                    </h2>
-                    <p class="text-gray-500 text-sm leading-loose mb-8 font-light">
-                        私たちは単に「動くもの」を作るのではありません。UX/UIを核とし、ビジネスの目的を達成するための「価値あるプロダクト」を構築します。
-                        企業サイト・ECサイト・業務システム・モバイルアプリまで幅広く対応。
-                    </p>
-                </div>
-                <div class="md:w-1/2" data-aos="fade-right">
-                    <div class="grid grid-cols-3 gap-3">
-                        <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
-                                class="service-img w-full h-full object-cover" alt="Web開発">
-                        </div>
-                        <div class="rounded-2xl overflow-hidden shadow-md">
-                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400"
-                                class="service-img w-full h-full object-cover" alt="開発チーム">
-                        </div>
-                        <div class="rounded-2xl overflow-hidden shadow-md">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400"
-                                class="service-img w-full h-full object-cover" alt="テクノロジー">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products -->
-    <section class="py-20 md:py-24 px-8 bg-warm-gray">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">PRODUCTS</span>
-                <h2 class="text-2xl md:text-3xl font-bold serif text-tech-blue">プロダクト</h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-8 items-center group"
-                    data-aos="fade-up">
-                    <div
-                        class="w-24 h-24 bg-tech-blue rounded-2xl flex-shrink-0 flex items-center justify-center text-white text-3xl font-bold shadow-xl transition group-hover:scale-110">
-                        漢</div>
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-bold mb-2 text-tech-blue">Kanji Practice JP</h3>
-                        <p class="text-sm text-gray-400 mb-6">日本語学習者向けの漢字練習ツール。最新のWeb技術を用いたインタラクティブな体験。</p>
-                        <div class="flex gap-4">
-                            <a href="https://kanji-practice-jp.vercel.app/" target="_blank"
-                                class="btn-coral px-8 py-2 rounded-full text-[10px] font-bold tracking-widest">LAUNCH
-                                WEB</a>
-                            <div
-                                class="bg-slate-100 text-slate-300 px-8 py-2 rounded-full text-[10px] font-bold cursor-not-allowed tracking-widest">
-                                iOS APP</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white/50 border border-dashed border-gray-300 rounded-2xl flex items-center justify-center p-10"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <p class="text-gray-300 font-bold uppercase text-[10px] tracking-[0.2em] italic">Next Product Coming
-                        Soon</p>
-                </div>
-            </div>
-
-            <div id="more-products" class="expand-content">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                    <div class="bg-white p-8 rounded-2xl border border-gray-100">
-                        <h4 class="font-bold text-sm mb-3 uppercase tracking-widest text-tech-blue">Gaming LP</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">没入感を高めるゲーム特化型ランディングページ。</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl border border-gray-100">
-                        <h4 class="font-bold text-sm mb-3 uppercase tracking-widest text-tech-blue">SaaS App</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">業務効率を最大化するビジネスアプリケーション。</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl border border-gray-100">
-                        <h4 class="font-bold text-sm mb-3 uppercase tracking-widest text-tech-blue">EC Solutions</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">越境ECに特化したシームレスな購入体験の構築。</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-16">
-                <button
-                    class="expand-btn inline-block px-12 py-4 border-2 border-coral/20 text-coral text-[10px] font-bold tracking-[0.3em] hover:bg-coral hover:text-white transition duration-300 uppercase rounded-full"
-                    data-target="more-products" data-open-text="CLOSE" data-close-text="VIEW MORE">
-                    VIEW MORE
-                </button>
-            </div>
+    <!-- その他サービス: Web & App (最小表示) -->
+    <section class="py-10 px-8 bg-white border-t border-gray-100">
+        <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+            <p class="text-gray-400 text-sm">
+                Web・App開発・UI/UXデザインなどのご相談も承っております。
+                <a href="contact.html" class="text-coral hover:underline font-bold">お問合せ</a>よりご連絡ください。
+            </p>
         </div>
     </section>
 
@@ -427,7 +349,7 @@
     <section class="py-24 md:py-32 bg-tech-blue px-6 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-96 h-96 bg-coral/10 rounded-full blur-[120px]"></div>
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <span class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase block mb-4">CONTACT</span>
+            <span class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase block mb-4">お問い合わせ</span>
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 serif">お気軽にご相談ください</h2>
             <p class="text-white/40 text-sm mb-10 max-w-lg mx-auto leading-relaxed">
                 サービスに関するご質問・お見積もり・資料請求など、何でもお気軽にご連絡ください。
@@ -451,25 +373,25 @@
                     <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
-                        <li><a href="services.html" class="hover:text-coral transition">Web・App開発</a></li>
-                        <li><a href="services.html" class="hover:text-coral transition">UI/UXデザイン</a></li>
+                        <li><a href="services.html" class="hover:text-coral transition">その他サービス</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="company.html" class="hover:text-coral transition">会社概要</a></li>
-                        <li><a href="news.html" class="hover:text-coral transition">ニュース</a></li>
+                        <li><a href="cases.html" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="blog.html" class="hover:text-coral transition">ブログ</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Contact</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">お問合せ</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="contact.html" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

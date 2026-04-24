@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>企業情報 - PROTECH株式会社</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
 
     <meta name="description" content="PROTECH株式会社の企業情報。ビジョン、ミッション、事業内容、アクセス情報をご覧ください。">
     <meta name="keywords" content="企業情報, 会社概要, PROTECH, ビジョン, ミッション">
@@ -19,7 +19,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@600&family=Inter:wght@300;400;600;700;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -42,21 +42,30 @@
         :root {
             --tech-blue: #001A33;
             --coral: #E86B7A;
+            --font-h1: 48px;
+            --font-h2: 24px;
+            --font-body: 15px;
+            --font-button: 12px;
         }
 
         body {
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'M PLUS 1p', sans-serif;
+            font-size: var(--font-body);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
         .serif {
-            font-family: 'Noto Serif JP', serif;
+            font-family: 'M PLUS 1p', sans-serif;
         }
 
         .inter {
-            font-family: 'Inter', sans-serif;
+            font-family: 'M PLUS 1p', sans-serif;
         }
+
+        h1 { font-size: var(--font-h1); }
+        h2 { font-size: var(--font-h2); }
+        p, body { font-size: var(--font-body); }
 
         .glass-nav {
             background: rgba(255, 255, 255, 0.92);
@@ -138,11 +147,12 @@
                 class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
             <div
                 class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="index.html" class="nav-link">TOP</a>
-                <a href="services.html" class="nav-link">SERVICES</a>
-                <a href="company.html" class="nav-link text-coral">COMPANY</a>
-                <a href="news.html" class="nav-link">NEWS</a>
-                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="index.html" class="nav-link">トップ</a>
+                <a href="red.html" class="nav-link">小紅書</a>
+                <a href="services.html" class="nav-link">サービス</a>
+                <a href="company.html" class="nav-link text-coral">会社概要</a>
+                <a href="cases.html" class="nav-link">導入事例</a>
+                <a href="blog.html" class="nav-link">ブログ</a>
                 <a href="contact.html"
                     class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>
@@ -159,12 +169,13 @@
     <div id="mobile-menu"
         class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
-            <a href="services.html" class="text-lg font-bold text-slate-700">SERVICES</a>
-            <a href="company.html" class="text-lg font-bold text-coral">COMPANY</a>
-            <a href="news.html" class="text-lg font-bold text-slate-700">NEWS</a>
-            <a href="blog.html" class="text-lg font-bold text-slate-700">BLOG</a>
-            <a href="contact.html" class="text-lg font-bold text-slate-700">CONTACT</a>
+            <a href="index.html" class="text-lg font-bold text-slate-700">トップ</a>
+            <a href="red.html" class="text-lg font-bold text-slate-700">小紅書</a>
+            <a href="services.html" class="text-lg font-bold text-slate-700">サービス</a>
+            <a href="company.html" class="text-lg font-bold text-coral">会社概要</a>
+            <a href="cases.html" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="blog.html" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="contact.html" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
     </div>
 
@@ -173,7 +184,7 @@
         class="pt-32 md:pt-40 pb-20 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
         <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
-            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">COMPANY</span>
+            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">会社概要</span>
             <h1 class="text-4xl md:text-6xl font-bold serif text-tech-blue mb-6">会社概要</h1>
             <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
                 テクノロジーとマーケティングで、<br>ビジネスの境界を越える。
@@ -276,7 +287,7 @@
     <section class="py-24 md:py-32 bg-tech-blue px-6 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-96 h-96 bg-coral/10 rounded-full blur-[120px]"></div>
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <span class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase block mb-4">CONTACT</span>
+            <span class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase block mb-4">お問い合わせ</span>
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 serif">お気軽にご相談ください</h2>
             <p class="text-white/40 text-sm mb-10 max-w-lg mx-auto leading-relaxed">
                 サービスに関するご質問・お見積もり・資料請求など、何でもお気軽にご連絡ください。
@@ -300,24 +311,26 @@
                     <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
-                        <li><a href="services.html" class="hover:text-coral transition">Web・App開発</a></li>
+                        
+                        <li><a href="services.html" class="hover:text-coral transition">UI/UXデザイン</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="company.html" class="hover:text-coral transition">会社概要</a></li>
-                        <li><a href="news.html" class="hover:text-coral transition">ニュース</a></li>
+                        <li><a href="cases.html" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="blog.html" class="hover:text-coral transition">ブログ</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Contact</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">お問合せ</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="contact.html" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お問い合わせ | PROTECH株式会社</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
 
     <meta name="description" content="PROTECHへのお問い合わせ。サービスに関するご質問やお見積もりなど、お気軽にご連絡ください。">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@600&family=Inter:wght@300;400;600;700;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -35,21 +35,30 @@
         :root {
             --tech-blue: #001A33;
             --coral: #E86B7A;
+            --font-h1: 48px;
+            --font-h2: 24px;
+            --font-body: 15px;
+            --font-button: 12px;
         }
 
         body {
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'M PLUS 1p', sans-serif;
+            font-size: var(--font-body);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
         .serif {
-            font-family: 'Noto Serif JP', serif;
+            font-family: 'M PLUS 1p', sans-serif;
         }
 
         .inter {
-            font-family: 'Inter', sans-serif;
+            font-family: 'M PLUS 1p', sans-serif;
         }
+
+        h1 { font-size: var(--font-h1); }
+        h2 { font-size: var(--font-h2); }
+        p, body { font-size: var(--font-body); }
 
         .glass-nav {
             background: rgba(255, 255, 255, 0.92);
@@ -120,10 +129,10 @@
             box-shadow: 0 8px 25px rgba(232, 107, 122, 0.3);
         }
 
-        input:focus,
-        textarea:focus {
-            ring-color: var(--coral) !important;
-            border-color: var(--coral) !important;
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--coral);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(232, 107, 122, 0.2);
         }
     </style>
 </head>
@@ -137,11 +146,12 @@
                 class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
             <div
                 class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="index.html" class="nav-link">TOP</a>
-                <a href="services.html" class="nav-link">SERVICES</a>
-                <a href="company.html" class="nav-link">COMPANY</a>
-                <a href="news.html" class="nav-link">NEWS</a>
-                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="index.html" class="nav-link">トップ</a>
+                <a href="red.html" class="nav-link">小紅書</a>
+                <a href="services.html" class="nav-link">サービス</a>
+                <a href="company.html" class="nav-link">会社概要</a>
+                <a href="cases.html" class="nav-link">導入事例</a>
+                <a href="blog.html" class="nav-link">ブログ</a>
                 <a href="contact.html"
                     class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>
@@ -158,12 +168,13 @@
     <div id="mobile-menu"
         class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
-            <a href="services.html" class="text-lg font-bold text-slate-700">SERVICES</a>
-            <a href="company.html" class="text-lg font-bold text-slate-700">COMPANY</a>
-            <a href="news.html" class="text-lg font-bold text-slate-700">NEWS</a>
-            <a href="blog.html" class="text-lg font-bold text-slate-700">BLOG</a>
-            <a href="contact.html" class="text-lg font-bold text-coral">CONTACT</a>
+            <a href="index.html" class="text-lg font-bold text-slate-700">トップ</a>
+            <a href="red.html" class="text-lg font-bold text-slate-700">小紅書</a>
+            <a href="services.html" class="text-lg font-bold text-slate-700">サービス</a>
+            <a href="company.html" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="cases.html" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="blog.html" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="contact.html" class="text-lg font-bold text-coral">お問合せ</a>
         </div>
     </div>
 
@@ -172,7 +183,7 @@
         class="pt-32 md:pt-40 pb-16 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
         <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
-            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">CONTACT</span>
+            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">お問い合わせ</span>
             <h1 class="text-4xl md:text-6xl font-bold serif text-tech-blue mb-6">お問い合わせ</h1>
             <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
                 サービスに関するご質問やお見積もりなど、<br class="hidden md:block">
@@ -225,6 +236,19 @@
                         </div>
 
                         <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お問い合わせ種別 *</label>
+                                <select id="inquiry_type" name="inquiry_type" required
+                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                    <option value="">選択してください</option>
+                                    <option value="red_marketing">小紅書(RED)マーケティング</option>
+                                    <option value="web_development">Web・App開発</option>
+                                    <option value="ui_ux_design">UI/UXデザイン</option>
+                                    <option value="consultation">サービス全般のご相談</option>
+                                    <option value="estimate">お見積もり依頼</option>
+                                    <option value="other">その他</option>
+                                </select>
+                            </div>
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お名前
@@ -239,17 +263,52 @@
                                         class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
                                 </div>
                             </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">メールアドレス
+                                        *</label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">電話番号</label>
+                                    <input type="tel" id="phone" name="phone"
+                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm"
+                                        placeholder="03-1234-5678">
+                                </div>
+                            </div>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">メールアドレス
-                                    *</label>
-                                <input type="email" id="email" name="email" required
+                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">ご予算</label>
+                                <select id="budget" name="budget"
                                     class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                    <option value="">選択してください</option>
+                                    <option value="under_500k">50万円未満</option>
+                                    <option value="500k_1m">50万円〜100万円</option>
+                                    <option value="1m_3m">100万円〜300万円</option>
+                                    <option value="3m_5m">300万円〜500万円</option>
+                                    <option value="over_5m">500万円以上</option>
+                                    <option value="undecided">未定・相談したい</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">PROTECHを知ったきっかけ</label>
+                                <select id="referral_source" name="referral_source"
+                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                    <option value="">選択してください</option>
+                                    <option value="web_search">Web検索</option>
+                                    <option value="sns">SNS（小紅書・X・Instagram等）</option>
+                                    <option value="referral">知人の紹介</option>
+                                    <option value="event">イベント・セミナー</option>
+                                    <option value="media">メディア・記事</option>
+                                    <option value="other">その他</option>
+                                </select>
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お問い合わせ内容
                                     *</label>
                                 <textarea id="message" name="message" rows="6" required
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm resize-none"></textarea>
+                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm resize-none"
+                                    placeholder="具体的なご相談内容をご記入ください"></textarea>
                             </div>
 
                             <button type="submit" id="submitBtn"
@@ -277,24 +336,26 @@
                     <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
-                        <li><a href="services.html" class="hover:text-coral transition">Web・App開発</a></li>
+                        
+                        
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="company.html" class="hover:text-coral transition">会社概要</a></li>
-                        <li><a href="news.html" class="hover:text-coral transition">ニュース</a></li>
+                        <li><a href="cases.html" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="blog.html" class="hover:text-coral transition">ブログ</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Contact</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">お問合せ</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="contact.html" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

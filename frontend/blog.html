@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ブログ - PROTECH株式会社</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+
+    <meta name="description" content="PROTECHのブログ。小紅書マーケティング、インバウンド戦略、デジタルマーケティングに関する最新情報と知見をお届けします。">
+    <meta name="keywords" content="ブログ, 小紅書, RED, インバウンド, マーケティング, PROTECH">
+    <link rel="canonical" href="https://www.pro-tech.jp/blog.html">
+    <link rel="alternate" type="application/rss+xml" title="PROTECH Blog RSS" href="https://www.pro-tech.jp/rss.xml">
+
+    <meta property="og:title" content="ブログ - PROTECH">
+    <meta property="og:description" content="PROTECHのブログ。小紅書マーケティング・インバウンド戦略に関する最新情報。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pro-tech.jp/blog.html">
+    <meta property="og:image" content="https://www.pro-tech.jp/img/og-image.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --tech-blue: #001A33;
+            --font-h1: 48px;
+            --font-h2: 24px;
+            --font-body: 15px;
+            --font-button: 12px;
+        }
+
+        body {
+            font-family: 'M PLUS 1p', sans-serif;
+            font-size: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .serif {
+            font-family: 'M PLUS 1p', sans-serif;
+        }
+
+        h1 { font-size: var(--font-h1); }
+        h2 { font-size: var(--font-h2); }
+        p, body { font-size: var(--font-body); }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+        }
+
+        .filter-btn {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #94a3b8;
+        }
+
+        .filter-btn.active {
+            color: var(--tech-blue);
+            font-weight: 700;
+        }
+
+        .filter-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--tech-blue);
+        }
+
+        .hamburger line {
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .hamburger.active #line1 {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.active #line2 {
+            opacity: 0;
+        }
+
+        .hamburger.active #line3 {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .btn-coral {
+            background: #E86B7A;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        .btn-coral:hover {
+            opacity: 0.85;
+        }
+
+        .text-coral {
+            color: #E86B7A !important;
+        }
+
+        .nav-link {
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #E86B7A;
+        }
+
+        .card-img-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            height: 200px;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'tech-blue': '#001A33', 'coral': '#E86B7A' }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-slate-900">
+
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="index.html" class="nav-link">トップ</a>
+                <a href="red.html" class="nav-link">小紅書</a>
+                <a href="services.html" class="nav-link">サービス</a>
+                <a href="company.html" class="nav-link">会社概要</a>
+                <a href="cases.html" class="nav-link">導入事例</a>
+                <a href="blog.html" class="nav-link text-coral">ブログ</a>
+                <a href="contact.html" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden transition-transform duration-300 ease-in-out">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
+            <a href="index.html" class="text-lg font-bold text-slate-700">トップ</a>
+            <a href="red.html" class="text-lg font-bold text-slate-700">小紅書</a>
+            <a href="services.html" class="text-lg font-bold text-slate-700">サービス</a>
+            <a href="company.html" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="cases.html" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="blog.html" class="text-lg font-bold text-coral">ブログ</a>
+            <a href="contact.html" class="text-lg font-bold text-slate-700">お問合せ</a>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <main class="max-w-6xl mx-auto px-8 pt-40 md:pt-48 pb-20">
+
+        <!-- Page Header -->
+        <header class="mb-16 border-b border-gray-100 pb-16" data-aos="fade-up">
+            <p class="text-tech-blue text-[10px] font-bold tracking-[0.3em] uppercase mb-4">ブログ</p>
+            <h1 class="text-4xl md:text-5xl font-bold serif text-tech-blue mb-6 uppercase tracking-widest">Insights &amp; Knowledge</h1>
+            <p class="text-gray-400 text-xs tracking-[0.2em] font-light">小紅書・インバウンドマーケティングの知見</p>
+        </header>
+
+        <!-- Category Filter -->
+        <div id="filter-controls" class="flex flex-wrap gap-8 text-[10px] tracking-[0.2em] uppercase mb-12 border-b border-gray-100 pb-4" data-aos="fade-up">
+            <button data-filter="all" class="filter-btn active">All</button>
+            <button data-filter="小紅書運用" class="filter-btn">小紅書運用</button>
+            <button data-filter="インバウンド" class="filter-btn">インバウンド</button>
+            <button data-filter="マーケティング" class="filter-btn">マーケティング</button>
+            <button data-filter="運営ノウハウ" class="filter-btn">運営ノウハウ</button>
+        </div>
+
+        <!-- Blog Card Grid -->
+        <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Article 1 -->
+            <a href="blog/red-account-basics.html"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="小紅書運用" data-aos="fade-up">
+                <div class="overflow-hidden bg-slate-100 h-48 flex items-center justify-center">
+                    <img src="../assets/images/red-marketing.jpg"
+                        alt="小紅書アカウント運用の基本"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display:none;" class="w-full h-full items-center justify-center bg-slate-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.03.04</span>
+                        <span class="text-[9px] font-bold bg-red-50 text-red-500 px-3 py-1 rounded uppercase tracking-widest">小紅書運用</span>
+                    </div>
+                    <h3 class="font-bold text-base text-tech-blue group-hover:text-coral transition mb-3 leading-snug">
+                        小紅書アカウント運用の基本：日本企業が最初に知るべき5つのこと
+                    </h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">
+                        小紅書（RED）でアカウントを開設したばかりの日本企業向けに、プロフィール設定からコンテンツ方針まで、最初に押さえるべき基本事項を5つのポイントで解説します。
+                    </p>
+                    <div class="mt-5 flex items-center justify-between">
+                        <span class="text-[10px] text-gray-300 tracking-widest">8 MIN READ</span>
+                        <span class="text-xs font-bold text-coral tracking-widest uppercase group-hover:translate-x-1 transition-transform inline-block">READ MORE →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 2 -->
+            <a href="blog/inbound-xiaohongshu-2026.html"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="インバウンド" data-aos="fade-up" data-aos-delay="100">
+                <div class="overflow-hidden bg-slate-100 h-48 flex items-center justify-center">
+                    <img src="../assets/images/case-tourism.jpg"
+                        alt="インバウンド集客を小紅書で加速させる方法"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display:none;" class="w-full h-full items-center justify-center bg-slate-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.03.20</span>
+                        <span class="text-[9px] font-bold bg-blue-50 text-blue-500 px-3 py-1 rounded uppercase tracking-widest">インバウンド</span>
+                    </div>
+                    <h3 class="font-bold text-base text-tech-blue group-hover:text-coral transition mb-3 leading-snug">
+                        インバウンド集客を小紅書で加速させる方法：2026年最新戦略
+                    </h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">
+                        訪日中国人観光客の情報収集の場として小紅書は欠かせない存在です。2026年最新データをもとに、インバウンド集客に直結する投稿戦略とアカウント設計のポイントを解説します。
+                    </p>
+                    <div class="mt-5 flex items-center justify-between">
+                        <span class="text-[10px] text-gray-300 tracking-widest">10 MIN READ</span>
+                        <span class="text-xs font-bold text-coral tracking-widest uppercase group-hover:translate-x-1 transition-transform inline-block">READ MORE →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 3 -->
+            <a href="blog/kol-koc-guide.html"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="マーケティング" data-aos="fade-up" data-aos-delay="200">
+                <div class="overflow-hidden bg-slate-100 h-48 flex items-center justify-center">
+                    <img src="../assets/images/hero-cityscape.jpg"
+                        alt="KOL・KOCマーケティング完全ガイド"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display:none;" class="w-full h-full items-center justify-center bg-slate-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.01</span>
+                        <span class="text-[9px] font-bold bg-purple-50 text-purple-500 px-3 py-1 rounded uppercase tracking-widest">マーケティング</span>
+                    </div>
+                    <h3 class="font-bold text-base text-tech-blue group-hover:text-coral transition mb-3 leading-snug">
+                        KOL・KOCマーケティング完全ガイド：小紅書で効果的なインフルエンサー施策
+                    </h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">
+                        小紅書におけるKOL（Key Opinion Leader）とKOC（Key Opinion Consumer）の違いから選定基準、費用感、効果測定まで。日本企業が実践できるインフルエンサー施策を網羅的に解説します。
+                    </p>
+                    <div class="mt-5 flex items-center justify-between">
+                        <span class="text-[10px] text-gray-300 tracking-widest">12 MIN READ</span>
+                        <span class="text-xs font-bold text-coral tracking-widest uppercase group-hover:translate-x-1 transition-transform inline-block">READ MORE →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 4 -->
+            <a href="blog/agency-checklist.html"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="運営ノウハウ" data-aos="fade-up">
+                <div class="overflow-hidden bg-slate-100 h-48 flex items-center justify-center">
+                    <img src="../assets/images/office.jpg"
+                        alt="小紅書運用代行を選ぶ際の7つのチェックポイント"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display:none;" class="w-full h-full items-center justify-center bg-slate-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.10</span>
+                        <span class="text-[9px] font-bold bg-amber-50 text-amber-500 px-3 py-1 rounded uppercase tracking-widest">運営ノウハウ</span>
+                    </div>
+                    <h3 class="font-bold text-base text-tech-blue group-hover:text-coral transition mb-3 leading-snug">
+                        小紅書運用代行を選ぶ際の7つのチェックポイント
+                    </h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">
+                        小紅書の運用を外部に委託する際、失敗しないために確認すべき7つのポイントを解説。実績・体制・レポーティングなど、代理店選びで見落としがちな観点を整理しました。
+                    </p>
+                    <div class="mt-5 flex items-center justify-between">
+                        <span class="text-[10px] text-gray-300 tracking-widest">6 MIN READ</span>
+                        <span class="text-xs font-bold text-coral tracking-widest uppercase group-hover:translate-x-1 transition-transform inline-block">READ MORE →</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">
+                        テクノロジーとマーケティングで、<br>ビジネスの境界を越える。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        
+                        <li><a href="services.html" class="hover:text-coral transition">UI/UXデザイン</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="company.html" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="cases.html" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="blog.html" class="hover:text-coral transition">ブログ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">お問合せ</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="contact.html" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 1000, once: true });
+
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    menuBtn.classList.toggle('active');
+                    mobileMenu.classList.toggle('translate-x-full');
+                });
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                        menuBtn.classList.remove('active');
+                        mobileMenu.classList.add('translate-x-full');
+                    }
+                });
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768) {
+                        menuBtn.classList.remove('active');
+                        mobileMenu.classList.add('translate-x-full');
+                    }
+                });
+            }
+
+            const filterButtons = document.querySelectorAll('#filter-controls .filter-btn');
+            const blogItems = document.querySelectorAll('#blog-container > a');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    const filterValue = button.getAttribute('data-filter');
+                    blogItems.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        if (filterValue === 'all' || filterValue === itemCategory) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                    AOS.refresh();
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
