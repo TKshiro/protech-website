@@ -4,3 +4,5 @@ node_modules/
 *.log
 *.json.bak
 citric-nimbus-*.json
+.vercel
+.env*.local
