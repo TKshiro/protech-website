@@ -426,6 +426,28 @@
 
             emailjs.send('service_zg0cj56', 'template_9wqf6sc', templateParams)
                 .then(function () {
+                    // Save to localStorage for admin panel
+                    try {
+                        const contactData = {
+                            id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
+                            inquiry_type: document.getElementById('inquiry_type').value,
+                            name: document.getElementById('name').value,
+                            company: document.getElementById('company').value,
+                            email: document.getElementById('email').value,
+                            phone: document.getElementById('phone').value || '',
+                            budget: document.getElementById('budget').value || '',
+                            referral_source: document.getElementById('referral_source').value || '',
+                            message: document.getElementById('message').value,
+                            date: new Date().toISOString(),
+                            status: '未対応'
+                        };
+                        const stored = JSON.parse(localStorage.getItem('protech_contacts') || '[]');
+                        stored.unshift(contactData);
+                        localStorage.setItem('protech_contacts', JSON.stringify(stored));
+                    } catch (err) {
+                        console.error('Failed to save contact to localStorage:', err);
+                    }
+
                     document.getElementById('successMessage').classList.remove('hidden');
                     document.getElementById('contactForm').reset();
                     window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -53,6 +53,7 @@
         const AUTH_KEY = 'protech_admin_auth';
         const CASES_KEY = 'protech_cases';
         const BLOGS_KEY = 'protech_blogs';
+        const CONTACTS_KEY = 'protech_contacts';
         const VALID_USER = 'admin';
         const VALID_PASS = 'Zhb201314!';
 
@@ -194,15 +195,26 @@
             return {
                 dashboard: 'ダッシュボード',
                 cases: '導入事例',
-                blogs: 'ブログ記事'
+                blogs: 'ブログ記事',
+                contacts: 'お問い合わせ'
             }[state.currentSection] || 'ダッシュボード';
         }
 
+        function getContacts() {
+            return JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+        }
+
+        function setContacts(items) {
+            localStorage.setItem(CONTACTS_KEY, JSON.stringify(items));
+        }
+
         function getStatCards() {
+            const contacts = getContacts();
+            const unread = contacts.filter(c => c.status === '未対応').length;
             return [
                 { label: '導入事例数', value: getCases().length, note: '公開データ' },
                 { label: 'ブログ記事数', value: getBlogs().length, note: '管理中の記事' },
-                { label: '今月のお問い合わせ', value: '12', note: 'placeholder' }
+                { label: '未対応のお問い合わせ', value: unread, note: `全${contacts.length}件` }
             ];
         }
 
@@ -274,7 +286,8 @@
             const navItems = [
                 ['dashboard', 'ダッシュボード'],
                 ['cases', '導入事例'],
-                ['blogs', 'ブログ記事']
+                ['blogs', 'ブログ記事'],
+                ['contacts', 'お問い合わせ']
             ];
 
             return `
@@ -444,7 +457,109 @@
             `;
         }
 
-        // ── Image compression via Canvas API ──────────────────────────────
+        const INQUIRY_TYPE_LABELS = {
+            red_marketing: '小紅書マーケティング',
+            web_development: 'Web・App開発',
+            ui_ux_design: 'UI/UXデザイン',
+            consultation: 'サービス全般のご相談',
+            estimate: 'お見積もり依頼',
+            other: 'その他'
+        };
+
+        const BUDGET_LABELS = {
+            under_500k: '50万円未満',
+            '500k_1m': '50万円〜100万円',
+            '1m_3m': '100万円〜300万円',
+            '3m_5m': '300万円〜500万円',
+            over_5m: '500万円以上',
+            undecided: '未定・相談したい'
+        };
+
+        const REFERRAL_LABELS = {
+            web_search: 'Web検索',
+            sns: 'SNS',
+            referral: '知人の紹介',
+            event: 'イベント・セミナー',
+            media: 'メディア・記事',
+            other: 'その他'
+        };
+
+        function renderContactsSection() {
+            const contacts = getContacts().sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+            return `
+                <section class="space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">お問い合わせ一覧</h3>
+                            <p class="text-sm text-slate-500 mt-1">フォームから送信されたお問い合わせを管理します。</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm text-slate-500">全 ${contacts.length} 件</span>
+                            <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-rose-50 text-rose-600">${contacts.filter(c => c.status === '未対応').length} 件未対応</span>
+                        </div>
+                    </div>
+                    ${contacts.length === 0 ? `
+                        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-16 text-center">
+                            <p class="text-slate-400 text-sm">まだお問い合わせはありません。</p>
+                        </div>
+                    ` : `
+                        <div class="space-y-4">
+                            ${contacts.map(item => {
+                                const isUnread = item.status === '未対応';
+                                const dateStr = item.date ? new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }).format(new Date(item.date)) : '不明';
+                                return `
+                                <div class="bg-white rounded-2xl shadow-sm border ${isUnread ? 'border-coral/40' : 'border-slate-200'} overflow-hidden">
+                                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-6 py-4 border-b border-slate-100">
+                                        <div class="flex flex-wrap items-center gap-3">
+                                            <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold ${isUnread ? 'bg-rose-50 text-rose-600' : 'bg-emerald-50 text-emerald-600'}">${escapeHtml(item.status)}</span>
+                                            <span class="inline-flex px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">${escapeHtml(INQUIRY_TYPE_LABELS[item.inquiry_type] || item.inquiry_type || '未分類')}</span>
+                                            <span class="text-xs text-slate-400">${dateStr}</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            ${isUnread
+                                                ? `<button data-contact-done="${item.id}" class="rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 px-3 py-1.5 text-xs font-bold hover:bg-emerald-100 transition">対応済みにする</button>`
+                                                : `<button data-contact-reopen="${item.id}" class="rounded-lg border border-slate-200 text-slate-500 px-3 py-1.5 text-xs font-medium hover:border-coral hover:text-coral transition">未対応に戻す</button>`
+                                            }
+                                            <button data-delete-contact="${item.id}" class="rounded-lg border border-rose-200 text-rose-600 px-3 py-1.5 text-xs font-medium hover:bg-rose-50 transition">削除</button>
+                                        </div>
+                                    </div>
+                                    <div class="px-6 py-5 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-sm">
+                                        <div class="flex gap-3">
+                                            <span class="text-slate-400 w-20 shrink-0">お名前</span>
+                                            <span class="font-semibold text-slate-900">${escapeHtml(item.name)}</span>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <span class="text-slate-400 w-20 shrink-0">会社名</span>
+                                            <span class="font-semibold text-slate-900">${escapeHtml(item.company)}</span>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <span class="text-slate-400 w-20 shrink-0">メール</span>
+                                            <a href="mailto:${escapeHtml(item.email)}" class="text-coral hover:underline truncate">${escapeHtml(item.email)}</a>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <span class="text-slate-400 w-20 shrink-0">電話</span>
+                                            <span class="text-slate-700">${escapeHtml(item.phone || '未記入')}</span>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <span class="text-slate-400 w-20 shrink-0">予算</span>
+                                            <span class="text-slate-700">${escapeHtml(BUDGET_LABELS[item.budget] || item.budget || '未記入')}</span>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <span class="text-slate-400 w-20 shrink-0">きっかけ</span>
+                                            <span class="text-slate-700">${escapeHtml(REFERRAL_LABELS[item.referral_source] || item.referral_source || '未記入')}</span>
+                                        </div>
+                                        <div class="flex gap-3 md:col-span-2">
+                                            <span class="text-slate-400 w-20 shrink-0">内容</span>
+                                            <p class="text-slate-700 whitespace-pre-wrap leading-relaxed">${escapeHtml(item.message)}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `}).join('')}
+                        </div>
+                    `}
+                </section>
+            `;
+        }
         async function compressImage(file, maxSizeMB = 3) {
             return new Promise((resolve, reject) => {
                 const maxBytes = maxSizeMB * 1024 * 1024;
@@ -673,7 +788,9 @@
                 ? renderCasesSection()
                 : state.currentSection === 'blogs'
                     ? renderBlogsSection()
-                    : renderDashboardHome();
+                    : state.currentSection === 'contacts'
+                        ? renderContactsSection()
+                        : renderDashboardHome();
 
             return `
                 <div class="min-h-screen bg-slate-100">
@@ -777,6 +894,33 @@
                 button.addEventListener('click', () => {
                     const items = getBlogs().filter(item => item.id !== button.dataset.deleteBlog);
                     setBlogs(items);
+                    render();
+                });
+            });
+
+            document.querySelectorAll('[data-contact-done]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const items = getContacts().map(item =>
+                        item.id === button.dataset.contactDone ? { ...item, status: '対応済み' } : item
+                    );
+                    setContacts(items);
+                    render();
+                });
+            });
+            document.querySelectorAll('[data-contact-reopen]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const items = getContacts().map(item =>
+                        item.id === button.dataset.contactReopen ? { ...item, status: '未対応' } : item
+                    );
+                    setContacts(items);
+                    render();
+                });
+            });
+            document.querySelectorAll('[data-delete-contact]').forEach(button => {
+                button.addEventListener('click', () => {
+                    if (!confirm('このお問い合わせを削除しますか？')) return;
+                    const items = getContacts().filter(item => item.id !== button.dataset.deleteContact);
+                    setContacts(items);
                     render();
                 });
             });
