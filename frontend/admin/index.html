@@ -454,6 +454,7 @@
                                             <td class="px-6 py-4 align-top">
                                                 <div class="flex flex-wrap gap-2">
                                                     <button data-edit-blog="${item.id}" class="rounded-lg border border-slate-200 px-3 py-2 hover:border-coral hover:text-coral transition">編集</button>
+                                                    <button data-download-blog="${item.id}" class="rounded-lg border border-emerald-200 text-emerald-600 px-3 py-2 hover:bg-emerald-50 transition">HTML生成</button>
                                                     <button data-delete-blog="${item.id}" class="rounded-lg border border-rose-200 text-rose-600 px-3 py-2 hover:bg-rose-50 transition">削除</button>
                                                 </div>
                                             </td>
@@ -905,6 +906,43 @@
                     const items = getBlogs().filter(item => item.id !== button.dataset.deleteBlog);
                     setBlogs(items);
                     render();
+                });
+            });
+            document.querySelectorAll('[data-download-blog]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const item = getBlogs().find(i => i.id === button.dataset.downloadBlog);
+                    if (!item) return;
+                    
+                    const html = `<!DOCTYPE html>
+<html lang="ja" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${item.title} | PROTECH</title>
+    <script src="https://cdn.tailwindcss.com"><\/script>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>tailwind.config = { theme: { extend: { colors: { 'tech-blue': '#001A33', 'coral': '#E86B7A' } } } }<\/script>
+</head>
+<body class="bg-slate-50">
+    <!-- Replace with standard NAV -->
+    <main class="max-w-3xl mx-auto px-6 py-24">
+        <h1 class="text-3xl md:text-4xl font-bold text-tech-blue mb-6">${item.title}</h1>
+        <div class="mb-10 text-gray-400 text-sm">${item.date}</div>
+        ${item.imageUrl ? `<img src="${item.imageUrl}" class="w-full rounded-2xl mb-10 object-cover">` : ''}
+        <div class="prose prose-lg max-w-none text-gray-700 leading-loose">
+            ${item.content}
+        </div>
+    </main>
+    <!-- Replace with standard FOOTER -->
+</body>
+</html>`;
+                    const blob = new Blob([html], { type: 'text/html' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'blog-post.html';
+                    a.click();
+                    URL.revokeObjectURL(url);
                 });
             });
 
