@@ -373,12 +373,22 @@
         document.addEventListener('DOMContentLoaded', () => {
             AOS.init({ duration: 1000, once: true });
 
-            // ── Inject dynamic cases from localStorage ────────────────────
+            // ── Inject dynamic cases and Sort All ────────────────────
             const container = document.getElementById('cases-container');
+            const items = Array.from(container.children);
+            
+            // Assign dummy older dates to static cases to keep them in order if no data-date exists
+            items.forEach((item, index) => {
+                if (!item.getAttribute('data-date')) {
+                    // Create an older date so dynamic items appear first
+                    // Example: 2025-01-10, 09, 08...
+                    item.setAttribute('data-date', `2025-01-${30 - index}`);
+                }
+            });
+
             try {
                 const stored = JSON.parse(localStorage.getItem('protech_cases') || '[]');
-                const sorted = stored.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
-                sorted.forEach(item => {
+                stored.forEach(item => {
                     const services = (item.services || []).map(s =>
                         `<span class="bg-gray-50 px-2 py-1 rounded">${s}</span>`
                     ).join('');
@@ -391,6 +401,7 @@
                     el.className = 'case-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100';
                     el.setAttribute('data-category', catKey);
                     el.setAttribute('data-dynamic', '1');
+                    el.setAttribute('data-date', item.date || '1970-01-01');
                     el.innerHTML = `
                         <div class="overflow-hidden">${img}</div>
                         <div class="p-6">
@@ -404,9 +415,20 @@
                             <p class="text-sm text-gray-400 mb-4">${item.summary || ''}</p>
                             <div class="flex flex-wrap gap-2 text-[10px] text-gray-400">${services}</div>
                         </div>`;
-                    container.insertBefore(el, container.firstChild);
+                    items.push(el);
                 });
             } catch (_) {}
+
+            // Sort all cases by date (newest first)
+            items.sort((a, b) => {
+                const dateA = new Date(a.getAttribute('data-date')).getTime() || 0;
+                const dateB = new Date(b.getAttribute('data-date')).getTime() || 0;
+                return dateB - dateA;
+            });
+
+            // Render up to 30 items
+            container.innerHTML = '';
+            items.slice(0, 30).forEach(item => container.appendChild(item));
 
             const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');

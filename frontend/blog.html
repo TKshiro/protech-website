@@ -430,17 +430,29 @@
         document.addEventListener('DOMContentLoaded', () => {
             AOS.init({ duration: 1000, once: true });
 
-            // ── Inject dynamic blog posts from localStorage ───────────────
+            // ── Inject dynamic blog posts and Sort All ───────────────
             const container = document.getElementById('blog-container');
+            const items = Array.from(container.children);
             try {
                 const stored = JSON.parse(localStorage.getItem('protech_blogs') || '[]');
-                const published = stored
-                    .filter(item => item.status === '公開')
-                    .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+                const published = stored.filter(item => item.status === '公開');
                 published.forEach(item => {
-                    container.insertBefore(buildBlogCard(item), container.firstChild);
+                    items.push(buildBlogCard(item));
                 });
             } catch (_) {}
+
+            // Sort all items by date (newest first)
+            items.sort((a, b) => {
+                const getDate = (el) => {
+                    const text = el.querySelector('.font-mono')?.textContent.trim() || '';
+                    return new Date(text.replace(/\./g, '-')).getTime() || 0;
+                };
+                return getDate(b) - getDate(a);
+            });
+
+            // Render up to 30 items
+            container.innerHTML = '';
+            items.slice(0, 30).forEach(item => container.appendChild(item));
 
             const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
