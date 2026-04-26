@@ -1,7 +1,5 @@
 {
-  "cleanUrls": true,
+  "buildCommand": "echo 'No build'",
   "outputDirectory": "frontend",
-  "buildCommand": "",
-  "installCommand": "",
   "framework": null
 }
