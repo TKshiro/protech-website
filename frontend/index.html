@@ -35,7 +35,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -65,18 +65,19 @@
         }
 
         body {
-            font-family: 'M PLUS 1p', sans-serif;
+            font-family: 'Noto Sans JP', sans-serif;
             font-size: var(--font-body);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
         .serif {
-            font-family: 'M PLUS 1p', sans-serif;
+            font-family: 'Noto Serif JP', serif;
+            letter-spacing: 0.02em;
         }
 
         .inter {
-            font-family: 'M PLUS 1p', sans-serif;
+            font-family: 'Noto Sans JP', sans-serif;
         }
 
         h1 { font-size: var(--font-h1); }
@@ -180,7 +181,7 @@
 
         /* Gradient text */
         .gradient-text {
-            background: linear-gradient(135deg, #E86B7A, #c94e5c);
+            background: linear-gradient(120deg, #E86B7A 0%, #c85f8a 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -353,6 +354,27 @@
             background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48'%3E%3Cpath fill='%23F8F6F3' d='M0,24 C480,48 960,0 1440,24 L1440,48 L0,48 Z'/%3E%3C/svg%3E") no-repeat bottom;
             background-size: cover;
         }
+        /* Japanese editorial section heading with thin underline */
+        .jp-heading {
+            position: relative;
+            display: inline-block;
+        }
+        .jp-heading::after {
+            content: '';
+            display: block;
+            width: 2rem;
+            height: 1px;
+            background: var(--coral);
+            margin: 0.75rem auto 0;
+            opacity: 0.6;
+        }
+
+        /* Hero scroll indicator */
+        @keyframes scroll-bounce {
+            0%, 100% { transform: translateY(0); opacity: 0.3; }
+            50% { transform: translateY(6px); opacity: 0.7; }
+        }
+        .scroll-indicator { animation: scroll-bounce 2s ease-in-out infinite; }
     </style>
 </head>
 
@@ -430,35 +452,63 @@
                 </div>
             </div>
             <!-- Gradient overlay -->
-            <div class="absolute inset-0 bg-gradient-to-b from-tech-blue/70 via-tech-blue/60 to-tech-blue/80"></div>
+            <!-- Multi-layer refined overlay -->
+            <div class="absolute inset-0" style="background: linear-gradient(160deg, rgba(0,18,40,0.82) 0%, rgba(0,26,51,0.72) 50%, rgba(0,18,40,0.90) 100%);"></div>
+            <!-- Subtle horizontal rule line decorations -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute top-1/3 left-0 w-full h-px bg-white/5"></div>
+                <div class="absolute top-2/3 left-0 w-full h-px bg-white/5"></div>
+            </div>
         </div>
 
-        <!-- Hero content -->
-        <div class="relative z-10 flex items-center min-h-screen px-6">
-            <div class="max-w-5xl mx-auto text-center pt-20" data-aos="fade-up">
-                <p class="text-white/60 tracking-[0.3em] uppercase text-[10px] md:text-xs mb-8 font-bold">
-                    中国SNS運営 × 制作 × 開発
-                </p>
-                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-8 serif leading-tight">
-                    小红书・抖音の運営代行から<br class="hidden md:block">
-                    <span class="text-coral">LP制作・小程序開発まで</span>
+        <!-- Hero content – Japanese minimalist style -->
+        <div class="relative z-10 flex items-center min-h-screen px-6 md:px-16">
+            <div class="max-w-6xl mx-auto w-full pt-24" data-aos="fade-up">
+                <!-- Thin top rule line - Japanese editorial style -->
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="h-px bg-white/25 w-12"></div>
+                    <p class="text-white/50 tracking-[0.4em] text-[10px] font-light" style="font-family:'Noto Sans JP',sans-serif;">
+                        中国SNS運営 &nbsp;×&nbsp; 制作 &nbsp;×&nbsp; 開発
+                    </p>
+                </div>
+
+                <!-- Main heading – Noto Serif JP, refined weight -->
+                <h1 class="serif mb-6 leading-[1.4]" style="font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 500; color: white; letter-spacing: 0.04em;">
+                    小紅書・抖音の運営代行から<br>
+                    <span style="font-weight: 300; color: rgba(255,255,255,0.55); font-size: 0.72em; display: block; margin-top: 0.2em; letter-spacing: 0.06em;">LP制作・小程序開発まで、</span>
+                    <span style="font-weight: 600; background: linear-gradient(90deg, #f0a0aa, #E86B7A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 0.82em;">ワンストップで支援。</span>
                 </h1>
-                <p class="text-white/50 text-sm md:text-base max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-                    日中マーケティングのすべてを一社で。<br class="hidden md:block">
-                    インバウンド集客から越境EC、中国市場への進出までワンストップで支援します。
+
+                <!-- Thin divider line -->
+                <div class="h-px bg-white/15 w-48 mb-8"></div>
+
+                <!-- Subtitle – very light, generous spacing -->
+                <p class="text-white/45 mb-12 leading-[2.1]" style="font-size: 0.875rem; font-weight: 300; max-width: 480px; letter-spacing: 0.06em; font-family:'Noto Sans JP',sans-serif;">
+                    日中マーケティングのすべてを一社で。<br>
+                    インバウンド集客から越境EC、<br>
+                    中国市場への進出までご支援します。
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+                <!-- Buttons – refined, minimal -->
+                <div class="flex flex-col sm:flex-row gap-4">
                     <a href="contact.html"
-                        class="btn-coral px-10 py-4 text-sm font-bold tracking-widest rounded-full inline-flex items-center justify-center gap-2">
+                        class="btn-coral px-10 py-3.5 text-xs tracking-[0.2em] rounded-none inline-flex items-center justify-center gap-3" style="font-family:'Noto Sans JP',sans-serif; font-weight:500;">
                         お問合せ・ご相談
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </a>
                     <a href="services.html"
-                        class="px-10 py-4 border border-white/30 text-white text-sm font-bold tracking-widest rounded-full hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2">
+                        class="px-10 py-3.5 border border-white/25 text-white/70 text-xs tracking-[0.2em] rounded-none hover:border-white/60 hover:text-white transition-all inline-flex items-center justify-center gap-2" style="font-family:'Noto Sans JP',sans-serif; font-weight:300;">
                         サービス一覧
                     </a>
+                </div>
+
+                <!-- Bottom area: vertical text decoration (Japanese editorial) -->
+                <div class="absolute right-10 bottom-24 hidden xl:flex flex-col items-center gap-3 opacity-20">
+                    <div class="w-px h-20 bg-white"></div>
+                    <p style="writing-mode: vertical-rl; font-size: 10px; letter-spacing: 0.3em; color: white; font-family:'Noto Sans JP',sans-serif; font-weight:300;">SCROLL</p>
+                    <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
                 </div>
             </div>
         </div>
@@ -469,15 +519,15 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-100">
                 <div class="text-center py-4 md:py-0" data-aos="fade-up">
-                    <p class="text-4xl md:text-5xl font-bold text-coral mb-2 tracking-tighter" data-target="15" data-suffix="+">15+</p>
+                    <p class="text-4xl md:text-5xl font-medium text-coral mb-2 tracking-tight serif" data-target="15" data-suffix="+">15+</p>
                     <p class="text-xs text-gray-500 tracking-widest font-bold">支援企業数</p>
                 </div>
                 <div class="text-center py-4 md:py-0" data-aos="fade-up" data-aos-delay="100">
-                    <p class="text-4xl md:text-5xl font-bold text-coral mb-2 tracking-tighter" data-target="100" data-suffix="+">100+</p>
+                    <p class="text-4xl md:text-5xl font-medium text-coral mb-2 tracking-tight serif" data-target="100" data-suffix="+">100+</p>
                     <p class="text-xs text-gray-500 tracking-widest font-bold">運用アカウント数</p>
                 </div>
                 <div class="text-center py-4 md:py-0" data-aos="fade-up" data-aos-delay="200">
-                    <p class="text-4xl md:text-5xl font-bold text-coral mb-2 tracking-tighter" data-target="300" data-suffix="%">300%</p>
+                    <p class="text-4xl md:text-5xl font-medium text-coral mb-2 tracking-tight serif" data-target="300" data-suffix="%">300%</p>
                     <p class="text-xs text-gray-500 tracking-widest font-bold">平均フォロワー増加率</p>
                 </div>
             </div>
@@ -600,7 +650,7 @@
         <div class="max-w-6xl mx-auto relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">小紅書(RED)とは</span>
-                <h2 class="text-2xl md:text-4xl font-bold serif text-tech-blue mb-6">
+                <h2 class="text-2xl md:text-4xl font-medium serif text-tech-blue mb-6" style="letter-spacing: 0.04em;">
                     中国最大のライフスタイルSNS
                 </h2>
                 <p class="text-gray-500 text-sm max-w-2xl mx-auto leading-relaxed">
@@ -669,7 +719,7 @@
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">SERVICES</span>
-                <h2 class="text-2xl md:text-4xl font-bold serif text-tech-blue">小紅書運用、何をしてくれるの？</h2>
+                <h2 class="text-2xl md:text-4xl font-medium serif text-tech-blue" style="letter-spacing: 0.04em;">小紅書運用、何をしてくれるの？</h2>
                 <p class="text-gray-400 text-sm mt-4 max-w-xl mx-auto">
                     アカウント開設から成果報告まで、すべてPROTECHにお任せください。
                 </p>
@@ -763,7 +813,7 @@
                 </div>
                 <div class="text-center">
                     <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">対象業種</span>
-                    <h2 class="text-2xl md:text-4xl font-bold serif text-tech-blue">こんな業種に選ばれています</h2>
+                    <h2 class="text-2xl md:text-4xl font-medium serif text-tech-blue" style="letter-spacing: 0.04em;">こんな業種に選ばれています</h2>
                 </div>
                 <div class="w-14 h-20 flex-shrink-0 hidden sm:block opacity-90">
                     <svg viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
@@ -883,7 +933,7 @@
         <div class="max-w-6xl mx-auto relative z-10">
             <div class="text-center mb-16 md:mb-20 relative" data-aos="fade-up">
                 <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">STRENGTHS</span>
-                <h2 class="text-2xl md:text-4xl font-bold serif text-tech-blue">PROTECHの強み</h2>
+                <h2 class="text-2xl md:text-4xl font-medium serif text-tech-blue" style="letter-spacing: 0.04em;">PROTECHの強み</h2>
                 <div class="absolute right-0 top-0 w-12 h-16 opacity-80 hidden lg:block">
                     <svg viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
   <!-- head -->
@@ -969,7 +1019,7 @@
             <div class="flex items-end justify-between mb-12" data-aos="fade-up">
                 <div>
                     <span class="text-coral font-bold text-[10px] tracking-[0.3em] uppercase mb-3 block">導入事例</span>
-                    <h2 class="text-2xl md:text-4xl font-bold serif text-tech-blue">お客様の成功事例</h2>
+                    <h2 class="text-2xl md:text-4xl font-medium serif text-tech-blue" style="letter-spacing: 0.04em;">お客様の成功事例</h2>
                 </div>
                 <a href="cases.html" class="text-coral text-xs font-bold tracking-wider hover:underline inline-flex items-center gap-1">
                     すべて見る
@@ -1053,7 +1103,7 @@
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
                 <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">よくあるご質問</span>
-                <h2 class="text-2xl md:text-4xl font-bold serif text-tech-blue">FAQ</h2>
+                <h2 class="text-2xl md:text-4xl font-medium serif text-tech-blue" style="letter-spacing: 0.04em;">FAQ</h2>
             </div>
             
             <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
@@ -1140,7 +1190,7 @@
         <div class="max-w-5xl mx-auto relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <span class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase block mb-4">お問い合わせ</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 serif">お問合せ</h2>
+                <h2 class="text-3xl md:text-4xl font-medium text-white mb-4 serif" style="letter-spacing: 0.04em;">お問合せ</h2>
                 <p class="text-white/50 text-sm">「PROTECH」導入についてのご相談や資料請求はこちらから</p>
             </div>
 
