@@ -320,6 +320,87 @@
                 </div>
             </a>
 
+            <!-- Article (Operation) -->
+            <a href="blog/content-operation-flow.html"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="運営ノウハウ" data-aos="fade-up">
+                <div class="overflow-hidden bg-slate-100 h-48 flex items-center justify-center">
+                    <img src="assets/images/blog-content-operation.jpg"
+                        alt="運営ノウハウ：少人数チームでも回るコンテンツ運用フローの作り方"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onerror="this.src='assets/images/office.jpg'">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.01</span>
+                        <span class="text-[9px] font-bold bg-amber-50 text-amber-500 px-3 py-1 rounded uppercase tracking-widest">運営ノウハウ</span>
+                    </div>
+                    <h3 class="font-bold text-base text-tech-blue group-hover:text-coral transition mb-3 leading-snug">
+                        運営ノウハウ：少人数チームでも回るコンテンツ運用フローの作り方
+                    </h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">
+                        企画、制作、レビュー、公開までを属人化させないためのフローとテンプレート活用法を紹介します。
+                    </p>
+                    <div class="mt-5 flex items-center justify-end">
+                        <span class="text-xs font-bold text-coral tracking-widest uppercase group-hover:translate-x-1 transition-transform inline-block">READ MORE →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article (Inbound Funnel) -->
+            <a href="blog/inbound-funnel-design.html"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="インバウンド" data-aos="fade-up">
+                <div class="overflow-hidden bg-slate-100 h-48 flex items-center justify-center">
+                    <img src="assets/images/blog-inbound-funnel.jpg"
+                        alt="訪日中国人向けインバウンド施策で成果を出す導線設計の基本"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onerror="this.src='assets/images/case-tourism.jpg'">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.03.14</span>
+                        <span class="text-[9px] font-bold bg-blue-50 text-blue-500 px-3 py-1 rounded uppercase tracking-widest">インバウンド</span>
+                    </div>
+                    <h3 class="font-bold text-base text-tech-blue group-hover:text-coral transition mb-3 leading-snug">
+                        訪日中国人向けインバウンド施策で成果を出す導線設計の基本
+                    </h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">
+                        認知から来店予約までの導線設計を、SNS・LP・店舗オペレーションの視点から整理します。
+                    </p>
+                    <div class="mt-5 flex items-center justify-end">
+                        <span class="text-xs font-bold text-coral tracking-widest uppercase group-hover:translate-x-1 transition-transform inline-block">READ MORE →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article (RED Trends) -->
+            <a href="blog/red-marketing-trends-2026.html"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="小紅書運用" data-aos="fade-up">
+                <div class="overflow-hidden bg-slate-100 h-48 flex items-center justify-center">
+                    <img src="assets/images/blog-red-trends-2026.jpg"
+                        alt="小紅書マーケティング2026年最新トレンド"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onerror="this.src='assets/images/hero-data.jpg'">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.03.05</span>
+                        <span class="text-[9px] font-bold bg-red-50 text-red-500 px-3 py-1 rounded uppercase tracking-widest">小紅書運用</span>
+                    </div>
+                    <h3 class="font-bold text-base text-tech-blue group-hover:text-coral transition mb-3 leading-snug">
+                        小紅書マーケティング2026年最新トレンド：日本企業が知るべき5つのポイント
+                    </h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">
+                        2026年の小紅書運用で重要になるUGC設計、検索導線、ライブ配信、地域連携、CV計測の5点を解説します。
+                    </p>
+                    <div class="mt-5 flex items-center justify-end">
+                        <span class="text-xs font-bold text-coral tracking-widest uppercase group-hover:translate-x-1 transition-transform inline-block">READ MORE →</span>
+                    </div>
+                </div>
+            </a>
+
             <!-- Article 0 (New) -->
             <a href="blog/dazhong-dianping-guide.html"
                 class="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
@@ -605,7 +686,14 @@
                 const stored = JSON.parse(localStorage.getItem('protech_blogs') || '[]');
                 const published = stored.filter(item => item.status === '公開');
                 published.forEach(item => {
-                    items.push(buildBlogCard(item));
+                    // Prevent duplicate rendering if a static card already exists
+                    const exists = Array.from(container.children).some(el => {
+                        const h3 = el.querySelector('h3');
+                        return h3 && h3.textContent.trim() === item.title.trim();
+                    });
+                    if (!exists) {
+                        items.push(buildBlogCard(item));
+                    }
                 });
             } catch (_) {}
 
