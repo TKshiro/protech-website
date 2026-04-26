@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "PROTECH blog build system",
   "scripts": {
-    "build": "node scripts/build-blog.js",
+    "build": "echo 'No build step required'",
     "new-post": "node scripts/new-post.js",
     "ping-google": "node scripts/ping-google.js"
   },
