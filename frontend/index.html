@@ -283,6 +283,76 @@
             font-size: 10px;
             font-weight: 700;
         }
+
+        /* Enhanced card hover lift */
+        .industry-card:hover .industry-icon {
+            transform: scale(1.15) rotate(-5deg);
+            transition: transform 0.3s ease;
+        }
+        .industry-icon { transition: transform 0.3s ease; }
+
+        /* Animated gradient border on strength cards */
+        .strength-card {
+            position: relative;
+        }
+        .strength-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1rem;
+            padding: 1px;
+            background: linear-gradient(135deg, transparent, rgba(232,107,122,0.3), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .strength-card:hover::before { opacity: 1; }
+
+        /* Scroll reveal line animation */
+        .reveal-line {
+            width: 0;
+            height: 2px;
+            background: var(--coral);
+            transition: width 1.2s ease;
+        }
+        .reveal-line.active { width: 60px; }
+
+        /* Flow lines background */
+        .flow-bg {
+            background-image:
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 40px,
+                    rgba(232,107,122,0.03) 40px,
+                    rgba(232,107,122,0.03) 41px
+                );
+        }
+
+        /* Marquee ticker */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-inner { animation: marquee 28s linear infinite; }
+        .marquee-inner:hover { animation-play-state: paused; }
+
+        /* Section divider wave */
+        .section-wave {
+            position: relative;
+        }
+        .section-wave::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 48px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48'%3E%3Cpath fill='%23F8F6F3' d='M0,24 C480,48 960,0 1440,24 L1440,48 L0,48 Z'/%3E%3C/svg%3E") no-repeat bottom;
+            background-size: cover;
+        }
     </style>
 </head>
 
@@ -399,23 +469,45 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-100">
                 <div class="text-center py-4 md:py-0" data-aos="fade-up">
-                    <p class="text-4xl md:text-5xl font-bold text-coral mb-2 tracking-tighter">15<span class="text-2xl text-coral/70">+</span></p>
+                    <p class="text-4xl md:text-5xl font-bold text-coral mb-2 tracking-tighter" data-target="15" data-suffix="+">15+</p>
                     <p class="text-xs text-gray-500 tracking-widest font-bold">支援企業数</p>
                 </div>
                 <div class="text-center py-4 md:py-0" data-aos="fade-up" data-aos-delay="100">
-                    <p class="text-4xl md:text-5xl font-bold text-coral mb-2 tracking-tighter">100<span class="text-2xl text-coral/70">+</span></p>
+                    <p class="text-4xl md:text-5xl font-bold text-coral mb-2 tracking-tighter" data-target="100" data-suffix="+">100+</p>
                     <p class="text-xs text-gray-500 tracking-widest font-bold">運用アカウント数</p>
                 </div>
                 <div class="text-center py-4 md:py-0" data-aos="fade-up" data-aos-delay="200">
-                    <p class="text-4xl md:text-5xl font-bold text-coral mb-2 tracking-tighter">300<span class="text-2xl text-coral/70">%</span></p>
+                    <p class="text-4xl md:text-5xl font-bold text-coral mb-2 tracking-tighter" data-target="300" data-suffix="%">300%</p>
                     <p class="text-xs text-gray-500 tracking-widest font-bold">平均フォロワー増加率</p>
                 </div>
             </div>
         </div>
     </section>
 
+
+    <!-- MARQUEE TICKER -->
+    <div class="bg-tech-blue py-4 overflow-hidden border-y border-white/5">
+        <div class="marquee-inner flex gap-16 whitespace-nowrap text-white/30 text-[10px] font-bold tracking-[0.25em] uppercase" style="width: max-content;">
+            <span>小紅書運用代行</span><span class="text-coral">—</span>
+            <span>抖音・TikTok</span><span class="text-coral">—</span>
+            <span>KOL / KOCマーケティング</span><span class="text-coral">—</span>
+            <span>越境ECコンサル</span><span class="text-coral">—</span>
+            <span>LP・動画制作</span><span class="text-coral">—</span>
+            <span>小程序（ミニプログラム）開発</span><span class="text-coral">—</span>
+            <span>インバウンド集客</span><span class="text-coral">—</span>
+            <span>データ分析・PDCA</span><span class="text-coral">—</span>
+            <span>小紅書運用代行</span><span class="text-coral">—</span>
+            <span>抖音・TikTok</span><span class="text-coral">—</span>
+            <span>KOL / KOCマーケティング</span><span class="text-coral">—</span>
+            <span>越境ECコンサル</span><span class="text-coral">—</span>
+            <span>LP・動画制作</span><span class="text-coral">—</span>
+            <span>小程序（ミニプログラム）開発</span><span class="text-coral">—</span>
+            <span>インバウンド集客</span><span class="text-coral">—</span>
+            <span>データ分析・PDCA</span><span class="text-coral">—</span>
+        </div>
+    </div>
     <!-- ═══════════════════════ NEWS ═══════════════════════ -->
-    <section class="py-20 md:py-28 px-6 bg-coral-light seigaiha-pattern relative">
+    <section class="py-20 md:py-28 px-6 bg-coral-light seigaiha-pattern relative section-wave">
         <div class="max-w-7xl mx-auto">
             <div class="flex items-end justify-between mb-12" data-aos="fade-up">
                 <div>
@@ -571,8 +663,9 @@
     </section>
 
     <!-- ═══════════════════════ SERVICE MENU ═══════════════════════ -->
-    <section class="py-20 md:py-28 px-6 bg-warm-gray relative overflow-hidden">
+    <section class="py-20 md:py-28 px-6 bg-warm-gray relative overflow-hidden flow-bg">
         <div class="absolute top-10 left-0 w-48 h-full seigaiha-pattern opacity-30"></div>
+        <svg class="absolute top-0 right-0 w-64 h-64 opacity-[0.05] pointer-events-none" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M 0,100 C 50,0 150,200 200,100" stroke="#E86B7A" stroke-width="2" fill="none"/><path d="M 0,60 C 60,10 140,190 200,140" stroke="#001A33" stroke-width="1" fill="none"/><path d="M 0,140 C 40,80 160,120 200,60" stroke="#E86B7A" stroke-width="1.5" fill="none"/></svg>
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">SERVICES</span>
@@ -582,33 +675,33 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16" data-aos="fade-up" data-aos-delay="100">
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-coral/15" data-aos="fade-up" data-aos-delay="0">
                     <span class="text-[10px] font-bold text-coral tracking-widest uppercase block mb-4">STEP 01</span>
                     <h3 class="font-bold text-tech-blue text-lg mb-3">戦略設計・アカウント開設</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">ターゲット分析・競合調査・ブランドポジショニングを行い、最適な運用戦略を策定。公式アカウントの開設・認証取得まで代行します。</p>
                 </div>
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-coral/15" data-aos="fade-up" data-aos-delay="80">
                     <span class="text-[10px] font-bold text-coral tracking-widest uppercase block mb-4">STEP 02</span>
                     <h3 class="font-bold text-tech-blue text-lg mb-3">コンテンツ制作・投稿</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">中国語ネイティブライターが、小紅書のアルゴリズムに最適化した写真・動画・テキストを制作。月次投稿カレンダーに沿って定期配信します。</p>
                 </div>
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-coral/15" data-aos="fade-up" data-aos-delay="160">
                     <span class="text-[10px] font-bold text-coral tracking-widest uppercase block mb-4">STEP 03</span>
                     <h3 class="font-bold text-tech-blue text-lg mb-3">KOL・KOCインフルエンサー施策</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">業種・予算・目標に合わせたKOL/KOCを選定・交渉・管理。口コミ投稿の品質管理から効果測定まで一貫して対応します。</p>
                 </div>
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-coral/15" data-aos="fade-up" data-aos-delay="240">
                     <span class="text-[10px] font-bold text-coral tracking-widest uppercase block mb-4">STEP 04</span>
                     <h3 class="font-bold text-tech-blue text-lg mb-3">広告運用（信息流広告）</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">小紅書の純広告（フィード広告・検索広告）を活用し、ターゲット層へのリーチを最大化。予算配分の最適化とA/Bテストで費用対効果を高めます。</p>
                 </div>
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-coral/15" data-aos="fade-up" data-aos-delay="320">
                     <span class="text-[10px] font-bold text-coral tracking-widest uppercase block mb-4">STEP 05</span>
                     <h3 class="font-bold text-tech-blue text-lg mb-3">コメント・DM対応</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">中国語でのコメント返信・DM対応を代行。ユーザーとのエンゲージメントを高め、来店・予約・購買へとつなげます。</p>
                 </div>
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-coral/15" data-aos="fade-up" data-aos-delay="400">
                     <span class="text-[10px] font-bold text-coral tracking-widest uppercase block mb-4">STEP 06</span>
                     <h3 class="font-bold text-tech-blue text-lg mb-3">月次レポート・改善提案</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">フォロワー数・インプレッション・エンゲージメント・来店数などをデータで可視化。毎月の改善提案で継続的に成果を向上させます。</p>
@@ -627,43 +720,46 @@
     </section>
 
     <!-- ═══════════════════════ TARGET INDUSTRIES ═══════════════════════ -->
-    <section class="py-20 md:py-28 px-6 bg-white">
-        <div class="max-w-6xl mx-auto">
+    <section class="py-20 md:py-28 px-6 bg-white relative overflow-hidden">
+        <!-- Flowing curve decoration -->
+        <svg class="absolute -bottom-1 left-0 w-full pointer-events-none opacity-[0.06]" viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg"><path d="M0,100 C240,160 480,40 720,100 C960,160 1200,40 1440,100 L1440,200 L0,200 Z" fill="#001A33"/></svg>
+        <svg class="absolute top-0 right-0 w-80 h-80 pointer-events-none opacity-[0.035]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="90" stroke="#E86B7A" stroke-width="1" fill="none"/><circle cx="100" cy="100" r="60" stroke="#E86B7A" stroke-width="1" fill="none"/><circle cx="100" cy="100" r="30" stroke="#E86B7A" stroke-width="1" fill="none"/></svg>
+        <div class="max-w-6xl mx-auto relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">対象業種</span>
                 <h2 class="text-2xl md:text-4xl font-bold serif text-tech-blue">こんな業種に選ばれています</h2>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl">
-                    <span class="text-2xl">🍜</span>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top-bottom">
+                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl hover:bg-white hover:shadow-md hover:border-coral/20 border border-transparent transition-all duration-300 group cursor-default">
+                    <div class="w-9 h-9 bg-coral/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1M5 12H3m18 0h-2M7.05 7.05 5.636 5.636m12.728 12.728L16.95 16.95M7.05 16.95l-1.414 1.414M18.364 5.636 16.95 7.05"/></svg></div>
                     <span class="font-bold text-sm text-tech-blue">飲食・レストラン</span>
                 </div>
-                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl">
-                    <span class="text-2xl">🏨</span>
+                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl hover:bg-white hover:shadow-md hover:border-coral/20 border border-transparent transition-all duration-300 group cursor-default">
+                    <div class="w-9 h-9 bg-coral/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
                     <span class="font-bold text-sm text-tech-blue">ホテル・旅館</span>
                 </div>
-                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl">
-                    <span class="text-2xl">💄</span>
+                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl hover:bg-white hover:shadow-md hover:border-coral/20 border border-transparent transition-all duration-300 group cursor-default">
+                    <div class="w-9 h-9 bg-coral/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
                     <span class="font-bold text-sm text-tech-blue">美容・コスメ</span>
                 </div>
-                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl">
-                    <span class="text-2xl">👗</span>
+                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl hover:bg-white hover:shadow-md hover:border-coral/20 border border-transparent transition-all duration-300 group cursor-default">
+                    <div class="w-9 h-9 bg-coral/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v3m0 0h6m-6 0V5m6 0a2 2 0 012 2v12a4 4 0 01-4 4m-6 0h6"/></svg></div>
                     <span class="font-bold text-sm text-tech-blue">ファッション・小売</span>
                 </div>
-                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl">
-                    <span class="text-2xl">🏯</span>
+                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl hover:bg-white hover:shadow-md hover:border-coral/20 border border-transparent transition-all duration-300 group cursor-default">
+                    <div class="w-9 h-9 bg-coral/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
                     <span class="font-bold text-sm text-tech-blue">観光施設・体験</span>
                 </div>
-                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl">
-                    <span class="text-2xl">🛍️</span>
+                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl hover:bg-white hover:shadow-md hover:border-coral/20 border border-transparent transition-all duration-300 group cursor-default">
+                    <div class="w-9 h-9 bg-coral/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
                     <span class="font-bold text-sm text-tech-blue">EC・越境販売</span>
                 </div>
-                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl">
-                    <span class="text-2xl">🏥</span>
+                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl hover:bg-white hover:shadow-md hover:border-coral/20 border border-transparent transition-all duration-300 group cursor-default">
+                    <div class="w-9 h-9 bg-coral/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
                     <span class="font-bold text-sm text-tech-blue">医療・クリニック</span>
                 </div>
-                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl">
-                    <span class="text-2xl">🏢</span>
+                <div class="flex items-center gap-3 p-5 bg-warm-gray rounded-xl hover:bg-white hover:shadow-md hover:border-coral/20 border border-transparent transition-all duration-300 group cursor-default">
+                    <div class="w-9 h-9 bg-coral/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg></div>
                     <span class="font-bold text-sm text-tech-blue">不動産・投資</span>
                 </div>
             </div>
@@ -671,15 +767,19 @@
     </section>
 
     <!-- ═══════════════════════ STRENGTHS ═══════════════════════ -->
-    <section class="py-24 md:py-32 px-6 bg-white">
-        <div class="max-w-6xl mx-auto">
+    <section class="py-24 md:py-32 px-6 bg-white relative overflow-hidden">
+        <!-- Decorative grid dots -->
+        <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle, #E86B7A18 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <!-- Decorative lines -->
+        <svg class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-[0.04]" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="50%" x2="100%" y2="50%" stroke="#001A33" stroke-width="1"/><line x1="25%" y1="0" x2="25%" y2="100%" stroke="#001A33" stroke-width="1"/><line x1="75%" y1="0" x2="75%" y2="100%" stroke="#001A33" stroke-width="1"/></svg>
+        <div class="max-w-6xl mx-auto relative z-10">
             <div class="text-center mb-16 md:mb-20" data-aos="fade-up">
                 <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">STRENGTHS</span>
                 <h2 class="text-2xl md:text-4xl font-bold serif text-tech-blue">PROTECHの強み</h2>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center p-8" data-aos="fade-up">
+                <div class="text-center p-8 rounded-2xl hover:bg-warm-gray transition-all duration-300 group" data-aos="fade-up" data-aos-delay="0">
                     <div
                         class="w-16 h-16 bg-coral-light rounded-2xl flex items-center justify-center text-coral text-2xl mx-auto mb-6">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -690,7 +790,7 @@
                     <h4 class="font-bold text-tech-blue text-lg mb-3">中日ネイティブ<br>チーム</h4>
                     <p class="text-sm text-gray-400 leading-relaxed">日中両言語のバイリンガルスタッフが、文化の壁を越えた最適な戦略を策定します。</p>
                 </div>
-                <div class="text-center p-8" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center p-8 rounded-2xl hover:bg-warm-gray transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
                     <div
                         class="w-16 h-16 bg-coral-light rounded-2xl flex items-center justify-center text-coral text-2xl mx-auto mb-6">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -701,7 +801,7 @@
                     <h4 class="font-bold text-tech-blue text-lg mb-3">Tech×Marketing<br>融合</h4>
                     <p class="text-sm text-gray-400 leading-relaxed">IT企業ならではのデータ分析・自動化ツールで、他社にはない精度の高い運用を実現。</p>
                 </div>
-                <div class="text-center p-8" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-center p-8 rounded-2xl hover:bg-warm-gray transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
                     <div
                         class="w-16 h-16 bg-coral-light rounded-2xl flex items-center justify-center text-coral text-2xl mx-auto mb-6">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -712,7 +812,7 @@
                     <h4 class="font-bold text-tech-blue text-lg mb-3">ワンストップ<br>対応</h4>
                     <p class="text-sm text-gray-400 leading-relaxed">戦略立案から実行・分析まで、すべてを一社で完結。複数外注の必要がありません。</p>
                 </div>
-                <div class="text-center p-8" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-center p-8 rounded-2xl hover:bg-warm-gray transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
                     <div
                         class="w-16 h-16 bg-coral-light rounded-2xl flex items-center justify-center text-coral text-2xl mx-auto mb-6">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -744,9 +844,9 @@
                 </a>
             </div>
             <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
-                <a href="cases.html" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 block">
-                    <div class="aspect-[16/9] overflow-hidden bg-coral/5 flex items-center justify-center">
-                        <img src="assets/images/case-restaurant.jpg" class="w-full h-full object-cover" alt="飲食店">
+                <a href="cases.html" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 block group">
+                    <div class="aspect-[16/9] overflow-hidden bg-coral/5 flex items-center justify-center relative">
+                        <img src="assets/images/case-restaurant.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="飲食店">
                     </div>
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-3">
@@ -757,9 +857,9 @@
                         <p class="text-xs text-gray-400">花雕酔鶏鍋 渋谷店</p>
                     </div>
                 </a>
-                <a href="cases.html" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 block">
+                <a href="cases.html" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 block group">
                     <div class="aspect-[16/9] overflow-hidden">
-                        <img src="assets/images/case-beauty.jpg" class="w-full h-full object-cover" alt="コスメ">
+                        <img src="assets/images/case-beauty.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="コスメ">
                     </div>
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-3">
@@ -770,9 +870,9 @@
                         <p class="text-xs text-gray-400">某日本コスメブランド</p>
                     </div>
                 </a>
-                <a href="cases.html" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 block">
+                <a href="cases.html" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 block group">
                     <div class="aspect-[16/9] overflow-hidden">
-                        <img src="assets/images/case-tourism.jpg" class="w-full h-full object-cover" alt="観光">
+                        <img src="assets/images/case-tourism.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="観光">
                     </div>
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-3">
@@ -886,7 +986,7 @@
             <div class="grid md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="100">
                 <div
                     class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10 text-center hover:bg-white/10 transition">
-                    <div class="text-4xl mb-6">💬</div>
+                    <div class="w-14 h-14 bg-coral/20 rounded-2xl flex items-center justify-center mx-auto mb-6"><svg class="w-7 h-7 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
                     <h3 class="text-white font-bold text-xl mb-3">オンライン相談</h3>
                     <p class="text-white/40 text-sm leading-relaxed mb-8">
                         全国どこからでも、対面と変わりなくご相談可能です。お気軽にご活用ください。
@@ -898,7 +998,7 @@
                 </div>
                 <div
                     class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10 text-center hover:bg-white/10 transition">
-                    <div class="text-4xl mb-6">📄</div>
+                    <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6"><svg class="w-7 h-7 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
                     <h3 class="text-white font-bold text-xl mb-3">資料請求</h3>
                     <p class="text-white/40 text-sm leading-relaxed mb-8">
                         サービス概要をわかりやすくまとめた資料をご用意しています。導入検討にご活用ください。
@@ -964,10 +1064,41 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 800,
+            duration: 900,
             once: true,
-            offset: 80
+            offset: 60,
+            easing: 'ease-out-cubic',
         });
+
+        // Parallax on hero images
+        const heroImgs = document.querySelectorAll('#hero-parallax img');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            heroImgs.forEach((img, i) => {
+                const speed = 0.08 + (i % 3) * 0.04;
+                img.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+        }, { passive: true });
+
+        // Counter animation for stats
+        function animateCounter(el) {
+            const target = parseFloat(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            const duration = 1800;
+            const start = performance.now();
+            const update = (now) => {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.round(target * eased) + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+            };
+            requestAnimationFrame(update);
+        }
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); statObserver.unobserve(e.target); } });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('[data-target]').forEach(el => statObserver.observe(el));
 
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
