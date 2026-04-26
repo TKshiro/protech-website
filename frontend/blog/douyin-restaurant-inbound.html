@@ -200,12 +200,36 @@
     <footer class="bg-[#0a1628] text-white pt-16 pb-8 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
-                <!-- Footer content matches original... omitted for brevity but standard layout -->
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
                     <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
                 </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="../red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="../services.html" class="hover:text-coral transition">その他サービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="../company.html" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="../cases.html" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="../blog.html" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="../privacy.html" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">お問合せ</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="../contact.html" class="hover:text-coral transition">お問合せフォーム</a></li>
+                    </ul>
+                </div>
             </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -219,6 +243,20 @@
                 menuBtn.addEventListener('click', e => { e.stopPropagation(); menuBtn.classList.toggle('active'); mobileMenu.classList.toggle('translate-x-full'); });
                 document.addEventListener('click', e => { if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) { menuBtn.classList.remove('active'); mobileMenu.classList.add('translate-x-full'); } });
             }
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            document.getElementById('x-share').href = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+            document.getElementById('fb-share').href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            document.getElementById('line-share').href = `https://social-plugins.line.me/lineit/share?url=${url}`;
+
+            // TOC active state on scroll
+            const sections = document.querySelectorAll('h2[id]');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+                tocLinks.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + current); });
+            });
         });
     </script>
 </body>
