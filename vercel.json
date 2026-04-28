@@ -1,16 +1,3 @@
 {
-  "outputDirectory": "frontend",
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.pro-tech.jp"
-        }
-      ],
-      "destination": "https://pro-tech.jp/$1",
-      "permanent": true
-    }
-  ]
+  "outputDirectory": "frontend"
 }
