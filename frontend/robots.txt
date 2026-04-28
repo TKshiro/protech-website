@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.pro-tech.jp/sitemap.xml
+Sitemap: https://pro-tech.jp/sitemap.xml
