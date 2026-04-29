@@ -299,7 +299,17 @@
                     </div>
                 </aside>
             </div>
-        </article>
+
+    <!-- Back to blog -->
+    <div class="max-w-3xl mx-auto px-8 pb-20 flex justify-between items-center border-t border-gray-100 pt-8 mt-4">
+        <a href="../blog.html" class="flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-coral transition tracking-widest uppercase">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            ブログ一覧へ
+        </a>
+        <a href="xiaohongshu-algorithm-ec-2026.html" class="flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-coral transition tracking-widest uppercase">
+            次の記事
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
     </div>
 
     <!-- FOOTER -->
@@ -347,37 +357,24 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            menuBtn.classList.toggle('active');
-            if (mobileMenu.classList.contains('translate-x-full')) {
-                mobileMenu.classList.remove('translate-x-full');
-            } else {
-                mobileMenu.classList.add('translate-x-full');
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 800, once: true });
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', e => { e.stopPropagation(); menuBtn.classList.toggle('active'); mobileMenu.classList.toggle('translate-x-full'); });
+                document.addEventListener('click', e => { if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) { menuBtn.classList.remove('active'); mobileMenu.classList.add('translate-x-full'); } });
             }
-        });
-        
-        // TOC highlight
-        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    document.querySelectorAll('.toc-link').forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
+            // TOC active state on scroll
+            const sections = document.querySelectorAll('h2[id]');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+                tocLinks.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + current); });
             });
-        }, observerOptions);
-
-        document.querySelectorAll('h2[id]').forEach((section) => {
-            observer.observe(section);
         });
     </script>
 </body>
