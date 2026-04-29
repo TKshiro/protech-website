@@ -100,50 +100,41 @@
         </div>
     </div>
 
-    <main class="pt-24 pb-20">
-        <article class="max-w-4xl mx-auto px-6">
-            
+    
+    <!-- ARTICLE HERO -->
+    <div class="pt-24 md:pt-32 pb-0 bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-3xl mx-auto px-6 md:px-8">
             <!-- Breadcrumb -->
-            <nav class="text-xs text-gray-500 mb-8" aria-label="Breadcrumb">
-                <ol class="list-none p-0 inline-flex">
-                    <li class="flex items-center">
-                        <a href="../index.html" class="hover:text-coral transition-colors">トップ</a>
-                        <svg class="w-3 h-3 mx-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                    </li>
-                    <li class="flex items-center">
-                        <a href="../blog.html" class="hover:text-coral transition-colors">ブログ</a>
-                        <svg class="w-3 h-3 mx-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                    </li>
-                    <li class="text-gray-400 truncate max-w-[150px] sm:max-w-none">データとAIで勝つインバウンド集客</li>
-                </ol>
+            <nav class="text-xs text-gray-400 mb-6 flex items-center gap-2" data-aos="fade-up">
+                <a href="../index.html" class="hover:text-coral transition">トップ</a>
+                <span>›</span>
+                <a href="../blog.html" class="hover:text-coral transition">ブログ</a>
+                <span>›</span>
+                <span class="text-gray-600">データとAIで勝つインバウンド集客</span>
             </nav>
 
-            <!-- Hero Section -->
-            <header class="mb-12">
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="bg-blue-50 text-tech-blue text-xs font-bold px-3 py-1 rounded-full border border-blue-100">インバウンド戦略</span>
-                    <span class="bg-red-50 text-coral text-xs font-bold px-3 py-1 rounded-full border border-red-100">DX・AI</span>
-                    <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full">2026年トレンド</span>
-                </div>
-                
-                <h1 class="font-black text-tech-blue mb-6 leading-tight">
-                    【2026年最新】データとAIで勝つインバウンド集客：「量から質」への転換とDX戦略の正解
-                </h1>
-                
-                <div class="flex items-center text-sm text-gray-500 mb-8 border-b border-gray-100 pb-6">
-                    <div class="flex items-center mr-6">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        <span>公開日: 2026-04-29</span>
-                    </div>
-                </div>
+            <!-- Category + Date -->
+            <div class="flex items-center gap-3 mb-5" data-aos="fade-up">
+                <span class="text-[10px] font-bold bg-coral/10 text-coral px-3 py-1 rounded-full tracking-widest uppercase">DX・AI</span>
+                <span class="text-xs text-gray-400">2026.04.29</span>
+            </div>
 
-                <div class="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-lg mb-10 bg-slate-100">
-                    <!-- PLACEHOLDER FOR: inbound-data-ai-hero.jpeg -->
-                    <img src="../assets/images/inbound-data-ai-hero.jpeg" alt="データとAIで勝つインバウンド集客" class="w-full h-full object-cover">
-                </div>
-            </header>
+            <!-- Title -->
+            <h1 class="text-3xl md:text-4xl font-bold text-tech-blue leading-tight mb-8" data-aos="fade-up">
+                【2026年最新】データとAIで勝つインバウンド集客：「量から質」への転換とDX戦略の正解
+            </h1>
 
-            <div class="flex flex-col lg:flex-row gap-10">
+            <!-- Hero image -->
+            <div class="rounded-2xl overflow-hidden shadow-xl mb-0" data-aos="zoom-in">
+                <img src="../assets/images/inbound-data-ai-hero.jpeg" alt="データとAIで勝つインバウンド集客" class="w-full h-64 md:h-96 object-cover">
+            </div>
+        </div>
+    </div>
+
+    <!-- ARTICLE LAYOUT: content + sidebar -->
+    <div class="max-w-6xl mx-auto px-6 md:px-8 py-16 flex flex-col lg:flex-row gap-16">
+
+            
                 <!-- Main Content -->
                 <div class="lg:w-2/3 article-body">
                     
@@ -256,7 +247,7 @@
                     <div class="sticky top-28 space-y-8">
                         <!-- Author/Company -->
                         <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-                            <h3 class="font-bold text-tech-blue mb-4 pb-2 border-b border-gray-200">この記事を書いた人</h3>
+                            <h3 class="font-bold text-tech-blue mb-4 pb-2 border-b border-gray-200">編集者</h3>
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="w-12 h-12 rounded-full bg-tech-blue flex items-center justify-center text-white font-bold">
                                     PR
@@ -309,7 +300,7 @@
                 </aside>
             </div>
         </article>
-    </main>
+    </div>
 
     <!-- FOOTER -->
     <footer class="bg-tech-blue text-white pt-20 pb-10">
