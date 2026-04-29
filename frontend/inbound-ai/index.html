@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="google" content="notranslate">
+<title>インバウンドAI | 訪日観光ビッグデータ自動化ソリューション | PROTECH</title>
+<meta name="description" content="AIと官庁統計データで訪日インバウンドを科学する。JTA・JNTOデータの自動収集から、BIレポート生成、SNS視覚化まで、PROTECH独自のデータパイプラインが貴社の意思決定を加速します。">
+<link rel="canonical" href="https://pro-tech.jp/inbound-ai/">
+<link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>tailwind.config={theme:{extend:{colors:{"tech-blue":"#001A33","coral":"#E86B7A"}}}}</script>
+<style>
+:root{--tech-blue:#001A33;--coral:#E86B7A}
+body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+.glass-nav{background:rgba(255,255,255,.95);backdrop-filter:blur(20px)}
+.nav-link:hover{color:var(--coral)}
+.btn-coral{background:var(--coral);color:#fff;transition:opacity .2s}
+.btn-coral:hover{opacity:.85}
+.hamburger line{transition:all .3s;transform-origin:center}
+.hamburger.active #line1{transform:translateY(7px) rotate(45deg)}
+.hamburger.active #line2{opacity:0}
+.hamburger.active #line3{transform:translateY(-7px) rotate(-45deg)}
+.pipeline-line{width:2px;background:linear-gradient(to bottom,#E86B7A,#001A33);margin:0 auto}
+.stat-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px)}
+.phase-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900}
+.glow{box-shadow:0 0 40px rgba(232,107,122,.2)}
+</style>
+</head>
+<body class="bg-white text-slate-900">
+<!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/" class="nav-link">トップ</a>
+                <a href="/red" class="nav-link">小紅書</a>
+                <a href="/services" class="nav-link">サービス</a>
+                <a href="/company" class="nav-link">会社概要</a>
+                <a href="/cases" class="nav-link">導入事例</a>
+                <a href="/blog" class="nav-link" style="color:var(--coral)">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden transition-transform duration-300">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
+            <a href="../index.html" class="text-lg font-bold text-slate-700">トップ</a>
+            <a href="../red.html" class="text-lg font-bold text-slate-700">小紅書</a>
+            <a href="../services.html" class="text-lg font-bold text-slate-700">サービス</a>
+            <a href="../company.html" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="../cases.html" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="../blog.html" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="../contact.html" class="text-lg font-bold text-slate-700">お問合せ</a>
+        </div>
+    </div>
+
+<!-- HERO -->
+<section class="relative min-h-screen bg-tech-blue flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="../assets/images/inbound-ai-hero.png" alt="" class="w-full h-full object-cover opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-r from-tech-blue via-tech-blue/80 to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
+        <div class="max-w-3xl" data-aos="fade-right">
+            <span class="inline-block text-[10px] font-bold tracking-[0.3em] uppercase bg-coral/20 text-coral border border-coral/30 px-4 py-1.5 rounded-full mb-6">PROTECH INBOUND AI</span>
+            <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+                AIが解読する、<br><span class="text-coral">訪日観光の</span><br>リアルタイム真実。
+            </h1>
+            <p class="text-blue-100 text-lg leading-relaxed mb-10 max-w-xl">
+                JTA・JNTOの官庁統計を自動収集し、AIが即座にBIレポートへ変換。<br>
+                データドリブンなインバウンド戦略の立案を、72時間から<strong class="text-white">数分</strong>へ。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#pipeline" class="btn-coral px-8 py-4 rounded-full font-bold text-sm tracking-widest text-center">システムを見る</a>
+                <a href="../contact.html" class="border border-white/30 text-white px-8 py-4 rounded-full font-bold text-sm tracking-widest text-center hover:bg-white/10 transition">無料相談する</a>
+            </div>
+        </div>
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-4 mt-20 max-w-xl" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-card rounded-2xl p-5 text-center">
+                <p class="text-3xl font-black text-coral">9.6<span class="text-lg">兆円</span></p>
+                <p class="text-white/60 text-xs mt-1">訪日消費額 2026年</p>
+            </div>
+            <div class="stat-card rounded-2xl p-5 text-center">
+                <p class="text-3xl font-black text-white">4,140<span class="text-lg">万人</span></p>
+                <p class="text-white/60 text-xs mt-1">訪日外客数</p>
+            </div>
+            <div class="stat-card rounded-2xl p-5 text-center">
+                <p class="text-3xl font-black text-coral">72h<span class="text-lg">→分</span></p>
+                <p class="text-white/60 text-xs mt-1">レポート生成時間</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PIPELINE -->
+<section id="pipeline" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-coral">HOW IT WORKS</span>
+            <h2 class="text-3xl md:text-4xl font-black text-tech-blue mt-3">3ステップ自動化パイプライン</h2>
+            <p class="text-gray-500 mt-4 max-w-xl mx-auto">人が数日かけて行う「調査→分析→発信」のワークフローを、エンジニアリングで完全自動化します。</p>
+        </div>
+
+        <div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
+
+            <!-- Phase 1 -->
+            <div class="flex flex-col lg:flex-row gap-8 items-start bg-slate-50 rounded-3xl p-8 border border-gray-100 hover:border-coral/30 transition">
+                <div class="flex-shrink-0">
+                    <div class="phase-icon bg-tech-blue text-white text-2xl">01</div>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-[9px] font-bold tracking-widest uppercase bg-blue-50 text-blue-600 px-3 py-1 rounded">自動採集スクリプト</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-tech-blue mb-2">Phase 1 — 官庁データ自動モニタリング</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">PythonスクリプトがJTA（観光庁）とJNTOの統計ページを定期監視。「訪日外客数」「消費動向」などのキーワードを含む最新PDFを自動検出・ダウンロードし、PyMuPDFで数値データを構造化テキストに変換します。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-tech-blue text-white px-3 py-1 rounded-full font-mono">Python 3.11</span>
+                        <span class="text-xs bg-tech-blue text-white px-3 py-1 rounded-full font-mono">Playwright</span>
+                        <span class="text-xs bg-tech-blue text-white px-3 py-1 rounded-full font-mono">PyMuPDF</span>
+                        <span class="text-xs bg-tech-blue text-white px-3 py-1 rounded-full font-mono">history.json</span>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 bg-tech-blue rounded-2xl p-4 font-mono text-xs text-green-400 w-full lg:w-64">
+                    <p class="text-white/40 mb-2"># 実行例</p>
+                    <p>$ python inbound_data_collector.py</p>
+                    <p class="text-white/60">Monitoring JTA...</p>
+                    <p class="text-green-400">✓ Found 3 new PDFs</p>
+                    <p class="text-green-400">✓ Extracted 12,400 chars</p>
+                    <p class="text-coral">→ Sending to LLM...</p>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="flex flex-col lg:flex-row gap-8 items-start bg-slate-50 rounded-3xl p-8 border border-gray-100 hover:border-coral/30 transition">
+                <div class="flex-shrink-0">
+                    <div class="phase-icon bg-coral text-white text-2xl">02</div>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-[9px] font-bold tracking-widest uppercase bg-red-50 text-coral px-3 py-1 rounded">データ×AI解析</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-tech-blue mb-2">Phase 2 — 生データをビジネス洞察へ変換</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">抽出した数値データをLLM（GPT-4o等）に送信。「資深日本商業観察家」のロールで、300字速報・商業洞察・インフォグラフィック用JSONの3点セットを自動生成。日経ビジネスレベルの日本語品質を担保します。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-coral text-white px-3 py-1 rounded-full font-mono">GPT-4o</span>
+                        <span class="text-xs bg-coral text-white px-3 py-1 rounded-full font-mono">N1級日本語</span>
+                        <span class="text-xs bg-coral text-white px-3 py-1 rounded-full font-mono">JSON出力</span>
+                        <span class="text-xs bg-coral text-white px-3 py-1 rounded-full font-mono">速報+深度分析</span>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 bg-slate-800 rounded-2xl p-4 font-mono text-xs text-white w-full lg:w-64">
+                    <p class="text-yellow-400 mb-1">[出力サンプル]</p>
+                    <p class="text-white/60">タイトル:</p>
+                    <p class="text-white text-[11px]">「消費額9.6兆円の衝撃—訪日客が変えた日本小売業の構造」</p>
+                    <p class="text-white/60 mt-2">データJSON:</p>
+                    <p class="text-green-400 text-[10px]">{"visitors":41.4M, "spend":9.6T...}</p>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="flex flex-col lg:flex-row gap-8 items-start bg-slate-50 rounded-3xl p-8 border border-gray-100 hover:border-coral/30 transition">
+                <div class="flex-shrink-0">
+                    <div class="phase-icon bg-gradient-to-br from-blue-600 to-coral text-white text-2xl">03</div>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-[9px] font-bold tracking-widest uppercase bg-purple-50 text-purple-600 px-3 py-1 rounded">ビジュアル自動生成</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-tech-blue mb-2">Phase 3 — インフォグラフィック自動生成</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Phase 2のJSONデータを元に、3種類のビジュアルアセットを自動生成。封面图（カバー）、インフォグラフィック長尺図、X/LinkedIn向けSNSカードを一括出力。深蓝×金黄のB2B配色で権威感を演出します。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-purple-600 text-white px-3 py-1 rounded-full font-mono">DALL-E 3</span>
+                        <span class="text-xs bg-purple-600 text-white px-3 py-1 rounded-full font-mono">カバー画像</span>
+                        <span class="text-xs bg-purple-600 text-white px-3 py-1 rounded-full font-mono">Infographic</span>
+                        <span class="text-xs bg-purple-600 text-white px-3 py-1 rounded-full font-mono">SNSカード</span>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 bg-gradient-to-br from-tech-blue to-slate-700 rounded-2xl p-4 text-xs w-full lg:w-64">
+                    <p class="text-white/60 mb-2">生成アセット</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-coral flex-shrink-0"></span><span class="text-white text-[11px]">封面图 1200×630px</span></div>
+                        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-yellow-400 flex-shrink-0"></span><span class="text-white text-[11px]">Infographic 800×2400px</span></div>
+                        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span><span class="text-white text-[11px]">SNSカード 1080×1080px</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROMPTS LIBRARY -->
+<section class="py-24 bg-tech-blue">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-coral">PROMPT LIBRARY</span>
+            <h2 class="text-3xl md:text-4xl font-black text-white mt-3">3つのマスタープロンプト</h2>
+            <p class="text-white/60 mt-4">コピー＆ペーストですぐ使える、実戦投入済みのプロンプト集。</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-coral/40 transition">
+                <div class="text-coral font-black text-4xl mb-4">01</div>
+                <h3 class="text-white font-bold text-lg mb-3">自動採集スクリプト設計</h3>
+                <p class="text-white/60 text-sm leading-relaxed">JTA・JNTOのPDFを自動検出・DLし、PyMuPDFでテキスト抽出。history.jsonで重複管理。エラーハンドリング＆ログ付き完全版Pythonスクリプト生成プロンプト。</p>
+                <a href="../contact.html" class="mt-6 inline-block text-coral text-xs font-bold tracking-widest uppercase hover:underline">詳細を見る →</a>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-coral/40 transition">
+                <div class="text-coral font-black text-4xl mb-4">02</div>
+                <h3 class="text-white font-bold text-lg mb-3">データ×商業コンテンツ変換</h3>
+                <p class="text-white/60 text-sm leading-relaxed">生の統計テキストを速報・深度分析・Infographic JSONに変換。「訪日ラボ+日経商業」風の本格日本語コンテンツを生成するB2Bメディア編集者プロンプト。</p>
+                <a href="../contact.html" class="mt-6 inline-block text-coral text-xs font-bold tracking-widest uppercase hover:underline">詳細を見る →</a>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-coral/40 transition">
+                <div class="text-coral font-black text-4xl mb-4">03</div>
+                <h3 class="text-white font-bold text-lg mb-3">ビジュアル自動生成指令</h3>
+                <p class="text-white/60 text-sm leading-relaxed">JSONデータからカバー図・Infographic・SNSカードの3点セットを生成する画像AIプロンプト。深蓝×金黄の権威あるB2B配色でブランド統一感を担保。</p>
+                <a href="../contact.html" class="mt-6 inline-block text-coral text-xs font-bold tracking-widest uppercase hover:underline">詳細を見る →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 bg-gradient-to-br from-slate-50 to-white">
+    <div class="max-w-3xl mx-auto px-6 text-center" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-black text-tech-blue mb-6">このシステムを<br>貴社に導入しませんか？</h2>
+        <p class="text-gray-500 leading-relaxed mb-10">データ収集から、AI解析、ビジュアル生成まで——PROTECH がフルスタックでご支援します。<br>まずは無料でシステム構成の相談を承ります。</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="../contact.html" class="btn-coral px-10 py-4 rounded-full font-bold text-sm tracking-widest">無料相談を申し込む</a>
+            <a href="../blog.html" class="border border-tech-blue text-tech-blue px-10 py-4 rounded-full font-bold text-sm tracking-widest hover:bg-tech-blue hover:text-white transition">関連記事を読む</a>
+        </div>
+    </div>
+</section>
+<!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">その他サービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">お問合せ</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せフォーム</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+    AOS.init({duration:800,once:true});
+    const menuBtn=document.getElementById("menu-btn");
+    const mobileMenu=document.getElementById("mobile-menu");
+    if(menuBtn&&mobileMenu){
+        menuBtn.addEventListener("click",e=>{e.stopPropagation();menuBtn.classList.toggle("active");mobileMenu.classList.toggle("translate-x-full");});
+        document.addEventListener("click",e=>{if(!mobileMenu.contains(e.target)&&!menuBtn.contains(e.target)){menuBtn.classList.remove("active");mobileMenu.classList.add("translate-x-full");}});
+    }
+});
+</script>
+</body>
+</html>
