@@ -47,7 +47,7 @@ filesToFix.forEach(file => {
                 <div class="bg-tech-blue rounded-2xl p-6 text-white text-center">
                     <p class="font-bold text-sm mb-2">無料相談受付中</p>
                     <p class="text-xs text-white/60 mb-4 leading-relaxed">運用や集客について<br>お気軽にご相談ください</p>
-                    <a href="../contact.html" class="btn-coral px-6 py-2.5 rounded-full text-xs font-bold tracking-widest inline-block">相談する</a>
+                    <a href="/contact" class="btn-coral px-6 py-2.5 rounded-full text-xs font-bold tracking-widest inline-block">相談する</a>
                 </div>
             </div>
         </aside>

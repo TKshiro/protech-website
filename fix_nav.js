@@ -5,24 +5,24 @@ const blogDir = path.join(__dirname, 'frontend/blog');
 const files = fs.readdirSync(blogDir).filter(f => f.endsWith('.html'));
 
 const desktopNav = `            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="../index.html" class="nav-link">トップ</a>
-                <a href="../services.html" class="nav-link">サービス</a>
-                <a href="../company.html" class="nav-link">会社概要</a>
-                <a href="../news.html" class="nav-link">ニュース</a>
-                <a href="../blog.html" class="nav-link text-coral">ブログ</a>
-                <a href="../contact.html" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+                <a href="/" class="nav-link">トップ</a>
+                <a href="/services" class="nav-link">サービス</a>
+                <a href="/company" class="nav-link">会社概要</a>
+                <a href="/blog" class="nav-link">ニュース</a>
+                <a href="/blog" class="nav-link text-coral">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>`;
 
 const mobileMenu = `
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden transition-transform duration-300 ease-in-out">
         <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="../index.html" class="text-lg font-bold text-slate-700">トップ</a>
-            <a href="../services.html" class="text-lg font-bold text-slate-700">サービス</a>
-            <a href="../company.html" class="text-lg font-bold text-slate-700">会社概要</a>
-            <a href="../news.html" class="text-lg font-bold text-slate-700">ニュース</a>
-            <a href="../blog.html" class="text-lg font-bold text-coral">ブログ</a>
-            <a href="../contact.html" class="text-lg font-bold text-slate-700">お問合せ</a>
+            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
+            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">ニュース</a>
+            <a href="/blog" class="text-lg font-bold text-coral">ブログ</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
     </div>
 `;

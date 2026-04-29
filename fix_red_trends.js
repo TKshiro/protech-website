@@ -7,7 +7,7 @@ let newContent = templateContent;
 // Replace title and meta
 newContent = newContent.replace(/<title>.*?<\/title>/, '<title>小紅書マーケティング2026年最新トレンド：日本企業が知るべき5つのポイント | PROTECH</title>');
 newContent = newContent.replace(/<meta name="description" content=".*?">/, '<meta name="description" content="2026年の小紅書運用で重要になるUGC設計、検索導線、ライブ配信、地域連携、CV計測の5点を解説します。">');
-newContent = newContent.replace(/<link rel="canonical" href=".*?">/, '<link rel="canonical" href="https://www.pro-tech.jp/blog/red-marketing-trends-2026.html">');
+newContent = newContent.replace(/<link rel="canonical" href=".*?">/, '<link rel="canonical" href="https://pro-tech.jp/blog/red-marketing-trends-2026">');
 newContent = newContent.replace(/<meta property="og:title" content=".*?">/, '<meta property="og:title" content="小紅書マーケティング2026年最新トレンド：日本企業が知るべき5つのポイント">');
 newContent = newContent.replace(/<meta property="og:description" content=".*?">/, '<meta property="og:description" content="2026年の小紅書運用で重要になるUGC設計、検索導線、ライブ配信、地域連携、CV計測の5点を解説します。">');
 newContent = newContent.replace(/<meta property="og:image" content=".*?">/, '<meta property="og:image" content="../assets/images/blog-red-trends-2026.jpg">');

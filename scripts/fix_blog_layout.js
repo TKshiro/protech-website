@@ -17,9 +17,9 @@ if (heroStart !== -1 && heroEnd !== -1) {
         <div class="max-w-3xl mx-auto px-6 md:px-8">
             <!-- Breadcrumb -->
             <nav class="text-xs text-gray-400 mb-6 flex items-center gap-2" data-aos="fade-up">
-                <a href="../index.html" class="hover:text-coral transition">トップ</a>
+                <a href="/" class="hover:text-coral transition">トップ</a>
                 <span>›</span>
-                <a href="../blog.html" class="hover:text-coral transition">ブログ</a>
+                <a href="/blog" class="hover:text-coral transition">ブログ</a>
                 <span>›</span>
                 <span class="text-gray-600">データとAIで勝つインバウンド集客</span>
             </nav>

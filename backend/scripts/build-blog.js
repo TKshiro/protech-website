@@ -19,7 +19,7 @@ const { marked } = require('marked');
 const ROOT = path.resolve(__dirname, '..');
 const POSTS_DIR = path.join(ROOT, 'blog', 'posts');
 const OUTPUT_DIR = path.join(ROOT, 'blog');
-const SITE_URL = 'https://www.pro-tech.jp';
+const SITE_URL = 'https://pro-tech.jp';
 
 // ─── Helpers ───────────────────────────────────────────────
 
@@ -178,15 +178,15 @@ function generatePostHTML(post) {
 
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
-            <a href="../index.html"
+            <a href="/"
                 class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
             <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest uppercase">
-                <a href="../index.html" class="hover:text-blue-600 transition">TOP</a>
-                <a href="../services.html" class="hover:text-blue-600 transition">SERVICES</a>
-                <a href="../company.html" class="hover:text-blue-600 transition">COMPANY</a>
-                <a href="../news.html" class="hover:text-blue-600 transition">NEWS</a>
-                <a href="../blog.html" class="text-blue-600 font-bold">BLOG</a>
-                <a href="../contact.html" class="hover:text-blue-600 transition">CONTACT</a>
+                <a href="/" class="hover:text-blue-600 transition">TOP</a>
+                <a href="/services" class="hover:text-blue-600 transition">SERVICES</a>
+                <a href="/company" class="hover:text-blue-600 transition">COMPANY</a>
+                <a href="/blog" class="hover:text-blue-600 transition">NEWS</a>
+                <a href="/blog" class="text-blue-600 font-bold">BLOG</a>
+                <a href="/contact" class="hover:text-blue-600 transition">CONTACT</a>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -201,12 +201,12 @@ function generatePostHTML(post) {
     <div id="mobile-menu"
         class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="../index.html" class="text-lg font-bold text-slate-700">TOP</a>
-            <a href="../services.html" class="text-lg font-bold text-slate-700">SERVICES</a>
-            <a href="../company.html" class="text-lg font-bold text-slate-700">COMPANY</a>
-            <a href="../news.html" class="text-lg font-bold text-slate-700">NEWS</a>
-            <a href="../blog.html" class="text-lg font-bold text-blue-600">BLOG</a>
-            <a href="../contact.html" class="text-lg font-bold text-slate-700">CONTACT</a>
+            <a href="/" class="text-lg font-bold text-slate-700">TOP</a>
+            <a href="/services" class="text-lg font-bold text-slate-700">SERVICES</a>
+            <a href="/company" class="text-lg font-bold text-slate-700">COMPANY</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">NEWS</a>
+            <a href="/blog" class="text-lg font-bold text-blue-600">BLOG</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">CONTACT</a>
         </div>
     </div>
 
@@ -232,7 +232,7 @@ function generatePostHTML(post) {
 
         <footer
             class="max-w-4xl mx-auto px-8 mt-32 pt-12 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-12">
-            <a href="../blog.html"
+            <a href="/blog"
                 class="group flex items-center gap-4 text-xs font-bold tracking-[0.2em] uppercase transition">
                 <span
                     class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-tech-blue group-hover:text-white transition">←</span>
@@ -264,10 +264,10 @@ function generatePostHTML(post) {
             <div class="text-tech-blue font-bold text-2xl md:text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
             <div
                 class="flex justify-center flex-wrap gap-6 md:gap-8 mb-10 text-[10px] md:text-xs font-bold tracking-widest text-gray-400">
-                <a href="../services.html" class="hover:text-blue-600 transition">SERVICES</a>
-                <a href="../company.html" class="hover:text-blue-600 transition">COMPANY</a>
-                <a href="../news.html" class="hover:text-blue-600 transition">NEWS</a>
-                <a href="../blog.html" class="hover:text-blue-600 transition">BLOG</a>
+                <a href="/services" class="hover:text-blue-600 transition">SERVICES</a>
+                <a href="/company" class="hover:text-blue-600 transition">COMPANY</a>
+                <a href="/blog" class="hover:text-blue-600 transition">NEWS</a>
+                <a href="/blog" class="hover:text-blue-600 transition">BLOG</a>
             </div>
             <p class="text-[10px] text-gray-400 tracking-widest">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
@@ -324,12 +324,13 @@ function generateSitemap(posts) {
 
     const staticPages = [
         { url: '/', priority: '1.0', changefreq: 'weekly' },
-        { url: '/services.html', priority: '0.8', changefreq: 'monthly' },
-        { url: '/contact.html', priority: '0.8', changefreq: 'monthly' },
-        { url: '/company.html', priority: '0.7', changefreq: 'monthly' },
-        { url: '/news.html', priority: '0.6', changefreq: 'weekly' },
-        { url: '/blog.html', priority: '0.7', changefreq: 'weekly' },
-        { url: '/news-detail.html', priority: '0.5', changefreq: 'never' },
+        { url: '/services', priority: '0.8', changefreq: 'monthly' },
+        { url: '/contact', priority: '0.8', changefreq: 'monthly' },
+        { url: '/company', priority: '0.7', changefreq: 'monthly' },
+        { url: '/blog', priority: '0.7', changefreq: 'weekly' },
+        { url: '/cases', priority: '0.7', changefreq: 'monthly' },
+        { url: '/red', priority: '0.7', changefreq: 'monthly' },
+        { url: '/privacy', priority: '0.4', changefreq: 'yearly' },
     ];
 
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -403,7 +404,7 @@ function injectIntoNews(posts) {
     let blogEntries = '';
     for (const post of posts) {
         blogEntries += `
-            <a href="blog/${post.slug}.html"
+            <a href="/blog/${post.slug}"
                 class="news-item flex flex-col md:flex-row md:items-center py-10 gap-6 group hover:bg-slate-50/50 transition-colors px-4 -mx-4"
                 data-category="${post.category}" data-aos="fade-up">
                 <span class="text-xs text-gray-400 font-mono w-32 tracking-tighter flex-shrink-0">${formatDate(post.date)}</span>
@@ -441,7 +442,7 @@ function generateBlogListingHTML(posts) {
     let postItems = '';
     for (const post of posts) {
         postItems += `
-            <a href="blog/${post.slug}.html"
+            <a href="/blog/${post.slug}"
                 class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 data-category="${post.category}" data-aos="fade-up">
                 ${post.image ? `<div class="aspect-video overflow-hidden">
@@ -472,13 +473,13 @@ function generateBlogListingHTML(posts) {
 
     <meta name="description" content="PROTECHのブログ。小紅書マーケティング、Web開発、デジタル戦略に関する最新情報と知見をお届けします。">
     <meta name="keywords" content="ブログ, マーケティング, 小紅書, RED, Web開発, PROTECH">
-    <link rel="canonical" href="${SITE_URL}/blog.html">
+    <link rel="canonical" href="${SITE_URL}/blog">
     <link rel="alternate" type="application/rss+xml" title="PROTECH Blog RSS" href="${SITE_URL}/rss.xml">
 
     <meta property="og:title" content="ブログ - PROTECH">
     <meta property="og:description" content="PROTECHのブログ。マーケティング戦略・Web開発に関する最新情報。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="${SITE_URL}/blog.html">
+    <meta property="og:url" content="${SITE_URL}/blog">
     <meta property="og:image" content="${SITE_URL}/img/og-image.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -517,15 +518,15 @@ function generateBlogListingHTML(posts) {
 
     <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
-            <a href="index.html"
+            <a href="/"
                 class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
             <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest uppercase">
-                <a href="index.html" class="hover:text-blue-600 transition">TOP</a>
-                <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
-                <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
-                <a href="news.html" class="hover:text-blue-600 transition">NEWS</a>
-                <a href="blog.html" class="text-blue-600 font-bold">BLOG</a>
-                <a href="contact.html" class="hover:text-blue-600 transition">CONTACT</a>
+                <a href="/" class="hover:text-blue-600 transition">TOP</a>
+                <a href="/services" class="hover:text-blue-600 transition">SERVICES</a>
+                <a href="/company" class="hover:text-blue-600 transition">COMPANY</a>
+                <a href="/blog" class="hover:text-blue-600 transition">NEWS</a>
+                <a href="/blog" class="text-blue-600 font-bold">BLOG</a>
+                <a href="/contact" class="hover:text-blue-600 transition">CONTACT</a>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -540,12 +541,12 @@ function generateBlogListingHTML(posts) {
     <div id="mobile-menu"
         class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
-            <a href="services.html" class="text-lg font-bold text-slate-700">SERVICES</a>
-            <a href="company.html" class="text-lg font-bold text-slate-700">COMPANY</a>
-            <a href="news.html" class="text-lg font-bold text-slate-700">NEWS</a>
-            <a href="blog.html" class="text-lg font-bold text-blue-600">BLOG</a>
-            <a href="contact.html" class="text-lg font-bold text-slate-700">CONTACT</a>
+            <a href="/" class="text-lg font-bold text-slate-700">TOP</a>
+            <a href="/services" class="text-lg font-bold text-slate-700">SERVICES</a>
+            <a href="/company" class="text-lg font-bold text-slate-700">COMPANY</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">NEWS</a>
+            <a href="/blog" class="text-lg font-bold text-blue-600">BLOG</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">CONTACT</a>
         </div>
     </div>
 
@@ -576,10 +577,10 @@ ${postItems}
             <div class="text-tech-blue font-bold text-2xl md:text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
             <div
                 class="flex justify-center flex-wrap gap-6 md:gap-8 mb-10 text-[10px] md:text-xs font-bold tracking-widest text-gray-400">
-                <a href="services.html" class="hover:text-blue-600 transition">SERVICES</a>
-                <a href="company.html" class="hover:text-blue-600 transition">COMPANY</a>
-                <a href="news.html" class="hover:text-blue-600 transition">NEWS</a>
-                <a href="blog.html" class="hover:text-blue-600 transition">BLOG</a>
+                <a href="/services" class="hover:text-blue-600 transition">SERVICES</a>
+                <a href="/company" class="hover:text-blue-600 transition">COMPANY</a>
+                <a href="/blog" class="hover:text-blue-600 transition">NEWS</a>
+                <a href="/blog" class="hover:text-blue-600 transition">BLOG</a>
             </div>
             <p class="text-[10px] text-gray-400 tracking-widest">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>

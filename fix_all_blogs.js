@@ -4,12 +4,12 @@ const path = require('path');
 const blogDir = path.join(__dirname, 'frontend/blog');
 
 const desktopNav = `            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="../index.html" class="nav-link">トップ</a>
-                <a href="../services.html" class="nav-link">サービス</a>
-                <a href="../company.html" class="nav-link">会社概要</a>
-                <a href="../news.html" class="nav-link">ニュース</a>
-                <a href="../blog.html" class="nav-link text-coral">ブログ</a>
-                <a href="../contact.html" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+                <a href="/" class="nav-link">トップ</a>
+                <a href="/services" class="nav-link">サービス</a>
+                <a href="/company" class="nav-link">会社概要</a>
+                <a href="/blog" class="nav-link">ニュース</a>
+                <a href="/blog" class="nav-link text-coral">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>`;
 
 const latestArticlesBlock = `
@@ -17,7 +17,7 @@ const latestArticlesBlock = `
     <div class="max-w-6xl mx-auto px-6 md:px-8 py-16 border-t border-gray-100">
         <h3 class="text-2xl font-bold text-tech-blue mb-8 text-center">最新の記事</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="inbound-sns-strategy-2026.html" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
+            <a href="/blog/inbound-sns-strategy-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
                     <img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
@@ -28,7 +28,7 @@ const latestArticlesBlock = `
                     <h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">中国人観光客を集客するSNS戦略2026年版</h4>
                 </div>
             </a>
-            <a href="miniprogram-cost-period.html" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
+            <a href="/blog/miniprogram-cost-period" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
                     <img src="../assets/images/blog-miniprogram-cost.jpg" alt="ミニプログラム開発" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
@@ -39,7 +39,7 @@ const latestArticlesBlock = `
                     <h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">WeChat小程序（ミニプログラム）開発の費用と期間の目安</h4>
                 </div>
             </a>
-            <a href="dazhong-dianping-guide.html" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
+            <a href="/blog/dazhong-dianping-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
                     <img src="../assets/images/大衆点評×中国都市インバウンドマーケティング.jpg" alt="大衆点評ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/case-tourism.jpg'">
                 </div>
@@ -59,15 +59,15 @@ const relatedArticlesBlock = `
                 <div class="bg-white border border-gray-100 rounded-2xl p-6">
                     <h3 class="font-bold text-tech-blue text-sm mb-4 tracking-wider">関連記事</h3>
                     <div class="space-y-4">
-                        <a href="inbound-xiaohongshu-2026.html" class="flex gap-3 group">
+                        <a href="/blog/inbound-xiaohongshu-2026" class="flex gap-3 group">
                             <img src="../assets/images/case-tourism.jpg" class="w-16 h-16 object-cover rounded-lg flex-shrink-0" alt="">
                             <p class="text-xs text-gray-600 group-hover:text-coral transition leading-relaxed">インバウンド集客を小紅書で加速させる方法</p>
                         </a>
-                        <a href="kol-koc-guide.html" class="flex gap-3 group">
+                        <a href="/blog/kol-koc-guide" class="flex gap-3 group">
                             <img src="../assets/images/hero-cityscape.jpg" class="w-16 h-16 object-cover rounded-lg flex-shrink-0" alt="">
                             <p class="text-xs text-gray-600 group-hover:text-coral transition leading-relaxed">KOL・KOCマーケティング完全ガイド</p>
                         </a>
-                        <a href="agency-checklist.html" class="flex gap-3 group">
+                        <a href="/blog/agency-checklist" class="flex gap-3 group">
                             <img src="../assets/images/office.jpg" class="w-16 h-16 object-cover rounded-lg flex-shrink-0" alt="">
                             <p class="text-xs text-gray-600 group-hover:text-coral transition leading-relaxed">小紅書運用代行を選ぶ際の7つのチェックポイント</p>
                         </a>
@@ -85,10 +85,10 @@ files.forEach(file => {
     // The nav closes after PROTECH logo with </div></nav> without the links
     if (!content.includes('hidden md:flex')) {
         // Find the nav closing pattern where PROTECH link closes and nav div closes
-        const oldNavClose = `            <a href="../index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+        const oldNavClose = `            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
         </div>
     </nav>`;
-        const newNavClose = `            <a href="../index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+        const newNavClose = `            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
 ${desktopNav}
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
