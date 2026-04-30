@@ -102,7 +102,7 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
 
     <!-- COVER IMAGE -->
     <div class="max-w-5xl mx-auto px-6 -mt-8 relative z-10" data-aos="fade-up" data-aos-delay="300">
-        <img src="../assets/images/inbound-ai-report-2026-04.png" alt="2026年4月 AIインバウンドレポート" class="w-full rounded-2xl shadow-2xl object-cover border-4 border-white">
+        <img src="../assets/images/inbound-ai-report-2026-04-cover.png" alt="2026年4月 AIインバウンドレポート" class="w-full rounded-2xl shadow-2xl object-cover border-4 border-white">
     </div>
 
     <!-- MAIN CONTENT -->
@@ -163,7 +163,10 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
             <!-- CHART 1 -->
             <div class="report-card m-0" data-aos="fade-up">
                 <h2 class="section-title">国籍別 訪日外客数 (2026年3月)</h2>
-                <div class="h-64 relative">
+                <div class="relative w-full mb-6">
+                    <img src="../assets/images/inbound-visitors-nationality-chart.png" alt="国籍別 訪日外客数" class="w-full h-auto rounded-lg shadow-sm">
+                </div>
+                <div class="h-48 relative hidden">
                     <canvas id="visitorsChart"></canvas>
                 </div>
                 <div class="mt-6 space-y-3">
@@ -216,6 +219,9 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
         <!-- DETAILED ANALYSIS -->
         <div class="report-card" data-aos="fade-up">
             <h2 class="section-title">市場別の詳細動向とビジネスアクション</h2>
+            <div class="mb-8 relative w-full">
+                <img src="../assets/images/inbound-market-insights-taiwan-korea-us-china.png" alt="市場別の詳細動向" class="w-full h-auto rounded-xl shadow-md">
+            </div>
             
             <div class="space-y-8">
                 <div>
@@ -241,15 +247,32 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
             </div>
         </div>
 
+        <!-- DATA SOURCES -->
+        <div class="mt-8 text-sm text-slate-500 bg-slate-50 p-6 rounded-xl border border-slate-100" data-aos="fade-up">
+            <h4 class="font-bold text-slate-700 mb-2 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                データの出典・引用元について
+            </h4>
+            <p class="mb-2">本レポートの各種データは、以下の公的機関が公表している統計資料を基に、PROTECHのAIシステムが自動収集・解析して作成しています。</p>
+            <ul class="list-disc pl-5 space-y-1">
+                <li><a href="https://www.jnto.go.jp/statistics/data/visitors-statistics/" target="_blank" rel="noopener noreferrer" class="text-coral hover:underline transition">日本政府観光局 (JNTO) - 訪日外客数統計データ</a></li>
+                <li><a href="https://www.mlit.go.jp/kankocho/siryou/toukei/index.html" target="_blank" rel="noopener noreferrer" class="text-coral hover:underline transition">観光庁 (JTA) - 訪日外国人消費動向調査 等</a></li>
+            </ul>
+        </div>
+
         <!-- CTA -->
-        <div class="mt-16 bg-gradient-to-br from-tech-blue to-slate-800 rounded-2xl p-10 text-center text-white" data-aos="fade-up">
-            <h3 class="text-2xl font-bold mb-4">データに基づいたインバウンド集客を始めませんか？</h3>
-            <p class="text-white/80 mb-8 max-w-2xl mx-auto">
-                PROTECHでは、本レポートのようなマクロデータと、小紅書（RED）などのSNSミクロデータを掛け合わせ、貴社に最適なインバウンドマーケティング戦略をご提案します。
-            </p>
-            <a href="/contact" class="btn-coral px-8 py-4 rounded-full font-bold tracking-widest inline-block hover:scale-105 transition-transform">
-                無料マーケティング相談はこちら
-            </a>
+        <div class="mt-16 rounded-2xl p-10 text-center text-white relative overflow-hidden" data-aos="fade-up">
+            <img src="../assets/images/inbound-ai-data-hub-section-banner.jpeg" alt="Data Hub Banner" class="absolute inset-0 w-full h-full object-cover z-0">
+            <div class="absolute inset-0 bg-tech-blue/80 z-0"></div>
+            <div class="relative z-10 py-4">
+                <h3 class="text-2xl font-bold mb-4">データに基づいたインバウンド集客を始めませんか？</h3>
+                <p class="text-white/80 mb-8 max-w-2xl mx-auto">
+                    PROTECHでは、本レポートのようなマクロデータと、小紅書（RED）などのSNSミクロデータを掛け合わせ、貴社に最適なインバウンドマーケティング戦略をご提案します。
+                </p>
+                <a href="/contact" class="btn-coral px-8 py-4 rounded-full font-bold tracking-widest inline-block hover:scale-105 transition-transform">
+                    無料マーケティング相談はこちら
+                </a>
+            </div>
         </div>
 
     </main>
