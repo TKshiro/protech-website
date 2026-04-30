@@ -7,3 +7,4 @@ citric-nimbus-*.json
 .vercel
 .env*.local
 google-service-account.json
+data/

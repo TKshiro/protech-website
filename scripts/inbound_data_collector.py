@@ -38,6 +38,9 @@ LOG_FILE = BASE_DIR / "collector.log"
 
 KEYWORDS = ["統計", "訪日外客数", "消費動向", "訪日外客", "旅行消費額"]
 
+# Only download PDFs from this year onwards (avoids bulk-downloading decades of history)
+MIN_YEAR = 2024
+
 SOURCES = [
     {
         "name": "JTA (観光庁)",
@@ -99,6 +102,18 @@ def mark_downloaded(url: str, history: dict):
     save_history(history)
 
 
+# ── URL date filter ─────────────────────────────────────────────────────────
+import re as _re
+
+def _is_recent_url(url: str) -> bool:
+    """Return True if the PDF URL appears to be from MIN_YEAR or later.
+    Falls back to True when no 4-digit year is detectable."""
+    years = [int(m) for m in _re.findall(r'(20\d{2})', url)]
+    if not years:
+        return True  # can't tell → include
+    return max(years) >= MIN_YEAR
+
+
 # ── PDF link discovery ────────────────────────────────────────────────────────
 def fetch_pdf_links_requests(source: dict) -> list[str]:
     """Fetch PDF links using requests + basic HTML parsing."""
@@ -125,8 +140,10 @@ def fetch_pdf_links_requests(source: dict) -> list[str]:
         parser = LinkParser()
         parser.feed(resp.text)
 
-        # Filter by keyword relevance in URL
+        # Filter by keyword relevance in URL and recency
         for link in parser.pdf_links:
+            if not _is_recent_url(link):
+                continue
             for kw in ["toukei", "visitor", "inbound", "消費", "外客"]:
                 if kw in link.lower():
                     links.append(link)
@@ -152,7 +169,8 @@ def fetch_pdf_links_playwright(source: dict) -> list[str]:
             for a in anchors:
                 href = a.get_attribute("href") or ""
                 full_url = urljoin(source["base"], href)
-                links.append(full_url)
+                if _is_recent_url(full_url):
+                    links.append(full_url)
             browser.close()
         log.info(f"[{source['name']}] Found {len(links)} PDF links via Playwright.")
     except Exception as e:
