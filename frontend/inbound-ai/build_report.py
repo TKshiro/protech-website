@@ -1,0 +1,352 @@
+import json
+import os
+
+html_content = """<!DOCTYPE html>
+<html lang="ja" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="google" content="notranslate">
+<title>2026年4月発行：訪日インバウンドデータ AI解析レポート | PROTECH</title>
+<meta name="description" content="2026年3月のJNTO訪日外客数および1-3月期観光庁消費動向に基づくインバウンド市場のAI解析レポート。訪日客数は361万人を突破し、消費額は2.3兆円に到達。">
+<link rel="canonical" href="https://pro-tech.jp/inbound-ai/2026-04-report">
+<link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>tailwind.config={theme:{extend:{colors:{"tech-blue":"#001A33","coral":"#E86B7A"}}}}</script>
+<style>
+:root{--tech-blue:#001A33;--coral:#E86B7A}
+body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;background-color:#F8FAFC}
+.glass-nav{background:rgba(255,255,255,.95);backdrop-filter:blur(20px)}
+.nav-link:hover{color:var(--coral)}
+.btn-coral{background:var(--coral);color:#fff;transition:opacity .2s}
+.btn-coral:hover{opacity:.85}
+.hamburger line{transition:all .3s;transform-origin:center}
+.hamburger.active #line1{transform:translateY(7px) rotate(45deg)}
+.hamburger.active #line2{opacity:0}
+.hamburger.active #line3{transform:translateY(-7px) rotate(-45deg)}
+.report-card{background:#fff;border-radius:1rem;box-shadow:0 4px 6px -1px rgba(0,0,0,.05),0 2px 4px -1px rgba(0,0,0,.03);padding:2rem;margin-bottom:2rem}
+.data-value{font-size:2.5rem;font-weight:900;color:var(--tech-blue);line-height:1}
+.data-label{font-size:0.875rem;color:#64748B;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem}
+.trend-up{color:#10B981;font-weight:700;font-size:0.875rem}
+.trend-down{color:#EF4444;font-weight:700;font-size:0.875rem}
+h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-left:4px solid var(--coral);padding-left:1rem;margin-bottom:1.5rem}
+.insight-box{background:#F0F9FF;border:1px solid #BAE6FD;border-radius:0.75rem;padding:1.5rem}
+.insight-box h3{color:#0369A1;font-weight:700;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem}
+</style>
+</head>
+<body class="text-slate-900">
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/" class="nav-link">トップ</a>
+                <a href="/red" class="nav-link">小紅書</a>
+                <a href="/services" class="nav-link">サービス</a>
+                <a href="/company" class="nav-link">会社概要</a>
+                <a href="/cases" class="nav-link">導入事例</a>
+                <a href="/blog" class="nav-link">ブログ</a>
+                <a href="/inbound-ai" class="nav-link" style="color:var(--coral)">インバウンドAI</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden transition-transform duration-300">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
+            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <a href="/red" class="text-lg font-bold text-slate-700">小紅書</a>
+            <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
+            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="/inbound-ai" class="text-lg font-bold" style="color:var(--coral)">インバウンドAI</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="pt-24 md:pt-32 pb-12 bg-tech-blue text-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex items-center gap-3 mb-4" data-aos="fade-up">
+                <span class="bg-coral text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">AI Report</span>
+                <span class="text-white/60 text-sm">2026年4月発行</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+                2026年1-3月期 訪日インバウンド<br>市場動向 AI解析レポート
+            </h1>
+            <p class="text-white/80 text-lg max-w-2xl leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                最新のJNTO訪日外客数データ（2026年3月推計値）および観光庁消費動向調査を基に、AIが抽出したビジネスインサイトと市場のトレンドを解説します。
+            </p>
+        </div>
+    </header>
+
+    <!-- COVER IMAGE -->
+    <div class="max-w-5xl mx-auto px-6 -mt-8 relative z-10" data-aos="fade-up" data-aos-delay="300">
+        <img src="../assets/images/inbound-ai-report-2026-04.png" alt="2026年4月 AIインバウンドレポート" class="w-full rounded-2xl shadow-2xl object-cover border-4 border-white">
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-5xl mx-auto px-6 py-16">
+        
+        <!-- DASHBOARD SUMMARY -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="report-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="data-label">2026年3月 訪日外客数</div>
+                <div class="data-value mb-2">361<span class="text-2xl text-slate-500">.8万人</span></div>
+                <div class="flex items-center gap-2">
+                    <span class="trend-up flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        +3.5%
+                    </span>
+                    <span class="text-xs text-slate-500">前年同月比 (過去最高)</span>
+                </div>
+            </div>
+            <div class="report-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="data-label">1-3月期 累計外客数</div>
+                <div class="data-value mb-2">1,068<span class="text-2xl text-slate-500">万人</span></div>
+                <div class="flex items-center gap-2">
+                    <span class="trend-up flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        +1.4%
+                    </span>
+                    <span class="text-xs text-slate-500">前年同期比</span>
+                </div>
+            </div>
+            <div class="report-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="data-label">1-3月期 訪日消費額</div>
+                <div class="data-value mb-2">2.33<span class="text-2xl text-slate-500">兆円</span></div>
+                <div class="flex items-center gap-2">
+                    <span class="trend-up flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        +2.5%
+                    </span>
+                    <span class="text-xs text-slate-500">前年同期比</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI INSIGHT -->
+        <div class="insight-box mb-16" data-aos="fade-up">
+            <h3>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                AI Executive Summary
+            </h3>
+            <p class="text-slate-700 leading-relaxed mb-4">
+                2026年第1四半期のインバウンド市場は、記録的なペースで推移しています。3月の訪日外客数は361万8,900人を記録し、単月として過去最高を更新。桜シーズンとイースター休暇の重なりが需要を強く牽引しました。消費額も2兆3,378億円に達しており、日本経済におけるインバウンドの重要性がさらに高まっています。
+            </p>
+            <p class="text-slate-700 leading-relaxed">
+                一方で、国籍別に見ると明暗が分かれています。韓国・台湾・米国が過去最高ペースで成長を続ける一方、中国市場は回復に遅れが見られます。事業者は「脱・特定国依存」の多角的なマーケティング戦略への移行が急務です。
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <!-- CHART 1 -->
+            <div class="report-card m-0" data-aos="fade-up">
+                <h2 class="section-title">国籍別 訪日外客数 (2026年3月)</h2>
+                <div class="h-64 relative">
+                    <canvas id="visitorsChart"></canvas>
+                </div>
+                <div class="mt-6 space-y-3">
+                    <div class="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                        <span class="font-bold text-slate-700">1. 韓国</span>
+                        <div><span class="font-bold text-tech-blue">795,600人</span> <span class="trend-up ml-2">+15.0%</span></div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                        <span class="font-bold text-slate-700">2. 台湾</span>
+                        <div><span class="font-bold text-tech-blue">653,300人</span> <span class="trend-up ml-2">+24.9%</span></div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                        <span class="font-bold text-slate-700">3. 米国</span>
+                        <div><span class="font-bold text-tech-blue">375,900人</span> <span class="trend-up ml-2">+9.7%</span></div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                        <span class="font-bold text-slate-700">4. 中国</span>
+                        <div><span class="font-bold text-tech-blue">291,500人</span> <span class="trend-down ml-2">-55.9%</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHART 2 -->
+            <div class="report-card m-0" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="section-title">国籍別 消費額シェア (1-3月期)</h2>
+                <div class="h-64 relative flex justify-center">
+                    <canvas id="spendChart"></canvas>
+                </div>
+                <div class="mt-6 space-y-3">
+                    <div class="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                        <span class="font-bold text-slate-700">1. 台湾</span>
+                        <div><span class="font-bold text-tech-blue">3,884億円</span> <span class="text-slate-500 ml-2">16.6%</span></div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                        <span class="font-bold text-slate-700">2. 韓国</span>
+                        <div><span class="font-bold text-tech-blue">3,182億円</span> <span class="text-slate-500 ml-2">13.6%</span></div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                        <span class="font-bold text-slate-700">3. 中国</span>
+                        <div><span class="font-bold text-tech-blue">2,715億円</span> <span class="text-slate-500 ml-2">11.6%</span></div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
+                        <span class="font-bold text-slate-700">4. 米国</span>
+                        <div><span class="font-bold text-tech-blue">2,592億円</span> <span class="text-slate-500 ml-2">11.1%</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DETAILED ANALYSIS -->
+        <div class="report-card" data-aos="fade-up">
+            <h2 class="section-title">市場別の詳細動向とビジネスアクション</h2>
+            
+            <div class="space-y-8">
+                <div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2 border-b border-slate-100 pb-2">🇹🇼 台湾・🇰🇷 韓国：安定した巨大市場</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        訪日客数の1位、2位を占める韓国・台湾は、消費額でもトップ2となっています。特に台湾は消費額16.6%のシェアを誇り、購買意欲の高さが伺えます。リピーター率が非常に高いため、王道の観光地だけでなく、地方都市やニッチな体験型コンテンツへの誘導が有効です。
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2 border-b border-slate-100 pb-2">🇺🇸 欧米豪：単価と滞在日数の伸びに注目</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        米国は3月に37万人を突破し、消費額でも4位につけています。欧米豪市場は1人当たりの消費額が高く、長期滞在の傾向があります。高付加価値な宿泊施設や、伝統文化を深く体験できるプレミアムツアーの需要が拡大しています。
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2 border-b border-slate-100 pb-2">🇨🇳 中国：減少傾向と今後の戦略</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        前年比で半減となっている中国市場ですが、依然として消費総額では3位（2,715億円）をキープしており、一人当たりの消費額（客単価）の高さは健在です。今後は「爆買い」から「体験・ウェルネス・美容」といった目的型ツーリズムへのシフトが予想されるため、小紅書（RED）などを活用したピンポイントな富裕層マーケティングが鍵となります。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-16 bg-gradient-to-br from-tech-blue to-slate-800 rounded-2xl p-10 text-center text-white" data-aos="fade-up">
+            <h3 class="text-2xl font-bold mb-4">データに基づいたインバウンド集客を始めませんか？</h3>
+            <p class="text-white/80 mb-8 max-w-2xl mx-auto">
+                PROTECHでは、本レポートのようなマクロデータと、小紅書（RED）などのSNSミクロデータを掛け合わせ、貴社に最適なインバウンドマーケティング戦略をご提案します。
+            </p>
+            <a href="/contact" class="btn-coral px-8 py-4 rounded-full font-bold tracking-widest inline-block hover:scale-105 transition-transform">
+                無料マーケティング相談はこちら
+            </a>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">その他サービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">お問合せ</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せフォーム</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 800, once: true });
+            
+            // Mobile Menu
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', e => { 
+                    e.stopPropagation(); 
+                    menuBtn.classList.toggle('active'); 
+                    mobileMenu.classList.toggle('translate-x-full'); 
+                });
+                document.addEventListener('click', e => { 
+                    if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) { 
+                        menuBtn.classList.remove('active'); 
+                        mobileMenu.classList.add('translate-x-full'); 
+                    } 
+                });
+            }
+
+            // Charts
+            const ctx1 = document.getElementById('visitorsChart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['韓国', '台湾', '米国', '中国', '香港'],
+                    datasets: [{
+                        label: '訪日外客数 (万人)',
+                        data: [79.5, 65.3, 37.5, 29.1, 21.5],
+                        backgroundColor: '#001A33',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } }
+                }
+            });
+
+            const ctx2 = document.getElementById('spendChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'doughnut',
+                data: {
+                    labels: ['台湾', '韓国', '中国', '米国', 'その他'],
+                    datasets: [{
+                        data: [16.6, 13.6, 11.6, 11.1, 47.1],
+                        backgroundColor: ['#E86B7A', '#001A33', '#3B82F6', '#10B981', '#CBD5E1'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: { legend: { position: 'right' } }
+                }
+            });
+        });
+    </script>
+</body>
+</html>"""
+
+with open('/Users/charles/Downloads/自己/PROTECH/protech-website-main/frontend/inbound-ai/2026-04-report.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+print("Created 2026-04-report.html")

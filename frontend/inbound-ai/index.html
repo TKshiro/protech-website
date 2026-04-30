@@ -23,6 +23,12 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
 .hamburger.active #line1{transform:translateY(7px) rotate(45deg)}
 .hamburger.active #line2{opacity:0}
 .hamburger.active #line3{transform:translateY(-7px) rotate(-45deg)}
+.nav-dropdown{position:relative}
+.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #f1f5f9;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.10);min-width:180px;padding:8px 0;z-index:100}
+.nav-dropdown:hover .nav-dropdown-menu{display:block}
+.nav-dropdown-menu a{display:block;padding:10px 20px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#334155;white-space:nowrap;transition:color .2s,background .2s}
+.nav-dropdown-menu a:hover{color:var(--coral);background:#fff5f6}
+.nav-dropdown-menu a.active-sub{color:var(--coral)}
 .pipeline-line{width:2px;background:linear-gradient(to bottom,#E86B7A,#001A33);margin:0 auto}
 .stat-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px)}
 .phase-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900}
@@ -40,7 +46,15 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
                 <a href="/services" class="nav-link">サービス</a>
                 <a href="/company" class="nav-link">会社概要</a>
                 <a href="/cases" class="nav-link">導入事例</a>
-                <a href="/blog" class="nav-link" style="color:var(--coral)">ブログ</a>
+                <a href="/blog" class="nav-link nav-dropdown">
+                    ブログ
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog">ブログ一覧</a>
+                        <a href="/inbound-ai" class="active-sub flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-coral inline-block"></span>インバウンドAI
+                        </a>
+                    </div>
+                </a>
                 <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
@@ -59,7 +73,8 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
             <a href="../services.html" class="text-lg font-bold text-slate-700">サービス</a>
             <a href="../company.html" class="text-lg font-bold text-slate-700">会社概要</a>
             <a href="../cases.html" class="text-lg font-bold text-slate-700">導入事例</a>
-            <a href="../blog.html" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="/inbound-ai" class="text-lg font-bold pl-4 border-l-2 border-coral/30" style="color:var(--coral)">— インバウンドAI</a>
             <a href="../contact.html" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
     </div>
@@ -231,6 +246,47 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
     </div>
 </section>
 
+<!-- LATEST REPORTS -->
+<section class="py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-coral">DATA HUB</span>
+            <h2 class="text-3xl md:text-4xl font-black text-tech-blue mt-3">週次・月次データレポート</h2>
+            <p class="text-gray-500 mt-4 max-w-xl mx-auto">AIが自動生成した最新の訪日インバウンド市場データとビジネス洞察。</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+            <!-- 2026-04 Report -->
+            <a href="2026-04-report.html" class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                <div class="h-48 relative overflow-hidden">
+                    <img src="../assets/images/inbound-ai-report-2026-04.png" alt="2026年4月 レポート" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-tech-blue">2026年4月</div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-[9px] font-bold bg-blue-50 text-blue-600 px-2 py-1 rounded tracking-widest uppercase">MONTHLY REPORT</span>
+                        <span class="text-xs text-gray-400">訪日外客数 / 消費動向</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-tech-blue mb-3 group-hover:text-coral transition">2026年1-3月期 訪日インバウンド市場動向 AI解析レポート</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-4">訪日客数361万人突破（3月過去最高）。消費額は2.3兆円に到達。韓国・台湾の好調と中国市場の動向についてAIが徹底解析。</p>
+                    <div class="flex items-center text-coral text-sm font-bold">
+                        レポートを読む 
+                        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Placeholder for next report -->
+            <div class="group block bg-slate-50 rounded-3xl overflow-hidden border border-dashed border-gray-300 flex flex-col items-center justify-center p-12 min-h-[400px]">
+                <div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 mb-4">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                </div>
+                <p class="text-sm font-bold text-slate-400 text-center">次回のレポートは<br>2026年5月中旬に公開予定です</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CTA -->
 <section class="py-24 bg-gradient-to-br from-slate-50 to-white">
     <div class="max-w-3xl mx-auto px-6 text-center" data-aos="fade-up">
@@ -267,9 +323,10 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">お問合せ</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">INBOUND AI</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/contact" class="hover:text-coral transition">お問合せフォーム</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition" style="color:var(--coral)">インバウンドAI</a></li>
+                        <li><a href="/inbound-ai/2026-04-report" class="hover:text-coral transition">2026年4月レポート</a></li>
                     </ul>
                 </div>
             </div>
