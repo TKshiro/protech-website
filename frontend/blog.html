@@ -948,7 +948,18 @@
             // Sort all items by date (newest first)
             items.sort((a, b) => {
                 const getDate = (el) => {
-                    const text = el.querySelector('.font-mono')?.textContent.trim() || '';
+                    // Try font-mono first (old cards), then any span with date format
+                    let text = el.querySelector('.font-mono')?.textContent.trim() || '';
+                    if (!text) {
+                        // Fallback: find any span whose text matches YYYY.MM.DD
+                        const spans = el.querySelectorAll('span');
+                        for (const span of spans) {
+                            if (/^\d{4}\.\d{2}\.\d{2}$/.test(span.textContent.trim())) {
+                                text = span.textContent.trim();
+                                break;
+                            }
+                        }
+                    }
                     return new Date(text.replace(/\./g, '-')).getTime() || 0;
                 };
                 return getDate(b) - getDate(a);
