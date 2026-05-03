@@ -117,7 +117,7 @@
         <article class="lg:w-2/3 article-body" data-aos="fade-up">
 
             <p>日本政府観光局（JNTO）が発表した2026年3月の訪日外国人旅行者数（推計値）は、なんと<strong>361万8,900人</strong>に達しました。<br>前年同月（2025年3月）比で3.5％増となり、3月として過去最高を更新しました。さらに、1〜3月の累計は1,068万3,500人となり、2年連続で第1四半期での1,000万人突破を達成しています。</p>
-            <p>本記事では、この最新データ（<a href="https://yamatogokoro.jp/inbound_data/59989/" target="_blank" class="text-coral hover:underline">参考：やまとごころ.jp様記事</a>／JNTO推計値）をもとに、どの国の人が増えているのか、そして今後のインバウンド集客にどのようなアクションが必要かをプロの視点から解説します。</p>
+            <p>本記事では、日本政府観光局（JNTO）が発表した最新の統計データ（<a href="https://www.jnto.go.jp/news/press/20260415_monthly.html" target="_blank" class="text-coral hover:underline">出典：JNTO 訪日外客数推計値</a>）をもとに、どの国の人が増えているのか、そして今後のインバウンド集客にどのようなアクションが必要かをプロの視点から解説します。</p>
 
             <h2 id="section-1">なぜ3月に急増したのか？</h2>
             <p>3月の旅行需要を大きく押し上げた要因は、主に以下の2つです。</p>
@@ -147,7 +147,27 @@
                 <li><strong>長距離市場：</strong> メキシコが驚異の<strong>+69.7%増</strong>。他にもスペイン（+36.3%）、イタリア（+23.6%）、ドイツ（+21.7%）など欧州市場が軒並み好調です。</li>
             </ul>
 
-            <h2 id="section-3">データから読み解く、今後のインバウンド対策</h2>
+            <div class="my-8 p-6 bg-white rounded-2xl shadow-lg border border-gray-100">
+                <h4 class="text-center font-bold text-tech-blue mb-4">注目市場の伸長率トップ5（前年同月比）</h4>
+                <div class="relative h-64 md:h-80 w-full">
+                    <canvas id="growthChart"></canvas>
+                </div>
+                <p class="text-center text-[10px] text-gray-400 mt-4 mb-0">※JNTOデータを基に伸びの著しい市場を抜粋</p>
+            </div>
+
+            <h2 id="section-3">2026年第1四半期（1〜3月）累計の動向</h2>
+            <p>2026年1〜3月の累計訪日客数は1,068万3,500人となり、前年同期比1.4％増と緩やかながら着実に成長を続けています。市場別の累計トップ4は以下の通りです。</p>
+
+            <div class="my-8 p-6 bg-white rounded-2xl shadow-lg border border-gray-100">
+                <h4 class="text-center font-bold text-tech-blue mb-4">2026年1〜3月 累計訪日客数トップ4（万人）</h4>
+                <div class="relative h-64 md:h-80 w-full">
+                    <canvas id="cumulativeChart"></canvas>
+                </div>
+            </div>
+            
+            <p>韓国（305.8万人）と台湾（204.1万人）が全体を大きく牽引しています。この2カ国だけで全体の半数近くを占めるため、インバウンド施策において東アジア市場の重要性は依然として極めて高いと言えます。</p>
+
+            <h2 id="section-4">データから読み解く、今後のインバウンド対策</h2>
             <p>中国市場の回復が遅れる中、韓国・台湾の安定した集客と、欧米・東南アジアの急激な伸びをどのようにビジネスに活かすべきでしょうか。</p>
 
             <div class="point-card">
@@ -311,34 +331,67 @@
                         datasets: [{
                             label: '2026年3月 訪日外客数 (万人)',
                             data: [79.5, 65.3, 37.5, 29.1, 21.6],
-                            backgroundColor: [
-                                '#E86B7A',
-                                '#E86B7A',
-                                '#E86B7A',
-                                '#E86B7A',
-                                '#E86B7A'
-                            ],
+                            backgroundColor: '#E86B7A',
                             borderRadius: 6
                         }]
                     },
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false }
-                        },
+                        plugins: { legend: { display: false } },
                         scales: {
-                            y: {
-                                beginAtZero: true,
-                                grid: { color: '#f1f5f9' },
-                                border: { display: false },
-                                ticks: { font: { family: "'Noto Sans JP', sans-serif" } }
-                            },
-                            x: {
-                                grid: { display: false },
-                                border: { display: false },
-                                ticks: { font: { family: "'Noto Sans JP', sans-serif" } }
-                            }
+                            y: { beginAtZero: true, grid: { color: '#f1f5f9' }, border: { display: false }, ticks: { font: { family: "'Noto Sans JP', sans-serif" } } },
+                            x: { grid: { display: false }, border: { display: false }, ticks: { font: { family: "'Noto Sans JP', sans-serif" } } }
+                        }
+                    }
+                });
+            }
+
+            const ctxGrowth = document.getElementById('growthChart');
+            if (ctxGrowth) {
+                new Chart(ctxGrowth, {
+                    type: 'bar',
+                    data: {
+                        labels: ['メキシコ', 'マレーシア', 'ベトナム', 'インドネシア', 'スペイン'],
+                        datasets: [{
+                            label: '前年同月比伸び率 (%)',
+                            data: [69.7, 44.2, 43.5, 36.6, 36.3],
+                            backgroundColor: '#3b82f6',
+                            borderRadius: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: { beginAtZero: true, grid: { color: '#f1f5f9' }, border: { display: false }, ticks: { font: { family: "'Noto Sans JP', sans-serif" } } },
+                            x: { grid: { display: false }, border: { display: false }, ticks: { font: { family: "'Noto Sans JP', sans-serif" } } }
+                        }
+                    }
+                });
+            }
+
+            const ctxCumulative = document.getElementById('cumulativeChart');
+            if (ctxCumulative) {
+                new Chart(ctxCumulative, {
+                    type: 'bar',
+                    data: {
+                        labels: ['韓国', '台湾', '中国', 'アメリカ'],
+                        datasets: [{
+                            label: '1〜3月累計 (万人)',
+                            data: [305.8, 204.1, 107.3, 85.2],
+                            backgroundColor: '#10b981',
+                            borderRadius: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: { beginAtZero: true, grid: { color: '#f1f5f9' }, border: { display: false }, ticks: { font: { family: "'Noto Sans JP', sans-serif" } } },
+                            x: { grid: { display: false }, border: { display: false }, ticks: { font: { family: "'Noto Sans JP', sans-serif" } } }
                         }
                     }
                 });
