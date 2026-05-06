@@ -177,12 +177,7 @@
                 </div>
                 <div class="bg-slate-50 rounded-2xl p-6">
                     <h3 class="font-bold text-tech-blue text-sm mb-4 tracking-wider">目次</h3>
-                    <ol class="space-y-2 text-sm text-gray-500">
-                        <li><a href="#section-1" class="toc-link hover:text-coral">コンテンツ運用が失敗する3つの理由</a></li>
-                        <li><a href="#section-2" class="toc-link hover:text-coral">少人数チームのための運用フロー</a></li>
-                        <li><a href="#section-3" class="toc-link hover:text-coral">レビュープロセスを仕組み化する</a></li>
-                        <li><a href="#section-4" class="toc-link hover:text-coral">実務への落とし込みと今後の展開</a></li>
-                    </ol>
+                    <ol id="auto-toc" class="space-y-2 text-sm text-gray-500"></ol>
                 </div>
                 
 
@@ -315,6 +310,36 @@
             document.getElementById('x-share').href = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
             document.getElementById('fb-share').href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
             document.getElementById('line-share').href = `https://social-plugins.line.me/lineit/share?url=${url}`;
+
+            
+            // ── Auto-generate TOC from article h2 / h3 ──────────────────────
+            const tocList = document.getElementById('auto-toc');
+            if (tocList) {
+                const article = document.querySelector('.article-body');
+                if (article) {
+                    let h3Counter = 0;
+                    article.querySelectorAll('h2[id], h3').forEach(h => {
+                        if (h.tagName === 'H2') {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<a href="#${h.id}" class="toc-link hover:text-coral font-medium block py-0.5">${h.textContent}</a>`;
+                            tocList.appendChild(li);
+                        } else if (h.tagName === 'H3') {
+                            if (!h.id) { h.id = 'h3-' + (++h3Counter); }
+                            let lastH2Li = tocList.querySelector('li:last-child');
+                            if (!lastH2Li) return;
+                            let sub = lastH2Li.querySelector('ol');
+                            if (!sub) {
+                                sub = document.createElement('ol');
+                                sub.className = 'mt-1 ml-3 space-y-0.5 text-xs text-gray-400';
+                                lastH2Li.appendChild(sub);
+                            }
+                            const subLi = document.createElement('li');
+                            subLi.innerHTML = `<a href="#${h.id}" class="toc-link hover:text-coral block py-0.5 pl-1 border-l border-gray-200">${h.textContent}</a>`;
+                            sub.appendChild(subLi);
+                        }
+                    });
+                }
+            }
 
             // TOC active state on scroll
             const sections = document.querySelectorAll('h2[id]');
