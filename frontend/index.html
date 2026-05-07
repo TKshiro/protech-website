@@ -37,26 +37,13 @@
         content="「中国人に届かない」「インバウンドが増えない」そのお悩み、PROTECHが解決します。小紅書・抖音の中国SNS運営代行から、LP制作・動画制作・小程序開発まで一社で完結。">
     <meta name="twitter:image" content="https://pro-tech.jp/img/og-image.jpg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'tech-blue': '#001A33',
-                        'coral': '#E86B7A',
-                        'coral-light': '#FFF0F1',
-                        'warm-gray': '#F8F6F3',
-                    }
-                }
-            }
-        }
-    </script>
+    
 
     <style>
         :root {
@@ -423,7 +410,11 @@
             animation: scroll-bounce 2s ease-in-out infinite;
         }
     </style>
-</head>
+    <link href="/assets/css/tailwind.css" rel="stylesheet">
+    <link rel="preload" as="image" href="/assets/images/hero-landscape.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    </head>
 
 <body class="bg-white text-slate-900">
 
@@ -474,7 +465,7 @@
         <div class="absolute inset-0">
             <div class="grid grid-cols-4 grid-rows-2 h-full gap-1">
                 <div class="col-span-2 row-span-1 overflow-hidden">
-                    <img src="assets/images/hero-landscape.jpg" alt="富士山" class="w-full h-full object-cover">
+                    <img src="assets/images/hero-landscape.jpg" alt="富士山" class="w-full h-full object-cover" fetchpriority="high">
                 </div>
                 <div class="overflow-hidden">
                     <img src="assets/images/hero-cityscape.jpg" alt="日本の街並み" class="w-full h-full object-cover">
