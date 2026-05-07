@@ -1,0 +1,6 @@
+# 削除済み記事のリダイレクト（301 Permanent Redirect）
+# 削除: inbound-sns-strategy-2026 → 類似記事へ転送
+/blog/inbound-sns-strategy-2026    /blog/china-sns-inbound-guide    301
+
+# HTTP → HTTPS（Netlifyが自動処理するが念のため）
+# http://pro-tech.jp/*  https://pro-tech.jp/:splat  301!
