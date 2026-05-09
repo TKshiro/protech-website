@@ -361,7 +361,7 @@
                             tocList.appendChild(li);
                         } else if (h.tagName === 'H3') {
                             if (!h.id) { h.id = 'h3-' + (++h3Counter); }
-                            let lastH2Li = tocList.querySelector('li:last-child');
+                            let lastH2Li = tocList.lastElementChild;
                             if (!lastH2Li) return;
                             let sub = lastH2Li.querySelector('ol');
                             if (!sub) {
