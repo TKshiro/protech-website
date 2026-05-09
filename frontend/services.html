@@ -6,18 +6,19 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-7QYC9JLZ1M');
+        gtag('config', 'G-7QYC9JLZ1M');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小紅書・SNS運営代行｜LP制作・app開発のサービス一覧｜PROTECH</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 
-    <meta name="description" content="PROTECHの提供する日中マーケティングサービス一覧。小紅書・抖音の運営代行から中国語LP・動画制作、WeChat小程序（ミニプログラム）開発までワンストップでご支援します。">
+    <meta name="description"
+        content="PROTECHの提供する日中マーケティングサービス一覧。小紅書・抖音の運営代行から中国語LP・動画制作、WeChat小程序（ミニプログラム）開発までワンストップでご支援します。">
     <meta name="keywords" content="小紅書 運営代行, 抖音 運営代行, 中国SNS, 中国語 LP制作, インバウンド 動画制作, 小程序 開発, WeChat ミニプログラム, PROTECH">
     <link rel="canonical" href="https://pro-tech.jp/services">
 
@@ -27,13 +28,12 @@
     <meta property="og:url" content="https://pro-tech.jp/services">
     <meta property="og:image" content="https://pro-tech.jp/img/og-image.jpg">
 
-    
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    
+
 
     <style>
         :root {
@@ -60,9 +60,18 @@
             font-family: 'Noto Sans JP', sans-serif;
         }
 
-        h1 { font-size: var(--font-h1); }
-        h2 { font-size: var(--font-h2); }
-        p, body { font-size: var(--font-body); }
+        h1 {
+            font-size: var(--font-h1);
+        }
+
+        h2 {
+            font-size: var(--font-h2);
+        }
+
+        p,
+        body {
+            font-size: var(--font-body);
+        }
 
         .glass-nav {
             background: rgba(255, 255, 255, 0.92);
@@ -162,28 +171,39 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
         }
     </style>
-    <link href="/assets/css/tailwind.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="assets/css/tailwind.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    </head>
+</head>
 
 <body class="bg-white text-slate-900">
 
-    <!-- NAV -->
+        <!-- NAV -->
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
-            <a href="/"
-                class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
-            <div
-                class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="/" class="nav-link">トップ</a>
-                <a href="/red" class="nav-link">小紅書</a>
-                <a href="/services" class="nav-link text-coral">サービス</a>
-                <a href="/company" class="nav-link">会社概要</a>
-                <a href="/cases" class="nav-link">導入事例</a>
-                <a href="/blog" class="nav-link">ブログ</a>
-                <a href="/contact"
-                    class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/" class="nav-link ">トップ</a>
+
+                <div class="relative group">
+                    <a href="/services" class="nav-link text-coral flex items-center gap-1">サービス
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 mt-4 w-48 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="p-2 flex flex-col space-y-1">
+                            <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/cases" class="nav-link ">導入事例</a>
+                <a href="/blog" class="nav-link ">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -195,17 +215,20 @@
         </div>
     </nav>
 
-    <div id="mobile-menu"
-        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden">
-        <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
-            <a href="/red" class="text-lg font-bold text-slate-700">小紅書</a>
-            <a href="/services" class="text-lg font-bold text-coral">サービス</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/services" class="text-lg font-bold text-coral">サービス</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+            </div>
             <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
             <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
             <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
+    </div>
     </div>
 
     <!-- HERO -->
@@ -269,16 +292,16 @@
                 <div class="md:w-1/2" data-aos="fade-left">
                     <div class="grid grid-cols-3 gap-3">
                         <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-lg">
-                            <img src="assets/images/red-marketing.jpg"
-                                class="service-img w-full h-full object-cover" alt="中国SNS運営代行">
+                            <img src="assets/images/red-marketing.jpg" class="service-img w-full h-full object-cover"
+                                alt="中国SNS運営代行">
                         </div>
                         <div class="rounded-2xl overflow-hidden shadow-md">
-                            <img src="assets/images/case-restaurant.jpg"
-                                class="service-img w-full h-full object-cover" alt="KOL">
+                            <img src="assets/images/case-restaurant.jpg" class="service-img w-full h-full object-cover"
+                                alt="KOL">
                         </div>
                         <div class="rounded-2xl overflow-hidden shadow-md">
-                            <img src="assets/images/office.jpg"
-                                class="service-img w-full h-full object-cover" alt="チーム">
+                            <img src="assets/images/office.jpg" class="service-img w-full h-full object-cover"
+                                alt="チーム">
                         </div>
                     </div>
                 </div>
@@ -286,7 +309,7 @@
         </div>
     </section>
 
-    <!-- SERVICE 02: LP & Video Production -->
+    <!-- SERVICE 02: Dianping Marketing -->
     <section class="py-20 md:py-28 px-8 bg-warm-gray relative overflow-hidden">
         <div class="absolute top-0 right-0 w-64 h-64 seigaiha-pattern opacity-10"></div>
         <div class="max-w-7xl mx-auto">
@@ -294,6 +317,68 @@
                 <div class="md:w-1/2" data-aos="fade-left">
                     <div class="mb-8">
                         <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase inter">SERVICE 02</span>
+                        <div class="w-10 h-0.5 bg-coral mt-2"></div>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-tech-blue leading-tight mb-6 serif">
+                        大衆点評(Dianping)<br>店舗集客・運用代行
+                    </h2>
+                    <p class="text-gray-500 text-sm leading-loose mb-6 font-light">
+                        中国最大の口コミ・ナビゲーションアプリ「大衆点評」を活用し、訪日中国人の実店舗への集客を支援します。公式店舗の登録・認証から、クーポンの設定、口コミの促進・管理まで、インバウンド集客に必要な施策をトータルでサポートします。
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="p-5 bg-white rounded-xl shadow-sm border border-gray-50">
+                            <h4 class="font-bold text-sm mb-1 text-tech-blue">公式店舗登録</h4>
+                            <p class="text-[11px] text-gray-400">複雑な審査手続きを代行し、公式V認証を取得します。</p>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl shadow-sm border border-gray-50">
+                            <h4 class="font-bold text-sm mb-1 text-tech-blue">クーポン・予約設定</h4>
+                            <p class="text-[11px] text-gray-400">アプリ内で完結する団購（クーポン）や予約機能を構築します。</p>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl shadow-sm border border-gray-50">
+                            <h4 class="font-bold text-sm mb-1 text-tech-blue">口コミ（UGC）管理</h4>
+                            <p class="text-[11px] text-gray-400">来店者の口コミ投稿を促进し、店舗の高評価ランキング入りを目指します。</p>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl shadow-sm border border-gray-50">
+                            <h4 class="font-bold text-sm mb-1 text-tech-blue">公式広告運用</h4>
+                            <p class="text-[11px] text-gray-400">商圏内のターゲットユーザーに広告を配信し、露出を最大化します。</p>
+                        </div>
+                    </div>
+
+                    <a href="/dianping.html"
+                        class="px-8 py-3 border border-coral text-coral text-xs font-bold tracking-widest rounded-full inline-flex items-center gap-2 hover:bg-coral hover:text-white transition-all">
+                        大衆点評マーケティング詳細
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-tech-blue/80 to-transparent z-10 flex items-end p-8">
+                            <div>
+                                <span
+                                    class="bg-[#FF6600] text-white text-[10px] font-bold px-2 py-1 rounded mb-2 inline-block">Dianping</span>
+                                <h3 class="text-white font-bold text-lg">インバウンド実店舗集客</h3>
+                            </div>
+                        </div>
+                        <img src="assets/images/service-dianping.png" class="service-img w-full h-[400px] object-cover"
+                            alt="大衆点評(Dianping) 店舗集客・運用代行">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE 04: LP & Video Production -->
+    <section class="py-20 md:py-28 px-8 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 seigaiha-pattern opacity-10"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="mb-8">
+                        <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase inter">SERVICE 03</span>
                         <div class="w-10 h-0.5 bg-coral mt-2"></div>
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold text-tech-blue leading-tight mb-6 serif">
@@ -313,7 +398,7 @@
                             <p class="text-[11px] text-gray-400">抖音や小紅書で好まれるテンポと構成で、魅力的なPR動画を撮影・編集。</p>
                         </div>
                     </div>
-                    
+
                     <a href="/contact"
                         class="px-8 py-3 border border-coral text-coral text-xs font-bold tracking-widest rounded-full inline-flex items-center gap-2 hover:bg-coral hover:text-white transition-all">
                         制作について相談する
@@ -322,28 +407,32 @@
                         </svg>
                     </a>
                 </div>
-                <div class="md:w-1/2" data-aos="fade-right">
+                <div class="md:w-1/2" data-aos="fade-left">
                     <div class="rounded-2xl overflow-hidden shadow-2xl relative">
-                        <div class="absolute inset-0 bg-gradient-to-t from-tech-blue/80 to-transparent z-10 flex items-end p-8">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-tech-blue/80 to-transparent z-10 flex items-end p-8">
                             <div>
-                                <span class="bg-coral text-white text-[10px] font-bold px-2 py-1 rounded mb-2 inline-block">Design & Video</span>
+                                <span
+                                    class="bg-coral text-white text-[10px] font-bold px-2 py-1 rounded mb-2 inline-block">Design
+                                    & Video</span>
                                 <h3 class="text-white font-bold text-lg">ローカライズに強いクリエイティブチーム</h3>
                             </div>
                         </div>
-                        <img src="assets/images/service-lp-video.jpg" class="service-img w-full h-[400px] object-cover" alt="中国語 LP制作 動画制作">
+                        <img src="assets/images/service-lp-video.jpg" class="service-img w-full h-[400px] object-cover"
+                            alt="中国語 LP制作 動画制作">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICE 03: Mini Program -->
-    <section class="py-20 md:py-28 px-8 bg-white relative overflow-hidden">
+    <!-- SERVICE 04: Mini Program -->
+    <section class="py-20 md:py-28 px-8 bg-warm-gray relative overflow-hidden">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
-                <div class="md:w-1/2" data-aos="fade-right">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
+                <div class="md:w-1/2" data-aos="fade-left">
                     <div class="mb-8">
-                        <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase inter">SERVICE 03</span>
+                        <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase inter">SERVICE 04</span>
                         <div class="w-10 h-0.5 bg-coral mt-2"></div>
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold text-tech-blue leading-tight mb-6 serif">
@@ -355,19 +444,34 @@
 
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-coral mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-sm text-gray-600"><strong>越境EC / 予約システム:</strong> アプリのインストール不要で、WeChat内から直接購入や予約が可能。</span>
+                            <svg class="w-5 h-5 text-coral mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm text-gray-600"><strong>越境EC / 予約システム:</strong>
+                                アプリのインストール不要で、WeChat内から直接購入や予約が可能。</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-coral mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-sm text-gray-600"><strong>CRM連携:</strong> 公式アカウントと連携し、会員証機能やポイントシステムでリピート率を向上。</span>
+                            <svg class="w-5 h-5 text-coral mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm text-gray-600"><strong>CRM連携:</strong>
+                                公式アカウントと連携し、会員証機能やポイントシステムでリピート率を向上。</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-coral mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-sm text-gray-600"><strong>日本国内向けの保守運用:</strong> 開発後のサーバー保守やアップデートも日本の窓口で対応します。</span>
+                            <svg class="w-5 h-5 text-coral mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm text-gray-600"><strong>日本国内向けの保守運用:</strong>
+                                開発後のサーバー保守やアップデートも日本の窓口で対応します。</span>
                         </li>
                     </ul>
-                    
+
                     <a href="/contact"
                         class="px-8 py-3 border border-coral text-coral text-xs font-bold tracking-widest rounded-full inline-flex items-center gap-2 hover:bg-coral hover:text-white transition-all">
                         開発について相談する
@@ -376,15 +480,19 @@
                         </svg>
                     </a>
                 </div>
-                <div class="md:w-1/2" data-aos="fade-left">
+                <div class="md:w-1/2" data-aos="fade-right">
                     <div class="rounded-2xl overflow-hidden shadow-2xl relative">
-                        <div class="absolute inset-0 bg-gradient-to-t from-tech-blue/80 to-transparent z-10 flex items-end p-8">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-tech-blue/80 to-transparent z-10 flex items-end p-8">
                             <div>
-                                <span class="bg-coral text-white text-[10px] font-bold px-2 py-1 rounded mb-2 inline-block">Mini Program</span>
+                                <span
+                                    class="bg-coral text-white text-[10px] font-bold px-2 py-1 rounded mb-2 inline-block">Mini
+                                    Program</span>
                                 <h3 class="text-white font-bold text-lg">WeChat app開発</h3>
                             </div>
                         </div>
-                        <img src="assets/images/service-miniprogram.jpg" class="service-img w-full h-[400px] object-cover" alt="WeChat app開発">
+                        <img src="assets/images/service-miniprogram.jpg"
+                            class="service-img w-full h-[400px] object-cover" alt="WeChat app開発">
                     </div>
                 </div>
             </div>
@@ -402,9 +510,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="case-card bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                     <div class="aspect-[16/10] overflow-hidden">
-                        <img src="assets/images/case-restaurant.jpg"
-                            alt="飲食店向け支援"
-                            loading="lazy"
+                        <img src="assets/images/case-restaurant.jpg" alt="飲食店向け支援" loading="lazy"
                             class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
@@ -416,9 +522,7 @@
                 </div>
                 <div class="case-card bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
                     <div class="aspect-[16/10] overflow-hidden">
-                        <img src="assets/images/office.jpg"
-                            alt="自社運用支援"
-                            loading="lazy"
+                        <img src="assets/images/office.jpg" alt="自社運用支援" loading="lazy"
                             class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
@@ -430,9 +534,7 @@
                 </div>
                 <div class="case-card bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
                     <div class="aspect-[16/10] overflow-hidden">
-                        <img src="assets/images/hero-data.jpg"
-                            alt="データ分析コンサルティング"
-                            loading="lazy"
+                        <img src="assets/images/hero-data.jpg" alt="データ分析コンサルティング" loading="lazy"
                             class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
@@ -467,7 +569,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+        <!-- FOOTER -->
     <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
@@ -478,8 +580,9 @@
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
-                        <li><a href="/services" class="hover:text-coral transition">その他サービス</a></li>
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
                     </ul>
                 </div>
                 <div>
@@ -501,7 +604,6 @@
         </div>
         <div class="border-t border-white/10 pt-8 text-center">
             <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
-        </div>
         </div>
     </footer>
 
