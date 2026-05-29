@@ -4,7 +4,7 @@
 <head>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -34,9 +34,7 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    
-
+    <link rel="stylesheet" href="assets/css/shared.css">
     <style>
         :root {
             --tech-blue: #001A33;
@@ -48,36 +46,11 @@
             --font-button: 12px;
         }
 
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: var(--font-body);
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
         .serif {
             font-family: 'Noto Sans JP', sans-serif;
         }
 
-        .inter {
-            font-family: 'Noto Sans JP', sans-serif;
-        }
-
-        h1 { font-size: var(--font-h1); }
-        h2 { font-size: var(--font-h2); }
-        p, body { font-size: var(--font-body); }
-
         /* Nav */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-        }
-
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
 
         .nav-link::after {
             content: '';
@@ -90,34 +63,8 @@
             transition: width 0.3s ease;
         }
 
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
         .nav-link:hover {
             color: var(--red-brand);
-        }
-
-        #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .hamburger line {
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform-origin: center;
-        }
-
-        .hamburger.active #line1 {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .hamburger.active #line2 {
-            opacity: 0;
-            transform: translateX(-10px);
-        }
-
-        .hamburger.active #line3 {
-            transform: translateY(-7px) rotate(-45deg);
         }
 
         /* Seigaiha pattern */
@@ -263,8 +210,9 @@
 
 <body class="bg-white text-slate-900">
 
-    <!-- ═══════════════════════ NAV ═══════════════════════ -->
-        <!-- NAV -->
+        <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+                <!-- NAV -->
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
@@ -277,11 +225,18 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </a>
-                    <div class="absolute top-full left-0 pt-4 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
                             <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
                             <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
                         </div>
                     </div>
                 </div>
@@ -291,7 +246,7 @@
                 <a href="/blog" class="nav-link ">ブログ</a>
                 <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
                     <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
@@ -308,6 +263,11 @@
                 <a href="/services" class="text-lg font-bold text-coral">サービス</a>
                 <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
                 <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
             </div>
             <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
             <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
@@ -315,10 +275,12 @@
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
     </div>
-    </div>
+    
+    
+    
 
     <!-- ═══════════════════════ HERO ═══════════════════════ -->
-    <section
+    <section id="main-content"
         class="relative pt-28 md:pt-36 pb-20 md:pb-28 bg-gradient-to-br from-white via-red-50/30 to-white overflow-hidden">
         <!-- Subtle decorative circles -->
         <div class="absolute top-20 right-0 w-96 h-96 bg-red-brand/5 rounded-full blur-[100px]"></div>
@@ -368,16 +330,16 @@
                         <div class="grid grid-cols-2 gap-3 relative z-10">
                             <div class="rounded-2xl overflow-hidden shadow-lg aspect-[3/4]">
                                 <img src="assets/images/red-marketing.jpg"
-                                    class="w-full h-full object-cover" alt="小紅書">
+                                    class="w-full h-full object-cover" alt="小紅書" decoding="async">
                             </div>
                             <div class="space-y-3">
                                 <div class="rounded-2xl overflow-hidden shadow-md aspect-square">
                                     <img src="assets/images/case-restaurant.jpg"
-                                        class="w-full h-full object-cover" alt="マーケティング">
+                                        class="w-full h-full object-cover" alt="マーケティング" loading="lazy" decoding="async">
                                 </div>
                                 <div class="rounded-2xl overflow-hidden shadow-md aspect-[4/3]">
                                     <img src="assets/images/office.jpg"
-                                        class="w-full h-full object-cover" alt="チーム">
+                                        class="w-full h-full object-cover" alt="チーム" loading="lazy" decoding="async">
                                 </div>
                             </div>
                         </div>
@@ -795,7 +757,7 @@
             <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
                 <a href="/blog/xiaohongshu-guide-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 duration-300">
                     <div class="h-40 overflow-hidden bg-slate-100">
-                        <img src="assets/images/blog-xiaohongshu-guide.jpg" alt="小紅書とは" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='assets/images/red-marketing.jpg'">
+                        <img src="assets/images/blog-xiaohongshu-guide.jpg" alt="小紅書とは" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='assets/images/red-marketing.jpg'" loading="lazy" decoding="async">
                     </div>
                     <div class="p-5">
                         <span class="text-[9px] font-bold bg-red-50 text-red-500 px-2 py-1 rounded uppercase tracking-wider">小紅書運用</span>
@@ -805,7 +767,7 @@
                 </a>
                 <a href="/blog/red-marketing-trends-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 duration-300">
                     <div class="h-40 overflow-hidden bg-slate-100">
-                        <img src="assets/images/blog-red-trends-2026.jpg" alt="小紅書マーケティングトレンド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='assets/images/hero-data.jpg'">
+                        <img src="assets/images/blog-red-trends-2026.jpg" alt="小紅書マーケティングトレンド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='assets/images/hero-data.jpg'" loading="lazy" decoding="async">
                     </div>
                     <div class="p-5">
                         <span class="text-[9px] font-bold bg-red-50 text-red-500 px-2 py-1 rounded uppercase tracking-wider">小紅書運用</span>
@@ -815,7 +777,7 @@
                 </a>
                 <a href="/blog/kol-koc-meaning-fee-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 duration-300">
                     <div class="h-40 overflow-hidden bg-slate-100">
-                        <img src="assets/images/blog-kol-koc-1.jpg" alt="KOL KOC とは" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='assets/images/case-restaurant.jpg'">
+                        <img src="assets/images/blog-kol-koc-1.jpg" alt="KOL KOC とは" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='assets/images/case-restaurant.jpg'" loading="lazy" decoding="async">
                     </div>
                     <div class="p-5">
                         <span class="text-[9px] font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded uppercase tracking-wider">マーケティング</span>
@@ -899,7 +861,7 @@
     </section>
 
     <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
-        <!-- FOOTER -->
+                <!-- FOOTER -->
     <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
@@ -912,6 +874,11 @@
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
                         <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
                         <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
                     </ul>
                 </div>
@@ -922,12 +889,17 @@
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">INBOUND AI</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
                     <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
                     </ul>
                 </div>
             </div>
@@ -941,38 +913,8 @@
     <script>
         AOS.init({ duration: 800, once: true, offset: 80 });
 
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            menuBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('translate-x-full');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                menuBtn.classList.remove('active');
-                mobileMenu.classList.add('translate-x-full');
-            }
-        });
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) {
-                menuBtn.classList.remove('active');
-                mobileMenu.classList.add('translate-x-full');
-            }
-        });
-
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
-            } else {
-                nav.style.boxShadow = 'none';
-            }
-        });
     </script>
+    <script defer src="assets/js/main.js"></script>
 </body>
 
 </html>

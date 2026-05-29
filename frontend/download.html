@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+
+<head>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7QYC9JLZ1M');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <title>お役立ち資料ダウンロード - PROTECH株式会社</title>
+    <meta name="description" content="中国インバウンドマーケティングに役立つ無料ガイド・レポートを無料公開。大衆点評インバウンド集客読本、小紅書マーケティング完全攻略マニュアル、最新インバウンドトレンド白書が無料でダウンロードできます。">
+    <meta name="keywords" content="中国インバウンド, 大衆点評 ガイド, 小紅書 マーケティング, インバウンドトレンド, 無料資料, PROTECH">
+    <link rel="canonical" href="https://pro-tech.jp/download">
+
+    <meta property="og:title" content="お役立ち資料ダウンロード - PROTECH株式会社">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pro-tech.jp/download">
+    <meta property="og:image" content="https://pro-tech.jp/img/og-image.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <style>
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            background: #f8f9fb;
+        }
+
+        /* ===== NAV ===== */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .btn-coral:hover { background: #d15b6a; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(232,107,122,0.3); }
+
+        /* ===== HERO: Light clean (no dark bg) ===== */
+        .dl-hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #fafbff 50%, #f8f5ff 100%);
+        }
+        .dl-hero-grid-pattern {
+            background-image:
+                linear-gradient(rgba(0,26,51,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,26,51,0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .hero-badge-light {
+            background: white;
+            border: 1px solid rgba(0,26,51,0.1);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        /* ===== RESOURCE CARDS ===== */
+        .resource-card {
+            background: white;
+            border: 1px solid rgba(0,26,51,0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+        .resource-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 60px rgba(0,26,51,0.1);
+            border-color: rgba(0,26,51,0.15);
+        }
+        .resource-card-img {
+            height: 260px;
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+        .resource-card-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .resource-card:hover .resource-card-img img {
+            transform: scale(1.04);
+        }
+        .resource-tag {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 999px;
+        }
+        .tag-dianping { background: rgba(255,102,0,0.1); color: #FF6600; }
+        .tag-red { background: rgba(255,36,66,0.1); color: #FF2442; }
+        .tag-inbound { background: rgba(0,26,51,0.08); color: var(--tech-blue); }
+
+        /* ===== HOW TO ===== */
+        .how-step-icon {
+            width: 56px; height: 56px;
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            position: fixed; inset: 0; z-index: 1000;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .modal-overlay.active { opacity: 1; pointer-events: all; }
+        .modal-box {
+            background: white; border-radius: 24px;
+            max-width: 480px; width: 100%;
+            padding: 40px; position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+        }
+        .modal-overlay.active .modal-box { transform: translateY(0); }
+
+        .form-input {
+            width: 100%; padding: 14px 16px;
+            border: 1.5px solid #e2e8f0; border-radius: 12px;
+            font-size: 14px; font-family: inherit;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+        .form-input:focus { border-color: var(--coral); }
+
+        .btn-download {
+            background: var(--tech-blue); color: white;
+            width: 100%; padding: 16px;
+            border-radius: 12px; font-weight: 700;
+            font-size: 13px; letter-spacing: 0.05em;
+            transition: all 0.3s; border: none; cursor: pointer;
+        }
+        .btn-download:hover {
+            background: #002d59; transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0,26,51,0.25);
+        }
+
+    </style>
+    <link href="assets/css/tailwind.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="text-slate-900">
+
+            <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+<!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/" class="nav-link ">トップ</a>
+
+                <div class="relative group">
+                    <a href="/services" class="nav-link  flex items-center gap-1">サービス
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/cases" class="nav-link ">導入事例</a>
+                <a href="/blog" class="nav-link ">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
+            </div>
+            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════ HERO: Light and clean ═══════════════════════ -->
+    <section id="main-content" class="dl-hero relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
+        <div class="absolute inset-0 dl-hero-grid-pattern z-0"></div>
+
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="text-center" data-aos="fade-up">
+                <div class="hero-badge-light inline-flex items-center gap-3 rounded-full px-5 py-2.5 mb-8">
+                    <svg class="w-4 h-4 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-600">Free Download Resources</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-black text-tech-blue mb-6 leading-tight tracking-tight">
+                    中国インバウンド攻略の<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-coral to-rose-500">知識を、無料で。</span>
+                </h1>
+                <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                    PROTECHが現場の最前線から得た知見をまとめた、実践的なインバウンドマーケティングガイドを無料公開しています。<br class="hidden md:block">
+                    お名前とメールアドレスをご入力いただくだけで即時ダウンロードできます。
+                </p>
+            </div>
+
+            <!-- Stats row -->
+            <div class="grid grid-cols-3 gap-6 mt-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+                <div class="text-center">
+                    <div class="text-2xl md:text-3xl font-black text-tech-blue">3</div>
+                    <p class="text-xs text-slate-500 font-bold mt-1">資料を無料公開</p>
+                </div>
+                <div class="text-center border-x border-slate-200">
+                    <div class="text-2xl md:text-3xl font-black text-tech-blue">即時</div>
+                    <p class="text-xs text-slate-500 font-bold mt-1">ダウンロード</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl md:text-3xl font-black text-tech-blue">完全</div>
+                    <p class="text-xs text-slate-500 font-bold mt-1">無料・登録不要</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ RESOURCE CARDS ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-[#f8f9fb]" id="resources">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-14" data-aos="fade-up">
+                <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Available Resources</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-tech-blue">無料ダウンロード資料一覧</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Resource 1: Dianping -->
+                <div class="resource-card" data-aos="fade-up" onclick="openModal('大衆点評インバウンド集客読本', 'dianping')">
+                    <div class="resource-card-img">
+                        <img src="assets/images/download-cover-dianpinghandbook.jpg" alt="大衆点評インバウンド集客読本" decoding="async">
+                    </div>
+                    <div class="p-6">
+                        <span class="resource-tag tag-dianping mb-3 inline-block">大衆点評 Dianping</span>
+                        <h3 class="font-bold text-tech-blue text-lg mb-3 leading-tight">大衆点評<br>インバウンド集客読本</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            中国最大の口コミ・予約プラットフォームで訪日中国人を集客する実践的ノウハウを完全網羅。アカウント開設から口コミ対策・広告運用まで。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-400 font-bold">全28ページ</span>
+                            <button class="flex items-center gap-2 text-coral text-xs font-bold hover:gap-3 transition-all">
+                                今すぐ入手する
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource 2: RED -->
+                <div class="resource-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal('小紅書マーケティング完全攻略マニュアル', 'red')">
+                    <div class="resource-card-img">
+                        <img src="assets/images/download-cover-redguide.jpg" alt="小紅書マーケティング完全攻略マニュアル" loading="lazy" decoding="async">
+                    </div>
+                    <div class="p-6">
+                        <span class="resource-tag tag-red mb-3 inline-block">小紅書 RED</span>
+                        <h3 class="font-bold text-tech-blue text-lg mb-3 leading-tight">小紅書マーケティング<br>完全攻略マニュアル</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            中国のインスタ「小紅書（RED/Xiaohongshu）」でバズる投稿・アカウント設計のすべて。アルゴリズム攻略からKOC施策まで最新版。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-400 font-bold">全35ページ</span>
+                            <button class="flex items-center gap-2 text-coral text-xs font-bold hover:gap-3 transition-all">
+                                今すぐ入手する
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource 3: Inbound Trend -->
+                <div class="resource-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal('最新インバウンドトレンド白書2026', 'inbound')">
+                    <div class="resource-card-img">
+                        <img src="assets/images/download-cover-inboundtrend.jpg" alt="最新インバウンドトレンド白書2026" loading="lazy" decoding="async">
+                    </div>
+                    <div class="p-6">
+                        <span class="resource-tag tag-inbound mb-3 inline-block">市場レポート</span>
+                        <h3 class="font-bold text-tech-blue text-lg mb-3 leading-tight">最新インバウンドトレンド<br>白書 2026</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            訪日外国人の最新動向・消費傾向・SNS利用状況を徹底データ分析。中国・台湾・韓国・欧米市場のトレンド比較レポート。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-400 font-bold">全52ページ</span>
+                            <button class="flex items-center gap-2 text-coral text-xs font-bold hover:gap-3 transition-all">
+                                今すぐ入手する
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ HOW TO: 3 steps ═══════════════════════ -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold text-tech-blue">ダウンロードの流れ</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center">
+                    <div class="how-step-icon mx-auto mb-4 bg-coral/10">
+                        <span class="text-2xl">👆</span>
+                    </div>
+                    <h4 class="font-bold text-tech-blue mb-2">1. 資料を選ぶ</h4>
+                    <p class="text-slate-600 text-sm">気になる資料のカードをクリック</p>
+                </div>
+                <div class="text-center">
+                    <div class="how-step-icon mx-auto mb-4 bg-coral/10">
+                        <span class="text-2xl">📝</span>
+                    </div>
+                    <h4 class="font-bold text-tech-blue mb-2">2. 情報を入力</h4>
+                    <p class="text-slate-600 text-sm">お名前とメールアドレスのみ</p>
+                </div>
+                <div class="text-center">
+                    <div class="how-step-icon mx-auto mb-4 bg-coral/10">
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <h4 class="font-bold text-tech-blue mb-2">3. 即時ダウンロード</h4>
+                    <p class="text-slate-600 text-sm">送信直後にPDFリンクをお届け</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CTA: Consult ═══════════════════════ -->
+    <section class="py-16 md:py-24 text-white" style="background-color: #001A33;">
+        <div class="max-w-4xl mx-auto px-8 text-center">
+            <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-6" data-aos="fade-up">Need Expert Advice?</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up" data-aos-delay="100">
+                資料だけでなく、<br>専門家のアドバイスも無料で。
+            </h2>
+            <p class="text-slate-300 text-sm max-w-xl mx-auto mb-10 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="200">
+                ガイドを読んでみて、もっと具体的な施策設計を相談したい方はPROTECHへ。貴社の業種・予算に合ったインバウンド施策のご提案を無料で行います。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                <a href="/contact" class="btn-coral px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-block">
+                    無料相談を予約する
+                </a>
+                <a href="/services" class="px-10 py-4 border border-white/20 text-white text-xs font-bold tracking-widest rounded-full hover:bg-white/5 transition-all inline-block">
+                    サービス一覧を見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+        <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ===== DOWNLOAD MODAL ===== -->
+    <div class="modal-overlay" id="downloadModal" onclick="closeModalOnBg(event)">
+        <div class="modal-box">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 transition text-slate-600 text-sm font-bold">✕</button>
+            <div class="mb-6">
+                <span class="text-xs font-bold text-coral tracking-widest uppercase">無料ダウンロード</span>
+                <h3 class="text-xl font-bold text-tech-blue mt-2 leading-tight" id="modalTitle">資料タイトル</h3>
+            </div>
+            <form onsubmit="handleDownload(event)" class="space-y-4">
+                <div>
+                    <label class="text-xs font-bold text-slate-700 block mb-2">お名前 <span class="text-coral">*</span></label>
+                    <input type="text" class="form-input" placeholder="山田 太郎" required>
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-700 block mb-2">会社名</label>
+                    <input type="text" class="form-input" placeholder="株式会社〇〇">
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-700 block mb-2">メールアドレス <span class="text-coral">*</span></label>
+                    <input type="email" class="form-input" placeholder="info@example.jp" required>
+                </div>
+                <p class="text-[11px] text-slate-400 leading-relaxed">送信後、ご入力のメールアドレスにダウンロードリンクをお送りします。<a href="/privacy" class="underline">プライバシーポリシー</a>に同意の上お進みください。</p>
+                <button type="submit" class="btn-download">
+                    無料でダウンロードする →
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic', offset: 60 });
+
+
+
+        let currentResource = '';
+        function openModal(title, type) {
+            document.getElementById('modalTitle').textContent = title;
+            currentResource = type;
+            document.getElementById('downloadModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('downloadModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        function closeModalOnBg(e) {
+            if (e.target === e.currentTarget) closeModal();
+        }
+        function handleDownload(e) {
+            e.preventDefault();
+            // In production, this would submit to a backend and redirect to the PDF
+            alert('ありがとうございます！ご入力のメールアドレスにダウンロードリンクをお送りしました。');
+            closeModal();
+        }
+    </script>
+    <script defer src="assets/js/main.js"></script>
+</body>
+</html>

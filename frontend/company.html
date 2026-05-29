@@ -4,7 +4,7 @@
 <head>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -32,88 +32,11 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    
-
+    <link rel="stylesheet" href="assets/css/shared.css">
     <style>
-        :root {
-            --tech-blue: #001A33;
-            --coral: #E86B7A;
-            --font-h1: 48px;
-            --font-h2: 24px;
-            --font-body: 15px;
-            --font-button: 12px;
-        }
-
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: var(--font-body);
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
 
         .serif {
             font-family: 'Noto Sans JP', sans-serif;
-        }
-
-        .inter {
-            font-family: 'Noto Sans JP', sans-serif;
-        }
-
-        h1 { font-size: var(--font-h1); }
-        h2 { font-size: var(--font-h2); }
-        p, body { font-size: var(--font-body); }
-
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-        }
-
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--coral);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link:hover {
-            color: var(--coral);
-        }
-
-        #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .hamburger line {
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform-origin: center;
-        }
-
-        .hamburger.active #line1 {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .hamburger.active #line2 {
-            opacity: 0;
-            transform: translateX(-10px);
-        }
-
-        .hamburger.active #line3 {
-            transform: translateY(-7px) rotate(-45deg);
         }
 
         .seigaiha-pattern {
@@ -121,17 +44,6 @@
             background-size: 80px 40px;
         }
 
-        .btn-coral {
-            background: var(--coral);
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .btn-coral:hover {
-            background: #d15b6a;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(232, 107, 122, 0.3);
-        }
     </style>
     <link href="assets/css/tailwind.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -140,7 +52,8 @@
 
 <body class="bg-white text-slate-900">
 
-        <!-- NAV -->
+                    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+<!-- NAV -->
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
@@ -153,11 +66,18 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </a>
-                    <div class="absolute top-full left-0 pt-4 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
                             <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
                             <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
                         </div>
                     </div>
                 </div>
@@ -167,7 +87,7 @@
                 <a href="/blog" class="nav-link ">ブログ</a>
                 <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
                     <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
@@ -184,6 +104,11 @@
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
                 <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
                 <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
             </div>
             <a href="/company" class="text-lg font-bold text-coral">会社概要</a>
             <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
@@ -191,9 +116,11 @@
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
     </div>
+    
+    
 
     <!-- HERO -->
-    <section
+    <section id="main-content"
         class="pt-32 md:pt-40 pb-20 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
         <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
@@ -287,7 +214,7 @@
         </div>
         <div class="mt-8 flex justify-end" data-aos="fade-up">
             <a href="https://maps.google.com/?q=東京都文京区本郷1丁目5-17" target="_blank"
-                class="text-coral font-bold text-sm hover:underline inline-flex items-center gap-1">
+                class="text-coral font-bold text-sm hover:underline inline-flex items-center gap-1" rel="noopener noreferrer">
                 Google Mapで開く
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -297,39 +224,64 @@
     </section>
 
     <!-- Services Overview -->
-    <section class="py-20 px-8 bg-warm-gray">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <span class="text-coral font-bold text-[10px] tracking-[0.3em] uppercase block mb-3">SERVICES</span>
-                <h2 class="text-2xl font-bold serif text-tech-blue">PROTECHのサービス</h2>
+    <section class="py-24 md:py-32 px-8 bg-white relative overflow-hidden">
+        <!-- Decorative line elements -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-transparent via-coral/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+
+        <div class="max-w-5xl mx-auto relative">
+            <!-- Header with horizontal line accent -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center gap-4 mb-6">
+                    <div class="h-px w-12 bg-coral/60"></div>
+                    <span class="text-coral font-bold text-[10px] tracking-[0.3em] uppercase">Services</span>
+                    <div class="h-px w-12 bg-coral/60"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue">PROTECHのサービス</h2>
             </div>
-            <div class="grid md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="100">
-                <a href="/red.html" class="group flex items-start gap-5 bg-white rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 duration-300">
-                    <div class="w-10 h-10 bg-[#FF2442]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <span class="text-[#FF2442] font-black text-xs">RED</span>
+
+            <!-- Services list - minimal line-based design -->
+            <div class="border-t border-slate-200" data-aos="fade-up" data-aos-delay="100">
+                <a href="/red.html" class="group flex items-center gap-6 md:gap-8 py-7 border-b border-slate-200 hover:bg-slate-50/50 transition-all px-2">
+                    <span class="font-mono text-xs text-slate-400 tracking-wider w-10 flex-shrink-0">01</span>
+                    <span class="w-12 h-12 rounded-full border border-[#FF2442]/30 flex items-center justify-center flex-shrink-0 group-hover:border-[#FF2442] group-hover:bg-[#FF2442]/5 transition-all">
+                        <span class="text-[#FF2442] font-black text-[10px] tracking-tight">RED</span>
+                    </span>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="font-bold text-tech-blue text-base md:text-lg group-hover:text-coral transition">小紅書（RED）マーケティング</h3>
+                        <p class="text-xs md:text-sm text-slate-500 leading-relaxed mt-1">中国最大のライフスタイルSNSを活用したインバウンド集客・越境EC支援</p>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-tech-blue mb-1 group-hover:text-coral transition text-sm">小紅書（RED）マーケティング</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed">中国最大のライフスタイルSNSを活用したインバウンド集客・越境EC支援</p>
-                    </div>
+                    <svg class="w-5 h-5 text-slate-300 group-hover:text-coral group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+                    </svg>
                 </a>
-                <a href="/dianping.html" class="group flex items-start gap-5 bg-white rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 duration-300">
-                    <div class="w-10 h-10 bg-[#FF6600]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <span class="text-[#FF6600] font-black text-xs">点評</span>
+
+                <a href="/dianping.html" class="group flex items-center gap-6 md:gap-8 py-7 border-b border-slate-200 hover:bg-slate-50/50 transition-all px-2">
+                    <span class="font-mono text-xs text-slate-400 tracking-wider w-10 flex-shrink-0">02</span>
+                    <span class="w-12 h-12 rounded-full border border-[#FF6600]/30 flex items-center justify-center flex-shrink-0 group-hover:border-[#FF6600] group-hover:bg-[#FF6600]/5 transition-all">
+                        <span class="text-[#FF6600] font-black text-[10px] tracking-tight">点評</span>
+                    </span>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="font-bold text-tech-blue text-base md:text-lg group-hover:text-coral transition">大衆点評（Dianping）集客</h3>
+                        <p class="text-xs md:text-sm text-slate-500 leading-relaxed mt-1">訪日中国人の8割が使う口コミアプリで実店舗への集客を強化</p>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-tech-blue mb-1 group-hover:text-coral transition text-sm">大衆点評（Dianping）集客</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed">訪日中国人の8割が使う口コミアプリで実店舗への集客を強化</p>
-                    </div>
+                    <svg class="w-5 h-5 text-slate-300 group-hover:text-coral group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+                    </svg>
                 </a>
-                <a href="/services" class="group flex items-start gap-5 bg-white rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 duration-300 md:col-span-2">
-                    <div class="w-10 h-10 bg-coral/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+
+                <a href="/services" class="group flex items-center gap-6 md:gap-8 py-7 hover:bg-slate-50/50 transition-all px-2">
+                    <span class="font-mono text-xs text-slate-400 tracking-wider w-10 flex-shrink-0">03</span>
+                    <span class="w-12 h-12 rounded-full border border-coral/30 flex items-center justify-center flex-shrink-0 group-hover:border-coral group-hover:bg-coral/5 transition-all">
+                        <svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    </span>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="font-bold text-tech-blue text-base md:text-lg group-hover:text-coral transition">すべてのサービスを見る</h3>
+                        <p class="text-xs md:text-sm text-slate-500 leading-relaxed mt-1">中国語LP制作・抖音運営代行・WeChat小程序開発など、インバウンド集客に必要なサービスをワンストップで提供</p>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-tech-blue mb-1 group-hover:text-coral transition text-sm">すべてのサービスを見る</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed">中国語LP制作・抖音運営代行・WeChat小程序開発など、インバウンド集客に必要なサービスをワンストップで提供</p>
-                    </div>
+                    <svg class="w-5 h-5 text-slate-300 group-hover:text-coral group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -354,7 +306,7 @@
         </div>
     </section>
 
-        <!-- FOOTER -->
+                <!-- FOOTER -->
     <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
@@ -367,6 +319,11 @@
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
                         <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
                         <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
                     </ul>
                 </div>
@@ -377,12 +334,17 @@
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">INBOUND AI</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
                     <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
                     </ul>
                 </div>
             </div>
@@ -396,38 +358,8 @@
     <script>
         AOS.init({ duration: 800, once: true, offset: 80 });
 
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            menuBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('translate-x-full');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                menuBtn.classList.remove('active');
-                mobileMenu.classList.add('translate-x-full');
-            }
-        });
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) {
-                menuBtn.classList.remove('active');
-                mobileMenu.classList.add('translate-x-full');
-            }
-        });
-
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
-            } else {
-                nav.style.boxShadow = 'none';
-            }
-        });
     </script>
+    <script defer src="assets/js/main.js"></script>
 </body>
 
 </html>

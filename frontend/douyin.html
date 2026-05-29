@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7QYC9JLZ1M');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <title>抖音(Douyin)運営代行・集客支援 - PROTECH株式会社</title>
+    <meta name="description"
+        content="中国最大の短尺動画プラットフォーム「抖音(Douyin / 中国版TikTok)」を活用したマーケティング運用代行サービス。アカウント開設から戦略設計・動画撮影編集・インフルエンサー(KOL)手配までワンストップで訪日中国人集客を最大化します。">
+    <meta name="keywords" content="抖音, Douyin, 中国版TikTok, 運営代行, 動画マーケティング, インバウンド集客, 中国SNS, KOLプロモーション, PROTECH">
+    <link rel="canonical" href="https://pro-tech.jp/douyin">
+
+    <meta property="og:title" content="抖音(Douyin)運営代行・集客支援 - PROTECH株式会社">
+    <meta property="og:description" content="7.3億人が利用する巨大ショート動画プラットフォーム「抖音」を完全攻略。ネイティブによる企画・撮影編集・KOL手配でインバウンドを最大化。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pro-tech.jp/douyin">
+    <meta property="og:image" content="https://pro-tech.jp/img/og-image.jpg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <style>
+        :root {
+            --tech-blue: #001A33;
+            --coral: #E86B7A;
+            --douyin-cyan: #00f2fe;
+            --douyin-magenta: #fe0979;
+            --font-h1: 48px;
+            --font-h2: 24px;
+            --font-body: 15px;
+            --font-button: 12px;
+        }
+
+        .serif {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        /* Nav */
+
+        /* Seigaiha pattern */
+        .seigaiha-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 C20 40 20 20 40 20 C60 20 60 40 80 40' fill='none' stroke='%2300f2fe' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M-40 40 C-20 40 -20 20 0 20 C20 20 20 40 40 40' fill='none' stroke='%2300f2fe' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M40 40 C60 40 60 20 80 20 C100 20 100 40 120 40' fill='none' stroke='%2300f2fe' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
+            background-size: 80px 40px;
+        }
+
+        /* Douyin Gradient text */
+        .douyin-gradient {
+            background: linear-gradient(135deg, var(--douyin-cyan) 0%, var(--douyin-magenta) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .douyin-bg-gradient {
+            background: linear-gradient(135deg, #001a33 0%, #002d59 50%, #001a33 100%);
+        }
+
+        /* Interactive cards */
+        .solution-card {
+            background: white;
+            border: 1px solid #f1f5f9;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .solution-card:hover {
+            border-color: rgba(0, 242, 254, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.05);
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            background: #fafbfc;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+            opacity: 1;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-chevron {
+            transition: transform 0.3s ease;
+        }
+
+        /* Buttons */
+        .btn-douyin {
+            background: linear-gradient(135deg, #00d2da 0%, #00b8c0 100%);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-douyin:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 242, 254, 0.3);
+        }
+
+        .pain-icon {
+            background: linear-gradient(135deg, #eefcff, #e3f9fd);
+        }
+
+        .wave-top {
+            position: relative;
+        }
+
+        .wave-top::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath fill='%23ffffff' d='M0,20 C360,50 720,0 1080,20 C1260,30 1350,25 1440,20 L1440,0 L0,0 Z'/%3E%3C/svg%3E") no-repeat;
+            background-size: cover;
+        }
+
+        /* Custom Hero Styles */
+        .hero-badge {
+            font-size: 11px !important;
+            letter-spacing: 0.2em !important;
+            font-weight: 700 !important;
+            text-transform: uppercase;
+        }
+        .hero-title {
+            font-size: 2.25rem !important; /* Mobile fallback */
+            line-height: 1.25 !important;
+            letter-spacing: -0.01em !important;
+            font-weight: 900 !important;
+        }
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3.25rem !important; /* Tablet */
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero-title {
+                font-size: 4rem !important; /* Desktop */
+                line-height: 1.15 !important;
+                letter-spacing: -0.02em !important;
+            }
+        }
+    </style>
+    <link href="assets/css/tailwind.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="bg-white text-slate-900">
+
+        <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+            <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/" class="nav-link ">トップ</a>
+
+                <div class="relative group">
+                    <a href="/services" class="nav-link text-coral flex items-center gap-1">サービス
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/cases" class="nav-link ">導入事例</a>
+                <a href="/blog" class="nav-link ">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/services" class="text-lg font-bold text-coral">サービス</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
+            </div>
+            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════ HERO: Cinematic with safe padding ═══════════════════════ -->
+    <section id="main-content" class="relative text-white overflow-hidden pt-32 md:pt-40 pb-20 md:pb-28" style="background-color: #000000;">
+        <div class="absolute inset-0" style="z-index: 0;">
+            <!-- Background image -->
+            <img src="assets/images/douyin-hero.jpg" class="w-full h-full object-cover" style="opacity: 0.12;" alt="抖音(Douyin)運用代行" decoding="async">
+            <!-- Strong dark overlay -->
+            <div class="absolute inset-0" style="background: rgba(0,0,0,0.88);"></div>
+            <!-- Subtle cyan radial glow on right -->
+            <div class="absolute inset-0" style="background: radial-gradient(circle at 82% 30%, rgba(0,210,218,0.08) 0%, transparent 60%);"></div>
+            <!-- Bottom fade -->
+            <div class="absolute inset-x-0 bottom-0 h-32" style="background: linear-gradient(to bottom, transparent, #000000);"></div>
+        </div>
+        <!-- Neon accent line at top -->
+        <div class="absolute left-0 w-full" style="top: 80px; height: 1px; background: linear-gradient(to right, transparent, rgba(0,210,218,0.6), transparent); z-index: 1;"></div>
+
+        <div class="max-w-6xl mx-auto px-8" style="position: relative; z-index: 10;">
+            <!-- Main text content -->
+            <div class="max-w-3xl" data-aos="fade-up">
+                <div class="inline-flex items-center gap-3 rounded-full px-5 py-2 mb-8" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(0,210,218,0.3);">
+                    <div class="w-2.5 h-2.5 rounded-full animate-pulse" style="background: linear-gradient(135deg, #00f2fe, #fe0979);"></div>
+                    <span class="hero-badge" style="color: rgba(0,210,218,0.8);">Douyin (抖音) Marketing</span>
+                </div>
+
+                <h1 class="hero-title mb-8 text-white" style="text-shadow: 0 2px 32px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.8);">
+                    <span class="text-white font-extrabold" style="text-shadow: 0 0 30px rgba(0,210,218,0.6), 0 2px 20px rgba(0,0,0,1);">7.3億人</span>の心を動かす。<br>
+                    縦型ショート動画<br>マーケティングの最高峰。
+                </h1>
+
+                <p class="text-sm md:text-base max-w-xl mb-10 leading-relaxed" style="color: rgba(226,232,240,0.95); text-shadow: 0 1px 12px rgba(0,0,0,1);">
+                    中国最大の短尺動画プラットフォーム「抖音(Douyin / 中国版TikTok)」を完全攻略。企画からネイティブによる台本・撮影・編集、インフルエンサー(KOL)連携まで一社完結で支援し、貴社のインバウンド集客を最大化します。
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="btn-douyin px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-flex items-center justify-center gap-2">
+                        無料相談する
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#services" class="px-10 py-4 text-xs font-bold tracking-widest rounded-full inline-flex items-center justify-center text-white" style="border: 1px solid rgba(255,255,255,0.25);" onmouseover="this.style.background='white';this.style.color='#001021'" onmouseout="this.style.background='transparent';this.style.color='white'">
+                        サービス詳細
+                    </a>
+                </div>
+            </div>
+
+            <!-- Phone mockup: absolute positioned on right, large screens only -->
+            <div class="absolute hidden lg:block" style="right: 2rem; top: 50%; transform: translateY(-50%); z-index: 5;" data-aos="fade-left" data-aos-delay="200">
+                <div class="relative" style="width: 256px;">
+                    <div style="width: 256px; height: 460px; border-radius: 2.5rem; border: 4px solid rgba(255,255,255,0.2); overflow: hidden; box-shadow: 0 25px 50px rgba(0,210,218,0.15);">
+                        <img src="assets/images/douyin-creator-1.jpg" class="w-full h-full object-cover" alt="抖音クリエイター" loading="lazy" decoding="async">
+                    </div>
+                    <div class="absolute overflow-hidden" style="bottom: -1rem; left: -1rem; width: 8rem; height: 12rem; border-radius: 1rem; border: 2px solid rgba(254,9,121,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+                        <img src="assets/images/douyin-restaurant-scene.jpg" class="w-full h-full object-cover" alt="店舗ショート動画撮影" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ STATS: Smooth continuation of hero ═══════════════════════ -->
+    <section class="text-white relative overflow-hidden" style="background-color: #000000;">
+        <!-- Subtle divider line with neon glow -->
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="h-px bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent"></div>
+        </div>
+        <div class="py-12 md:py-16">
+            <div class="max-w-7xl mx-auto px-8 w-full">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+                    <div class="text-center md:border-r border-cyan-900/40" data-aos="fade-up">
+                        <div class="text-4xl md:text-5xl font-black mb-2 tracking-tight text-cyan-400">7.3億人+</div>
+                        <p class="text-xs text-slate-300 tracking-wider">日間アクティブユーザー(DAU)</p>
+                    </div>
+                    <div class="text-center md:border-r border-cyan-900/40" data-aos="fade-up" data-aos-delay="80">
+                        <div class="text-4xl md:text-5xl font-black mb-2 tracking-tight text-pink-400">120分+</div>
+                        <p class="text-xs text-slate-300 tracking-wider">1日平均利用時間</p>
+                    </div>
+                    <div class="text-center md:border-r border-cyan-900/40" data-aos="fade-up" data-aos-delay="160">
+                        <div class="text-4xl md:text-5xl font-black mb-2 tracking-tight text-cyan-400">80%以上</div>
+                        <p class="text-xs text-slate-300 tracking-wider">動画を契機とする購買意欲増</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="240">
+                        <div class="text-4xl md:text-5xl font-black mb-2 tracking-tight text-pink-400">1兆元+</div>
+                        <p class="text-xs text-slate-300 tracking-wider">抖音内EC取引年間総額(GMV)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Douyin -->
+    <section class="pt-4 pb-16 md:pb-24 text-white relative overflow-hidden" style="background-color: #000000;">
+        <div class="max-w-5xl mx-auto px-8 relative z-10">
+            <div class="text-center" data-aos="fade-up">
+                <p class="text-cyan-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Why Douyin?</p>
+                <h2 class="text-3xl md:text-5xl font-bold serif mb-6">
+                    なぜ今、抖音（Douyin）なのか
+                </h2>
+                <p class="text-slate-200 text-sm max-w-2xl mx-auto leading-relaxed">
+                    抖音は単なる動画アプリではありません。精度の高いレコメンドアルゴリズムを核に、日本の観光地、美容、グルメ情報を「興味を持つ潜在ターゲット」へ直接かつ爆発的に拡散させる最強のメディアです。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ COMMON CHALLENGES ═══════════════════════ -->
+    <section class="py-16 md:py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-48 h-full seigaiha-pattern opacity-10"></div>
+
+        <div class="max-w-5xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Common Challenges</p>
+                <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue">このようなお悩みはありませんか？</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+                <!-- Pain Point 1 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-start">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-6 text-coral text-xl font-bold">✕</div>
+                    <h4 class="text-tech-blue font-bold mb-3">動画アルゴリズムが複雑</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        動画を投稿しても全く再生数が伸びない。抖音独自のアルゴリズムや「推薦エンジン」の仕組みが理解できない。
+                    </p>
+                </div>
+                <!-- Pain Point 2 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-start">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-6 text-coral text-xl font-bold">✕</div>
+                    <h4 class="text-tech-blue font-bold mb-3">現地の映像トレンドがわからない</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        ただ映像を翻訳して出すだけではバズらない。中国ネイティブに深く刺さる言葉のセンス、カット割、BGMの流行が追えない。
+                    </p>
+                </div>
+                <!-- Pain Point 3 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-start">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-6 text-coral text-xl font-bold">✕</div>
+                    <h4 class="text-tech-blue font-bold mb-3">撮影・編集リソースの不足</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        台本企画、縦動画のカメラワーク、現地受けするナレーションの手配など、社内だけでは高品質な動画制作体制を回せない。
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="inline-block bg-[#eefcff] border border-cyan-200 rounded-2xl px-10 py-6 text-center">
+                    <p class="text-gray-600 text-xs mb-2">PROTECHが動画のプロフェッショナルとして課題を完全解決</p>
+                    <p class="text-tech-blue font-bold text-lg">
+                        企画・撮影・ネイティブ編集から運用まで、すべて<span class="text-cyan-700 font-extrabold">ワンストップ</span>でサポート
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CORE SERVICES ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-slate-50" id="services">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Our Services</p>
+                <h2 class="text-3xl md:text-5xl font-bold serif text-tech-blue">
+                    抖音(Douyin)運営代行サービス
+                </h2>
+                <p class="text-gray-600 text-sm max-w-2xl mx-auto mt-4">
+                    PROTECHの動画専門マーケティングチームが、貴社のアカウントを強力にプロデュースします。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="solution-card rounded-2xl p-8" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-xl flex items-center justify-center font-bold mb-6">01</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">公式認証アカウント<br>開設手続き代行</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        日本企業向けの抖音公式企業認証（ブルーバッジ）のアカウント開設手続きを完全代行。信頼性の担保とブランド構築を初動からサポート。
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="solution-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="50">
+                    <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-xl flex items-center justify-center font-bold mb-6">02</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">バズを狙う企画・<br>構成・中国語台本作成</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        ネイティブスタッフが現地の最新動画トレンド・BGMを追跡し、貴社の魅力を最大限に伝える動画構成やセリフ・台本を作成。
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="solution-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-xl flex items-center justify-center font-bold mb-6">03</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">動画撮影・高度な<br>ネイティブ向け編集</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        スマートフォン縦動画に特化した、没入感の高い撮影とエフェクトカット。現地の若者に刺さるテンポの良いネイティブ字幕や音効を追加。
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="solution-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-xl flex items-center justify-center font-bold mb-6">04</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">アルゴリズム連動型<br>ハッシュタグ & SEO最適化</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        ユーザーの検索キーワードトレンドに連動するキーワード設計。投稿ごとに最もインプレッションを獲得しやすいタグを選択・設計します。
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="solution-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-xl flex items-center justify-center font-bold mb-6">05</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">KOL・KOC<br>動画コラボレーション手配</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        数万〜数百万のフォロワーを持つ動画クリエイターとのコラボ企画。製品紹介や店舗訪問のリアルな動画で爆発的なインプレッションを実現。
+                    </p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="solution-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-xl flex items-center justify-center font-bold mb-6">06</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">データインサイト分析・<br>定期PDCAレポート</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        動画ごとの完了率（再生維持時間）、コメント率、シェア率を詳細に分析。エンゲージメント改善に向けて動画構成を毎回微調整・アップデート。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ INFLUENCER SYNERGY ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="rounded-3xl overflow-hidden shadow-xl aspect-[4/3] border border-slate-100 relative">
+                        <img src="assets/images/douyin-kol-collab.jpg" class="w-full h-full object-cover" alt="KOLコラボレーション" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <p class="text-cyan-600 text-[10px] font-bold tracking-[0.2em] uppercase mb-4">Influencer Networks</p>
+                    <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue mb-6">
+                        中国現地トップKOLとの強固なネットワーク
+                    </h2>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        抖音におけるインバウンド集客で極めて高い効果を発揮するのが、体験発信を得意とする旅行・グルメ・カルチャー系KOLとのアライアンスです。PROTECHは、中国市場で実績のある数多くの有力動画クリエイターと直接連携。貴社の業種や魅力に合致する「最もエンゲージメントの高いインフルエンサー」を戦略的にアサインします。
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><span class="text-cyan-500">✓</span> ターゲットに最も刺さるカテゴリーに特化したKOLの厳選</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-500">✓</span> 自社アカウントの立ち上げとKOL拡散を組み合わせたシナジー設計</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-500">✓</span> 費用対効果（ROI）を追求したデータドリブンなアサイン基準</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CASE STUDIES ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-slate-50 relative">
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-cyan-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Case Studies</p>
+                <h2 class="text-3xl md:text-5xl font-bold serif text-tech-blue mb-6">
+                    抖音(Douyin)の導入・成功事例
+                </h2>
+                <p class="text-gray-600 text-sm max-w-2xl mx-auto leading-relaxed">
+                    バズる仕掛けとデータ分析のPDCAによって、ブランド認知拡大から売上直結までをスピーディに達成した実例です。
+                </p>
+            </div>
+
+            <!-- Cases Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Case 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-slate-100 flex flex-col md:flex-row" data-aos="fade-up">
+                    <div class="md:w-1/2 h-64 md:h-72 overflow-hidden relative">
+                        <img src="assets/images/douyin-case-thumb.jpg" class="w-full h-full object-cover" alt="飲食店抖音事例" loading="lazy" decoding="async">
+                        <div class="absolute top-4 left-4 bg-cyan-400 text-[#001A33] text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">飲食店</div>
+                    </div>
+                    <div class="md:w-1/2 p-8 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-tech-blue mb-3">本格和食レストランチェーン</h3>
+                            <p class="text-gray-400 text-xs mb-4">ターゲット：20代〜30代の訪日旅行者・グルメ層</p>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 font-light">
+                                ネイティブが「シズル感」を極限まで引き立てる縦型調理動画を設計。料理の美しさと調理シーンを30秒で魅力的に編集し配信。
+                            </p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4 flex justify-between items-center text-xs">
+                            <span class="text-cyan-600 font-bold">1ヶ月目再生数：50万回突破</span>
+                            <span class="text-gray-400">訪日予約が前月比 160% 増加</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-slate-100 flex flex-col md:flex-row" data-aos="fade-up" data-aos-delay="100">
+                    <div class="md:w-1/2 h-64 md:h-72 overflow-hidden relative">
+                        <img src="assets/images/douyin-dashboard-mockup.jpg" class="w-full h-full object-cover" alt="観光地抖音事例" loading="lazy" decoding="async">
+                        <div class="absolute top-4 left-4 bg-cyan-400 text-[#001A33] text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">観光施設</div>
+                    </div>
+                    <div class="md:w-1/2 p-8 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-tech-blue mb-3">関東エリア有名温泉リゾート</h3>
+                            <p class="text-gray-400 text-xs mb-4">ターゲット：カップル・ラグジュアリー観光旅行層</p>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 font-light">
+                                絶景客室露天風呂と夕食の演出を「体験者視点（POV）」の動画でドキュメンタリー風に切り出し。KOLアサインを同時連動。
+                            </p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4 flex justify-between items-center text-xs">
+                            <span class="text-cyan-600 font-bold">総再生数：150万回達成</span>
+                            <span class="text-gray-400">中国人観光客の予約が 2倍 に成長</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FAQ ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-cyan-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">FAQ</p>
+                <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue">よくある質問</h2>
+            </div>
+
+            <div class="space-y-0" data-aos="fade-up" data-aos-delay="100">
+                <!-- FAQ 1 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">抖音と小紅書、自社にはどちらが向いていますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-cyan-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            業種や集客の目的によって異なります。大まかには、コスメや小規模なカフェ、じっくりテキストで調べたい予約・実用情報は「小紅書」が適しています。一方で、体験施設、大迫力のグルメ動画、エンタメ性の高いストーリー発信、一瞬のインパクトで大爆発的なバイラル（拡散）を起こしたい場合は「抖音（Douyin）」が圧倒的に向いています。弊社では両プラットフォームを掛け合わせたクロス展開も推奨・サポートしております。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">動画素材は手持ちのものを提供すれば良いですか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-cyan-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            はい、お持ちの映像素材や写真素材をご提供いただければ、それらを抖音用にリメイク・編集して利用することが可能です。また、素材がない場合や現行のクオリティを上げたい場合は、弊社のディレクターおよび撮影スタッフを派遣して新規に撮影を行うことも可能です（お見積もり要相談）。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">企業公式認証アカウント（ブルーバッジ）の取得は必須ですか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-cyan-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            必須ではありませんが、取得を強く推奨しています。公式認証を取得することで「企業公式であること」の信頼性をユーザーにアピールでき、検索結果で上位に表示されやすくなるほか、公式ホームページや予約ページへのダイレクトリンク貼付などの商用機能が開放され、コンバージョン効率が大きく向上します。PROTECHでは申請・審査の事務手続きを一貫して完全代行いたします。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">対応可能な動画の尺（長さ）はどのくらいですか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-cyan-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            基本的には「15秒〜60秒」の範囲のショート動画を標準としています。抖音ではユーザーの離脱防止（視聴完了率）がアルゴリズム上極めて重要なため、無駄のないテンポの良い尺で構成することが成功の鍵となります。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CTA ═══════════════════════ -->
+    <section class="relative py-20 md:py-28 text-white overflow-hidden wave-top" id="contact" style="background-color: #001021;">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/pricing-consultation.jpg" class="w-full h-full object-cover opacity-5 filter grayscale" alt="無料相談" loading="lazy" decoding="async">
+            <div class="absolute inset-0" style="background-color: rgba(0, 16, 33, 0.95);"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold serif mb-6" data-aos="fade-up">
+                ショート動画でインバウンドを掴み取る
+            </h2>
+            <p class="text-slate-100 text-sm md:text-base max-w-xl mx-auto mb-10 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
+                貴社の業種や課題に合わせた最適なショート動画活用案、および集客シミュレーションを無料で作成いたします。
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="/contact" class="btn-douyin px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-block">
+                    オンラインで無料相談する
+                </a>
+                <a href="/pricing" class="px-10 py-4 border border-white/20 text-white text-xs font-bold tracking-widest rounded-full uppercase hover:bg-white hover:text-tech-blue transition-all inline-block">
+                    運営プランと料金を見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+            <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 900,
+            once: true,
+            offset: 60,
+            easing: 'ease-out-cubic',
+        });
+
+        // Mobile Menu Logic
+        // Navbar shadow transition on scroll
+    </script>
+    <script defer src="assets/js/main.js"></script>
+</body>
+
+</html>

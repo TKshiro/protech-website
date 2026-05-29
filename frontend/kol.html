@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7QYC9JLZ1M');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <title>KOL/KOCインフルエンサーマーケティング - PROTECH株式会社</title>
+    <meta name="description" content="中国最大SNSで影響力を持つKOL（Key Opinion Leader）・KOC（Key Opinion Consumer）を活用したインバウンド集客プロモーション。小紅書・抖音・WeChatを横断するインフルエンサーキャスティングから投稿管理・効果分析まで、PROTECH独自ネットワークで一貫支援します。">
+    <meta name="keywords" content="KOL, KOC, インフルエンサー, 中国SNS, 小紅書, 抖音, インバウンドマーケティング, 口コミ施策, ライブコマース, PROTECH">
+    <link rel="canonical" href="https://pro-tech.jp/kol">
+
+    <meta property="og:title" content="KOL/KOCインフルエンサーマーケティング - PROTECH株式会社">
+    <meta property="og:description" content="500名以上のKOL/KOCパートナーネットワークで中国市場に最大インパクト。口コミ体験型プロモーションからライブコマースまで完全サポート。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pro-tech.jp/kol">
+    <meta property="og:image" content="https://pro-tech.jp/img/og-image.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <style>
+        :root {
+            --tech-blue: #001A33;
+            --coral: #E86B7A;
+            --kol-gold: #D97706;
+            --kol-amber: #F59E0B;
+            --kol-dark-amber: #92400E;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAV ===== */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.93);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .btn-coral:hover { background: #d15b6a; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(232,107,122,0.3); }
+
+        /* ===== HERO: Diagonal split editorial ===== */
+        .kol-hero {
+            background: linear-gradient(135deg, #78350F 0%, #7C2D12 20%, var(--tech-blue) 50%, #001A33 100%);
+            min-height: 88vh;
+        }
+        .hero-headline {
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+        }
+        .hero-badge {
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.45);
+        }
+        .floating-metrics {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        /* ===== STATS: Giant dark navy on white ===== */
+        .stat-giant {
+            font-size: clamp(3.5rem, 9vw, 6.5rem);
+            font-weight: 900;
+            color: #001A33;
+            line-height: 1;
+            letter-spacing: -0.04em;
+        }
+        .stat-col { border-right: 1px solid #e2e8f0; }
+        .stat-col:last-child { border-right: none; }
+
+        /* ===== TIER SECTION: Dark navy + image ===== */
+        .tier-badge-active {
+            background: rgba(245, 158, 11, 0.14);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+        }
+        .tier-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== CAMPAIGN ROWS ===== */
+        .campaign-image-wrap {
+            border-radius: 24px;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .campaign-image-wrap:hover { transform: scale(1.02); }
+
+        /* ===== PROCESS ===== */
+        .process-step-num {
+            width: 56px; height: 56px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem; font-weight: 900; color: white;
+            flex-shrink: 0;
+        }
+
+        /* ===== FAQ: Dark navy ===== */
+        .faq-dark-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+        .faq-dark-item:hover { background: rgba(255, 255, 255, 0.08); }
+        .faq-dark-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s;
+            opacity: 0;
+        }
+        .faq-dark-item.open .faq-dark-answer { max-height: 400px; opacity: 1; }
+        .faq-dark-item.open .faq-chevron { transform: rotate(180deg); }
+        .faq-chevron { transition: transform 0.3s; }
+
+        /* ===== BUTTONS ===== */
+        .btn-amber {
+            background: linear-gradient(135deg, var(--kol-amber) 0%, var(--kol-gold) 100%);
+            color: #001A33; font-weight: 800;
+            transition: all 0.3s ease;
+        }
+        .btn-amber:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.35);
+        }
+        .btn-amber-outline {
+            border: 1.5px solid rgba(245, 158, 11, 0.4);
+            color: rgba(245, 158, 11, 0.9);
+            transition: all 0.3s;
+        }
+        .btn-amber-outline:hover {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.7);
+        }
+
+        /* Left accent bar on hero */
+        .hero-accent-bar {
+            width: 4px;
+            background: linear-gradient(to bottom, var(--kol-amber), var(--kol-gold));
+            border-radius: 2px;
+        }
+    </style>
+    <link href="assets/css/tailwind.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="bg-white text-slate-900">
+
+            <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+<!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/" class="nav-link ">トップ</a>
+
+                <div class="relative group">
+                    <a href="/services" class="nav-link text-coral flex items-center gap-1">サービス
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/cases" class="nav-link ">導入事例</a>
+                <a href="/blog" class="nav-link ">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/services" class="text-lg font-bold text-coral">サービス</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
+            </div>
+            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════ HERO: Diagonal editorial ═══════════════════════ -->
+    <section id="main-content" class="kol-hero relative pt-24 md:pt-32 pb-20 md:pb-28 text-white overflow-hidden">
+        <!-- Right side image bleed -->
+        <div class="absolute right-0 top-0 w-full md:w-3/5 h-full z-0">
+            <img src="assets/images/kol-hero.jpg" class="w-full h-full object-cover opacity-20 filter brightness-50" alt="KOLインフルエンサーキャンペーン" decoding="async">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#001A33] via-[#001A33]/85 to-[#001A33]/60"></div>
+        </div>
+        <!-- Amber left accent bar -->
+        <div class="absolute left-0 top-0 w-1 h-full hero-accent-bar z-20"></div>
+
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="max-w-xl" data-aos="fade-right">
+                <div class="hero-badge inline-flex items-center gap-3 rounded-full px-5 py-2.5 mb-8">
+                    <div class="w-2.5 h-2.5 bg-amber-400 rounded-full animate-pulse"></div>
+                    <span class="text-[10px] font-bold tracking-[0.25em] uppercase text-amber-300">KOL / KOC Influencer Marketing</span>
+                </div>
+
+                <h1 class="hero-headline mb-8">
+                    インフルエンサーの<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-200">拡散力</span>で、<br>
+                    中国市場を動かす。
+                </h1>
+
+                <p class="text-slate-200 text-sm md:text-base max-w-lg mb-10 leading-loose font-light">
+                    中国では「知人からの口コミ」が購買意思決定の最大因子です。PROTECHは500名以上のKOL/KOCネットワークから最適なインフルエンサーをマッチングし、認知拡大から購買転換まで戦略的に設計・運用します。
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="/contact" class="btn-amber px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-flex items-center justify-center gap-2">
+                        無料キャンペーン相談
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#tiers" class="btn-amber-outline px-10 py-4 text-xs font-bold tracking-widest rounded-full inline-flex items-center justify-center">
+                        KOLティアを見る
+                    </a>
+                </div>
+            </div>
+
+            <!-- Floating metrics card -->
+            <div class="absolute right-8 bottom-8 hidden lg:block" data-aos="fade-left" data-aos-delay="200">
+                <div class="floating-metrics rounded-2xl p-6 space-y-4 w-52">
+                    <p class="text-[10px] text-amber-300 font-bold tracking-[0.2em] uppercase">リアルタイム指標</p>
+                    <div>
+                        <p class="text-3xl font-black text-white tracking-tight">8.5億人+</p>
+                        <p class="text-xs text-slate-400 mt-1">小紅書月間アクティブ</p>
+                    </div>
+                    <div class="h-px bg-white/10"></div>
+                    <div>
+                        <p class="text-3xl font-black text-white tracking-tight">73%</p>
+                        <p class="text-xs text-slate-400 mt-1">KOL推薦から購買転換</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ GIANT STATS: White bg ═══════════════════════ -->
+    <section class="py-16 md:py-20 bg-white border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4">
+                <div class="stat-col py-8 px-6 text-center" data-aos="fade-up">
+                    <div class="stat-giant">8.5億</div>
+                    <div class="text-[10px] font-black text-kol-gold tracking-widest uppercase mt-1 mb-2">+</div>
+                    <p class="text-xs text-slate-500 font-bold tracking-wide leading-relaxed">小紅書月間<br>アクティブユーザー</p>
+                </div>
+                <div class="stat-col py-8 px-6 text-center" data-aos="fade-up" data-aos-delay="80">
+                    <div class="stat-giant">73%</div>
+                    <div class="text-[10px] font-black tracking-widest uppercase mt-1 mb-2 text-slate-300">—</div>
+                    <p class="text-xs text-slate-500 font-bold tracking-wide leading-relaxed">KOL推薦が購買<br>意思決定に影響</p>
+                </div>
+                <div class="stat-col py-8 px-6 text-center" data-aos="fade-up" data-aos-delay="160">
+                    <div class="stat-giant">3.2x</div>
+                    <div class="text-[10px] font-black tracking-widest uppercase mt-1 mb-2 text-slate-300">—</div>
+                    <p class="text-xs text-slate-500 font-bold tracking-wide leading-relaxed">KOC施策の<br>広告比CPA改善効果</p>
+                </div>
+                <div class="py-8 px-6 text-center" data-aos="fade-up" data-aos-delay="240">
+                    <div class="stat-giant">500</div>
+                    <div class="text-[10px] font-black text-kol-gold tracking-widest uppercase mt-1 mb-2">+</div>
+                    <p class="text-xs text-slate-500 font-bold tracking-wide leading-relaxed">PROTECH連携<br>KOL/KOCパートナー</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ KOL TIER: Dark navy + image right ═══════════════════════ -->
+    <section class="relative py-16 md:py-24 overflow-hidden" id="tiers" style="background-color: #001A33;">
+        <!-- Background tier image on right -->
+        <div class="absolute right-0 top-0 w-full md:w-2/5 h-full z-0 hidden md:block">
+            <img src="assets/images/kol-tier-pyramid.jpg" class="w-full h-full object-cover opacity-10 filter brightness-50" alt="KOLティア構造" loading="lazy" decoding="async">
+            <div class="absolute inset-0" style="background-color: rgba(0, 26, 51, 0.80);"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="md:w-1/2" data-aos="fade-right">
+                <p class="text-amber-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">KOL / KOC Tier Structure</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-10 leading-tight">
+                    貴社目標に最適な<br>インフルエンサーを、<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-200">戦略的に選定</span>する。
+                </h2>
+
+                <div class="space-y-3">
+                    <div class="tier-badge-active rounded-xl p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold tracking-widest uppercase text-amber-300">Tier 1 — トップKOL</span>
+                            <span class="text-xs text-amber-200 font-bold bg-amber-500/20 px-3 py-1 rounded-full">100万+ フォロワー</span>
+                        </div>
+                        <p class="text-slate-200 text-xs leading-relaxed">最大リーチと圧倒的ブランド認知。新規市場参入・大型キャンペーンに最適。</p>
+                    </div>
+                    <div class="tier-badge rounded-xl p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold tracking-widest uppercase text-slate-200">Tier 2 — ミドルKOL</span>
+                            <span class="text-xs text-slate-200 font-bold bg-white/10 px-3 py-1 rounded-full">10〜100万</span>
+                        </div>
+                        <p class="text-slate-200 text-xs leading-relaxed">業界・ニッチ特化の高エンゲージメント。美容・グルメ・旅行専門ジャンルに深い影響力。</p>
+                    </div>
+                    <div class="tier-badge rounded-xl p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold tracking-widest uppercase text-slate-200">Tier 3 — マイクロKOL</span>
+                            <span class="text-xs text-slate-200 font-bold bg-white/10 px-3 py-1 rounded-full">1〜10万</span>
+                        </div>
+                        <p class="text-slate-200 text-xs leading-relaxed">コミュニティへの強い信頼と高コメント率。地域密着型・実店舗集客に特に効果的。</p>
+                    </div>
+                    <div class="tier-badge rounded-xl p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold tracking-widest uppercase text-slate-200">Tier 4 — KOC（口コミ消費者）</span>
+                            <span class="text-xs text-slate-200 font-bold bg-white/10 px-3 py-1 rounded-full">〜1万</span>
+                        </div>
+                        <p class="text-slate-200 text-xs leading-relaxed">最もリアルな体験談レビュー。購買直前の背中を押すラストワンマイル施策に最適。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CAMPAIGN SOLUTIONS: Alternating rows ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-block bg-amber-50 border border-amber-200 rounded-2xl px-8 py-6 mb-2">
+                    <p class="text-amber-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-3">Campaign Solutions</p>
+                    <h2 class="text-3xl md:text-5xl font-bold text-tech-blue mb-3">
+                        3つのキャンペーン<br>ソリューション
+                    </h2>
+                    <p class="text-slate-600 text-sm max-w-2xl mx-auto">
+                        貴社のフェーズ（認知・検討・購買）に最適なKOL/KOCキャンペーンを一貫設計します。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Row 1 -->
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-20 md:mb-28" data-aos="fade-up">
+                <div class="order-2 md:order-1">
+                    <span class="text-amber-600 text-xs font-black tracking-[0.3em] uppercase">01</span>
+                    <h3 class="text-2xl md:text-3xl font-bold text-tech-blue mt-2 mb-4 leading-tight">
+                        口コミ体験型<br>プロモーション
+                    </h3>
+                    <div class="border-l-4 border-amber-400 pl-4 mb-6">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            ターゲット業界・地域・年齢層に最もマッチしたKOL/KOCが実際に貴社の商品・サービスを体験し、本音に基づいたレビューコンテンツを複数媒体へ投稿。信頼性の高い口コミが検索結果に積み上がり、継続的なSEO効果も発生します。
+                        </p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start gap-3"><span class="text-amber-500 font-bold flex-shrink-0 mt-0.5">✓</span><span>現地ネイティブによる3段階インフルエンサー審査・ブランドセーフティ確認</span></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-500 font-bold flex-shrink-0 mt-0.5">✓</span><span>投稿ブリーフィング・コンテンツ監修・最終承認フロー完備</span></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-500 font-bold flex-shrink-0 mt-0.5">✓</span><span>小紅書・抖音・WeChatへの横断的なコンテンツ展開</span></li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2" data-aos="fade-left" data-aos-delay="100">
+                    <div class="campaign-image-wrap h-72 md:h-96 shadow-2xl">
+                        <img src="assets/images/kol-collaboration-meeting.jpg" class="w-full h-full object-cover" alt="KOLコラボ打ち合わせ" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-20 md:mb-28" data-aos="fade-up">
+                <div data-aos="fade-right" data-aos-delay="100">
+                    <div class="campaign-image-wrap h-72 md:h-96 shadow-2xl">
+                        <img src="assets/images/kol-livestream.jpg" class="w-full h-full object-cover" alt="KOLライブコマース" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div>
+                    <span class="text-amber-600 text-xs font-black tracking-[0.3em] uppercase">02</span>
+                    <h3 class="text-2xl md:text-3xl font-bold text-tech-blue mt-2 mb-4 leading-tight">
+                        ライブコマース・<br>動画タイアップ
+                    </h3>
+                    <div class="border-l-4 border-amber-400 pl-4 mb-6">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            インフルエンサーがライブストリームで貴社の商品をリアルタイムに紹介・販売するライブコマース（直播）は、中国ECの主流チャネル。リハーサルから本番配信まで一貫サポートし、視聴者の購買衝動を最大化します。
+                        </p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start gap-3"><span class="text-amber-500 font-bold flex-shrink-0 mt-0.5">✓</span><span>抖音・淘宝ライブ・快手への配信プラットフォーム最適設計</span></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-500 font-bold flex-shrink-0 mt-0.5">✓</span><span>中国語台本・セールストーク・演出構成の制作支援</span></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-500 font-bold flex-shrink-0 mt-0.5">✓</span><span>ライブ中リアルタイムKPI追跡とオペレーションサポート</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center" data-aos="fade-up">
+                <div class="order-2 md:order-1">
+                    <span class="text-amber-600 text-xs font-black tracking-[0.3em] uppercase">03</span>
+                    <h3 class="text-2xl md:text-3xl font-bold text-tech-blue mt-2 mb-4 leading-tight">
+                        タコ足ネットワーク<br>拡散施策
+                    </h3>
+                    <div class="border-l-4 border-amber-400 pl-4 mb-6">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            1名のトップKOLが発信したコンテンツを、複数のマイクロKOL・KOCが二次拡散するネットワーク戦略。Tier 1〜4を組み合わせた複合施策設計で、最大リーチと深い信頼性を同時に実現します。
+                        </p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start gap-3"><span class="text-amber-500 font-bold flex-shrink-0 mt-0.5">✓</span><span>クロスティア複合施策設計でCPA最適化</span></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-500 font-bold flex-shrink-0 mt-0.5">✓</span><span>UGC（ユーザー生成コンテンツ）の二次利用権管理</span></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-500 font-bold flex-shrink-0 mt-0.5">✓</span><span>拡散ネットワークの可視化とインプレッション分析レポート</span></li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2" data-aos="fade-left" data-aos-delay="100">
+                    <div class="campaign-image-wrap h-72 md:h-96 shadow-2xl">
+                        <img src="assets/images/kol-network-map.jpg" class="w-full h-full object-cover" alt="KOLネットワーク拡散マップ" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ PROCESS: Numbered steps ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-8">
+            <div class="text-center mb-14" data-aos="fade-up">
+                <p class="text-amber-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Campaign Flow</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-tech-blue">施策開始まで、<span class="text-amber-600">4ステップ</span></h2>
+            </div>
+
+            <div class="space-y-0 divide-y divide-slate-200">
+                <div class="flex gap-6 md:gap-8 items-start py-8" data-aos="fade-up">
+                    <div class="process-step-num flex-shrink-0 shadow-lg" style="background: #D97706">01</div>
+                    <div class="pt-1">
+                        <h3 class="text-lg font-bold text-tech-blue mb-2">ヒアリング・キャンペーン戦略立案</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed max-w-2xl">ブランド・ターゲット層・予算・競合状況をヒアリングし、最適なKOLティア構成・プラットフォーム配分・KPIを定義した施策計画書を作成します。</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 md:gap-8 items-start py-8" data-aos="fade-up" data-aos-delay="60">
+                    <div class="process-step-num flex-shrink-0 shadow-lg" style="background: #B45309">02</div>
+                    <div class="pt-1">
+                        <h3 class="text-lg font-bold text-tech-blue mb-2">KOL/KOCリサーチ・選定・契約代行</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed max-w-2xl">PROTECH独自ネットワーク・データベースから候補者をリサーチし、フォロワー質・エンゲージメント率・ブランドフィットを評価。交渉・契約締結まで完全代行します。</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 md:gap-8 items-start py-8" data-aos="fade-up" data-aos-delay="120">
+                    <div class="process-step-num flex-shrink-0 shadow-lg" style="background: #92400E">03</div>
+                    <div class="pt-1">
+                        <h3 class="text-lg font-bold text-tech-blue mb-2">コンテンツ制作・監修・投稿管理</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed max-w-2xl">ブランドガイドラインを遵守しつつ、KOLの自然な表現で書かれた投稿ブリーフィングを提供。投稿前のコンプライアンスチェック・最終承認を徹底します。</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 md:gap-8 items-start py-8" data-aos="fade-up" data-aos-delay="180">
+                    <div class="process-step-num flex-shrink-0 shadow-lg" style="background: var(--tech-blue)">04</div>
+                    <div class="pt-1">
+                        <h3 class="text-lg font-bold text-tech-blue mb-2">パフォーマンス分析・改善レポート</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed max-w-2xl">インプレッション・エンゲージメント・コンバージョン等を集計し、次回施策の改善提案を含む詳細レポートを提供。ROIを明確化します。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FAQ: Dark navy ═══════════════════════ -->
+    <section class="py-16 md:py-24 text-white" style="background-color: #001A33;">
+        <div class="max-w-3xl mx-auto px-8">
+            <div class="text-center mb-14" data-aos="fade-up">
+                <p class="text-amber-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">FAQ</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">よくある質問</h2>
+            </div>
+
+            <div class="space-y-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-dark-item p-6 cursor-pointer" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-white text-sm">KOLキャンペーンの予算の目安を教えてください。</h4>
+                        <svg class="faq-chevron w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-dark-answer pt-4">
+                        <p class="text-xs text-slate-200 leading-relaxed">KOCのみの口コミ施策は1名あたり数万円〜、マイクロKOLは1投稿あたり10〜50万円、ミドルKOLは50〜300万円、トップKOLは500万円〜が目安です。貴社の目標・期間・規模に応じた最適な予算配分を無料相談でご提案します。</p>
+                    </div>
+                </div>
+                <div class="faq-dark-item p-6 cursor-pointer" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-white text-sm">投稿内容の確認・承認はできますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-dark-answer pt-4">
+                        <p class="text-xs text-slate-200 leading-relaxed">はい、全ての投稿はPROTECHが日本語に翻訳した上でご確認いただきます。ブランドガイドラインの遵守・虚偽表現の排除・炎上リスクのチェックを行った上で最終承認を取得してから投稿します。</p>
+                    </div>
+                </div>
+                <div class="faq-dark-item p-6 cursor-pointer" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-white text-sm">日本で知名度がほぼないブランドでも施策は可能ですか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-dark-answer pt-4">
+                        <p class="text-xs text-slate-200 leading-relaxed">はい、むしろゼロからブランドを作る段階こそKOL/KOCの口コミが最大の効果を発揮します。中国では新発見の喜びを共有するカルチャーが根強く、KOCによる「本当に良いもの」の発掘・拡散が特に力を持ちます。</p>
+                    </div>
+                </div>
+                <div class="faq-dark-item p-6 cursor-pointer" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-white text-sm">施策効果はどのように測定しますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-dark-answer pt-4">
+                        <p class="text-xs text-slate-200 leading-relaxed">各プラットフォームのインサイト（インプレッション・エンゲージメント率・コメント・保存数）を取得し、目標KPIとの乖離分析を行います。さらにLPへのトラフィック変化、検索ボリューム増加、来店数・予約数の変動も合わせた統合レポートを提供します。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CTA: Amber/dark gradient ═══════════════════════ -->
+    <section class="relative py-20 md:py-28 text-white overflow-hidden" style="background: linear-gradient(135deg, #78350F 0%, #92400E 40%, #001A33 100%);">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/kol-livestream.jpg" class="w-full h-full object-cover opacity-10 filter grayscale" alt="背景" loading="lazy" decoding="async">
+            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(120,53,15,0.85) 0%, rgba(1,26,51,0.90) 100%)"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+            <p class="text-amber-300 text-[10px] font-bold tracking-[0.3em] uppercase mb-6" data-aos="fade-up">Let's Start Your Campaign</p>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6" data-aos="fade-up" data-aos-delay="100">
+                インフルエンサーの力で、<br>インバウンド集客を変える。
+            </h2>
+            <p class="text-slate-200 text-sm md:text-base max-w-xl mx-auto mb-10 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="200">
+                ターゲット層・予算・目標に合わせた最適なKOL/KOC施策設計を、無料でご提案します。まずはお気軽にご相談ください。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                <a href="/contact" class="btn-amber px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-block">
+                    無料キャンペーン相談
+                </a>
+                <a href="/pricing" class="btn-amber-outline px-10 py-4 text-xs font-bold tracking-widest rounded-full inline-block">
+                    料金プランを見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+        <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic', offset: 60 });
+
+
+    </script>
+    <script defer src="assets/js/main.js"></script>
+</body>
+</html>

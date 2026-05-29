@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7QYC9JLZ1M');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <title>料金プラン - PROTECH株式会社｜中国インバウンド・SNS集客</title>
+    <meta name="description"
+        content="PROTECHのサービス料金プラン一覧。小紅書(RED)・抖音(Douyin)の中国SNS代運営プラン（月額5万円〜）から、WeChat小程序開発、LP・動画制作の個別お見積もりまで、明瞭な価格設計で貴社の中国マーケティングを強力に支援します。">
+    <meta name="keywords" content="PROTECH 料金, 中国SNS代運営 費用, 小紅書 運用代行 価格, 抖音 代運営 料金, WeChat ミニプログラム 開発 費用, 中国インバウンド 予算">
+    <link rel="canonical" href="https://pro-tech.jp/pricing">
+
+    <meta property="og:title" content="料金プラン - PROTECH株式会社｜中国インバウンド・SNS集客">
+    <meta property="og:description" content="明朗な価格設計で中国マーケティングを支援。SNS代運営プラン月額5万円〜、システム開発・クリエイティブ制作の個別お見積もりまで。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pro-tech.jp/pricing">
+    <meta property="og:image" content="https://pro-tech.jp/img/og-image.jpg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <style>
+
+        .serif {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .pricing-hero {
+            background:
+                linear-gradient(125deg, rgba(0, 18, 36, 0.96) 0%, rgba(0, 26, 51, 0.9) 45%, rgba(6, 19, 33, 0.92) 100%),
+                url('assets/images/pricing-hero.jpg') center/cover;
+        }
+
+        .pricing-hero h1 {
+            font-size: clamp(3rem, 5vw, 4.75rem);
+        }
+
+        .pricing-grid-overlay {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+            background-size: 72px 72px;
+            mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+        }
+
+        .hero-panel {
+            background: rgba(255, 255, 255, 0.075);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+            backdrop-filter: blur(18px);
+        }
+
+        .hero-panel-row {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .hero-panel-row:last-child {
+            border-bottom: 0;
+        }
+
+        .metric-tile {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.82));
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 18px 50px rgba(0, 26, 51, 0.06);
+        }
+
+        .section-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--coral);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+        }
+
+        .section-kicker::before {
+            content: '';
+            width: 34px;
+            height: 1px;
+            background: currentColor;
+            opacity: 0.7;
+        }
+
+        /* Nav */
+
+        /* Seigaiha pattern */
+        .seigaiha-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 C20 40 20 20 40 20 C60 20 60 40 80 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.08'/%3E%3Cpath d='M-40 40 C-20 40 -20 20 0 20 C20 20 20 40 40 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.08'/%3E%3Cpath d='M40 40 C60 40 60 20 80 20 C100 20 100 40 120 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.08'/%3E%3C/svg%3E");
+            background-size: 80px 40px;
+        }
+
+        /* Pricing Card */
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(15, 23, 42, 0.1);
+            border-radius: 18px;
+            box-shadow: 0 22px 70px rgba(0, 26, 51, 0.07);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(232, 107, 122, 0.32);
+            box-shadow: 0 30px 80px rgba(0, 26, 51, 0.12);
+        }
+
+        .pricing-card-popular {
+            border: 1px solid rgba(232, 107, 122, 0.65);
+            position: relative;
+            transform: translateY(-10px);
+            box-shadow: 0 32px 90px rgba(232, 107, 122, 0.18);
+        }
+
+        .pricing-card-popular:hover {
+            transform: translateY(-16px);
+            box-shadow: 0 42px 100px rgba(232, 107, 122, 0.22);
+        }
+
+        /* Coral accent stripe at top of popular card */
+        .pricing-card-popular::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--coral);
+            border-radius: 18px 18px 0 0;
+        }
+
+        .pricing-card-popular::before {
+            content: 'MOST SELECTED';
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: var(--tech-blue);
+            color: white;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            padding: 6px 12px;
+            border-radius: 999px;
+            box-shadow: 0 10px 24px rgba(0, 26, 51, 0.2);
+        }
+
+        /* Glassmorphic card — solid white bg for contrast */
+        .glass-card {
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 16px;
+            box-shadow: 0 18px 55px rgba(0, 26, 51, 0.055);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: white;
+            border-color: rgba(232, 107, 122, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 26px 70px rgba(0, 26, 51, 0.1);
+        }
+
+        .comparison-table {
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 26, 51, 0.06);
+            border-radius: 14px;
+        }
+
+        .btn-coral,
+        .btn-outline-coral {
+            border-radius: 4px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            background: #fff8f9;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+            color: var(--coral);
+        }
+
+        .faq-chevron {
+            transition: transform 0.3s ease, color 0.3s ease;
+            color: var(--coral);
+        }
+
+        /* btn-outline-coral: visible coral outline button */
+        .btn-outline-coral {
+            border: 2px solid var(--coral);
+            color: var(--coral);
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-coral:hover {
+            background: var(--coral);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(232, 107, 122, 0.25);
+        }
+
+        /* CTA */
+        .cta-gradient {
+            background: linear-gradient(135deg, #001A33 0%, #0c2b4e 50%, #001A33 100%);
+            background-size: 200% 200%;
+            animation: gradient-shift 8s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Buttons */
+
+        .wave-top {
+            position: relative;
+        }
+
+        .wave-top::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath fill='%23ffffff' d='M0,20 C360,50 720,0 1080,20 C1260,30 1350,25 1440,20 L1440,0 L0,0 Z'/%3E%3C/svg%3E") no-repeat;
+            background-size: cover;
+        }
+
+        @media (max-width: 767px) {
+            .pricing-hero h1 {
+                font-size: clamp(2.35rem, 11vw, 3rem);
+                line-height: 1.12;
+                letter-spacing: 0;
+            }
+
+            .hero-panel {
+                padding: 1.25rem;
+            }
+
+            .pricing-card-popular {
+                transform: none;
+            }
+
+            .pricing-card-popular:hover {
+                transform: translateY(-4px);
+            }
+        }
+    </style>
+    <link href="assets/css/tailwind.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="bg-white text-slate-900">
+
+        <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+            <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/" class="nav-link ">トップ</a>
+
+                <div class="relative group">
+                    <a href="/services" class="nav-link text-coral flex items-center gap-1">サービス
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/cases" class="nav-link ">導入事例</a>
+                <a href="/blog" class="nav-link ">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu-backdrop" class="fixed inset-0 z-30 hidden bg-tech-blue/35 md:hidden" aria-hidden="true"></div>
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/services" class="text-lg font-bold text-coral">サービス</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
+            </div>
+            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section id="main-content" class="pricing-hero relative pt-32 md:pt-40 pb-20 md:pb-28 text-white overflow-hidden">
+        <div class="pricing-grid-overlay absolute inset-0 opacity-60"></div>
+        <div class="absolute -right-24 top-20 w-96 h-96 rounded-full bg-coral/15 blur-[110px]"></div>
+        <div class="absolute left-0 bottom-0 w-full h-40 bg-gradient-to-t from-white to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+            <div class="grid lg:grid-cols-[1.08fr_0.92fr] gap-10 lg:gap-16 items-center">
+                <div data-aos="fade-up">
+                    <div class="section-kicker mb-7">Pricing Architecture</div>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.08] tracking-tight mb-7">
+                        中国集客の<br class="sm:hidden">投資判断を、<br><span class="text-coral">明確に。</span>
+                    </h1>
+                    <p class="text-slate-200/80 text-sm md:text-base max-w-2xl leading-[2] font-light mb-9">
+                        小紅書・大衆点評・抖音の運用から、KOL施策、LP制作、小程序開発まで。必要な施策だけを組み合わせ、初期設計から改善運用まで一貫して支援します。
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#subscription-plans" class="btn-coral px-8 py-4 text-xs font-bold tracking-widest rounded-none text-center">月額プランを見る</a>
+                        <a href="/contact?source=pricing-hero" class="px-8 py-4 border border-white/25 text-white text-xs font-bold tracking-widest rounded-none hover:bg-white hover:text-tech-blue transition text-center">個別見積もりを相談</a>
+                    </div>
+                </div>
+
+                <div class="hero-panel p-6 md:p-8" data-aos="fade-up" data-aos-delay="120">
+                    <div class="flex items-center justify-between mb-7">
+                        <div>
+                            <p class="text-white/45 text-[10px] font-bold tracking-[0.24em] uppercase mb-2">Estimated Budget</p>
+                            <h2 class="text-2xl md:text-3xl font-black">料金レンジ早見表</h2>
+                        </div>
+                        <div class="w-11 h-11 border border-white/20 flex items-center justify-center text-coral font-black">¥</div>
+                    </div>
+                    <div class="space-y-0">
+                        <div class="hero-panel-row py-5 flex items-center justify-between gap-6">
+                            <div>
+                                <p class="text-white font-bold">SNS運用代行</p>
+                                <p class="text-white/45 text-xs mt-1">小紅書・大衆点評・抖音</p>
+                            </div>
+                            <p class="text-right text-xl font-black">5万〜25万<span class="text-xs text-white/45">/月</span></p>
+                        </div>
+                        <div class="hero-panel-row py-5 flex items-center justify-between gap-6">
+                            <div>
+                                <p class="text-white font-bold">KOL / KOC施策</p>
+                                <p class="text-white/45 text-xs mt-1">選定・交渉・投稿管理</p>
+                            </div>
+                            <p class="text-right text-xl font-black">個別見積</p>
+                        </div>
+                        <div class="hero-panel-row py-5 flex items-center justify-between gap-6">
+                            <div>
+                                <p class="text-white font-bold">LP・動画・小程序</p>
+                                <p class="text-white/45 text-xs mt-1">制作・開発プロジェクト</p>
+                            </div>
+                            <p class="text-right text-xl font-black">個別設計</p>
+                        </div>
+                    </div>
+                    <p class="text-white/45 text-xs leading-relaxed mt-6">
+                        初回相談では、業種・商圏・ターゲットに合わせて、推奨チャネルと3ヶ月分の予算配分を整理します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ PRICING PRINCIPLES ═══════════════════════ -->
+    <section class="py-12 md:py-16 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-20"></div>
+        
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="grid md:grid-cols-3 gap-5">
+                <!-- Value 1 -->
+                <div class="metric-tile p-7" data-aos="fade-up">
+                    <p class="text-coral text-[10px] font-black tracking-[0.22em] uppercase mb-5">01 / Scope</p>
+                    <h3 class="font-bold text-lg text-tech-blue mb-3">費用範囲を事前定義</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        投稿本数、返信件数、広告管理、レポート範囲を契約前に明文化。追加費用の発生条件も明確にします。
+                    </p>
+                </div>
+                <!-- Value 2 -->
+                <div class="metric-tile p-7" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-coral text-[10px] font-black tracking-[0.22em] uppercase mb-5">02 / Native</p>
+                    <h3 class="font-bold text-lg text-tech-blue mb-3">日中チームで運用</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        日本語で要件整理し、中国語ネイティブが投稿・返信・口コミ導線を最適化。翻訳だけで終わらせません。
+                    </p>
+                </div>
+                <!-- Value 3 -->
+                <div class="metric-tile p-7" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-coral text-[10px] font-black tracking-[0.22em] uppercase mb-5">03 / Improve</p>
+                    <h3 class="font-bold text-lg text-tech-blue mb-3">改善前提の月次運用</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        投稿して終わりではなく、検索語・保存率・問い合わせ内容を見て改善。月額費用を投資として管理します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ SUBSCRIPTION PLANS ═══════════════════════ -->
+    <section class="py-20 md:py-28 relative overflow-hidden" id="subscription-plans" style="background: linear-gradient(180deg, #f8fafc 0%, #fff5f6 48%, #ffffff 100%);">
+        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
+        <div class="absolute -left-40 top-24 w-96 h-96 rounded-full bg-coral/10 blur-[110px]"></div>
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="md:flex md:items-end md:justify-between gap-10 mb-16" data-aos="fade-up">
+                <div>
+                    <p class="section-kicker mb-4">Subscription Plans</p>
+                    <h2 class="text-3xl md:text-5xl font-black serif text-tech-blue mb-6 leading-tight">
+                    中国SNSアカウント運営代行プラン
+                    </h2>
+                </div>
+                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">
+                    小紅書（RED）や大衆点評（Dianping）、抖音（Douyin）等の運用を丸ごとサポート。初期費用を抑えながら、まずは安定的に認知と問い合わせ導線を作りたい企業様向けです。
+                </p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid lg:grid-cols-3 gap-7 items-stretch">
+                <!-- Light Plan -->
+                <div class="pricing-card p-8 md:p-10 flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <div class="mb-6">
+                            <span class="inline-block bg-slate-100 text-slate-600 text-[10px] font-bold px-3 py-1 uppercase tracking-wider mb-4">ライト</span>
+                            <h3 class="text-2xl font-bold text-tech-blue">基本プラン</h3>
+                            <p class="text-gray-400 text-xs mt-2">最小限のコストでSNS発信をスタートしたい店舗・事業主様へ</p>
+                        </div>
+                        <div class="border-t border-b border-gray-100 py-6 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-black text-tech-blue">¥50,000</span>
+                                <span class="text-xs text-gray-400 font-bold ml-2">/ 月（税別）</span>
+                            </div>
+                            <span class="text-[10px] text-coral font-bold tracking-widest block mt-2">最低契約期間：3ヶ月</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm text-gray-600">
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span>毎月<strong>3本</strong>の関連投稿（記事）<br><span class="text-gray-400 text-xs">または動画1本の編集・投稿</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span>お問合せ対応：最大<strong>100件</strong> / 月<br><span class="text-gray-400 text-xs">（ネイティブによる丁寧な代理返信）</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span>キーワード最適化：<strong>随時対応</strong><br><span class="text-gray-400 text-xs">（プラットフォーム内の検索キーワード設計）</span></span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-300">
+                                <span>✕</span>
+                                <span>定例ミーティング・詳細データ分析</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-300">
+                                <span>✕</span>
+                                <span>KOC（体験型インフルエンサー）手配</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="/contact?plan=light" class="btn-outline-coral w-full py-4 text-center text-xs font-bold tracking-widest uppercase block">
+                        このプランで相談する
+                    </a>
+                </div>
+
+                <!-- Standard Plan -->
+                <div class="pricing-card pricing-card-popular p-8 md:p-10 flex flex-col justify-between shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="mb-6">
+                            <span class="inline-block bg-coral/10 text-coral text-[10px] font-bold px-3 py-1 uppercase tracking-wider mb-4">スタンダード</span>
+                            <h3 class="text-2xl font-bold text-tech-blue">推奨プラン</h3>
+                            <p class="text-gray-400 text-xs mt-2">インサイト分析や競合調査、KOC起用で集客成果を本格化したい企業様へ</p>
+                        </div>
+                        <div class="border-t border-b border-gray-100 py-6 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-black text-tech-blue">¥120,000</span>
+                                <span class="text-xs text-gray-400 font-bold ml-2">/ 月（税別）</span>
+                            </div>
+                            <span class="text-[10px] text-coral font-bold tracking-widest block mt-2">最低契約期間：3ヶ月</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm text-gray-600">
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span>毎月<strong>6本</strong>の高品質記事投稿<br><span class="text-gray-400 text-xs">または動画2本の企画・編集・投稿</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span>お問合せ対応：最大<strong>250件</strong> / 月<br><span class="text-gray-400 text-xs">（24時間以内ネイティブ返信）</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span>キーワード & ハッシュタグ最適化<br><span class="text-gray-400 text-xs">（競合・ホットトレンド分析を含む）</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span><strong>詳細インサイト分析レポート</strong>提供<br><span class="text-gray-400 text-xs">（毎月1回のオンライン定例ミーティング）</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span class="text-slate-800 font-bold">【プレミアム特典】</span>
+                            </li>
+                            <li class="pl-6 text-xs text-gray-500 space-y-2">
+                                <div>・初期設定 & 公式認証申請無料（5万円相当）</div>
+                                <div>・マイクロKOC手配付帯（毎月2名無料）</div>
+                                <div>・広告運用代行費込（月額予算5万円分まで）</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="/contact?plan=standard" class="btn-coral w-full py-4 text-center text-xs font-bold tracking-widest uppercase block">
+                        人気No.1プランで相談する
+                    </a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card p-8 md:p-10 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <div class="mb-6">
+                            <span class="inline-block bg-slate-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-wider mb-4">プレミアム</span>
+                            <h3 class="text-2xl font-bold text-tech-blue">エンタープライズ</h3>
+                            <p class="text-gray-400 text-xs mt-2">複数チャネル展開やKOLコラボ、広告の最適化で市場シェアを狙うブランドへ</p>
+                        </div>
+                        <div class="border-t border-b border-gray-100 py-6 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-black text-tech-blue">¥250,000</span>
+                                <span class="text-xs text-gray-400 font-bold ml-2">/ 月（税別）</span>
+                            </div>
+                            <span class="text-[10px] text-coral font-bold tracking-widest block mt-2">最低契約期間：3ヶ月</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm text-gray-600">
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span>毎月<strong>10本</strong>のハイクオリティ記事投稿<br><span class="text-gray-400 text-xs">または動画4本のフル編集（台本・素材対応）</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span>お問合せ・コメント対応：<strong>無制限</strong><br><span class="text-gray-400 text-xs">（緊急対応用ホットラインの開設）</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span>包括的SEOキーワード・競合比較設計</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span>詳細レポート ＋ 定例会（月2回 / 訪問可）</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral font-bold">✓</span>
+                                <span class="text-slate-800 font-bold">【プレミアム特典】</span>
+                            </li>
+                            <li class="pl-6 text-xs text-gray-500 space-y-2">
+                                <div>・初期設定 & 公式認証申請無料</div>
+                                <div>・KOLマッチング & コラボ特別割引適用</div>
+                                <div>・プロモーションイベントの企画・運営</div>
+                                <div>・広告運用代行費込（月額予算15万円分まで）</div>
+                                <div>・中国語LP初期制作費 50% OFF</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="/contact?plan=premium" class="btn-outline-coral w-full py-4 text-center text-xs font-bold tracking-widest uppercase block">
+                        このプランで相談する
+                    </a>
+                </div>
+            </div>
+
+            <div class="comparison-table mt-12 bg-white overflow-x-auto" data-aos="fade-up">
+                <table class="w-full min-w-[760px] text-sm">
+                    <thead>
+                        <tr class="bg-slate-950 text-white text-left">
+                            <th class="px-6 py-5 text-xs tracking-[0.18em] uppercase">比較項目</th>
+                            <th class="px-6 py-5 text-xs tracking-[0.18em] uppercase">ライト</th>
+                            <th class="px-6 py-5 text-xs tracking-[0.18em] uppercase text-coral">スタンダード</th>
+                            <th class="px-6 py-5 text-xs tracking-[0.18em] uppercase">プレミアム</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-slate-600">
+                        <tr>
+                            <td class="px-6 py-5 font-bold text-tech-blue">月間投稿</td>
+                            <td class="px-6 py-5">記事3本 または 動画1本</td>
+                            <td class="px-6 py-5 font-bold text-tech-blue">記事6本 または 動画2本</td>
+                            <td class="px-6 py-5">記事10本 または 動画4本</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-5 font-bold text-tech-blue">問い合わせ対応</td>
+                            <td class="px-6 py-5">100件 / 月</td>
+                            <td class="px-6 py-5 font-bold text-tech-blue">250件 / 月</td>
+                            <td class="px-6 py-5">無制限</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-5 font-bold text-tech-blue">月次レポート</td>
+                            <td class="px-6 py-5 text-slate-300">なし</td>
+                            <td class="px-6 py-5 font-bold text-tech-blue">詳細レポート + 定例1回</td>
+                            <td class="px-6 py-5">詳細レポート + 定例2回</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-5 font-bold text-tech-blue">向いている企業</td>
+                            <td class="px-6 py-5">小規模店舗・試験導入</td>
+                            <td class="px-6 py-5 font-bold text-tech-blue">継続集客を作りたい企業</td>
+                            <td class="px-6 py-5">複数チャネルで伸ばすブランド</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ PROJECT BASE / ON-DEMAND SERVICES ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-white relative" id="project-services">
+        <div class="absolute bottom-0 left-0 w-64 h-full seigaiha-pattern opacity-10"></div>
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="md:flex md:items-end md:justify-between gap-10 mb-16" data-aos="fade-up">
+                <div>
+                    <p class="section-kicker mb-4">On-Demand Services</p>
+                    <h2 class="text-3xl md:text-5xl font-black serif text-tech-blue mb-6 leading-tight">
+                    個別お見積もりサービス
+                    </h2>
+                </div>
+                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">
+                    プロジェクトの要件や機能範囲、稼働メンバーの規模に応じてお見積もりを行うカスタムソリューションです。<br>
+                    お客様のご要望に合わせてムダのないプランを策定いたします。
+                </p>
+            </div>
+
+            <!-- Custom Quote Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Mini Program Dev -->
+                <div class="glass-card p-8 flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <span class="text-coral text-2xl font-black block mb-4">01</span>
+                        <h3 class="text-xl font-bold text-tech-blue mb-4">WeChat 小プログラム開発</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                            予約システム、店舗決済、デジタル会員証、インバウンド向け多言語ECなど。WeChat経済圏と直結する強力なツールをお客様の要件に合わせて設計・構築いたします。
+                        </p>
+                    </div>
+                    <div class="border-t border-gray-100 pt-6 mt-6 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 font-bold">目安費用：要お見積もり</span>
+                        <a href="/contact?service=miniprogram" class="text-coral text-xs font-bold hover:underline inline-flex items-center gap-1">
+                            詳細を聞く →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LP & Video Production -->
+                <div class="glass-card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <span class="text-coral text-2xl font-black block mb-4">02</span>
+                        <h3 class="text-xl font-bold text-tech-blue mb-4">中国語クリエイティブ制作</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                            インバウンド向けランディングページ（LP）や、小紅書・抖音用の短尺動画・プロモーション映像の制作。翻訳だけでなく、現地のユーザー心理に刺さる言葉選びで制作します。
+                        </p>
+                    </div>
+                    <div class="border-t border-gray-100 pt-6 mt-6 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 font-bold">目安費用：要お見積もり</span>
+                        <a href="/contact?service=creative" class="text-coral text-xs font-bold hover:underline inline-flex items-center gap-1">
+                            詳細を聞く →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- KOL / KOC Campaigns -->
+                <div class="glass-card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <span class="text-coral text-2xl font-black block mb-4">03</span>
+                        <h3 class="text-xl font-bold text-tech-blue mb-4">KOL / KOC インフルエンサー施策</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                            中国市場での第一歩となる認知獲得に欠かせないインフルエンサーとの連携施策。インフルエンサーの選定、交渉、進行管理、結果分析まで一括で担当します。
+                        </p>
+                    </div>
+                    <div class="border-t border-gray-100 pt-6 mt-6 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 font-bold">目安費用：要お見積もり</span>
+                        <a href="/contact?service=kol" class="text-coral text-xs font-bold hover:underline inline-flex items-center gap-1">
+                            詳細を聞く →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ TRANSPARENCY SECTION ═══════════════════════ -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white relative">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/pricing-pattern-bg.jpg" class="w-full h-full object-cover opacity-10 filter grayscale" alt="装飾背景" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-slate-900/90"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold serif mb-6">プロジェクトごとに料金が変わる理由</h2>
+                <div class="h-px bg-white/20 w-24 mx-auto mb-6"></div>
+                <p class="text-slate-300 text-sm leading-relaxed max-w-2xl mx-auto font-light">
+                    私たちは一社ごとに完全に最適化された中国マーケティングソリューションを提供しています。画一的なプランを押し付けるのではなく、お客様の事業形態、ターゲット属性、求める開発要件、人員稼働スケジュールに合わせて無駄を排除した個別見積もりを提示いたします。それにより、費用対効果の最大化をお約束します。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 text-sm" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                    <h4 class="font-bold text-coral mb-2">① 開発要件や仕様の範囲</h4>
+                    <p class="text-slate-200 leading-relaxed font-light">ミニプログラム等では、決済機能の有無、バックエンドシステムとの連携難易度、管理画面の多言語要件などによって最適な工数が異なるためです。</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                    <h4 class="font-bold text-coral mb-2">② クリエイティブの品質と撮影手法</h4>
+                    <p class="text-slate-200 leading-relaxed font-light">動画制作におけるロケ撮影、現地キャストのアサイン、高度なモーショングラフィックス演出、動画本数などによって適切な予算配置を行います。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FAQ ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-3xl mx-auto px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-4">FAQ</p>
+                <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue">料金に関するよくある質問</h2>
+            </div>
+
+            <div class="space-y-0" data-aos="fade-up" data-aos-delay="100">
+                <!-- FAQ 1 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">SNS代運営プランの最低契約期間はありますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            原則として最低契約期間は「3ヶ月」とさせていただいております。中国SNSは信頼や実績のアキュムレーション（積み上げ）が重視されるため、一定期間継続して施策を行うことで効果が出やすくなるためです。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">初期費用はいくら発生しますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            アカウント代運営プラン（ライト・スタンダード・プレミアム共通）では、初期アカウント構築および公式認証申請代行サポートとして、通常5万円（税別）をいただいております。ただし、スタンダード以上のプランでご契約された場合は無料（無料付帯）となります。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">複数のSNSプラットフォームをまとめて運営代行できますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            はい、可能です。小紅書（RED）と大衆点評（Dianping）を掛け合わせた総合パッケージや、抖音（Douyin）を含めた複数アカウント運営も承っております。複数チャネルをセットでご利用いただく場合は割引を適用いたしますので、まずはお気軽にご相談ください。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">お支払いの方法やタイミングを教えてください。</h4>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            毎月月末締めで翌月末支払い（銀行振込）となります。契約期間に応じた一括支払いや、他の支払いフローについてもご相談に応じます。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue">中国語の翻訳や代理の顧客対応（コメント返し）の費用は別にかかりますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            いいえ、必要ありません。投稿する記事の中国語ローカライズ翻訳費および、プランで指定された上限件数までのコメント/チャットお問合せ代理返信費用は、すべて月額プラン料金に包括されています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CTA ═══════════════════════ -->
+    <section class="relative py-20 md:py-28 cta-gradient text-white overflow-hidden wave-top">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/pricing-consultation.jpg" class="w-full h-full object-cover opacity-10 filter grayscale" alt="無料相談" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-slate-950/80"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold serif mb-6" data-aos="fade-up">
+                まずは無料相談・アカウント診断から
+            </h2>
+            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-10 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
+                貴社の業種や課題に合わせた最適な集客シミュレーションを無料で提示いたします。まずはお気軽にお問合せください。
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="/contact" class="btn-coral px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-block">
+                    無料の集客相談を予約する
+                </a>
+                <a href="/contact?type=document" class="px-10 py-4 border border-white/20 text-white text-xs font-bold tracking-widest rounded-full uppercase hover:bg-white hover:text-tech-blue transition-all inline-block">
+                    資料を請求する
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+            <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 900,
+            once: true,
+            offset: 60,
+            easing: 'ease-out-cubic',
+        });
+
+        // Mobile Menu Logic
+        // Navbar shadow transition on scroll
+    </script>
+    <script defer src="assets/js/main.js"></script>
+</body>
+
+</html>

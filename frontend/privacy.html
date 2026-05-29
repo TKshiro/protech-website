@@ -3,7 +3,7 @@
 <head>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -21,13 +21,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="assets/css/shared.css">
     <style>
-        :root { --tech-blue: #001A33; --coral: #E86B7A; }
+        
         body { font-family: 'Noto Sans JP', sans-serif; font-size: 15px; -webkit-font-smoothing: antialiased; }
         .glass-nav { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); }
         .nav-link { transition: color 0.2s; }
-        .nav-link:hover { color: var(--coral); }
+        
         .btn-coral { background: var(--coral); color: white; transition: opacity 0.2s; }
         .btn-coral:hover { opacity: 0.85; }
         .content-area h2 { font-size: 1.25rem; font-weight: 700; color: var(--tech-blue); margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.5rem; }
@@ -38,7 +38,8 @@
 </head>
 <body class="bg-slate-50 text-slate-900 pt-24 pb-20">
 
-    <!-- NAV -->
+        <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+<!-- NAV -->
     <nav class="fixed top-0 w-full z-50 glass-nav border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue">PROTECH</a>
@@ -54,7 +55,7 @@
     </nav>
 
     <!-- CONTENT -->
-    <div class="max-w-3xl mx-auto px-6">
+    <div id="main-content" class="max-w-3xl mx-auto px-6">
         <div class="bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100 mt-8 content-area">
             <h1 class="text-2xl md:text-3xl font-bold text-tech-blue mb-8 text-center">プライバシーポリシー</h1>
             
@@ -96,5 +97,6 @@
         <a href="/" class="text-sm font-bold text-gray-400 hover:text-coral transition">← トップページへ戻る</a>
     </div>
 
+    <script defer src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,191 @@
+/*
+ * PROTECH shared styles
+ * Extracted from per-page <style> blocks. Keep this in sync if base nav/menu/btn changes.
+ */
+
+:root {
+    --tech-blue: #001A33;
+    --coral: #E86B7A;
+    --font-h1: 48px;
+    --font-h2: 24px;
+    --font-body: 15px;
+    --font-button: 12px;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+h1 { font-size: var(--font-h1); }
+h2 { font-size: var(--font-h2); }
+p, body { font-size: var(--font-body); }
+
+/* .inter is an alias for Noto Sans JP used in legacy markup */
+.inter { font-family: 'Noto Sans JP', sans-serif; }
+
+.text-tech-blue { color: var(--tech-blue); }
+
+/* Glass nav */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Nav link with coral underline */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--coral);
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after { width: 100%; }
+.nav-link:hover { color: var(--coral); }
+.group:focus-within .group-hover\:opacity-100 { opacity: 1; }
+.group:focus-within .group-hover\:visible { visibility: visible; }
+.group:focus-within .group-hover\:translate-y-0 { transform: translateY(0); }
+.group:focus-within .group-hover\:rotate-180 { transform: rotate(180deg); }
+
+/* Mobile menu */
+#mobile-menu {
+    width: min(82vw, 20rem);
+    transition: transform 0.3s ease-in-out;
+}
+#mobile-menu-backdrop {
+    backdrop-filter: blur(2px);
+}
+
+/* Hamburger animation */
+.hamburger line {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.hamburger.active #line1 { transform: translateY(6px) rotate(45deg); }
+.hamburger.active #line2 { opacity: 0; transform: translateX(-10px); }
+.hamburger.active #line3 { transform: translateY(-6px) rotate(-45deg); }
+.hamburger.active line {
+    opacity: 0;
+}
+.hamburger.active::before,
+.hamburger.active::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 999px;
+}
+.hamburger.active::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.hamburger.active::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Coral CTA button */
+.btn-coral {
+    background: var(--coral);
+    color: white;
+    transition: all 0.3s ease;
+}
+.btn-coral:hover {
+    background: #d15b6a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(232, 107, 122, 0.3);
+}
+
+/* a11y helper: visually hidden but available to AT */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip link, hidden until focused */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--tech-blue);
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 100;
+    text-decoration: none;
+    transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
+
+/* Focus ring (visible only via keyboard) */
+:focus-visible {
+    outline: 2px solid var(--coral);
+    outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+    .hero-bg-grid {
+        display: block !important;
+    }
+
+    .hero-bg-grid > div {
+        display: none;
+    }
+
+    .hero-bg-grid > div:first-child {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-bg-grid > div:first-child img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(180deg, rgba(0, 18, 40, 0.72) 0%, rgba(0, 26, 51, 0.84) 44%, rgba(0, 18, 40, 0.92) 100%) !important;
+    }
+
+    .hero-heading {
+        max-width: 21rem;
+        line-height: 1.42 !important;
+    }
+
+    .hero-heading span:first-child {
+        font-size: 0.72rem !important;
+        letter-spacing: 0.08em !important;
+        line-height: 1.7 !important;
+    }
+
+    .hero-heading span:nth-child(2),
+    .hero-heading span:nth-child(3) {
+        font-size: clamp(1.55rem, 8vw, 2rem) !important;
+        letter-spacing: 0 !important;
+        line-height: 1.32 !important;
+    }
+
+    .hero-eyebrow {
+        margin-bottom: 1.6rem !important;
+    }
+}

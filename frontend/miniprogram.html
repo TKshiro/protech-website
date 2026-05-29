@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7QYC9JLZ1M');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <title>WeChatミニプログラム(微信小程序)開発・導入支援 - PROTECH株式会社</title>
+    <meta name="description"
+        content="中国最大のSNS「WeChat(微信)」内で動作する軽量アプリ「ミニプログラム(小程序)」の開発・運用サービス。飲食店・ホテル・小売・越境EC向けの独自注文・予約・会員CRMシステムを完全カスタマイズで構築し、インバウンド顧客の囲い込みを強化します。">
+    <meta name="keywords" content="WeChatミニプログラム, 微信小程序, 小程序開発, 飲食モバイルオーダー, ホテル予約システム, 越境EC, 中国デジタルマーケティング, インバウンドCRM, PROTECH">
+    <link rel="canonical" href="https://pro-tech.jp/miniprogram">
+
+    <meta property="og:title" content="WeChatミニプログラム(微信小程序)開発・導入支援 - PROTECH株式会社">
+    <meta property="og:description" content="13億人が利用する巨大SNS「WeChat」内で動作する独自アプリ「ミニプログラム」を完全受託開発。飲食店・ホテル・EC・会員CRM等、インバウンド顧客接点を圧倒的に改善。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pro-tech.jp/miniprogram">
+    <meta property="og:image" content="https://pro-tech.jp/img/og-image.jpg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <style>
+        :root {
+            --tech-blue: #001A33;
+            --coral: #E86B7A;
+            --wechat-green: #07C160;
+            --font-h1: 48px;
+            --font-h2: 24px;
+            --font-body: 15px;
+            --font-button: 12px;
+        }
+
+        .serif {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        /* Nav */
+
+        /* Seigaiha pattern */
+        .seigaiha-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 C20 40 20 20 40 20 C60 20 60 40 80 40' fill='none' stroke='%2307C160' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M-40 40 C-20 40 -20 20 0 20 C20 20 20 40 40 40' fill='none' stroke='%2307C160' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M40 40 C60 40 60 20 80 20 C100 20 100 40 120 40' fill='none' stroke='%2307C160' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
+            background-size: 80px 40px;
+        }
+
+        /* WeChat Gradient text */
+        .wechat-gradient {
+            background: linear-gradient(135deg, var(--wechat-green) 0%, #00b050 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .wechat-bg-gradient {
+            background: linear-gradient(135deg, #001a33 0%, #002d59 50%, #001a33 100%);
+        }
+
+        /* Interactive cards */
+        .solution-card {
+            background: white;
+            border: 1px solid #f1f5f9;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .solution-card:hover {
+            border-color: rgba(7, 193, 96, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(7, 193, 96, 0.05);
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            background: #fafbfc;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 450px;
+            opacity: 1;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-chevron {
+            transition: transform 0.3s ease;
+        }
+
+        /* Buttons */
+        .btn-wechat {
+            background: linear-gradient(135deg, var(--wechat-green) 0%, #05a853 100%);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-wechat:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(7, 193, 96, 0.3);
+        }
+
+        .pain-icon {
+            background: linear-gradient(135deg, #f0fdf4, #e8fdf0);
+        }
+
+        .wave-top {
+            position: relative;
+        }
+
+        .wave-top::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath fill='%23ffffff' d='M0,20 C360,50 720,0 1080,20 C1260,30 1350,25 1440,20 L1440,0 L0,0 Z'/%3E%3C/svg%3E") no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <link href="assets/css/tailwind.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="bg-white text-slate-900">
+
+        <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+        <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/" class="nav-link ">トップ</a>
+
+                <div class="relative group">
+                    <a href="/services" class="nav-link text-coral flex items-center gap-1">サービス
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/cases" class="nav-link ">導入事例</a>
+                <a href="/blog" class="nav-link ">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/services" class="text-lg font-bold text-coral">サービス</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
+            </div>
+            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════ HERO: Soft white-green gradient ═══════════════════════ -->
+    <section id="main-content" class="relative pt-28 md:pt-36 pb-20 md:pb-32 overflow-hidden" style="background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 40%, #ecfdf5 70%, #f0fdf4 100%);">
+        <!-- Subtle grid pattern -->
+        <div class="absolute inset-0 z-0 opacity-30" style="background-image: linear-gradient(rgba(7,193,96,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(7,193,96,0.06) 1px, transparent 1px); background-size: 48px 48px;"></div>
+
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="inline-flex items-center gap-3 bg-white border border-green-200 shadow-sm rounded-full px-5 py-2 mb-8">
+                        <div class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-green-700">WeChat Mini Program (小程序)</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight text-[#001A33]">
+                        <span class="text-green-600">13.4億人</span>の日常に溶け込む、<br>
+                        最高品質のインバウンドITソリューション。
+                    </h1>
+
+                    <p class="text-slate-600 text-sm md:text-base max-w-lg mb-10 leading-relaxed">
+                        中国最大のスーパーアプリ「WeChat(微信)」で直接動作する、ダウンロード不要のアプリ環境「ミニプログラム」を完全受託開発。飲食店・ホテル・店舗コマースにおける事前注文・決済・デジタル会員管理をシームレス化し、顧客ロイヤルティを劇的に高めます。
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="btn-wechat px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-flex items-center justify-center gap-2">
+                            開発の相談をする
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#solutions" class="px-10 py-4 border-2 border-green-200 text-green-700 text-xs font-bold tracking-widest rounded-full hover:bg-green-50 transition-all inline-flex items-center justify-center">
+                            開発ソリューション
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="absolute -inset-6 bg-gradient-to-br from-green-100 to-emerald-50 rounded-[2rem]"></div>
+                        <div class="grid grid-cols-2 gap-4 relative z-10">
+                            <div class="rounded-2xl overflow-hidden shadow-lg border border-green-100 aspect-[3/4]">
+                                <img src="assets/images/miniprogram-ui-showcase.jpg" class="w-full h-full object-cover" alt="ミニプログラムUIモックアップ" decoding="async">
+                            </div>
+                            <div class="space-y-4">
+                                <div class="rounded-2xl overflow-hidden shadow-lg border border-green-100 aspect-square">
+                                    <img src="assets/images/miniprogram-restaurant-case.jpg" class="w-full h-full object-cover" alt="モバイルオーダー" loading="lazy" decoding="async">
+                                </div>
+                                <div class="rounded-2xl overflow-hidden shadow-lg border border-green-100 aspect-[4/3]">
+                                    <img src="assets/images/miniprogram-developer.jpg" class="w-full h-full object-cover" alt="開発ディレクション" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ WHY WECHAT MINI PROGRAM: White cards ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-green-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Why WeChat Mini Program?</p>
+                <h2 class="text-3xl md:text-5xl font-bold serif text-[#001A33] mb-6">
+                    なぜインバウンドに「ミニプログラム」なのか
+                </h2>
+                <p class="text-slate-500 text-sm max-w-2xl mx-auto leading-relaxed">
+                    中国では個別のアプリをApp Storeからダウンロードする習慣が廃れ、すべての行動がWeChat内のミニプログラム（小程序）で完結します。店舗のQRコードをスキャンするだけで1秒起動。そのまま事前決済、予約、デジタルスタンプ取得まで可能なため、言語の壁を完全に超越します。
+                </p>
+            </div>
+
+            <!-- Stats Grid: Light cards with green accents -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center p-8 bg-green-50 border border-green-100 rounded-2xl">
+                    <div class="text-4xl md:text-5xl font-black mb-2 tracking-tight text-green-700">13.4億人+</div>
+                    <p class="text-xs text-slate-500 tracking-wider">WeChat月間アクティブユーザー</p>
+                </div>
+                <div class="text-center p-8 bg-green-50 border border-green-100 rounded-2xl">
+                    <div class="text-4xl md:text-5xl font-black mb-2 tracking-tight text-green-700">1秒起動</div>
+                    <p class="text-xs text-slate-500 tracking-wider">ダウンロード不要・即時立ち上げ</p>
+                </div>
+                <div class="text-center p-8 bg-green-50 border border-green-100 rounded-2xl">
+                    <div class="text-4xl md:text-5xl font-black mb-2 tracking-tight text-green-700">98%</div>
+                    <p class="text-xs text-slate-500 tracking-wider">WeChat Pay経由の決済完了率</p>
+                </div>
+                <div class="text-center p-8 bg-green-50 border border-green-100 rounded-2xl">
+                    <div class="text-4xl md:text-5xl font-black mb-2 tracking-tight text-green-700">9.2億人+</div>
+                    <p class="text-xs text-slate-500 tracking-wider">ミニプログラムデイリーアクティブ(DAU)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ COMMON CHALLENGES ═══════════════════════ -->
+    <section class="py-16 md:py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-48 h-full seigaiha-pattern opacity-10"></div>
+
+        <div class="max-w-5xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Common Challenges</p>
+                <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue">このようなお悩みはありませんか？</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+                <!-- Pain Point 1 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-start">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-6 text-emerald-600 text-xl font-bold">✕</div>
+                    <h4 class="text-tech-blue font-bold mb-3">決済や事前予約のシステム構築が困難</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        WeChat Payを用いたオンライン決済や、インバウンド観光客からの直接予約を受け付ける仕組みを作りたいが、API仕様書がすべて中国語で開発できない。
+                    </p>
+                </div>
+                <!-- Pain Point 2 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-start">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-6 text-emerald-600 text-xl font-bold">✕</div>
+                    <h4 class="text-tech-blue font-bold mb-3">公式認証やデータ保護法等の規制への不安</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        中国本土でのサーバー配置、ICP登録、あるいは日本の個人情報保護法や中国の個人情報保護法（PIPL）をクリアする設計が自社だけでは対応不可能。
+                    </p>
+                </div>
+                <!-- Pain Point 3 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-start">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-6 text-emerald-600 text-xl font-bold">✕</div>
+                    <h4 class="text-tech-blue font-bold mb-3">アプリストアの登録ハードルの高さ</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        自社のインバウンド用スマホアプリを作りたいが、中国の多種多様なAndroidストアやApp Storeの登録申請要件が複雑すぎて断念している。
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="inline-block bg-[#f0fdf4] border border-green-200 rounded-2xl px-10 py-6 text-center">
+                    <p class="text-gray-600 text-xs mb-2">PROTECHが要件定義から開発・公式ライセンス申請まで完全支援</p>
+                    <p class="text-tech-blue font-bold text-lg">
+                        中国ネイティブ視点のUI設計と万全のセキュリティで<span class="text-green-700 font-extrabold">高付加価値アプリ</span>を実現
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CORE SOLUTIONS ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-slate-50" id="solutions">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-green-700 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Our Solutions</p>
+                <h2 class="text-3xl md:text-5xl font-bold serif text-tech-blue">
+                    4つの業界特化型ソリューション
+                </h2>
+                <p class="text-gray-600 text-sm max-w-2xl mx-auto mt-4">
+                    ビジネスモデルや業種に最適な機能を備えたミニプログラムを受託開発し、業務自動化と顧客獲得を同時に達成します。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Solution 1 -->
+                <div class="solution-card rounded-3xl p-8 bg-white flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center font-bold mb-6">01</div>
+                        <h3 class="text-tech-blue font-bold text-xl mb-3">スマートモバイルオーダー<br><span class="text-sm font-light text-slate-500">（飲食・レストラン・多店舗チェーン向け）</span></h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            来店客がテーブルのQRコードをスキャンして自身のスマートフォンから中国語メニューを表示・注文・決済（WeChat Pay）できるフルセルフシステム。中国語対応スタッフの不足をカバーし、客単価と回転率を劇的に向上させます。
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-600 mb-6">
+                            <li>• 多言語対応（簡体字・繁体字・日本語） & シズル感を追求した画像配置</li>
+                            <li>• テイクアウト（事前注文・受け取り時間指定）機能</li>
+                            <li>• 厨房プリンター・キッチディスプレイ（KDS）とのシステム連携</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden h-48">
+                        <img src="assets/images/miniprogram-restaurant-case.jpg" class="w-full h-full object-cover" alt="モバイルオーダー" loading="lazy" decoding="async">
+                    </div>
+                </div>
+
+                <!-- Solution 2 -->
+                <div class="solution-card rounded-3xl p-8 bg-white flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50">
+                    <div>
+                        <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center font-bold mb-6">02</div>
+                        <h3 class="text-tech-blue font-bold text-xl mb-3">スマート直販・予約システム<br><span class="text-sm font-light text-slate-500">（ホテル・リゾート・体験型施設向け）</span></h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            OTA（オンライントラベルエージェント）を介さず、ユーザーがWeChat内で客室やサービスをダイレクトに検索・空室照会し、リアルタイム予約・事前決済できるシステム。自社直販比率を高め、高額な代理店手数料を削減します。
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-600 mb-6">
+                            <li>• 写真や動画による客室設備・体験ツアーのパノラマビュー</li>
+                            <li>• アメニティ追加や貸切風呂などのアップセル連動</li>
+                            <li>• 来館時のチェックイン支援機能 & スマートキー（デジタル鍵）連携</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden h-48">
+                        <img src="assets/images/miniprogram-ui-showcase.jpg" class="w-full h-full object-cover" alt="直販予約UI" loading="lazy" decoding="async">
+                    </div>
+                </div>
+
+                <!-- Solution 3 -->
+                <div class="solution-card rounded-3xl p-8 bg-white flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center font-bold mb-6">03</div>
+                        <h3 class="text-tech-blue font-bold text-xl mb-3">越境コマース・スマート小売<br><span class="text-sm font-light text-slate-500">（メーカー・コスメ・アパレル・土産店向け）</span></h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            WeChat内で動作する独立型Eコマース（EC）ミニプログラム。旅先での体験をもとに、帰国後も再購入（リピートEC）できる仕組みを構築。WeChat Payによるスピーディな海外決済と国際物流管理システムをスマートに融合します。
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-600 mb-6">
+                            <li>• 海外クレジットカード、国際宅配システム、税関データ連携</li>
+                            <li>• WeChat動画アカウント（ビデオチャネル）とのライブコマース連携</li>
+                            <li>• 期間限定割引、共同購入（グループ購入）、フラッシュセール機能</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden h-48">
+                        <img src="assets/images/blog-miniprogram-cost.jpg" class="w-full h-full object-cover" alt="越境コマース" loading="lazy" decoding="async">
+                    </div>
+                </div>
+
+                <!-- Solution 4 -->
+                <div class="solution-card rounded-3xl p-8 bg-white flex flex-col justify-between" data-aos="fade-up" data-aos-delay="150">
+                    <div>
+                        <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center font-bold mb-6">04</div>
+                        <h3 class="text-tech-blue font-bold text-xl mb-3">デジタル会員・CRM・プッシュ配信<br><span class="text-sm font-light text-slate-500">（リピーター獲得・ロイヤルティ向上）</span></h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            店頭で簡単に登録できるデジタル会員証システム。顧客属性や購買行動履歴に応じたパーソナライズプロモーションを行い、WeChatのプッシュ通知機能（サービスメッセージ）を用いて休眠顧客へ直接アプローチできます。
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-600 mb-6">
+                            <li>• スマホから即時入会・ポイント蓄積・会員ランク設計</li>
+                            <li>• WeChatのソーシャル性を活かした「お友だち紹介クーポン」配布</li>
+                            <li>• 通知許諾を得たユーザーへのイベント通知・限定情報のプッシュ配信</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden h-48">
+                        <img src="assets/images/miniprogram-ecosystem.jpg" class="w-full h-full object-cover" alt="CRMシステム" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ DEVELOPMENT TIMELINE & PROCESS ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <p class="text-green-700 text-[10px] font-bold tracking-[0.2em] uppercase mb-4">Development Flow</p>
+                    <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue mb-8">
+                        要件定義からリリースまで、<br>安心のワンストップ開発フロー
+                    </h2>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                        PROTECHは単なるシステム開発会社ではありません。日本企業のビジネス要件を熟知した日本人コンサルタントが窓口となり、現地のUI/UXトレンドに精通したネイティブデザイナーおよびエンジニアチームと緊密に連携。複雑なWeChat公式審査の手続きを含めてワンストップでサポートします。
+                    </p>
+
+                    <!-- Timeline steps -->
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                            <div>
+                                <h4 class="text-tech-blue font-bold text-sm mb-1">戦略・要件定義と画面設計（ワイヤーフレーム）</h4>
+                                <p class="text-xs text-gray-600">実現したい機能、既存システム（POS等）とのデータ連携スコープをクリアにし、設計図（ワイヤーフレーム）を作成します。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                            <div>
+                                <h4 class="text-tech-blue font-bold text-sm mb-1">中国ユーザーの行動特性に沿ったUI/UXデザイン</h4>
+                                <p class="text-xs text-gray-600">現地のトレンドや直感的な動線を計算した、洗練されたビジュアルデザインを制作。モックアップで実際の操作感を確認可能です。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                            <div>
+                                <h4 class="text-tech-blue font-bold text-sm mb-1">実装・API連携と徹底した検証</h4>
+                                <p class="text-xs text-gray-600">WeChat APIの仕様に準拠したセキュアな開発。WeChat Pay決済テストや、複数端末（iPhone/Android）での動作検証を繰り返します。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                            <div>
+                                <h4 class="text-tech-blue font-bold text-sm mb-1">テンセント公式審査・リリースと運用保守</h4>
+                                <p class="text-xs text-gray-600">非常に難易度の高いテンセント（腾讯）への公式審査申請・ライセンス関連の手続きを代行。無事リリース後のサーバー運用保守もお任せください。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-100 relative">
+                        <img src="assets/images/miniprogram-developer.jpg" class="w-full h-full object-cover" alt="開発ディレクターとディスカッション" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FAQ ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-green-700 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">FAQ</p>
+                <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue">よくある質問</h2>
+            </div>
+
+            <div class="space-y-0" data-aos="fade-up" data-aos-delay="100">
+                <!-- FAQ 1 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl bg-white mb-2 shadow-sm" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue text-sm">日本法人だけでもWeChatミニプログラムを開設・リリースすることは可能ですか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-green-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-xs text-gray-600 leading-relaxed font-light">
+                            はい、可能です。以前は中国現地法人名義でしか取得できませんでしたが、現在は日本法人の登記簿謄本や会社資料を提出することで、日本法人名義でもテンセント公式のビジネス認証を取得し、ミニプログラムをリリースすることができます。PROTECHでは、その際の中国語書類の準備や翻訳、申請手続きのすべてを完全代行いたします。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl bg-white mb-2 shadow-sm" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue text-sm">決済の仕組みはどうなりますか？売上金は日本円で受け取れますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-green-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-xs text-gray-600 leading-relaxed font-light">
+                            ミニプログラム内でWeChat Pay（微信支付）を直接利用します。決済代行事業者とのパートナーシップにより、中国のユーザーはWeChatアカウントと紐づいた人民元で決済を行いますが、貴社（日本法人）への売上金の精算は日本円で指定口座に送金されます。為替変動リスクや複雑な海外送金手続きの心配なく、国内取引同様に売上を受け取ることができます。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl bg-white mb-2 shadow-sm" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue text-sm">開発期間とコストはどのくらいかかりますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-green-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-xs text-gray-600 leading-relaxed font-light">
+                            開発する機能要件によって大きく前後しますが、標準的な「飲食店向けセルフオーダー」や「簡易予約ミニプログラム」の場合、要件定義から開発・審査・リリースまでで【最短1.5ヶ月〜3ヶ月】程度が目安です。コストに関してもシステム規模により個別見積もりとなりますが、B2B向けパッケージ仕様をベースにした開発手法を取り入れることで、一からネイティブアプリをビルドするよりも遥かに低いコストでリリース可能です。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item py-6 px-4 cursor-pointer rounded-xl bg-white mb-2 shadow-sm" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-tech-blue text-sm">日本国内で現在使用しているPOSレジやCRMシステムと連携することはできますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-green-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-xs text-gray-600 leading-relaxed font-light">
+                            連携可能です。既存の国内POSや自社CRMがAPI（Webhook等）を公開している場合、それらのAPIをミニプログラムのバックエンドサーバーと繋ぐことで、注文データや在庫データ、顧客ポイント情報の同期処理を開発することができます。開発初期のカウンセリング時に、連携可能かどうかの技術検証を専門のアーキテクトが無料で行います。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CTA ═══════════════════════ -->
+    <section class="relative py-20 md:py-28 text-white overflow-hidden wave-top" id="contact" style="background-color: #001326;">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/pricing-consultation.jpg" class="w-full h-full object-cover opacity-5 filter grayscale" alt="無料相談" loading="lazy" decoding="async">
+            <div class="absolute inset-0" style="background-color: rgba(0, 19, 38, 0.95);"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold serif mb-6" data-aos="fade-up">
+                インバウンドの「決済と予約」を劇的に改善する
+            </h2>
+            <p class="text-slate-100 text-sm md:text-base max-w-xl mx-auto mb-10 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
+                貴社の業種、既存のレジ・管理システムに応じたWeChatミニプログラムの最適な設計モデル、およびお見積もり案を無料でご提案します。
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="/contact" class="btn-wechat px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-block">
+                    オンラインで無料要件定義する
+                </a>
+                <a href="/pricing" class="px-10 py-4 border border-white/20 text-white text-xs font-bold tracking-widest rounded-full uppercase hover:bg-white hover:text-tech-blue transition-all inline-block">
+                    料金プラン・見積基準を見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+        <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 900,
+            once: true,
+            offset: 60,
+            easing: 'ease-out-cubic',
+        });
+
+        // Mobile Menu Logic
+        // Navbar shadow transition on scroll
+    </script>
+    <script defer src="assets/js/main.js"></script>
+</body>
+
+</html>

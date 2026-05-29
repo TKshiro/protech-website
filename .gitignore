@@ -8,3 +8,4 @@ citric-nimbus-*.json
 .env*.local
 google-service-account.json
 data/
+unused_images_backup/

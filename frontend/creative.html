@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7QYC9JLZ1M');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <title>中国語LP制作・動画制作(クリエイティブ) - PROTECH株式会社</title>
+    <meta name="description"
+        content="中国向けデジタルマーケティングを成功に導く、最高品質の中国語ランディングページ(LP)・プロモーション動画・クリエイティブ制作サービス。中国ネイティブの行動心理と言語感覚を徹底分析し、高成約率のローカライズを提供します。">
+    <meta name="keywords" content="中国語LP制作, 中国語LP開発, インバウンド動画制作, ショート動画制作, 中国語コピーライティング, ローカライズデザイン, 百度SEO, H5制作, PROTECH">
+    <link rel="canonical" href="https://pro-tech.jp/creative">
+
+    <meta property="og:title" content="中国語LP制作・動画制作(クリエイティブ) - PROTECH株式会社">
+    <meta property="og:description" content="単なる翻訳ではない、中国ユーザーに刺さる言葉とデザイン。成約率を最大化する中国語LP制作・プロモーション動画・SNS動画クリエイティブ。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pro-tech.jp/creative">
+    <meta property="og:image" content="https://pro-tech.jp/img/og-image.jpg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <style>
+        :root {
+            --tech-blue: #001A33;
+            --coral: #E86B7A;
+            --creative-purple: #8B5CF6;
+            --font-h1: 48px;
+            --font-h2: 24px;
+            --font-body: 15px;
+            --font-button: 12px;
+        }
+
+        .serif {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        /* Nav */
+
+        /* Seigaiha pattern */
+        .seigaiha-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 C20 40 20 20 40 20 C60 20 60 40 80 40' fill='none' stroke='%238B5CF6' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M-40 40 C-20 40 -20 20 0 20 C20 20 20 40 40 40' fill='none' stroke='%238B5CF6' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M40 40 C60 40 60 20 80 20 C100 20 100 40 120 40' fill='none' stroke='%238B5CF6' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
+            background-size: 80px 40px;
+        }
+
+        /* Creative Gradient text */
+        .creative-gradient {
+            background: linear-gradient(135deg, var(--creative-purple) 0%, var(--coral) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .creative-bg-gradient {
+            background: linear-gradient(135deg, #001a33 0%, #002d59 50%, #001a33 100%);
+        }
+
+        /* Interactive cards */
+        .solution-card {
+            background: white;
+            border: 1px solid #f1f5f9;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .solution-card:hover {
+            border-color: rgba(139, 92, 246, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.05);
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            background: #fafbfc;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+            opacity: 1;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-chevron {
+            transition: transform 0.3s ease;
+        }
+
+        /* Buttons */
+        .btn-creative {
+            background: linear-gradient(135deg, var(--creative-purple) 0%, #7c3aed 100%);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-creative:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .pain-icon {
+            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+        }
+
+        .wave-top {
+            position: relative;
+        }
+
+        .wave-top::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            /* FAQ section background is slate-50 (#f8fafc), so wave fill matches */
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath fill='%23f8fafc' d='M0,20 C360,50 720,0 1080,20 C1260,30 1350,25 1440,20 L1440,0 L0,0 Z'/%3E%3C/svg%3E") no-repeat;
+            background-size: cover;
+        }
+
+        /* Custom Hero Styles */
+        .hero-badge {
+            font-size: 11px !important;
+            letter-spacing: 0.2em !important;
+            font-weight: 700 !important;
+            text-transform: uppercase;
+        }
+        .hero-title {
+            font-size: 2.25rem !important; /* Mobile fallback */
+            line-height: 1.25 !important;
+            letter-spacing: -0.01em !important;
+            font-weight: 900 !important;
+        }
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3rem !important; /* Tablet */
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero-title {
+                font-size: 3.25rem !important; /* Desktop */
+                line-height: 1.15 !important;
+                letter-spacing: -0.02em !important;
+            }
+        }
+    </style>
+    <link href="assets/css/tailwind.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="bg-white text-slate-900">
+
+        <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+        <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/" class="nav-link ">トップ</a>
+
+                <div class="relative group">
+                    <a href="/services" class="nav-link text-coral flex items-center gap-1">サービス
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/cases" class="nav-link ">導入事例</a>
+                <a href="/blog" class="nav-link ">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/services" class="text-lg font-bold text-coral">サービス</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
+            </div>
+            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section id="main-content" class="relative text-white overflow-hidden pt-32 md:pt-40 pb-20 md:pb-28" style="background-color: #001021;">
+        <div class="absolute inset-0" style="z-index: 0;">
+            <!-- Background image -->
+            <img src="assets/images/creative-hero.jpg" class="w-full h-full object-cover" style="opacity: 0.12;" alt="中国語LP・動画制作" decoding="async">
+            <!-- Strong dark overlay -->
+            <div class="absolute inset-0" style="background: rgba(0,10,30,0.90);"></div>
+            <!-- Subtle violet radial glow -->
+            <div class="absolute inset-0" style="background: radial-gradient(circle at 80% 30%, rgba(139,92,246,0.1) 0%, transparent 60%);"></div>
+            <div class="absolute top-0 right-0 w-64 h-full seigaiha-pattern" style="opacity: 0.2;"></div>
+            <!-- Bottom fade -->
+            <div class="absolute inset-x-0 bottom-0 h-24" style="background: linear-gradient(to bottom, transparent, #001021);"></div>
+        </div>
+        <!-- Neon accent line at top -->
+        <div class="absolute left-0 w-full" style="top: 80px; height: 1px; background: linear-gradient(to right, transparent, rgba(139,92,246,0.6), transparent); z-index: 1;"></div>
+
+        <div class="max-w-6xl mx-auto px-6 md:px-8" style="position: relative; z-index: 10;">
+            <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
+                <!-- Text column -->
+                <div class="w-full lg:w-3/5" data-aos="fade-right">
+                    <div class="inline-flex items-center gap-3 rounded-full px-5 py-2 mb-8" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(139,92,246,0.25);">
+                        <div class="w-2.5 h-2.5 rounded-full animate-pulse" style="background: linear-gradient(135deg, #8B5CF6, #ec4899);"></div>
+                        <span class="hero-badge" style="color: rgba(196,181,253,0.9);">Creative &amp; Localization</span>
+                    </div>
+
+                    <h1 class="hero-title mb-6 text-white" style="text-shadow: 0 2px 32px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.8);">
+                        中国ユーザーの<span class="creative-gradient">視覚と感性</span>に刺さる、<br>
+                        インバウンド特化型クリエイティブ。
+                    </h1>
+
+                    <p class="text-sm md:text-base max-w-xl mb-10 leading-relaxed" style="color: rgba(226,232,240,0.95); text-shadow: 0 1px 12px rgba(0,0,0,1);">
+                        単なる翻訳ではありません。中国ネイティブの「行動心理」と「最新のデジタルトレンド」を反映した、圧倒的高コンバージョンの中国語ランディングページ（LP）開発・Webデザイン・プロモーション動画・SNSショート動画をワンストップで制作します。
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="btn-creative px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-flex items-center justify-center gap-2">
+                            無料見積・相談
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#services" class="px-10 py-4 text-xs font-bold tracking-widest rounded-full inline-flex items-center justify-center text-white" style="border: 1px solid rgba(255,255,255,0.25);" onmouseover="this.style.background='white';this.style.color='#001021'" onmouseout="this.style.background='transparent';this.style.color='white'">
+                            サービス詳細
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image grid – narrower column, hidden on smaller screens -->
+                <div class="w-full lg:w-2/5 hidden lg:block" data-aos="fade-left" data-aos-delay="100">
+                    <div class="relative">
+                        <div class="absolute rounded-3xl" style="inset: -1rem; background: linear-gradient(135deg, rgba(139,92,246,0.15), rgba(236,72,153,0.08)); filter: blur(24px);"></div>
+                        <div class="grid grid-cols-2 gap-3" style="position: relative; z-index: 10;">
+                            <!-- Tall left image -->
+                            <div class="rounded-2xl overflow-hidden" style="aspect-ratio: 3/5; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 25px 50px rgba(139,92,246,0.2);">
+                                <img src="assets/images/creative-lp-mockup.jpg" class="w-full h-full object-cover" alt="中国語LPデザイン" loading="lazy" decoding="async">
+                            </div>
+                            <!-- Right column: two stacked images -->
+                            <div class="flex flex-col gap-3">
+                                <div class="rounded-2xl overflow-hidden aspect-square" style="border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 25px 50px rgba(139,92,246,0.2);">
+                                    <img src="assets/images/creative-video-shoot.jpg" class="w-full h-full object-cover" alt="プロモーション動画撮影" loading="lazy" decoding="async">
+                                </div>
+                                <div class="rounded-2xl overflow-hidden" style="aspect-ratio: 4/3; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 25px 50px rgba(139,92,246,0.2);">
+                                    <img src="assets/images/creative-output-grid.jpg" class="w-full h-full object-cover" alt="クリエイティブデザイン実積" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ WHY LOCALIZATION / METRIC ═══════════════════════ -->
+    <section class="py-16 md:py-24 relative overflow-hidden" style="background-color: #f5f3ff;">
+
+
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-violet-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Core Competence</p>
+                <h2 class="text-3xl md:text-5xl font-bold serif mb-6 text-tech-blue">
+                    「直訳」ではバズらない、売れない。
+                </h2>
+                <p class="text-slate-600 text-sm max-w-2xl mx-auto leading-relaxed">
+                    日本語のランディングページや動画を単純に自動翻訳しただけのクリエイティブは、現地のユーザーには極めて不自然で、ブランドへの不信感に繋がります。PROTECHは、中国特有の「派手さの中に信頼性を持たせるデザイン感」「トレンドを取り入れたキャッチコピー」「モバイルファーストの超高速コーディング」で、コンバージョンを跳ね上げます。
+                </p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center p-8 bg-white border border-violet-100 rounded-2xl shadow-sm">
+                    <div class="text-4xl md:text-5xl font-black mb-2 tracking-tight text-tech-blue">2.8倍</div>
+                    <p class="text-xs text-slate-500 tracking-wider">ネイティブ文脈ローカライズでのCVR向上値</p>
+                </div>
+                <div class="text-center p-8 bg-white border border-violet-100 rounded-2xl shadow-sm">
+                    <div class="text-4xl md:text-5xl font-black mb-2 tracking-tight text-tech-blue">0.8秒以下</div>
+                    <p class="text-xs text-slate-500 tracking-wider">高速CDN対応による平均ページ表示速度</p>
+                </div>
+                <div class="text-center p-8 bg-white border border-violet-100 rounded-2xl shadow-sm">
+                    <div class="text-4xl md:text-5xl font-black mb-2 tracking-tight text-tech-blue">92%</div>
+                    <p class="text-xs text-slate-500 tracking-wider">モバイル（スマホ）経由の閲覧比率</p>
+                </div>
+                <div class="text-center p-8 bg-white border border-violet-100 rounded-2xl shadow-sm">
+                    <div class="text-4xl md:text-5xl font-black mb-2 tracking-tight text-tech-blue">100%</div>
+                    <p class="text-xs text-slate-500 tracking-wider">ネイティブ専任ディレクター完全監修</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ COMMON CHALLENGES ═══════════════════════ -->
+    <section class="py-16 md:py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-48 h-full seigaiha-pattern opacity-10"></div>
+
+        <div class="max-w-5xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Common Challenges</p>
+                <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue">このようなお悩みはありませんか？</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+                <!-- Pain Point 1 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-start">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-6 text-violet-600 text-xl font-bold">✕</div>
+                    <h4 class="text-tech-blue font-bold mb-3">直訳により離脱率が異常に高い</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        日本語のLPを機械翻訳・直訳しただけで公開しているため、中国ネイティブから見ると不自然で説得力に欠け、直帰されてしまう。
+                    </p>
+                </div>
+                <!-- Pain Point 2 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-start">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-6 text-violet-600 text-xl font-bold">✕</div>
+                    <h4 class="text-tech-blue font-bold mb-3">中国でのページ読み込みが極端に遅い</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        日本国内のサーバーにLPを配置している、または中国固有のWeb規制（グレートファイアウォール）に対応していないため、表示に何秒もかかって離脱される。
+                    </p>
+                </div>
+                <!-- Pain Point 3 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-start">
+                    <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-6 text-violet-600 text-xl font-bold">✕</div>
+                    <h4 class="text-tech-blue font-bold mb-3">動画制作の現地の流行がわからない</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        PR用・SNS動画を制作したいが、小紅書や抖音で実際に再生が伸びている動画構成（カット割り、文字演出、中国語ナレーション）のトレンドがわからない。
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="inline-block border border-violet-200 rounded-2xl px-10 py-6 text-center" style="background-color: #f5f3ff;">
+                    <p class="text-gray-600 text-xs mb-2">PROTECHがコピーライティング・映像設計から高速配信まで全面支援</p>
+                    <p class="text-tech-blue font-bold text-lg">
+                        中国市場の消費者インサイトを見抜く、高転換率な<span class="text-violet-700 font-extrabold">ハイエンドクリエイティブ</span>をご提供
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CORE SERVICES ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-slate-50" id="services">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Our Services</p>
+                <h2 class="text-3xl md:text-5xl font-bold serif text-tech-blue">
+                    中国語クリエイティブ制作メニュー
+                </h2>
+                <p class="text-gray-600 text-sm max-w-2xl mx-auto mt-4">
+                    中国マーケティングのコンバージョンボトルネックを解決する、4つの主要ソリューション。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Service 1 -->
+                <div class="solution-card rounded-3xl p-8 bg-white" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center font-bold mb-6">01</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">高成約率・中国語ランディングページ(LP)制作</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        中国ユーザーの視線誘導、競合比較情報の提示方法、意思決定ロジックを反映した完全ローカライズLPを設計。中国の検索エンジン（百度）インデックスに対応したSEO最適化と、中国国内での表示速度を限界まで高めた超高速サーバーコーディングを行います。
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-600">
+                        <li>• ネイティブコピーライターによる「ベネフィット型」キャッチコピー開発</li>
+                        <li>• モバイル（スマートフォン）特化型レスポンシブデザイン</li>
+                        <li>• 高速CDN配信・グレートファイアウォール回避コーディング</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="solution-card rounded-3xl p-8 bg-white" data-aos="fade-up" data-aos-delay="50">
+                    <div class="w-12 h-12 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center font-bold mb-6">02</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">プロモーション動画・SNS動画クリエイティブ</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        小紅書(RED)や抖音(Douyin)等の縦型ショート動画広告に特化した、バイラル（バズ）を生む動画制作。日本人クリエイティブディレクターによる品質管理のもと、現地の若者に最もアピールする音効、BGM、ナレーション、ネイティブ字幕を実装します。
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-600">
+                        <li>• バズる構造を定義した中国語動画構成案・絵コンテ作成</li>
+                        <li>• 美容、グルメ、観光地に特化した「体験型POV」動画撮影</li>
+                        <li>• ネイティブ声優による情感豊かなプロナレーション手配</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="solution-card rounded-3xl p-8 bg-white" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center font-bold mb-6">03</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">WeChat/RED用 インタラクティブH5キャンペーン制作</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        WeChatや小紅書アプリ内でシームレスに立ち上がる、アニメーションやクイズ、診断コンテンツを搭載したインタラクティブWebページ（H5）を制作。高いバイラル性とSNS内での驚異的なシェア率（拡散）を実現します。
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-600">
+                        <li>• おみくじ・診断機能・プレゼントキャンペーン等のゲーム性連携</li>
+                        <li>• WeChat内ワンタップシェア・公式アカウント誘導フロー設計</li>
+                        <li>• モバイルに完全特化したリッチで滑らかなJSアニメーション</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="solution-card rounded-3xl p-8 bg-white" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-12 h-12 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center font-bold mb-6">04</div>
+                    <h3 class="text-tech-blue font-bold text-lg mb-3">多言語UI/UXデザイン & 広告バナーセット設計</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        日本企業が展開するアプリやWebプラットフォームの中国市場向けローカライズUI/UXデザイン。また、百度広告、小紅書・抖音フィード広告、テンセント広告等、配信媒体のアルゴリズムやサイズ規定に完全準拠したA/Bテスト用バナーパックを制作します。
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-600">
+                        <li>• 各媒体でクリック率（CTR）を最大化するアセットサイズ最適化</li>
+                        <li>• 美観と情報の読みやすさを両立した中国語Webフォント選定</li>
+                        <li>• インサイトに深く刺さるプロモーションバナー複数パターン同時納品</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CREATIVE PROCESS ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <p class="text-violet-600 text-[10px] font-bold tracking-[0.2em] uppercase mb-4">Production Process</p>
+                    <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue mb-8">
+                        戦略に基づく徹底したプロセスと<br>ネイティブ品質へのこだわり
+                    </h2>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                        PROTECHの制作プロセスは、ただ「言われたテキストを直訳して綺麗にデザインする」ことではありません。ターゲットとなる中国の消費者の具体的な人物像（ペルソナ）を浮き彫りにし、どのような言葉、色、映像カットが最も強い行動喚起を起こすかを設計してから制作に取り掛かります。
+                    </p>
+
+                    <!-- Steps -->
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded-full bg-violet-100 text-violet-700 flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                            <div>
+                                <h4 class="text-tech-blue font-bold text-sm mb-1">ヒアリング・中国市場ポジショニング設計</h4>
+                                <p class="text-xs text-gray-600">貴社製品・サービスの特徴、日本での強みをヒアリング。中国市場でどの競合と比較されるかを調査し、差別化の切り口を定義します。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded-full bg-violet-100 text-violet-700 flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                            <div>
+                                <h4 class="text-tech-blue font-bold text-sm mb-1">構成案（ワイヤー）と中国語コピーライティング</h4>
+                                <p class="text-xs text-gray-600">成約に至る心理動線を計算した構成案を作成。ネイティブの現役コピーライターが、心理的価値を訴求する刺さるキャッチフレーズと構成テキストを執筆します。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded-full bg-violet-100 text-violet-700 flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                            <div>
+                                <h4 class="text-tech-blue font-bold text-sm mb-1">ビジュアルデザイン＆動画・撮影ディレクション</h4>
+                                <p class="text-xs text-gray-600">中国トレンドを取り入れたモダンでインパクトのあるビジュアル制作。動画の場合は詳細な絵コンテを作成した上で、プロ仕様のカメラで撮影を行います。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded-full bg-violet-100 text-violet-700 flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                            <div>
+                                <h4 class="text-tech-blue font-bold text-sm mb-1">高速コーディング・検証・納品</h4>
+                                <p class="text-xs text-gray-600">モバイル環境で瞬時に読み込める軽量で美しいフロントエンド実装。中国国内からのアクセス表示速度検証を徹底して行った上で納品・公開します。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-100 relative aspect-[4/3]">
+                        <img src="assets/images/creative-design-process.jpg" class="w-full h-full object-cover" alt="デザインディスカッション" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FAQ ═══════════════════════ -->
+    <section class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-4">FAQ</p>
+                <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue">よくある質問</h2>
+            </div>
+
+            <div class="space-y-2" data-aos="fade-up" data-aos-delay="100">
+                <!-- FAQ 1 -->
+                <div class="faq-item py-6 px-6 cursor-pointer rounded-xl bg-white shadow-sm border border-slate-100" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-[#001A33] text-sm">既に日本語のLPがある場合、デザインはそのままでテキスト翻訳・コーディング調整だけお願いできますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            はい、可能です。日本語の元ファイル（Figma, Adobe XD, Illustrator等）をご提供いただき、レイアウト構造を維持したまま、ネイティブ視点での自然かつ刺さるキャッチコピーへの置き換え、画像素材の差し替え、中国向けに最適化した軽量なHTML/CSSコーディングのみをご提供するプランもございます。まずはお気軽にお手元のLPのURLをお知らせください。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item py-6 px-6 cursor-pointer rounded-xl bg-white shadow-sm border border-slate-100" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-[#001A33] text-sm">中国国内でのページ表示速度（読み込み速度）の遅さを解消するにはどうすれば良いですか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            中国には「グレートファイアウォール（金盾）」と呼ばれる独自の通信遮断壁があるため、海外サーバー（日本国内サーバーを含む）からのアクセスは非常に遅くなります。PROTECHでは、中国の通信網に最適化された高速CDN（コンテンツ配信ネットワーク）の活用、中国国内での表示をブロックする要因となるGoogle FontsやYouTube埋め込みコード等の排除、アセット画像の徹底的な軽量化を実施することで、中国本土内での高速表示（0.8秒以下）を可能にしています。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item py-6 px-6 cursor-pointer rounded-xl bg-white shadow-sm border border-slate-100" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-[#001A33] text-sm">動画制作の場合、撮影は日本で、編集やナレーションはネイティブにお願いできますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            はい、最も得意とする手法の一つです。PROTECHの日本人映像撮影チームが貴社の国内施設・店舗（東京都内など）に直接お伺いして高解像度なシズル動画を撮影。その撮影素材をもとに、中国のSNS（小紅書・抖音）で流行している縦動画のカット割りや、ネイティブのプロの音声ナレーターによる語り、現地で今最もバズっているエフェクト字幕をネイティブクリエイターチームが編集・実装します。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item py-6 px-6 cursor-pointer rounded-xl bg-white shadow-sm border border-slate-100" onclick="this.classList.toggle('open')">
+                    <div class="flex justify-between items-center gap-4">
+                        <h4 class="font-bold text-[#001A33] text-sm">百度（Baidu）のSEO対策（検索エンジン対策）も考慮されていますか？</h4>
+                        <svg class="faq-chevron w-5 h-5 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer pt-4">
+                        <p class="text-sm text-gray-600 leading-relaxed font-light">
+                            はい、当社のLPコーディングは百度（Baidu）のクローラーが巡回しやすく、インデックス登録されやすい仕様に準拠しています。metaタグの設計、titleタグの階層化、高速表示対応など、現地の主要検索エンジンのインバウンドSEOルールに合致した技術的対策を標準で網羅しております。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CTA ═══════════════════════ -->
+    <section class="relative py-20 md:py-28 text-white overflow-hidden wave-top" id="contact" style="background-color: #001021;">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/pricing-consultation.jpg" class="w-full h-full object-cover opacity-5 filter grayscale" alt="無料相談" loading="lazy" decoding="async">
+            <div class="absolute inset-0" style="background-color: rgba(0, 16, 33, 0.95);"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold serif mb-6" data-aos="fade-up">
+                直帰されない「本物」の中国語クリエイティブを
+            </h2>
+            <p class="text-slate-100 text-sm md:text-base max-w-xl mx-auto mb-10 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
+                既存ページの無料簡易ローカライズ診断、およびプロモーション動画の構成案・お見積もりを無料で作成いたします。
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="/contact" class="btn-creative px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-block">
+                    オンラインで無料見積・相談
+                </a>
+                <a href="/pricing" class="px-10 py-4 border border-white/20 text-white text-xs font-bold tracking-widest rounded-full uppercase hover:bg-white hover:text-tech-blue transition-all inline-block">
+                    料金プランと制作基準を見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+        <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 900,
+            once: true,
+            offset: 60,
+            easing: 'ease-out-cubic',
+        });
+
+        // Mobile Menu Logic
+        // Navbar shadow transition on scroll
+    </script>
+    <script defer src="assets/js/main.js"></script>
+</body>
+
+</html>
