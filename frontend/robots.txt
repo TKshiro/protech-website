@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Disallow: /admin/
+
 Sitemap: https://pro-tech.jp/sitemap.xml
