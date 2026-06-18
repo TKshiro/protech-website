@@ -16,7 +16,7 @@ const path = require('path');
 const matter = require('gray-matter');
 const { marked } = require('marked');
 
-const ROOT = path.resolve(__dirname, '..');
+const ROOT = path.resolve(__dirname, '../../frontend');
 const POSTS_DIR = path.join(ROOT, 'blog', 'posts');
 const OUTPUT_DIR = path.join(ROOT, 'blog');
 const SITE_URL = 'https://pro-tech.jp';
@@ -398,6 +398,10 @@ ${items}  </channel>
 
 function injectIntoNews(posts) {
     const newsFile = path.join(ROOT, 'news.html');
+    if (!fs.existsSync(newsFile)) {
+        console.log('⏭  news.html not found, skipping news injection');
+        return;
+    }
     let html = fs.readFileSync(newsFile, 'utf-8');
 
     // Generate blog entry HTML
