@@ -13,8 +13,10 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="PROTECH local-only content management prototype.">
     <title>PROTECH Admin Panel</title>
-    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
     
     <link href="/assets/css/tailwind.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,11 +52,12 @@
 
     <script>
         const AUTH_KEY = 'protech_admin_auth';
+        const PASSWORD_HASH_KEY = 'protech_admin_password_hash';
         const CASES_KEY = 'protech_cases';
         const BLOGS_KEY = 'protech_blogs';
         const CONTACTS_KEY = 'protech_contacts';
         const VALID_USER = 'admin';
-        const VALID_PASS = 'Zhb201314!';
+        const LOCAL_ADMIN_HOSTS = new Set(['', 'localhost', '127.0.0.1', '0.0.0.0', '::1']);
 
         const sampleCases = [
             {
@@ -181,6 +184,26 @@
                 .replace(/'/g, '&#39;');
         }
 
+        async function sha256(value) {
+            if (!window.crypto?.subtle) {
+                throw new Error('このブラウザでは安全なローカルパスワード保存を利用できません。');
+            }
+
+            const bytes = new TextEncoder().encode(value);
+            const hashBuffer = await window.crypto.subtle.digest('SHA-256', bytes);
+            return Array.from(new Uint8Array(hashBuffer))
+                .map(byte => byte.toString(16).padStart(2, '0'))
+                .join('');
+        }
+
+        function isLocalAdminContext() {
+            return window.location.protocol === 'file:' || LOCAL_ADMIN_HOSTS.has(window.location.hostname);
+        }
+
+        function hasLocalPassword() {
+            return Boolean(localStorage.getItem(PASSWORD_HASH_KEY));
+        }
+
         function formatDate(dateString) {
             if (!dateString) return '未設定';
             const date = new Date(dateString);
@@ -227,8 +250,24 @@
             render();
         }
 
-        function login(username, password) {
-            if (username === VALID_USER && password === VALID_PASS) {
+        async function setLocalPassword(password) {
+            if (!password || password.length < 10) {
+                return false;
+            }
+
+            localStorage.setItem(PASSWORD_HASH_KEY, await sha256(password));
+            sessionStorage.setItem(AUTH_KEY, JSON.stringify({ username: VALID_USER }));
+            state.user = { username: VALID_USER };
+            render();
+            return true;
+        }
+
+        async function login(username, password) {
+            const expectedHash = localStorage.getItem(PASSWORD_HASH_KEY);
+            if (!expectedHash) return false;
+
+            const passwordHash = await sha256(password || '');
+            if (username === VALID_USER && passwordHash === expectedHash) {
                 sessionStorage.setItem(AUTH_KEY, JSON.stringify({ username }));
                 state.user = { username };
                 render();
@@ -254,27 +293,40 @@
             }
         }
 
+        function renderBlockedAdmin() {
+            return `
+                <div class="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
+                    <div class="max-w-lg rounded-3xl border border-white/10 bg-white/10 p-8 md:p-10 shadow-2xl">
+                        <p class="text-xs font-bold tracking-[0.3em] text-rose-300 uppercase mb-4">Local Admin Only</p>
+                        <h1 class="text-3xl font-black mb-4">管理画面はローカル環境専用です</h1>
+                        <p class="text-sm leading-7 text-white/70">この静的管理プロトタイプは localhost、127.0.0.1、または file:// から開いた場合のみ利用できます。公開環境で利用する場合は、サーバー側の認証を導入してください。</p>
+                    </div>
+                </div>
+            `;
+        }
+
         function renderLogin() {
+            const needsSetup = !hasLocalPassword();
             return `
                 <div class="min-h-screen bg-gradient-to-br from-slate-950 via-tech-blue to-slate-900 flex items-center justify-center p-6">
                     <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 md:p-10">
                         <div class="text-center mb-8">
                             <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-tech-blue text-white text-2xl font-black tracking-widest mb-4">P</div>
                             <p class="text-sm font-bold tracking-[0.35em] text-coral uppercase mb-2">PROTECH</p>
-                            <h1 class="text-2xl font-bold text-slate-900">管理パネル ログイン</h1>
-                            <p class="text-sm text-slate-500 mt-2">社内用ダッシュボードへアクセス</p>
+                            <h1 class="text-2xl font-bold text-slate-900">${needsSetup ? 'ローカルパスワード設定' : '管理パネル ログイン'}</h1>
+                            <p class="text-sm text-slate-500 mt-2">${needsSetup ? '初回利用のため、10文字以上の管理パスワードを設定してください。' : '社内用ダッシュボードへアクセス'}</p>
                         </div>
                         <form id="login-form" class="space-y-5">
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-2">ユーザー名</label>
-                                <input name="username" type="text" class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="admin" required>
+                                <input name="username" type="text" autocomplete="username" value="${VALID_USER}" ${needsSetup ? 'readonly' : ''} class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="admin" required>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-2">パスワード</label>
-                                <input name="password" type="password" class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="protech2026" required>
+                                <input name="password" type="password" autocomplete="${needsSetup ? 'new-password' : 'current-password'}" class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="${needsSetup ? '10文字以上で設定' : 'Password'}" required>
                             </div>
                             <p id="login-error" class="hidden text-sm text-rose-600 bg-rose-50 border border-rose-200 rounded-xl px-4 py-3"></p>
-                            <button type="submit" class="w-full bg-tech-blue hover:bg-slate-900 text-white rounded-xl py-3 font-bold transition">ログイン</button>
+                            <button type="submit" class="w-full bg-tech-blue hover:bg-slate-900 text-white rounded-xl py-3 font-bold transition">${needsSetup ? 'パスワードを設定' : 'ログイン'}</button>
                         </form>
                     </div>
                 </div>
@@ -846,6 +898,11 @@
 
         function render() {
             const app = document.getElementById('app');
+            if (!isLocalAdminContext()) {
+                app.innerHTML = renderBlockedAdmin();
+                return;
+            }
+
             app.innerHTML = state.user ? renderAuthenticatedApp() : renderLogin();
             bindEvents();
         }
@@ -853,14 +910,32 @@
         function bindEvents() {
             const loginForm = document.getElementById('login-form');
             if (loginForm) {
-                loginForm.addEventListener('submit', (event) => {
+                loginForm.addEventListener('submit', async (event) => {
                     event.preventDefault();
                     const form = new FormData(loginForm);
                     const errorEl = document.getElementById('login-error');
-                    const ok = login(form.get('username')?.toString().trim(), form.get('password')?.toString());
+                    if (errorEl) {
+                        errorEl.textContent = '';
+                        errorEl.classList.add('hidden');
+                    }
+
+                    let ok = false;
+                    try {
+                        const password = form.get('password')?.toString() || '';
+                        ok = hasLocalPassword()
+                            ? await login(form.get('username')?.toString().trim(), password)
+                            : await setLocalPassword(password);
+                    } catch (error) {
+                        if (errorEl) errorEl.textContent = error.message;
+                    }
+
                     if (!ok) {
-                        errorEl.textContent = 'ユーザー名またはパスワードが正しくありません。';
-                        errorEl.classList.remove('hidden');
+                        if (errorEl && !errorEl.textContent) {
+                            errorEl.textContent = hasLocalPassword()
+                                ? 'ユーザー名またはパスワードが正しくありません。'
+                                : 'パスワードは10文字以上で設定してください。';
+                        }
+                        if (errorEl) errorEl.classList.remove('hidden');
                     }
                 });
             }
@@ -942,7 +1017,7 @@
     <main class="max-w-3xl mx-auto px-6 py-24">
         <h1 class="text-3xl md:text-4xl font-bold text-tech-blue mb-6">${item.title}</h1>
         <div class="mb-10 text-gray-400 text-sm">${item.date}</div>
-        ${item.imageUrl ? `<img src="${item.imageUrl}" class="w-full rounded-2xl mb-10 object-cover">` : ''}
+        ${item.imageUrl ? `<img src="${item.imageUrl}" alt="${escapeHtml(item.title)}" class="w-full rounded-2xl mb-10 object-cover">` : ''}
         <div class="prose prose-lg max-w-none text-gray-700 leading-loose">
             ${item.content}
         </div>

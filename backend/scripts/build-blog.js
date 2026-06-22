@@ -38,8 +38,107 @@ function isoDate(dateStr) {
     return new Date(dateStr).toISOString().split('T')[0];
 }
 
-function categoryLabel(cat) {
-    const map = { news: 'News', service: 'Service', case: 'Case Study' };
+const BLOG_I18N = {
+    ja: {
+        nav: {
+            top: 'トップ',
+            services: 'サービス',
+            company: '会社概要',
+            news: 'お知らせ',
+            blog: 'ブログ',
+            contact: 'お問い合わせ'
+        },
+        categories: {
+            news: 'ニュース',
+            service: 'サービス',
+            case: '事例'
+        },
+        listing: {
+            title: 'ブログ - PROTECH株式会社',
+            description: 'PROTECHのブログ。小紅書マーケティング、Web開発、デジタル戦略に関する最新情報と知見をお届けします。',
+            heading: 'ブログ',
+            kicker: 'ブログ',
+            subheading: '小紅書マーケティング・訪日集客・Web開発の最新情報',
+            all: 'すべて',
+            readMore: '続きを読む'
+        },
+        backToBlog: 'ブログ一覧へ戻る',
+        share: '共有',
+        footer: {
+            services: 'サービス',
+            company: '会社概要',
+            news: 'お知らせ',
+            blog: 'ブログ'
+        }
+    },
+    en: {
+        nav: {
+            top: 'Home',
+            services: 'Services',
+            company: 'Company',
+            news: 'News',
+            blog: 'Blog',
+            contact: 'Contact'
+        },
+        categories: {
+            news: 'News',
+            service: 'Service',
+            case: 'Case Study'
+        },
+        listing: {
+            title: 'Blog - PROTECH Inc.',
+            description: 'PROTECH Blog. We deliver the latest information and insights on Xiaohongshu marketing, web development, and digital strategy.',
+            heading: 'Insights & Knowledge',
+            kicker: 'BLOG',
+            subheading: 'Marketing & Development Insights',
+            all: 'All',
+            readMore: 'Read More'
+        },
+        backToBlog: 'Back to Blog',
+        share: 'Share',
+        footer: {
+            services: 'Services',
+            company: 'Company',
+            news: 'News',
+            blog: 'Blog'
+        }
+    },
+    cn: {
+        nav: {
+            top: '首页',
+            services: '服务',
+            company: '公司介绍',
+            news: '最新动态',
+            blog: '博客',
+            contact: '联系我们'
+        },
+        categories: {
+            news: '新闻',
+            service: '服务',
+            case: '案例'
+        },
+        listing: {
+            title: '博客 - PROTECH 株式会社',
+            description: 'PROTECH 博客。为您带来关于小红书营销、网页开发和数字化战略的最新资讯与行业见解。',
+            heading: '博客',
+            kicker: '博客',
+            subheading: '小红书营销、访日集客与技术开发的专业内容',
+            all: '全部',
+            readMore: '阅读全文'
+        },
+        backToBlog: '返回博客列表',
+        share: '分享',
+        footer: {
+            services: '服务',
+            company: '公司介绍',
+            news: '最新动态',
+            blog: '博客'
+        }
+    }
+};
+
+function categoryLabel(cat, lang = 'en') {
+    const map = BLOG_I18N[lang]?.categories || BLOG_I18N.en.categories;
     return map[cat] || cat;
 }
 
@@ -84,6 +183,7 @@ function readPosts(postsDir, lang) {
 
 function generatePostHTML(post, availableLangs) {
     const langPrefix = post.lang === 'ja' ? '' : `/${post.lang}`;
+    const i18n = BLOG_I18N[post.lang] || BLOG_I18N.en;
     
     // SEO Canonical / Alternate Tags
     const canonicalUrl = `${SITE_URL}${langPrefix}/blog/${post.slug}`;
@@ -208,12 +308,12 @@ function generatePostHTML(post, availableLangs) {
             <a href="${langPrefix}/"
                 class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
             <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest items-center uppercase">
-                <a href="${langPrefix}/" class="hover:text-blue-600 transition">TOP</a>
-                <a href="${langPrefix}/services" class="hover:text-blue-600 transition">SERVICES</a>
-                <a href="${langPrefix}/company" class="hover:text-blue-600 transition">COMPANY</a>
-                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">NEWS</a>
-                <a href="${langPrefix}/blog" class="text-blue-600 font-bold">BLOG</a>
-                <a href="${langPrefix}/contact" class="hover:text-blue-600 transition">CONTACT</a>
+                <a href="${langPrefix}/" class="hover:text-blue-600 transition">${i18n.nav.top}</a>
+                <a href="${langPrefix}/services" class="hover:text-blue-600 transition">${i18n.nav.services}</a>
+                <a href="${langPrefix}/company" class="hover:text-blue-600 transition">${i18n.nav.company}</a>
+                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">${i18n.nav.news}</a>
+                <a href="${langPrefix}/blog" class="text-blue-600 font-bold">${i18n.nav.blog}</a>
+                <a href="${langPrefix}/contact" class="hover:text-blue-600 transition">${i18n.nav.contact}</a>
                 
                 <!-- Premium Language Dropdown -->
                 <div class="relative group ml-4">
@@ -240,12 +340,12 @@ function generatePostHTML(post, availableLangs) {
     <div id="mobile-menu"
         class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="${langPrefix}/" class="text-lg font-bold text-slate-700">TOP</a>
-            <a href="${langPrefix}/services" class="text-lg font-bold text-slate-700">SERVICES</a>
-            <a href="${langPrefix}/company" class="text-lg font-bold text-slate-700">COMPANY</a>
-            <a href="${langPrefix}/blog" class="text-lg font-bold text-slate-700">NEWS</a>
-            <a href="${langPrefix}/blog" class="text-lg font-bold text-blue-600">BLOG</a>
-            <a href="${langPrefix}/contact" class="text-lg font-bold text-slate-700">CONTACT</a>
+            <a href="${langPrefix}/" class="text-lg font-bold text-slate-700">${i18n.nav.top}</a>
+            <a href="${langPrefix}/services" class="text-lg font-bold text-slate-700">${i18n.nav.services}</a>
+            <a href="${langPrefix}/company" class="text-lg font-bold text-slate-700">${i18n.nav.company}</a>
+            <a href="${langPrefix}/blog" class="text-lg font-bold text-slate-700">${i18n.nav.news}</a>
+            <a href="${langPrefix}/blog" class="text-lg font-bold text-blue-600">${i18n.nav.blog}</a>
+            <a href="${langPrefix}/contact" class="text-lg font-bold text-slate-700">${i18n.nav.contact}</a>
             
             <!-- Language Selection Mobile -->
             <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
@@ -261,7 +361,7 @@ function generatePostHTML(post, availableLangs) {
             <div class="flex items-center justify-center gap-4 mb-8" data-aos="fade-up">
                 <span class="text-sm text-slate-400 font-mono">${formatDate(post.date)}</span>
                 <span
-                    class="text-[10px] font-bold text-blue-600 border border-blue-600 px-3 py-1 rounded-full uppercase tracking-widest">${categoryLabel(post.category)}</span>
+                    class="text-[10px] font-bold text-blue-600 border border-blue-600 px-3 py-1 rounded-full uppercase tracking-widest">${categoryLabel(post.category, post.lang)}</span>
             </div>
             <h1 class="text-3xl md:text-5xl font-bold serif text-tech-blue leading-tight mb-16" data-aos="fade-up"
                 data-aos-delay="100">
@@ -282,10 +382,10 @@ function generatePostHTML(post, availableLangs) {
                 class="group flex items-center gap-4 text-xs font-bold tracking-[0.2em] uppercase transition">
                 <span
                     class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-tech-blue group-hover:text-white transition">←</span>
-                Back to Blog
+                ${i18n.backToBlog}
             </a>
             <div class="flex items-center gap-8">
-                <span class="text-[10px] font-bold tracking-[0.3em] text-slate-300 uppercase">Share</span>
+                <span class="text-[10px] font-bold tracking-[0.3em] text-slate-300 uppercase">${i18n.share}</span>
                 <div class="flex items-center gap-6">
                     <a id="line-share" href="#" target="_blank"><svg class="w-6 h-6 fill-[#06C755]" viewBox="0 0 24 24">
                             <path
@@ -310,10 +410,10 @@ function generatePostHTML(post, availableLangs) {
             <div class="text-tech-blue font-bold text-2xl md:text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
             <div
                 class="flex justify-center flex-wrap gap-6 md:gap-8 mb-10 text-[10px] md:text-xs font-bold tracking-widest text-gray-400">
-                <a href="${langPrefix}/services" class="hover:text-blue-600 transition">SERVICES</a>
-                <a href="${langPrefix}/company" class="hover:text-blue-600 transition">COMPANY</a>
-                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">NEWS</a>
-                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">BLOG</a>
+                <a href="${langPrefix}/services" class="hover:text-blue-600 transition">${i18n.footer.services}</a>
+                <a href="${langPrefix}/company" class="hover:text-blue-600 transition">${i18n.footer.company}</a>
+                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">${i18n.footer.news}</a>
+                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">${i18n.footer.blog}</a>
             </div>
             <p class="text-[10px] text-gray-400 tracking-widest">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
@@ -369,14 +469,29 @@ function generateSitemap(postsJa, postsEn, postsCn) {
     const today = isoDate(new Date().toISOString());
 
     const staticPages = [
-        { url: '', priority: '1.0', changefreq: 'weekly' },
-        { url: '/services', priority: '0.8', changefreq: 'monthly' },
-        { url: '/contact', priority: '0.8', changefreq: 'monthly' },
-        { url: '/company', priority: '0.7', changefreq: 'monthly' },
-        { url: '/blog', priority: '0.7', changefreq: 'weekly' },
-        { url: '/cases', priority: '0.7', changefreq: 'monthly' },
-        { url: '/red', priority: '0.7', changefreq: 'monthly' },
-        { url: '/privacy', priority: '0.4', changefreq: 'yearly' },
+        { urls: { ja: '', en: '/en', cn: '/cn' }, priority: '1.0', changefreq: 'weekly' },
+        { urls: { ja: '/services', en: '/en/services', cn: '/cn/services' }, priority: '0.8', changefreq: 'monthly' },
+        { urls: { ja: '/contact', en: '/en/contact', cn: '/cn/contact' }, priority: '0.8', changefreq: 'monthly' },
+        { urls: { ja: '/company', en: '/en/company', cn: '/cn/company' }, priority: '0.7', changefreq: 'monthly' },
+        { urls: { ja: '/blog', en: '/en/blog', cn: '/cn/blog' }, priority: '0.7', changefreq: 'weekly' },
+        { urls: { ja: '/cases', en: '/en/cases', cn: '/cn/cases' }, priority: '0.7', changefreq: 'monthly' },
+        { urls: { ja: '/cases/local-tourism' }, priority: '0.6', changefreq: 'monthly' },
+        { urls: { ja: '/cases/huadiao-zuiji-guo', en: '/en/cases/huadiao-zuiji-guo', cn: '/cn/cases/huadiao-zuiji-guo' }, priority: '0.6', changefreq: 'monthly' },
+        { urls: { ja: '/cases/cosmetics-brand' }, priority: '0.6', changefreq: 'monthly' },
+        { urls: { ja: '/red' }, priority: '0.7', changefreq: 'monthly' },
+        { urls: { ja: '/dianping' }, priority: '0.7', changefreq: 'monthly' },
+        { urls: { ja: '/douyin' }, priority: '0.7', changefreq: 'monthly' },
+        { urls: { ja: '/miniprogram' }, priority: '0.7', changefreq: 'monthly' },
+        { urls: { ja: '/creative' }, priority: '0.6', changefreq: 'monthly' },
+        { urls: { ja: '/kol' }, priority: '0.6', changefreq: 'monthly' },
+        { urls: { ja: '/pricing' }, priority: '0.6', changefreq: 'monthly' },
+        { urls: { ja: '/download' }, priority: '0.5', changefreq: 'monthly' },
+        { urls: { ja: '/faq' }, priority: '0.5', changefreq: 'monthly' },
+        { urls: { ja: '/inbound-ai' }, priority: '0.6', changefreq: 'monthly' },
+        { urls: { ja: '/inbound-ai/2026-04-report' }, priority: '0.5', changefreq: 'monthly' },
+        { urls: { ja: '/privacy' }, priority: '0.4', changefreq: 'yearly' },
+        { urls: { ja: '/terms' }, priority: '0.4', changefreq: 'yearly' },
+        { urls: { ja: '/tokushoho' }, priority: '0.4', changefreq: 'yearly' }
     ];
 
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -391,8 +506,8 @@ function generateSitemap(postsJa, postsEn, postsCn) {
     // 1. Static pages alternates
     for (const page of staticPages) {
         for (const lang of langs) {
-            const prefix = langPrefixes[lang];
-            const url = `${prefix}${page.url}`;
+            const url = page.urls[lang];
+            if (url === undefined) continue;
             xml += `  <url>\n`;
             xml += `    <loc>${SITE_URL}${url}</loc>\n`;
             xml += `    <lastmod>${today}</lastmod>\n`;
@@ -400,10 +515,11 @@ function generateSitemap(postsJa, postsEn, postsCn) {
             xml += `    <priority>${page.priority}</priority>\n`;
             
             for (const l of langs) {
-                const lp = langPrefixes[l];
-                xml += `    <xhtml:link rel="alternate" hreflang="${hreflangs[l]}" href="${SITE_URL}${lp}${page.url}" />\n`;
+                if (page.urls[l] !== undefined) {
+                    xml += `    <xhtml:link rel="alternate" hreflang="${hreflangs[l]}" href="${SITE_URL}${page.urls[l]}" />\n`;
+                }
             }
-            xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}${page.url}" />\n`;
+            xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}${page.urls.ja || url}" />\n`;
             xml += `  </url>\n\n`;
         }
     }
@@ -470,7 +586,7 @@ function generateRSS(posts, lang) {
       <guid isPermaLink="true">${SITE_URL}${langPrefix}/blog/${post.slug}</guid>
       <description><![CDATA[${post.description}]]></description>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-      <category>${categoryLabel(post.category)}</category>
+      <category>${categoryLabel(post.category, lang)}</category>
     </item>
 `;
     }
@@ -486,6 +602,24 @@ function generateRSS(posts, lang) {
     <atom:link href="${SITE_URL}/${rssFile}" rel="self" type="application/rss+xml"/>
 ${items}  </channel>
 </rss>`;
+}
+
+function preserveMarkedSitemapBlocks(xml) {
+    const sitemapPath = path.join(ROOT, 'sitemap.xml');
+    if (!fs.existsSync(sitemapPath)) return xml;
+
+    const current = fs.readFileSync(sitemapPath, 'utf-8');
+    const markers = [
+        ['  <!-- TRAVEL_GUIDES_I18N_START -->', '  <!-- TRAVEL_GUIDES_I18N_END -->']
+    ];
+
+    let merged = xml;
+    for (const [start, end] of markers) {
+        const currentBlock = current.match(new RegExp(`${start}[\\s\\S]*?${end}`));
+        if (!currentBlock || merged.includes(start)) continue;
+        merged = merged.replace('</urlset>', `${currentBlock[0]}\n</urlset>`);
+    }
+    return merged;
 }
 
 // ─── Inject Blog Posts into news.html ─────────────────────
@@ -507,7 +641,7 @@ function injectIntoNews(posts) {
                 data-category="${post.category}" data-aos="fade-up">
                 <span class="text-xs text-gray-400 font-mono w-32 tracking-tighter flex-shrink-0">${formatDate(post.date)}</span>
                 <span
-                    class="text-[9px] font-bold ${categoryClasses(post.category)} px-3 py-1 rounded w-fit uppercase tracking-widest">${categoryLabel(post.category)}</span>
+                    class="text-[9px] font-bold ${categoryClasses(post.category)} px-3 py-1 rounded w-fit uppercase tracking-widest">${categoryLabel(post.category, 'ja')}</span>
                 <h3 class="flex-1 font-bold text-[15px] group-hover:text-blue-600 transition">${post.title}</h3>
                 <span
                     class="hidden md:block text-slate-200 group-hover:text-blue-600 transition translate-x-0 group-hover:translate-x-2">→</span>
@@ -536,41 +670,13 @@ function injectIntoNews(posts) {
 
 function generateBlogListingHTML(posts, lang) {
     const langPrefix = lang === 'ja' ? '' : `/${lang}`;
+    const i18n = BLOG_I18N[lang] || BLOG_I18N.en;
     const translations = {
-        ja: {
-            title: 'ブログ - PROTECH株式会社',
-            description: 'PROTECHのブログ。小紅書マーケティング、Web開発、デジタル戦略に関する最新情報と知見をお届けします。',
-            heading: 'Insights & Knowledge',
-            subheading: 'マーケティング・開発に関する知見',
-            all: 'All',
-            news: 'News',
-            service: 'Service',
-            case: 'Case Study',
-            readMore: 'READ MORE'
-        },
-        en: {
-            title: 'Blog - PROTECH Inc.',
-            description: 'PROTECH Blog. We deliver the latest information and insights on Xiaohongshu marketing, web development, and digital strategy.',
-            heading: 'Insights & Knowledge',
-            subheading: 'Marketing & Development Insights',
-            all: 'All',
-            news: 'News',
-            service: 'Service',
-            case: 'Case Study',
-            readMore: 'READ MORE'
-        },
-        cn: {
-            title: '博客 - PROTECH株式会社',
-            description: 'PROTECH 博客。为您带来关于小红书营销、网页开发和数字化战略的最新资讯与行业见解。',
-            heading: '行业洞察与知识库',
-            subheading: '关于市场营销与技术开发的专业见解',
-            all: '全部',
-            news: '新闻',
-            service: '服务',
-            case: '案例研究',
-            readMore: '阅读更多'
-        }
-    }[lang];
+        ...i18n.listing,
+        news: i18n.categories.news,
+        service: i18n.categories.service,
+        case: i18n.categories.case
+    };
 
     let postItems = '';
     for (const post of posts) {
@@ -660,12 +766,12 @@ function generateBlogListingHTML(posts, lang) {
             <a href="${langPrefix}/"
                 class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
             <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest items-center uppercase">
-                <a href="${langPrefix}/" class="hover:text-blue-600 transition">TOP</a>
-                <a href="${langPrefix}/services" class="hover:text-blue-600 transition">SERVICES</a>
-                <a href="${langPrefix}/company" class="hover:text-blue-600 transition">COMPANY</a>
-                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">NEWS</a>
-                <a href="${langPrefix}/blog" class="text-blue-600 font-bold">BLOG</a>
-                <a href="${langPrefix}/contact" class="hover:text-blue-600 transition">CONTACT</a>
+                <a href="${langPrefix}/" class="hover:text-blue-600 transition">${i18n.nav.top}</a>
+                <a href="${langPrefix}/services" class="hover:text-blue-600 transition">${i18n.nav.services}</a>
+                <a href="${langPrefix}/company" class="hover:text-blue-600 transition">${i18n.nav.company}</a>
+                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">${i18n.nav.news}</a>
+                <a href="${langPrefix}/blog" class="text-blue-600 font-bold">${i18n.nav.blog}</a>
+                <a href="${langPrefix}/contact" class="hover:text-blue-600 transition">${i18n.nav.contact}</a>
                 
                 <!-- Premium Language Dropdown -->
                 <div class="relative group ml-4">
@@ -692,12 +798,12 @@ function generateBlogListingHTML(posts, lang) {
     <div id="mobile-menu"
         class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="${langPrefix}/" class="text-lg font-bold text-slate-700">TOP</a>
-            <a href="${langPrefix}/services" class="text-lg font-bold text-slate-700">SERVICES</a>
-            <a href="${langPrefix}/company" class="text-lg font-bold text-slate-700">COMPANY</a>
-            <a href="${langPrefix}/blog" class="text-lg font-bold text-slate-700">NEWS</a>
-            <a href="${langPrefix}/blog" class="text-lg font-bold text-blue-600">BLOG</a>
-            <a href="${langPrefix}/contact" class="text-lg font-bold text-slate-700">CONTACT</a>
+            <a href="${langPrefix}/" class="text-lg font-bold text-slate-700">${i18n.nav.top}</a>
+            <a href="${langPrefix}/services" class="text-lg font-bold text-slate-700">${i18n.nav.services}</a>
+            <a href="${langPrefix}/company" class="text-lg font-bold text-slate-700">${i18n.nav.company}</a>
+            <a href="${langPrefix}/blog" class="text-lg font-bold text-slate-700">${i18n.nav.news}</a>
+            <a href="${langPrefix}/blog" class="text-lg font-bold text-blue-600">${i18n.nav.blog}</a>
+            <a href="${langPrefix}/contact" class="text-lg font-bold text-slate-700">${i18n.nav.contact}</a>
             
             <!-- Language Selection Mobile -->
             <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
@@ -710,7 +816,7 @@ function generateBlogListingHTML(posts, lang) {
 
     <main class="max-w-6xl mx-auto px-8 pt-40 md:pt-48 pb-20">
         <header class="mb-16 border-b border-gray-100 pb-16" data-aos="fade-up">
-            <p class="text-tech-blue text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Blog</p>
+            <p class="text-tech-blue text-[10px] font-bold tracking-[0.3em] uppercase mb-4">${translations.kicker}</p>
             <h1 class="text-4xl md:text-5xl font-bold serif text-tech-blue mb-6 uppercase tracking-widest">${translations.heading}</h1>
             <p class="text-gray-400 text-xs tracking-[0.2em] font-light">${translations.subheading}</p>
         </header>
@@ -734,10 +840,10 @@ ${postItems}
             <div class="text-tech-blue font-bold text-2xl md:text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
             <div
                 class="flex justify-center flex-wrap gap-6 md:gap-8 mb-10 text-[10px] md:text-xs font-bold tracking-widest text-gray-400">
-                <a href="${langPrefix}/services" class="hover:text-blue-600 transition">SERVICES</a>
-                <a href="${langPrefix}/company" class="hover:text-blue-600 transition">COMPANY</a>
-                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">NEWS</a>
-                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">BLOG</a>
+                <a href="${langPrefix}/services" class="hover:text-blue-600 transition">${i18n.footer.services}</a>
+                <a href="${langPrefix}/company" class="hover:text-blue-600 transition">${i18n.footer.company}</a>
+                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">${i18n.footer.news}</a>
+                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">${i18n.footer.blog}</a>
             </div>
             <p class="text-[10px] text-gray-400 tracking-widest">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
@@ -848,7 +954,7 @@ function build() {
     console.log(`  ✅ blog.html listing pages (JA, EN, CN)`);
 
     // 5. Generate dynamic sitemap.xml
-    const sitemapContent = generateSitemap(postsJa, postsEn, postsCn);
+    const sitemapContent = preserveMarkedSitemapBlocks(generateSitemap(postsJa, postsEn, postsCn));
     fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemapContent, 'utf-8');
     console.log(`🗺  sitemap.xml updated`);
 

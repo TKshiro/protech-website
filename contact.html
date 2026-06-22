@@ -1,384 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja" translate="no">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ | PROTECH株式会社</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-
-    <meta name="description" content="PROTECHへのお問い合わせ。サービスに関するご質問やお見積もりなど、お気軽にご連絡ください。">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@600&family=Inter:wght@300;400;600;700;900&display=swap"
-        rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'tech-blue': '#001A33',
-                        'coral': '#E86B7A',
-                        'coral-light': '#FFF0F1',
-                        'warm-gray': '#F8F6F3',
-                    }
-                }
-            }
-        }
-    </script>
-
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="This legacy contact page redirects maintainers to the active frontend contact page.">
+    <meta http-equiv="refresh" content="0;url=frontend/contact.html">
+    <title>Redirecting to Contact | PROTECH</title>
     <style>
-        :root {
-            --tech-blue: #001A33;
-            --coral: #E86B7A;
-        }
-
         body {
-            font-family: 'Noto Sans JP', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
         }
-
-        .serif {
-            font-family: 'Noto Serif JP', serif;
+        main {
+            width: min(520px, calc(100% - 40px));
+            padding: 32px;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 20px 70px rgba(15, 23, 42, 0.08);
         }
-
-        .inter {
-            font-family: 'Inter', sans-serif;
+        p {
+            color: #475569;
+            line-height: 1.8;
         }
-
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        a {
+            color: #d9465d;
+            font-weight: 700;
         }
-
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--coral);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link:hover {
-            color: var(--coral);
-        }
-
-        #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .hamburger line {
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform-origin: center;
-        }
-
-        .hamburger.active #line1 {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .hamburger.active #line2 {
-            opacity: 0;
-            transform: translateX(-10px);
-        }
-
-        .hamburger.active #line3 {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-
-        .seigaiha-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 C20 40 20 20 40 20 C60 20 60 40 80 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M-40 40 C-20 40 -20 20 0 20 C20 20 20 40 40 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M40 40 C60 40 60 20 80 20 C100 20 100 40 120 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3C/svg%3E");
-            background-size: 80px 40px;
-        }
-
-        .btn-coral {
-            background: var(--coral);
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .btn-coral:hover {
-            background: #d15b6a;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(232, 107, 122, 0.3);
-        }
-
-        input:focus,
-        textarea:focus {
-
-            : var(--coral) !important;
-            border-color: var(--coral) !important;
     </style>
 </head>
-
-<body class="bg-white text-slate-900">
-
-    <!-- NAV -->
-    <nav class="fixed w-full z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
-            <a href="index.html"
-                class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
-            <div
-                class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="index.html" class="nav-link">TOP</a>
-                <a href="services.html" class="nav-link">SERVICES</a>
-                <a href="company.html" class="nav-link">COMPANY</a>
-                <a href="news.html" class="nav-link">NEWS</a>
-                <a href="blog.html" class="nav-link">BLOG</a>
-                <a href="contact.html"
-                    class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
-            </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
-                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
-                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-    </nav>
-
-    <div id="mobile-menu"
-        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden">
-        <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="index.html" class="text-lg font-bold text-slate-700">TOP</a>
-            <a href="services.html" class="text-lg font-bold text-slate-700">SERVICES</a>
-            <a href="company.html" class="text-lg font-bold text-slate-700">COMPANY</a>
-            <a href="news.html" class="text-lg font-bold text-slate-700">NEWS</a>
-            <a href="blog.html" class="text-lg font-bold text-slate-700">BLOG</a>
-            <a href="contact.html" class="text-lg font-bold text-coral">CONTACT</a>
-        </div>
-    </div>
-
-    <!-- HERO -->
-    <section
-        class="pt-32 md:pt-40 pb-16 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
-        <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
-            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">CONTACT</span>
-            <h1 class="text-4xl md:text-6xl font-bold serif text-tech-blue mb-6">お問い合わせ</h1>
-            <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-                サービスに関するご質問やお見積もりなど、<br class="hidden md:block">
-                お気軽にお問い合わせください。
-            </p>
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <main class="py-16 md:py-24 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
-
-                <div class="lg:col-span-5" data-aos="fade-right">
-                    <h2 class="text-2xl font-bold text-tech-blue mb-6 serif">ご連絡ください</h2>
-                    <p class="text-gray-500 leading-loose mb-12 text-sm">
-                        ご質問、お見積もり、その他のご相談など、お気軽にお問い合わせください。通常24時間以内にご返信いたします。
-                    </p>
-
-                    <div class="space-y-4">
-                        <div class="flex items-start p-6 bg-warm-gray rounded-2xl">
-                            <span class="text-2xl mr-4">📧</span>
-                            <div>
-                                <h4 class="font-bold text-tech-blue text-sm mb-1">メール</h4>
-                                <p class="text-gray-500 text-sm">support@pro-tech.jp</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start p-6 bg-warm-gray rounded-2xl">
-                            <span class="text-2xl mr-4">📍</span>
-                            <div>
-                                <h4 class="font-bold text-tech-blue text-sm mb-1">所在地</h4>
-                                <p class="text-gray-500 text-sm">東京都文京区本郷1-5-17 三洋ビル48</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start p-6 bg-warm-gray rounded-2xl">
-                            <span class="text-2xl mr-4">💬</span>
-                            <div>
-                                <h4 class="font-bold text-tech-blue text-sm mb-1">オンライン相談</h4>
-                                <p class="text-gray-500 text-sm">全国どこからでもオンラインでご相談可能です</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7" data-aos="fade-left">
-                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 md:p-12">
-                        <div id="successMessage"
-                            class="hidden mb-8 bg-emerald-50 border border-emerald-200 text-emerald-700 px-6 py-4 rounded-xl">
-                            <p class="font-bold text-sm">✅ 送信が完了しました。担当者よりご連絡いたします。</p>
-                        </div>
-
-                        <form id="contactForm" class="space-y-6">
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お名前
-                                        *</label>
-                                    <input type="text" id="name" name="name" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">会社名
-                                        *</label>
-                                    <input type="text" id="company" name="company" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">メールアドレス
-                                    *</label>
-                                <input type="email" id="email" name="email" required
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お問い合わせ内容
-                                    *</label>
-                                <textarea id="message" name="message" rows="6" required
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm resize-none"></textarea>
-                            </div>
-
-                            <button type="submit" id="submitBtn"
-                                class="w-full py-5 btn-coral font-bold rounded-xl tracking-[0.2em] text-xs uppercase shadow-lg">
-                                送信する
-                            </button>
-
-                            <p class="text-center text-[10px] text-gray-400 mt-6">
-                                送信することで、当社の<a href="#" class="underline text-coral">プライバシーポリシー</a>に同意したものとみなされます。
-                            </p>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+<body>
+    <main>
+        <h1>Redirecting to the active contact page</h1>
+        <p>このルート直下の旧お問い合わせページは使用しません。自動的に <a href="frontend/contact.html">frontend/contact.html</a> へ移動します。</p>
     </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
-                <div class="md:col-span-1">
-                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
-                </div>
-                <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
-                        <li><a href="services.html" class="hover:text-coral transition">Web・App開発</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="company.html" class="hover:text-coral transition">会社概要</a></li>
-                        <li><a href="news.html" class="hover:text-coral transition">ニュース</a></li>
-                        <li><a href="blog.html" class="hover:text-coral transition">ブログ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Contact</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="contact.html" class="hover:text-coral transition">お問合せ</a></li>
-                </div>
-            </div>
-        </div>
-        <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
-        </div>
-        </div>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true, offset: 80 });
-
-        (function () { emailjs.init("Oa3PmeXJ7kwYjIls0"); })();
-
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            menuBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('translate-x-full');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                menuBtn.classList.remove('active');
-                mobileMenu.classList.add('translate-x-full');
-            }
-        });
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) {
-                menuBtn.classList.remove('active');
-                mobileMenu.classList.add('translate-x-full');
-            }
-        });
-
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
-            } else {
-                nav.style.boxShadow = 'none';
-            }
-        });
-
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const btn = document.getElementById('submitBtn');
-            const originalBtnText = btn.innerText;
-
-            btn.innerText = '送信中...';
-            btn.disabled = true;
-
-            const templateParams = {
-                name: document.getElementById('name').value,
-                company: document.getElementById('company').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-
-            emailjs.send('service_zg0cj56', 'template_9wqf6sc', templateParams)
-                .then(function () {
-                    document.getElementById('successMessage').classList.remove('hidden');
-                    document.getElementById('contactForm').reset();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                    setTimeout(() => {
-                        document.getElementById('successMessage').classList.add('hidden');
-                    }, 5000);
-
-                    btn.innerText = originalBtnText;
-                    btn.disabled = false;
-                }, function (error) {
-                    alert('送信に失敗しました。後でもう一度お試しください。');
-                    console.error('EmailJS Error:', error);
-
-                    btn.innerText = originalBtnText;
-                    btn.disabled = false;
-                });
-        });
-    </script>
 </body>
-
 </html>

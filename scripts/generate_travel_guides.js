@@ -828,7 +828,7 @@ function urlFor(lang, slug = '') {
   if (dir) parts.push(dir);
   parts.push('guides');
   if (slug) parts.push(slug);
-  return `${site}/${parts.join('/')}/`;
+  return `${site}/${parts.join('/')}`;
 }
 
 function relativeDepth(lang, isArticle) {

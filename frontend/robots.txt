@@ -39,6 +39,7 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /admin
 Disallow: /admin/
 
 Sitemap: https://pro-tech.jp/sitemap.xml
