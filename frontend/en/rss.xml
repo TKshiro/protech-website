@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PROTECH Blog</title>
+    <link>https://pro-tech.jp/en</link>
+    <description>Latest news, marketing, and strategy insights from PROTECH</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 22 Jun 2026 00:56:03 GMT</lastBuildDate>
+    <atom:link href="https://pro-tech.jp/en/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title><![CDATA[【2026 Edition】15 Best Fireworks Festivals in Japan | Schedules, Launch Counts & Access Guide]]></title>
+      <link>https://pro-tech.jp/en/blog/japan-hanabi-guide-2026</link>
+      <guid isPermaLink="true">https://pro-tech.jp/en/blog/japan-hanabi-guide-2026</guid>
+      <description><![CDATA[A comprehensive guide to the top 15 fireworks festivals in Japan in summer 2026, including Sumida River, Nagaoka, and Omagari. Details on schedules, launch counts, ticket reservations, and access info.]]></description>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 GMT</pubDate>
+      <category>Service</category>
+    </item>
+    <item>
+      <title><![CDATA[【Summer 2026】15 Best Places to Visit in Japan | Complete Summer Travel Guide]]></title>
+      <link>https://pro-tech.jp/en/blog/japan-summer-spots-2026</link>
+      <guid isPermaLink="true">https://pro-tech.jp/en/blog/japan-summer-spots-2026</guid>
+      <description><![CDATA[Discover the top 15 destinations in Japan for summer 2026. From spectacular fireworks and crystal-clear beaches to cool mountain resorts and dynamic festivals, read our complete guide with access tips and best seasons.]]></description>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 GMT</pubDate>
+      <category>Service</category>
+    </item>
+  </channel>
+</rss>

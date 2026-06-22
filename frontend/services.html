@@ -21,6 +21,10 @@
         content="PROTECHの提供する日中マーケティングサービス一覧。小紅書・抖音の運営代行から中国語LP・動画制作、WeChat小程序（ミニプログラム）開発までワンストップでご支援します。">
     <meta name="keywords" content="小紅書 運営代行, 抖音 運営代行, 中国SNS, 中国語 LP制作, インバウンド 動画制作, 小程序 開発, WeChat ミニプログラム, PROTECH">
     <link rel="canonical" href="https://pro-tech.jp/services">
+    <link rel="alternate" hreflang="ja" href="https://pro-tech.jp/services" />
+    <link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/services" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/services" />
+    <link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/services" />
 
     <meta property="og:title" content="小紅書・SNS運営代行｜LP制作・app開発のサービス一覧｜PROTECH">
     <meta property="og:description" content="PROTECHの提供する日中マーケティングサービス一覧。小紅書・抖音の運営代行から中国語LP・動画制作、WeChatapp開発まで。">
@@ -113,6 +117,7 @@
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
                             <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <a href="/travel/" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-emerald-700 transition-colors text-xs font-bold">日本定制旅行</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
                             <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
                         </div>
@@ -123,6 +128,18 @@
                 <a href="/cases" class="nav-link ">導入事例</a>
                 <a href="/blog" class="nav-link ">ブログ</a>
                 <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+                
+                <!-- Language Switcher -->
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
+                        🌐 JP
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="/services" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="/en/services" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="/cn/services" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                    </div>
+                </div>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -145,12 +162,19 @@
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
                 <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/travel/" class="text-sm font-bold text-slate-500 hover:text-emerald-700">日本定制旅行</a>
                 <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
             </div>
             <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
             <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
             <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+            <!-- Language Selection Mobile -->
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="/services" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                <a href="/en/services" class="text-slate-500 hover:text-coral font-bold">EN</a>
+                <a href="/cn/services" class="text-slate-500 hover:text-coral font-bold">CN</a>
+            </div>
         </div>
     </div>
     </div>
@@ -262,7 +286,7 @@
                         </div>
                         <div class="p-5 bg-white rounded-xl shadow-sm border border-gray-50">
                             <h4 class="font-bold text-sm mb-1 text-tech-blue">口コミ（UGC）管理</h4>
-                            <p class="text-[11px] text-gray-400">来店者の口コミ投稿を促进し、店舗の高評価ランキング入りを目指します。</p>
+                            <p class="text-[11px] text-gray-400">来店者の口コミ投稿を促進し、店舗の高評価ランキング入りを目指します。</p>
                         </div>
                         <div class="p-5 bg-white rounded-xl shadow-sm border border-gray-50">
                             <h4 class="font-bold text-sm mb-1 text-tech-blue">公式広告運用</h4>
@@ -424,6 +448,57 @@
         </div>
     </section>
 
+    <!-- SERVICE 05: Travel Concierge -->
+    <section class="py-20 md:py-28 px-8 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="mb-8">
+                        <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase inter">SERVICE 05</span>
+                        <div class="w-10 h-0.5 bg-coral mt-2"></div>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-tech-blue leading-tight mb-6 serif">
+                        日本多言語<br>定制旅行管家
+                    </h2>
+                    <p class="text-gray-500 text-sm leading-loose mb-6 font-light">
+                        訪日旅行者向けに、包車、ホテル・温泉旅館、景点・餐厅预约、亲子・老人同行路线をまとめて設計する新サービスです。通常の観光記事ではなく、実際に予約・移動・沟通まで落とし込む旅行管家サービスとして展開します。
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="p-5 bg-warm-gray rounded-xl">
+                            <h4 class="font-bold text-sm mb-1">包車路线</h4>
+                            <p class="text-[11px] text-gray-400">富士山、箱根、京都周边など、少换乘路线を设计。</p>
+                        </div>
+                        <div class="p-5 bg-warm-gray rounded-xl">
+                            <h4 class="font-bold text-sm mb-1">住宿安排</h4>
+                            <p class="text-[11px] text-gray-400">酒店、温泉旅馆、亲子房、纪念日住宿を筛选。</p>
+                        </div>
+                        <div class="p-5 bg-warm-gray rounded-xl">
+                            <h4 class="font-bold text-sm mb-1">预约支持</h4>
+                            <p class="text-[11px] text-gray-400">景点、餐厅、体验项目、排队规则を事前確認。</p>
+                        </div>
+                        <div class="p-5 bg-warm-gray rounded-xl">
+                            <h4 class="font-bold text-sm mb-1">多语言沟通</h4>
+                            <p class="text-[11px] text-gray-400">中文、英文、日本語などで旅行前後の沟通を支援。</p>
+                        </div>
+                    </div>
+                    <a href="/travel/"
+                        class="btn-coral px-8 py-3 text-xs font-bold tracking-widest rounded-full inline-flex items-center gap-2">
+                        旅行管家サービスを見る
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="rounded-2xl overflow-hidden shadow-lg">
+                        <img src="assets/images/hero-landscape.jpg"
+                            class="service-img w-full h-[420px] object-cover" alt="日本定制旅行管家" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Case Studies -->
     <section class="py-20 md:py-24 px-8 bg-warm-gray seigaiha-pattern">
         <div class="max-w-7xl mx-auto">
@@ -559,6 +634,7 @@
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
                         <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/travel/" class="hover:text-coral transition">日本多言語定制旅行</a></li>
                         <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
                         <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
                     </ul>

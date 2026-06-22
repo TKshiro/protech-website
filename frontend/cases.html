@@ -197,8 +197,6 @@
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
     </div>
-    </div>
-    </div>
     
     
 
@@ -254,7 +252,7 @@
             <a href="/cases/cosmetics-brand" class="block case-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100"
                 data-category="beauty" data-aos="fade-up" data-aos-delay="100">
                 <div class="overflow-hidden">
-                    <img src="assets/images/case-cosmetics.jpg" alt="日本コスメブランド 中国EC展開"
+                    <img src="assets/images/case-beauty.jpg" alt="日本コスメブランド 中国EC展開"
                         class="w-full h-48 object-cover"
                         onerror="this.src='assets/images/office.jpg'" loading="lazy" decoding="async">
                 </div>
@@ -457,7 +455,7 @@
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
                     const filterValue = button.getAttribute('data-filter');
-                    document.querySelectorAll('#cases-container .case-card').forEach(item => {
+                    document.querySelectorAll('#cases-container a.case-card').forEach(item => {
                         const itemCategory = item.getAttribute('data-category');
                         if (filterValue === 'all' || filterValue === itemCategory) {
                             item.classList.remove('hidden');

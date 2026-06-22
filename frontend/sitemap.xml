@@ -1,59 +1,268 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pro-tech.jp/</loc>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://pro-tech.jp</loc>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/en</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/cn</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp" />
   </url>
 
   <url>
     <loc>https://pro-tech.jp/services</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/services" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/services" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/en/services</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/services" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/services" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/cn/services</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/services" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/services" />
   </url>
 
   <url>
     <loc>https://pro-tech.jp/contact</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/contact" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/contact" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/en/contact</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/contact" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/contact" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/cn/contact</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/contact" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/contact" />
   </url>
 
   <url>
     <loc>https://pro-tech.jp/company</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/company" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/company" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/company" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/company" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/en/company</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/company" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/company" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/company" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/company" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/cn/company</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/company" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/company" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/company" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/company" />
   </url>
 
   <url>
     <loc>https://pro-tech.jp/blog</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/en/blog</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/cn/blog</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog" />
   </url>
 
   <url>
     <loc>https://pro-tech.jp/cases</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/cases" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/cases" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/cases" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/cases" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/en/cases</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/cases" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/cases" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/cases" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/cases" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/cn/cases</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/cases" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/cases" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/cases" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/cases" />
   </url>
 
   <url>
     <loc>https://pro-tech.jp/red</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/red" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/red" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/red" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/red" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/en/red</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/red" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/red" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/red" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/red" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/cn/red</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/red" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/red" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/red" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/red" />
   </url>
 
   <url>
     <loc>https://pro-tech.jp/privacy</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/privacy" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/en/privacy</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/privacy" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/cn/privacy</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/privacy" />
   </url>
 
   <url>
@@ -61,6 +270,32 @@
     <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/japan-hanabi-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/blog/japan-hanabi-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/blog/japan-hanabi-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/japan-hanabi-guide-2026" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/en/blog/japan-hanabi-guide-2026</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/japan-hanabi-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/blog/japan-hanabi-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/blog/japan-hanabi-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/japan-hanabi-guide-2026" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/cn/blog/japan-hanabi-guide-2026</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/japan-hanabi-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/blog/japan-hanabi-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/blog/japan-hanabi-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/japan-hanabi-guide-2026" />
   </url>
 
   <url>
@@ -68,6 +303,32 @@
     <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/japan-summer-spots-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/blog/japan-summer-spots-2026" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/blog/japan-summer-spots-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/japan-summer-spots-2026" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/en/blog/japan-summer-spots-2026</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/japan-summer-spots-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/blog/japan-summer-spots-2026" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/blog/japan-summer-spots-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/japan-summer-spots-2026" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/cn/blog/japan-summer-spots-2026</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/japan-summer-spots-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/blog/japan-summer-spots-2026" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/blog/japan-summer-spots-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/japan-summer-spots-2026" />
   </url>
 
   <url>
@@ -75,6 +336,297 @@
     <lastmod>2026-03-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/red-marketing-trends-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/red-marketing-trends-2026" />
   </url>
 
+  <!-- TRAVEL_GUIDES_I18N_START -->
+  <url>
+    <loc>https://pro-tech.jp/travel/guides/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/zh-tw/guides/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/en/guides/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/ja/guides/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/guides/tokyo-fuji-private-car/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/zh-tw/guides/tokyo-fuji-private-car/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/en/guides/tokyo-fuji-private-car/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/ja/guides/tokyo-fuji-private-car/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/tokyo-fuji-private-car/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/guides/japan-family-custom-trip/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/zh-tw/guides/japan-family-custom-trip/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/en/guides/japan-family-custom-trip/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/ja/guides/japan-family-custom-trip/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-family-custom-trip/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/guides/onsen-ryokan-booking/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/zh-tw/guides/onsen-ryokan-booking/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/en/guides/onsen-ryokan-booking/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/ja/guides/onsen-ryokan-booking/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/onsen-ryokan-booking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/zh-tw/guides/japan-senior-friendly-itinerary/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/en/guides/japan-senior-friendly-itinerary/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/ja/guides/japan-senior-friendly-itinerary/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-senior-friendly-itinerary/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/zh-tw/guides/japan-attraction-restaurant-reservation/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/en/guides/japan-attraction-restaurant-reservation/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation/" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/travel/ja/guides/japan-attraction-restaurant-reservation/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-attraction-restaurant-reservation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation/" />
+  </url>
+  <!-- TRAVEL_GUIDES_I18N_END -->
 </urlset>

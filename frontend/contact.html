@@ -19,6 +19,10 @@
 
     <meta name="description" content="PROTECHへのお問い合わせ。サービスに関するご質問やお見積もりなど、お気軽にご連絡ください。">
     <link rel="canonical" href="https://pro-tech.jp/contact">
+    <link rel="alternate" hreflang="ja" href="https://pro-tech.jp/contact" />
+    <link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/contact" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/contact" />
+    <link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/contact" />
 
     
     <link
@@ -98,6 +102,18 @@
                 <a href="/cases" class="nav-link ">導入事例</a>
                 <a href="/blog" class="nav-link ">ブログ</a>
                 <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+                
+                <!-- Language Switcher -->
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
+                        🌐 JP
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="/contact" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="/en/contact" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="/cn/contact" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                    </div>
+                </div>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -126,6 +142,12 @@
             <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
             <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+            <!-- Language Selection Mobile -->
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="/contact" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                <a href="/en/contact" class="text-slate-500 hover:text-coral font-bold">EN</a>
+                <a href="/cn/contact" class="text-slate-500 hover:text-coral font-bold">CN</a>
+            </div>
         </div>
     </div>
     </div>

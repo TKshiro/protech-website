@@ -458,6 +458,7 @@
         }
 
         const INQUIRY_TYPE_LABELS = {
+            travel_custom: '日本旅行コンシェルジュ',
             red_marketing: '小紅書マーケティング',
             web_development: 'Web・App開発',
             ui_ux_design: 'UI/UXデザイン',
@@ -476,6 +477,7 @@
         };
 
         const REFERRAL_LABELS = {
+            travel_page: '旅行LP・記事',
             web_search: 'Web検索',
             sns: 'SNS',
             referral: '知人の紹介',
@@ -507,6 +509,25 @@
                             ${contacts.map(item => {
                                 const isUnread = item.status === '未対応';
                                 const dateStr = item.date ? new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }).format(new Date(item.date)) : '不明';
+                                const contactValue = item.email || item.contact || '';
+                                const contactHtml = contactValue.includes('@')
+                                    ? `<a href="mailto:${escapeHtml(contactValue)}" class="text-coral hover:underline truncate">${escapeHtml(contactValue)}</a>`
+                                    : `<span class="text-slate-700 break-all">${escapeHtml(contactValue || '未記入')}</span>`;
+                                const travel = item.travel || {};
+                                const travelBlock = travel.service || travel.travel_date || travel.people || travel.language || travel.page_url ? `
+                                    <div class="md:col-span-2 mt-2 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4">
+                                        <p class="text-xs font-bold text-emerald-700 mb-3 tracking-wide">旅行相談内容</p>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <div><span class="text-slate-400">出行日程</span><p class="font-semibold text-slate-800">${escapeHtml(travel.travel_date || '未記入')}</p></div>
+                                            <div><span class="text-slate-400">人数</span><p class="font-semibold text-slate-800">${escapeHtml(travel.people || '未記入')}</p></div>
+                                            <div><span class="text-slate-400">対応言語</span><p class="font-semibold text-slate-800">${escapeHtml(travel.language || '未記入')}</p></div>
+                                            <div><span class="text-slate-400">希望サービス</span><p class="font-semibold text-slate-800">${escapeHtml(travel.service || '未記入')}</p></div>
+                                            <div><span class="text-slate-400">予算</span><p class="font-semibold text-slate-800">${escapeHtml(travel.budget || item.budget || '未記入')}</p></div>
+                                            <div><span class="text-slate-400">流入元</span><p class="font-semibold text-slate-800">${escapeHtml(travel.source || 'travel_page')}</p></div>
+                                            <div class="md:col-span-2"><span class="text-slate-400">送信ページ</span><p class="font-semibold text-slate-800 break-all">${escapeHtml(travel.page_url || '未記入')}</p></div>
+                                        </div>
+                                    </div>
+                                ` : '';
                                 return `
                                 <div class="bg-white rounded-2xl shadow-sm border ${isUnread ? 'border-coral/40' : 'border-slate-200'} overflow-hidden">
                                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-6 py-4 border-b border-slate-100">
@@ -533,8 +554,8 @@
                                             <span class="font-semibold text-slate-900">${escapeHtml(item.company)}</span>
                                         </div>
                                         <div class="flex gap-3">
-                                            <span class="text-slate-400 w-20 shrink-0">メール</span>
-                                            <a href="mailto:${escapeHtml(item.email)}" class="text-coral hover:underline truncate">${escapeHtml(item.email)}</a>
+                                            <span class="text-slate-400 w-20 shrink-0">連絡先</span>
+                                            ${contactHtml}
                                         </div>
                                         <div class="flex gap-3">
                                             <span class="text-slate-400 w-20 shrink-0">電話</span>
@@ -552,6 +573,7 @@
                                             <span class="text-slate-400 w-20 shrink-0">内容</span>
                                             <p class="text-slate-700 whitespace-pre-wrap leading-relaxed">${escapeHtml(item.message)}</p>
                                         </div>
+                                        ${travelBlock}
                                     </div>
                                 </div>
                             `}).join('')}

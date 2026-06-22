@@ -166,7 +166,7 @@
     </div>
     </div>
     
-    <div class="max-w-4xl mx-auto px-6">
+    <div class="max-w-4xl mx-auto px-6 pt-40 md:pt-48">
         <div class="flex flex-wrap gap-2 mb-6" data-aos="fade-up">
             <span class="tag bg-teal-50 text-teal-600">観光・宿泊</span>
             <span class="tag bg-orange-50 text-orange-600">大衆点評</span>
@@ -364,11 +364,8 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 800, once: true });
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-    }
+
 </script>
+<script defer src="../assets/js/main.js"></script>
 </body>
 </html>

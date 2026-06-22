@@ -5,18 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ブログ - PROTECH株式会社</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
 
     <meta name="description" content="PROTECHのブログ。小紅書マーケティング、Web開発、デジタル戦略に関する最新情報と知見をお届けします。">
-    <meta name="keywords" content="ブログ, マーケティング, 小紅書, RED, Web開発, PROTECH">
     <link rel="canonical" href="https://pro-tech.jp/blog">
     <link rel="alternate" type="application/rss+xml" title="PROTECH Blog RSS" href="https://pro-tech.jp/rss.xml">
+    
+    <!-- Hreflang Tags for Blog Listing -->
+    <link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog" />
+    <link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/blog" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/blog" />
+    <link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog" />
 
-    <meta property="og:title" content="ブログ - PROTECH">
-    <meta property="og:description" content="PROTECHのブログ。マーケティング戦略・Web開発に関する最新情報。">
+    <meta property="og:title" content="ブログ - PROTECH株式会社">
+    <meta property="og:description" content="PROTECHのブログ。小紅書マーケティング、Web開発、デジタル戦略に関する最新情報と知見をお届けします。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pro-tech.jp/blog">
-    <meta property="og:image" content="https://pro-tech.jp/img/og-image.jpg">
+    <meta property="og:image" content="https://pro-tech.jp/assets/images/favicon.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link
@@ -56,13 +61,25 @@
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="/"
                 class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
-            <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest uppercase">
+            <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest items-center uppercase">
                 <a href="/" class="hover:text-blue-600 transition">TOP</a>
                 <a href="/services" class="hover:text-blue-600 transition">SERVICES</a>
                 <a href="/company" class="hover:text-blue-600 transition">COMPANY</a>
                 <a href="/blog" class="hover:text-blue-600 transition">NEWS</a>
                 <a href="/blog" class="text-blue-600 font-bold">BLOG</a>
                 <a href="/contact" class="hover:text-blue-600 transition">CONTACT</a>
+                
+                <!-- Premium Language Dropdown -->
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-blue-600 font-bold transition text-tech-blue cursor-pointer">
+                        🌐 JA
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 py-1">
+                        <a href="https://pro-tech.jp/blog" class="block px-4 py-2 text-xs text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="https://pro-tech.jp/en/blog" class="block px-4 py-2 text-xs text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="https://pro-tech.jp/cn/blog" class="block px-4 py-2 text-xs text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                    </div>
+                </div>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -83,14 +100,20 @@
             <a href="/blog" class="text-lg font-bold text-slate-700">NEWS</a>
             <a href="/blog" class="text-lg font-bold text-blue-600">BLOG</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">CONTACT</a>
+            
+            <!-- Language Selection Mobile -->
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="https://pro-tech.jp/blog" class="text-slate-500 hover:text-blue-600 font-bold">JP</a>
+                <a href="https://pro-tech.jp/en/blog" class="text-slate-500 hover:text-blue-600 font-bold">EN</a>
+                <a href="https://pro-tech.jp/cn/blog" class="text-slate-500 hover:text-blue-600 font-bold">CN</a>
+            </div>
         </div>
     </div>
 
     <main class="max-w-6xl mx-auto px-8 pt-40 md:pt-48 pb-20">
         <header class="mb-16 border-b border-gray-100 pb-16" data-aos="fade-up">
             <p class="text-tech-blue text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Blog</p>
-            <h1 class="text-4xl md:text-5xl font-bold serif text-tech-blue mb-6 uppercase tracking-widest">Insights &
-                Knowledge</h1>
+            <h1 class="text-4xl md:text-5xl font-bold serif text-tech-blue mb-6 uppercase tracking-widest">Insights & Knowledge</h1>
             <p class="text-gray-400 text-xs tracking-[0.2em] font-light">マーケティング・開発に関する知見</p>
         </header>
 
@@ -127,7 +150,7 @@
                 class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 data-category="service" data-aos="fade-up">
                 <div class="aspect-video overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1600" alt="【2026年夏】日本で絶対行くべき観光スポット15選｜穴場から定番まで完全ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="/assets/images/blog-summer-furano-lavender.jpg" alt="【2026年夏】日本で絶対行くべき観光スポット15選｜穴場から定番まで完全ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="p-6 md:p-8">
                     <div class="flex items-center gap-3 mb-4">
