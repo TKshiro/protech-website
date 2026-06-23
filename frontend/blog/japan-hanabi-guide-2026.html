@@ -31,7 +31,11 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        :root { --tech-blue: #001A33; }
+        :root { --tech-blue: #001A33; --coral: #E86B7A; }
+        .btn-coral { background-color: #E86B7A !important; color: white !important; transition: opacity 0.2s; }
+        .btn-coral:hover { opacity: 0.85; }
+        .nav-link { transition: color 0.2s; }
+        .nav-link:hover { color: #E86B7A !important; }
         body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         .serif { font-family: 'Noto Serif JP', serif; }
         .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
@@ -64,7 +68,10 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { 'tech-blue': '#001A33' }
+                    colors: { 
+                        'tech-blue': '#001A33',
+                        'coral': '#E86B7A'
+                    }
                 }
             }
         }
@@ -105,10 +112,10 @@
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
             <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest items-center uppercase">
-                <a href="/" class="text-slate-600 hover:text-coral transition-colors">トップ</a>
+                <a href="/" class="nav-link text-slate-600 hover:text-coral transition-colors">トップ</a>
 
                 <div class="relative group">
-                    <a href="/services" class="text-slate-600 hover:text-coral transition-colors flex items-center gap-1">サービス
+                    <a href="/services" class="nav-link text-slate-600 hover:text-coral transition-colors flex items-center gap-1">サービス
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
@@ -130,9 +137,9 @@
                     </div>
                 </div>
 
-                <a href="/company" class="text-slate-600 hover:text-coral transition-colors">会社概要</a>
-                <a href="/cases" class="text-slate-600 hover:text-coral transition-colors">導入事例</a>
-                <a href="/blog" class="text-coral font-bold">ブログ</a>
+                <a href="/company" class="nav-link text-slate-600 hover:text-coral transition-colors">会社概要</a>
+                <a href="/cases" class="nav-link text-slate-600 hover:text-coral transition-colors">導入事例</a>
+                <a href="/blog" class="nav-link text-coral font-bold">ブログ</a>
                 <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
                 
                 

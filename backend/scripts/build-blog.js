@@ -83,8 +83,8 @@ function getNavHTML(lang, isListing, postSlug = '', availableLangs = { ja: true 
     };
 
     const t = navText[lang] || navText.en;
-    const activeClass = 'text-coral font-bold';
-    const normalClass = 'text-slate-600 hover:text-coral transition-colors';
+    const activeClass = 'nav-link text-coral font-bold';
+    const normalClass = 'nav-link text-slate-600 hover:text-coral transition-colors';
     
     const blogClass = activeClass;
     const topClass = normalClass;
@@ -822,7 +822,11 @@ function generatePostHTML(post, availableLangs, allPostsOfLang = []) {
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        :root { --tech-blue: #001A33; }
+        :root { --tech-blue: #001A33; --coral: #E86B7A; }
+        .btn-coral { background-color: #E86B7A !important; color: white !important; transition: opacity 0.2s; }
+        .btn-coral:hover { opacity: 0.85; }
+        .nav-link { transition: color 0.2s; }
+        .nav-link:hover { color: #E86B7A !important; }
         body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         .serif { font-family: 'Noto Serif JP', serif; }
         .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
@@ -855,7 +859,10 @@ function generatePostHTML(post, availableLangs, allPostsOfLang = []) {
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { 'tech-blue': '#001A33' }
+                    colors: { 
+                        'tech-blue': '#001A33',
+                        'coral': '#E86B7A'
+                    }
                 }
             }
         }
@@ -1364,7 +1371,11 @@ function generateBlogListingHTML(posts, lang) {
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        :root { --tech-blue: #001A33; }
+        :root { --tech-blue: #001A33; --coral: #E86B7A; }
+        .btn-coral { background-color: #E86B7A !important; color: white !important; transition: opacity 0.2s; }
+        .btn-coral:hover { opacity: 0.85; }
+        .nav-link { transition: color 0.2s; }
+        .nav-link:hover { color: #E86B7A !important; }
         body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         .serif { font-family: 'Noto Serif JP', serif; }
         .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); }
@@ -1382,7 +1393,10 @@ function generateBlogListingHTML(posts, lang) {
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { 'tech-blue': '#001A33' }
+                    colors: { 
+                        'tech-blue': '#001A33',
+                        'coral': '#E86B7A'
+                    }
                 }
             }
         }
