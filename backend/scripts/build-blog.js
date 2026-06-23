@@ -23,6 +23,479 @@ const { marked } = require('marked');
 const ROOT = path.resolve(__dirname, '../../frontend');
 const SITE_URL = 'https://pro-tech.jp';
 
+// ─── Unification Helpers ────────────────────────────────────
+
+function getNavHTML(lang, isListing, postSlug = '', availableLangs = { ja: true }) {
+    const langPrefix = lang === 'ja' ? '' : `/${lang}`;
+    const SITE_URL = 'https://pro-tech.jp';
+    
+    const navText = {
+        ja: {
+            top: 'トップ',
+            services: 'サービス',
+            company: '会社概要',
+            cases: '導入事例',
+            blog: 'ブログ',
+            contact: 'お問合せ',
+            allServicesText: 'すべてのサービス',
+            dianping: '大衆点評',
+            red: '小紅書',
+            douyin: '抖音 (Douyin)',
+            miniprogram: '微信小程序',
+            creative: 'クリエイティブ制作',
+            kol: 'KOL/KOC施策',
+            pricing: '料金プラン'
+        },
+        en: {
+            top: 'Home',
+            services: 'Services',
+            company: 'Company',
+            cases: 'Case Studies',
+            blog: 'Blog',
+            contact: 'Contact',
+            allServicesText: 'All Services',
+            dianping: 'Dianping',
+            red: 'Xiaohongshu (RED)',
+            douyin: 'Douyin',
+            miniprogram: 'WeChat Mini-Program',
+            creative: 'Creative Production',
+            kol: 'KOL/KOC Promotion',
+            travel: 'Custom Japan Travel',
+            pricing: 'Pricing Plans'
+        },
+        cn: {
+            top: '首页',
+            services: '服务介绍',
+            company: '公司概要',
+            cases: '客户案例',
+            blog: '博客文章',
+            contact: '联系我们',
+            allServicesText: '全部服务',
+            dianping: '大众点评',
+            red: '小红书',
+            douyin: '抖音 (Douyin)',
+            miniprogram: '微信小程序',
+            creative: '中文视觉与内容制作',
+            kol: 'KOL / KOC 网红营销',
+            travel: '日本定制旅行',
+            pricing: '价格方案'
+        }
+    };
+
+    const t = navText[lang] || navText.en;
+    const activeClass = 'text-coral font-bold';
+    const normalClass = 'text-slate-600 hover:text-coral transition-colors';
+    
+    const blogClass = activeClass;
+    const topClass = normalClass;
+    const servicesClass = normalClass;
+    const companyClass = normalClass;
+    const casesClass = normalClass;
+    
+    const travelItem = (lang === 'en' || lang === 'cn') 
+        ? `<a href="/travel/" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-emerald-700 transition-colors text-xs font-bold">${t.travel}</a>`
+        : '';
+        
+    const mActive = 'text-coral font-bold';
+    const mNormal = 'text-slate-700 hover:text-coral transition-colors';
+    const mBlogClass = mActive;
+    const mTopClass = mNormal;
+    const mServicesClass = mNormal;
+    const mCompanyClass = mNormal;
+    const mCasesClass = mNormal;
+
+    let langDropdown = '';
+    let mobileLangSelector = '';
+    
+    if (isListing) {
+        langDropdown = `
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
+                        🌐 ${lang.toUpperCase()}
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="${SITE_URL}/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="${SITE_URL}/en/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="${SITE_URL}/cn/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                    </div>
+                </div>`;
+                
+        mobileLangSelector = `
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="${SITE_URL}/blog" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                <a href="${SITE_URL}/en/blog" class="text-slate-500 hover:text-coral font-bold">EN</a>
+                <a href="${SITE_URL}/cn/blog" class="text-slate-500 hover:text-coral font-bold">CN</a>
+            </div>`;
+    } else {
+        const available = {
+            ja: availableLangs.ja,
+            en: availableLangs.en,
+            cn: availableLangs.cn
+        };
+        
+        langDropdown = `
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
+                        🌐 ${lang.toUpperCase()}
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="${SITE_URL}/blog/${postSlug}" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        ${available.en ? `<a href="${SITE_URL}/en/blog/${postSlug}" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>` : ''}
+                        ${available.cn ? `<a href="${SITE_URL}/cn/blog/${postSlug}" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>` : ''}
+                    </div>
+                </div>`;
+                
+        mobileLangSelector = `
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="${SITE_URL}/blog/${postSlug}" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                ${available.en ? `<a href="${SITE_URL}/en/blog/${postSlug}" class="text-slate-500 hover:text-coral font-bold">EN</a>` : ''}
+                ${available.cn ? `<a href="${SITE_URL}/cn/blog/${postSlug}" class="text-slate-500 hover:text-coral font-bold">CN</a>` : ''}
+            </div>`;
+    }
+
+    return `<!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="${langPrefix}/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest items-center uppercase">
+                <a href="${langPrefix}/" class="${topClass}">${t.top}</a>
+
+                <div class="relative group">
+                    <a href="${langPrefix}/services" class="${servicesClass} flex items-center gap-1">${t.services}
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="${langPrefix}/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">${t.allServicesText}</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">${t.dianping}</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">${t.red}</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">${t.douyin}</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">${t.miniprogram}</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">${t.creative}</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">${t.kol}</a>
+                            ${travelItem}
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">${t.pricing}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="${langPrefix}/company" class="${companyClass}">${t.company}</a>
+                <a href="${langPrefix}/cases" class="${casesClass}">${t.cases}</a>
+                <a href="${langPrefix}/blog" class="${blogClass}">${t.blog}</a>
+                <a href="${langPrefix}/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">${t.contact}</a>
+                
+                ${langDropdown}
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="${langPrefix}/" class="text-lg font-bold ${mTopClass}">${t.top}</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="${langPrefix}/services" class="text-lg font-bold ${mServicesClass}">${t.services}</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">${t.dianping}</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">${t.red}</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">${t.douyin}</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">${t.miniprogram}</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">${t.creative}</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">${t.kol}</a>
+                ${(lang === 'en' || lang === 'cn') ? `<a href="/travel/" class="text-sm font-bold text-slate-500 hover:text-emerald-700">${t.travel}</a>` : ''}
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">${t.pricing}</a>
+            </div>
+            <a href="${langPrefix}/company" class="text-lg font-bold ${mCompanyClass}">${t.company}</a>
+            <a href="${langPrefix}/cases" class="text-lg font-bold ${mCasesClass}">${t.cases}</a>
+            <a href="${langPrefix}/blog" class="text-lg font-bold ${mBlogClass}">${t.blog}</a>
+            <a href="${langPrefix}/contact" class="text-lg font-bold text-slate-700">${t.contact}</a>
+            
+            ${mobileLangSelector}
+        </div>
+    </div>`;
+}
+
+function getFooterHTML(lang) {
+    const footers = {
+        ja: `    <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>`,
+        en: `    <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">Crossing business boundaries with<br>technology and marketing.</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">Dianping Store Attraction</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">RED (Xiaohongshu) Marketing</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">Douyin Operations</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChat Mini-Program Dev</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">Chinese Creative Production</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOC Promotion</a></li>
+                        <li><a href="/travel/" class="hover:text-coral transition">Multilingual Custom Japan Travel</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">Pricing Plans</a></li>
+                        <li><a href="/en/services" class="hover:text-coral transition">All Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company Info</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/en/company" class="hover:text-coral transition">Company</a></li>
+                        <li><a href="/en/cases" class="hover:text-coral transition">Case Studies</a></li>
+                        <li><a href="/en/blog" class="hover:text-coral transition">Blog</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">Privacy Policy</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">Legal Notice</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Resources</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">Download Whitepapers</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">FAQ</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">Inbound AI</a></li>
+                        <li><a href="/en/contact" class="hover:text-coral transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>`,
+        cn: `    <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">用科技与营销，<br>跨越商业的边界。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">服务介绍</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大众点评引流</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小红书 (RED) 整合营销</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音 (Douyin) 代运营</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChat 小程序开发</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中文内容与视觉制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL / KOC 网红营销</a></li>
+                        <li><a href="/travel/" class="hover:text-coral transition">日本多语言定制旅行</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">价格方案</a></li>
+                        <li><a href="/cn/services" class="hover:text-coral transition">全部服务</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">公司信息</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/cn/company" class="hover:text-coral transition">公司概要</a></li>
+                        <li><a href="/cn/cases" class="hover:text-coral transition">客户案例</a></li>
+                        <li><a href="/cn/blog" class="hover:text-coral transition">博客文章</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">隐私政策</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商业交易法声明</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">使用条款</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">资源中心</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">干货资料下载</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">常见问题 (FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">入境营销 AI</a></li>
+                        <li><a href="/cn/contact" class="hover:text-coral transition">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. 版权所有</p>
+        </div>
+    </footer>`
+    };
+    return footers[lang] || footers.en;
+}
+
+function readLegacyHTMLPosts(blogDir) {
+    if (!fs.existsSync(blogDir)) return [];
+    const files = fs.readdirSync(blogDir).filter(f => f.endsWith('.html') && f !== 'blog.html');
+    const legacyPosts = [];
+
+    // Exclude posts generated from markdown
+    const mdSlugs = new Set(['japan-hanabi-guide-2026', 'japan-summer-spots-2026', 'red-marketing-trends-2026']);
+
+    for (const file of files) {
+        const slug = file.replace(/\.html$/, '');
+        if (mdSlugs.has(slug)) continue;
+
+        const filePath = path.join(blogDir, file);
+        const htmlContent = fs.readFileSync(filePath, 'utf-8');
+
+        // Extract title
+        const titleMatch = htmlContent.match(/<title>([^<]+)<\/title>/i);
+        let title = titleMatch ? titleMatch[1].trim() : 'Untitled';
+        title = title.replace(/\s*\|\s*PROTECH\s*$/i, '').replace(/\s*\|\s*PROTECH株式会社\s*$/i, '');
+
+        // Extract description
+        const descMatch = htmlContent.match(/<meta\s+name="description"\s+content="([^"]+)"/i) || 
+                          htmlContent.match(/<meta\s+content="([^"]+)"\s+name="description"/i);
+        const description = descMatch ? descMatch[1].trim() : '';
+
+        // Extract date
+        const dateMatch = htmlContent.match(/<meta\s+property="article:published_time"\s+content="([^"]+)"/i) ||
+                          htmlContent.match(/<meta\s+content="([^"]+)"\s+property="article:published_time"/i) ||
+                          htmlContent.match(/<span\s+class="text-xs\s+text-gray-400">(\d{4}\.\d{2}\.\d{2})<\/span>/i);
+        let date = '2026-01-01';
+        if (dateMatch) {
+            date = dateMatch[1].trim().replace(/\./g, '-');
+        }
+
+        // Extract image
+        const imgMatch = htmlContent.match(/<meta\s+property="og:image"\s+content="([^"]+)"/i) ||
+                         htmlContent.match(/<meta\s+content="([^"]+)"\s+property="og:image"/i);
+        let image = imgMatch ? imgMatch[1].trim() : '';
+        if (image.startsWith('https://pro-tech.jp')) {
+            image = image.replace('https://pro-tech.jp', '');
+        }
+
+        // Extract raw category badge and map it
+        const catMatch = htmlContent.match(/font-bold bg-[a-z0-9-]+ text-[a-z0-9-]+ px-3 py-1 rounded-full[^>]*>([^<]+)<\/span>/i);
+        const rawCat = catMatch ? catMatch[1].trim() : '';
+        
+        let category = 'news';
+        if (rawCat.includes('事例') || rawCat.includes('実績')) {
+            category = 'case';
+        } else if (
+            rawCat.includes('開発') || 
+            rawCat.includes('費用') || 
+            rawCat.includes('料金') || 
+            rawCat.includes('運営') || 
+            rawCat.includes('ノウハウ') || 
+            rawCat.includes('受け入れ') || 
+            rawCat.includes('基礎知識') || 
+            rawCat.includes('マーケティング') || 
+            rawCat.includes('小紅書') || 
+            rawCat.includes('越境') ||
+            rawCat.includes('数据分析') ||
+            rawCat.includes('データ分析') ||
+            rawCat.includes('インバウンド') ||
+            rawCat.includes('地方創生') ||
+            rawCat.includes('観光')
+        ) {
+            category = 'service';
+        }
+
+        legacyPosts.push({
+            slug,
+            title,
+            date,
+            category,
+            description,
+            image,
+            lang: 'ja',
+            isLegacy: true,
+            filePath
+        });
+    }
+
+    return legacyPosts;
+}
+
+function replaceNavAndFooterInLegacyHTML(filePath, lang, slug, availableLangs) {
+    let html = fs.readFileSync(filePath, 'utf-8');
+    
+    // Replace Nav (from '<nav' or '<!-- NAV -->' up to the start of the HERO section)
+    let navStart = html.indexOf('<!-- NAV -->');
+    if (navStart === -1) {
+        navStart = html.indexOf('<nav');
+    }
+    
+    let heroStart = html.indexOf('<!-- HERO -->');
+    if (heroStart === -1) {
+        heroStart = html.indexOf('<div class="pt-24');
+    }
+    if (heroStart === -1) {
+        heroStart = html.indexOf('<div class="pt-32');
+    }
+    
+    if (navStart !== -1 && heroStart !== -1 && heroStart > navStart) {
+        const premiumNav = getNavHTML(lang, false, slug, availableLangs);
+        html = html.slice(0, navStart) + premiumNav + '\n    ' + html.slice(heroStart);
+    }
+    
+    // Replace Footer (from '<!-- FOOTER -->' or '<footer' to the end of '</footer>')
+    let footerStart = html.indexOf('<!-- FOOTER -->');
+    if (footerStart === -1) {
+        footerStart = html.indexOf('<footer');
+    }
+    
+    let footerEnd = html.indexOf('</footer>', footerStart);
+    if (footerStart !== -1 && footerEnd !== -1) {
+        footerEnd += 9; // include '</footer>'
+        const premiumFooter = getFooterHTML(lang);
+        html = html.slice(0, footerStart) + premiumFooter + html.slice(footerEnd);
+    }
+    
+    fs.writeFileSync(filePath, html, 'utf-8');
+}
+
 // ─── Helpers ───────────────────────────────────────────────
 
 function slugFromFilename(filename) {
@@ -418,58 +891,7 @@ function generatePostHTML(post, availableLangs, allPostsOfLang = []) {
 
 <body class="bg-white">
 
-    <nav class="fixed w-full z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
-            <a href="${langPrefix}/"
-                class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
-            <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest items-center uppercase">
-                <a href="${langPrefix}/" class="hover:text-blue-600 transition">${i18n.nav.top}</a>
-                <a href="${langPrefix}/services" class="hover:text-blue-600 transition">${i18n.nav.services}</a>
-                <a href="${langPrefix}/company" class="hover:text-blue-600 transition">${i18n.nav.company}</a>
-                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">${i18n.nav.news}</a>
-                <a href="${langPrefix}/blog" class="text-blue-600 font-bold">${i18n.nav.blog}</a>
-                <a href="${langPrefix}/contact" class="hover:text-blue-600 transition">${i18n.nav.contact}</a>
-                
-                <!-- Premium Language Dropdown -->
-                <div class="relative group ml-4">
-                    <button class="flex items-center gap-1 hover:text-blue-600 font-bold transition text-tech-blue cursor-pointer">
-                        🌐 ${post.lang.toUpperCase()}
-                    </button>
-                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 py-1">
-                        <a href="${SITE_URL}/blog/${post.slug}" class="block px-4 py-2 text-xs text-gray-700 hover:bg-slate-50 transition">日本語</a>
-                        ${availableLangs.en ? `<a href="${SITE_URL}/en/blog/${post.slug}" class="block px-4 py-2 text-xs text-gray-700 hover:bg-slate-50 transition">English</a>` : ''}
-                        ${availableLangs.cn ? `<a href="${SITE_URL}/cn/blog/${post.slug}" class="block px-4 py-2 text-xs text-gray-700 hover:bg-slate-50 transition">简体中文</a>` : ''}
-                    </div>
-                </div>
-            </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
-                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
-                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-    </nav>
-
-    <div id="mobile-menu"
-        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-        <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="${langPrefix}/" class="text-lg font-bold text-slate-700">${i18n.nav.top}</a>
-            <a href="${langPrefix}/services" class="text-lg font-bold text-slate-700">${i18n.nav.services}</a>
-            <a href="${langPrefix}/company" class="text-lg font-bold text-slate-700">${i18n.nav.company}</a>
-            <a href="${langPrefix}/blog" class="text-lg font-bold text-slate-700">${i18n.nav.news}</a>
-            <a href="${langPrefix}/blog" class="text-lg font-bold text-blue-600">${i18n.nav.blog}</a>
-            <a href="${langPrefix}/contact" class="text-lg font-bold text-slate-700">${i18n.nav.contact}</a>
-            
-            <!-- Language Selection Mobile -->
-            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
-                <a href="${SITE_URL}/blog/${post.slug}" class="text-slate-500 hover:text-blue-600 font-bold">JP</a>
-                ${availableLangs.en ? `<a href="${SITE_URL}/en/blog/${post.slug}" class="text-slate-500 hover:text-blue-600 font-bold">EN</a>` : ''}
-                ${availableLangs.cn ? `<a href="${SITE_URL}/cn/blog/${post.slug}" class="text-slate-500 hover:text-blue-600 font-bold">CN</a>` : ''}
-            </div>
-        </div>
-    </div>
+${getNavHTML(post.lang, false, post.slug, availableLangs)}
 
     <article class="pt-40 pb-32">
         <header class="max-w-4xl mx-auto px-8 mb-20 text-center">
@@ -569,20 +991,7 @@ function generatePostHTML(post, availableLangs, allPostsOfLang = []) {
         ${latestHtml}
     </article>
 
-    <!-- Footer -->
-    <footer class="py-16 md:py-20 text-center bg-white border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-tech-blue font-bold text-2xl md:text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
-            <div
-                class="flex justify-center flex-wrap gap-6 md:gap-8 mb-10 text-[10px] md:text-xs font-bold tracking-widest text-gray-400">
-                <a href="${langPrefix}/services" class="hover:text-blue-600 transition">${i18n.footer.services}</a>
-                <a href="${langPrefix}/company" class="hover:text-blue-600 transition">${i18n.footer.company}</a>
-                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">${i18n.footer.news}</a>
-                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">${i18n.footer.blog}</a>
-            </div>
-            <p class="text-[10px] text-gray-400 tracking-widest">© 2026 PROTECH Inc. All Rights Reserved.</p>
-        </div>
-    </footer>
+${getFooterHTML(post.lang)}
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -982,58 +1391,7 @@ function generateBlogListingHTML(posts, lang) {
 
 <body class="bg-white text-slate-900">
 
-    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
-            <a href="${langPrefix}/"
-                class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
-            <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest items-center uppercase">
-                <a href="${langPrefix}/" class="hover:text-blue-600 transition">${i18n.nav.top}</a>
-                <a href="${langPrefix}/services" class="hover:text-blue-600 transition">${i18n.nav.services}</a>
-                <a href="${langPrefix}/company" class="hover:text-blue-600 transition">${i18n.nav.company}</a>
-                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">${i18n.nav.news}</a>
-                <a href="${langPrefix}/blog" class="text-blue-600 font-bold">${i18n.nav.blog}</a>
-                <a href="${langPrefix}/contact" class="hover:text-blue-600 transition">${i18n.nav.contact}</a>
-                
-                <!-- Premium Language Dropdown -->
-                <div class="relative group ml-4">
-                    <button class="flex items-center gap-1 hover:text-blue-600 font-bold transition text-tech-blue cursor-pointer">
-                        🌐 ${lang.toUpperCase()}
-                    </button>
-                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 py-1">
-                        <a href="${SITE_URL}/blog" class="block px-4 py-2 text-xs text-gray-700 hover:bg-slate-50 transition">日本語</a>
-                        <a href="${SITE_URL}/en/blog" class="block px-4 py-2 text-xs text-gray-700 hover:bg-slate-50 transition">English</a>
-                        <a href="${SITE_URL}/cn/blog" class="block px-4 py-2 text-xs text-gray-700 hover:bg-slate-50 transition">简体中文</a>
-                    </div>
-                </div>
-            </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
-                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
-                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-    </nav>
-
-    <div id="mobile-menu"
-        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-        <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="${langPrefix}/" class="text-lg font-bold text-slate-700">${i18n.nav.top}</a>
-            <a href="${langPrefix}/services" class="text-lg font-bold text-slate-700">${i18n.nav.services}</a>
-            <a href="${langPrefix}/company" class="text-lg font-bold text-slate-700">${i18n.nav.company}</a>
-            <a href="${langPrefix}/blog" class="text-lg font-bold text-slate-700">${i18n.nav.news}</a>
-            <a href="${langPrefix}/blog" class="text-lg font-bold text-blue-600">${i18n.nav.blog}</a>
-            <a href="${langPrefix}/contact" class="text-lg font-bold text-slate-700">${i18n.nav.contact}</a>
-            
-            <!-- Language Selection Mobile -->
-            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
-                <a href="${SITE_URL}/blog" class="text-slate-500 hover:text-blue-600 font-bold">JP</a>
-                <a href="${SITE_URL}/en/blog" class="text-slate-500 hover:text-blue-600 font-bold">EN</a>
-                <a href="${SITE_URL}/cn/blog" class="text-slate-500 hover:text-blue-600 font-bold">CN</a>
-            </div>
-        </div>
-    </div>
+${getNavHTML(lang, true)}
 
     <main class="max-w-6xl mx-auto px-8 pt-40 md:pt-48 pb-20">
         <header class="mb-16 border-b border-gray-100 pb-16" data-aos="fade-up">
@@ -1056,19 +1414,7 @@ ${postItems}
         </div>
     </main>
 
-    <footer class="py-16 md:py-20 text-center bg-white border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-tech-blue font-bold text-2xl md:text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
-            <div
-                class="flex justify-center flex-wrap gap-6 md:gap-8 mb-10 text-[10px] md:text-xs font-bold tracking-widest text-gray-400">
-                <a href="${langPrefix}/services" class="hover:text-blue-600 transition">${i18n.footer.services}</a>
-                <a href="${langPrefix}/company" class="hover:text-blue-600 transition">${i18n.footer.company}</a>
-                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">${i18n.footer.news}</a>
-                <a href="${langPrefix}/blog" class="hover:text-blue-600 transition">${i18n.footer.blog}</a>
-            </div>
-            <p class="text-[10px] text-gray-400 tracking-widest">© 2026 PROTECH Inc. All Rights Reserved.</p>
-        </div>
-    </footer>
+${getFooterHTML(lang)}
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -1135,11 +1481,14 @@ function build() {
     const postsDirCn = path.join(ROOT, 'cn', 'blog', 'posts');
 
     // 2. Read posts for all tracks
-    const postsJa = readPosts(postsDirJa, 'ja');
+    const postsJa = [...readPosts(postsDirJa, 'ja'), ...readLegacyHTMLPosts(path.join(ROOT, 'blog'))];
     const postsEn = readPosts(postsDirEn, 'en');
     const postsCn = readPosts(postsDirCn, 'cn');
 
-    console.log(`📄 Found blog posts: JA: ${postsJa.length}, EN: ${postsEn.length}, CN: ${postsCn.length}`);
+    // Sort combined JA posts by date descending
+    postsJa.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    console.log(`📄 Found blog posts (including legacy): JA: ${postsJa.length}, EN: ${postsEn.length}, CN: ${postsCn.length}`);
 
     // Create target output directories
     const outputDirJa = path.join(ROOT, 'blog');
@@ -1158,6 +1507,12 @@ function build() {
         const hasEn = postsEn.some(p => p.slug === post.slug);
         const hasCn = postsCn.some(p => p.slug === post.slug);
         const availableLangs = { ja: hasJa, en: hasEn, cn: hasCn };
+
+        if (post.isLegacy) {
+            replaceNavAndFooterInLegacyHTML(post.filePath, post.lang, post.slug, availableLangs);
+            console.log(`  🔄 Synced legacy layout: blog/${post.lang}/${post.slug}.html`);
+            continue;
+        }
 
         let targetDir = outputDirJa;
         let postsOfLang = postsJa;

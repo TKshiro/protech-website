@@ -127,11 +127,11 @@
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
-            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="/" class="nav-link ">トップ</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest items-center uppercase">
+                <a href="/" class="text-slate-600 hover:text-coral transition-colors">トップ</a>
 
                 <div class="relative group">
-                    <a href="/services" class="nav-link  flex items-center gap-1">サービス
+                    <a href="/services" class="text-slate-600 hover:text-coral transition-colors flex items-center gap-1">サービス
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
@@ -146,16 +146,29 @@
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
                             <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
                             <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
                         </div>
                     </div>
                 </div>
 
-                <a href="/company" class="nav-link ">会社概要</a>
-                <a href="/cases" class="nav-link ">導入事例</a>
-                <a href="/blog" class="nav-link text-coral">ブログ</a>
+                <a href="/company" class="text-slate-600 hover:text-coral transition-colors">会社概要</a>
+                <a href="/cases" class="text-slate-600 hover:text-coral transition-colors">導入事例</a>
+                <a href="/blog" class="text-coral font-bold">ブログ</a>
                 <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+                
+                
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
+                        🌐 JA
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="https://pro-tech.jp/blog/wechat-marketing-guide-2026" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        
+                        
+                    </div>
+                </div>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -169,27 +182,31 @@
 
     <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
         <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
-            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <a href="/" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">トップ</a>
             <div class="flex flex-col items-center space-y-4">
-                <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
+                <a href="/services" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">サービス</a>
                 <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
                 <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
-                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ制作</a>
                 <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                
                 <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
             </div>
-            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
-            <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
-            <a href="/blog" class="text-lg font-bold text-coral">ブログ</a>
+            <a href="/company" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">会社概要</a>
+            <a href="/cases" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">導入事例</a>
+            <a href="/blog" class="text-lg font-bold text-coral font-bold">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+            
+            
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="https://pro-tech.jp/blog/wechat-marketing-guide-2026" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                
+                
+            </div>
         </div>
     </div>
-    </div>
-    </div>
-
-    <!-- ARTICLE HERO -->
     <div class="pt-24 md:pt-32 pb-0 bg-gradient-to-b from-slate-50 to-white">
         <div class="max-w-3xl mx-auto px-6 md:px-8">
             <!-- Breadcrumb -->
@@ -550,7 +567,7 @@
         </a>
     </div>
 
-            <!-- FOOTER -->
+                <!-- FOOTER -->
     <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">

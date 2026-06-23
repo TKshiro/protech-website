@@ -57,27 +57,50 @@
 
 <body class="bg-white text-slate-900">
 
-    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
+<!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
-            <a href="/"
-                class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
-            <div class="hidden md:flex space-x-10 text-sm font-bold tracking-widest items-center uppercase">
-                <a href="/" class="hover:text-blue-600 transition">トップ</a>
-                <a href="/services" class="hover:text-blue-600 transition">サービス</a>
-                <a href="/company" class="hover:text-blue-600 transition">会社概要</a>
-                <a href="/blog" class="hover:text-blue-600 transition">お知らせ</a>
-                <a href="/blog" class="text-blue-600 font-bold">ブログ</a>
-                <a href="/contact" class="hover:text-blue-600 transition">お問い合わせ</a>
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest items-center uppercase">
+                <a href="/" class="text-slate-600 hover:text-coral transition-colors">トップ</a>
+
+                <div class="relative group">
+                    <a href="/services" class="text-slate-600 hover:text-coral transition-colors flex items-center gap-1">サービス
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/company" class="text-slate-600 hover:text-coral transition-colors">会社概要</a>
+                <a href="/cases" class="text-slate-600 hover:text-coral transition-colors">導入事例</a>
+                <a href="/blog" class="text-coral font-bold">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
                 
-                <!-- Premium Language Dropdown -->
+                
                 <div class="relative group ml-4">
-                    <button class="flex items-center gap-1 hover:text-blue-600 font-bold transition text-tech-blue cursor-pointer">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
                         🌐 JA
                     </button>
-                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 py-1">
-                        <a href="https://pro-tech.jp/blog" class="block px-4 py-2 text-xs text-gray-700 hover:bg-slate-50 transition">日本語</a>
-                        <a href="https://pro-tech.jp/en/blog" class="block px-4 py-2 text-xs text-gray-700 hover:bg-slate-50 transition">English</a>
-                        <a href="https://pro-tech.jp/cn/blog" class="block px-4 py-2 text-xs text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="https://pro-tech.jp/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="https://pro-tech.jp/en/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="https://pro-tech.jp/cn/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
                     </div>
                 </div>
             </div>
@@ -91,21 +114,30 @@
         </div>
     </nav>
 
-    <div id="mobile-menu"
-        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-        <div class="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
-            <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
-            <a href="/blog" class="text-lg font-bold text-slate-700">お知らせ</a>
-            <a href="/blog" class="text-lg font-bold text-blue-600">ブログ</a>
-            <a href="/contact" class="text-lg font-bold text-slate-700">お問い合わせ</a>
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">トップ</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/services" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">サービス</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ制作</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
+            </div>
+            <a href="/company" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">会社概要</a>
+            <a href="/cases" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">導入事例</a>
+            <a href="/blog" class="text-lg font-bold text-coral font-bold">ブログ</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
             
-            <!-- Language Selection Mobile -->
+            
             <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
-                <a href="https://pro-tech.jp/blog" class="text-slate-500 hover:text-blue-600 font-bold">JP</a>
-                <a href="https://pro-tech.jp/en/blog" class="text-slate-500 hover:text-blue-600 font-bold">EN</a>
-                <a href="https://pro-tech.jp/cn/blog" class="text-slate-500 hover:text-blue-600 font-bold">CN</a>
+                <a href="https://pro-tech.jp/blog" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                <a href="https://pro-tech.jp/en/blog" class="text-slate-500 hover:text-coral font-bold">EN</a>
+                <a href="https://pro-tech.jp/cn/blog" class="text-slate-500 hover:text-coral font-bold">CN</a>
             </div>
         </div>
     </div>
@@ -164,6 +196,546 @@
                     </div>
                 </div>
             </a>
+            <a href="/blog/korea-inbound-strategy-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-korea-inbound-hero.jpeg" alt="訪日韓国人向けインバウンドマーケティング戦略【2026年最新】NaverブログとInstagramを活用した集客方法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.06.01</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">訪日韓国人向けインバウンドマーケティング戦略【2026年最新】NaverブログとInstagramを活用した集客方法</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">訪日外国人数2位の韓国人観光客を集客するインバウンドマーケティング戦略を解説。NaverブログやInstagram・KakaoTalkの活用法、韓国人旅行者の消費行動データ・おすすめ施策まで2026年最新情報をお届け。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/inbound-marketing-cost-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-inbound-cost-hero.jpeg" alt="インバウンド集客の費用・料金相場【2026年最新】中国SNS・KOL・代行サービス別に徹底解説" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.05.22</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">インバウンド集客の費用・料金相場【2026年最新】中国SNS・KOL・代行サービス別に徹底解説</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">インバウンド集客にかかる費用を徹底解説。小紅書・大衆点評・WeChat・KOL起用・代行会社の料金相場を比較。予算別の最適な施策選びに役立つ2026年最新ガイド。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/wechat-marketing-guide-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-wechat-marketing-hero.jpeg" alt="WeChat（微信）マーケティングとは？【2026年最新】日本企業向け完全ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.05.15</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">WeChat（微信）マーケティングとは？【2026年最新】日本企業向け完全ガイド</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">WeChat（微信）を活用したインバウンド集客の完全ガイド。公式アカウント・ミニプログラム・WeChatペイの仕組みから、日本企業の導入事例・費用まで徹底解説【2026年最新版】。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/inbound-foreign-tourist-trends-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/hero-landscape2.jpg" alt="【2026年最新】訪日外国人旅行の現状と課題：6,000万人達成に向けた地方誘客とインバウンド戦略" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.05.11</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【2026年最新】訪日外国人旅行の現状と課題：6,000万人達成に向けた地方誘客とインバウンド戦略</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">訪日外国人旅行客（インバウンド）の最新動向と、7都道府県に集中するオーバーツーリズムの課題。6,000万人達成に向けたJATAの提言と、地方誘客のための具体的なSNS集客戦略を解説します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/what-is-inbound-demand"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-what-is-inbound-demand.jpg" alt="インバウンド需要とは？2026年最新の動向・経済効果・重要性を解説" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.05.09</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">インバウンド需要とは？2026年最新の動向・経済効果・重要性を解説</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">インバウンド需要の定義や、なぜ今日本企業にとって重要なのか、2026年の最新トレンドやインバウンド対策の基本をわかりやすく解説します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/xiaohongshu-local-tourism-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-xiaohongshu-local-tourism.jpeg" alt="小紅書で観光地・地方創生集客【2026年最新】中国人旅行者を地方に呼ぶ戦略と成功事例" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.05.08</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">小紅書で観光地・地方創生集客【2026年最新】中国人旅行者を地方に呼ぶ戦略と成功事例</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">小紅書（RED）を使って地方観光地・地域資源の魅力を中国人旅行者に伝える集客戦略を解説。コンテンツ作成のコツ・KOL活用・地方自治体の成功事例まで2026年最新情報。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/china-sns-inbound-guide"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="news" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-sns-strategy-2026.jpg" alt="小紅書アカウント運用の基本【2026年版】開設から投稿・分析まで日本企業向け完全ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.05.07</span>
+                        <span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded uppercase tracking-widest">ニュース</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">小紅書アカウント運用の基本【2026年版】開設から投稿・分析まで日本企業向け完全ガイド</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">小紅書（RED）のアカウント開設・プロフィール設定・投稿ルール・ハッシュタグ戦略・分析まで、日本企業向けに2026年最新の運用基本を徹底解説します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/xiaohongshu-beauty-salon-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="news" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-beauty-salon-xiaohongshu.jpg" alt="【2026年最新版】美容サロン×小紅書集客完全ガイド：中国人観光客を呼び込む戦略" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.05.06</span>
+                        <span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded uppercase tracking-widest">ニュース</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【2026年最新版】美容サロン×小紅書集客完全ガイド：中国人観光客を呼び込む戦略</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">美容サロン・ヘアサロン・エステが小紅書（RED）で中国人観光客を集客する方法を徹底解説。2026年最新データ・ビフォーアフター投稿戦略・KOC活用・予約導線設計まで、美容業界向けインバウンド集客ガイド。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/xiaohongshu-hotel-marketing-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="news" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-hotel-xiaohongshu.jpg" alt="小紅書でホテル集客【2026年版】開設から投稿・分析まで日本企業向け完全ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.05.05</span>
+                        <span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded uppercase tracking-widest">ニュース</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">小紅書でホテル集客【2026年版】開設から投稿・分析まで日本企業向け完全ガイド</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">小紅書（RED）のアカウント開設・プロフィール設定・投稿ルール・ハッシュタグ戦略・分析まで、日本企業向けに2026年最新の運用基本を徹底解説します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/inbound-march-2026-report"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/inbound-march-hero.jpg" alt="【2026年3月最新】訪日客361万人で過去最高！桜需要で欧米・東南アジアが急伸長" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.05.04</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【2026年3月最新】訪日客361万人で過去最高！桜需要で欧米・東南アジアが急伸長</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">JNTOの最新統計をもとに、2026年3月の訪日外国人動向を徹底解説。累計1000万人突破の背景や、欧米・東南アジア市場の伸び、中国市場の現状など、インバウンド集客に必要なデータをお届けします。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/taiwan-inbound-strategy"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/taiwan_inbound_hero.jpg" alt="【台湾市場攻略】訪日台湾人観光客の最新動向と集客成功の秘訣" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.05.03</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【台湾市場攻略】訪日台湾人観光客の最新動向と集客成功の秘訣</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">訪日インバウンド市場でトップクラスの重要度を誇る台湾。リピーターの多さや消費傾向などの最新動向から、SNS・口コミを活用した効果的な集客戦略まで詳しく解説します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/inbound-calendar-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/inbound_calendar_2026_hero.jpg" alt="【2026年最新：インバウンド祝日カレンダー】外国人観光客が多い時期・月別の動向を徹底解説" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.05.01</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【2026年最新：インバウンド祝日カレンダー】外国人観光客が多い時期・月別の動向を徹底解説</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">インバウンド集客を成功させるには「いつ、どの国の人が来るか」を知ることが重要です。2026年の主要国の祝日カレンダーと月別の旅行動向をまとめました。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/xiaohongshu-algorithm-ec-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="news" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/hero-data.jpg" alt="【2026年最新】小紅書(RED)アルゴリズム変更とEC強化を徹底解説！" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.29</span>
+                        <span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded uppercase tracking-widest">ニュース</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【2026年最新】小紅書(RED)アルゴリズム変更とEC強化を徹底解説！</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">2026年の小紅書（RED）はどう変わった？「検索エンジン化」するアルゴリズムや強化された越境EC機能など、中国マーケティングの最新動向をわかりやすく徹底解説します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/inbound-data-ai-dx-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="news" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/inbound-data-ai-hero.jpeg" alt="【2026年最新】AIとデータで勝つインバウンド集客：量から質への転換・DX戦略の正解" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.28</span>
+                        <span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded uppercase tracking-widest">ニュース</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【2026年最新】AIとデータで勝つインバウンド集客：量から質への転換・DX戦略の正解</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">2026年、日本のインバウンド市場は「集客数」から「消費単価」への転換点を迎えました。テクノロジーを活用した高単価マーケティングやDX戦略の正解を解説します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/dazhong-dianping-guide"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/dazhong-dianping-inbound.jpg" alt="大衆点評（ダージョンディエンピン）とは？簡単な使い方とマーケティング活用法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.25</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">大衆点評（ダージョンディエンピン）とは？簡単な使い方とマーケティング活用法</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">中国からインバウンド客を呼び込みたいときに役立つ「大衆点評」について解説します。簡単な使い方からマーケティングでの活用方法をご紹介。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/inbound-spending-behavior-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-inbound-spending-data.jpeg" alt="訪日外国人の消費行動データ分析【2026年最新】国籍別・カテゴリ別の傾向と集客への活かし方" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.24</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">訪日外国人の消費行動データ分析【2026年最新】国籍別・カテゴリ別の傾向と集客への活かし方</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">訪日外国人の消費行動を国籍別・カテゴリ別に徹底分析。中国・韓国・台湾・欧米別の購買傾向・消費額データから、インバウンド集客戦略に活かすポイントまで2026年最新情報。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/douyin-restaurant-inbound"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-douyin-restaurant.jpg" alt="抖音・TikTok運営で飲食店のインバウンド集客を増やす方法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.22</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">抖音・TikTok運営で飲食店のインバウンド集客を増やす方法</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">飲食店にとって中国版TikTok「抖音・TikTok（Douyin）」は強力なインバウンド集客ツールです。抖音・TikTokの特徴と、飲食店が実践すべき運営ノウハウを解説します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/inbound-meaning-guide"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/inbound-tourist-image.jpg" alt="インバウンドとは？意味・訪日外国人動向・中国向けマーケティング戦略まで完全解説【2026年】" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.20</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">インバウンドとは？意味・訪日外国人動向・中国向けマーケティング戦略まで完全解説【2026年】</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">ニュースでよく聞く「インバウンド」の本来の意味や使い方、さらに日本企業の成長に欠かせない中国向けインバウンド対策の基本を詳しく解説します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/miniprogram-cost-period"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-miniprogram-cost.jpg" alt="WeChat小程序（ミニプログラム）開発の費用と期間の目安" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.18</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">WeChat小程序（ミニプログラム）開発の費用と期間の目安</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">日本企業がWeChat小程序（ミニプログラム）を開発する際の費用相場や期間、必要な準備について解説します。インバウンド集客や越境ECに必須のツールです。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/xiaohongshu-guide-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="news" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-xiaohongshu-guide.jpg" alt="小紅書（RED）とは？完全ガイド【2026年】特徴・使い方・日本企業の活用法まで徹底解説" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.12</span>
+                        <span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded uppercase tracking-widest">ニュース</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">小紅書（RED）とは？完全ガイド【2026年】特徴・使い方・日本企業の活用法まで徹底解説</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">小紅書（RED）とは何か、基本的な仕組みから月間3億人超のユーザー層、アルゴリズム、インバウンド集客・中国向けマーケティングへの活用法まで完全解説。日本企業が今すぐ始めるべき理由とは。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/agency-checklist"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/office.jpg" alt="小紅書運用代行を選ぶ際の7つのチェックポイント" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.10</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">小紅書運用代行を選ぶ際の7つのチェックポイント</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">小紅書の運用を外部に委託する際、失敗しないために確認すべき7つのポイントを解説。実績・体制・レポーティングなど、代理店選びで見落としがちな観点を整理しました。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/cross-border-ec-success-cases"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-douyin-restaurant.jpg" alt="越境ECで成功するためのポイントとは？日本の成功事例とおすすめの決済・物流手法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.08</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">越境ECで成功するためのポイントとは？日本の成功事例とおすすめの決済・物流手法</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">越境ECを成功に導くための具体的なポイントや、日本企業の実際の成功事例を詳しく解説。失敗しないための決済システム・物流手法の選び方からSNS集客まで、実践的なノウハウをお届けします。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/cashless-payment-inbound-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-cashless-payment-hero.jpeg" alt="Alipay・WeChat Pay導入ガイド【2026年最新】インバウンド向けキャッシュレス決済の始め方と費用" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.07</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">Alipay・WeChat Pay導入ガイド【2026年最新】インバウンド向けキャッシュレス決済の始め方と費用</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">訪日外国人向けにAlipay（支付宝）・WeChat Pay（微信支付）を導入する手順・費用・審査を徹底解説。中国人観光客の9割が使うQR決済を導入しないと起きる機会損失も。2026年最新情報。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/cross-border-ec-market-size-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-douyin-restaurant.jpg" alt="【2026年最新版】越境EC市場規模のまとめ！日本・中国・アメリカの動向" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.05</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【2026年最新版】越境EC市場規模のまとめ！日本・中国・アメリカの動向</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">世界中で拡大し続ける越境EC市場。2026年最新のデータに基づき、日本・中国・アメリカの3大市場の規模や特徴、トレンドを徹底比較・解説します。企業のグローバル戦略に必見の市場レポートです。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/kol-koc-meaning-fee-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-douyin-restaurant.jpg" alt="KOLとは？KOCとの違い・起用メリットから中国プロモーションの費用相場まで徹底解説【2026年最新】" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.03</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">KOLとは？KOCとの違い・起用メリットから中国プロモーションの費用相場まで徹底解説【2026年最新】</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">中国マーケティングで欠かせない「KOL」の意味やKOCとの違い、起用するメリット・デメリット、さらに2026年最新の費用相場からキャスティングの注意点までを専門家がわかりやすく解説します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/cross-border-ec-guide"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-douyin-restaurant.jpg" alt="越境ECとは？【2026年版】メリット・デメリット・始め方・必要な準備を徹底解説" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.02</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">越境ECとは？【2026年版】メリット・デメリット・始め方・必要な準備を徹底解説</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">越境EC（越境Eコマース）とは何か？基本的な意味から、日本企業が取り組むべきメリット・デメリット、そして始めるための具体的な準備や手順まで、2026年最新の情報を網羅して徹底解説します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/content-operation-flow"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-content-operation.jpg" alt="小紅書コンテンツ運用フローの作り方【2026年版】少人数チームでも続けられる仕組みづくり" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.01</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">小紅書コンテンツ運用フローの作り方【2026年版】少人数チームでも続けられる仕組みづくり</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">企画、制作、レビュー、公開までを属人化させないためのフローとテンプレート活用法を紹介します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/kol-koc-guide"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/hero-cityscape.jpg" alt="KOLとKOCの違いとは？【2026年最新】小紅書マーケティング完全ガイド・費用相場まで" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.04.01</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">KOLとKOCの違いとは？【2026年最新】小紅書マーケティング完全ガイド・費用相場まで</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">KOLとKOCの違いとは何か？定義・選定基準・費用相場・効果測定まで徹底解説。小紅書（RED）を活用したインフルエンサーマーケティングを日本企業が成功させるための実践ガイド。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/inbound-xiaohongshu-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/case-tourism.jpg" alt="小紅書で飲食店集客する方法【2026年最新】中国人観光客をリピーターにする実践ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.03.20</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">小紅書で飲食店集客する方法【2026年最新】中国人観光客をリピーターにする実践ガイド</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">小紅書（RED）を使って飲食店のインバウンド集客を成功させる具体的な方法を解説。訪日中国人の約80%が飲食情報を小紅書で収集。アカウント設計・投稿戦略・KOC活用・大衆点評との連携まで、プロの実践ノウハウを公開します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/blog/inbound-funnel-design"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-inbound-funnel.jpg" alt="訪日中国人インバウンド集客：小紅書・大衆点評を組み合わせた導線設計の基本【2026年版】" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.03.14</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">サービス</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">訪日中国人インバウンド集客：小紅書・大衆点評を組み合わせた導線設計の基本【2026年版】</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">認知から来店予約までの導線設計を、SNS・LP・店舗オペレーションの視点から整理します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
             <a href="/blog/red-marketing-trends-2026"
                 class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 data-category="service" data-aos="fade-up">
@@ -182,20 +754,72 @@
                     </div>
                 </div>
             </a>
+            <a href="/blog/red-account-basics"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="news" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/red-marketing.jpg" alt="小紅書アカウント運用の基本【2026年版】開設から投稿・分析まで日本企業向け完全ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.03.04</span>
+                        <span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded uppercase tracking-widest">ニュース</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">小紅書アカウント運用の基本【2026年版】開設から投稿・分析まで日本企業向け完全ガイド</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">小紅書（RED）のアカウント開設・プロフィール設定・投稿ルール・ハッシュタグ戦略・分析まで、日本企業向けに2026年最新の運用基本を徹底解説します。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        続きを読む <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
         </div>
     </main>
 
-    <footer class="py-16 md:py-20 text-center bg-white border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-tech-blue font-bold text-2xl md:text-3xl mb-8 tracking-tighter uppercase">PROTECH</div>
-            <div
-                class="flex justify-center flex-wrap gap-6 md:gap-8 mb-10 text-[10px] md:text-xs font-bold tracking-widest text-gray-400">
-                <a href="/services" class="hover:text-blue-600 transition">サービス</a>
-                <a href="/company" class="hover:text-blue-600 transition">会社概要</a>
-                <a href="/blog" class="hover:text-blue-600 transition">お知らせ</a>
-                <a href="/blog" class="hover:text-blue-600 transition">ブログ</a>
+    <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
+                </div>
             </div>
-            <p class="text-[10px] text-gray-400 tracking-widest">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
