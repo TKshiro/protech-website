@@ -826,7 +826,7 @@ function urlFor(lang, slug = '') {
   const dir = langConfig[lang].dir;
   const parts = ['travel'];
   if (dir) parts.push(dir);
-  parts.push('guides');
+  parts.push('itinerary');
   if (slug) parts.push(slug);
   return `${site}/${parts.join('/')}`;
 }
@@ -841,7 +841,7 @@ function rel(lang, isArticle, target) {
   if (target === 'private') return lang === 'zh-Hans' ? (isArticle ? '../../private-car/' : '../private-car/') : (isArticle ? '../../../private-car/' : '../../private-car/');
   if (target === 'hotel') return lang === 'zh-Hans' ? (isArticle ? '../../hotel-ryokan/' : '../hotel-ryokan/') : (isArticle ? '../../../hotel-ryokan/' : '../../hotel-ryokan/');
   if (target === 'attractions') return lang === 'zh-Hans' ? (isArticle ? '../../attractions/' : '../attractions/') : (isArticle ? '../../../attractions/' : '../../attractions/');
-  if (target === 'guides') return isArticle ? '../' : './';
+  if (target === 'itinerary') return isArticle ? '../' : './';
   if (target === 'inquiry') return isArticle ? '../../' : '../';
   return '#';
 }
@@ -867,7 +867,7 @@ function languageSwitcherHtml(currentLang, slug = '') {
 
 function navHtml(lang, isArticle, slug = '') {
   const c = langConfig[lang];
-  return `<nav class="travel-nav"><div class="travel-shell travel-nav__inner"><a class="travel-brand" href="${rel(lang, isArticle, 'home')}"><span class="travel-brand__mark">旅</span><span class="travel-brand__text"><span class="travel-brand__name">PROTECH Travel</span><span class="travel-brand__sub">${c.brandSub}</span></span></a><div class="travel-nav__links"><a href="${rel(lang, isArticle, 'private')}">${c.nav[0]}</a><a href="${rel(lang, isArticle, 'hotel')}">${c.nav[1]}</a><a href="${rel(lang, isArticle, 'attractions')}">${c.nav[2]}</a><a href="${rel(lang, isArticle, 'guides')}">${c.nav[3]}</a><a href="${rel(lang, isArticle, 'inquiry')}?source=guide#inquiry">${c.nav[4]}</a></div>${languageSwitcherHtml(lang, slug)}</div></nav>`;
+  return `<nav class="travel-nav"><div class="travel-shell travel-nav__inner"><a class="travel-brand" href="${rel(lang, isArticle, 'home')}"><span class="travel-brand__mark">旅</span><span class="travel-brand__text"><span class="travel-brand__name">PROTECH Travel</span><span class="travel-brand__sub">${c.brandSub}</span></span></a><div class="travel-nav__links"><a href="${rel(lang, isArticle, 'private')}">${c.nav[0]}</a><a href="${rel(lang, isArticle, 'hotel')}">${c.nav[1]}</a><a href="${rel(lang, isArticle, 'attractions')}">${c.nav[2]}</a><a href="${rel(lang, isArticle, 'itinerary')}">${c.nav[3]}</a><a href="${rel(lang, isArticle, 'inquiry')}?source=guide#inquiry">${c.nav[4]}</a></div>${languageSwitcherHtml(lang, slug)}</div></nav>`;
 }
 
 function footerHtml(lang, isArticle) {
@@ -971,7 +971,7 @@ function hubHtml(lang) {
     ${navHtml(lang, false)}
     <header class="travel-page-hero" style="--page-image:url('${assetPrefix}assets/images/travel/travel-team-coordination.jpg')">
         <div class="travel-shell travel-page-hero__content">
-            <div class="travel-breadcrumb"><a href="../">TRAVEL</a> / GUIDES</div>
+            <div class="travel-breadcrumb"><a href="../">TRAVEL</a> / ITINERARY</div>
             <span class="travel-kicker">${c.hub.kicker}</span>
             <h1>${c.hub.h1}</h1>
             <p>${c.hub.lead}</p>
@@ -996,7 +996,7 @@ function outputPath(lang, slug = '') {
   const dir = langConfig[lang].dir;
   const parts = [outRoot];
   if (dir) parts.push(dir);
-  parts.push('guides');
+  parts.push('itinerary');
   if (slug) parts.push(slug);
   parts.push('index.html');
   return path.join(...parts);
@@ -1021,13 +1021,13 @@ function updateLandingLinks(file, replacements) {
 }
 
 updateLandingLinks('frontend/travel/zh-tw/index.html', [
-  ['href="../guides/', 'href="guides/']
+  ['href="../itinerary/', 'href="itinerary/']
 ]);
 updateLandingLinks('frontend/travel/en/index.html', [
-  ['href="../guides/', 'href="guides/']
+  ['href="../itinerary/', 'href="itinerary/']
 ]);
 updateLandingLinks('frontend/travel/ja/index.html', [
-  ['href="../guides/', 'href="guides/']
+  ['href="../itinerary/', 'href="itinerary/']
 ]);
 
 const sitemapPath = path.join(root, 'frontend', 'sitemap.xml');

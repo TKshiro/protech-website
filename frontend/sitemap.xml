@@ -732,291 +732,291 @@
 
   <!-- TRAVEL_GUIDES_I18N_START -->
   <url>
-    <loc>https://pro-tech.jp/travel/guides</loc>
+    <loc>https://pro-tech.jp/travel/itinerary</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/zh-tw/guides</loc>
+    <loc>https://pro-tech.jp/travel/zh-tw/itinerary</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/en/guides</loc>
+    <loc>https://pro-tech.jp/travel/en/itinerary</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/ja/guides</loc>
+    <loc>https://pro-tech.jp/travel/ja/itinerary</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/guides/tokyo-fuji-private-car</loc>
+    <loc>https://pro-tech.jp/travel/itinerary/tokyo-fuji-private-car</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/tokyo-fuji-private-car" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/zh-tw/guides/tokyo-fuji-private-car</loc>
+    <loc>https://pro-tech.jp/travel/zh-tw/itinerary/tokyo-fuji-private-car</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/tokyo-fuji-private-car" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/en/guides/tokyo-fuji-private-car</loc>
+    <loc>https://pro-tech.jp/travel/en/itinerary/tokyo-fuji-private-car</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/tokyo-fuji-private-car" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/ja/guides/tokyo-fuji-private-car</loc>
+    <loc>https://pro-tech.jp/travel/ja/itinerary/tokyo-fuji-private-car</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/tokyo-fuji-private-car" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/tokyo-fuji-private-car" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/tokyo-fuji-private-car" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/guides/japan-family-custom-trip</loc>
+    <loc>https://pro-tech.jp/travel/itinerary/japan-family-custom-trip</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-family-custom-trip" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/zh-tw/guides/japan-family-custom-trip</loc>
+    <loc>https://pro-tech.jp/travel/zh-tw/itinerary/japan-family-custom-trip</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-family-custom-trip" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/en/guides/japan-family-custom-trip</loc>
+    <loc>https://pro-tech.jp/travel/en/itinerary/japan-family-custom-trip</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-family-custom-trip" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/ja/guides/japan-family-custom-trip</loc>
+    <loc>https://pro-tech.jp/travel/ja/itinerary/japan-family-custom-trip</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-family-custom-trip" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-family-custom-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-family-custom-trip" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/guides/onsen-ryokan-booking</loc>
+    <loc>https://pro-tech.jp/travel/itinerary/onsen-ryokan-booking</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/onsen-ryokan-booking" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/zh-tw/guides/onsen-ryokan-booking</loc>
+    <loc>https://pro-tech.jp/travel/zh-tw/itinerary/onsen-ryokan-booking</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/onsen-ryokan-booking" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/en/guides/onsen-ryokan-booking</loc>
+    <loc>https://pro-tech.jp/travel/en/itinerary/onsen-ryokan-booking</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/onsen-ryokan-booking" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/ja/guides/onsen-ryokan-booking</loc>
+    <loc>https://pro-tech.jp/travel/ja/itinerary/onsen-ryokan-booking</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/onsen-ryokan-booking" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/onsen-ryokan-booking" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/onsen-ryokan-booking" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary</loc>
+    <loc>https://pro-tech.jp/travel/itinerary/japan-senior-friendly-itinerary</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-senior-friendly-itinerary" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/zh-tw/guides/japan-senior-friendly-itinerary</loc>
+    <loc>https://pro-tech.jp/travel/zh-tw/itinerary/japan-senior-friendly-itinerary</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-senior-friendly-itinerary" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/en/guides/japan-senior-friendly-itinerary</loc>
+    <loc>https://pro-tech.jp/travel/en/itinerary/japan-senior-friendly-itinerary</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-senior-friendly-itinerary" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/ja/guides/japan-senior-friendly-itinerary</loc>
+    <loc>https://pro-tech.jp/travel/ja/itinerary/japan-senior-friendly-itinerary</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-senior-friendly-itinerary" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-senior-friendly-itinerary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-senior-friendly-itinerary" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation</loc>
+    <loc>https://pro-tech.jp/travel/itinerary/japan-attraction-restaurant-reservation</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-attraction-restaurant-reservation" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/zh-tw/guides/japan-attraction-restaurant-reservation</loc>
+    <loc>https://pro-tech.jp/travel/zh-tw/itinerary/japan-attraction-restaurant-reservation</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-attraction-restaurant-reservation" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/en/guides/japan-attraction-restaurant-reservation</loc>
+    <loc>https://pro-tech.jp/travel/en/itinerary/japan-attraction-restaurant-reservation</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-attraction-restaurant-reservation" />
   </url>
 
   <url>
-    <loc>https://pro-tech.jp/travel/ja/guides/japan-attraction-restaurant-reservation</loc>
+    <loc>https://pro-tech.jp/travel/ja/itinerary/japan-attraction-restaurant-reservation</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/guides/japan-attraction-restaurant-reservation" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/guides/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-attraction-restaurant-reservation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-attraction-restaurant-reservation" />
   </url>
   <!-- TRAVEL_GUIDES_I18N_END -->
 </urlset>
