@@ -11,24 +11,109 @@
     <link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary/japan-attraction-restaurant-reservation">
     <link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary/japan-attraction-restaurant-reservation">
     <link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-attraction-restaurant-reservation">
-    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     <meta property="og:title" content="日本景點和餐廳預約怎麼安排？熱門門票、排隊和時間窗口">
     <meta property="og:description" content="日本景點和餐廳預約指南：熱門門票、預約開放時間、排隊規劃、餐廳規則、取消政策、語言溝通和行程時間安排。">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://pro-tech.jp/travel/zh-tw/itinerary/japan-attraction-restaurant-reservation">
     <meta property="og:image" content="https://pro-tech.jp/assets/images/travel/travel-restaurant-reservation.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../../../assets/css/travel.css">
+    <link href="/assets/css/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/travel.css">
 </head>
 <body class="travel-page">
-    <nav class="travel-nav"><div class="travel-shell travel-nav__inner"><a class="travel-brand" href="../../"><span class="travel-brand__mark">旅</span><span class="travel-brand__text"><span class="travel-brand__name">PROTECH Travel</span><span class="travel-brand__sub">Japan Concierge</span></span></a><div class="travel-nav__links"><a href="../../../private-car/">包車</a><a href="../../../hotel-ryokan/">酒店旅館</a><a href="../../../attractions/">預約服務</a><a href="../">攻略文章</a><a href="../../?source=guide#inquiry">諮詢</a></div><div class="travel-language" aria-label="Language"><a href="https://pro-tech.jp/travel/itinerary/japan-attraction-restaurant-reservation">简</a><span>/</span><a href="https://pro-tech.jp/travel/zh-tw/itinerary/japan-attraction-restaurant-reservation" aria-current="page">繁</a><span>/</span><a href="https://pro-tech.jp/travel/en/itinerary/japan-attraction-restaurant-reservation">EN</a><span>/</span><a href="https://pro-tech.jp/travel/ja/itinerary/japan-attraction-restaurant-reservation">JP</a></div></div></nav>
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/cn/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/cn/" class="nav-link ">首頁</a>
+
+                <div class="relative group">
+                    <a href="/cn/services" class="nav-link  flex items-center gap-1">服務介紹
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/cn/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">全部服務</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大眾點評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">中文視覺與內容製作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL / KOC 網紅行銷</a>
+                            <a href="/travel/" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-emerald-700 font-bold transition-colors text-xs font-bold">日本客製旅行</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">價格方案</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/cn/company" class="nav-link ">公司概要</a>
+                <a href="/cn/cases" class="nav-link ">客戶案例</a>
+                <a href="/cn/blog" class="nav-link ">部落格文章</a>
+                <a href="/cn/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">聯絡我們</a>
+                
+                <!-- Language Switcher -->
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
+                        🌐 繁
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="/travel/itinerary/japan-attraction-restaurant-reservation" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                        <a href="/travel/zh-tw/itinerary/japan-attraction-restaurant-reservation" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">繁體中文</a>
+                        <a href="/travel/en/itinerary/japan-attraction-restaurant-reservation" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="/travel/ja/itinerary/japan-attraction-restaurant-reservation" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                    </div>
+                </div>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/cn/" class="text-lg font-bold text-slate-700">首頁</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/cn/services" class="text-lg font-bold text-slate-700">服務介紹</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大眾點評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">中文視覺與內容製作</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL / KOC 網紅行銷</a>
+                <a href="/travel/" class="text-sm font-bold text-slate-600 hover:text-emerald-700">日本客製旅行</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">價格方案</a>
+            </div>
+            <a href="/cn/company" class="text-lg font-bold text-slate-700">公司概要</a>
+            <a href="/cn/cases" class="text-lg font-bold text-slate-700">客戶案例</a>
+            <a href="/cn/blog" class="text-lg font-bold text-slate-700">部落格文章</a>
+            <a href="/cn/contact" class="text-lg font-bold text-slate-700">聯絡我們</a>
+            
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="/travel/ja/itinerary/japan-attraction-restaurant-reservation" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                <a href="/travel/en/itinerary/japan-attraction-restaurant-reservation" class="text-slate-500 hover:text-coral font-bold">EN</a>
+                <a href="/travel/itinerary/japan-attraction-restaurant-reservation" class="text-slate-500 hover:text-coral font-bold">简</a>
+                <a href="/travel/zh-tw/itinerary/japan-attraction-restaurant-reservation" class="text-slate-500 hover:text-coral font-bold">繁</a>
+            </div>
+        </div>
+    </div>
     <article class="travel-article">
         <header class="travel-shell travel-article__head">
             <div class="travel-article__meta">景點預約 / 餐廳預約 / 2026.06.20</div>
             <h1>日本景點和餐廳預約怎麼安排？</h1>
             <p class="travel-section__lead">很多日本旅行的麻煩不是路線不會走，而是熱門景點、餐廳、體驗項目的預約窗口、入場時間和取消規則沒有提前整理，最後導致當天排隊、錯過或臨時改行程。</p>
         </header>
-        <img class="travel-article__image" src="../../../../assets/images/travel/travel-restaurant-reservation.jpg" alt="日本景點和餐廳預約安排">
+        <img class="travel-article__image" src="/assets/images/travel/travel-restaurant-reservation.jpg" alt="日本景點和餐廳預約安排">
         <main class="travel-content">
             <nav class="travel-article-toc" aria-label="Article contents">
                 <strong>本文會幫你判斷</strong>
@@ -68,9 +153,56 @@
             <h3>只需要幫忙預約一間餐廳可以嗎？</h3>
             <p>可以討論，但這類服務更適合和完整路線、包車或住宿安排一起做，效率和價值更高。</p>
             <div class="travel-callout"><strong>諮詢時可以直接提供：</strong>出行日期、人數、酒店位置、預算、想去的點、是否有長輩或小孩同行。</div>
-            <p><a class="travel-btn" href="../../?source=japan-attraction-restaurant-reservation#inquiry">諮詢日本景點餐廳預約</a></p>
+            <p><a class="travel-btn" href="/travel/zh-tw?source=japan-attraction-restaurant-reservation#inquiry">諮詢日本景點餐廳預約</a></p>
         </main>
     </article>
-    <footer class="travel-footer"><div class="travel-shell travel-footer__grid"><div><strong>PROTECH Travel Concierge</strong><p>日本多語言客製旅行管家。</p></div><div><strong>服務</strong><a href="../../../private-car/">日本包車</a><a href="../../../hotel-ryokan/">酒店旅館</a><a href="../../../attractions/">景點預約</a></div><div><strong>場景</strong><a href="../../../family-trip/">親子旅行</a><a href="../../../senior-trip/">長輩同行</a><a href="../../../onsen-ryokan/">溫泉旅館</a></div><div><strong>公司</strong><a href="/">PROTECH 主站</a><a href="/contact">聯絡諮詢</a></div></div></footer>
+    <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">用技術與行銷，<br>跨越商業邊界。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">服務介紹</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大眾點評集客代運營</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小紅書行銷代運營</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音行銷代運營</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChat微信小程序開發</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中文視覺與內容製作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOC網紅行銷推廣</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">價格方案</a></li>
+                        <li><a href="/cn/services" class="hover:text-coral transition">全部服務介紹</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">公司資訊</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/cn/company" class="hover:text-coral transition">公司概要</a></li>
+                        <li><a href="/cn/cases" class="hover:text-coral transition">客戶案例</a></li>
+                        <li><a href="/cn/blog" class="hover:text-coral transition">部落格文章</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">隱私政策</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商業交易法標記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">使用條款</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">實用資源</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">資料下載</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">常見問題(FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">入境遊 AI 報告</a></li>
+                        <li><a href="/cn/contact" class="hover:text-coral transition">聯絡我們</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script defer src="/assets/js/main.js"></script>
 </body>
 </html>

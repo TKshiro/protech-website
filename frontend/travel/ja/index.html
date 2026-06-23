@@ -51,6 +51,7 @@
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
                             <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <a href="/travel/" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-emerald-700 font-bold transition-colors text-xs font-bold">日本定制旅行</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
                             <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
                         </div>
@@ -61,6 +62,19 @@
                 <a href="/cases" class="nav-link ">導入事例</a>
                 <a href="/blog" class="nav-link ">ブログ</a>
                 <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+                
+                <!-- Language Switcher -->
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
+                        🌐 JP
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="/travel" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                        <a href="/travel/zh-tw" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">繁體中文</a>
+                        <a href="/travel/en" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="/travel/ja" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                    </div>
+                </div>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -81,15 +95,28 @@
                 <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
-                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ制作</a>
                 <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/travel/" class="text-sm font-bold text-slate-600 hover:text-emerald-700">日本定制旅行</a>
                 <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
             </div>
             <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
             <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
             <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+            
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="/travel/ja" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                <a href="/travel/en" class="text-slate-500 hover:text-coral font-bold">EN</a>
+                <a href="/travel" class="text-slate-500 hover:text-coral font-bold">简</a>
+                <a href="/travel/zh-tw" class="text-slate-500 hover:text-coral font-bold">繁</a>
+            </div>
         </div>
+    </div>
+        </div>
+    </div>
+        </div>
+    </div>
     </div>
 
     <header class="travel-hero">
@@ -99,7 +126,7 @@
                 <span class="travel-kicker">Japan Travel Concierge</span>
                 <h1>訪日旅行を、実行できる旅程へ。</h1>
                 <p>貸切車、ホテル・旅館、観光施設予約、レストラン手配、待ち時間対策、多言語コミュニケーションまで。訪日旅行者の不安を、具体的な行程と手配内容に落とし込みます。</p>
-                <div class="travel-hero__actions"><a class="travel-btn" href="#inquiry">旅行相談を送る</a><a class="travel-btn-secondary" href="itinerary/">記事を見る</a></div>
+                <div class="travel-hero__actions"><a class="travel-btn" href="#inquiry">旅行相談を送る</a><a class="travel-btn-secondary" href="/travel/ja/itinerary">記事を見る</a></div>
             </div>
             <div class="travel-hero__facts" aria-label="Service facts">
                 <div class="travel-fact"><b>4+</b><span>中国語、英語、日本語、韓国語などに対応</span></div>
@@ -115,9 +142,9 @@
             <div class="travel-shell">
                 <div class="travel-section__head"><div><span class="travel-eyebrow">What We Arrange</span><h2>固定ツアーではなく、旅行中の面倒な手配を整理します。</h2></div><p class="travel-section__lead">一般的な観光ガイドではなく、移動、宿泊、予約、言語、当日の実行までを具体的なタスクに分解します。</p></div>
                 <div class="travel-grid">
-                    <article class="travel-card travel-card--media"><img src="../../assets/images/travel/travel-private-car.jpg" alt="富士山周辺の貸切車ルート"><div class="travel-card__body"><h3>貸切車・郊外移動</h3><p>富士山、箱根、伊豆、軽井沢、京都周辺など、公共交通だけでは動きにくいルートを整理します。</p><a href="../private-car/">貸切車ページへ</a></div></article>
-                    <article class="travel-card travel-card--media"><img src="../../assets/images/travel/travel-ryokan-onsen.jpg" alt="日本旅館とホテル手配"><div class="travel-card__body"><h3>ホテル・旅館</h3><p>予算、部屋タイプ、アクセス、食事、家族・シニア対応を踏まえて宿泊先を選定します。</p><a href="../hotel-ryokan/">宿泊支援ページへ</a></div></article>
-                    <article class="travel-card travel-card--media"><img src="../../assets/images/travel/travel-restaurant-reservation.jpg" alt="日本の観光施設予約"><div class="travel-card__body"><h3>観光施設・飲食店予約</h3><p>予約開始日、入場ルール、待ち時間、言語説明、当日の動線を事前に確認します。</p><a href="../attractions/">予約支援ページへ</a></div></article>
+                    <article class="travel-card travel-card--media"><img src="../../assets/images/travel/travel-private-car.jpg" alt="富士山周辺の貸切車ルート"><div class="travel-card__body"><h3>貸切車・郊外移動</h3><p>富士山、箱根、伊豆、軽井沢、京都周辺など、公共交通だけでは動きにくいルートを整理します。</p><a href="/travel/private-car">貸切車ページへ</a></div></article>
+                    <article class="travel-card travel-card--media"><img src="../../assets/images/travel/travel-ryokan-onsen.jpg" alt="日本旅館とホテル手配"><div class="travel-card__body"><h3>ホテル・旅館</h3><p>予算、部屋タイプ、アクセス、食事、家族・シニア対応を踏まえて宿泊先を選定します。</p><a href="/travel/hotel-ryokan">宿泊支援ページへ</a></div></article>
+                    <article class="travel-card travel-card--media"><img src="../../assets/images/travel/travel-restaurant-reservation.jpg" alt="日本の観光施設予約"><div class="travel-card__body"><h3>観光施設・飲食店予約</h3><p>予約開始日、入場ルール、待ち時間、言語説明、当日の動線を事前に確認します。</p><a href="/travel/attractions">予約支援ページへ</a></div></article>
                 </div>
             </div>
         </section>
@@ -126,9 +153,9 @@
             <div class="travel-shell">
                 <div class="travel-section__head"><div><span class="travel-eyebrow">Trip Scenarios</span><h2>旅行者の状況ごとに、必要な設計は変わります。</h2></div><p class="travel-section__lead">家族旅行、シニア同行、高付加価値旅行、企業接待では、不安点も必要な手配も異なります。</p></div>
                 <div class="travel-grid">
-                    <article class="travel-card"><h3>家族旅行</h3><p>子ども向けホテル、テーマパーク、少ない乗換、雨天代替案、無理のない日程。</p><a href="../family-trip/">家族旅行ページへ</a></article>
-                    <article class="travel-card"><h3>シニア同行</h3><p>歩行距離、エレベーター、貸切車、旅館アクセス、食事の好みに配慮。</p><a href="../senior-trip/">シニア向けページへ</a></article>
-                    <article class="travel-card"><h3>温泉旅館・地方旅行</h3><p>箱根、河口湖、伊豆、草津、由布院など、高単価旅行と相性の良い地域を設計。</p><a href="../onsen-ryokan/">温泉旅館ページへ</a></article>
+                    <article class="travel-card"><h3>家族旅行</h3><p>子ども向けホテル、テーマパーク、少ない乗換、雨天代替案、無理のない日程。</p><a href="/travel/family-trip">家族旅行ページへ</a></article>
+                    <article class="travel-card"><h3>シニア同行</h3><p>歩行距離、エレベーター、貸切車、旅館アクセス、食事の好みに配慮。</p><a href="/travel/senior-trip">シニア向けページへ</a></article>
+                    <article class="travel-card"><h3>温泉旅館・地方旅行</h3><p>箱根、河口湖、伊豆、草津、由布院など、高単価旅行と相性の良い地域を設計。</p><a href="/travel/onsen-ryokan">温泉旅館ページへ</a></article>
                 </div>
             </div>
         </section>
@@ -147,11 +174,11 @@
                     <p class="travel-section__lead">貸切車、家族旅行、温泉旅館、シニア同行、観光施設と飲食店予約など、訪日旅行で迷いやすい判断を実用的にまとめています。</p>
                 </div>
                 <div class="travel-grid">
-                    <article class="travel-card"><h3>東京から富士山への貸切車</h3><p>ルート順、停車時間、費用に影響する要素、貸切車が向いている状況。</p><a href="itinerary/tokyo-fuji-private-car/">記事を見る</a></article>
-                    <article class="travel-card"><h3>日本家族旅行の設計</h3><p>子ども向けホテル、テーマパーク、移動負担、雨天代替案。</p><a href="itinerary/japan-family-custom-trip/">記事を見る</a></article>
-                    <article class="travel-card"><h3>温泉旅館予約の注意点</h3><p>部屋タイプ、食事、貸切風呂、交通、取消条件の確認。</p><a href="itinerary/onsen-ryokan-booking/">記事を見る</a></article>
-                    <article class="travel-card"><h3>シニア同行の日本旅行</h3><p>歩行量を抑える行程、ホテル位置、貸切車、休憩場所、相談前チェック。</p><a href="itinerary/japan-senior-friendly-itinerary/">記事を見る</a></article>
-                    <article class="travel-card"><h3>観光施設と飲食店予約</h3><p>人気チケット、予約開始日、待ち時間、飲食店ルール、多言語連絡。</p><a href="itinerary/japan-attraction-restaurant-reservation/">記事を見る</a></article>
+                    <article class="travel-card"><h3>東京から富士山への貸切車</h3><p>ルート順、停車時間、費用に影響する要素、貸切車が向いている状況。</p><a href="/travel/ja/itinerary/tokyo-fuji-private-car/">記事を見る</a></article>
+                    <article class="travel-card"><h3>日本家族旅行の設計</h3><p>子ども向けホテル、テーマパーク、移動負担、雨天代替案。</p><a href="/travel/ja/itinerary/japan-family-custom-trip/">記事を見る</a></article>
+                    <article class="travel-card"><h3>温泉旅館予約の注意点</h3><p>部屋タイプ、食事、貸切風呂、交通、取消条件の確認。</p><a href="/travel/ja/itinerary/onsen-ryokan-booking/">記事を見る</a></article>
+                    <article class="travel-card"><h3>シニア同行の日本旅行</h3><p>歩行量を抑える行程、ホテル位置、貸切車、休憩場所、相談前チェック。</p><a href="/travel/ja/itinerary/japan-senior-friendly-itinerary/">記事を見る</a></article>
+                    <article class="travel-card"><h3>観光施設と飲食店予約</h3><p>人気チケット、予約開始日、待ち時間、飲食店ルール、多言語連絡。</p><a href="/travel/ja/itinerary/japan-attraction-restaurant-reservation/">記事を見る</a></article>
                 </div>
             </div>
         </section>
@@ -250,7 +277,11 @@
             <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
-    <script src="../../assets/js/travel.js" defer></script>
+    
+    
+    
+    <script defer src="/assets/js/main.js"></script>
+    <script defer src="/assets/js/travel.js"></script>
 </body>
 
 </html>

@@ -11,20 +11,105 @@
     <link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en/itinerary">
     <link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja/itinerary">
     <link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary">
-    <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     <meta property="og:title" content="日本定制旅游实用指南｜包车・亲子・温泉旅馆・景点预约｜PROTECH Travel">
     <meta property="og:description" content="日本定制旅游实用指南，整理日本包车、亲子旅行、带老人去日本、温泉旅馆预订、景点餐厅预约等常见决策问题。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pro-tech.jp/travel/itinerary">
     <meta property="og:image" content="https://pro-tech.jp/assets/images/travel/travel-hero-concierge.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/travel.css">
+    <link href="/assets/css/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/travel.css">
 </head>
 <body class="travel-page">
-    <nav class="travel-nav"><div class="travel-shell travel-nav__inner"><a class="travel-brand" href="../"><span class="travel-brand__mark">旅</span><span class="travel-brand__text"><span class="travel-brand__name">PROTECH Travel</span><span class="travel-brand__sub">Japan Concierge</span></span></a><div class="travel-nav__links"><a href="../private-car/">包车</a><a href="../hotel-ryokan/">酒店旅馆</a><a href="../attractions/">预约服务</a><a href="./">攻略文章</a><a href="../?source=guide#inquiry">咨询</a></div><div class="travel-language" aria-label="Language"><a href="https://pro-tech.jp/travel/itinerary" aria-current="page">简</a><span>/</span><a href="https://pro-tech.jp/travel/zh-tw/itinerary">繁</a><span>/</span><a href="https://pro-tech.jp/travel/en/itinerary">EN</a><span>/</span><a href="https://pro-tech.jp/travel/ja/itinerary">JP</a></div></div></nav>
-    <header class="travel-page-hero" style="--page-image:url('../../assets/images/travel/travel-team-coordination.jpg')">
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/cn/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/cn/" class="nav-link ">首页</a>
+
+                <div class="relative group">
+                    <a href="/cn/services" class="nav-link  flex items-center gap-1">服务介绍
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/cn/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">全部服务</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大众点评</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小红书</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">中文视觉与内容制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL / KOC 网红营销</a>
+                            <a href="/travel/" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-emerald-700 font-bold transition-colors text-xs font-bold">日本定制旅行</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">价格方案</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/cn/company" class="nav-link ">公司概要</a>
+                <a href="/cn/cases" class="nav-link ">客户案例</a>
+                <a href="/cn/blog" class="nav-link ">博客文章</a>
+                <a href="/cn/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">联系我们</a>
+                
+                <!-- Language Switcher -->
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
+                        🌐 简
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="/travel/itinerary" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                        <a href="/travel/zh-tw/itinerary" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">繁體中文</a>
+                        <a href="/travel/en/itinerary" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="/travel/ja/itinerary" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                    </div>
+                </div>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/cn/" class="text-lg font-bold text-slate-700">首页</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/cn/services" class="text-lg font-bold text-slate-700">服务介绍</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大众点评</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小红书</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">中文视觉与内容制作</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL / KOC 网红营销</a>
+                <a href="/travel/" class="text-sm font-bold text-slate-600 hover:text-emerald-700">日本定制旅行</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">价格方案</a>
+            </div>
+            <a href="/cn/company" class="text-lg font-bold text-slate-700">公司概要</a>
+            <a href="/cn/cases" class="text-lg font-bold text-slate-700">客户案例</a>
+            <a href="/cn/blog" class="text-lg font-bold text-slate-700">博客文章</a>
+            <a href="/cn/contact" class="text-lg font-bold text-slate-700">联系我们</a>
+            
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="/travel/ja/itinerary" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                <a href="/travel/en/itinerary" class="text-slate-500 hover:text-coral font-bold">EN</a>
+                <a href="/travel/itinerary" class="text-slate-500 hover:text-coral font-bold">简</a>
+                <a href="/travel/zh-tw/itinerary" class="text-slate-500 hover:text-coral font-bold">繁</a>
+            </div>
+        </div>
+    </div>
+    <header class="travel-page-hero" style="--page-image:url('/assets/images/travel/travel-team-coordination.jpg')">
         <div class="travel-shell travel-page-hero__content">
-            <div class="travel-breadcrumb"><a href="../">TRAVEL</a> / ITINERARY</div>
+            <div class="travel-breadcrumb"><a href="/travel">TRAVEL</a> / ITINERARY</div>
             <span class="travel-kicker">Travel Guides</span>
             <h1>日本定制旅行指南：先把关键问题想清楚，再安排行程。</h1>
             <p>这里整理的不是泛泛游记，而是计划日本旅行时最容易卡住的问题：什么时候适合包车、亲子路线怎么控节奏、温泉旅馆预订前要确认什么。</p>
@@ -34,15 +119,62 @@
         <section class="travel-section">
             <div class="travel-shell">
                 <div class="travel-grid">
-                    <a class="travel-card travel-card--media travel-card-link" href="tokyo-fuji-private-car/" aria-label="东京到富士山包车一日游怎么安排？路线、适合人群和避坑重点"><img src="../../assets/images/travel/travel-fuji-route.jpg" alt="东京到富士山包车一日游路线"><div class="travel-card__body"><h3>东京到富士山包车一日游怎么安排？路线、适合人群和避坑重点</h3><p>路线顺序、停留时间、费用影响和适合包车的具体场景。</p><span class="travel-card__cta">阅读文章</span></div></a>
-                    <a class="travel-card travel-card--media travel-card-link" href="japan-family-custom-trip/" aria-label="日本亲子定制旅游怎么做路线？主题乐园、酒店和少换乘安排"><img src="../../assets/images/travel/travel-family-trip.jpg" alt="日本亲子定制旅游路线"><div class="travel-card__body"><h3>日本亲子定制旅游怎么做路线？主题乐园、酒店和少换乘安排</h3><p>从儿童友好酒店、主题乐园预约、换乘强度和雨天备选开始规划。</p><span class="travel-card__cta">阅读文章</span></div></a>
-                    <a class="travel-card travel-card--media travel-card-link" href="onsen-ryokan-booking/" aria-label="日本温泉旅馆预订避坑指南：房型、餐食、私汤和交通怎么选"><img src="../../assets/images/travel/travel-ryokan-onsen.jpg" alt="日本温泉旅馆预订避坑指南"><div class="travel-card__body"><h3>日本温泉旅馆预订避坑指南：房型、餐食、私汤和交通怎么选</h3><p>预订前先确认房型、餐食、私汤、交通方式和取消规则。</p><span class="travel-card__cta">阅读文章</span></div></a>
-                    <a class="travel-card travel-card--media travel-card-link" href="japan-senior-friendly-itinerary/" aria-label="带老人去日本旅游怎么安排？少走路路线、酒店位置和包车建议"><img src="../../assets/images/travel/travel-senior-friendly.jpg" alt="带老人去日本旅游少走路路线"><div class="travel-card__body"><h3>带老人去日本旅游怎么安排？少走路路线、酒店位置和包车建议</h3><p>少走路路线、酒店位置、包车场景、休息点和预约前清单。</p><span class="travel-card__cta">阅读文章</span></div></a>
-                    <a class="travel-card travel-card--media travel-card-link" href="japan-attraction-restaurant-reservation/" aria-label="日本景点和餐厅预约怎么安排？热门门票、排队和时间窗口"><img src="../../assets/images/travel/travel-restaurant-reservation.jpg" alt="日本景点和餐厅预约安排"><div class="travel-card__body"><h3>日本景点和餐厅预约怎么安排？热门门票、排队和时间窗口</h3><p>热门门票、预约开放时间、排队规划、餐厅规则和语言沟通。</p><span class="travel-card__cta">阅读文章</span></div></a>
+                    <a class="travel-card travel-card--media travel-card-link" href="/travel/itinerary/tokyo-fuji-private-car" aria-label="东京到富士山包车一日游怎么安排？路线、适合人群和避坑重点"><img src="/assets/images/travel/travel-fuji-route.jpg" alt="东京到富士山包车一日游路线"><div class="travel-card__body"><h3>东京到富士山包车一日游怎么安排？路线、适合人群和避坑重点</h3><p>路线顺序、停留时间、费用影响和适合包车的具体场景。</p><span class="travel-card__cta">阅读文章</span></div></a>
+                    <a class="travel-card travel-card--media travel-card-link" href="/travel/itinerary/japan-family-custom-trip" aria-label="日本亲子定制旅游怎么做路线？主题乐园、酒店和少换乘安排"><img src="/assets/images/travel/travel-family-trip.jpg" alt="日本亲子定制旅游路线"><div class="travel-card__body"><h3>日本亲子定制旅游怎么做路线？主题乐园、酒店和少换乘安排</h3><p>从儿童友好酒店、主题乐园预约、换乘强度和雨天备选开始规划。</p><span class="travel-card__cta">阅读文章</span></div></a>
+                    <a class="travel-card travel-card--media travel-card-link" href="/travel/itinerary/onsen-ryokan-booking" aria-label="日本温泉旅馆预订避坑指南：房型、餐食、私汤和交通怎么选"><img src="/assets/images/travel/travel-ryokan-onsen.jpg" alt="日本温泉旅馆预订避坑指南"><div class="travel-card__body"><h3>日本温泉旅馆预订避坑指南：房型、餐食、私汤和交通怎么选</h3><p>预订前先确认房型、餐食、私汤、交通方式和取消规则。</p><span class="travel-card__cta">阅读文章</span></div></a>
+                    <a class="travel-card travel-card--media travel-card-link" href="/travel/itinerary/japan-senior-friendly-itinerary" aria-label="带老人去日本旅游怎么安排？少走路路线、酒店位置和包车建议"><img src="/assets/images/travel/travel-senior-friendly.jpg" alt="带老人去日本旅游少走路路线"><div class="travel-card__body"><h3>带老人去日本旅游怎么安排？少走路路线、酒店位置和包车建议</h3><p>少走路路线、酒店位置、包车场景、休息点和预约前清单。</p><span class="travel-card__cta">阅读文章</span></div></a>
+                    <a class="travel-card travel-card--media travel-card-link" href="/travel/itinerary/japan-attraction-restaurant-reservation" aria-label="日本景点和餐厅预约怎么安排？热门门票、排队和时间窗口"><img src="/assets/images/travel/travel-restaurant-reservation.jpg" alt="日本景点和餐厅预约安排"><div class="travel-card__body"><h3>日本景点和餐厅预约怎么安排？热门门票、排队和时间窗口</h3><p>热门门票、预约开放时间、排队规划、餐厅规则和语言沟通。</p><span class="travel-card__cta">阅读文章</span></div></a>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="travel-footer"><div class="travel-shell travel-footer__grid"><div><strong>PROTECH Travel Concierge</strong><p>日本多语言定制旅行管家。</p></div><div><strong>服务</strong><a href="../private-car/">日本包车</a><a href="../hotel-ryokan/">酒店旅馆</a><a href="../attractions/">景点预约</a></div><div><strong>场景</strong><a href="../family-trip/">亲子旅行</a><a href="../senior-trip/">老人同行</a><a href="../onsen-ryokan/">温泉旅馆</a></div><div><strong>公司</strong><a href="/">PROTECH 主站</a><a href="/contact">联系咨询</a></div></div></footer>
+    <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">用技术与营销，<br>跨越商业边界。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">服务介绍</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大众点评集客代运营</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小红书营销代运营</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音营销代运营</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChat微信小程序开发</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中文视觉与内容制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOC网红营销推广</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">价格方案</a></li>
+                        <li><a href="/cn/services" class="hover:text-coral transition">全部服务介绍</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">公司信息</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/cn/company" class="hover:text-coral transition">公司概要</a></li>
+                        <li><a href="/cn/cases" class="hover:text-coral transition">客户案例</a></li>
+                        <li><a href="/cn/blog" class="hover:text-coral transition">博客文章</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">隐私政策</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商业交易法标记</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">使用条款</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">实用资源</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">资料下载</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">常见问题(FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">入境游 AI 报告</a></li>
+                        <li><a href="/cn/contact" class="hover:text-coral transition">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script defer src="/assets/js/main.js"></script>
 </body>
 </html>

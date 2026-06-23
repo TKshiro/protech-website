@@ -31,36 +31,50 @@
         <!-- NAV -->
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
-            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <a href="/en/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
             <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="/" class="nav-link ">トップ</a>
+                <a href="/en/" class="nav-link ">Home</a>
 
                 <div class="relative group">
-                    <a href="/services" class="nav-link  flex items-center gap-1">サービス
+                    <a href="/en/services" class="nav-link  flex items-center gap-1">Services
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </a>
                     <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
-                            <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <a href="/en/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">All Services</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
-                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
-                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
-                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
-                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">Dianping</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">Xiaohongshu (RED)</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">Douyin</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">WeChat Mini-Program</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">Creative Production</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC Promotion</a>
+                            <a href="/travel/" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-emerald-700 font-bold transition-colors text-xs font-bold">Custom Japan Travel</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">Pricing Plans</a>
                         </div>
                     </div>
                 </div>
 
-                <a href="/company" class="nav-link ">会社概要</a>
-                <a href="/cases" class="nav-link ">導入事例</a>
-                <a href="/blog" class="nav-link ">ブログ</a>
-                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+                <a href="/en/company" class="nav-link ">Company</a>
+                <a href="/en/cases" class="nav-link ">Case Studies</a>
+                <a href="/en/blog" class="nav-link ">Blog</a>
+                <a href="/en/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">Contact</a>
+                
+                <!-- Language Switcher -->
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
+                        🌐 EN
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="/travel" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                        <a href="/travel/zh-tw" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">繁體中文</a>
+                        <a href="/travel/en" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="/travel/ja" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                    </div>
+                </div>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -74,22 +88,35 @@
 
     <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
         <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
-            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <a href="/en/" class="text-lg font-bold text-slate-700">Home</a>
             <div class="flex flex-col items-center space-y-4">
-                <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
-                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
-                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
-                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
-                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
-                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
+                <a href="/en/services" class="text-lg font-bold text-slate-700">Services</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">Dianping</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">Xiaohongshu (RED)</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">Douyin</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">WeChat Mini-Program</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">Creative Production</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC Promotion</a>
+                <a href="/travel/" class="text-sm font-bold text-slate-600 hover:text-emerald-700">Custom Japan Travel</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">Pricing Plans</a>
             </div>
-            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
-            <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
-            <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
-            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+            <a href="/en/company" class="text-lg font-bold text-slate-700">Company</a>
+            <a href="/en/cases" class="text-lg font-bold text-slate-700">Case Studies</a>
+            <a href="/en/blog" class="text-lg font-bold text-slate-700">Blog</a>
+            <a href="/en/contact" class="text-lg font-bold text-slate-700">Contact</a>
+            
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="/travel/ja" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                <a href="/travel/en" class="text-slate-500 hover:text-coral font-bold">EN</a>
+                <a href="/travel" class="text-slate-500 hover:text-coral font-bold">简</a>
+                <a href="/travel/zh-tw" class="text-slate-500 hover:text-coral font-bold">繁</a>
+            </div>
         </div>
+    </div>
+        </div>
+    </div>
+        </div>
+    </div>
     </div>
 
     <header class="travel-hero">
@@ -101,7 +128,7 @@
                 <p>We support inbound travelers with custom Japan planning: private car routes, hotel and ryokan selection, attraction reservations, restaurant arrangements, queue planning, and multilingual coordination before and during the trip.</p>
                 <div class="travel-hero__actions">
                     <a class="travel-btn" href="#inquiry">Send Trip Details</a>
-                    <a class="travel-btn-secondary" href="itinerary/">Read Planning Guides</a>
+                    <a class="travel-btn-secondary" href="/travel/en/itinerary">Read Planning Guides</a>
                 </div>
             </div>
             <div class="travel-hero__facts" aria-label="Service facts">
@@ -124,9 +151,9 @@
                     <p class="travel-section__lead">The value is not another generic Japan guide. We turn routes, cars, stays, bookings, language notes and day-by-day execution into a clear plan.</p>
                 </div>
                 <div class="travel-grid">
-                    <article class="travel-card travel-card--media"><img src="../../assets/images/travel/travel-private-car.jpg" alt="Mt. Fuji private car route"><div class="travel-card__body"><h3>Private car routes</h3><p>Useful for Mt. Fuji, Hakone, Izu, Karuizawa, Kyoto outskirts and routes with luggage or limited public transit.</p><a href="../private-car/">View private car service</a></div></article>
-                    <article class="travel-card travel-card--media"><img src="../../assets/images/travel/travel-ryokan-onsen.jpg" alt="Japan ryokan and hotel planning"><div class="travel-card__body"><h3>Hotels and ryokan</h3><p>We shortlist stays by budget, room type, access, meal needs, family fit and senior-friendly movement.</p><a href="../hotel-ryokan/">View stay support</a></div></article>
-                    <article class="travel-card travel-card--media"><img src="../../assets/images/travel/travel-restaurant-reservation.jpg" alt="Japan attraction reservations"><div class="travel-card__body"><h3>Attractions and restaurants</h3><p>We check booking windows, entry rules, queue planning, language notes and route timing for popular spots.</p><a href="../attractions/">View reservation support</a></div></article>
+                    <article class="travel-card travel-card--media"><img src="../../assets/images/travel/travel-private-car.jpg" alt="Mt. Fuji private car route"><div class="travel-card__body"><h3>Private car routes</h3><p>Useful for Mt. Fuji, Hakone, Izu, Karuizawa, Kyoto outskirts and routes with luggage or limited public transit.</p><a href="/travel/private-car">View private car service</a></div></article>
+                    <article class="travel-card travel-card--media"><img src="../../assets/images/travel/travel-ryokan-onsen.jpg" alt="Japan ryokan and hotel planning"><div class="travel-card__body"><h3>Hotels and ryokan</h3><p>We shortlist stays by budget, room type, access, meal needs, family fit and senior-friendly movement.</p><a href="/travel/hotel-ryokan">View stay support</a></div></article>
+                    <article class="travel-card travel-card--media"><img src="../../assets/images/travel/travel-restaurant-reservation.jpg" alt="Japan attraction reservations"><div class="travel-card__body"><h3>Attractions and restaurants</h3><p>We check booking windows, entry rules, queue planning, language notes and route timing for popular spots.</p><a href="/travel/attractions">View reservation support</a></div></article>
                 </div>
             </div>
         </section>
@@ -138,9 +165,9 @@
                     <p class="travel-section__lead">Families, senior travelers, premium households and business guests have different friction points. We design around the use case first.</p>
                 </div>
                 <div class="travel-grid">
-                    <article class="travel-card"><h3>Family trips</h3><p>Child-friendly hotels, theme park timing, fewer transfers, backup plans and manageable daily pacing.</p><a href="../family-trip/">Family planning</a></article>
-                    <article class="travel-card"><h3>Senior-friendly trips</h3><p>Elevator-friendly routes, less walking, private car movement, ryokan accessibility and meal preferences.</p><a href="../senior-trip/">Senior travel</a></article>
-                    <article class="travel-card"><h3>Ryokan and local regions</h3><p>Hakone, Kawaguchiko, Izu, Kusatsu and Yufuin are strong options for higher-value custom trips.</p><a href="../onsen-ryokan/">Onsen planning</a></article>
+                    <article class="travel-card"><h3>Family trips</h3><p>Child-friendly hotels, theme park timing, fewer transfers, backup plans and manageable daily pacing.</p><a href="/travel/family-trip">Family planning</a></article>
+                    <article class="travel-card"><h3>Senior-friendly trips</h3><p>Elevator-friendly routes, less walking, private car movement, ryokan accessibility and meal preferences.</p><a href="/travel/senior-trip">Senior travel</a></article>
+                    <article class="travel-card"><h3>Ryokan and local regions</h3><p>Hakone, Kawaguchiko, Izu, Kusatsu and Yufuin are strong options for higher-value custom trips.</p><a href="/travel/onsen-ryokan">Onsen planning</a></article>
                 </div>
             </div>
         </section>
@@ -173,11 +200,11 @@
                     <p class="travel-section__lead">These guides explain decisions that lead to real planning requests: private cars, family pacing, ryokan booking, senior-friendly routes, attractions and restaurant reservations.</p>
                 </div>
                 <div class="travel-grid">
-                    <article class="travel-card"><h3>Tokyo to Mt. Fuji by private car</h3><p>Route order, stop timing, cost factors and situations where a car is genuinely useful.</p><a href="itinerary/tokyo-fuji-private-car/">Read guide</a></article>
-                    <article class="travel-card"><h3>Planning a family trip to Japan</h3><p>Child-friendly hotels, theme park timing, transfer load and rainy-day alternatives.</p><a href="itinerary/japan-family-custom-trip/">Read guide</a></article>
-                    <article class="travel-card"><h3>Japan ryokan booking checklist</h3><p>Room type, meals, private baths, access and cancellation rules to confirm before booking.</p><a href="itinerary/onsen-ryokan-booking/">Read guide</a></article>
-                    <article class="travel-card"><h3>Senior-friendly Japan itinerary</h3><p>Lower-walking routes, hotel location, private car use cases, rest stops and planning checklist.</p><a href="itinerary/japan-senior-friendly-itinerary/">Read guide</a></article>
-                    <article class="travel-card"><h3>Japan attraction and restaurant reservations</h3><p>Ticket windows, queue planning, restaurant rules, cancellation policies and language notes.</p><a href="itinerary/japan-attraction-restaurant-reservation/">Read guide</a></article>
+                    <article class="travel-card"><h3>Tokyo to Mt. Fuji by private car</h3><p>Route order, stop timing, cost factors and situations where a car is genuinely useful.</p><a href="/travel/en/itinerary/tokyo-fuji-private-car/">Read guide</a></article>
+                    <article class="travel-card"><h3>Planning a family trip to Japan</h3><p>Child-friendly hotels, theme park timing, transfer load and rainy-day alternatives.</p><a href="/travel/en/itinerary/japan-family-custom-trip/">Read guide</a></article>
+                    <article class="travel-card"><h3>Japan ryokan booking checklist</h3><p>Room type, meals, private baths, access and cancellation rules to confirm before booking.</p><a href="/travel/en/itinerary/onsen-ryokan-booking/">Read guide</a></article>
+                    <article class="travel-card"><h3>Senior-friendly Japan itinerary</h3><p>Lower-walking routes, hotel location, private car use cases, rest stops and planning checklist.</p><a href="/travel/en/itinerary/japan-senior-friendly-itinerary/">Read guide</a></article>
+                    <article class="travel-card"><h3>Japan attraction and restaurant reservations</h3><p>Ticket windows, queue planning, restaurant rules, cancellation policies and language notes.</p><a href="/travel/en/itinerary/japan-attraction-restaurant-reservation/">Read guide</a></article>
                 </div>
             </div>
         </section>
@@ -271,39 +298,39 @@
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                    <p class="text-white/30 text-xs leading-relaxed">Crossing business boundaries with<br>technology and marketing.</p>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
-                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
-                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
-                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
-                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
-                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
-                        <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
+                        <li><a href="/dianping.html" class="hover:text-coral transition">Dianping Inbound Marketing</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">RED (Xiaohongshu) Marketing</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">Douyin Marketing</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChat Mini-Program Dev</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">Chinese Creative Production</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOC Promotion</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">Pricing Plans</a></li>
+                        <li><a href="/en/services" class="hover:text-coral transition">All Services</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
-                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
-                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
-                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
-                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
-                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
+                        <li><a href="/en/company" class="hover:text-coral transition">Company Profile</a></li>
+                        <li><a href="/en/cases" class="hover:text-coral transition">Case Studies</a></li>
+                        <li><a href="/en/blog" class="hover:text-coral transition">Blog</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">Privacy Policy</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">Specified Commercial Transactions Act</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">Terms of Use</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Resources</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
-                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
-                        <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
-                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
+                        <li><a href="/download" class="hover:text-coral transition">Free Resources</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">FAQ</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">Inbound AI</a></li>
+                        <li><a href="/en/contact" class="hover:text-coral transition">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -312,7 +339,11 @@
             <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
-    <script src="../../assets/js/travel.js" defer></script>
+    
+    
+    
+    <script defer src="/assets/js/main.js"></script>
+    <script defer src="/assets/js/travel.js"></script>
 </body>
 
 </html>

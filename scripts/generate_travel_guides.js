@@ -866,17 +866,377 @@ function languageSwitcherHtml(currentLang, slug = '') {
 }
 
 function navHtml(lang, isArticle, slug = '') {
-  const c = langConfig[lang];
-  return `<nav class="travel-nav"><div class="travel-shell travel-nav__inner"><a class="travel-brand" href="${rel(lang, isArticle, 'home')}"><span class="travel-brand__mark">旅</span><span class="travel-brand__text"><span class="travel-brand__name">PROTECH Travel</span><span class="travel-brand__sub">${c.brandSub}</span></span></a><div class="travel-nav__links"><a href="${rel(lang, isArticle, 'private')}">${c.nav[0]}</a><a href="${rel(lang, isArticle, 'hotel')}">${c.nav[1]}</a><a href="${rel(lang, isArticle, 'attractions')}">${c.nav[2]}</a><a href="${rel(lang, isArticle, 'itinerary')}">${c.nav[3]}</a><a href="${rel(lang, isArticle, 'inquiry')}?source=guide#inquiry">${c.nav[4]}</a></div>${languageSwitcherHtml(lang, slug)}</div></nav>`;
+  const isEn = lang === 'en';
+  const isJa = lang === 'ja';
+  const isZht = lang === 'zh-Hant';
+  const isZhs = lang === 'zh-Hans';
+
+  let langPrefix = '';
+  if (isEn) langPrefix = '/en';
+  else if (isZhs || isZht) langPrefix = '/cn';
+
+  // Navigation labels
+  let labels = {
+    brand: 'PROTECH',
+    top: 'トップ',
+    services: 'サービス',
+    allServices: 'すべてのサービス',
+    dianping: '大衆点評',
+    red: '小紅書',
+    douyin: '抖音 (Douyin)',
+    miniprogram: '微信小程序',
+    creative: 'クリエイティブ制作',
+    kol: 'KOL/KOC施策',
+    travel: '日本定制旅行',
+    pricing: '料金プラン',
+    company: '会社概要',
+    cases: '導入事例',
+    blog: 'ブログ',
+    contact: 'お問合せ'
+  };
+
+  if (isEn) {
+    labels = {
+      brand: 'PROTECH',
+      top: 'Home',
+      services: 'Services',
+      allServices: 'All Services',
+      dianping: 'Dianping',
+      red: 'Xiaohongshu (RED)',
+      douyin: 'Douyin',
+      miniprogram: 'WeChat Mini-Program',
+      creative: 'Creative Production',
+      kol: 'KOL/KOC Promotion',
+      travel: 'Custom Japan Travel',
+      pricing: 'Pricing Plans',
+      company: 'Company',
+      cases: 'Case Studies',
+      blog: 'Blog',
+      contact: 'Contact'
+    };
+  } else if (isZhs) {
+    labels = {
+      brand: 'PROTECH',
+      top: '首页',
+      services: '服务介绍',
+      allServices: '全部服务',
+      dianping: '大众点评',
+      red: '小红书',
+      douyin: '抖音 (Douyin)',
+      miniprogram: '微信小程序',
+      creative: '中文视觉与内容制作',
+      kol: 'KOL / KOC 网红营销',
+      travel: '日本定制旅行',
+      pricing: '价格方案',
+      company: '公司概要',
+      cases: '客户案例',
+      blog: '博客文章',
+      contact: '联系我们'
+    };
+  } else if (isZht) {
+    labels = {
+      brand: 'PROTECH',
+      top: '首頁',
+      services: '服務介紹',
+      allServices: '全部服務',
+      dianping: '大眾點評',
+      red: '小紅書',
+      douyin: '抖音 (Douyin)',
+      miniprogram: '微信小程序',
+      creative: '中文視覺與內容製作',
+      kol: 'KOL / KOC 網紅行銷',
+      travel: '日本客製旅行',
+      pricing: '價格方案',
+      company: '公司概要',
+      cases: '客戶案例',
+      blog: '部落格文章',
+      contact: '聯絡我們'
+    };
+  }
+
+  const travelHighlight = 'text-emerald-700 font-bold';
+
+  const articleUrls = {
+    'zh-Hans': `/travel/itinerary/${slug}`,
+    'zh-Hant': `/travel/zh-tw/itinerary/${slug}`,
+    'en': `/travel/en/itinerary/${slug}`,
+    'ja': `/travel/ja/itinerary/${slug}`
+  };
+  
+  const currentLangCode = isEn ? 'EN' : isJa ? 'JP' : isZht ? '繁' : '简';
+  
+  const langDropdownHtml = isArticle ? `
+                <!-- Language Switcher -->
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
+                        🌐 ${currentLangCode}
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="${articleUrls['zh-Hans']}" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                        <a href="${articleUrls['zh-Hant']}" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">繁體中文</a>
+                        <a href="${articleUrls['en']}" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="${articleUrls['ja']}" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                    </div>
+                </div>` : `
+                <!-- Language Switcher -->
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
+                        🌐 ${currentLangCode}
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="/travel/itinerary" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                        <a href="/travel/zh-tw/itinerary" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">繁體中文</a>
+                        <a href="/travel/en/itinerary" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="/travel/ja/itinerary" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                    </div>
+                </div>`;
+
+  const mobileLangHtml = isArticle ? `
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="${articleUrls['ja']}" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                <a href="${articleUrls['en']}" class="text-slate-500 hover:text-coral font-bold">EN</a>
+                <a href="${articleUrls['zh-Hans']}" class="text-slate-500 hover:text-coral font-bold">简</a>
+                <a href="${articleUrls['zh-Hant']}" class="text-slate-500 hover:text-coral font-bold">繁</a>
+            </div>` : `
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="/travel/ja/itinerary" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                <a href="/travel/en/itinerary" class="text-slate-500 hover:text-coral font-bold">EN</a>
+                <a href="/travel/itinerary" class="text-slate-500 hover:text-coral font-bold">简</a>
+                <a href="/travel/zh-tw/itinerary" class="text-slate-500 hover:text-coral font-bold">繁</a>
+            </div>`;
+
+  return `<!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="${langPrefix}/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">${labels.brand}</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="${langPrefix}/" class="nav-link ">${labels.top}</a>
+
+                <div class="relative group">
+                    <a href="${langPrefix}/services" class="nav-link  flex items-center gap-1">${labels.services}
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="${langPrefix}/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">${labels.allServices}</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">${labels.dianping}</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">${labels.red}</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">${labels.douyin}</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">${labels.miniprogram}</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">${labels.creative}</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">${labels.kol}</a>
+                            <a href="/travel/" class="px-4 py-2 hover:bg-gray-50 rounded-lg ${travelHighlight} transition-colors text-xs font-bold">${labels.travel}</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">${labels.pricing}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="${langPrefix}/company" class="nav-link ">${labels.company}</a>
+                <a href="${langPrefix}/cases" class="nav-link ">${labels.cases}</a>
+                <a href="${langPrefix}/blog" class="nav-link ">${labels.blog}</a>
+                <a href="${langPrefix}/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">${labels.contact}</a>
+                ${langDropdownHtml}
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="${langPrefix}/" class="text-lg font-bold text-slate-700">${labels.top}</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="${langPrefix}/services" class="text-lg font-bold text-slate-700">${labels.services}</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">${labels.dianping}</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">${labels.red}</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">${labels.douyin}</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">${labels.miniprogram}</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">${labels.creative}</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">${labels.kol}</a>
+                <a href="/travel/" class="text-sm font-bold text-slate-600 hover:text-emerald-700">${labels.travel}</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">${labels.pricing}</a>
+            </div>
+            <a href="${langPrefix}/company" class="text-lg font-bold text-slate-700">${labels.company}</a>
+            <a href="${langPrefix}/cases" class="text-lg font-bold text-slate-700">${labels.cases}</a>
+            <a href="${langPrefix}/blog" class="text-lg font-bold text-slate-700">${labels.blog}</a>
+            <a href="${langPrefix}/contact" class="text-lg font-bold text-slate-700">${labels.contact}</a>
+            ${mobileLangHtml}
+        </div>
+    </div>`;
 }
 
 function footerHtml(lang, isArticle) {
-  const c = langConfig[lang];
-  return `<footer class="travel-footer"><div class="travel-shell travel-footer__grid"><div><strong>PROTECH Travel Concierge</strong><p>${c.footerIntro}</p></div><div><strong>${c.footerServices[0]}</strong><a href="${rel(lang, isArticle, 'private')}">${c.footerServices[1]}</a><a href="${rel(lang, isArticle, 'hotel')}">${c.footerServices[2]}</a><a href="${rel(lang, isArticle, 'attractions')}">${c.footerServices[3]}</a></div><div><strong>${c.footerScenarios[0]}</strong><a href="${lang === 'zh-Hans' ? (isArticle ? '../../family-trip/' : '../family-trip/') : (isArticle ? '../../../family-trip/' : '../../family-trip/')}">${c.footerScenarios[1]}</a><a href="${lang === 'zh-Hans' ? (isArticle ? '../../senior-trip/' : '../senior-trip/') : (isArticle ? '../../../senior-trip/' : '../../senior-trip/')}">${c.footerScenarios[2]}</a><a href="${lang === 'zh-Hans' ? (isArticle ? '../../onsen-ryokan/' : '../onsen-ryokan/') : (isArticle ? '../../../onsen-ryokan/' : '../../onsen-ryokan/')}">${c.footerScenarios[3]}</a></div><div><strong>${c.footerCompany[0]}</strong><a href="/">${c.footerCompany[1]}</a><a href="/contact">${c.footerCompany[2]}</a></div></div></footer>`;
+  const isEn = lang === 'en';
+  const isZhs = lang === 'zh-Hans';
+  const isZht = lang === 'zh-Hant';
+
+  let langPrefix = '';
+  if (isEn) langPrefix = '/en';
+  else if (isZhs || isZht) langPrefix = '/cn';
+
+  let labels = {
+    intro: 'テクノロジーとマーケティングで、<br>ビジネスの境界を越える。',
+    servicesTitle: 'サービス',
+    dianping: '大衆点評(Dianping)集客',
+    red: '小紅書(RED)マーケティング',
+    douyin: '抖音(Douyin)マーケティング',
+    miniprogram: 'WeChatミニプログラム開発',
+    creative: '中国語クリエイティブ制作',
+    kol: 'KOL/KOCインフルエンサー施策',
+    pricing: '料金プラン',
+    allServices: 'すべてのサービス',
+    companyTitle: '会社情報',
+    company: '会社概要',
+    cases: '導入事例',
+    blog: 'ブログ',
+    privacy: 'プライバシーポリシー',
+    tokushoho: '特定商取引法に基づく表記',
+    terms: '利用規約',
+    resourceTitle: 'リソース',
+    download: 'お役立ち資料ダウンロード',
+    faq: 'よくある質問(FAQ)',
+    inboundAi: 'インバウンドAI',
+    contact: 'お問合せ'
+  };
+
+  if (isEn) {
+    labels = {
+      intro: 'Crossing business boundaries with<br>technology and marketing.',
+      servicesTitle: 'Services',
+      dianping: 'Dianping Inbound Marketing',
+      red: 'RED (Xiaohongshu) Marketing',
+      douyin: 'Douyin Marketing',
+      miniprogram: 'WeChat Mini-Program Dev',
+      creative: 'Chinese Creative Production',
+      kol: 'KOL/KOC Promotion',
+      pricing: 'Pricing Plans',
+      allServices: 'All Services',
+      companyTitle: 'Company',
+      company: 'Company Profile',
+      cases: 'Case Studies',
+      blog: 'Blog',
+      privacy: 'Privacy Policy',
+      tokushoho: 'Specified Commercial Transactions Act',
+      terms: 'Terms of Use',
+      resourceTitle: 'Resources',
+      download: 'Free Resources',
+      faq: 'FAQ',
+      inboundAi: 'Inbound AI',
+      contact: 'Contact Us'
+    };
+  } else if (isZhs) {
+    labels = {
+      intro: '用技术与营销，<br>跨越商业边界。',
+      servicesTitle: '服务介绍',
+      dianping: '大众点评集客代运营',
+      red: '小红书营销代运营',
+      douyin: '抖音营销代运营',
+      miniprogram: 'WeChat微信小程序开发',
+      creative: '中文视觉与内容制作',
+      kol: 'KOL/KOC网红营销推广',
+      pricing: '价格方案',
+      allServices: '全部服务介绍',
+      companyTitle: '公司信息',
+      company: '公司概要',
+      cases: '客户案例',
+      blog: '博客文章',
+      privacy: '隐私政策',
+      tokushoho: '特定商业交易法标记',
+      terms: '使用条款',
+      resourceTitle: '实用资源',
+      download: '资料下载',
+      faq: '常见问题(FAQ)',
+      inboundAi: '入境游 AI 报告',
+      contact: '联系我们'
+    };
+  } else if (isZht) {
+    labels = {
+      intro: '用技術與行銷，<br>跨越商業邊界。',
+      servicesTitle: '服務介紹',
+      dianping: '大眾點評集客代運營',
+      red: '小紅書行銷代運營',
+      douyin: '抖音行銷代運營',
+      miniprogram: 'WeChat微信小程序開發',
+      creative: '中文視覺與內容製作',
+      kol: 'KOL/KOC網紅行銷推廣',
+      pricing: '價格方案',
+      allServices: '全部服務介紹',
+      companyTitle: '公司資訊',
+      company: '公司概要',
+      cases: '客戶案例',
+      blog: '部落格文章',
+      privacy: '隱私政策',
+      tokushoho: '特定商業交易法標記',
+      terms: '使用條款',
+      resourceTitle: '實用資源',
+      download: '資料下載',
+      faq: '常見問題(FAQ)',
+      inboundAi: '入境遊 AI 報告',
+      contact: '聯絡我們'
+    };
+  }
+
+  return `<!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">${labels.intro}</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">${labels.servicesTitle}</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">${labels.dianping}</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">${labels.red}</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">${labels.douyin}</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">${labels.miniprogram}</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">${labels.creative}</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">${labels.kol}</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">${labels.pricing}</a></li>
+                        <li><a href="${langPrefix}/services" class="hover:text-coral transition">${labels.allServices}</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">${labels.companyTitle}</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="${langPrefix}/company" class="hover:text-coral transition">${labels.company}</a></li>
+                        <li><a href="${langPrefix}/cases" class="hover:text-coral transition">${labels.cases}</a></li>
+                        <li><a href="${langPrefix}/blog" class="hover:text-coral transition">${labels.blog}</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">${labels.privacy}</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">${labels.tokushoho}</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">${labels.terms}</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">${labels.resourceTitle}</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">${labels.download}</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">${labels.faq}</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">${labels.inboundAi}</a></li>
+                        <li><a href="${langPrefix}/contact" class="hover:text-coral transition">${labels.contact}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>`;
 }
 
 function headHtml(lang, slug, title, description, assetPrefix, isArticle) {
-  const css = `${assetPrefix}assets/css/travel.css`;
+  const tailwind = `/assets/css/tailwind.css`;
+  const css = `/assets/css/travel.css`;
   const canonical = urlFor(lang, slug);
   return `<!DOCTYPE html>
 <html lang="${langConfig[lang].htmlLang}">
@@ -887,13 +1247,14 @@ function headHtml(lang, slug, title, description, assetPrefix, isArticle) {
     <meta name="description" content="${description}">
     <link rel="canonical" href="${canonical}">
 ${alternates(slug)}
-    <link rel="icon" type="image/png" href="${assetPrefix}assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
     <meta property="og:type" content="${isArticle ? 'article' : 'website'}">
     <meta property="og:url" content="${canonical}">
     <meta property="og:image" content="${site}/assets/images/travel/${slug && articles[slug] ? articles[slug].image : 'travel-hero-concierge.jpg'}">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="${tailwind}" rel="stylesheet">
     <link rel="stylesheet" href="${css}">
 </head>`;
 }
@@ -930,6 +1291,7 @@ function articleHtml(lang, slug) {
   const toc = d.sections.slice(1, 6).map(([h], index) => `<a href="#section-${index + 2}">${h}</a>`).join('\n                ');
   const faq = d.faq.map(([q, a]) => `<h3>${q}</h3>\n            <p>${a}</p>`).join('\n            ');
   const sourceParam = encodeURIComponent(slug);
+  const travelHomePath = c.dir ? `/travel/${c.dir}` : '/travel';
   return `${headHtml(lang, slug, d.title, d.description, assetPrefix, true)}
 <body class="travel-page">
     ${navHtml(lang, true, slug)}
@@ -939,7 +1301,7 @@ function articleHtml(lang, slug) {
             <h1>${h1}</h1>
             <p class="travel-section__lead">${d.lead}</p>
         </header>
-        <img class="travel-article__image" src="${assetPrefix}assets/images/travel/${article.image}" alt="${article.alts[lang]}">
+        <img class="travel-article__image" src="/assets/images/travel/${article.image}" alt="${article.alts[lang]}">
         <main class="travel-content">
             <nav class="travel-article-toc" aria-label="Article contents">
                 <strong>${lang === 'en' ? 'In this guide' : lang === 'ja' ? 'この記事で分かること' : lang === 'zh-Hant' ? '本文會幫你判斷' : '本文会帮你判断'}</strong>
@@ -950,10 +1312,11 @@ function articleHtml(lang, slug) {
             <h2>FAQ</h2>
             ${faq}
             <div class="travel-callout"><strong>${lang === 'en' ? 'For inquiry:' : lang === 'ja' ? '相談時に共有するとスムーズです：' : lang === 'zh-Hant' ? '諮詢時可以直接提供：' : '准备咨询时可以直接发给我们：'}</strong>${lang === 'en' ? ' Share your dates, group size, hotel location, budget, must-visit places and any senior or child traveler needs.' : lang === 'ja' ? '日程、人数、ホテル位置、予算、行きたい場所、子どもやシニア同行の有無をお知らせください。' : lang === 'zh-Hant' ? '出行日期、人數、酒店位置、預算、想去的點、是否有長輩或小孩同行。' : '出行日期、人数、酒店位置、预算、想去的点、是否有老人或小孩同行。'}</div>
-            <p><a class="travel-btn" href="../../?source=${sourceParam}#inquiry">${c.ctaPrefix}${d.cta}</a></p>
+            <p><a class="travel-btn" href="${travelHomePath}?source=${sourceParam}#inquiry">${c.ctaPrefix}${d.cta}</a></p>
         </main>
     </article>
     ${footerHtml(lang, true)}
+    <script defer src="/assets/js/main.js"></script>
 </body>
 </html>
 `;
@@ -962,16 +1325,18 @@ function articleHtml(lang, slug) {
 function hubHtml(lang) {
   const c = langConfig[lang];
   const assetPrefix = relativeDepth(lang, false);
+  const travelHomePath = c.dir ? `/travel/${c.dir}` : '/travel';
   const cards = Object.entries(articles).map(([slug, article]) => {
     const d = article.data[lang];
-    return `<a class="travel-card travel-card--media travel-card-link" href="${slug}/" aria-label="${d.title}"><img src="${assetPrefix}assets/images/travel/${article.image}" alt="${article.alts[lang]}"><div class="travel-card__body"><h3>${d.title}</h3><p>${d.cardText}</p><span class="travel-card__cta">${c.read}</span></div></a>`;
+    const articlePath = c.dir ? `/travel/${c.dir}/itinerary/${slug}` : `/travel/itinerary/${slug}`;
+    return `<a class="travel-card travel-card--media travel-card-link" href="${articlePath}" aria-label="${d.title}"><img src="/assets/images/travel/${article.image}" alt="${article.alts[lang]}"><div class="travel-card__body"><h3>${d.title}</h3><p>${d.cardText}</p><span class="travel-card__cta">${c.read}</span></div></a>`;
   }).join('\n                    ');
   return `${headHtml(lang, '', c.hub.title, c.hub.description, assetPrefix, false)}
 <body class="travel-page">
     ${navHtml(lang, false)}
-    <header class="travel-page-hero" style="--page-image:url('${assetPrefix}assets/images/travel/travel-team-coordination.jpg')">
+    <header class="travel-page-hero" style="--page-image:url('/assets/images/travel/travel-team-coordination.jpg')">
         <div class="travel-shell travel-page-hero__content">
-            <div class="travel-breadcrumb"><a href="../">TRAVEL</a> / ITINERARY</div>
+            <div class="travel-breadcrumb"><a href="${travelHomePath}">TRAVEL</a> / ITINERARY</div>
             <span class="travel-kicker">${c.hub.kicker}</span>
             <h1>${c.hub.h1}</h1>
             <p>${c.hub.lead}</p>
@@ -987,6 +1352,7 @@ function hubHtml(lang) {
         </section>
     </main>
     ${footerHtml(lang, false)}
+    <script defer src="/assets/js/main.js"></script>
 </body>
 </html>
 `;
