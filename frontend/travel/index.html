@@ -43,33 +43,69 @@
 
 <body class="travel-page">
     <a class="skip-link" href="#main-content">跳到主要内容</a>
-    <nav class="travel-nav" aria-label="Travel navigation">
-        <div class="travel-shell travel-nav__inner">
-            <a class="travel-brand" href="./">
-                <span class="travel-brand__mark">旅</span>
-                <span class="travel-brand__text">
-                    <span class="travel-brand__name">PROTECH Travel</span>
-                    <span class="travel-brand__sub">Japan Concierge</span>
-                </span>
-            </a>
-            <div class="travel-nav__links">
-                <a href="private-car/">包车</a>
-                <a href="hotel-ryokan/">酒店旅馆</a>
-                <a href="attractions/">预约服务</a>
-                <a href="guides/">攻略文章</a>
-                <a href="#inquiry">咨询</a>
+        <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/" class="nav-link ">トップ</a>
+
+                <div class="relative group">
+                    <a href="/services" class="nav-link  flex items-center gap-1">サービス
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/cases" class="nav-link ">導入事例</a>
+                <a href="/blog" class="nav-link ">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>
-            <div class="travel-language" aria-label="Language">
-                <a href="./" aria-current="page">简</a>
-                <span>/</span>
-                <a href="zh-tw/">繁</a>
-                <span>/</span>
-                <a href="en/">EN</a>
-                <span>/</span>
-                <a href="ja/">JP</a>
-            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
         </div>
     </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
+            </div>
+            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+        </div>
+    </div>
 
     <header class="travel-hero">
         <img class="travel-hero__image" src="../assets/images/travel/travel-hero-concierge.jpg" alt="日本山景与城市旅行场景">
@@ -317,24 +353,21 @@
             </div>
         </section>
 
-        <section class="travel-section">
+                <section class="travel-section">
             <div class="travel-shell travel-two-column">
                 <div>
-                    <span class="travel-eyebrow">Content Assets Needed</span>
-                    <h2>这里需要你后续补真实图片，我先把位置留好。</h2>
-                    <p class="travel-section__lead">现在我先用站内已有日本旅行图片撑起视觉。等你给真实照片后，可信度会明显提升，SEO 图片搜索也更好做。</p>
+                    <span class="travel-eyebrow">Before Proposal</span>
+                    <h2>报价前先确认关键条件，避免做出不能落地的行程。</h2>
+                    <p class="travel-section__lead">定制旅行最怕只看景点清单，不看交通、时间、预约规则和同行人的体力。我们会先把这些条件问清楚，再给路线和服务边界。</p>
                 </div>
                 <aside class="travel-sidebar">
-                    <h3>优先补这 8 类图片</h3>
+                    <h3>咨询时建议准备</h3>
                     <ul class="travel-list">
-                        <li>包车车辆外观、车内座位、行李空间</li>
-                        <li>富士山/河口湖/箱根路线实拍</li>
-                        <li>温泉旅馆外观、房间、晚餐、私汤</li>
-                        <li>亲子酒店、儿童友好设施、主题乐园外围</li>
-                        <li>老人少走路路线、电梯/车站/包车上下车点</li>
-                        <li>餐厅预约、菜单、多语言沟通场景</li>
-                        <li>客户授权评价截图或文字反馈</li>
-                        <li>你们团队在日本现场协调的工作照</li>
+                        <li>出行日期、人数、年龄层和是否带老人儿童</li>
+                        <li>抵达/离开机场、已有酒店和必须去的城市</li>
+                        <li>每天可接受的步行量、换乘次数和起床时间</li>
+                        <li>包车、酒店、温泉旅馆、餐厅和景点预约需求</li>
+                        <li>预算范围、语言需求、饮食禁忌和临时变更规则</li>
                     </ul>
                 </aside>
             </div>
@@ -344,29 +377,20 @@
             <div class="travel-shell">
                 <div class="travel-section__head">
                     <div>
-                        <span class="travel-eyebrow">Trust</span>
-                        <h2>可信度模块已经预留，等你给真实素材后替换。</h2>
+                        <span class="travel-eyebrow">Trust Signals</span>
+                        <h2>不用空泛承诺，用可检查的执行细节建立信任。</h2>
                     </div>
-                    <p class="travel-section__lead">我没有编造用户评价。这里先搭好结构：正式上线时建议放微信聊天授权截图、客户文字反馈、路线执行照片和付款后评价。</p>
+                    <p class="travel-section__lead">正式案例和授权评价会在取得客户许可后补充。当前页面先展示我们在咨询阶段就会交代清楚的关键事项。</p>
                 </div>
                 <div class="travel-proof">
-                    <div class="travel-quote">
-                        <blockquote>真实评价展示位 01</blockquote>
-                        <cite>建议素材：亲子家庭包车后反馈</cite>
-                    </div>
-                    <div class="travel-quote">
-                        <blockquote>真实评价展示位 02</blockquote>
-                        <cite>建议素材：温泉旅馆预订与入住反馈</cite>
-                    </div>
-                    <div class="travel-quote">
-                        <blockquote>真实评价展示位 03</blockquote>
-                        <cite>建议素材：老人同行少走路路线反馈</cite>
-                    </div>
+                    <div class="travel-quote"><blockquote>路线可执行</blockquote><cite>每天按城市、交通、停留时长、预约时间和备用方案拆开确认。</cite></div>
+                    <div class="travel-quote"><blockquote>价格边界清楚</blockquote><cite>规划费、包车、住宿、预约协助、陪同翻译和变更费用分开说明。</cite></div>
+                    <div class="travel-quote"><blockquote>现场沟通有准备</blockquote><cite>提前整理酒店、司机、餐厅、景点预约和多语言沟通文本。</cite></div>
                 </div>
             </div>
         </section>
 
-        <section class="travel-section" id="inquiry">
+<section class="travel-section" id="inquiry">
             <div class="travel-shell travel-inquiry">
                 <div>
                     <span class="travel-eyebrow">Start Planning</span>
@@ -416,12 +440,51 @@
         </section>
     </main>
 
-    <footer class="travel-footer">
-        <div class="travel-shell travel-footer__grid">
-            <div><strong>PROTECH Travel Concierge</strong><p>日本多语言定制旅行管家。路线规划、包车、住宿、预约和旅行沟通支持。</p></div>
-            <div><strong>服务</strong><a href="private-car/">日本包车</a><a href="hotel-ryokan/">酒店旅馆</a><a href="attractions/">景点预约</a></div>
-            <div><strong>场景</strong><a href="family-trip/">亲子旅行</a><a href="senior-trip/">老人同行</a><a href="onsen-ryokan/">温泉旅馆</a></div>
-            <div><strong>公司</strong><a href="/">PROTECH 主站</a><a href="/contact">联系咨询</a><a href="/privacy">隐私政策</a></div>
+            <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
     <script src="../assets/js/travel.js" defer></script>

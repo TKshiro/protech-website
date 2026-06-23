@@ -21,7 +21,69 @@
     <link rel="stylesheet" href="../../../../assets/css/travel.css">
 </head>
 <body class="travel-page">
-    <nav class="travel-nav"><div class="travel-shell travel-nav__inner"><a class="travel-brand" href="../../"><span class="travel-brand__mark">旅</span><span class="travel-brand__text"><span class="travel-brand__name">PROTECH Travel</span><span class="travel-brand__sub">Japan Concierge</span></span></a><div class="travel-nav__links"><a href="../../../private-car/">貸切車</a><a href="../../../hotel-ryokan/">宿泊</a><a href="../../../attractions/">予約支援</a><a href="../">記事</a><a href="../../?source=guide#inquiry">相談</a></div></div></nav>
+        <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
+                <a href="/" class="nav-link ">トップ</a>
+
+                <div class="relative group">
+                    <a href="/services" class="nav-link  flex items-center gap-1">サービス
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/cases" class="nav-link ">導入事例</a>
+                <a href="/blog" class="nav-link ">ブログ</a>
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
+            </div>
+            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+        </div>
+    </div>
     <article class="travel-article">
         <header class="travel-shell travel-article__head">
             <div class="travel-article__meta">貸切車 / 富士山 / 2026.06.20</div>
@@ -71,6 +133,52 @@
             <p><a class="travel-btn" href="../../?source=tokyo-fuji-private-car#inquiry">相談する：東京から富士山への貸切車</a></p>
         </main>
     </article>
-    <footer class="travel-footer"><div class="travel-shell travel-footer__grid"><div><strong>PROTECH Travel Concierge</strong><p>訪日旅行の企画、貸切車、宿泊、予約、多言語サポート。</p></div><div><strong>サービス</strong><a href="../../../private-car/">貸切車</a><a href="../../../hotel-ryokan/">宿泊</a><a href="../../../attractions/">予約支援</a></div><div><strong>シーン</strong><a href="../../../family-trip/">家族旅行</a><a href="../../../senior-trip/">シニア同行</a><a href="../../../onsen-ryokan/">温泉旅館</a></div><div><strong>会社</strong><a href="/">PROTECHトップ</a><a href="/contact">お問い合わせ</a></div></div></footer>
+            <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL/KOCインフルエンサー施策</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">料金プラン</a></li>
+                        <li><a href="/services" class="hover:text-coral transition">すべてのサービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
+                        <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
+                        <li><a href="/contact" class="hover:text-coral transition">お問合せ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

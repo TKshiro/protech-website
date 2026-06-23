@@ -851,9 +851,23 @@ function alternates(slug = '') {
     `\n    <link rel="alternate" hreflang="x-default" href="${urlFor('zh-Hans', slug)}">`;
 }
 
-function navHtml(lang, isArticle) {
+function languageSwitcherHtml(currentLang, slug = '') {
+  const labels = {
+    'zh-Hans': '简',
+    'zh-Hant': '繁',
+    en: 'EN',
+    ja: 'JP'
+  };
+  return `<div class="travel-language" aria-label="Language">${langOrder.map((lang, index) => {
+    const separator = index === 0 ? '' : '<span>/</span>';
+    const current = lang === currentLang ? ' aria-current="page"' : '';
+    return `${separator}<a href="${urlFor(lang, slug)}"${current}>${labels[lang]}</a>`;
+  }).join('')}</div>`;
+}
+
+function navHtml(lang, isArticle, slug = '') {
   const c = langConfig[lang];
-  return `<nav class="travel-nav"><div class="travel-shell travel-nav__inner"><a class="travel-brand" href="${rel(lang, isArticle, 'home')}"><span class="travel-brand__mark">旅</span><span class="travel-brand__text"><span class="travel-brand__name">PROTECH Travel</span><span class="travel-brand__sub">${c.brandSub}</span></span></a><div class="travel-nav__links"><a href="${rel(lang, isArticle, 'private')}">${c.nav[0]}</a><a href="${rel(lang, isArticle, 'hotel')}">${c.nav[1]}</a><a href="${rel(lang, isArticle, 'attractions')}">${c.nav[2]}</a><a href="${rel(lang, isArticle, 'guides')}">${c.nav[3]}</a><a href="${rel(lang, isArticle, 'inquiry')}?source=guide#inquiry">${c.nav[4]}</a></div></div></nav>`;
+  return `<nav class="travel-nav"><div class="travel-shell travel-nav__inner"><a class="travel-brand" href="${rel(lang, isArticle, 'home')}"><span class="travel-brand__mark">旅</span><span class="travel-brand__text"><span class="travel-brand__name">PROTECH Travel</span><span class="travel-brand__sub">${c.brandSub}</span></span></a><div class="travel-nav__links"><a href="${rel(lang, isArticle, 'private')}">${c.nav[0]}</a><a href="${rel(lang, isArticle, 'hotel')}">${c.nav[1]}</a><a href="${rel(lang, isArticle, 'attractions')}">${c.nav[2]}</a><a href="${rel(lang, isArticle, 'guides')}">${c.nav[3]}</a><a href="${rel(lang, isArticle, 'inquiry')}?source=guide#inquiry">${c.nav[4]}</a></div>${languageSwitcherHtml(lang, slug)}</div></nav>`;
 }
 
 function footerHtml(lang, isArticle) {
@@ -918,7 +932,7 @@ function articleHtml(lang, slug) {
   const sourceParam = encodeURIComponent(slug);
   return `${headHtml(lang, slug, d.title, d.description, assetPrefix, true)}
 <body class="travel-page">
-    ${navHtml(lang, true)}
+    ${navHtml(lang, true, slug)}
     <article class="travel-article">
         <header class="travel-shell travel-article__head">
             <div class="travel-article__meta">${d.meta}</div>

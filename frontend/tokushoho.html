@@ -21,39 +21,87 @@
     <link href="assets/css/tailwind.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/shared.css">
     <style>
-        
-        body { font-family: 'Noto Sans JP', sans-serif; font-size: 15px; -webkit-font-smoothing: antialiased; background: #f8f9fb; }
-        .glass-nav { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); }
-        .nav-link { transition: color 0.2s; }
-        
-        .btn-coral { background: var(--coral); color: white; transition: all 0.3s; }
-        .btn-coral:hover { background: #d15b6a; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+            background: #f8f9fb;
+        }
 
-        .toku-table { width: 100%; border-collapse: collapse; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-link {
+            transition: color 0.2s;
+        }
+
+        .btn-coral {
+            background: var(--coral);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .btn-coral:hover {
+            background: #d15b6a;
+        }
+
+        .toku-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
         .toku-table th {
-            background: #f1f5f9; color: var(--tech-blue);
-            font-size: 13px; font-weight: 700;
-            text-align: left; vertical-align: top;
-            padding: 18px 20px; width: 220px;
+            background: #f1f5f9;
+            color: var(--tech-blue);
+            font-size: 13px;
+            font-weight: 700;
+            text-align: left;
+            vertical-align: top;
+            padding: 18px 20px;
+            width: 220px;
             border: 1px solid #e2e8f0;
             white-space: nowrap;
         }
+
         .toku-table td {
-            font-size: 14px; color: #475569;
-            padding: 18px 20px; line-height: 1.8;
+            font-size: 14px;
+            color: #475569;
+            padding: 18px 20px;
+            line-height: 1.8;
             border: 1px solid #e2e8f0;
             vertical-align: top;
         }
-        .toku-table tr:hover td { background: #fafbff; }
+
+        .toku-table tr:hover td {
+            background: #fafbff;
+        }
+
         @media (max-width: 640px) {
-            .toku-table, .toku-table tbody, .toku-table tr, .toku-table th, .toku-table td {
-                display: block; width: 100%;
+
+            .toku-table,
+            .toku-table tbody,
+            .toku-table tr,
+            .toku-table th,
+            .toku-table td {
+                display: block;
+                width: 100%;
             }
-            .toku-table th { border-bottom: none; background: #e8edf5; }
-            .toku-table td { border-top: none; }
+
+            .toku-table th {
+                border-bottom: none;
+                background: #e8edf5;
+            }
+
+            .toku-table td {
+                border-top: none;
+            }
         }
     </style>
     <meta property="og:title" content="特定商取引法に基づく表記 | PROTECH株式会社">
@@ -65,27 +113,78 @@
 
 <body class="pt-24 pb-20">
 
-        <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
-<!-- NAV -->
-    <nav class="fixed top-0 w-full z-50 glass-nav">
+    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+            <!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
-            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue">PROTECH</a>
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
             <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="/" class="nav-link">トップ</a>
-                <a href="/services" class="nav-link">サービス</a>
-                <a href="/company" class="nav-link">会社概要</a>
-                <a href="/cases" class="nav-link">導入事例</a>
-                <a href="/blog" class="nav-link">ブログ</a>
+                <a href="/" class="nav-link ">トップ</a>
+
+                <div class="relative group">
+                    <a href="/services" class="nav-link  flex items-center gap-1">サービス
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/cases" class="nav-link ">導入事例</a>
+                <a href="/blog" class="nav-link ">ブログ</a>
                 <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
         </div>
     </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL/KOC施策</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>
+            </div>
+            <a href="/company" class="text-lg font-bold text-slate-700">会社概要</a>
+            <a href="/cases" class="text-lg font-bold text-slate-700">導入事例</a>
+            <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
+            <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
+        </div>
+    </div>
+    </div>
 
     <!-- CONTENT -->
     <div id="main-content" class="max-w-3xl mx-auto px-6 mt-8">
         <!-- Page header -->
         <div class="rounded-2xl px-8 py-10 mb-8 text-center" style="background-color: #001A33; color: #ffffff;">
-            <p class="font-bold uppercase mb-3" style="font-size: 11px; letter-spacing: 0.2em; color: rgba(255, 255, 255, 0.5);">Legal Notice</p>
+            <p class="font-bold uppercase mb-3"
+                style="font-size: 11px; letter-spacing: 0.2em; color: rgba(255, 255, 255, 0.5);">Legal Notice</p>
             <h1 class="text-2xl md:text-3xl font-bold" style="color: #ffffff;">特定商取引法に基づく表記</h1>
             <p class="text-xs mt-3" style="color: rgba(255, 255, 255, 0.6);">Specified Commercial Transactions Act</p>
         </div>
@@ -103,7 +202,7 @@
                     </tr>
                     <tr>
                         <th>所在地</th>
-                        <td>〒XXX-XXXX 東京都（詳細はお問合せください）<br>
+                        <td>〒113-0033 東京都文京区本郷１丁目５−１７ 三洋ビル48<br>
                             <span class="text-xs text-slate-400">※特定商取引法に基づき、請求があった場合は速やかに開示いたします。</span>
                         </td>
                     </tr>
@@ -131,7 +230,8 @@
                     <tr>
                         <th>販売価格</th>
                         <td>各サービスページまたはお見積りの通り。<br>消費税は別途申し受けます（税率10%）。<br>
-                            <span class="text-xs text-slate-400">※プランの詳細は<a href="/pricing" class="text-coral hover:underline">料金ページ</a>をご参照ください。</span>
+                            <span class="text-xs text-slate-400">※プランの詳細は<a href="/pricing"
+                                    class="text-coral hover:underline">料金ページ</a>をご参照ください。</span>
                         </td>
                     </tr>
                     <tr>
@@ -159,7 +259,8 @@
                         <td>
                             サービスの性質上、原則として提供後の返金はお受けできません。<br>
                             継続サービスの解約は、解約希望日の1ヶ月前までにご通知いただく必要があります。<br>
-                            <span class="text-xs text-slate-400">※詳細は<a href="/terms" class="text-coral hover:underline">利用規約</a>第7条をご参照ください。</span>
+                            <span class="text-xs text-slate-400">※詳細は<a href="/terms"
+                                    class="text-coral hover:underline">利用規約</a>第7条をご参照ください。</span>
                         </td>
                     </tr>
                     <tr>
@@ -181,9 +282,12 @@
         <div class="text-center mt-10">
             <p class="text-xs text-slate-400 mb-6">最終更新：2026年5月</p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="/terms" class="px-8 py-3 border border-slate-200 text-slate-700 text-xs font-bold rounded-full hover:bg-slate-50 transition">利用規約を見る</a>
-                <a href="/privacy" class="px-8 py-3 border border-slate-200 text-slate-700 text-xs font-bold rounded-full hover:bg-slate-50 transition">プライバシーポリシー</a>
-                <a href="/contact" class="px-8 py-3 bg-coral text-white text-xs font-bold rounded-full hover:bg-[#d15b6a] transition">お問合せ</a>
+                <a href="/terms"
+                    class="px-8 py-3 border border-slate-200 text-slate-700 text-xs font-bold rounded-full hover:bg-slate-50 transition">利用規約を見る</a>
+                <a href="/privacy"
+                    class="px-8 py-3 border border-slate-200 text-slate-700 text-xs font-bold rounded-full hover:bg-slate-50 transition">プライバシーポリシー</a>
+                <a href="/contact"
+                    class="px-8 py-3 bg-coral text-white text-xs font-bold rounded-full hover:bg-[#d15b6a] transition">お問合せ</a>
             </div>
         </div>
     </div>
@@ -237,4 +341,5 @@
     </footer>
     <script defer src="assets/js/main.js"></script>
 </body>
+
 </html>

@@ -69,7 +69,17 @@ const BLOG_I18N = {
             company: '会社概要',
             news: 'お知らせ',
             blog: 'ブログ'
-        }
+        },
+        toc: '目次',
+        editor: '編集者',
+        editorName: 'PROTECH 編集部',
+        editorTeam: 'インバウンド・DX専門チーム',
+        editorDesc: '中国をはじめとするアジア市場や、欧米市場向けのインバウンドマーケティングをワンストップで支援。テクノロジーと独自のデータを活用し、数多くの企業の海外進出を成功に導いています。',
+        related: '関連記事',
+        latest: '最新の記事',
+        ctaTitle: '無料相談受付中',
+        ctaDesc: '小紅書運用のお悩みをプロに相談してみませんか？',
+        ctaButton: '相談する'
     },
     en: {
         nav: {
@@ -101,7 +111,17 @@ const BLOG_I18N = {
             company: 'Company',
             news: 'News',
             blog: 'Blog'
-        }
+        },
+        toc: 'Table of Contents',
+        editor: 'Editor',
+        editorName: 'PROTECH Editor',
+        editorTeam: 'Inbound & DX Team',
+        editorDesc: 'One-stop support for inbound marketing targeting Asian (including China) and Western markets. Leveraging technology and unique data to guide enterprises to successful global expansion.',
+        related: 'Related Articles',
+        latest: 'Latest Articles',
+        ctaTitle: 'Free Consultation',
+        ctaDesc: 'Have questions about marketing in Japan? Ask our experts.',
+        ctaButton: 'Inquire'
     },
     cn: {
         nav: {
@@ -133,7 +153,17 @@ const BLOG_I18N = {
             company: '公司介绍',
             news: '最新动态',
             blog: '博客'
-        }
+        },
+        toc: '目录',
+        editor: '编辑',
+        editorName: 'PROTECH 编辑部',
+        editorTeam: '入境与数字化团队',
+        editorDesc: '一站式支持面向中国等亚洲市场及欧美市场的入境营销。利用先进技术与独特数据，助力众多企业成功走向海外。',
+        related: '相关文章',
+        latest: '最新文章',
+        ctaTitle: '免费咨询进行中',
+        ctaDesc: '有关于小红书运营的烦恼？欢迎咨询专业团队。',
+        ctaButton: '立即咨询'
     }
 };
 
@@ -181,7 +211,7 @@ function readPosts(postsDir, lang) {
 
 // ─── Generate Blog Post HTML ──────────────────────────────
 
-function generatePostHTML(post, availableLangs) {
+function generatePostHTML(post, availableLangs, allPostsOfLang = []) {
     const langPrefix = post.lang === 'ja' ? '' : `/${post.lang}`;
     const i18n = BLOG_I18N[post.lang] || BLOG_I18N.en;
     
@@ -205,6 +235,90 @@ function generatePostHTML(post, availableLangs) {
 
     // Image logic (make local image absolute path relative to domain)
     const ogImgUrl = post.image ? (post.image.startsWith('http') ? post.image : `${SITE_URL}${post.image}`) : '';
+
+    // Related & Latest posts calculation
+    const relatedPosts = allPostsOfLang
+        .filter(p => p.slug !== post.slug && p.category === post.category);
+    let fallbackPosts = [];
+    if (relatedPosts.length < 3) {
+        fallbackPosts = allPostsOfLang.filter(p => p.slug !== post.slug && p.category !== post.category);
+    }
+    const finalRelated = [...relatedPosts, ...fallbackPosts].slice(0, 3);
+
+    let relatedHtml = '';
+    if (finalRelated.length > 0) {
+        relatedHtml += `
+                <!-- Related Articles Card -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
+                    <h3 class="text-xs font-bold tracking-widest text-tech-blue uppercase mb-4 flex items-center gap-2">
+                        <span class="w-1.5 h-3 bg-blue-600 rounded-full"></span>
+                        ${i18n.related}
+                    </h3>
+                    <div class="space-y-4">`;
+
+        for (const rp of finalRelated) {
+            const rpUrl = `${langPrefix}/blog/${rp.slug}`;
+            relatedHtml += `
+                        <a href="${rpUrl}" class="flex gap-4 group">
+                            ${rp.image ? `
+                            <div class="w-16 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-slate-100">
+                                <img src="${rp.image}" alt="${rp.title.replace(/"/g, '&quot;')}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            ` : `
+                            <div class="w-16 h-12 rounded-lg bg-slate-50 flex items-center justify-center flex-shrink-0 border border-slate-100">
+                                <span class="text-[10px] font-bold text-slate-400">BLOG</span>
+                            </div>
+                            `}
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-bold text-xs text-tech-blue line-clamp-2 group-hover:text-blue-600 transition leading-snug mb-1">${rp.title}</h4>
+                                <span class="text-[9px] font-bold ${categoryClasses(rp.category)} px-2 py-0.5 rounded uppercase tracking-widest">${categoryLabel(rp.category, post.lang)}</span>
+                            </div>
+                        </a>`;
+        }
+        relatedHtml += `
+                    </div>
+                </div>`;
+    }
+
+    const latestPosts = allPostsOfLang
+        .filter(p => p.slug !== post.slug)
+        .slice(0, 3);
+
+    let latestHtml = '';
+    if (latestPosts.length > 0) {
+        latestHtml += `
+    <!-- Latest Articles Section -->
+    <section class="max-w-7xl mx-auto px-6 md:px-8 mt-24 pt-16 border-t border-gray-100" data-aos="fade-up">
+        <h2 class="text-xl md:text-2xl font-bold serif text-tech-blue mb-8 tracking-wide">${i18n.latest}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">`;
+
+        for (const lp of latestPosts) {
+            const lpUrl = `${langPrefix}/blog/${lp.slug}`;
+            latestHtml += `
+            <a href="${lpUrl}" class="group block bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                ${lp.image ? `
+                <div class="aspect-video overflow-hidden">
+                    <img src="${lp.image}" alt="${lp.title.replace(/"/g, '&quot;')}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                ` : `
+                <div class="aspect-video bg-slate-50 flex items-center justify-center border-b border-slate-100">
+                    <span class="text-xs font-bold text-slate-400">BLOG</span>
+                </div>
+                `}
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-[10px] text-gray-400 font-mono tracking-tighter">${formatDate(lp.date)}</span>
+                        <span class="text-[9px] font-bold ${categoryClasses(lp.category)} px-2 py-0.5 rounded uppercase tracking-widest">${categoryLabel(lp.category, post.lang)}</span>
+                    </div>
+                    <h3 class="font-bold text-sm text-tech-blue group-hover:text-blue-600 transition line-clamp-2 leading-snug">${lp.title}</h3>
+                </div>
+            </a>`;
+        }
+
+        latestHtml += `
+        </div>
+    </section>`;
+    }
 
     return `<!DOCTYPE html>
 <html lang="${post.lang === 'cn' ? 'zh-CN' : post.lang}" translate="no">
@@ -261,6 +375,7 @@ function generatePostHTML(post, availableLangs) {
         .blog-content pre { background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 0.75rem; overflow-x: auto; margin-bottom: 1.5rem; }
         .blog-content pre code { background: transparent; padding: 0; }
         .blog-content img { border-radius: 0.75rem; margin: 1.5rem 0; max-width: 100%; height: auto; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     </style>
 
     <script>
@@ -367,41 +482,91 @@ function generatePostHTML(post, availableLangs) {
                 data-aos-delay="100">
                 ${post.title}
             </h1>
-            ${post.image ? `<div class="rounded-3xl overflow-hidden shadow-2xl aspect-video" data-aos="zoom-in" data-aos-duration="1200">
+            ${post.image ? `<div class="rounded-3xl overflow-hidden shadow-2xl aspect-video px-4 md:px-0 max-w-4xl mx-auto" data-aos="zoom-in" data-aos-duration="1200">
                 <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover">
             </div>` : ''}
         </header>
 
-        <main class="max-w-3xl mx-auto px-8 blog-content" data-aos="fade-up">
-            ${post.html}
-        </main>
-
-        <footer
-            class="max-w-4xl mx-auto px-8 mt-32 pt-12 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-12">
-            <a href="${langPrefix}/blog"
-                class="group flex items-center gap-4 text-xs font-bold tracking-[0.2em] uppercase transition">
-                <span
-                    class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-tech-blue group-hover:text-white transition">←</span>
-                ${i18n.backToBlog}
-            </a>
-            <div class="flex items-center gap-8">
-                <span class="text-[10px] font-bold tracking-[0.3em] text-slate-300 uppercase">${i18n.share}</span>
-                <div class="flex items-center gap-6">
-                    <a id="line-share" href="#" target="_blank"><svg class="w-6 h-6 fill-[#06C755]" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2C6.48 2 2 5.51 2 9.83c0 2.45 1.45 4.62 3.73 6.02-.19.68-.69 2.46-.79 2.83-.16.58.19.57.4.43.16-.11 2.58-1.75 3.63-2.47.33.05.67.07 1.03.07 5.52 0 10-3.51 10-7.83S17.52 2 12 2z" />
-                        </svg></a>
-                    <a id="x-share" href="#" target="_blank"><svg class="w-5 h-5 fill-slate-800" viewBox="0 0 24 24">
-                            <path
-                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                        </svg></a>
-                    <a id="fb-share" href="#" target="_blank"><svg class="w-6 h-6 fill-slate-800" viewBox="0 0 24 24">
-                            <path
-                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                        </svg></a>
-                </div>
+        <div class="max-w-7xl mx-auto px-6 md:px-8 mt-12 flex flex-col lg:flex-row gap-12">
+            <!-- Left Column: Content -->
+            <div class="w-full lg:w-2/3">
+                <main class="blog-content mb-16" data-aos="fade-up">
+                    ${post.html}
+                </main>
+                
+                <footer class="pt-12 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-8 mb-16">
+                    <a href="${langPrefix}/blog"
+                        class="group flex items-center gap-4 text-xs font-bold tracking-[0.2em] uppercase transition">
+                        <span
+                            class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-tech-blue group-hover:text-white transition">←</span>
+                        ${i18n.backToBlog}
+                    </a>
+                    <div class="flex items-center gap-8">
+                        <span class="text-[10px] font-bold tracking-[0.3em] text-slate-300 uppercase">${i18n.share}</span>
+                        <div class="flex items-center gap-6">
+                            <a id="line-share" href="#" target="_blank"><svg class="w-6 h-6 fill-[#06C755]" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 5.51 2 9.83c0 2.45 1.45 4.62 3.73 6.02-.19.68-.69 2.46-.79 2.83-.16.58.19.57.4.43.16-.11 2.58-1.75 3.63-2.47.33.05.67.07 1.03.07 5.52 0 10-3.51 10-7.83S17.52 2 12 2z" />
+                                </svg></a>
+                            <a id="x-share" href="#" target="_blank"><svg class="w-5 h-5 fill-slate-800" viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg></a>
+                            <a id="fb-share" href="#" target="_blank"><svg class="w-6 h-6 fill-slate-800" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg></a>
+                        </div>
+                    </div>
+                </footer>
             </div>
-        </footer>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="w-full lg:w-1/3 space-y-10">
+                <!-- Editor Info Card -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <h3 class="text-xs font-bold tracking-widest text-tech-blue uppercase mb-4 flex items-center gap-2">
+                        <span class="w-1.5 h-3 bg-blue-600 rounded-full"></span>
+                        ${i18n.editor}
+                    </h3>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600 text-lg">
+                            PT
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-tech-blue">${i18n.editorName}</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">${i18n.editorTeam}</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">${i18n.editorDesc}</p>
+                </div>
+
+                <!-- Table of Contents Card (Sticky) -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-100 sticky top-28 shadow-sm">
+                    <h3 class="text-xs font-bold tracking-widest text-tech-blue uppercase mb-4 flex items-center gap-2">
+                        <span class="w-1.5 h-3 bg-blue-600 rounded-full"></span>
+                        ${i18n.toc}
+                    </h3>
+                    <ul id="auto-toc" class="space-y-3 text-xs text-slate-500">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+
+                ${relatedHtml}
+
+                <!-- CTA Card -->
+                <div class="bg-gradient-to-br from-tech-blue to-blue-900 rounded-2xl p-6 text-white relative overflow-hidden shadow-lg group">
+                    <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-blue-600/20 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500"></div>
+                    <h3 class="font-bold text-lg mb-2 relative z-10">${i18n.ctaTitle}</h3>
+                    <p class="text-xs text-blue-200/90 leading-relaxed mb-6 relative z-10">${i18n.ctaDesc}</p>
+                    <a href="${langPrefix}/contact" class="btn-coral inline-flex items-center justify-center w-full py-3 bg-white text-tech-blue hover:bg-blue-50 text-xs font-bold tracking-widest uppercase rounded-xl transition duration-300 relative z-10 shadow-sm">
+                        ${i18n.ctaButton} →
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        ${latestHtml}
     </article>
 
     <!-- Footer -->
@@ -444,6 +609,62 @@ function generatePostHTML(post, availableLangs) {
                         mobileMenu.classList.add('translate-x-full');
                     }
                 });
+            }
+
+            // Auto TOC Generation
+            const tocContainer = document.getElementById('auto-toc');
+            const headings = document.querySelectorAll('.blog-content h2, .blog-content h3');
+            
+            if (tocContainer && headings.length > 0) {
+                let h2Counter = 0;
+                headings.forEach((h, index) => {
+                    if (!h.id) {
+                        h.id = 'section-' + (++h2Counter) + '-' + index;
+                    }
+                    
+                    const li = document.createElement('li');
+                    li.className = 'toc-item';
+                    
+                    const a = document.createElement('a');
+                    a.href = '#' + h.id;
+                    a.textContent = h.textContent;
+                    a.className = 'hover:text-blue-600 transition duration-200 block py-1';
+                    
+                    if (h.tagName.toLowerCase() === 'h3') {
+                        a.className += ' pl-4 text-[11px] text-slate-400';
+                    } else {
+                        a.className += ' font-medium';
+                    }
+                    
+                    li.appendChild(a);
+                    tocContainer.appendChild(li);
+                });
+
+                // Highlight Active TOC Item on scroll
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '-10% 0px -70% 0px',
+                    threshold: 0
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.id;
+                            const activeLink = document.querySelector('#auto-toc a[href="#' + id + '"]');
+                            if (activeLink) {
+                                document.querySelectorAll('#auto-toc a').forEach(link => {
+                                    link.classList.remove('text-blue-600', 'font-bold');
+                                    link.classList.add('text-slate-500');
+                                });
+                                activeLink.classList.add('text-blue-600', 'font-bold');
+                                activeLink.classList.remove('text-slate-500');
+                            }
+                        }
+                    });
+                }, observerOptions);
+
+                headings.forEach(h => observer.observe(h));
             }
 
             // Social share
@@ -939,11 +1160,18 @@ function build() {
         const availableLangs = { ja: hasJa, en: hasEn, cn: hasCn };
 
         let targetDir = outputDirJa;
-        if (post.lang === 'en') targetDir = outputDirEn;
-        if (post.lang === 'cn') targetDir = outputDirCn;
+        let postsOfLang = postsJa;
+        if (post.lang === 'en') {
+            targetDir = outputDirEn;
+            postsOfLang = postsEn;
+        }
+        if (post.lang === 'cn') {
+            targetDir = outputDirCn;
+            postsOfLang = postsCn;
+        }
 
         const htmlFile = path.join(targetDir, `${post.slug}.html`);
-        fs.writeFileSync(htmlFile, generatePostHTML(post, availableLangs), 'utf-8');
+        fs.writeFileSync(htmlFile, generatePostHTML(post, availableLangs, postsOfLang), 'utf-8');
         console.log(`  ✅ blog/${post.lang}/${post.slug}.html`);
     }
 

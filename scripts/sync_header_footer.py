@@ -188,6 +188,12 @@ def replace_nav(html_content, filename):
             # replace
             return html_content[:start_idx] + formatted_nav + html_content[end_idx:]
             
+    # If no mobile menu is found, find the closing </nav> tag and replace up to there
+    end_nav_idx = html_content.find('</nav>', start_idx)
+    if end_nav_idx != -1:
+        end_nav_idx += 6 # include '</nav>'
+        return html_content[:start_idx] + formatted_nav + html_content[end_nav_idx:]
+
     return html_content
 
 def replace_footer(html_content):
@@ -210,8 +216,9 @@ html_files = glob.glob(f'{frontend_dir}/**/*.html', recursive=True)
 
 success_count = 0
 for file_path in html_files:
-    if 'admin' in file_path:
-        continue # skip admin dashboard
+    # Skip admin dashboard, localized directories, travel guides, and individual blog posts
+    if any(x in file_path for x in ['admin/', 'en/', 'cn/', 'travel/', 'blog/']):
+        continue
         
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
