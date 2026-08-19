@@ -74,31 +74,43 @@ module.exports = async (req, res) => {
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
   const sheets = google.sheets({ version: 'v4', auth });
-  const range = 'Sheet1!A:L'; // Columns: id, date, inquiry_type, name, company, email, phone, budget, referral_source, message, status, travel
+
+  // Get sheet name dynamically from first sheet in the spreadsheet
+  let sheetName = 'Sheet1';
+  try {
+    const meta = await sheets.spreadsheets.get({ spreadsheetId });
+    if (meta.data.sheets && meta.data.sheets.length > 0) {
+      sheetName = meta.data.sheets[0].properties.title;
+    }
+  } catch (err) {
+    console.warn('Could not fetch sheet name metadata:', err.message);
+  }
+
+  const range = `${sheetName}!A:L`; // Columns: id, date, inquiry_type, name, company, email, phone, budget, referral_source, message, status, travel
 
   try {
     // 2. POST Handler: Append a new inquiry
     if (req.method === 'POST') {
       const { id, date, inquiry_type, name, company, email, phone, budget, referral_source, message, status, travel } = req.body;
 
-      // Check if Sheet1 exists and is blank. If so, write headers first.
+      // Check if Sheet exists and is blank. If so, write headers first.
       let currentRows;
       try {
         const checkRes = await sheets.spreadsheets.values.get({
           spreadsheetId,
-          range: 'Sheet1!A1:A1',
+          range: `${sheetName}!A1:A1`,
         });
         currentRows = checkRes.data.values;
       } catch (err) {
-        console.warn('Could not read Sheet1 A1 (might be empty/not exist):', err.message);
+        console.warn(`Could not read ${sheetName} A1 (might be empty/not exist):`, err.message);
       }
 
       if (!currentRows || currentRows.length === 0) {
-        // Initialize Sheet1 with headers
+        // Initialize Sheet with headers
         const headers = ['id', 'date', 'inquiry_type', 'name', 'company', 'email', 'phone', 'budget', 'referral_source', 'message', 'status', 'travel'];
         await sheets.spreadsheets.values.update({
           spreadsheetId,
-          range: 'Sheet1!A1:L1',
+          range: `${sheetName}!A1:L1`,
           valueInputOption: 'USER_ENTERED',
           requestBody: { values: [headers] },
         });
@@ -184,7 +196,7 @@ module.exports = async (req, res) => {
       }
 
       // K corresponds to the 11th column (status)
-      const cellRange = `Sheet1!K${rowIndex + 1}`;
+      const cellRange = `${sheetName}!K${rowIndex + 1}`;
       await sheets.spreadsheets.values.update({
         spreadsheetId,
         range: cellRange,
