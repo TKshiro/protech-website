@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
   }
 
   const spreadsheetId = process.env.SPREADSHEET_ID;
-  const adminPassword = process.env.ADMIN_PASSWORD || 'protechadmin123';
+  const adminPassword = process.env.ADMIN_PASSWORD || 'protechadmin2026';
   const googleCredsEnv = process.env.GOOGLE_SERVICE_ACCOUNT;
 
   // Find Google credentials

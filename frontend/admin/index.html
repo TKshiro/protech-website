@@ -345,9 +345,10 @@
 
             // Local fallback
             const expectedHash = localStorage.getItem(PASSWORD_HASH_KEY);
-            if (!expectedHash) return false;
+            const isDefaultCreds = username === VALID_USER && password === 'protechadmin2026';
+            const isLocalMatch = expectedHash && username === VALID_USER && passwordHash === expectedHash;
 
-            if (username === VALID_USER && passwordHash === expectedHash) {
+            if (isDefaultCreds || isLocalMatch) {
                 const userData = { username, token: passwordHash };
                 sessionStorage.setItem(AUTH_KEY, JSON.stringify(userData));
                 state.user = userData;
@@ -392,27 +393,26 @@
         }
 
         function renderLogin() {
-            const needsSetup = isLocalHostname() && !hasLocalPassword();
             return `
                 <div class="min-h-screen bg-gradient-to-br from-slate-950 via-tech-blue to-slate-900 flex items-center justify-center p-6">
                     <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 md:p-10">
                         <div class="text-center mb-8">
                             <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-tech-blue text-white text-2xl font-black tracking-widest mb-4">P</div>
                             <p class="text-sm font-bold tracking-[0.35em] text-coral uppercase mb-2">PROTECH</p>
-                            <h1 class="text-2xl font-bold text-slate-900">${needsSetup ? 'ローカルパスワード設定' : '管理パネル ログイン'}</h1>
-                            <p class="text-sm text-slate-500 mt-2">${needsSetup ? '初回利用のため、10文字以上の管理パスワードを設定してください。' : '社内用ダッシュボードへアクセス'}</p>
+                            <h1 class="text-2xl font-bold text-slate-900">管理パネル ログイン</h1>
+                            <p class="text-sm text-slate-500 mt-2">社内用ダッシュボードへアクセス</p>
                         </div>
                         <form id="login-form" class="space-y-5">
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-2">ユーザー名</label>
-                                <input name="username" type="text" autocomplete="username" value="${VALID_USER}" ${needsSetup ? 'readonly' : ''} class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="admin" required>
+                                <input name="username" type="text" autocomplete="username" value="${VALID_USER}" class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="admin" required>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-2">パスワード</label>
-                                <input name="password" type="password" autocomplete="${needsSetup ? 'new-password' : 'current-password'}" class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="${needsSetup ? '10文字以上で設定' : 'Password'}" required>
+                                <input name="password" type="password" autocomplete="current-password" class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="Password" required>
                             </div>
                             <p id="login-error" class="hidden text-sm text-rose-600 bg-rose-50 border border-rose-200 rounded-xl px-4 py-3"></p>
-                            <button type="submit" class="w-full bg-tech-blue hover:bg-slate-900 text-white rounded-xl py-3 font-bold transition">${needsSetup ? 'パスワードを設定' : 'ログイン'}</button>
+                            <button type="submit" class="w-full bg-tech-blue hover:bg-slate-900 text-white rounded-xl py-3 font-bold transition">ログイン</button>
                         </form>
                     </div>
                 </div>
@@ -1001,21 +1001,16 @@
                     }
 
                     let ok = false;
-                    const needsSetup = isLocalHostname() && !hasLocalPassword();
                     try {
                         const password = form.get('password')?.toString() || '';
-                        ok = needsSetup
-                            ? await setLocalPassword(password)
-                            : await login(form.get('username')?.toString().trim(), password);
+                        ok = await login(form.get('username')?.toString().trim(), password);
                     } catch (error) {
                         if (errorEl) errorEl.textContent = error.message;
                     }
 
                     if (!ok) {
                         if (errorEl && !errorEl.textContent) {
-                            errorEl.textContent = !needsSetup
-                                ? 'ユーザー名またはパスワードが正しくありません。'
-                                : 'パスワードは10文字以上で設定してください。';
+                            errorEl.textContent = 'ユーザー名またはパスワードが正しくありません。';
                         }
                         if (errorEl) errorEl.classList.remove('hidden');
                     }
