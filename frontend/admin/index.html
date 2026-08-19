@@ -330,11 +330,17 @@
                         await syncContacts();
                         render();
                         return true;
+                    } else {
+                        if (res.status === 401) {
+                            return false;
+                        }
+                        const errData = await res.json().catch(() => ({}));
+                        throw new Error(errData.error || `サーバーエラー (HTTP ${res.status})。Vercel 后台的环境变量可能配置有误，请确认 SPREADSHEET_ID 和 GOOGLE_SERVICE_ACCOUNT 已正确设置。`);
                     }
                 } catch (err) {
                     console.error('API login failed:', err);
+                    throw err;
                 }
-                return false;
             }
 
             // Local fallback
