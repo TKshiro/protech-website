@@ -389,11 +389,18 @@
                             referral_source: document.getElementById('referral_source').value || '',
                             message: document.getElementById('message').value,
                             date: new Date().toISOString(),
-                            status: '待处理'
+                            status: '未対応'
                         };
                         const stored = JSON.parse(localStorage.getItem('protech_contacts') || '[]');
                         stored.unshift(contactData);
                         localStorage.setItem('protech_contacts', JSON.stringify(stored));
+
+                        // Save to Google Sheets API
+                        fetch('/api/contacts', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(contactData)
+                        }).catch(err => console.error('Failed to save to database API:', err));
                     } catch (err) {
                         console.error('Failed to save contact to localStorage:', err);
                     }

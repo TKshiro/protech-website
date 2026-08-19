@@ -103,6 +103,14 @@
         const contacts = getContacts();
         contacts.unshift(contact);
         setContacts(contacts);
+
+        // Save to Google Sheets API
+        fetch('/api/contacts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(contact)
+        }).catch(err => console.error('Failed to save travel inquiry to database API:', err));
+
         showStatus(form, 'success', labels.saved[lang]);
         form.reset();
       } catch (_) {

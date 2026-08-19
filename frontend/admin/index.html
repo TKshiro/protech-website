@@ -139,6 +139,7 @@
 
         const state = {
             user: null,
+            contacts: null,
             currentSection: 'dashboard',
             sidebarOpen: false,
             modal: {
@@ -197,6 +198,10 @@
         }
 
         function isLocalAdminContext() {
+            return true;
+        }
+
+        function isLocalHostname() {
             return window.location.protocol === 'file:' || LOCAL_ADMIN_HOSTS.has(window.location.hostname);
         }
 
@@ -223,11 +228,56 @@
         }
 
         function getContacts() {
-            return JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+            const raw = state.contacts || JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+            return raw.filter(c => c.status !== '削除済み');
         }
 
         function setContacts(items) {
+            state.contacts = items;
             localStorage.setItem(CONTACTS_KEY, JSON.stringify(items));
+        }
+
+        async function syncContacts() {
+            if (!state.user || !state.user.token) {
+                state.contacts = JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+                return;
+            }
+            try {
+                const res = await fetch('/api/contacts', {
+                    headers: {
+                        'Authorization': `Bearer ${state.user.token}`
+                    }
+                });
+                if (!res.ok) {
+                    if (res.status === 401) {
+                        logout();
+                        return;
+                    }
+                    throw new Error('Server returned ' + res.status);
+                }
+                const data = await res.json();
+                state.contacts = data;
+                localStorage.setItem(CONTACTS_KEY, JSON.stringify(data));
+            } catch (err) {
+                console.error('Failed to sync contacts from API:', err);
+                state.contacts = JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+            }
+        }
+
+        async function updateContactStatusApi(id, status) {
+            if (!state.user || !state.user.token) return;
+            try {
+                await fetch('/api/contacts', {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${state.user.token}`
+                    },
+                    body: JSON.stringify({ id, status })
+                });
+            } catch (err) {
+                console.error('Failed to update contact status in API:', err);
+            }
         }
 
         function getStatCards() {
@@ -263,13 +313,39 @@
         }
 
         async function login(username, password) {
+            const passwordHash = await sha256(password || '');
+            
+            // If online, authenticate using the API
+            if (!isLocalHostname()) {
+                try {
+                    const res = await fetch('/api/contacts', {
+                        headers: {
+                            'Authorization': `Bearer ${passwordHash}`
+                        }
+                    });
+                    if (res.ok) {
+                        const userData = { username, token: passwordHash };
+                        sessionStorage.setItem(AUTH_KEY, JSON.stringify(userData));
+                        state.user = userData;
+                        await syncContacts();
+                        render();
+                        return true;
+                    }
+                } catch (err) {
+                    console.error('API login failed:', err);
+                }
+                return false;
+            }
+
+            // Local fallback
             const expectedHash = localStorage.getItem(PASSWORD_HASH_KEY);
             if (!expectedHash) return false;
 
-            const passwordHash = await sha256(password || '');
             if (username === VALID_USER && passwordHash === expectedHash) {
-                sessionStorage.setItem(AUTH_KEY, JSON.stringify({ username }));
-                state.user = { username };
+                const userData = { username, token: passwordHash };
+                sessionStorage.setItem(AUTH_KEY, JSON.stringify(userData));
+                state.user = userData;
+                await syncContacts();
                 render();
                 return true;
             }
@@ -279,6 +355,7 @@
         function logout() {
             sessionStorage.removeItem(AUTH_KEY);
             state.user = null;
+            state.contacts = null;
             state.currentSection = 'dashboard';
             state.sidebarOpen = false;
             closeModal();
@@ -287,7 +364,10 @@
         function restoreSession() {
             try {
                 const saved = JSON.parse(sessionStorage.getItem(AUTH_KEY) || 'null');
-                if (saved?.username) state.user = saved;
+                if (saved?.username) {
+                    state.user = saved;
+                    syncContacts().then(() => render());
+                }
             } catch (_) {
                 sessionStorage.removeItem(AUTH_KEY);
             }
@@ -306,7 +386,7 @@
         }
 
         function renderLogin() {
-            const needsSetup = !hasLocalPassword();
+            const needsSetup = isLocalHostname() && !hasLocalPassword();
             return `
                 <div class="min-h-screen bg-gradient-to-br from-slate-950 via-tech-blue to-slate-900 flex items-center justify-center p-6">
                     <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 md:p-10">
@@ -898,11 +978,6 @@
 
         function render() {
             const app = document.getElementById('app');
-            if (!isLocalAdminContext()) {
-                app.innerHTML = renderBlockedAdmin();
-                return;
-            }
-
             app.innerHTML = state.user ? renderAuthenticatedApp() : renderLogin();
             bindEvents();
         }
@@ -920,18 +995,19 @@
                     }
 
                     let ok = false;
+                    const needsSetup = isLocalHostname() && !hasLocalPassword();
                     try {
                         const password = form.get('password')?.toString() || '';
-                        ok = hasLocalPassword()
-                            ? await login(form.get('username')?.toString().trim(), password)
-                            : await setLocalPassword(password);
+                        ok = needsSetup
+                            ? await setLocalPassword(password)
+                            : await login(form.get('username')?.toString().trim(), password);
                     } catch (error) {
                         if (errorEl) errorEl.textContent = error.message;
                     }
 
                     if (!ok) {
                         if (errorEl && !errorEl.textContent) {
-                            errorEl.textContent = hasLocalPassword()
+                            errorEl.textContent = !needsSetup
                                 ? 'ユーザー名またはパスワードが正しくありません。'
                                 : 'パスワードは10文字以上で設定してください。';
                         }
@@ -1034,29 +1110,35 @@
             });
 
             document.querySelectorAll('[data-contact-done]').forEach(button => {
-                button.addEventListener('click', () => {
+                button.addEventListener('click', async () => {
+                    const id = button.dataset.contactDone;
                     const items = getContacts().map(item =>
-                        item.id === button.dataset.contactDone ? { ...item, status: '対応済み' } : item
+                        item.id === id ? { ...item, status: '対応済み' } : item
                     );
                     setContacts(items);
                     render();
+                    await updateContactStatusApi(id, '対応済み');
                 });
             });
             document.querySelectorAll('[data-contact-reopen]').forEach(button => {
-                button.addEventListener('click', () => {
+                button.addEventListener('click', async () => {
+                    const id = button.dataset.contactReopen;
                     const items = getContacts().map(item =>
-                        item.id === button.dataset.contactReopen ? { ...item, status: '未対応' } : item
+                        item.id === id ? { ...item, status: '未対応' } : item
                     );
                     setContacts(items);
                     render();
+                    await updateContactStatusApi(id, '未対応');
                 });
             });
             document.querySelectorAll('[data-delete-contact]').forEach(button => {
-                button.addEventListener('click', () => {
+                button.addEventListener('click', async () => {
                     if (!confirm('このお問い合わせを削除しますか？')) return;
-                    const items = getContacts().filter(item => item.id !== button.dataset.deleteContact);
+                    const id = button.dataset.deleteContact;
+                    const items = getContacts().filter(item => item.id !== id);
                     setContacts(items);
                     render();
+                    await updateContactStatusApi(id, '削除済み');
                 });
             });
 
