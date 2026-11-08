@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://pro-tech.jp/</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp" />
   </url>
+
   <url>
     <loc>https://pro-tech.jp/blog</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/services" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/services" />
   </url>
   <url>
     <loc>https://pro-tech.jp/blog/agency-checklist</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/korea-inbound-strategy-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/korea-inbound-strategy-2026" />
   </url>
+
   <url>
     <loc>https://pro-tech.jp/blog/cashless-payment-inbound-2026</loc>
     <lastmod>2026-11-08</lastmod>
@@ -106,8 +119,11 @@
     <loc>https://pro-tech.jp/blog/inbound-meaning-guide</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/inbound-marketing-cost-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/inbound-marketing-cost-2026" />
   </url>
+
   <url>
     <loc>https://pro-tech.jp/blog/inbound-spending-behavior-2026</loc>
     <lastmod>2026-11-08</lastmod>
@@ -196,13 +212,36 @@
     <loc>https://pro-tech.jp/blog/xiaohongshu-hotel-marketing-2026</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/wechat-marketing-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/wechat-marketing-guide-2026" />
   </url>
+
+  <url>
+    <loc>https://pro-tech.jp/blog/inbound-foreign-tourist-trends-2026</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/inbound-foreign-tourist-trends-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/inbound-foreign-tourist-trends-2026" />
+  </url>
+
+  <url>
+    <loc>https://pro-tech.jp/blog/what-is-inbound-demand</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/what-is-inbound-demand" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/what-is-inbound-demand" />
+  </url>
+
   <url>
     <loc>https://pro-tech.jp/blog/xiaohongshu-local-tourism-2026</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/xiaohongshu-local-tourism-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog/xiaohongshu-local-tourism-2026" />
   </url>
   <url>
     <loc>https://pro-tech.jp/cases</loc>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客 - PROTECH 株式会社</title>
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+    <meta name="description" content="PROTECH 博客。为您带来关于小红书营销、网页开发和数字化战略的最新资讯与行业见解。">
+    <link rel="canonical" href="https://pro-tech.jp/cn/blog">
+    <link rel="alternate" type="application/rss+xml" title="PROTECH Blog RSS" href="https://pro-tech.jp/cn/rss.xml">
+    
+    <!-- Hreflang Tags for Blog Listing -->
+    <link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog" />
+    <link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/blog" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/blog" />
+    <link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/blog" />
+
+    <meta property="og:title" content="博客 - PROTECH 株式会社">
+    <meta property="og:description" content="PROTECH 博客。为您带来关于小红书营销、网页开发和数字化战略的最新资讯与行业见解。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pro-tech.jp/cn/blog">
+    <meta property="og:image" content="https://pro-tech.jp/assets/images/favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root { --tech-blue: #001A33; --coral: #E86B7A; }
+        .btn-coral { background-color: #E86B7A !important; color: white !important; transition: opacity 0.2s; }
+        .btn-coral:hover { opacity: 0.85; }
+        .nav-link { transition: color 0.2s; }
+        .nav-link:hover { color: #E86B7A !important; }
+        body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .serif { font-family: 'Noto Serif JP', serif; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); }
+        .filter-btn { position: relative; cursor: pointer; transition: all 0.3s; color: #94a3b8; }
+        .filter-btn.active { color: var(--tech-blue); font-weight: 700; }
+        .filter-btn.active::after { content: ''; position: absolute; bottom: -17px; left: 0; width: 100%; height: 2px; background: var(--tech-blue); }
+        .hamburger line { transition: all 0.3s ease; transform-origin: center; }
+        .hamburger.active #line1 { transform: translateY(7px) rotate(45deg); }
+        .hamburger.active #line2 { opacity: 0; }
+        .hamburger.active #line3 { transform: translateY(-7px) rotate(-45deg); }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        'tech-blue': '#001A33',
+                        'coral': '#E86B7A'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-slate-900">
+
+<!-- NAV -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
+            <a href="/cn/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest items-center uppercase">
+                <a href="/cn/" class="nav-link text-slate-600 hover:text-coral transition-colors">首页</a>
+
+                <div class="relative group">
+                    <a href="/cn/services" class="nav-link text-slate-600 hover:text-coral transition-colors flex items-center gap-1">服务介绍
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/cn/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">全部服务</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大众点评</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小红书</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">中文视觉与内容制作</a>
+                            <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL / KOC 网红营销</a>
+                            <a href="/travel/" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-emerald-700 transition-colors text-xs font-bold">日本定制旅行</a>
+                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
+                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">价格方案</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/cn/company" class="nav-link text-slate-600 hover:text-coral transition-colors">公司概要</a>
+                <a href="/cn/cases" class="nav-link text-slate-600 hover:text-coral transition-colors">客户案例</a>
+                <a href="/cn/blog" class="nav-link text-coral font-bold">博客文章</a>
+                <a href="/cn/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">联系我们</a>
+                
+                
+                <div class="relative group ml-4">
+                    <button class="flex items-center gap-1 hover:text-coral font-bold transition text-slate-600 cursor-pointer text-xs uppercase tracking-widest">
+                        🌐 CN
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+                        <a href="https://pro-tech.jp/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="https://pro-tech.jp/en/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="https://pro-tech.jp/cn/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                    </div>
+                </div>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                    <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                    <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform translate-x-full md:hidden overflow-y-auto">
+        <div class="flex flex-col items-center justify-center min-h-full space-y-8 py-20">
+            <a href="/cn/" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">首页</a>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="/cn/services" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">服务介绍</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大众点评</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小红书</a>
+                <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
+                <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
+                <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">中文视觉与内容制作</a>
+                <a href="/kol" class="text-sm font-bold text-slate-500 hover:text-amber-600">KOL / KOC 网红营销</a>
+                <a href="/travel/" class="text-sm font-bold text-slate-500 hover:text-emerald-700">日本定制旅行</a>
+                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">价格方案</a>
+            </div>
+            <a href="/cn/company" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">公司概要</a>
+            <a href="/cn/cases" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">客户案例</a>
+            <a href="/cn/blog" class="text-lg font-bold text-coral font-bold">博客文章</a>
+            <a href="/cn/contact" class="text-lg font-bold text-slate-700">联系我们</a>
+            
+            
+            <div class="flex gap-4 border-t border-gray-100 pt-6 mt-4 w-full justify-center text-xs">
+                <a href="https://pro-tech.jp/blog" class="text-slate-500 hover:text-coral font-bold">JP</a>
+                <a href="https://pro-tech.jp/en/blog" class="text-slate-500 hover:text-coral font-bold">EN</a>
+                <a href="https://pro-tech.jp/cn/blog" class="text-slate-500 hover:text-coral font-bold">CN</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-8 pt-40 md:pt-48 pb-20">
+        <header class="mb-16 border-b border-gray-100 pb-16" data-aos="fade-up">
+            <p class="text-tech-blue text-[10px] font-bold tracking-[0.3em] uppercase mb-4">博客</p>
+            <h1 class="text-4xl md:text-5xl font-bold serif text-tech-blue mb-6 uppercase tracking-widest">博客</h1>
+            <p class="text-gray-400 text-xs tracking-[0.2em] font-light">小红书营销、访日集客与技术开发的专业内容</p>
+        </header>
+
+        <div id="filter-controls"
+            class="flex gap-10 text-[10px] tracking-[0.2em] uppercase mb-12 border-b border-gray-100 pb-4"
+            data-aos="fade-up">
+            <button data-filter="all" class="filter-btn active">全部</button>
+            <button data-filter="news" class="filter-btn">新闻</button>
+            <button data-filter="service" class="filter-btn">服务</button>
+            <button data-filter="case" class="filter-btn">案例</button>
+        </div>
+
+        <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <a href="/cn/blog/japan-autumn-spots-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600" alt="【2026年秋】日本秋季赏枫与旅游必去十大景点｜秋日绝景完全指南" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.08.20</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">服务</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【2026年秋】日本秋季赏枫与旅游必去十大景点｜秋日绝景完全指南</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">为您严选2026年秋天访日游客绝对不能错过的日本十大旅游与赏枫景点。从京都历史悠久的古寺、北海道的壮丽自然，到令人屏息的峡谷风光，为您深度解析看点、交通及最佳观赏期。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        阅读全文 <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/cn/blog/japan-hanabi-guide-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-hanabi-hero-2026.jpg" alt="【2026年保存版】日本夏日烟花大会推荐15选｜举办日程・发射数量・交通攻略全覆盖" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.06.18</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">服务</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【2026年保存版】日本夏日烟花大会推荐15选｜举办日程・发射数量・交通攻略全覆盖</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">为您严选介绍2026年夏季在日本举办的15个最值得看的烟花大会。隅田川、长冈、大曲等，全方位覆盖举办时间、发射发数、有料观赏席与交通出行指南。非常适合访日入境游客出行规划的烟花盛典信息。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        阅读全文 <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/cn/blog/japan-summer-spots-2026"
+                class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                data-category="service" data-aos="fade-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="/assets/images/blog-summer-furano-lavender.jpg" alt="【2026年夏】日本夏季旅游必去景点15选｜避暑胜地与热门打卡全攻略" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.06.18</span>
+                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">服务</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【2026年夏】日本夏季旅游必去景点15选｜避暑胜地与热门打卡全攻略</h3>
+                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">为您精心推荐2026年夏季访日游客最值得一去的15个旅游景点。囊括震撼花火大会、清澈海滩、高原避暑胜地以及热烈夏日祭典，全方位覆盖交通指南、特色看点与最佳旅行时间规划。</p>
+                    <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
+                        阅读全文 <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
+                    <p class="text-white/30 text-xs leading-relaxed">用科技与营销，<br>跨越商业的边界。</p>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">服务介绍</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/dianping.html" class="hover:text-coral transition">大众点评引流</a></li>
+                        <li><a href="/red.html" class="hover:text-coral transition">小红书 (RED) 整合营销</a></li>
+                        <li><a href="/douyin" class="hover:text-coral transition">抖音 (Douyin) 代运营</a></li>
+                        <li><a href="/miniprogram" class="hover:text-coral transition">WeChat 小程序开发</a></li>
+                        <li><a href="/creative" class="hover:text-coral transition">中文内容与视觉制作</a></li>
+                        <li><a href="/kol" class="hover:text-coral transition">KOL / KOC 网红营销</a></li>
+                        <li><a href="/travel/" class="hover:text-coral transition">日本多语言定制旅行</a></li>
+                        <li><a href="/pricing" class="hover:text-coral transition">价格方案</a></li>
+                        <li><a href="/cn/services" class="hover:text-coral transition">全部服务</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">公司信息</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/cn/company" class="hover:text-coral transition">公司概要</a></li>
+                        <li><a href="/cn/cases" class="hover:text-coral transition">客户案例</a></li>
+                        <li><a href="/cn/blog" class="hover:text-coral transition">博客文章</a></li>
+                        <li><a href="/privacy" class="hover:text-coral transition">隐私政策</a></li>
+                        <li><a href="/tokushoho" class="hover:text-coral transition">特定商业交易法声明</a></li>
+                        <li><a href="/terms" class="hover:text-coral transition">使用条款</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">资源中心</h4>
+                    <ul class="space-y-3 text-sm text-white/40">
+                        <li><a href="/download" class="hover:text-coral transition">干货资料下载</a></li>
+                        <li><a href="/faq" class="hover:text-coral transition">常见问题 (FAQ)</a></li>
+                        <li><a href="/inbound-ai" class="hover:text-coral transition">入境营销 AI</a></li>
+                        <li><a href="/cn/contact" class="hover:text-coral transition">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. 版权所有</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 1000, once: true });
+
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    menuBtn.classList.toggle('active');
+                    mobileMenu.classList.toggle('translate-x-full');
+                });
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                        menuBtn.classList.remove('active');
+                        mobileMenu.classList.add('translate-x-full');
+                    }
+                });
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768) {
+                        menuBtn.classList.remove('active');
+                        mobileMenu.classList.add('translate-x-full');
+                    }
+                });
+            }
+
+            const filterButtons = document.querySelectorAll('#filter-controls .filter-btn');
+            const blogItems = document.querySelectorAll('#blog-container > a');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    const filterValue = button.getAttribute('data-filter');
+                    blogItems.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        if (filterValue === 'all' || filterValue === itemCategory) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                    AOS.refresh();
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

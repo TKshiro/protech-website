@@ -135,7 +135,7 @@
 <body class="bg-white text-slate-900">
 
                     <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
-        <!-- NAV -->
+                    <!-- NAV -->
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
@@ -440,7 +440,7 @@
         </div>
     </section>
 
-                        <!-- FOOTER -->
+                                    <!-- FOOTER -->
     <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
@@ -504,7 +504,7 @@
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
                     const filterValue = button.getAttribute('data-filter');
-                    document.querySelectorAll('#cases-container .case-card').forEach(item => {
+                    document.querySelectorAll('#cases-container a.case-card').forEach(item => {
                         const itemCategory = item.getAttribute('data-category');
                         if (filterValue === 'all' || filterValue === itemCategory) {
                             item.classList.remove('hidden');

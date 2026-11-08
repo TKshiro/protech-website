@@ -13,6 +13,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="PROTECH local-only content management prototype.">
     <title>PROTECH Admin Panel</title>
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     
@@ -50,11 +52,12 @@
 
     <script>
         const AUTH_KEY = 'protech_admin_auth';
+        const PASSWORD_HASH_KEY = 'protech_admin_password_hash';
         const CASES_KEY = 'protech_cases';
         const BLOGS_KEY = 'protech_blogs';
         const CONTACTS_KEY = 'protech_contacts';
         const VALID_USER = 'admin';
-        const VALID_PASS = 'Zhb201314!';
+        const LOCAL_ADMIN_HOSTS = new Set(['', 'localhost', '127.0.0.1', '0.0.0.0', '::1']);
 
         const sampleCases = [
             {
@@ -136,6 +139,7 @@
 
         const state = {
             user: null,
+            contacts: null,
             currentSection: 'dashboard',
             sidebarOpen: false,
             modal: {
@@ -181,6 +185,30 @@
                 .replace(/'/g, '&#39;');
         }
 
+        async function sha256(value) {
+            if (!window.crypto?.subtle) {
+                throw new Error('このブラウザでは安全なローカルパスワード保存を利用できません。');
+            }
+
+            const bytes = new TextEncoder().encode(value);
+            const hashBuffer = await window.crypto.subtle.digest('SHA-256', bytes);
+            return Array.from(new Uint8Array(hashBuffer))
+                .map(byte => byte.toString(16).padStart(2, '0'))
+                .join('');
+        }
+
+        function isLocalAdminContext() {
+            return true;
+        }
+
+        function isLocalHostname() {
+            return window.location.protocol === 'file:' || LOCAL_ADMIN_HOSTS.has(window.location.hostname);
+        }
+
+        function hasLocalPassword() {
+            return Boolean(localStorage.getItem(PASSWORD_HASH_KEY));
+        }
+
         function formatDate(dateString) {
             if (!dateString) return '未設定';
             const date = new Date(dateString);
@@ -200,11 +228,56 @@
         }
 
         function getContacts() {
-            return JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+            const raw = state.contacts || JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+            return raw.filter(c => c.status !== '削除済み');
         }
 
         function setContacts(items) {
+            state.contacts = items;
             localStorage.setItem(CONTACTS_KEY, JSON.stringify(items));
+        }
+
+        async function syncContacts() {
+            if (!state.user || !state.user.token) {
+                state.contacts = JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+                return;
+            }
+            try {
+                const res = await fetch('/api/contacts', {
+                    headers: {
+                        'Authorization': `Bearer ${state.user.token}`
+                    }
+                });
+                if (!res.ok) {
+                    if (res.status === 401) {
+                        logout();
+                        return;
+                    }
+                    throw new Error('Server returned ' + res.status);
+                }
+                const data = await res.json();
+                state.contacts = data;
+                localStorage.setItem(CONTACTS_KEY, JSON.stringify(data));
+            } catch (err) {
+                console.error('Failed to sync contacts from API:', err);
+                state.contacts = JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+            }
+        }
+
+        async function updateContactStatusApi(id, status) {
+            if (!state.user || !state.user.token) return;
+            try {
+                await fetch('/api/contacts', {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${state.user.token}`
+                    },
+                    body: JSON.stringify({ id, status })
+                });
+            } catch (err) {
+                console.error('Failed to update contact status in API:', err);
+            }
         }
 
         function getStatCards() {
@@ -227,10 +300,59 @@
             render();
         }
 
-        function login(username, password) {
-            if (username === VALID_USER && password === VALID_PASS) {
-                sessionStorage.setItem(AUTH_KEY, JSON.stringify({ username }));
-                state.user = { username };
+        async function setLocalPassword(password) {
+            if (!password || password.length < 10) {
+                return false;
+            }
+
+            localStorage.setItem(PASSWORD_HASH_KEY, await sha256(password));
+            sessionStorage.setItem(AUTH_KEY, JSON.stringify({ username: VALID_USER }));
+            state.user = { username: VALID_USER };
+            render();
+            return true;
+        }
+
+        async function login(username, password) {
+            const passwordHash = await sha256(password || '');
+            
+            // If online, authenticate using the API
+            if (!isLocalHostname()) {
+                try {
+                    const res = await fetch('/api/contacts', {
+                        headers: {
+                            'Authorization': `Bearer ${passwordHash}`
+                        }
+                    });
+                    if (res.ok) {
+                        const userData = { username, token: passwordHash };
+                        sessionStorage.setItem(AUTH_KEY, JSON.stringify(userData));
+                        state.user = userData;
+                        await syncContacts();
+                        render();
+                        return true;
+                    } else {
+                        if (res.status === 401) {
+                            return false;
+                        }
+                        const errData = await res.json().catch(() => ({}));
+                        throw new Error(errData.error || `サーバーエラー (HTTP ${res.status})。Vercel 后台的环境变量可能配置有误，请确认 SPREADSHEET_ID 和 GOOGLE_SERVICE_ACCOUNT 已正确设置。`);
+                    }
+                } catch (err) {
+                    console.error('API login failed:', err);
+                    throw err;
+                }
+            }
+
+            // Local fallback
+            const expectedHash = localStorage.getItem(PASSWORD_HASH_KEY);
+            const isDefaultCreds = username === VALID_USER && password === 'protechadmin2026';
+            const isLocalMatch = expectedHash && username === VALID_USER && passwordHash === expectedHash;
+
+            if (isDefaultCreds || isLocalMatch) {
+                const userData = { username, token: passwordHash };
+                sessionStorage.setItem(AUTH_KEY, JSON.stringify(userData));
+                state.user = userData;
+                await syncContacts();
                 render();
                 return true;
             }
@@ -240,6 +362,7 @@
         function logout() {
             sessionStorage.removeItem(AUTH_KEY);
             state.user = null;
+            state.contacts = null;
             state.currentSection = 'dashboard';
             state.sidebarOpen = false;
             closeModal();
@@ -248,10 +371,25 @@
         function restoreSession() {
             try {
                 const saved = JSON.parse(sessionStorage.getItem(AUTH_KEY) || 'null');
-                if (saved?.username) state.user = saved;
+                if (saved?.username) {
+                    state.user = saved;
+                    syncContacts().then(() => render());
+                }
             } catch (_) {
                 sessionStorage.removeItem(AUTH_KEY);
             }
+        }
+
+        function renderBlockedAdmin() {
+            return `
+                <div class="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
+                    <div class="max-w-lg rounded-3xl border border-white/10 bg-white/10 p-8 md:p-10 shadow-2xl">
+                        <p class="text-xs font-bold tracking-[0.3em] text-rose-300 uppercase mb-4">Local Admin Only</p>
+                        <h1 class="text-3xl font-black mb-4">管理画面はローカル環境専用です</h1>
+                        <p class="text-sm leading-7 text-white/70">この静的管理プロトタイプは localhost、127.0.0.1、または file:// から開いた場合のみ利用できます。公開環境で利用する場合は、サーバー側の認証を導入してください。</p>
+                    </div>
+                </div>
+            `;
         }
 
         function renderLogin() {
@@ -267,11 +405,11 @@
                         <form id="login-form" class="space-y-5">
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-2">ユーザー名</label>
-                                <input name="username" type="text" class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="admin" required>
+                                <input name="username" type="text" autocomplete="username" value="${VALID_USER}" class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="admin" required>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-2">パスワード</label>
-                                <input name="password" type="password" class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="protech2026" required>
+                                <input name="password" type="password" autocomplete="current-password" class="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral" placeholder="Password" required>
                             </div>
                             <p id="login-error" class="hidden text-sm text-rose-600 bg-rose-50 border border-rose-200 rounded-xl px-4 py-3"></p>
                             <button type="submit" class="w-full bg-tech-blue hover:bg-slate-900 text-white rounded-xl py-3 font-bold transition">ログイン</button>
@@ -458,6 +596,7 @@
         }
 
         const INQUIRY_TYPE_LABELS = {
+            travel_custom: '日本旅行コンシェルジュ',
             red_marketing: '小紅書マーケティング',
             web_development: 'Web・App開発',
             ui_ux_design: 'UI/UXデザイン',
@@ -476,6 +615,7 @@
         };
 
         const REFERRAL_LABELS = {
+            travel_page: '旅行LP・記事',
             web_search: 'Web検索',
             sns: 'SNS',
             referral: '知人の紹介',
@@ -507,6 +647,25 @@
                             ${contacts.map(item => {
                                 const isUnread = item.status === '未対応';
                                 const dateStr = item.date ? new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }).format(new Date(item.date)) : '不明';
+                                const contactValue = item.email || item.contact || '';
+                                const contactHtml = contactValue.includes('@')
+                                    ? `<a href="mailto:${escapeHtml(contactValue)}" class="text-coral hover:underline truncate">${escapeHtml(contactValue)}</a>`
+                                    : `<span class="text-slate-700 break-all">${escapeHtml(contactValue || '未記入')}</span>`;
+                                const travel = item.travel || {};
+                                const travelBlock = travel.service || travel.travel_date || travel.people || travel.language || travel.page_url ? `
+                                    <div class="md:col-span-2 mt-2 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4">
+                                        <p class="text-xs font-bold text-emerald-700 mb-3 tracking-wide">旅行相談内容</p>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <div><span class="text-slate-400">出行日程</span><p class="font-semibold text-slate-800">${escapeHtml(travel.travel_date || '未記入')}</p></div>
+                                            <div><span class="text-slate-400">人数</span><p class="font-semibold text-slate-800">${escapeHtml(travel.people || '未記入')}</p></div>
+                                            <div><span class="text-slate-400">対応言語</span><p class="font-semibold text-slate-800">${escapeHtml(travel.language || '未記入')}</p></div>
+                                            <div><span class="text-slate-400">希望サービス</span><p class="font-semibold text-slate-800">${escapeHtml(travel.service || '未記入')}</p></div>
+                                            <div><span class="text-slate-400">予算</span><p class="font-semibold text-slate-800">${escapeHtml(travel.budget || item.budget || '未記入')}</p></div>
+                                            <div><span class="text-slate-400">流入元</span><p class="font-semibold text-slate-800">${escapeHtml(travel.source || 'travel_page')}</p></div>
+                                            <div class="md:col-span-2"><span class="text-slate-400">送信ページ</span><p class="font-semibold text-slate-800 break-all">${escapeHtml(travel.page_url || '未記入')}</p></div>
+                                        </div>
+                                    </div>
+                                ` : '';
                                 return `
                                 <div class="bg-white rounded-2xl shadow-sm border ${isUnread ? 'border-coral/40' : 'border-slate-200'} overflow-hidden">
                                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-6 py-4 border-b border-slate-100">
@@ -533,8 +692,8 @@
                                             <span class="font-semibold text-slate-900">${escapeHtml(item.company)}</span>
                                         </div>
                                         <div class="flex gap-3">
-                                            <span class="text-slate-400 w-20 shrink-0">メール</span>
-                                            <a href="mailto:${escapeHtml(item.email)}" class="text-coral hover:underline truncate">${escapeHtml(item.email)}</a>
+                                            <span class="text-slate-400 w-20 shrink-0">連絡先</span>
+                                            ${contactHtml}
                                         </div>
                                         <div class="flex gap-3">
                                             <span class="text-slate-400 w-20 shrink-0">電話</span>
@@ -552,6 +711,7 @@
                                             <span class="text-slate-400 w-20 shrink-0">内容</span>
                                             <p class="text-slate-700 whitespace-pre-wrap leading-relaxed">${escapeHtml(item.message)}</p>
                                         </div>
+                                        ${travelBlock}
                                     </div>
                                 </div>
                             `}).join('')}
@@ -831,14 +991,28 @@
         function bindEvents() {
             const loginForm = document.getElementById('login-form');
             if (loginForm) {
-                loginForm.addEventListener('submit', (event) => {
+                loginForm.addEventListener('submit', async (event) => {
                     event.preventDefault();
                     const form = new FormData(loginForm);
                     const errorEl = document.getElementById('login-error');
-                    const ok = login(form.get('username')?.toString().trim(), form.get('password')?.toString());
+                    if (errorEl) {
+                        errorEl.textContent = '';
+                        errorEl.classList.add('hidden');
+                    }
+
+                    let ok = false;
+                    try {
+                        const password = form.get('password')?.toString() || '';
+                        ok = await login(form.get('username')?.toString().trim(), password);
+                    } catch (error) {
+                        if (errorEl) errorEl.textContent = error.message;
+                    }
+
                     if (!ok) {
-                        errorEl.textContent = 'ユーザー名またはパスワードが正しくありません。';
-                        errorEl.classList.remove('hidden');
+                        if (errorEl && !errorEl.textContent) {
+                            errorEl.textContent = 'ユーザー名またはパスワードが正しくありません。';
+                        }
+                        if (errorEl) errorEl.classList.remove('hidden');
                     }
                 });
             }
@@ -916,7 +1090,6 @@
     <script>tailwind.config = { theme: { extend: { colors: { 'tech-blue': '#001A33', 'coral': '#E86B7A' } } } }<\/script>
 </head>
 <body class="bg-slate-50">
-    <!-- Replace with standard NAV -->
     <main class="max-w-3xl mx-auto px-6 py-24">
         <h1 class="text-3xl md:text-4xl font-bold text-tech-blue mb-6">${item.title}</h1>
         <div class="mb-10 text-gray-400 text-sm">${item.date}</div>
@@ -925,7 +1098,6 @@
             ${item.content}
         </div>
     </main>
-    <!-- Replace with standard FOOTER -->
 </body>
 </html>`;
                     const blob = new Blob([html], { type: 'text/html' });
@@ -939,29 +1111,35 @@
             });
 
             document.querySelectorAll('[data-contact-done]').forEach(button => {
-                button.addEventListener('click', () => {
+                button.addEventListener('click', async () => {
+                    const id = button.dataset.contactDone;
                     const items = getContacts().map(item =>
-                        item.id === button.dataset.contactDone ? { ...item, status: '対応済み' } : item
+                        item.id === id ? { ...item, status: '対応済み' } : item
                     );
                     setContacts(items);
                     render();
+                    await updateContactStatusApi(id, '対応済み');
                 });
             });
             document.querySelectorAll('[data-contact-reopen]').forEach(button => {
-                button.addEventListener('click', () => {
+                button.addEventListener('click', async () => {
+                    const id = button.dataset.contactReopen;
                     const items = getContacts().map(item =>
-                        item.id === button.dataset.contactReopen ? { ...item, status: '未対応' } : item
+                        item.id === id ? { ...item, status: '未対応' } : item
                     );
                     setContacts(items);
                     render();
+                    await updateContactStatusApi(id, '未対応');
                 });
             });
             document.querySelectorAll('[data-delete-contact]').forEach(button => {
-                button.addEventListener('click', () => {
+                button.addEventListener('click', async () => {
                     if (!confirm('このお問い合わせを削除しますか？')) return;
-                    const items = getContacts().filter(item => item.id !== button.dataset.deleteContact);
+                    const id = button.dataset.deleteContact;
+                    const items = getContacts().filter(item => item.id !== id);
                     setContacts(items);
                     render();
+                    await updateContactStatusApi(id, '削除済み');
                 });
             });
 

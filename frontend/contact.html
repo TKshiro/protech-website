@@ -19,6 +19,10 @@
 
     <meta name="description" content="PROTECHへのお問い合わせページ。小紅書・大衆点評・抖音運用代行、KOL施策、WeChat小程序開発、中国語LP・動画制作のご相談や見積もり依頼はこちらから。">
     <link rel="canonical" href="https://pro-tech.jp/contact">
+    <link rel="alternate" hreflang="ja" href="https://pro-tech.jp/contact" />
+    <link rel="alternate" hreflang="en" href="https://pro-tech.jp/en/contact" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/cn/contact" />
+    <link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/contact" />
 
     
     <link
@@ -119,7 +123,7 @@
 <body class="bg-white text-slate-900">
 
                     <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
-        <!-- NAV -->
+                    <!-- NAV -->
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
@@ -397,7 +401,7 @@
         </div>
     </main>
 
-                        <!-- FOOTER -->
+                                    <!-- FOOTER -->
     <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
@@ -627,6 +631,13 @@
                         const stored = JSON.parse(localStorage.getItem('protech_contacts') || '[]');
                         stored.unshift(contactData);
                         localStorage.setItem('protech_contacts', JSON.stringify(stored));
+
+                        // Save to Google Sheets API
+                        fetch('/api/contacts', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(contactData)
+                        }).catch(err => console.error('Failed to save to database API:', err));
                     } catch (err) {
                         console.error('Failed to save contact to localStorage:', err);
                     }

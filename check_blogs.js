@@ -24,7 +24,13 @@ files.forEach(file => {
   const content = fs.readFileSync(path.join(blogDir, file), 'utf-8');
   const missing = [];
   for (const [key, pattern] of Object.entries(checks)) {
-    if (!content.includes(pattern)) missing.push(key);
+    if (key === 'backLink') {
+      if (!content.includes('blog.html') && !content.includes('/blog') && !content.includes('/blog/')) {
+        missing.push(key);
+      }
+    } else {
+      if (!content.includes(pattern)) missing.push(key);
+    }
   }
   if (missing.length > 0) {
     console.log(`❌ ${file}: MISSING [${missing.join(', ')}]`);

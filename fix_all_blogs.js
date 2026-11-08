@@ -17,7 +17,7 @@ const latestArticlesBlock = `
     <div class="max-w-6xl mx-auto px-6 md:px-8 py-16 border-t border-gray-100">
         <h3 class="text-2xl font-bold text-tech-blue mb-8 text-center">最新の記事</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="/blog/inbound-sns-strategy-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
+            <a href="/blog/china-sns-inbound-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
                     <img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
@@ -41,7 +41,7 @@ const latestArticlesBlock = `
             </a>
             <a href="/blog/dazhong-dianping-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/大衆点評×中国都市インバウンドマーケティング.jpg" alt="大衆点評ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/case-tourism.jpg'">
+                    <img src="../assets/images/dazhong-dianping-inbound.jpg" alt="大衆点評ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/case-tourism.jpg'">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -109,10 +109,15 @@ ${desktopNav}
     // Fix 2: missing 最新の記事 block
     if (!content.includes('最新の記事')) {
         const backLinkPattern = '<!-- Back to blog -->';
+        const fallbackPattern = '<div class="max-w-3xl mx-auto px-8 pb-20 flex justify-between items-center border-t border-gray-100 pt-8">';
         if (content.includes(backLinkPattern)) {
             content = content.replace(backLinkPattern, latestArticlesBlock + '\n    <!-- Back to blog -->');
             changed = true;
             console.log(`  → Added 最新の記事 to ${file}`);
+        } else if (content.includes(fallbackPattern)) {
+            content = content.replace(fallbackPattern, latestArticlesBlock + '\n    ' + fallbackPattern);
+            changed = true;
+            console.log(`  → Added 最新の記事 (via fallback) to ${file}`);
         }
     }
 
