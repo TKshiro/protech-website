@@ -17,12 +17,12 @@
     <title>企業情報 - PROTECH株式会社</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-    <meta name="description" content="PROTECH株式会社の企業情報。ビジョン、ミッション、事業内容、アクセス情報をご覧ください。">
+    <meta name="description" content="PROTECH株式会社の企業情報。中国SNS運用、インバウンド集客、LP・動画制作、WeChat小程序開発を支援する日中マーケティング企業の概要と事業内容を紹介します。">
     <meta name="keywords" content="企業情報, 会社概要, PROTECH, ビジョン, ミッション">
     <link rel="canonical" href="https://pro-tech.jp/company">
 
     <meta property="og:title" content="企業情報 - PROTECH">
-    <meta property="og:description" content="PROTECH企業情報。テクノロジーとマーケティングで、ビジネスの境界を越える。">
+    <meta property="og:description" content="中国SNS運用、インバウンド集客、LP・動画制作、WeChat小程序開発を支援するPROTECH株式会社の企業情報。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pro-tech.jp/company">
     <meta property="og:image" content="https://pro-tech.jp/img/og-image.jpg">
@@ -31,7 +31,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/shared.css">
     <style>
 
@@ -58,7 +59,21 @@
         "@type": "Organization",
         "name": "PROTECH株式会社",
         "url": "https://pro-tech.jp",
-        "description": "テクノロジーとマーケティングで、ビジネスの境界を越える"
+        "logo": "https://pro-tech.jp/assets/images/favicon.png",
+        "description": "中国SNS運用、インバウンド集客、LP・動画制作、WeChat小程序開発を支援する日中マーケティング企業",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "東京都",
+            "addressLocality": "文京区",
+            "streetAddress": "本郷1-5-17 三洋ビル48",
+            "addressCountry": "JP"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["Japanese", "Chinese"],
+            "url": "https://pro-tech.jp/contact"
+        }
     }
 }
     </script>
@@ -71,9 +86,7 @@
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
-            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="/" class="nav-link ">トップ</a>
-
+                        <div class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-widest uppercase text-slate-600">
                 <div class="relative group">
                     <a href="/services" class="nav-link  flex items-center gap-1">サービス
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,22 +97,36 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
-                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
-                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
-                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書（RED）</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評（Dianping）</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音（Douyin）</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">WeChatミニプログラム</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">中国語LP・制作</a>
                             <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
-                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
                         </div>
                     </div>
                 </div>
 
-                <a href="/company" class="nav-link text-coral">会社概要</a>
+                <a href="/pricing" class="nav-link ">料金</a>
                 <a href="/cases" class="nav-link ">導入事例</a>
-                <a href="/blog" class="nav-link ">ブログ</a>
-                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+                <a href="/company" class="nav-link text-coral font-bold">会社概要</a>
+
+                <div class="relative group">
+                    <a href="/blog" class="nav-link  flex items-center gap-1">お役立ち情報
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/blog" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">ブログ・解説記事</a>
+                            <a href="/download" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">資料ダウンロード</a>
+                            <a href="/faq" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">よくある質問（FAQ）</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold shadow-md hover:shadow-lg transition">無料相談</a>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -116,8 +143,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -129,8 +156,6 @@
             <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
-    </div>
-    </div>
     </div>
     
     
@@ -177,9 +202,20 @@
                     </p>
                     <p>単なる制作会社ではなく、共に未来を創るプロフェッショナルとして、最高品質のソリューションを提供し続けることをお約束いたします。</p>
                 </div>
-                <div class="mt-16 text-right">
-                    <p class="text-tech-blue font-bold text-lg tracking-widest">PROTECH株式会社</p>
-                    <p class="text-gray-400 text-sm">代表取締役</p>
+                <div class="mt-16 p-8 bg-slate-50 rounded-2xl border border-gray-100">
+                    <div class="md:flex items-center justify-between gap-6">
+                        <div>
+                            <span class="text-coral text-[10px] font-bold tracking-widest uppercase">CEO Profile</span>
+                            <h4 class="text-xl font-bold text-tech-blue mt-1">代表取締役　陳 紅（Chen Hong）</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed mt-2 max-w-xl">
+                                長年にわたり日中クロスボーダー領域のマーケティングおよびWeb/システム開発に従事。中国本土のデジタルエコシステム（小紅書・大衆点評・WeChat・抖音）と日本企業のビジネス実務に精通し、多くの日本企業・飲食・観光事業者の訪日集客導線構築を牽引。
+                            </p>
+                        </div>
+                        <div class="text-right mt-4 md:mt-0 flex-shrink-0">
+                            <p class="text-tech-blue font-bold text-base tracking-widest">PROTECH株式会社</p>
+                            <p class="text-gray-500 text-xs">代表取締役 陳 紅</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -194,7 +230,7 @@
         <dl class="space-y-0 border-t border-gray-100" data-aos="fade-up">
             <div class="flex border-b border-gray-100 py-6">
                 <dt class="w-32 md:w-48 text-gray-400 text-sm flex-shrink-0">社名</dt>
-                <dd class="font-bold text-tech-blue">PROTECH株式会社</dd>
+                <dd class="font-bold text-tech-blue">PROTECH株式会社（PROTECH Inc.）</dd>
             </div>
             <div class="flex border-b border-gray-100 py-6">
                 <dt class="w-32 md:w-48 text-gray-400 text-sm flex-shrink-0">代表者</dt>
@@ -204,15 +240,46 @@
                 <dt class="w-32 md:w-48 text-gray-400 text-sm flex-shrink-0">所在地</dt>
                 <dd class="font-bold text-tech-blue">東京都文京区本郷1-5-17 三洋ビル48</dd>
             </div>
+            <div class="flex border-b border-gray-100 py-6">
+                <dt class="w-32 md:w-48 text-gray-400 text-sm flex-shrink-0">主要取引銀行</dt>
+                <dd class="font-bold text-tech-blue">三井住友銀行 / GMOあおぞらネット銀行</dd>
+            </div>
+            <div class="flex border-b border-gray-100 py-6">
+                <dt class="w-32 md:w-48 text-gray-400 text-sm flex-shrink-0">支援体制・分工</dt>
+                <dd class="font-bold text-tech-blue text-sm leading-relaxed">
+                    日中バイリンガルディレクター（日本語顧客対応・戦略設計）<br>
+                    中国ネイティブコンテンツライター・エディター（投稿制作・コミュニティ運用）<br>
+                    インフルエンサーコーディネーター（KOL/KOC直接キャスティング）<br>
+                    Webエンジニア・UI/UXデザイナー（LP・ミニプログラム内製開発）
+                </dd>
+            </div>
             <div class="flex items-start border-b border-gray-100 py-6">
                 <dt class="w-32 md:w-48 text-gray-400 text-sm flex-shrink-0">事業内容</dt>
-                <dd class="font-bold text-tech-blue">
-                    マーケティング<br>
-                    Web・アプリ開発<br>
-                    UI・UXデザイン
+                <dd class="font-bold text-tech-blue text-sm leading-relaxed">
+                    ・中国向けSNSマーケティング・運用代行（小紅書、大衆点評、抖音、WeChat）<br>
+                    ・中国インバウンド集客支援・KOL/KOCキャスティング<br>
+                    ・中国語ランディングページ制作・クリエイティブローカライズ<br>
+                    ・WeChatミニプログラムおよびモバイルアプリケーション開発
                 </dd>
             </div>
         </dl>
+        <div class="mt-10 grid md:grid-cols-3 gap-6" data-aos="fade-up">
+            <a href="/editorial-policy" class="block p-7 rounded-2xl border border-gray-100 bg-white hover:shadow-md transition">
+                <p class="text-coral text-[10px] font-bold tracking-[0.22em] uppercase mb-3">Editorial Policy</p>
+                <h4 class="text-tech-blue font-bold text-lg mb-3">コンテンツ制作方針</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">中国SNS・インバウンド集客に関する記事の編集体制、参照情報、更新基準を公開しています。</p>
+            </a>
+            <a href="/media-kit" class="block p-7 rounded-2xl border border-gray-100 bg-white hover:shadow-md transition">
+                <p class="text-coral text-[10px] font-bold tracking-[0.22em] uppercase mb-3">Media Kit</p>
+                <h4 class="text-tech-blue font-bold text-lg mb-3">メディアキット</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">掲載・引用時に利用できる会社紹介文、公式リンク、事業領域、問い合わせ窓口をまとめています。</p>
+            </a>
+            <a href="/contact" class="block p-7 rounded-2xl border border-gray-100 bg-white hover:shadow-md transition">
+                <p class="text-coral text-[10px] font-bold tracking-[0.22em] uppercase mb-3">Contact</p>
+                <h4 class="text-tech-blue font-bold text-lg mb-3">取材・相談・確認依頼</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">記事内容に関する確認、サービス相談、見積もり依頼はこちらからご連絡ください。</p>
+            </a>
+        </div>
     </section>
 
     <!-- Access -->
@@ -258,7 +325,7 @@
 
             <!-- Services list - minimal line-based design -->
             <div class="border-t border-slate-200" data-aos="fade-up" data-aos-delay="100">
-                <a href="/red.html" class="group flex items-center gap-6 md:gap-8 py-7 border-b border-slate-200 hover:bg-slate-50/50 transition-all px-2">
+                <a href="/red" class="group flex items-center gap-6 md:gap-8 py-7 border-b border-slate-200 hover:bg-slate-50/50 transition-all px-2">
                     <span class="font-mono text-xs text-slate-400 tracking-wider w-10 flex-shrink-0">01</span>
                     <span class="w-12 h-12 rounded-full border border-[#FF2442]/30 flex items-center justify-center flex-shrink-0 group-hover:border-[#FF2442] group-hover:bg-[#FF2442]/5 transition-all">
                         <span class="text-[#FF2442] font-black text-[10px] tracking-tight">RED</span>
@@ -272,7 +339,7 @@
                     </svg>
                 </a>
 
-                <a href="/dianping.html" class="group flex items-center gap-6 md:gap-8 py-7 border-b border-slate-200 hover:bg-slate-50/50 transition-all px-2">
+                <a href="/dianping" class="group flex items-center gap-6 md:gap-8 py-7 border-b border-slate-200 hover:bg-slate-50/50 transition-all px-2">
                     <span class="font-mono text-xs text-slate-400 tracking-wider w-10 flex-shrink-0">02</span>
                     <span class="w-12 h-12 rounded-full border border-[#FF6600]/30 flex items-center justify-center flex-shrink-0 group-hover:border-[#FF6600] group-hover:bg-[#FF6600]/5 transition-all">
                         <span class="text-[#FF6600] font-black text-[10px] tracking-tight">点評</span>
@@ -333,8 +400,8 @@
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
@@ -347,6 +414,7 @@
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/media-kit" class="hover:text-coral transition">メディアキット</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>

@@ -27,7 +27,8 @@
     <meta property="og:image" content="https://pro-tech.jp/img/og-image.jpg">
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/shared.css">
     <style>
         :root {
@@ -166,10 +167,22 @@
     "@type": "Service",
     "name": "KOL/KOCインフルエンサーマーケティング",
     "description": "500名以上のKOL/KOCパートナーネットワークで中国市場に最大インパクト。",
+    "url": "https://pro-tech.jp/kol",
+    "serviceType": "KOL/KOCインフルエンサーマーケティング",
+    "areaServed": [
+        {"@type": "Country", "name": "日本"},
+        {"@type": "Country", "name": "中国"}
+    ],
     "provider": {
         "@type": "Organization",
         "name": "PROTECH株式会社",
         "url": "https://pro-tech.jp"
+    },
+    "offers": {
+        "@type": "Offer",
+        "url": "https://pro-tech.jp/pricing#project-services",
+        "priceCurrency": "JPY",
+        "availability": "https://schema.org/InStock"
     }
 }
     </script>
@@ -182,9 +195,7 @@
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
-            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="/" class="nav-link ">トップ</a>
-
+                        <div class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-widest uppercase text-slate-600">
                 <div class="relative group">
                     <a href="/services" class="nav-link text-coral flex items-center gap-1">サービス
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -195,22 +206,36 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
-                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
-                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
-                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書（RED）</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評（Dianping）</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音（Douyin）</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">WeChatミニプログラム</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">中国語LP・制作</a>
                             <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
-                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
                         </div>
                     </div>
                 </div>
 
-                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/pricing" class="nav-link ">料金</a>
                 <a href="/cases" class="nav-link ">導入事例</a>
-                <a href="/blog" class="nav-link ">ブログ</a>
-                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+                <a href="/company" class="nav-link ">会社概要</a>
+
+                <div class="relative group">
+                    <a href="/blog" class="nav-link  flex items-center gap-1">お役立ち情報
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/blog" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">ブログ・解説記事</a>
+                            <a href="/download" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">資料ダウンロード</a>
+                            <a href="/faq" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">よくある質問（FAQ）</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold shadow-md hover:shadow-lg transition">無料相談</a>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -227,8 +252,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-coral">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -241,14 +266,12 @@
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
     </div>
-    </div>
-    </div>
 
     <!-- ═══════════════════════ HERO: Diagonal editorial ═══════════════════════ -->
     <section id="main-content" class="kol-hero relative pt-24 md:pt-32 pb-20 md:pb-28 text-white overflow-hidden">
         <!-- Right side image bleed -->
         <div class="absolute right-0 top-0 w-full md:w-3/5 h-full z-0">
-            <img src="assets/images/kol-hero.jpg" class="w-full h-full object-cover opacity-20 filter brightness-50" alt="KOLインフルエンサーキャンペーン" decoding="async">
+            <img src="assets/images/kol-hero.jpg" class="w-full h-full object-cover opacity-20 filter brightness-50" alt="KOLインフルエンサーキャンペーン" loading="eager" fetchpriority="high" decoding="async" width="1289" height="1600">
             <div class="absolute inset-0 bg-gradient-to-r from-[#001A33] via-[#001A33]/85 to-[#001A33]/60"></div>
         </div>
         <!-- Amber left accent bar -->
@@ -272,7 +295,7 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="/contact" class="btn-amber px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-flex items-center justify-center gap-2">
+                    <a href="/contact?service=kol&source_path=/kol" class="btn-amber px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-flex items-center justify-center gap-2">
                         無料キャンペーン相談
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -334,7 +357,7 @@
     <section class="relative py-16 md:py-24 overflow-hidden" id="tiers" style="background-color: #001A33;">
         <!-- Background tier image on right -->
         <div class="absolute right-0 top-0 w-full md:w-2/5 h-full z-0 hidden md:block">
-            <img src="assets/images/kol-tier-pyramid.jpg" class="w-full h-full object-cover opacity-10 filter brightness-50" alt="KOLティア構造" loading="lazy" decoding="async">
+            <img src="assets/images/kol-tier-pyramid.jpg" class="w-full h-full object-cover opacity-10 filter brightness-50" alt="KOLティア構造" loading="lazy" decoding="async" width="1600" height="1288">
             <div class="absolute inset-0" style="background-color: rgba(0, 26, 51, 0.80);"></div>
         </div>
 
@@ -415,7 +438,7 @@
                 </div>
                 <div class="order-1 md:order-2" data-aos="fade-left" data-aos-delay="100">
                     <div class="campaign-image-wrap h-72 md:h-96 shadow-2xl">
-                        <img src="assets/images/kol-collaboration-meeting.jpg" class="w-full h-full object-cover" alt="KOLコラボ打ち合わせ" loading="lazy" decoding="async">
+                        <img src="assets/images/kol-collaboration-meeting.jpg" class="w-full h-full object-cover" alt="KOLコラボ打ち合わせ" loading="lazy" decoding="async" width="1600" height="1194">
                     </div>
                 </div>
             </div>
@@ -424,7 +447,7 @@
             <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-20 md:mb-28" data-aos="fade-up">
                 <div data-aos="fade-right" data-aos-delay="100">
                     <div class="campaign-image-wrap h-72 md:h-96 shadow-2xl">
-                        <img src="assets/images/kol-livestream.jpg" class="w-full h-full object-cover" alt="KOLライブコマース" loading="lazy" decoding="async">
+                        <img src="assets/images/kol-livestream.jpg" class="w-full h-full object-cover" alt="KOLライブコマース" loading="lazy" decoding="async" width="1289" height="1600">
                     </div>
                 </div>
                 <div>
@@ -465,7 +488,7 @@
                 </div>
                 <div class="order-1 md:order-2" data-aos="fade-left" data-aos-delay="100">
                     <div class="campaign-image-wrap h-72 md:h-96 shadow-2xl">
-                        <img src="assets/images/kol-network-map.jpg" class="w-full h-full object-cover" alt="KOLネットワーク拡散マップ" loading="lazy" decoding="async">
+                        <img src="assets/images/kol-network-map.jpg" class="w-full h-full object-cover" alt="KOLネットワーク拡散マップ" loading="lazy" decoding="async" width="1600" height="995">
                     </div>
                 </div>
             </div>
@@ -565,7 +588,7 @@
     <!-- ═══════════════════════ CTA: Amber/dark gradient ═══════════════════════ -->
     <section class="relative py-20 md:py-28 text-white overflow-hidden" style="background: linear-gradient(135deg, #78350F 0%, #92400E 40%, #001A33 100%);">
         <div class="absolute inset-0 z-0">
-            <img src="assets/images/kol-livestream.jpg" class="w-full h-full object-cover opacity-10 filter grayscale" alt="背景" loading="lazy" decoding="async">
+            <img src="assets/images/kol-livestream.jpg" class="w-full h-full object-cover opacity-10 filter grayscale" alt="背景" loading="lazy" decoding="async" width="1289" height="1600">
             <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(120,53,15,0.85) 0%, rgba(1,26,51,0.90) 100%)"></div>
         </div>
         <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
@@ -577,10 +600,10 @@
                 ターゲット層・予算・目標に合わせた最適なKOL/KOC施策設計を、無料でご提案します。まずはお気軽にご相談ください。
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
-                <a href="/contact" class="btn-amber px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-block">
+                <a href="/contact?service=kol&source_path=/kol" class="btn-amber px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-block">
                     無料キャンペーン相談
                 </a>
-                <a href="/pricing" class="btn-amber-outline px-10 py-4 text-xs font-bold tracking-widest rounded-full inline-block">
+                <a href="/pricing#project-services" class="btn-amber-outline px-10 py-4 text-xs font-bold tracking-widest rounded-full inline-block">
                     料金プランを見る
                 </a>
             </div>
@@ -598,8 +621,8 @@
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
@@ -612,8 +635,10 @@
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/media-kit" class="hover:text-coral transition">メディアキット</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/editorial-policy" class="hover:text-coral transition">コンテンツ制作方針</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
                         <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
                         <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>

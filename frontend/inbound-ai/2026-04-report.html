@@ -9,10 +9,11 @@
 <link rel="canonical" href="https://pro-tech.jp/inbound-ai/2026-04-report">
 <link rel="icon" type="image/png" href="../assets/images/favicon.png">
 
-<link href="assets/css/tailwind.css" rel="stylesheet">
+<link href="../assets/css/tailwind.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://unpkg.com">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -68,6 +69,7 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
     }
 }
     </script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
 </head>
 <body class="text-slate-900">
                         <!-- NAV -->
@@ -87,8 +89,8 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -119,8 +121,8 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -132,8 +134,6 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
             <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
-    </div>
-    </div>
     </div>
     
     
@@ -156,7 +156,7 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
 
     <!-- COVER IMAGE -->
     <div class="max-w-5xl mx-auto px-6 -mt-8 relative z-10" data-aos="fade-up" data-aos-delay="300">
-        <img src="../assets/images/inbound-ai-report-2026-04-cover.jpg" alt="2026年4月 AIインバウンドレポート" class="w-full rounded-2xl shadow-2xl object-cover border-4 border-white">
+        <img src="../assets/images/inbound-ai-report-2026-04-cover.jpg" alt="2026年4月 AIインバウンドレポート" class="w-full rounded-2xl shadow-2xl object-cover border-4 border-white" decoding="async" loading="eager" fetchpriority="high" width="1200" height="669">
     </div>
 
     <!-- MAIN CONTENT -->
@@ -218,7 +218,7 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
             <div class="report-card m-0" data-aos="fade-up">
                 <h2 class="section-title">国籍別 訪日外客数 (2026年3月)</h2>
                 <div class="relative w-full mb-6">
-                    <img src="../assets/images/inbound-visitors-nationality-chart.jpg" alt="国籍別 訪日外客数" class="w-full h-auto rounded-lg shadow-sm">
+                    <img src="../assets/images/inbound-visitors-nationality-chart.jpg" alt="国籍別 訪日外客数" class="w-full h-auto rounded-lg shadow-sm" decoding="async" loading="lazy" width="1200" height="669">
                 </div>
                 <div class="h-48 relative hidden">
                     <canvas id="visitorsChart"></canvas>
@@ -274,7 +274,7 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
         <div class="report-card" data-aos="fade-up">
             <h2 class="section-title">市場別の詳細動向とビジネスアクション</h2>
             <div class="mb-8 relative w-full">
-                <img src="../assets/images/inbound-market-insights-taiwan-korea-us-china.jpg" alt="市場別の詳細動向" class="w-full h-auto rounded-xl shadow-md">
+                <img src="../assets/images/inbound-market-insights-taiwan-korea-us-china.jpg" alt="市場別の詳細動向" class="w-full h-auto rounded-xl shadow-md" decoding="async" loading="lazy" width="1200" height="669">
             </div>
             
             <div class="space-y-8">
@@ -316,7 +316,7 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
 
         <!-- CTA -->
         <div class="mt-16 rounded-2xl p-10 text-center text-white relative overflow-hidden" data-aos="fade-up">
-            <img src="../assets/images/inbound-ai-data-hub-section-banner.jpeg" alt="Data Hub Banner" class="absolute inset-0 w-full h-full object-cover z-0">
+            <img src="../assets/images/inbound-ai-data-hub-section-banner.jpeg" alt="Data Hub Banner" class="absolute inset-0 w-full h-full object-cover z-0" decoding="async" loading="lazy" width="2000" height="1116">
             <div class="absolute inset-0 bg-tech-blue/80 z-0"></div>
             <div class="relative z-10 py-4">
                 <h3 class="text-2xl font-bold mb-4">データに基づいたインバウンド集客を始めませんか？</h3>
@@ -342,8 +342,8 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
@@ -356,8 +356,10 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/media-kit" class="hover:text-coral transition">メディアキット</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/editorial-policy" class="hover:text-coral transition">コンテンツ制作方針</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
                         <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
                         <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
@@ -442,5 +444,6 @@ h2.section-title{font-size:1.5rem;font-weight:800;color:var(--tech-blue);border-
             });
         });
     </script>
+    <script defer src="../assets/js/main.js"></script>
 </body>
 </html>

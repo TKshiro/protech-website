@@ -17,14 +17,15 @@
     <title>お問い合わせ | PROTECH株式会社</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-    <meta name="description" content="PROTECHへのお問い合わせ。サービスに関するご質問やお見積もりなど、お気軽にご連絡ください。">
+    <meta name="description" content="PROTECHへのお問い合わせページ。小紅書・大衆点評・抖音運用代行、KOL施策、WeChat小程序開発、中国語LP・動画制作のご相談や見積もり依頼はこちらから。">
     <link rel="canonical" href="https://pro-tech.jp/contact">
 
     
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="assets/css/shared.css">
     <style>
@@ -43,12 +44,46 @@
             outline: none;
             box-shadow: 0 0 0 2px rgba(232, 107, 122, 0.2);
         }
+        .contact-intent {
+            border: 1px solid rgba(15, 23, 42, .09);
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px 20px;
+            transition: border-color .2s, transform .2s, box-shadow .2s;
+        }
+        .contact-intent:hover {
+            border-color: rgba(232, 107, 122, .35);
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(0, 26, 51, .07);
+        }
+        .contact-intent strong {
+            color: var(--tech-blue);
+            display: block;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+        .contact-intent span {
+            color: #64748b;
+            display: block;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .source-context {
+            display: none;
+            border: 1px solid rgba(232, 107, 122, .18);
+            background: #fff7f8;
+            border-radius: 14px;
+            padding: 16px 18px;
+        }
+        .source-context.is-visible {
+            display: block;
+        }
     </style>
     <link href="assets/css/tailwind.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <meta property="og:title" content="お問い合わせ | PROTECH株式会社">
-    <meta property="og:description" content="PROTECHへのお問い合わせ。サービスに関するご質問やお見積もりなど、お気軽にご連絡ください。">
+    <meta property="og:description" content="小紅書・大衆点評・抖音運用代行、KOL施策、WeChat小程序開発、中国語LP・動画制作のご相談はこちら。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pro-tech.jp/contact">
     <meta property="og:image" content="https://pro-tech.jp/img/og-image.jpg">
@@ -57,9 +92,28 @@
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "お問い合わせ | PROTECH株式会社",
-    "url": "https://pro-tech.jp/contact"
+    "url": "https://pro-tech.jp/contact",
+    "description": "小紅書・大衆点評・抖音・KOL/KOC・WeChatミニプログラム・中国インバウンド集客に関する問い合わせページです。",
+    "about": {
+        "@type": "Organization",
+        "name": "PROTECH株式会社",
+        "url": "https://pro-tech.jp"
+    },
+    "mainEntity": {
+        "@type": "Organization",
+        "name": "PROTECH株式会社",
+        "email": "support@pro-tech.jp",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "JP",
+            "addressRegion": "東京都",
+            "addressLocality": "文京区",
+            "streetAddress": "本郷1-5-17 三洋ビル48"
+        }
+    }
 }
     </script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
 </head>
 
 <body class="bg-white text-slate-900">
@@ -69,9 +123,7 @@
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
-            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="/" class="nav-link ">トップ</a>
-
+                        <div class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-widest uppercase text-slate-600">
                 <div class="relative group">
                     <a href="/services" class="nav-link  flex items-center gap-1">サービス
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,22 +134,36 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
-                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
-                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
-                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書（RED）</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評（Dianping）</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音（Douyin）</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">WeChatミニプログラム</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">中国語LP・制作</a>
                             <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
-                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
                         </div>
                     </div>
                 </div>
 
-                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/pricing" class="nav-link ">料金</a>
                 <a href="/cases" class="nav-link ">導入事例</a>
-                <a href="/blog" class="nav-link ">ブログ</a>
-                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+                <a href="/company" class="nav-link ">会社概要</a>
+
+                <div class="relative group">
+                    <a href="/blog" class="nav-link  flex items-center gap-1">お役立ち情報
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/blog" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">ブログ・解説記事</a>
+                            <a href="/download" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">資料ダウンロード</a>
+                            <a href="/faq" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">よくある質問（FAQ）</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold shadow-md hover:shadow-lg transition">無料相談</a>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -114,8 +180,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -128,13 +194,11 @@
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
     </div>
-    </div>
-    </div>
     
     
 
     <!-- HERO -->
-    <section class="pt-32 md:pt-40 pb-16 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
+    <section class="pt-24 md:pt-28 pb-10 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
         <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
             <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">お問い合わせ</span>
@@ -147,15 +211,35 @@
     </section>
 
     <!-- Contact Form -->
-    <main id="main-content" class="py-16 md:py-24 px-6 bg-white">
+    <main id="main-content" class="py-10 md:py-16 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
 
                 <div class="lg:col-span-5" data-aos="fade-right">
                     <h2 class="text-2xl font-bold text-tech-blue mb-6 serif">ご連絡ください</h2>
                     <p class="text-gray-500 leading-loose mb-12 text-sm">
-                        ご質問、お見積もり、その他のご相談など、お気軽にお問い合わせください。通常24時間以内にご返信いたします。
+                        ご質問、お見積もり、その他のご相談など、お気軽にお問い合わせください。通常1営業日以内（土日祝除く）に専任担当よりご返信いたします。
                     </p>
+
+                    <div id="sourceContext" class="source-context mb-6">
+                        <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-coral mb-2">相談内容の引き継ぎ</p>
+                        <p id="sourceContextText" class="text-sm text-slate-600 leading-relaxed mb-0">閲覧ページに合わせて、お問い合わせ種別を自動選択しました。</p>
+                    </div>
+
+                    <div class="space-y-3 mb-8">
+                        <a href="/contact?industry=restaurant-inbound&source_path=/contact" class="contact-intent block">
+                            <strong>飲食店の訪日中国人集客</strong>
+                            <span>小紅書、大衆点評、抖音、KOCを組み合わせた来店導線を相談できます。</span>
+                        </a>
+                        <a href="/contact?industry=hotel-inbound&source_path=/contact" class="contact-intent block">
+                            <strong>ホテル・旅館の宿泊予約増加</strong>
+                            <span>客室・周辺観光・KOC宿泊レビュー・中国語LPの優先順位を整理します。</span>
+                        </a>
+                        <a href="/contact?industry=beauty-salon-inbound&source_path=/contact" class="contact-intent block">
+                            <strong>美容サロン・コスメの小紅書施策</strong>
+                            <span>ビフォーアフター、KOCレビュー、予約導線、越境EC連携を相談できます。</span>
+                        </a>
+                    </div>
 
                     <div class="space-y-4">
                         <div class="flex items-start p-6 bg-warm-gray rounded-2xl">
@@ -189,79 +273,111 @@
                             <p class="font-bold text-sm">✅ 送信が完了しました。担当者よりご連絡いたします。</p>
                         </div>
 
+                        <!-- Selected Plan Notice Banner -->
+                        <div id="selectedPlanNotice" class="hidden mb-6 p-4 rounded-2xl border border-coral/30 bg-coral/5 transition-all">
+                            <div class="flex items-start justify-between gap-3">
+                                <div class="flex items-start gap-3">
+                                    <span class="text-coral text-lg mt-0.5 font-bold">✓</span>
+                                    <div>
+                                        <p class="text-xs font-bold text-tech-blue tracking-wide">
+                                            選択中：<span id="selectedPlanName" class="text-coral font-black text-sm">スタンダードプラン</span>
+                                        </p>
+                                        <p id="selectedPlanDetails" class="text-xs text-gray-500 mt-1 leading-relaxed">
+                                            月額 ¥120,000（税別）/ 1媒体・1店舗あたり（最低3ヶ月〜）
+                                        </p>
+                                    </div>
+                                </div>
+                                <button type="button" id="clearPlanBtn" class="text-[11px] text-gray-400 hover:text-coral underline flex-shrink-0">
+                                    変更・解除
+                                </button>
+                            </div>
+                        </div>
+
                         <form id="contactForm" class="space-y-6">
+                            <input type="hidden" id="selected_plan" name="selected_plan" value="">
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お問い合わせ種別 *</label>
+                                <label for="inquiry_type" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お問い合わせ種別 <span class="text-coral">*</span></label>
                                 <select id="inquiry_type" name="inquiry_type" required
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                    class="w-full px-5 py-3.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-coral/20 focus:border-coral outline-none transition text-sm shadow-sm">
                                     <option value="">選択してください</option>
                                     <option value="red_marketing">小紅書(RED)マーケティング</option>
-                                    <option value="web_development">Web・App開発</option>
-                                    <option value="ui_ux_design">UI/UXデザイン</option>
+                                    <option value="dianping_marketing">大衆点評(Dianping)集客</option>
+                                    <option value="douyin_marketing">抖音(Douyin)マーケティング</option>
+                                    <option value="kol_koc">KOL/KOC施策</option>
+                                    <option value="miniprogram">WeChatミニプログラム開発</option>
+                                    <option value="restaurant_inbound">飲食店向け中国インバウンド集客</option>
+                                    <option value="hotel_inbound">ホテル・旅館向け中国インバウンド集客</option>
+                                    <option value="beauty_salon_inbound">美容サロン向け中国インバウンド集客</option>
+                                    <option value="creative_lp">中国語LP・クリエイティブ制作</option>
+                                    <option value="media_partner">取材・掲載・提携のご相談</option>
                                     <option value="consultation">サービス全般のご相談</option>
+                                    <option value="consultation_undecided">まだ決まっていない・相談して決めたい</option>
+                                    <option value="material_request">サービス資料・媒体資料のお問い合わせ</option>
                                     <option value="estimate">お見積もり依頼</option>
                                     <option value="other">その他</option>
                                 </select>
                             </div>
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お名前
-                                        *</label>
-                                    <input type="text" id="name" name="name" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                    <label for="name" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お名前 <span class="text-coral">*</span></label>
+                                    <input type="text" id="name" name="name" required placeholder="山田 太郎"
+                                        class="w-full px-5 py-3.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-coral/20 focus:border-coral outline-none transition text-sm shadow-sm">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">会社名
-                                        *</label>
-                                    <input type="text" id="company" name="company" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                    <label for="company" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">会社名・店舗名・屋号 <span class="text-coral">*</span></label>
+                                    <input type="text" id="company" name="company" required placeholder="株式会社〇〇 / 〇〇店"
+                                        class="w-full px-5 py-3.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-coral/20 focus:border-coral outline-none transition text-sm shadow-sm">
                                 </div>
                             </div>
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">メールアドレス
-                                        *</label>
-                                    <input type="email" id="email" name="email" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                    <label for="email" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">メールアドレス <span class="text-coral">*</span></label>
+                                    <input type="email" id="email" name="email" required placeholder="info@example.jp"
+                                        class="w-full px-5 py-3.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-coral/20 focus:border-coral outline-none transition text-sm shadow-sm">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">電話番号</label>
-                                    <input type="tel" id="phone" name="phone"
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm"
-                                        placeholder="03-1234-5678">
+                                    <label for="phone" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">電話番号 <span class="text-gray-400 font-normal">（任意）</span></label>
+                                    <input type="tel" id="phone" name="phone" placeholder="03-1234-5678"
+                                        class="w-full px-5 py-3.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-coral/20 focus:border-coral outline-none transition text-sm shadow-sm">
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">ご予算</label>
+                                <label for="budget" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">想定のご予算 <span class="text-gray-400 font-normal">（任意）</span></label>
                                 <select id="budget" name="budget"
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                    <option value="">選択してください</option>
-                                    <option value="under_500k">50万円未満</option>
-                                    <option value="500k_1m">50万円〜100万円</option>
-                                    <option value="1m_3m">100万円〜300万円</option>
-                                    <option value="3m_5m">300万円〜500万円</option>
-                                    <option value="over_5m">500万円以上</option>
-                                    <option value="undecided">未定・相談したい</option>
+                                    class="w-full px-5 py-3.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-coral/20 focus:border-coral outline-none transition text-sm shadow-sm">
+                                    <option value="">選択してください（未定でも問題ございません）</option>
+                                    <option value="monthly_50k_150k">【月額運用】月額5万〜15万円（ライト〜標準）</option>
+                                    <option value="monthly_150k_300k">【月額運用】月額15万〜30万円（標準〜プレミアム）</option>
+                                    <option value="monthly_over_300k">【月額運用】月額30万円以上（複数チャネル展開）</option>
+                                    <option value="project_under_1m">【スポット/開発】〜100万円（制作・単発KOL等）</option>
+                                    <option value="project_over_1m">【スポット/開発】100万円以上（ミニプログラム等）</option>
+                                    <option value="undecided">未定・内容に応じて相談したい</option>
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">PROTECHを知ったきっかけ</label>
+                                <label for="referral_source" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">PROTECHを知ったきっかけ <span class="text-gray-400 font-normal">（任意）</span></label>
                                 <select id="referral_source" name="referral_source"
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                    class="w-full px-5 py-3.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-coral/20 focus:border-coral outline-none transition text-sm shadow-sm">
                                     <option value="">選択してください</option>
                                     <option value="web_search">Web検索</option>
                                     <option value="sns">SNS（小紅書・X・Instagram等）</option>
                                     <option value="referral">知人の紹介</option>
                                     <option value="event">イベント・セミナー</option>
                                     <option value="media">メディア・記事</option>
+                                    <option value="site">PROTECHサイト内ページ</option>
                                     <option value="other">その他</option>
                                 </select>
                             </div>
+                            <input type="hidden" id="industry" name="industry">
+                            <input type="hidden" id="source_path" name="source_path">
+                            <input type="hidden" id="landing_page" name="landing_page">
+                            <input type="hidden" id="utm_source" name="utm_source">
+                            <input type="hidden" id="utm_medium" name="utm_medium">
+                            <input type="hidden" id="utm_campaign" name="utm_campaign">
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お問い合わせ内容
-                                    *</label>
-                                <textarea id="message" name="message" rows="6" required
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm resize-none"
+                                <label for="message" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お問い合わせ内容 <span class="text-coral">*</span></label>
+                                <textarea id="message" name="message" rows="5" required
+                                    class="w-full px-5 py-3.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-coral/20 focus:border-coral outline-none transition text-sm shadow-sm resize-none"
                                     placeholder="具体的なご相談内容をご記入ください"></textarea>
                             </div>
 
@@ -292,8 +408,8 @@
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
@@ -306,8 +422,10 @@
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/media-kit" class="hover:text-coral transition">メディアキット</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/editorial-policy" class="hover:text-coral transition">コンテンツ制作方針</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
                         <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
                         <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
@@ -340,6 +458,121 @@
 
         (function () { emailjs.init("Oa3PmeXJ7kwYjIls0"); })();
 
+        const params = new URLSearchParams(window.location.search);
+        const industryMap = {
+            'restaurant-inbound': 'restaurant_inbound',
+            'hotel-inbound': 'hotel_inbound',
+            'beauty-salon-inbound': 'beauty_salon_inbound',
+            'xiaohongshu-agency-cost': 'red_marketing',
+            'xiaohongshu-agency-comparison': 'red_marketing',
+            'red': 'red_marketing',
+            'red-audit': 'red_marketing',
+            'red-agency-check': 'red_marketing',
+            'red-algorithm': 'red_marketing',
+            'china-sns-agency-comparison': 'red_marketing',
+            'china-sns-agency': 'red_marketing',
+            'dianping': 'dianping_marketing',
+            'dianping-store-registration': 'dianping_marketing',
+            'douyin': 'douyin_marketing',
+            'douyin-restaurant': 'douyin_marketing',
+            'kol-koc': 'kol_koc',
+            'miniprogram': 'miniprogram',
+            'cross-border-ec': 'red_marketing',
+            'cross-border-ec-research': 'red_marketing',
+            'cross-border-ec-growth': 'red_marketing',
+            'inbound-funnel': 'consultation',
+            'inbound-dx': 'consultation',
+            'regional-inbound': 'consultation',
+            'content-operation': 'consultation'
+        };
+        const intentLabels = {
+            restaurant_inbound: '飲食店向け中国インバウンド集客',
+            hotel_inbound: 'ホテル・旅館向け中国インバウンド集客',
+            beauty_salon_inbound: '美容サロン向け中国インバウンド集客',
+            red_marketing: '小紅書・中国SNSマーケティング',
+            dianping_marketing: '大衆点評集客',
+            douyin_marketing: '抖音・ショート動画集客',
+            kol_koc: 'KOL/KOC施策',
+            miniprogram: 'WeChatミニプログラム開発',
+            consultation: 'サービス全般のご相談'
+        };
+        // Handle Plan parameter
+        const planParam = (params.get('plan') || '').toLowerCase();
+        const planInfoMap = {
+            'light': { name: 'ライトプラン', price: '月額 ¥50,000（税別）/ 初期費用¥50,000 / 最低3ヶ月〜', budgetVal: 'monthly_50k_150k' },
+            'standard': { name: 'スタンダードプラン（人気No.1）', price: '月額 ¥120,000（税別）/ 初期費用無料 / 最低3ヶ月〜', budgetVal: 'monthly_50k_150k' },
+            'premium': { name: 'プレミアムプラン', price: '月額 ¥250,000（税別）/ 初期費用無料 / 最低3ヶ月〜', budgetVal: 'monthly_150k_300k' }
+        };
+
+        if (planParam && planInfoMap[planParam]) {
+            const pInfo = planInfoMap[planParam];
+            const notice = document.getElementById('selectedPlanNotice');
+            const nameEl = document.getElementById('selectedPlanName');
+            const detailEl = document.getElementById('selectedPlanDetails');
+            const hiddenInput = document.getElementById('selected_plan');
+            const budgetSelect = document.getElementById('budget');
+            const messageEl = document.getElementById('message');
+
+            if (notice && nameEl && detailEl) {
+                notice.classList.remove('hidden');
+                nameEl.textContent = pInfo.name;
+                detailEl.textContent = pInfo.price;
+                if (hiddenInput) hiddenInput.value = pInfo.name;
+                if (budgetSelect && pInfo.budgetVal) budgetSelect.value = pInfo.budgetVal;
+                if (messageEl && !messageEl.value) {
+                    messageEl.value = `【ご希望プラン】${pInfo.name}\n【ご相談・ご質問内容】\n`;
+                }
+            }
+
+            const clearBtn = document.getElementById('clearPlanBtn');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', function() {
+                    if (notice) notice.classList.add('hidden');
+                    if (hiddenInput) hiddenInput.value = '';
+                    if (messageEl && messageEl.value.startsWith(`【ご希望プラン】${pInfo.name}`)) {
+                        messageEl.value = '';
+                    }
+                });
+            }
+        }
+
+        const industry = params.get('industry') || params.get('service') || '';
+        const inquiryType = industryMap[industry] || params.get('inquiry_type') || (planParam ? 'red_marketing' : '');
+        const inquirySelect = document.getElementById('inquiry_type');
+        if (inquiryType && inquirySelect.querySelector(`option[value="${inquiryType}"]`)) {
+            inquirySelect.value = inquiryType;
+        }
+        if (industry) document.getElementById('industry').value = industry;
+        document.getElementById('source_path').value = params.get('source_path') || document.referrer || '';
+        document.getElementById('landing_page').value = window.location.pathname + window.location.search;
+        document.getElementById('utm_source').value = params.get('utm_source') || '';
+        document.getElementById('utm_medium').value = params.get('utm_medium') || '';
+        document.getElementById('utm_campaign').value = params.get('utm_campaign') || '';
+        if ((industry || params.get('source_path')) && document.getElementById('referral_source').value === '') {
+            document.getElementById('referral_source').value = 'site';
+        }
+        const sourceContext = document.getElementById('sourceContext');
+        const sourceContextText = document.getElementById('sourceContextText');
+        if (inquirySelect.value && sourceContext && sourceContextText) {
+            sourceContext.classList.add('is-visible');
+            sourceContextText.textContent = `${intentLabels[inquirySelect.value] || 'お問い合わせ'}としてフォームを準備しました。現在の課題、対象業種、希望時期が分かる範囲でご記入ください。`;
+        }
+        const messageField = document.getElementById('message');
+        const placeholderByType = {
+            restaurant_inbound: '例：上野の飲食店です。小紅書と大衆点評で訪日中国人の来店を増やしたいです。現在のSNS状況、店舗URL、希望開始時期などをご記入ください。',
+            hotel_inbound: '例：地方旅館です。中国人宿泊予約を増やすため、小紅書・KOC・中国語LPを相談したいです。客室数、エリア、既存OTA、課題をご記入ください。',
+            beauty_salon_inbound: '例：美容サロンです。小紅書で訪日中国人の予約を増やしたいです。メニュー、客単価、写真素材、予約方法などをご記入ください。',
+            red_marketing: '例：小紅書運用代行を検討しています。対象商品・サービス、現在のアカウント有無、目標、希望予算をご記入ください。',
+            dianping_marketing: '例：大衆点評への登録・店舗情報整備・口コミ導線を相談したいです。店舗名、業種、エリアをご記入ください。',
+            douyin_marketing: '例：抖音・ショート動画で中国向けに認知を広げたいです。撮影可能な素材、業種、希望する成果をご記入ください。',
+            kol_koc: '例：KOL/KOC施策を検討しています。商品・店舗、ターゲット、希望投稿数、実施時期をご記入ください。'
+        };
+        function updateMessagePlaceholder() {
+            messageField.placeholder = placeholderByType[inquirySelect.value] || '具体的なご相談内容、対象業種、現在の課題、希望時期、ご予算感などをご記入ください。';
+        }
+        updateMessagePlaceholder();
+        inquirySelect.addEventListener('change', updateMessagePlaceholder);
+
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -350,9 +583,20 @@
             btn.disabled = true;
 
             const templateParams = {
+                inquiry_type: document.getElementById('inquiry_type').value,
                 name: document.getElementById('name').value,
                 company: document.getElementById('company').value,
                 email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value || '',
+                budget: document.getElementById('budget').value || '',
+                referral_source: document.getElementById('referral_source').value || '',
+                selected_plan: document.getElementById('selected_plan')?.value || '',
+                industry: document.getElementById('industry').value || '',
+                source_path: document.getElementById('source_path').value || '',
+                landing_page: document.getElementById('landing_page').value || '',
+                utm_source: document.getElementById('utm_source').value || '',
+                utm_medium: document.getElementById('utm_medium').value || '',
+                utm_campaign: document.getElementById('utm_campaign').value || '',
                 message: document.getElementById('message').value
             };
 
@@ -369,6 +613,13 @@
                             phone: document.getElementById('phone').value || '',
                             budget: document.getElementById('budget').value || '',
                             referral_source: document.getElementById('referral_source').value || '',
+                            selected_plan: document.getElementById('selected_plan')?.value || '',
+                industry: document.getElementById('industry').value || '',
+                            source_path: document.getElementById('source_path').value || '',
+                            landing_page: document.getElementById('landing_page').value || '',
+                            utm_source: document.getElementById('utm_source').value || '',
+                            utm_medium: document.getElementById('utm_medium').value || '',
+                            utm_campaign: document.getElementById('utm_campaign').value || '',
                             message: document.getElementById('message').value,
                             date: new Date().toISOString(),
                             status: '未対応'
@@ -381,15 +632,24 @@
                     }
 
                     document.getElementById('successMessage').classList.remove('hidden');
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'contact_submit', {
+                            event_category: 'lead',
+                            event_label: templateParams.inquiry_type || 'contact',
+                            industry: templateParams.industry || 'general',
+                            source_path: templateParams.source_path || '',
+                            value: 1
+                        });
+                    }
                     document.getElementById('contactForm').reset();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                    setTimeout(() => {
-                        document.getElementById('successMessage').classList.add('hidden');
-                    }, 5000);
-
                     btn.innerText = originalBtnText;
                     btn.disabled = false;
+                    const thanksParams = new URLSearchParams({
+                        type: 'contact',
+                        inquiry: templateParams.inquiry_type || 'contact',
+                        source_path: templateParams.source_path || ''
+                    });
+                    window.location.href = `/thanks?${thanksParams.toString()}`;
                 }, function (error) {
                     alert('送信に失敗しました。後でもう一度お試しください。');
                     console.error('EmailJS Error:', error);

@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROTECH Admin Panel</title>
-    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     
     <link href="/assets/css/tailwind.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -715,7 +715,7 @@
                                             <span id="case-image-filename" class="text-xs text-white/50 truncate max-w-xs"></span>
                                         </div>
                                         <div id="case-image-preview" class="${data.imageUrl ? '' : 'hidden'} mt-3">
-                                            <img id="case-image-preview-img" src="${escapeHtml(data.imageUrl || '')}" alt="プレビュー" class="max-h-40 rounded-xl border border-white/10 object-cover">
+                                            <img id="case-image-preview-img" src="${escapeHtml(data.imageUrl || '')}" alt="プレビュー" class="max-h-40 rounded-xl border border-white/10 object-cover" decoding="async" loading="eager" fetchpriority="high">
                                         </div>
                                     </div>
                                 </div>
@@ -761,7 +761,7 @@
                                             <span id="blog-image-filename" class="text-xs text-white/50 truncate max-w-xs"></span>
                                         </div>
                                         <div id="blog-image-preview" class="${data.imageUrl ? '' : 'hidden'} mt-3">
-                                            <img id="blog-image-preview-img" src="${escapeHtml(data.imageUrl)}" alt="プレビュー" class="max-h-40 rounded-xl border border-white/10 object-cover">
+                                            <img id="blog-image-preview-img" src="${escapeHtml(data.imageUrl)}" alt="プレビュー" class="max-h-40 rounded-xl border border-white/10 object-cover" decoding="async" loading="lazy">
                                         </div>
                                     </div>
                                     <div>
@@ -920,7 +920,7 @@
     <main class="max-w-3xl mx-auto px-6 py-24">
         <h1 class="text-3xl md:text-4xl font-bold text-tech-blue mb-6">${item.title}</h1>
         <div class="mb-10 text-gray-400 text-sm">${item.date}</div>
-        ${item.imageUrl ? `<img src="${item.imageUrl}" class="w-full rounded-2xl mb-10 object-cover">` : ''}
+        ${item.imageUrl ? `<img src="${item.imageUrl}" class="w-full rounded-2xl mb-10 object-cover" decoding="async" loading="lazy">` : ''}
         <div class="prose prose-lg max-w-none text-gray-700 leading-loose">
             ${item.content}
         </div>

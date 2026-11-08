@@ -12,9 +12,26 @@
 
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+  let mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
 
   if (menuBtn && mobileMenu) {
+    if (!mobileMenuBackdrop) {
+      mobileMenuBackdrop = document.createElement('div');
+      mobileMenuBackdrop.id = 'mobile-menu-backdrop';
+      mobileMenuBackdrop.className = 'fixed inset-0 z-30 hidden bg-tech-blue/35 md:hidden';
+      mobileMenuBackdrop.setAttribute('aria-hidden', 'true');
+      mobileMenu.before(mobileMenuBackdrop);
+    }
+
+    if (!menuBtn.hasAttribute('type')) {
+      menuBtn.setAttribute('type', 'button');
+    }
+    if (!menuBtn.hasAttribute('aria-label')) {
+      menuBtn.setAttribute('aria-label', 'メニュー');
+    }
+    menuBtn.setAttribute('aria-controls', mobileMenu.id);
+    mobileMenu.setAttribute('aria-hidden', 'true');
+
     const setMenuOpen = (open) => {
       menuBtn.classList.toggle('active', open);
       mobileMenu.classList.toggle('translate-x-full', !open);
@@ -22,12 +39,22 @@
         mobileMenuBackdrop.classList.toggle('hidden', !open);
       }
       menuBtn.setAttribute('aria-expanded', String(open));
+      mobileMenu.setAttribute('aria-hidden', String(!open));
+      document.body.classList.toggle('mobile-menu-open', open);
     };
 
+    setMenuOpen(false);
+
     menuBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
+      e.stopImmediatePropagation();
       const willOpen = !menuBtn.classList.contains('active');
       setMenuOpen(willOpen);
+    }, true);
+
+    mobileMenuBackdrop.addEventListener('click', () => {
+      setMenuOpen(false);
     });
 
     document.addEventListener('click', (e) => {

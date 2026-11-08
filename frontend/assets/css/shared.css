@@ -63,7 +63,15 @@ p, body { font-size: var(--font-body); }
     transition: transform 0.3s ease-in-out;
 }
 #mobile-menu-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background: rgba(0, 26, 51, 0.35);
     backdrop-filter: blur(2px);
+}
+
+body.mobile-menu-open {
+    overflow: hidden;
 }
 
 /* Hamburger animation */

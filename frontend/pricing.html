@@ -30,7 +30,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/shared.css">
     <style>
 
@@ -290,7 +291,34 @@
     "@type": "WebPage",
     "name": "料金プラン | PROTECH株式会社",
     "description": "明朗な価格設計で中国マーケティングを支援。SNS代運営プラン月額5万円〜",
-    "url": "https://pro-tech.jp/pricing"
+    "url": "https://pro-tech.jp/pricing",
+    "mainEntity": {
+        "@type": "OfferCatalog",
+        "name": "PROTECH 中国マーケティング料金プラン",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "name": "基本プラン",
+                "price": "50000",
+                "priceCurrency": "JPY",
+                "url": "https://pro-tech.jp/pricing#subscription-plans"
+            },
+            {
+                "@type": "Offer",
+                "name": "推奨プラン",
+                "price": "120000",
+                "priceCurrency": "JPY",
+                "url": "https://pro-tech.jp/pricing#subscription-plans"
+            },
+            {
+                "@type": "Offer",
+                "name": "エンタープライズ",
+                "price": "250000",
+                "priceCurrency": "JPY",
+                "url": "https://pro-tech.jp/pricing#subscription-plans"
+            }
+        ]
+    }
 }
     </script>
 </head>
@@ -303,11 +331,9 @@
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-tech-blue z-50 relative">PROTECH</a>
-            <div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase text-slate-600">
-                <a href="/" class="nav-link ">トップ</a>
-
+                        <div class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-widest uppercase text-slate-600">
                 <div class="relative group">
-                    <a href="/services" class="nav-link text-coral flex items-center gap-1">サービス
+                    <a href="/services" class="nav-link  flex items-center gap-1">サービス
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
@@ -316,22 +342,36 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
-                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
-                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
-                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書（RED）</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評（Dianping）</a>
+                            <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音（Douyin）</a>
+                            <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">WeChatミニプログラム</a>
+                            <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">中国語LP・制作</a>
                             <a href="/kol" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-amber-600 transition-colors text-xs font-bold">KOL/KOC施策</a>
-                            <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>
                         </div>
                     </div>
                 </div>
 
-                <a href="/company" class="nav-link ">会社概要</a>
+                <a href="/pricing" class="nav-link text-coral font-bold">料金</a>
                 <a href="/cases" class="nav-link ">導入事例</a>
-                <a href="/blog" class="nav-link ">ブログ</a>
-                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
+                <a href="/company" class="nav-link ">会社概要</a>
+
+                <div class="relative group">
+                    <a href="/blog" class="nav-link  flex items-center gap-1">お役立ち情報
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-4 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
+                            <a href="/blog" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">ブログ・解説記事</a>
+                            <a href="/download" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">資料ダウンロード</a>
+                            <a href="/faq" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">よくある質問（FAQ）</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold shadow-md hover:shadow-lg transition">無料相談</a>
             </div>
             <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -348,8 +388,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-coral">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -361,8 +401,6 @@
             <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
-    </div>
-    </div>
     </div>
 
     <!-- ═══════════════════════ HERO ═══════════════════════ -->
@@ -460,6 +498,39 @@
         </div>
     </section>
 
+    <!-- ═══════════════════════ PLAN SELECTOR ═══════════════════════ -->
+    <section class="py-16 md:py-20 bg-slate-50 border-y border-slate-100">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="md:flex md:items-end md:justify-between gap-10 mb-12" data-aos="fade-up">
+                <div>
+                    <p class="section-kicker mb-4">Plan Selector</p>
+                    <h2 class="text-3xl md:text-4xl font-black serif text-tech-blue mb-4">目的から料金プランを選ぶ</h2>
+                </div>
+                <p class="text-gray-500 text-sm max-w-xl leading-relaxed">費用だけで比較すると、必要な運用範囲を削りすぎることがあります。現在の目的に合わせて、最初に見るべきプランを整理しました。</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="metric-tile p-7">
+                    <p class="text-coral text-[10px] font-black tracking-[0.22em] uppercase mb-4">Trial</p>
+                    <h3 class="font-bold text-lg text-tech-blue mb-3">まず中国SNS発信を始めたい</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-6">少ない投稿本数で市場反応を確認したい店舗・小規模事業者向け。</p>
+                    <a href="/contact?plan=light&source_path=/pricing" class="text-coral text-xs font-bold hover:underline">ライトプランを相談</a>
+                </div>
+                <div class="metric-tile p-7 border-coral/40">
+                    <p class="text-coral text-[10px] font-black tracking-[0.22em] uppercase mb-4">Growth</p>
+                    <h3 class="font-bold text-lg text-tech-blue mb-3">問い合わせ・来店につなげたい</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-6">投稿、返信、KOC、分析を組み合わせる標準構成。継続集客の土台作りに最適です。</p>
+                    <a href="/contact?plan=standard&source_path=/pricing" class="text-coral text-xs font-bold hover:underline">スタンダードを相談</a>
+                </div>
+                <div class="metric-tile p-7">
+                    <p class="text-coral text-[10px] font-black tracking-[0.22em] uppercase mb-4">Scale</p>
+                    <h3 class="font-bold text-lg text-tech-blue mb-3">複数媒体で一気に伸ばしたい</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-6">小紅書、大衆点評、KOL、LP、広告まで横断して市場接点を増やす企業向け。</p>
+                    <a href="/contact?plan=premium&source_path=/pricing" class="text-coral text-xs font-bold hover:underline">プレミアムを相談</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ═══════════════════════ SUBSCRIPTION PLANS ═══════════════════════ -->
     <section class="py-20 md:py-28 relative overflow-hidden" id="subscription-plans" style="background: linear-gradient(180deg, #f8fafc 0%, #fff5f6 48%, #ffffff 100%);">
         <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
@@ -474,6 +545,8 @@
                 </div>
                 <p class="text-gray-500 text-sm max-w-xl leading-relaxed">
                     小紅書（RED）や大衆点評（Dianping）、抖音（Douyin）等の運用を丸ごとサポート。初期費用を抑えながら、まずは安定的に認知と問い合わせ導線を作りたい企業様向けです。
+                    <a href="/xiaohongshu-agency-cost" class="text-coral font-bold hover:underline">小紅書運用代行の詳しい費用相場はこちら</a>。
+                    複数媒体を比較したい方は<a href="/china-sns-marketing-agency" class="text-coral font-bold hover:underline">中国SNS運用代行の全体設計</a>もご確認ください。
                 </p>
             </div>
 
@@ -483,8 +556,11 @@
                 <div class="pricing-card p-8 md:p-10 flex flex-col justify-between" data-aos="fade-up">
                     <div>
                         <div class="mb-6">
-                            <span class="inline-block bg-slate-100 text-slate-600 text-[10px] font-bold px-3 py-1 uppercase tracking-wider mb-4">ライト</span>
-                            <h3 class="text-2xl font-bold text-tech-blue">基本プラン</h3>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-block bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1 uppercase tracking-wider rounded-md">ライトプラン</span>
+                                <span class="text-[11px] text-gray-400 font-medium">1媒体・1店舗向け</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-tech-blue">ライトプラン</h3>
                             <p class="text-gray-400 text-xs mt-2">最小限のコストでSNS発信をスタートしたい店舗・事業主様へ</p>
                         </div>
                         <div class="border-t border-b border-gray-100 py-6 mb-6">
@@ -492,7 +568,11 @@
                                 <span class="text-3xl font-black text-tech-blue">¥50,000</span>
                                 <span class="text-xs text-gray-400 font-bold ml-2">/ 月（税別）</span>
                             </div>
-                            <span class="text-[10px] text-coral font-bold tracking-widest block mt-2">最低契約期間：3ヶ月</span>
+                            <div class="mt-3 space-y-1 text-xs text-gray-500">
+                                <p class="font-medium text-slate-700">計費単位：<strong>1媒体・1アカウント・1店舗あたり</strong></p>
+                                <p>初期費用：<strong>¥50,000</strong>（税別・アカウント開設/初期設計）</p>
+                                <p class="text-coral font-bold">最低契約期間：3ヶ月（3ヶ月最低総額：税別20万円 ※実費別途）</p>
+                            </div>
                         </div>
                         <ul class="space-y-4 mb-8 text-sm text-gray-600">
                             <li class="flex items-start gap-3">
@@ -501,7 +581,7 @@
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span>お問合せ対応：最大<strong>100件</strong> / 月<br><span class="text-gray-400 text-xs">（ネイティブによる丁寧な代理返信）</span></span>
+                                <span>お問合せ対応：最大<strong>100件</strong> / 月<br><span class="text-gray-400 text-xs">（平日ネイティブによる丁寧な代理返信）</span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
@@ -509,25 +589,31 @@
                             </li>
                             <li class="flex items-start gap-3 text-gray-300">
                                 <span>✕</span>
-                                <span>定例ミーティング・詳細データ分析</span>
+                                <span>定例ミーティング・詳細インサイト月報</span>
                             </li>
                             <li class="flex items-start gap-3 text-gray-300">
                                 <span>✕</span>
-                                <span>KOC（体験型インフルエンサー）手配</span>
+                                <span>KOC（体験型インフルエンサー）手配付帯</span>
                             </li>
                         </ul>
                     </div>
-                    <a href="/contact?plan=light" class="btn-outline-coral w-full py-4 text-center text-xs font-bold tracking-widest uppercase block">
-                        このプランで相談する
+                    <a href="/contact?plan=light&source_path=/pricing" class="btn-outline-coral w-full py-4 text-center text-xs font-bold tracking-widest uppercase block">
+                        ライトプランで相談する
                     </a>
                 </div>
 
                 <!-- Standard Plan -->
-                <div class="pricing-card pricing-card-popular p-8 md:p-10 flex flex-col justify-between shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <div class="pricing-card pricing-card-popular p-8 md:p-10 flex flex-col justify-between shadow-lg relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-coral text-white text-[11px] font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow">
+                        人気No.1 おすすめ
+                    </div>
                     <div>
-                        <div class="mb-6">
-                            <span class="inline-block bg-coral/10 text-coral text-[10px] font-bold px-3 py-1 uppercase tracking-wider mb-4">スタンダード</span>
-                            <h3 class="text-2xl font-bold text-tech-blue">推奨プラン</h3>
+                        <div class="mb-6 mt-2">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-block bg-coral/10 text-coral text-[10px] font-bold px-3 py-1 uppercase tracking-wider rounded-md">スタンダードプラン</span>
+                                <span class="text-[11px] text-coral font-bold">初期費用 ¥0 キャンペーン</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-tech-blue">スタンダードプラン</h3>
                             <p class="text-gray-400 text-xs mt-2">インサイト分析や競合調査、KOC起用で集客成果を本格化したい企業様へ</p>
                         </div>
                         <div class="border-t border-b border-gray-100 py-6 mb-6">
@@ -535,7 +621,11 @@
                                 <span class="text-4xl font-black text-tech-blue">¥120,000</span>
                                 <span class="text-xs text-gray-400 font-bold ml-2">/ 月（税別）</span>
                             </div>
-                            <span class="text-[10px] text-coral font-bold tracking-widest block mt-2">最低契約期間：3ヶ月</span>
+                            <div class="mt-3 space-y-1 text-xs text-gray-500">
+                                <p class="font-medium text-slate-700">計費単位：<strong>1媒体・1アカウント・1店舗あたり</strong></p>
+                                <p>初期費用：<span class="line-through text-gray-400">¥50,000</span> <strong class="text-coral">¥0（無料特典付帯）</strong></p>
+                                <p class="text-coral font-bold">最低契約期間：3ヶ月（3ヶ月最低総額：税別36万円 ※実費別途）</p>
+                            </div>
                         </div>
                         <ul class="space-y-4 mb-8 text-sm text-gray-600">
                             <li class="flex items-start gap-3">
@@ -544,7 +634,7 @@
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span>お問合せ対応：最大<strong>250件</strong> / 月<br><span class="text-gray-400 text-xs">（24時間以内ネイティブ返信）</span></span>
+                                <span>お問合せ対応：最大<strong>250件</strong> / 月<br><span class="text-gray-400 text-xs">（平日24時間以内ネイティブ返信）</span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
@@ -556,17 +646,17 @@
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span class="text-slate-800 font-bold">【プレミアム特典】</span>
+                                <span class="text-slate-800 font-bold">【スタンダード特典・付帯内容】</span>
                             </li>
-                            <li class="pl-6 text-xs text-gray-500 space-y-2">
-                                <div>・初期設定 & 公式認証申請無料（5万円相当）</div>
-                                <div>・マイクロKOC手配付帯（毎月2名無料）</div>
-                                <div>・広告運用代行費込（月額予算5万円分まで）</div>
+                            <li class="pl-6 text-xs text-gray-600 space-y-2">
+                                <div>・初期設定 & 公式認証申請代行：<strong>無料</strong>（通常5万円相当）</div>
+                                <div>・マイクロKOC手配費：<strong>無料付帯（毎月2名・各1投稿納品）</strong><br><span class="text-gray-400">※KOCへの飲食・商品提供および現地交通費などの実費はお客様ご負担となります</span></div>
+                                <div>・広告運用代行費：<strong>月額予算5万円分まで無料込</strong><br><span class="text-gray-400">※媒体（小紅書等）へ直接支払う広告実費は別途ご負担となります。予算5万円超過時は超過分の20%を手数料とします</span></div>
                             </li>
                         </ul>
                     </div>
-                    <a href="/contact?plan=standard" class="btn-coral w-full py-4 text-center text-xs font-bold tracking-widest uppercase block">
-                        人気No.1プランで相談する
+                    <a href="/contact?plan=standard&source_path=/pricing" class="btn-coral w-full py-4 text-center text-xs font-bold tracking-widest uppercase block shadow-md">
+                        人気No.1 スタンダードで相談する
                     </a>
                 </div>
 
@@ -574,8 +664,11 @@
                 <div class="pricing-card p-8 md:p-10 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
                     <div>
                         <div class="mb-6">
-                            <span class="inline-block bg-slate-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-wider mb-4">プレミアム</span>
-                            <h3 class="text-2xl font-bold text-tech-blue">エンタープライズ</h3>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-block bg-slate-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-wider rounded-md">プレミアムプラン</span>
+                                <span class="text-[11px] text-gray-400 font-medium">多角展開・拡大企業向け</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-tech-blue">プレミアムプラン</h3>
                             <p class="text-gray-400 text-xs mt-2">複数チャネル展開やKOLコラボ、広告の最適化で市場シェアを狙うブランドへ</p>
                         </div>
                         <div class="border-t border-b border-gray-100 py-6 mb-6">
@@ -583,7 +676,11 @@
                                 <span class="text-3xl font-black text-tech-blue">¥250,000</span>
                                 <span class="text-xs text-gray-400 font-bold ml-2">/ 月（税別）</span>
                             </div>
-                            <span class="text-[10px] text-coral font-bold tracking-widest block mt-2">最低契約期間：3ヶ月</span>
+                            <div class="mt-3 space-y-1 text-xs text-gray-500">
+                                <p class="font-medium text-slate-700">計費単位：<strong>1媒体・1アカウント・1店舗あたり</strong></p>
+                                <p>初期費用：<span class="line-through text-gray-400">¥50,000</span> <strong class="text-tech-blue">¥0（無料特典付帯）</strong></p>
+                                <p class="text-coral font-bold">最低契約期間：3ヶ月（3ヶ月最低総額：税別75万円 ※実費別途）</p>
+                            </div>
                         </div>
                         <ul class="space-y-4 mb-8 text-sm text-gray-600">
                             <li class="flex items-start gap-3">
@@ -592,7 +689,7 @@
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span>お問合せ・コメント対応：<strong>無制限</strong><br><span class="text-gray-400 text-xs">（緊急対応用ホットラインの開設）</span></span>
+                                <span>お問合せ・コメント対応：<strong>無制限対応</strong><br><span class="text-gray-400 text-xs">（平日10:00〜19:00対応 / 原則2時間以内返信。夜間・休日は翌営業日。専任緊急ホットライン開設）</span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
@@ -600,23 +697,23 @@
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span>詳細レポート ＋ 定例会（月2回 / 訪問可）</span>
+                                <span>詳細レポート ＋ 定例会（月2回 / オンラインまたは訪問可）</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span class="text-slate-800 font-bold">【プレミアム特典】</span>
+                                <span class="text-slate-800 font-bold">【プレミアム特典・付帯内容】</span>
                             </li>
-                            <li class="pl-6 text-xs text-gray-500 space-y-2">
-                                <div>・初期設定 & 公式認証申請無料</div>
-                                <div>・KOLマッチング & コラボ特別割引適用</div>
-                                <div>・プロモーションイベントの企画・運営</div>
-                                <div>・広告運用代行費込（月額予算15万円分まで）</div>
-                                <div>・中国語LP初期制作費 50% OFF</div>
+                            <li class="pl-6 text-xs text-gray-600 space-y-2">
+                                <div>・初期設定 & 公式認証申請代行：<strong>無料</strong></div>
+                                <div>・マイクロKOC手配費：<strong>無料付帯（毎月4名・各1投稿納品 / 実費別途）</strong></div>
+                                <div>・KOLマッチング & コラボ特別手数料割引適用</div>
+                                <div>・広告運用代行費：<strong>月額予算15万円分まで無料込（媒体費実費別途）</strong></div>
+                                <div>・中国語LP制作費 50% OFF特典付帯</div>
                             </li>
                         </ul>
                     </div>
-                    <a href="/contact?plan=premium" class="btn-outline-coral w-full py-4 text-center text-xs font-bold tracking-widest uppercase block">
-                        このプランで相談する
+                    <a href="/contact?plan=premium&source_path=/pricing" class="btn-outline-coral w-full py-4 text-center text-xs font-bold tracking-widest uppercase block">
+                        プレミアムプランで相談する
                     </a>
                 </div>
             </div>
@@ -626,9 +723,9 @@
                     <thead>
                         <tr class="bg-slate-950 text-white text-left">
                             <th class="px-6 py-5 text-xs tracking-[0.18em] uppercase">比較項目</th>
-                            <th class="px-6 py-5 text-xs tracking-[0.18em] uppercase">ライト</th>
-                            <th class="px-6 py-5 text-xs tracking-[0.18em] uppercase text-coral">スタンダード</th>
-                            <th class="px-6 py-5 text-xs tracking-[0.18em] uppercase">プレミアム</th>
+                            <th class="px-6 py-5 text-xs tracking-[0.18em] uppercase">ライトプラン</th>
+                            <th class="px-6 py-5 text-xs tracking-[0.18em] uppercase text-coral">スタンダードプラン</th>
+                            <th class="px-6 py-5 text-xs tracking-[0.18em] uppercase">プレミアムプラン</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100 text-slate-600">
@@ -692,7 +789,7 @@
                     </div>
                     <div class="border-t border-gray-100 pt-6 mt-6 flex items-center justify-between">
                         <span class="text-xs text-gray-400 font-bold">目安費用：要お見積もり</span>
-                        <a href="/contact?service=miniprogram" class="text-coral text-xs font-bold hover:underline inline-flex items-center gap-1">
+                        <a href="/contact?service=miniprogram&source_path=/pricing" class="text-coral text-xs font-bold hover:underline inline-flex items-center gap-1">
                             詳細を聞く →
                         </a>
                     </div>
@@ -709,7 +806,7 @@
                     </div>
                     <div class="border-t border-gray-100 pt-6 mt-6 flex items-center justify-between">
                         <span class="text-xs text-gray-400 font-bold">目安費用：要お見積もり</span>
-                        <a href="/contact?service=creative" class="text-coral text-xs font-bold hover:underline inline-flex items-center gap-1">
+                        <a href="/contact?service=creative&source_path=/pricing" class="text-coral text-xs font-bold hover:underline inline-flex items-center gap-1">
                             詳細を聞く →
                         </a>
                     </div>
@@ -726,7 +823,7 @@
                     </div>
                     <div class="border-t border-gray-100 pt-6 mt-6 flex items-center justify-between">
                         <span class="text-xs text-gray-400 font-bold">目安費用：要お見積もり</span>
-                        <a href="/contact?service=kol" class="text-coral text-xs font-bold hover:underline inline-flex items-center gap-1">
+                        <a href="/contact?service=kol&source_path=/pricing" class="text-coral text-xs font-bold hover:underline inline-flex items-center gap-1">
                             詳細を聞く →
                         </a>
                     </div>
@@ -738,7 +835,7 @@
     <!-- ═══════════════════════ TRANSPARENCY SECTION ═══════════════════════ -->
     <section class="py-16 md:py-20 bg-slate-900 text-white relative">
         <div class="absolute inset-0 z-0">
-            <img src="assets/images/pricing-pattern-bg.jpg" class="w-full h-full object-cover opacity-10 filter grayscale" alt="装飾背景" loading="lazy" decoding="async">
+            <img src="assets/images/pricing-pattern-bg.jpg" class="w-full h-full object-cover opacity-10 filter grayscale" alt="装飾背景" loading="lazy" decoding="async" width="1600" height="496">
             <div class="absolute inset-0 bg-slate-900/90"></div>
         </div>
 
@@ -854,7 +951,7 @@
     <!-- ═══════════════════════ CTA ═══════════════════════ -->
     <section class="relative py-20 md:py-28 cta-gradient text-white overflow-hidden wave-top">
         <div class="absolute inset-0 z-0">
-            <img src="assets/images/pricing-consultation.jpg" class="w-full h-full object-cover opacity-10 filter grayscale" alt="無料相談" loading="lazy" decoding="async">
+            <img src="assets/images/pricing-consultation.jpg" class="w-full h-full object-cover opacity-10 filter grayscale" alt="無料相談" loading="lazy" decoding="async" width="1600" height="1194">
             <div class="absolute inset-0 bg-slate-950/80"></div>
         </div>
 
@@ -867,10 +964,10 @@
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
-                <a href="/contact" class="btn-coral px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-block">
+                <a href="/contact?source_path=/pricing&inquiry_type=consultation" class="btn-coral px-10 py-4 text-xs font-bold tracking-widest rounded-full uppercase inline-block">
                     無料の集客相談を予約する
                 </a>
-                <a href="/contact?type=document" class="px-10 py-4 border border-white/20 text-white text-xs font-bold tracking-widest rounded-full uppercase hover:bg-white hover:text-tech-blue transition-all inline-block">
+                <a href="/contact?type=document&source_path=/pricing" class="px-10 py-4 border border-white/20 text-white text-xs font-bold tracking-widest rounded-full uppercase hover:bg-white hover:text-tech-blue transition-all inline-block">
                     資料を請求する
                 </a>
             </div>
@@ -889,8 +986,8 @@
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
@@ -903,8 +1000,10 @@
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/media-kit" class="hover:text-coral transition">メディアキット</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/editorial-policy" class="hover:text-coral transition">コンテンツ制作方針</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
                         <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
                         <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
@@ -934,9 +1033,6 @@
             offset: 60,
             easing: 'ease-out-cubic',
         });
-
-        // Mobile Menu Logic
-        // Navbar shadow transition on scroll
     </script>
     <script defer src="assets/js/main.js"></script>
 </body>

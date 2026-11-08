@@ -25,7 +25,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root { --tech-blue: #001A33; --coral: #E86B7A; }
@@ -45,6 +46,12 @@
         .article-body strong { color: var(--tech-blue); font-weight: 700; }
         .kpi-card { background: linear-gradient(135deg, #fff5f6 0%, #fff 100%); border: 1px solid #fce7ea; border-radius: 1rem; padding: 1.5rem; text-align: center; }
         .tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 999px; letter-spacing: .08em; text-transform: uppercase; }
+        .case-route { border: 1px solid rgba(15,23,42,.1); border-radius: 1rem; background: #fff; overflow: hidden; }
+        .case-route a { display: grid; grid-template-columns: 1fr auto; gap: 1rem; padding: 1rem 1.25rem; border-top: 1px solid rgba(15,23,42,.08); transition: background .2s; }
+        .case-route a:first-child { border-top: 0; }
+        .case-route a:hover { background: #fff7f8; }
+        .case-route span { color: #64748b; font-size: .78rem; line-height: 1.6; }
+        .case-route b { color: var(--coral); font-size: .68rem; letter-spacing: .12em; }
     </style>
     <script type="application/ld+json">
 {
@@ -97,6 +104,27 @@
     }
 }
     </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CaseStudy",
+    "name": "花雕酔鶏鍋の中国インバウンド集客事例",
+    "headline": "小紅書で日本進出初月から連日満席を達成した飲食店事例",
+    "description": "小紅書、大衆点評、KOL/KOC施策を組み合わせ、上野・六本木の飲食店が訪日中国人の来店導線を構築した事例です。",
+    "image": "https://pro-tech.jp/assets/images/case-restaurant.jpg",
+    "url": "https://pro-tech.jp/cases/huadiao-zuiji-guo",
+    "about": {
+        "@type": "Service",
+        "name": "飲食店向け中国インバウンド集客支援",
+        "url": "https://pro-tech.jp/industries/restaurant-inbound"
+    },
+    "provider": {
+        "@type": "Organization",
+        "name": "PROTECH株式会社",
+        "url": "https://pro-tech.jp"
+    }
+}
+    </script>
 </head>
 <body class="bg-white text-slate-900">
 
@@ -117,8 +145,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -149,8 +177,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -162,8 +190,6 @@
             <a href="/blog" class="text-lg font-bold text-slate-700">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
-    </div>
-    </div>
     </div>
     
     <div class="max-w-4xl mx-auto px-6">
@@ -182,13 +208,11 @@
             <span>業種：中華料理店（火鍋）</span>
             <span>規模：2店舗（上野・六本木）</span>
             <span>支援期間：2024年10月〜</span>
-        </div>
-    </div>
 
 <!-- HERO IMAGE -->
 <div class="max-w-4xl mx-auto px-6 mb-16" data-aos="fade-up">
     <div class="rounded-2xl overflow-hidden shadow-lg h-72 md:h-96 bg-slate-100">
-        <img src="../assets/images/case-restaurant.jpg" alt="花雕酔鶏鍋 上野店" class="w-full h-full object-cover">
+        <img src="../assets/images/case-restaurant.jpg" alt="花雕酔鶏鍋 上野店" class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" width="1200" height="669">
     </div>
     <p class="text-xs text-gray-400 mt-2 text-center">※ イメージ画像</p>
 </div>
@@ -200,21 +224,52 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="kpi-card">
                 <p class="text-3xl font-black text-coral">初月</p>
-                <p class="text-xs text-gray-400 mt-1 leading-tight">から連日<br>満席達成</p>
+                <p class="text-xs text-gray-500 mt-1 leading-tight font-medium">から連日満席達成<br><span class="text-[10px] text-gray-400">（週末ディナー帯中心）</span></p>
             </div>
             <div class="kpi-card">
                 <p class="text-3xl font-black text-coral">2.4倍</p>
-                <p class="text-xs text-gray-400 mt-1 leading-tight">中国人来客数<br>（3ヶ月後）</p>
+                <p class="text-xs text-gray-500 mt-1 leading-tight font-medium">中国人来客数<br><span class="text-[10px] text-gray-400">（当初目標比240%達成）</span></p>
             </div>
             <div class="kpi-card">
                 <p class="text-3xl font-black text-coral">15万+</p>
-                <p class="text-xs text-gray-400 mt-1 leading-tight">小紅書<br>インプレッション</p>
+                <p class="text-xs text-gray-400 mt-1 leading-tight font-medium">小紅書インプレッション<br><span class="text-[10px] text-gray-400">（施策累計）</span></p>
             </div>
             <div class="kpi-card">
                 <p class="text-3xl font-black text-coral">ROI<br><span class="text-xl">320%</span></p>
-                <p class="text-xs text-gray-400 mt-1 leading-tight">マーケティング<br>投資対効果</p>
+                <p class="text-xs text-gray-500 mt-1 leading-tight font-medium">投資対効果<br><span class="text-[10px] text-gray-400">（来店売上試算ベース）</span></p>
             </div>
         </div>
+        <p class="text-[11px] text-gray-400 text-right mt-3">※数値は施策開始後3ヶ月間の実績に基づく自社集計値。ROIは施策費に対する試算来店売上ベースの推計値です。※掲載画像の一部はイメージを含みます。</p>
+    </div>
+</section>
+
+<!-- SUPPORT SCOPE -->
+<section class="max-w-4xl mx-auto px-6 mb-16" aria-labelledby="support-scope-heading">
+    <div class="mb-8">
+        <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-3">Support Scope</p>
+        <h2 id="support-scope-heading" class="text-2xl font-bold serif text-tech-blue mb-3">この事例で実施した支援</h2>
+        <p class="text-sm text-gray-500 leading-relaxed">飲食店の訪日中国人集客では、認知獲得・来店判断・予約導線を一体で設計することが重要です。</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4">
+        <a href="/red" class="block rounded-lg border border-gray-100 bg-white p-5 hover:border-coral hover:shadow-sm transition">
+            <p class="text-xs font-bold text-coral tracking-wider mb-2">小紅書運用</p>
+            <p class="text-sm font-bold text-tech-blue mb-2">訪日前の検索・保存に届く投稿設計</p>
+            <p class="text-xs text-gray-400 leading-relaxed">料理写真、アクセス、予約導線を中国語で整備。</p>
+        </a>
+        <a href="/dianping" class="block rounded-lg border border-gray-100 bg-white p-5 hover:border-coral hover:shadow-sm transition">
+            <p class="text-xs font-bold text-coral tracking-wider mb-2">大衆点評対策</p>
+            <p class="text-sm font-bold text-tech-blue mb-2">来店直前の比較検討を後押し</p>
+            <p class="text-xs text-gray-400 leading-relaxed">店舗情報、写真、口コミ導線を来店判断に合わせて最適化。</p>
+        </a>
+        <a href="/industries/restaurant-inbound" class="block rounded-lg border border-gray-100 bg-white p-5 hover:border-coral hover:shadow-sm transition">
+            <p class="text-xs font-bold text-coral tracking-wider mb-2">飲食店インバウンド</p>
+            <p class="text-sm font-bold text-tech-blue mb-2">飲食店向けの集客導線を構築</p>
+            <p class="text-xs text-gray-400 leading-relaxed">小紅書、口コミ、予約まで一気通貫で改善。</p>
+        </a>
+    </div>
+    <div class="mt-8 flex flex-wrap gap-3 text-[11px] font-bold tracking-wider">
+        <a href="/kol" class="text-tech-blue hover:text-coral underline underline-offset-4">KOL/KOC施策を見る</a>
+        <a href="/contact?industry=restaurant-inbound&source_path=/cases/huadiao-zuiji-guo" class="text-coral hover:text-tech-blue underline underline-offset-4">飲食店集客を相談する</a>
     </div>
 </section>
 
@@ -267,7 +322,7 @@
 
     <h2>成果</h2>
     <p>
-        施策開始から約1ヶ月でオープンを迎えた「花雕酔鶏鍋」は、<strong>初月から週末を中心に連日満席</strong>を達成。3ヶ月後には中国人来客数が当初目標の2.4倍に達しました。
+        施策開始から約1ヶ月でオープンを迎えた「花雕酔鶏鍋」は、<strong>初月から週末を中心に連日満席</strong>を達成。3ヶ月後には中国人来客数が<strong>当初月間目標の2.4倍（目標達成率240%）</strong>に達しました。
     </p>
     <ul>
         <li>小紅書フォロワー数：0 → 2,800（3ヶ月）</li>
@@ -294,6 +349,21 @@
 
 </article>
 
+<section class="max-w-4xl mx-auto px-6 pb-20">
+    <div class="grid md:grid-cols-[0.85fr_1.15fr] gap-8 items-start">
+        <div>
+            <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-3">Next Step</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-tech-blue mb-4">この事例に近い飲食店が次に見るべきページ</h2>
+            <p class="text-sm text-gray-500 leading-relaxed">火鍋、焼肉、寿司、ラーメン、居酒屋など、訪日中国人に選ばれたい飲食店は、媒体選定より先に来店導線を整理するのが近道です。</p>
+        </div>
+        <div class="case-route">
+            <a href="/industries/restaurant-inbound"><strong>飲食店向け中国インバウンド集客</strong><span>業態別に小紅書・大衆点評・抖音の役割を整理</span><b>SERVICE</b></a>
+            <a href="/blog/douyin-restaurant-inbound"><strong>抖音で飲食店の来店を増やす方法</strong><span>動画から来店までの導線を解説</span><b>ARTICLE</b></a>
+            <a href="/contact?industry=restaurant-inbound&source_path=/cases/huadiao-zuiji-guo"><strong>飲食店集客の無料相談</strong><span>店舗の素材・エリア・予算から優先施策を診断</span><b>CONTACT</b></a>
+        </div>
+    </div>
+</section>
+
 <!-- CTA -->
 <section class="py-20 bg-tech-blue px-6 relative overflow-hidden">
     <div class="absolute top-0 left-0 w-96 h-96 bg-coral/10 rounded-full blur-[120px]"></div>
@@ -302,7 +372,7 @@
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">貴社でも同様の成果を出しませんか？</h2>
         <p class="text-white/50 text-sm mb-10 leading-relaxed">小紅書・大衆点評を活用したインバウンド集客について、<br class="hidden md:block">まずは無料でご相談ください。</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" class="btn-coral px-10 py-4 rounded-full text-sm font-bold tracking-widest inline-block">無料相談を申し込む</a>
+            <a href="/contact?industry=restaurant-inbound&source_path=/cases/huadiao-zuiji-guo" class="btn-coral px-10 py-4 rounded-full text-sm font-bold tracking-widest inline-block">無料相談を申し込む</a>
             <a href="/cases" class="px-10 py-4 rounded-full text-sm font-bold tracking-widest border border-white/20 text-white hover:bg-white/10 transition inline-block">他の事例を見る</a>
         </div>
     </div>
@@ -319,8 +389,8 @@
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
@@ -333,8 +403,10 @@
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/media-kit" class="hover:text-coral transition">メディアキット</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/editorial-policy" class="hover:text-coral transition">コンテンツ制作方針</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
                         <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
                         <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
@@ -362,8 +434,19 @@
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
     }
 </script>
+    <script defer src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -6,7 +6,8 @@
     "xml2js": "^0.6.2"
   },
   "scripts": {
-    "build": "node -e \"console.log('Static frontend ready')\"",
+    "build": "node scripts/generate-sitemap.js && node -e \"console.log('Static frontend ready')\"",
+    "sitemap": "node scripts/generate-sitemap.js",
     "push-google": "node scripts/push-urls-to-google.js"
   }
 }

@@ -16,7 +16,7 @@
     <meta name="description" content="2026年、日本のインバウンド市場は「集客数」から「消費単価」への転換点を迎えました。テクノロジーを活用した高単価マーケティングやDX戦略の正解を解説します。">
     <link rel="canonical" href="https://pro-tech.jp/blog/inbound-data-ai-dx-2026">
     <link rel="icon" type="image/png" href="../assets/images/favicon.png">
-    <meta property="og:title" content="【2026年最新】小紅書(RED)アルゴリズム変更とEC強化を徹底解説！ | PROTECH株式会社">
+    <meta property="og:title" content="【2026年最新】AIとデータで勝つインバウンド集客：量から質への転換・DX戦略の正解 | PROTECH株式会社">
     <meta property="og:description" content="2026年、日本のインバウンド市場は「集客数」から「消費単価」への転換点を迎えました。テクノロジーを活用した高単価マーケティングやDX戦略の正解を解説します。">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="2026-04-28">
@@ -30,10 +30,12 @@
 
     
     <link href="../assets/css/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/blog-seo-enhance.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     
 
@@ -117,9 +119,41 @@
     }
 }
     </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "インバウンド集客でAIやデータは何に使えますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "国籍別の需要分析、SNS投稿テーマの設計、予約フォームの離脱分析、多言語問い合わせ対応、広告配信の改善に活用できます。勘ではなく、どこで機会損失が起きているかを可視化することが目的です。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "小規模な店舗や宿泊施設でもインバウンドDXは必要ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "必要です。大規模なシステム導入でなくても、予約フォーム、決済、口コミ、SNS投稿、問い合わせ対応をデータで見直すだけで改善余地を見つけられます。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "AI導入より先に整えるべきことは何ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "まずは集客から予約・来店・口コミまでの導線を整理し、どの数値を追うか決めることです。導線と指標が曖昧なままAIを入れても成果につながりにくくなります。"
+            }
+        }
+    ]
+}
+    </script>
 </head>
 
-<body class="bg-white text-slate-900">
+<body class="blog-seo bg-white text-slate-900">
 
                         <!-- NAV -->
     <nav class="fixed w-full z-50 glass-nav">
@@ -138,8 +172,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -170,8 +204,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -183,8 +217,6 @@
             <a href="/blog" class="text-lg font-bold text-coral">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
-    </div>
-    </div>
     </div>
     
     
@@ -215,7 +247,7 @@
             <!-- Hero image -->
             <div class="rounded-2xl overflow-hidden shadow-xl mb-0" data-aos="zoom-in">
                 <!-- User should replace this with a professional data image -->
-                <img src="../assets/images/inbound-data-ai-hero.jpeg" alt="データとAIで勝つインバウンド集客" class="w-full h-64 md:h-96 object-cover">
+                <img src="../assets/images/inbound-data-ai-hero.jpeg" alt="データとAIで勝つインバウンド集客" class="w-full h-64 md:h-96 object-cover" decoding="async" loading="eager" fetchpriority="high" width="1600" height="893">
             </div>
         </div>
     </div>
@@ -228,10 +260,33 @@
 
             <p>2025年の大阪・関西万博による熱狂を経て、日本のインバウンド市場は大きな転換点を迎えました。2026年現在、観光事業者に求められているのは、単なる「集客」ではなく、テクノロジーを活用した<strong>「高単価・高効率なマーケティング」</strong>へのシフトです。本記事では、新時代のインバウンド戦略をPROTECH独自のデータ視点で解説します。</p>
 
+            <div class="answer-box">
+                <p><strong>この記事の結論：</strong>インバウンドDXの目的は、AIを入れることではなく「どの国の旅行者が、どこで離脱し、何に価値を感じて予約するか」を見える化することです。</p>
+                <p>SNS投稿、広告、予約フォーム、決済、口コミを別々に見るのではなく、来店・予約・単価までつながるデータとして扱う必要があります。</p>
+            </div>
+
+            <div class="seo-matrix">
+                <div class="matrix-row">
+                    <strong>集客データ</strong>
+                    <p>国籍、検索キーワード、SNS投稿、広告反応から需要を読み取ります。</p>
+                    <p><a href="/blog/inbound-foreign-tourist-trends-2026" class="text-coral underline hover:opacity-80">市場トレンド</a>と合わせて確認します。</p>
+                </div>
+                <div class="matrix-row">
+                    <strong>導線データ</strong>
+                    <p>LP、予約フォーム、決済、問い合わせで離脱している箇所を特定します。</p>
+                    <p><a href="/blog/inbound-funnel-design" class="text-coral underline hover:opacity-80">導線設計</a>が改善の土台です。</p>
+                </div>
+                <div class="matrix-row">
+                    <strong>運用データ</strong>
+                    <p>投稿頻度、口コミ、返信、再来店施策を継続的に改善します。</p>
+                    <p><a href="/blog/content-operation-flow" class="text-coral underline hover:opacity-80">運用フロー</a>で体制を整えます。</p>
+                </div>
+            </div>
+
             <h2 id="section-1">1. 2026年のインバウンド市場：「集客数」から「消費単価」へのパラダイムシフト</h2>
             <p>2026年現在、日本のインバウンド市場は一種の「成熟期」に突入しています。訪日外国人客数は約4,140万人と安定した推移を見せる一方で、注目すべきは<strong>観光消費額が9.6兆円を突破し、過去最高を更新し続けている</strong>という事実です。</p>
             <div class="bg-gray-100 rounded-xl p-4 text-center my-6">
-                <img src="../assets/images/inbound-market-trend-2026.jpg" alt="2026年のインバウンド市場トレンド」 class="w-full h-auto rounded">
+                <img src="../assets/images/inbound-market-trend-2026.jpg" alt="2026年のインバウンド市場トレンド」 class="w-full h-auto rounded" decoding="async" loading="lazy" width="1200" height="669">
                 <p class="text-xs text-gray-500 mt-2">※イメージ：2026年に向けた訪日客数と消費額の推移</p>
             </div>
             <p>インバウンドビジネスの成功指標が「いかに多くの人を呼ぶか（量）」から「いかに一人あたり消費額（LTV）を高めるか（質）」へ完全にシフトしました。背景には深刻化したオーバーツーリズムへの対策意識の高まりがあります。</p>
@@ -249,7 +304,7 @@
             <h2 id="section-3">3. PROTECHが提案する「次世代インバウンドDX」の3つの柱</h2>
             <p>複雑化する市場において、経験や勘だけで勝負するのはリスクが高すぎます。PROTECH（Professional × Technology）では、以下の3つの基幹ソリューションで観光事業者の<a href="/services" class="text-coral underline hover:opacity-80">DX・インバウンド集客支援</a>を行っています。</p>
             <div class="bg-gray-100 rounded-xl p-4 text-center my-6">
-                <img src="../assets/images/inbound-dx-solution.jpg" alt="次世代インバウンドDXの3つの柱" class="w-full h-auto rounded">
+                <img src="../assets/images/inbound-dx-solution.jpg" alt="次世代インバウンドDXの3つの柱" class="w-full h-auto rounded" decoding="async" loading="lazy" width="1200" height="669">
                 <p class="text-xs text-gray-500 mt-2">※PROTECHが提供するDXソリューションの全体像</p>
             </div>
             <div class="point-card">
@@ -278,11 +333,34 @@
             <p>インバウンド集客は、もはや「運」や「感性」に頼るフェーズを過ぎました。2026年における真の勝者は、「誰が、いつ、どこで、なぜ自社のサービスにお金を払うのか」をデータで解明し、適切にテクノロジーを実装できた企業です。</p>
             <p>「現状の集客に限界を感じている」「テクノロジーをどう活用すべきかわからない」という方は、ぜひPROTECHにご相談ください。AI・データ分析技術とインバウンド市場の専門知識で、貴社のビジネスを全力でサポートいたします！</p>
 
+            <div class="article-cta">
+                <strong>インバウンドの数字を、施策改善に使える形へ整理します。</strong>
+                <p>PROTECHでは、SNS、広告、予約、決済、口コミを分解し、どの施策を優先すべきかをデータ視点で設計します。</p>
+                <a href="/contact?service=inbound-dx&source_path=/blog/inbound-data-ai-dx-2026">無料でDX改善を相談</a>
+                <a href="/blog/inbound-funnel-design">導線設計を見る</a>
+            </div>
+
+            <h2 id="section-6">よくある質問</h2>
+            <div class="mini-faq">
+                <details>
+                    <summary>インバウンド集客でAIやデータは何に使えますか？</summary>
+                    <p>需要分析、投稿テーマ設計、予約フォームの離脱分析、多言語問い合わせ対応、広告改善に使えます。目的は、機会損失の場所を見える化することです。</p>
+                </details>
+                <details>
+                    <summary>小規模店舗でもインバウンドDXは必要ですか？</summary>
+                    <p>必要です。大規模なシステム導入ではなく、予約、決済、口コミ、SNS投稿、問い合わせ対応を数字で見直すだけでも改善余地を見つけられます。</p>
+                </details>
+                <details>
+                    <summary>AI導入より先に整えるべきことは何ですか？</summary>
+                    <p>集客から予約・来店・口コミまでの導線と、追うべき指標を決めることです。指標が曖昧なままAIを入れても成果につながりにくくなります。</p>
+                </details>
+            </div>
+
             <!-- CTA -->
             <div class="mt-12 p-8 bg-slate-50 rounded-2xl text-center">
                 <p class="font-bold text-tech-blue text-lg mb-2">インバウンドDX戦略を取り入れませんか？</p>
                 <p class="text-sm text-gray-500 mb-6">現状分析から戦略立案、AI施策までトータルでご提案します。初回相談は無料です。</p>
-                <a href="/contact" class="btn-coral px-8 py-3 rounded-full text-xs font-bold tracking-widest inline-block">無料相談を申し込む</a>
+                <a href="/contact?service=inbound-dx&source_path=/blog/inbound-data-ai-dx-2026" class="btn-coral px-8 py-3 rounded-full text-xs font-bold tracking-widest inline-block">無料相談を申し込む</a>
             </div>
 
             <!-- Share -->
@@ -325,7 +403,7 @@
                 <div class="bg-tech-blue rounded-2xl p-6 text-white text-center">
                     <p class="font-bold text-sm mb-2">無料相談受付中</p>
                     <p class="text-xs text-white/60 mb-4 leading-relaxed">インバウンドDXの最新戦略に<br>対応した施策をご提案します。</p>
-                    <a href="/contact" class="btn-coral px-6 py-2.5 rounded-full text-xs font-bold tracking-widest inline-block">相談する</a>
+                    <a href="/contact?service=inbound-dx&source_path=/blog/inbound-data-ai-dx-2026" class="btn-coral px-6 py-2.5 rounded-full text-xs font-bold tracking-widest inline-block">相談する</a>
                 </div>
             </div>
         </aside>
@@ -334,16 +412,16 @@
     <div class="max-w-6xl mx-auto px-6 md:px-8 py-12 border-t border-gray-100">
         <h3 class="text-2xl font-bold text-tech-blue mb-8 text-center">関連記事</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="/blog/xiaohongshu-algorithm-ec-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/blog-red-trends-2026.jpg" alt="【2026年最新】小紅書(RED)アルゴリズム変更とEC強化を徹底解説" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
-                <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">【2026年最新】小紅書(RED)アルゴリズム変更とEC強化を徹底解説</h4></div>
+            <a href="/blog/inbound-foreign-tourist-trends-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/hero-landscape2.jpg" alt="訪日外国人旅行の現状と地方誘客" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="1200"></div>
+                <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">訪日外国人旅行の現状と地方誘客</h4></div>
             </a>
-            <a href="/blog/dazhong-dianping-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/dazhong-dianping-inbound.jpg" alt="【2026年版】大衆点評（ダージョンディエンピン）完全攻略ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
-                <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">【2026年版】大衆点評（ダージョンディエンピン）完全攻略ガイド</h4></div>
+            <a href="/blog/inbound-funnel-design" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/blog-inbound-funnel.jpg" alt="インバウンド導線設計" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="654"></div>
+                <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">訪日中国人向け導線設計の基本</h4></div>
             </a>
             <a href="/blog/kol-koc-meaning-fee-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/blog-kol-koc-1.jpg" alt="【2026年最新】KOL・KOCとは？中国マーケティングの費用相場" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/blog-kol-koc-1.jpg" alt="【2026年最新】KOL・KOCとは？中国マーケティングの費用相場" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">【2026年最新】KOL・KOCとは？中国マーケティングの費用相場</h4></div>
             </a>
         </div>
@@ -355,15 +433,15 @@
         <h3 class="text-2xl font-bold text-tech-blue mb-8 text-center">最新の記事</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a href="/blog/china-sns-inbound-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669"></div>
                 <div class="p-6"><div class="mb-3"><span class="text-[10px] font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded tracking-widest uppercase">マーケティング</span></div><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">中国人観光客を集客するSNS戦略2026年版</h4></div>
             </a>
             <a href="/blog/xiaohongshu-algorithm-ec-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/blog-red-trends-2026.jpg" alt="小紅書アルゴリズム" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/blog-red-trends-2026.jpg" alt="小紅書アルゴリズム" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669"></div>
                 <div class="p-6"><div class="mb-3"><span class="text-[10px] font-bold bg-coral/10 text-coral px-2 py-1 rounded tracking-widest uppercase">SNS・小紅書</span></div><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">【2026年最新】小紅書(RED)アルゴリズム変更と越境EC強化を徹底解説</h4></div>
             </a>
             <a href="/blog/kol-koc-meaning-fee-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/blog-kol-koc-1.jpg" alt="KOL KOC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/blog-kol-koc-1.jpg" alt="KOL KOC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669"></div>
                 <div class="p-6"><div class="mb-3"><span class="text-[10px] font-bold bg-coral/10 text-coral px-2 py-1 rounded tracking-widest uppercase">マーケティング</span></div><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">中国インフルエンサーKOL・KOCの費用相場と選び方</h4></div>
             </a>
         </div>
@@ -392,8 +470,8 @@
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
@@ -406,8 +484,10 @@
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/media-kit" class="hover:text-coral transition">メディアキット</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/editorial-policy" class="hover:text-coral transition">コンテンツ制作方針</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
                         <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
                         <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
@@ -484,5 +564,6 @@
             });
         });
     </script>
+    <script defer src="../assets/js/main.js"></script>
 </body>
 </html>

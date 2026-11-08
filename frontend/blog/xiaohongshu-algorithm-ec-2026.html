@@ -33,7 +33,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/blog-seo-enhance.css">
 
     
 
@@ -117,9 +119,41 @@
     }
 }
     </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "2026年の小紅書アルゴリズムで重視される指標は何ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "保存率、完読率、検索キーワードとの一致、ユーザーの反応速度が重要です。短期的なバズより、検索で見つかり保存される実用的な投稿が評価されやすくなっています。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "小紅書SEOでは何をすればよいですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "タイトル、本文、ハッシュタグ、画像内テキストに検索されるキーワードを自然に入れます。日本旅行、地域名、商品カテゴリ、悩みキーワードを組み合わせることが基本です。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "小紅書の越境ECは日本企業にも向いていますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "口コミから購買までを小紅書内でつなげたい化粧品、食品、雑貨、体験型サービスには相性があります。ただし、先にレビュー投稿とKOC施策で信頼を作ることが重要です。"
+            }
+        }
+    ]
+}
+    </script>
 </head>
 
-<body class="bg-white text-slate-900">
+<body class="blog-seo bg-white text-slate-900">
 
                         <!-- NAV -->
     <nav class="fixed w-full z-50 glass-nav">
@@ -138,8 +172,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -170,8 +204,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -183,8 +217,6 @@
             <a href="/blog" class="text-lg font-bold text-coral">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
-    </div>
-    </div>
     </div>
     
     
@@ -215,7 +247,7 @@
             <!-- Hero image -->
             <div class="rounded-2xl overflow-hidden shadow-xl mb-0" data-aos="zoom-in">
                 <!-- User should replace this with a professional data image -->
-                <img src="../assets/images/hero-data.jpg" alt="2026年小紅書アルゴリズム変更" class="w-full h-64 md:h-96 object-cover" onerror="this.src='../assets/images/hero-data.jpg'">
+                <img src="../assets/images/hero-data.jpg" alt="2026年小紅書アルゴリズム変更" class="w-full h-64 md:h-96 object-cover" onerror="this.src='../assets/images/hero-data.jpg'" decoding="async" loading="eager" fetchpriority="high" width="1200" height="896">
             </div>
         </div>
     </div>
@@ -230,6 +262,34 @@
             <p>実は2026年に入り、月間3.5億人が利用する中国最大の口コミSNS「小紅書（Xiaohongshu / RED）」には、プラットフォーム全体を揺るがす大きな変化が起きています。</p>
             <p>結論から言うと、今の小紅書はただのSNSではなく<strong>「検索エンジン化」</strong>し、さらに<strong>「越境EC」</strong>の機能を爆発的に強化しています。「とりあえず可愛い写真を載せてバズるのを待つ」という昔のやり方は、もう通用しなくなりつつあるんです。</p>
             <p>今回は、中国マーケティングを熟知するPROTECHが、<strong>2026年の小紅書におけるアルゴリズムの最新動向と、日本企業が取るべき具体的な打ち手</strong>を分かりやすく解説します。</p>
+
+            <div class="answer-box">
+                <p><strong>結論：</strong>2026年の小紅書では、保存率・完読率・検索キーワードとの一致がより重要です。短期的なバズを狙うより、ユーザーが検索して保存する実用投稿を継続し、KOCレビューと広告で勝ち投稿を伸ばす運用が現実的です。</p>
+                <p>基本設計から見直したい場合は<a href="/blog/red-account-basics" class="text-coral underline hover:opacity-80">小紅書アカウント運用の基本</a>、外部支援の比較は<a href="/blog/agency-checklist" class="text-coral underline hover:opacity-80">小紅書運用代行会社の選び方</a>を参照してください。</p>
+            </div>
+
+            <div class="intent-panel">
+                <div class="intent-row bg-slate-50">
+                    <strong>変化</strong>
+                    <strong>対応する施策</strong>
+                    <strong>関連ページ</strong>
+                </div>
+                <div class="intent-row">
+                    <strong>検索エンジン化</strong>
+                    <p>タイトル・本文・画像内テキストに地域名、悩み、商品カテゴリを自然に入れる。</p>
+                    <p><a href="/red" class="text-coral underline hover:opacity-80">小紅書支援</a></p>
+                </div>
+                <div class="intent-row">
+                    <strong>保存率重視</strong>
+                    <p>比較表、手順、料金、モデルコースなど、後で見返す投稿形式を増やす。</p>
+                    <p><a href="/blog/content-operation-flow" class="text-coral underline hover:opacity-80">運用フロー</a></p>
+                </div>
+                <div class="intent-row">
+                    <strong>口コミ連動</strong>
+                    <p>KOCで複数切り口をテストし、反応が良い投稿を広告や公式投稿で拡張する。</p>
+                    <p><a href="/kol" class="text-coral underline hover:opacity-80">KOL/KOC施策</a></p>
+                </div>
+            </div>
             
             <h2 id="section-1">1. 小紅書（RED）の今：検索エンジン化するプラットフォーム</h2>
             <p>かつての小紅書は、タイムライン（フィード）に流れてくる投稿をダラダラと眺める使い方が主流でした。しかし2026年現在、ユーザー行動の大部分は<strong>「能動的な検索」</strong>にシフトしています。</p>
@@ -237,7 +297,7 @@
             
             <!-- User image placeholder: search vs feed traffic chart -->
             <div class="bg-gray-100 rounded-xl p-4 text-center my-6">
-                <img src="../assets/images/red-search-data.jpg" alt="検索トラフィックの増加データ" class="w-full h-auto rounded" onerror="this.src='../assets/images/red-marketing.jpg'">
+                <img src="../assets/images/red-search-data.jpg" alt="検索トラフィックの増加データ" class="w-full h-auto rounded" onerror="this.src='../assets/images/red-marketing.jpg'" decoding="async" loading="lazy" width="896" height="1200">
                 <p class="text-xs text-gray-500 mt-2">※画像イメージ：小紅書における検索流入とフィード流入の割合推移データ</p>
             </div>
 
@@ -270,7 +330,7 @@
 
             <!-- User image placeholder: EC funnel chart -->
             <div class="bg-gray-100 rounded-xl p-4 text-center my-6">
-                <img src="../assets/images/red-ec-funnel.jpg" alt="小紅書アプリ内の購買ファネル図" class="w-full h-auto rounded" onerror="this.src='../assets/images/case-beauty.jpg'">
+                <img src="../assets/images/red-ec-funnel.jpg" alt="小紅書アプリ内の購買ファネル図" class="w-full h-auto rounded" onerror="this.src='../assets/images/case-beauty.jpg'" decoding="async" loading="lazy" width="896" height="1200">
                 <p class="text-xs text-gray-500 mt-2">※画像イメージ：小紅書における「認知→検討→購買」のECファネル図</p>
             </div>
 
@@ -286,17 +346,39 @@
             <h3>③ KOC起用によるスモールテスト</h3>
             <p>いきなり高額なKOL（大物インフルエンサー）に依頼するのではなく、まずはフォロワー1万人以下のKOCを5〜10名起用し、実際に商品を使ってもらいましょう。どの切り口（成分？使用感？コスパ？）の投稿が一番「CESスコア（保存率）」が高かったかを測定し、勝ちパターンが見えてから広告費を投下するのが最も賢いやり方です。</p>
 
+            <div class="article-cta">
+                <p><strong>今の投稿がアルゴリズムに合っているか確認しませんか。</strong><br>保存率、検索キーワード、KOC活用、広告連動の観点で、改善優先度を整理します。</p>
+                <a href="/contact?service=red-algorithm&source_path=/blog/xiaohongshu-algorithm-ec-2026">無料で投稿診断を相談</a>
+                <a href="/blog/kol-koc-meaning-fee-2026">KOL/KOC費用相場を見る</a>
+            </div>
+
             <h2 id="section-5">まとめ</h2>
             <p>2026年の小紅書は<strong>「検索エンジン（RED SEO）」</strong>と<strong>「越境EC」</strong>の2つの武器を手に入れ、さらに強力なプラットフォームへと進化しました。</p>
             <p>「日本製だから売れる」という時代は終わり、中国消費者が求めているのは<strong>「徹底した使用感のレビュー」や「自分事化できるシーン提案」</strong>です。だからこそ、理屈（プロのデータ）と感情（リアルな口コミ）の両方をうまく操るマーケティングが求められます。</p>
             
             <p>「うちの商品はどうPRすればいい？」「小紅書の運用をプロに相談したい」という方は、ぜひPROTECHにご相談ください。中国マーケティングの最新データとノウハウで、貴社のビジネスを全力でサポートいたします！</p>
 
+            <h2 id="section-6">よくある質問</h2>
+            <div class="mini-faq">
+                <details open>
+                    <summary>2026年の小紅書アルゴリズムで重視される指標は何ですか？</summary>
+                    <p>保存率、完読率、検索キーワードとの一致、ユーザーの反応速度が重要です。短期的なバズより、検索で見つかり保存される実用的な投稿が評価されやすくなっています。</p>
+                </details>
+                <details>
+                    <summary>小紅書SEOでは何をすればよいですか？</summary>
+                    <p>タイトル、本文、ハッシュタグ、画像内テキストに検索されるキーワードを自然に入れます。日本旅行、地域名、商品カテゴリ、悩みキーワードを組み合わせることが基本です。</p>
+                </details>
+                <details>
+                    <summary>小紅書の越境ECは日本企業にも向いていますか？</summary>
+                    <p>口コミから購買までを小紅書内でつなげたい化粧品、食品、雑貨、体験型サービスには相性があります。ただし、先にレビュー投稿とKOC施策で信頼を作ることが重要です。</p>
+                </details>
+            </div>
+
             <!-- CTA -->
             <div class="mt-12 p-8 bg-slate-50 rounded-2xl text-center">
                 <p class="font-bold text-tech-blue text-lg mb-2">小紅書の最新戦略を取り入れませんか？</p>
                 <p class="text-sm text-gray-500 mb-6">現状分析から戦略立案、KOC施策までトータルでご提案します。初回相談は無料です。</p>
-                <a href="/contact" class="btn-coral px-8 py-3 rounded-full text-xs font-bold tracking-widest inline-block">無料相談を申し込む</a>
+                <a href="/contact?service=red-algorithm&source_path=/blog/xiaohongshu-algorithm-ec-2026" class="btn-coral px-8 py-3 rounded-full text-xs font-bold tracking-widest inline-block">無料相談を申し込む</a>
             </div>
 
             <!-- Share -->
@@ -343,7 +425,7 @@
                 <div class="bg-tech-blue rounded-2xl p-6 text-white text-center">
                     <p class="font-bold text-sm mb-2">無料相談受付中</p>
                     <p class="text-xs text-white/60 mb-4 leading-relaxed">中国SNSの最新アルゴリズムに<br>対応した施策をご提案します。</p>
-                    <a href="/contact" class="btn-coral px-6 py-2.5 rounded-full text-xs font-bold tracking-widest inline-block">相談する</a>
+                    <a href="/contact?service=red-algorithm&source_path=/blog/xiaohongshu-algorithm-ec-2026" class="btn-coral px-6 py-2.5 rounded-full text-xs font-bold tracking-widest inline-block">相談する</a>
                 </div>
             </div>
         </aside>
@@ -353,11 +435,11 @@
         <h3 class="text-2xl font-bold text-tech-blue mb-8 text-center">関連記事</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a href="/blog/inbound-xiaohongshu-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/case-tourism.jpg" alt="小紅書を活用したインバウンド集客戦略" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/hero-data.jpg'"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/case-tourism.jpg" alt="小紅書を活用したインバウンド集客戦略" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/hero-data.jpg'" decoding="async" loading="lazy" width="1200" height="669"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">小紅書を活用したインバウンド集客戦略</h4></div>
             </a>
             <a href="/blog/kol-koc-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/blog-kol-koc-1.jpg" alt="KOLとKOCの違いとは？インフルエンサー活用法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/red-marketing.jpg'"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/blog-kol-koc-1.jpg" alt="KOLとKOCの違いとは？インフルエンサー活用法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/red-marketing.jpg'" decoding="async" loading="lazy" width="1200" height="669"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">KOLとKOCの違いとは？インフルエンサー活用法</h4></div>
             </a>
         </div>
@@ -370,7 +452,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a href="/blog/china-sns-inbound-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -381,7 +463,7 @@
             </a>
             <a href="/blog/dazhong-dianping-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/dazhong-dianping-inbound.jpg" alt="大衆点評ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/case-tourism.jpg'">
+                    <img src="../assets/images/dazhong-dianping-inbound.jpg" alt="大衆点評ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/case-tourism.jpg'" decoding="async" loading="lazy" width="1200" height="654">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -392,7 +474,7 @@
             </a>
             <a href="/blog/kol-koc-meaning-fee-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/blog-kol-koc-1.jpg" alt="KOL・KOCガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/red-marketing.jpg'">
+                    <img src="../assets/images/blog-kol-koc-1.jpg" alt="KOL・KOCガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/red-marketing.jpg'" decoding="async" loading="lazy" width="1200" height="669">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -427,8 +509,8 @@
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
@@ -441,8 +523,10 @@
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/media-kit" class="hover:text-coral transition">メディアキット</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/editorial-policy" class="hover:text-coral transition">コンテンツ制作方針</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
                         <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
                         <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
@@ -519,5 +603,6 @@
             });
         });
     </script>
+    <script defer src="../assets/js/main.js"></script>
 </body>
 </html>

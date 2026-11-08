@@ -1,6 +1,6 @@
 import os
 
-file_path = 'frontend/dianping.html'
+file_path = 'frontend/dianping'
 
 with open(file_path, 'r', encoding='utf-8') as f:
     content = f.read()

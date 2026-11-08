@@ -34,7 +34,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/blog-seo-enhance.css">
     
     <style>
         :root { --tech-blue: #001A33; --coral: #E86B7A; }
@@ -111,8 +113,40 @@
     }
 }
     </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "インバウンドとは何ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "インバウンドとは、外から中へ入ってくることを意味します。日本の観光・ビジネス文脈では、外国人が日本を訪れる訪日外国人旅行や、その需要を指すことが一般的です。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "インバウンド対策では何から始めるべきですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "まずは多言語情報、決済、予約導線、Googleマップや小紅書・大衆点評などの情報収集チャネルを整えることが重要です。業種によって優先順位は変わります。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "中国人向けインバウンド集客で重要な媒体は何ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "中国人向けでは、小紅書で旅行前の発見と保存を獲得し、大衆点評で来店直前の比較・口コミ確認を整える導線が重要です。商材によって抖音やWeChatも組み合わせます。"
+            }
+        }
+    ]
+}
+    </script>
 </head>
-<body class="bg-white text-slate-900">
+<body class="blog-seo bg-white text-slate-900">
 
                         <!-- NAV -->
     <nav class="fixed w-full z-50 glass-nav">
@@ -131,8 +165,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -163,8 +197,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -176,8 +210,6 @@
             <a href="/blog" class="text-lg font-bold text-coral">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
-    </div>
-    </div>
     </div>
     
     
@@ -201,7 +233,7 @@
             </h1>
             <div class="rounded-2xl overflow-hidden shadow-xl mb-0" data-aos="zoom-in">
                 <!-- ここにユーザーが作成したヒーロー画像を配置 -->
-                <img src="../assets/images/inbound-tourist-image.jpg" alt="インバウンドとは？基礎知識から戦略まで解説" class="w-full h-64 md:h-96 object-cover bg-slate-100" onerror="this.src='../assets/images/case-tourism.jpg'">
+                <img src="../assets/images/inbound-tourist-image.jpg" alt="インバウンドとは？基礎知識から戦略まで解説" class="w-full h-64 md:h-96 object-cover bg-slate-100" onerror="this.src='../assets/images/case-tourism.jpg'" decoding="async" loading="eager" fetchpriority="high" width="1200" height="669">
             </div>
         </div>
     </div>
@@ -212,6 +244,34 @@
         <article class="lg:w-2/3 article-body" data-aos="fade-up">
 
             <p>ニュースや新聞で「インバウンド」という言葉を目にする機会が増えました。しかし、いざ「どういう意味？」と聞かれると、うまく説明できない方も多いのではないでしょうか。<br>本記事では、旅行業界における「インバウンド」の正しい意味と用語の使い方、そして日本企業が取り組むべきインバウンド対策についてわかりやすく解説します。</p>
+
+            <div class="answer-box">
+                <p><strong>結論：</strong>インバウンドとは、外国人が日本へ訪れること、またはその訪日需要を指す言葉です。観光客数だけでなく、宿泊、飲食、買い物、体験、予約、口コミ投稿まで含めて考えると、企業の売上に直結する重要な市場です。</p>
+                <p>店舗や観光施設が最初に整えるべきなのは、<a href="/blog/inbound-funnel-design" class="text-coral underline hover:opacity-80">来日前から来店までの導線</a>です。中国人向けなら、<a href="/red" class="text-coral underline hover:opacity-80">小紅書</a>で発見され、<a href="/dianping" class="text-coral underline hover:opacity-80">大衆点評</a>で比較され、予約・問い合わせにつながる流れを作ります。</p>
+            </div>
+
+            <div class="intent-panel">
+                <div class="intent-row bg-slate-50">
+                    <strong>知りたいこと</strong>
+                    <strong>この記事で分かること</strong>
+                    <strong>次に見るページ</strong>
+                </div>
+                <div class="intent-row">
+                    <strong>意味を知りたい</strong>
+                    <p>インバウンドの定義、アウトバウンドとの違い、関連用語を整理します。</p>
+                    <p><a href="#section-1" class="text-coral underline hover:opacity-80">意味を見る</a></p>
+                </div>
+                <div class="intent-row">
+                    <strong>市場規模を知りたい</strong>
+                    <p>訪日外国人の動向、消費額、国・地域別の特徴を確認できます。</p>
+                    <p><a href="/blog/inbound-spending-behavior-2026" class="text-coral underline hover:opacity-80">消費行動データ</a></p>
+                </div>
+                <div class="intent-row">
+                    <strong>集客を始めたい</strong>
+                    <p>小紅書、大衆点評、多言語、決済、口コミ導線の優先順位を解説します。</p>
+                    <p><a href="/contact?service=inbound-strategy&source_path=/blog/inbound-meaning-guide" class="text-coral underline hover:opacity-80">無料相談</a></p>
+                </div>
+            </div>
 
             <h2 id="section-1">インバウンドとは？</h2>
             <p><a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%90%E3%82%A6%E3%83%B3%E3%83%89" target="_blank" class="text-blue-500 hover:underline">インバウンド（Inbound）</a>は、もともと「外から中に入ってくる」「内向きの」という意味を持つ言葉です。</p>
@@ -235,7 +295,7 @@
 
             <div class="my-8 rounded-2xl overflow-hidden shadow-lg">
                 <!-- ここにユーザーが作成したインバウンド消費のイメージ画像を配置 -->
-                <img src="../assets/images/inbound-consumption-dutyfree.jpg" alt="インバウンド消費のイメージ" class="w-full h-auto bg-slate-100" onerror="this.style.display='none'">
+                <img src="../assets/images/inbound-consumption-dutyfree.jpg" alt="インバウンド消費のイメージ" class="w-full h-auto bg-slate-100" onerror="this.style.display='none'" decoding="async" loading="lazy" width="1200" height="669">
             </div>
 
             <h3>インバウンド消費とインバウンド需要</h3>
@@ -253,7 +313,7 @@
 
             <div class="my-8 rounded-2xl overflow-hidden shadow-lg">
                 <!-- ここにユーザーが作成したインバウンドとアウトバウンドの違いの図解画像を配置 -->
-                <img src="../assets/images/inbound-outbound-compare.jpg" alt="インバウンドとアウトバウンドの違い" class="w-full h-auto bg-slate-100" onerror="this.style.display='none'">
+                <img src="../assets/images/inbound-outbound-compare.jpg" alt="インバウンドとアウトバウンドの違い" class="w-full h-auto bg-slate-100" onerror="this.style.display='none'" decoding="async" loading="lazy" width="1200" height="669">
             </div>
 
             <p>旅行以外のビジネス用語としては、テレマーケティング業界で「顧客からかかってくる電話を受けること」をインバウンド業務、「企業側から顧客に電話をかけること」をアウトバウンド業務と呼ぶなど、業界によって使われ方が異なります。</p>
@@ -288,11 +348,33 @@
             <h3>ステップ4：SNS・口コミの好循環をつくる</h3>
             <p>来店した訪日客に小紅書・大衆点評への投稿を促し、<a href="/blog/kol-koc-meaning-fee-2026" class="text-coral underline hover:opacity-80">KOC（一般ユーザーの口コミ）</a>の好循環を作ることが、持続的なインバウンド集客の鍵です。詳しくは<a href="/blog/inbound-funnel-design" class="text-coral underline hover:opacity-80">インバウンド導線設計ガイド</a>をご覧ください。</p>
 
+            <div class="article-cta">
+                <p><strong>インバウンド対策の優先順位を整理したい方へ。</strong><br>業種、客単価、来店導線、既存SNS、対応言語を確認し、最初に整えるべき施策を診断します。</p>
+                <a href="/contact?service=inbound-strategy&source_path=/blog/inbound-meaning-guide">無料で相談する</a>
+                <a href="/services">サービス一覧を見る</a>
+            </div>
+
             <h2 id="section-6">まとめ：インバウンド市場の獲得に向けて</h2>
             <p>インバウンドとは、「外から中に入ってくる」という言葉通り、旅行業界においては「外国人が日本へ訪れること」を意味します。インバウンド需要が増加し続ける中、企業にとってインバウンド対策は「やればプラスになる」施策から「やらなければ取り残される」必須の取り組みへと変化しています。</p>
             <p>特に、インバウンド消費の大きな割合を占める中国人観光客に向けては、<a href="/red" class="text-coral underline hover:opacity-80">小紅書</a>（<a href="/red" class="text-coral underline hover:opacity-80">RED</a>）や<a href="/blog/dazhong-dianping-guide" class="text-coral underline hover:opacity-80">大衆点評</a>といった中国独自のプラットフォームを活用したマーケティングが鍵を握ります。</p>
 
             <hr>
+
+            <h2 id="section-7">よくある質問</h2>
+            <div class="mini-faq">
+                <details open>
+                    <summary>インバウンドとは何ですか？</summary>
+                    <p>インバウンドとは、外から中へ入ってくることを意味します。日本の観光・ビジネス文脈では、外国人が日本を訪れる訪日外国人旅行や、その需要を指すことが一般的です。</p>
+                </details>
+                <details>
+                    <summary>インバウンド対策では何から始めるべきですか？</summary>
+                    <p>まずは多言語情報、決済、予約導線、Googleマップや小紅書・大衆点評などの情報収集チャネルを整えることが重要です。業種によって優先順位は変わります。</p>
+                </details>
+                <details>
+                    <summary>中国人向けインバウンド集客で重要な媒体は何ですか？</summary>
+                    <p>中国人向けでは、小紅書で旅行前の発見と保存を獲得し、大衆点評で来店直前の比較・口コミ確認を整える導線が重要です。商材によって抖音やWeChatも組み合わせます。</p>
+                </details>
+            </div>
 
             <p>PROTECHでは、インバウンド集客における課題解決をサポートしています。中国SNSを活用したプロモーション戦略の策定から実行まで、ワンストップでご対応可能です。「インバウンド対策を始めたいが、何から手をつければいいかわからない」という方は、ぜひ一度無料相談をご活用ください。</p>
 
@@ -300,7 +382,7 @@
             <div class="mt-12 p-8 bg-slate-50 rounded-2xl text-center">
                 <p class="font-bold text-tech-blue text-lg mb-2">インバウンド集客でお悩みですか？</p>
                 <p class="text-sm text-gray-500 mb-6">初回相談は無料です。貴社の状況に合わせた最適なプランをご提案します。</p>
-                <a href="/contact" class="btn-coral px-8 py-3 rounded-full text-xs font-bold tracking-widest inline-block">無料相談を申し込む</a>
+                <a href="/contact?service=inbound-strategy&source_path=/blog/inbound-meaning-guide" class="btn-coral px-8 py-3 rounded-full text-xs font-bold tracking-widest inline-block">無料相談を申し込む</a>
             </div>
 
             <!-- Share -->
@@ -354,11 +436,11 @@
         <h3 class="text-2xl font-bold text-tech-blue mb-8 text-center">関連記事</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a href="/blog/inbound-xiaohongshu-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/case-tourism.jpg" alt="インバウンド集客を小紅書で加速させる方法：2026年最新戦略" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/case-tourism.jpg" alt="インバウンド集客を小紅書で加速させる方法：2026年最新戦略" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">インバウンド集客を小紅書で加速させる方法：2026年最新戦略</h4></div>
             </a>
             <a href="/blog/dazhong-dianping-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/hero-cityscape.jpg" alt="大衆点評とは？簡単な使い方とインバウンド集客・マーケティング活用法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/hero-cityscape.jpg" alt="大衆点評とは？簡単な使い方とインバウンド集客・マーケティング活用法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="1200"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">大衆点評とは？簡単な使い方とインバウンド集客・マーケティング活用法</h4></div>
             </a>
         </div>
@@ -372,7 +454,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a href="/blog/china-sns-inbound-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -383,7 +465,7 @@
             </a>
             <a href="/blog/miniprogram-cost-period" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/blog-miniprogram-cost.jpg" alt="ミニプログラム開発" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="../assets/images/blog-miniprogram-cost.jpg" alt="ミニプログラム開発" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -394,7 +476,7 @@
             </a>
             <a href="/blog/dazhong-dianping-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/dazhong-dianping-inbound.jpg" alt="大衆点評ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/case-tourism.jpg'">
+                    <img src="../assets/images/dazhong-dianping-inbound.jpg" alt="大衆点評ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/case-tourism.jpg'" decoding="async" loading="lazy" width="1200" height="654">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -425,8 +507,8 @@
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
@@ -439,8 +521,10 @@
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/media-kit" class="hover:text-coral transition">メディアキット</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/editorial-policy" class="hover:text-coral transition">コンテンツ制作方針</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
                         <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
                         <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
@@ -518,5 +602,6 @@
             });
         });
     </script>
+    <script defer src="../assets/js/main.js"></script>
 </body>
 </html>

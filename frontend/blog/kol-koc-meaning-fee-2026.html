@@ -37,7 +37,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/blog-seo-enhance.css">
     
     <style>
         :root {
@@ -211,9 +213,41 @@
     }
 }
     </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "KOLとKOCの違いは何ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "KOLは専門性や影響力を持つインフルエンサーで、広い認知獲得に向いています。KOCは一般消費者に近い投稿者で、リアルな口コミ形成や信頼補強に向いています。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "KOL/KOC施策の費用相場はいくらですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "KOCは1投稿あたり数万円程度から、マイクロKOLは5万〜20万円、ミドルKOLは30万〜150万円、トップKOLは数百万円以上になることがあります。媒体、商材、投稿条件により変動します。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "KOLとKOCはどちらを優先すべきですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "短期的な認知拡大ならKOL、口コミの蓄積や来店・予約につなげたい場合はKOCを優先することが多いです。小紅書や大衆点評では両者を組み合わせる設計が有効です。"
+            }
+        }
+    ]
+}
+    </script>
 </head>
 
-<body class="bg-white text-slate-900">
+<body class="blog-seo bg-white text-slate-900">
 
                         <!-- NAV -->
     <nav class="fixed w-full z-50 glass-nav">
@@ -232,8 +266,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -264,8 +298,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -277,8 +311,6 @@
             <a href="/blog" class="text-lg font-bold text-coral">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
-    </div>
-    </div>
     </div>
     
     
@@ -305,7 +337,7 @@
                 <!-- ここにユーザーが作成したヒーロー画像を配置 -->
                 <img src="../assets/images/blog-kol-koc-1.jpg" alt="KOLとは？KOCとの違い・起用メリットから中国プロモーションの費用相場まで徹底解説【2026年最新】"
                     class="w-full h-64 md:h-96 object-cover bg-slate-100"
-                    onerror="this.src='../assets/images/case-restaurant.jpg'">
+                    onerror="this.src='../assets/images/case-restaurant.jpg'" decoding="async" loading="eager" fetchpriority="high" width="1200" height="669">
             </div>
         </div>
     </div>
@@ -318,7 +350,35 @@
             <p>中国や中華圏のマーケティング市場において、最も強力なプロモーション手法として定着しているのが「KOL（Key Opinion Leader）」を活用した施策です。近年では、KOLに加えて「KOC（Key Opinion Consumer）」という言葉も頻繁に耳にするようになりました。</p>
             <p>しかし、「そもそもKOLとは何なのか？」「インフルエンサーやKOCと何が違うのか？」「実際に依頼するとどれくらいの費用がかかるのか？」といった疑問を持つ担当者の方も多いのではないでしょうか。本記事では、KOLの基礎知識から最新の費用相場、そして成功に導くためのポイントまで、2026年の最新トレンドに基づき徹底的に解説します。</p>
 
-            <img src="../assets/images/blog-kol-koc-1.jpg" alt="KOLのライブ配信・商品紹介イメージ" class="w-full rounded-2xl shadow-lg my-8 object-cover aspect-video">
+            <div class="answer-box">
+                <p><strong>結論：</strong>KOLは専門性や影響力で広い認知を作る投稿者、KOCは一般消費者に近い目線でリアルな口コミを作る投稿者です。中国向けプロモーションでは、KOLだけに予算を集中するより、小紅書・大衆点評・抖音でKOLとKOCを役割分担する方が成果につながりやすくなります。</p>
+                <p>費用はKOCで数万円から、マイクロKOLで5万〜20万円、ミドルKOLで30万〜150万円、トップKOLでは数百万円以上になることがあります。媒体選定や投稿条件を整理したい場合は、<a href="/kol" class="text-coral underline hover:opacity-80">KOL/KOC施策</a>ページも確認してください。</p>
+            </div>
+
+            <div class="intent-panel">
+                <div class="intent-row bg-slate-50">
+                    <strong>目的</strong>
+                    <strong>優先すべき施策</strong>
+                    <strong>次に見るページ</strong>
+                </div>
+                <div class="intent-row">
+                    <strong>短期で認知を広げたい</strong>
+                    <p>ミドルKOL、抖音動画、小紅書タイアップ投稿を組み合わせます。</p>
+                    <p><a href="/douyin" class="text-coral underline hover:opacity-80">抖音支援</a> / <a href="/kol" class="text-coral underline hover:opacity-80">KOL/KOC</a></p>
+                </div>
+                <div class="intent-row">
+                    <strong>口コミを蓄積したい</strong>
+                    <p>KOC複数名による体験投稿で、検索時に比較される口コミを増やします。</p>
+                    <p><a href="/red" class="text-coral underline hover:opacity-80">小紅書運用</a> / <a href="/dianping" class="text-coral underline hover:opacity-80">大衆点評</a></p>
+                </div>
+                <div class="intent-row">
+                    <strong>費用感を知りたい</strong>
+                    <p>投稿者ランク、媒体、撮影有無、投稿本数、二次利用範囲で費用が変わります。</p>
+                    <p><a href="/contact?service=kol-koc&source_path=/blog/kol-koc-meaning-fee-2026" class="text-coral underline hover:opacity-80">無料見積もり</a></p>
+                </div>
+            </div>
+
+            <img src="../assets/images/blog-kol-koc-1.jpg" alt="KOLのライブ配信・商品紹介イメージ" class="w-full rounded-2xl shadow-lg my-8 object-cover aspect-video" decoding="async" loading="lazy" width="1200" height="669">
 
             <h2 id="section-1">KOLとは？その意味と中国市場での影響力</h2>
             <h3>KOLの定義（Key Opinion Leader）</h3>
@@ -332,7 +392,7 @@
             <p>中国でKOLがこれほどまでに重視される背景には、中国特有の「口コミ文化」と「情報の透明性への課題」があります。中国の消費者は、企業が発信する公式な広告（テレビCMやバナー広告）をあまり信用せず、「身近な友人」や「自分が信頼している専門家（＝KOL）」のリアルな声（口コミ）を何よりも重視します。</p>
             <p>そのため、KOLが<a href="/red" class="text-coral underline hover:opacity-80">小紅書（RED）</a>や<a href="/blog/douyin-restaurant-inbound" class="text-coral underline hover:opacity-80">抖音（TikTok）</a>、WeChat（微信）などのプラットフォームで商品を紹介したり、<a href="/blog/cross-border-ec-market-size-2026" class="text-coral underline hover:opacity-80">ライブコマース</a>で販売したりすることで、一夜にして数億円規模の売上が発生することも珍しくありません。</p>
 
-            <img src="../assets/images/blog-kol-koc-2.jpg" alt="KOLとKOCのピラミッド型影響力モデル図解" class="w-full rounded-2xl shadow-lg my-8 object-cover aspect-video">
+            <img src="../assets/images/blog-kol-koc-2.jpg" alt="KOLとKOCのピラミッド型影響力モデル図解" class="w-full rounded-2xl shadow-lg my-8 object-cover aspect-video" decoding="async" loading="lazy" width="1200" height="669">
 
             <h2 id="section-2">KOLとKOCの決定的な違い</h2>
             <p>KOLと並んでよく使われるのが「KOC（Key Opinion Consumer）」という言葉です。中国マーケティングを成功させるためには、この両者の違いを正確に理解し、使い分ける必要があります。</p>
@@ -372,10 +432,15 @@
             <h3>3. 商材とKOLのミスマッチによる効果の低迷</h3>
             <p>フォロワー数だけを見てKOLを選定すると、「投稿はたくさん見られたが、全く売れなかった」という結果に終わることがよくあります。KOLの得意とするジャンル、フォロワーの年齢層・男女比、過去のPR案件の成功実績などを詳細に分析し、自社商材と完全にマッチするKOLを選定する目利き力が求められます。</p>
 
-            <img src="../assets/images/blog-kol-koc-3.jpg" alt="マーケティング費用・データ分析のイメージ" class="w-full rounded-2xl shadow-lg my-8 object-cover aspect-video">
+            <img src="../assets/images/blog-kol-koc-3.jpg" alt="マーケティング費用・データ分析のイメージ" class="w-full rounded-2xl shadow-lg my-8 object-cover aspect-video" decoding="async" loading="lazy" width="1200" height="669">
 
             <h2 id="section-5">【2026年最新】KOLの費用相場と依頼手法</h2>
             <p>KOLの起用にかかる費用は、利用するプラットフォームやKOLのフォロワー数（ランク）によって大きく異なります。ここでは2026年現在の一般的な費用相場の目安をご紹介します。</p>
+            <div class="article-cta">
+                <p><strong>KOL/KOCの候補選定で迷っている方へ。</strong><br>商材、ターゲット、媒体、予算感をもとに、KOLで認知を取るべきか、KOCで口コミを積むべきかを整理します。</p>
+                <a href="/contact?service=kol-koc&source_path=/blog/kol-koc-meaning-fee-2026">無料で候補相談</a>
+                <a href="/kol">KOL/KOC施策を見る</a>
+            </div>
 
             <h3>プラットフォーム別の特徴と相場感</h3>
             <ul>
@@ -397,21 +462,36 @@
             <h3>依頼手法：直接依頼か、MCN（事務所）経由か</h3>
             <p>KOLに依頼する方法としては、SNSのダイレクトメッセージを通じて直接交渉する方法と、「MCN（Multi-Channel Network）」と呼ばれるインフルエンサーのマネジメント事務所や、広告代理店を経由する方法があります。中国の商慣習に不慣れな日本企業の場合は、契約トラブル（投稿されない、内容が違うなど）を防ぐためにも、実績のある専門の代理店を介して依頼することを強く推奨します。</p>
 
-            <h2 id="section-6">まとめ：KOLとKOCを組み合わせた最適な中国マーケティングを</h2>
+            <h2 id="section-6">よくある質問</h2>
+            <div class="mini-faq">
+                <details open>
+                    <summary>KOLとKOCの違いは何ですか？</summary>
+                    <p>KOLは専門性や影響力を持つインフルエンサーで、広い認知獲得に向いています。KOCは一般消費者に近い投稿者で、リアルな口コミ形成や信頼補強に向いています。</p>
+                </details>
+                <details>
+                    <summary>KOL/KOC施策の費用相場はいくらですか？</summary>
+                    <p>KOCは1投稿あたり数万円程度から、マイクロKOLは5万〜20万円、ミドルKOLは30万〜150万円、トップKOLは数百万円以上になることがあります。</p>
+                </details>
+                <details>
+                    <summary>KOLとKOCはどちらを優先すべきですか？</summary>
+                    <p>短期的な認知拡大ならKOL、口コミの蓄積や来店・予約につなげたい場合はKOCを優先することが多いです。</p>
+                </details>
+            </div>
+
+            <h2 id="section-7">まとめ：KOLとKOCを組み合わせた最適な中国マーケティングを</h2>
             <p>中国市場においてKOLの活用はもはや選択肢ではなく、成功のための「必須条件」となっています。しかし、高額な費用を払って有名なKOLに依頼すれば必ず売れるという時代は終わり、現在は「自社商品に最適なKOLの選定」と「KOCを活用したリアルな口コミの土台作り」という緻密な戦略が求められています。</p>
             <p>PROTECHでは、中国市場における豊富なデータ分析と独自ネットワークを活かし、小紅書（RED）や抖音（TikTok）での最適なKOL/KOCキャスティングから、動画制作、<a href="/services" class="text-coral underline hover:opacity-80">運用代行</a>までをワンストップでご支援しております。「どのKOLを選べばいいかわからない」「費用対効果の高い施策を実施したい」という企業様は、ぜひお気軽にご相談ください。</p>
 
 <hr>
 
-            <p>PROTECHでは、飲食店の魅力を最大限に引き出す<a href="/blog/inbound-meaning-guide"
-                    class="text-coral underline hover:opacity-80">インバウンド</a>動画制作から、<strong>抖音・TikTokの運営代行</strong>、インフルエンサー（KOL）のキャスティングまでを一貫してサポートしています。集客力アップを目指す飲食店様は、ぜひご相談ください。
+            <p>PROTECHでは、<a href="/kol" class="text-coral underline hover:opacity-80">KOL/KOCキャスティング</a>、小紅書・抖音向けの投稿企画、撮影、広告連動、効果測定までを一貫して支援しています。商材・予算・媒体に合わせて、認知拡大と口コミ形成の両方を設計したい企業様は、ぜひご相談ください。
             </p>
 
             <!-- CTA -->
             <div class="mt-12 p-8 bg-slate-50 rounded-2xl text-center">
-                <p class="font-bold text-tech-blue text-lg mb-2">飲食店のインバウンド集客でお悩みですか？</p>
-                <p class="text-sm text-gray-500 mb-6">初回相談は無料です。貴店の魅力に合わせたプロモーションをご提案します。</p>
-                <a href="/contact"
+                <p class="font-bold text-tech-blue text-lg mb-2">KOL/KOC施策の設計でお悩みですか？</p>
+                <p class="text-sm text-gray-500 mb-6">初回相談は無料です。商材・媒体・予算に合わせた投稿者候補と施策順をご提案します。</p>
+                <a href="/contact?service=kol-koc&source_path=/blog/kol-koc-meaning-fee-2026"
                     class="btn-coral px-8 py-3 rounded-full text-xs font-bold tracking-widest inline-block">無料相談を申し込む</a>
             </div>
 
@@ -453,8 +533,8 @@
 
                 <div class="bg-tech-blue rounded-2xl p-6 text-white text-center">
                     <p class="font-bold text-sm mb-2">無料相談受付中</p>
-                    <p class="text-xs text-white/60 mb-4 leading-relaxed">動画制作やSNS運用の<br>お見積りはお気軽にどうぞ</p>
-                    <a href="/contact"
+                    <p class="text-xs text-white/60 mb-4 leading-relaxed">KOL/KOC候補や費用感を<br>お気軽にご相談ください</p>
+                    <a href="/contact?service=kol-koc&source_path=/blog/kol-koc-meaning-fee-2026"
                         class="btn-coral px-6 py-2.5 rounded-full text-xs font-bold tracking-widest inline-block">相談する</a>
                 </div>
             </div>
@@ -465,15 +545,15 @@
         <h3 class="text-2xl font-bold text-tech-blue mb-8 text-center">関連記事</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a href="/blog/inbound-xiaohongshu-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/case-tourism.jpg" alt="インバウンド集客を小紅書で加速させる方法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/case-tourism.jpg" alt="インバウンド集客を小紅書で加速させる方法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">インバウンド集客を小紅書で加速させる方法</h4></div>
             </a>
             <a href="/blog/kol-koc-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/hero-cityscape.jpg" alt="KOL・KOCマーケティング完全ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/hero-cityscape.jpg" alt="KOL・KOCマーケティング完全ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="1200"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">KOL・KOCマーケティング完全ガイド</h4></div>
             </a>
             <a href="/blog/agency-checklist" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/office.jpg" alt="小紅書運用代行を選ぶ際の7つのチェックポイント" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/office.jpg" alt="小紅書運用代行を選ぶ際の7つのチェックポイント" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="1200"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">小紅書運用代行を選ぶ際の7つのチェックポイント</h4></div>
             </a>
         </div>
@@ -489,7 +569,7 @@
                 class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
                     <img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -504,7 +584,7 @@
                 class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
                     <img src="../assets/images/blog-miniprogram-cost.jpg" alt="ミニプログラム開発"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -520,7 +600,7 @@
                 <div class="h-40 bg-slate-100 overflow-hidden">
                     <img src="../assets/images/dazhong-dianping-inbound.jpg" alt="大衆点評ガイド"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        onerror="this.src='../assets/images/case-tourism.jpg'">
+                        onerror="this.src='../assets/images/case-tourism.jpg'" decoding="async" loading="lazy" width="1200" height="654">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -556,8 +636,8 @@
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
@@ -570,8 +650,10 @@
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/media-kit" class="hover:text-coral transition">メディアキット</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/editorial-policy" class="hover:text-coral transition">コンテンツ制作方針</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
                         <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
                         <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
@@ -649,6 +731,7 @@
             });
         });
     </script>
+    <script defer src="../assets/js/main.js"></script>
 </body>
 
 </html>

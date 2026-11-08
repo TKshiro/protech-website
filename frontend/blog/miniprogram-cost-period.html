@@ -34,7 +34,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/blog-seo-enhance.css">
     
     <style>
         :root { --tech-blue: #001A33; --coral: #E86B7A; }
@@ -110,8 +112,40 @@
     }
 }
     </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "WeChatミニプログラム開発の費用相場はいくらですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "テンプレート活用型は30万から100万円、予約や会員機能を含む中規模開発は100万から300万円、POSやCRM連携を含む大規模開発は300万円以上が目安です。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "WeChatミニプログラム開発にはどれくらい期間がかかりますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "シンプルな構成なら2から3ヶ月、予約・決済・会員機能を含む場合は3から4ヶ月、外部システム連携を含む場合は4ヶ月以上を見込むのが現実的です。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "開発前に準備すべきものは何ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "WeChat公式アカウント、会社書類、機能要件、商品やメニュー情報、中国語コンテンツ、決済や予約の運用ルールを準備します。"
+            }
+        }
+    ]
+}
+    </script>
 </head>
-<body class="bg-white text-slate-900">
+<body class="blog-seo bg-white text-slate-900">
 
                         <!-- NAV -->
     <nav class="fixed w-full z-50 glass-nav">
@@ -130,8 +164,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -162,8 +196,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -175,8 +209,6 @@
             <a href="/blog" class="text-lg font-bold text-coral">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
-    </div>
-    </div>
     </div>
     
     
@@ -200,7 +232,7 @@
                 WeChat小程序（ミニプログラム）開発の費用と期間の目安
             </h1>
             <div class="rounded-2xl overflow-hidden shadow-xl mb-0">
-                <img src="../assets/images/blog-miniprogram-cost.jpg" alt="WeChatapp開発の費用" class="w-full h-64 md:h-96 object-cover bg-slate-100" onerror="this.src='../assets/images/service-miniprogram.jpg'">
+                <img src="../assets/images/blog-miniprogram-cost.jpg" alt="WeChatapp開発の費用" class="w-full h-64 md:h-96 object-cover bg-slate-100" onerror="this.src='../assets/images/service-miniprogram.jpg'" decoding="async" loading="eager" fetchpriority="high" width="1200" height="669">
             </div>
         </div>
     </div>
@@ -210,10 +242,38 @@
 
         <article class="lg:w-2/3 article-body">
 
-            <p>13億人以上が利用する中国のメガアプリ「<a href="/services" class="text-coral underline hover:opacity-80">WeChat</a>（微信）」。その中でダウンロード不要で利用できるアプリ内アプリが「小程序（<a href="/services" class="text-coral underline hover:opacity-80">ミニプログラム</a>）」です。<br>日本企業が<a href="/services" class="text-coral underline hover:opacity-80">越境EC</a>や<a href="/blog/inbound-meaning-guide" class="text-coral underline hover:opacity-80">インバウンド</a>向けの予約システムを構築する際、このミニプログラムの活用が非常に有効です。</p>
+            <p>13億人以上が利用する中国のメガアプリ「<a href="/blog/wechat-marketing-guide-2026" class="text-coral underline hover:opacity-80">WeChat</a>（微信）」。その中でダウンロード不要で利用できるアプリ内アプリが「小程序（<a href="/miniprogram" class="text-coral underline hover:opacity-80">ミニプログラム</a>）」です。<br>日本企業が<a href="/blog/cross-border-ec-guide" class="text-coral underline hover:opacity-80">越境EC</a>や<a href="/blog/inbound-meaning-guide" class="text-coral underline hover:opacity-80">インバウンド</a>向けの予約システムを構築する際、このミニプログラムの活用が非常に有効です。</p>
+
+            <div class="answer-box">
+                <p><strong>結論：</strong>WeChatミニプログラム開発の費用は、シンプルな紹介・予約型なら30万〜100万円、会員・決済・クーポンを含む中規模開発なら100万〜300万円、POSやCRM連携まで含む場合は300万円以上が目安です。期間はおおむね2〜4ヶ月を見込むのが現実的です。</p>
+                <p>まずは<a href="/miniprogram" class="text-coral underline hover:opacity-80">WeChatミニプログラム開発サービス</a>で対応範囲を確認し、WeChat全体の活用は<a href="/blog/wechat-marketing-guide-2026" class="text-coral underline hover:opacity-80">WeChatマーケティング完全ガイド</a>も参考にしてください。</p>
+            </div>
+
+            <div class="intent-panel">
+                <div class="intent-row bg-slate-50">
+                    <strong>開発タイプ</strong>
+                    <strong>主な機能</strong>
+                    <strong>向いているケース</strong>
+                </div>
+                <div class="intent-row">
+                    <strong>30万〜100万円</strong>
+                    <p>店舗紹介、商品一覧、問い合わせ、簡易予約、クーポン表示。</p>
+                    <p>初期検証、小規模店舗、観光施設</p>
+                </div>
+                <div class="intent-row">
+                    <strong>100万〜300万円</strong>
+                    <p>会員、予約、決済、ポイント、管理画面、中国語UI。</p>
+                    <p>飲食店、ホテル、美容サロン、小売</p>
+                </div>
+                <div class="intent-row">
+                    <strong>300万円以上</strong>
+                    <p>POS/CRM/API連携、複数店舗、EC、在庫管理、分析基盤。</p>
+                    <p>チェーン店、越境EC、広域観光</p>
+                </div>
+            </div>
 
             <h2 id="section-1">開発費用の相場</h2>
-            <p><a href="/services" class="text-coral underline hover:opacity-80">ミニプログラム</a>の開発費用は、実装する機能の複雑さによって大きく変動します。一般的な目安は以下の通りです。</p>
+            <p><a href="/miniprogram" class="text-coral underline hover:opacity-80">ミニプログラム</a>の開発費用は、実装する機能の複雑さによって大きく変動します。一般的な目安は以下の通りです。</p>
 
             <h3>① テンプレート活用型（約30万〜100万円）</h3>
             <p>既存のSaaSシステムやテンプレートを利用して開発する方法です。複雑なカスタマイズはできませんが、シンプルな商品販売（EC）や店舗の紹介などであれば低コストでスピーディーに立ち上げられます。</p>
@@ -234,20 +294,65 @@
             <p>トータルで<strong>約2ヶ月〜4ヶ月</strong>程度を見込むのが一般的です。</p>
 
             <h2 id="section-3">開発前に準備すべきこと</h2>
-            <p>日本企業が<a href="/services" class="text-coral underline hover:opacity-80">ミニプログラム</a>を公開するためには、事前に「<a href="/services" class="text-coral underline hover:opacity-80">WeChat</a>公式アカウント（認証済み）」を取得する必要があります。申請には登記簿謄本などの企業証明書類が必要となり、審査に数週間かかる場合があるため、早めの準備が推奨されます。</p>
+            <p>日本企業が<a href="/miniprogram" class="text-coral underline hover:opacity-80">ミニプログラム</a>を公開するためには、事前に「<a href="/blog/wechat-marketing-guide-2026" class="text-coral underline hover:opacity-80">WeChat</a>公式アカウント（認証済み）」を取得する必要があります。申請には登記簿謄本などの企業証明書類が必要となり、審査に数週間かかる場合があるため、早めの準備が推奨されます。</p>
+
+            <div class="seo-matrix">
+                <div class="matrix-row bg-slate-50">
+                    <strong>準備項目</strong>
+                    <strong>内容</strong>
+                    <strong>遅れやすい理由</strong>
+                </div>
+                <div class="matrix-row">
+                    <strong>会社書類</strong>
+                    <p>登記情報、担当者情報、WeChat公式アカウント申請情報。</p>
+                    <p>中国側審査や書類確認に時間がかかるため。</p>
+                </div>
+                <div class="matrix-row">
+                    <strong>機能要件</strong>
+                    <p>予約、決済、会員、クーポン、EC、管理画面の必要範囲。</p>
+                    <p>要件が曖昧だと見積もりと開発期間が膨らむため。</p>
+                </div>
+                <div class="matrix-row">
+                    <strong>中国語素材</strong>
+                    <p>メニュー、商品、写真、規約、問い合わせ文面、FAQ。</p>
+                    <p>翻訳だけでなく中国ユーザー向け表現調整が必要なため。</p>
+                </div>
+            </div>
 
             <h2 id="section-4">実務への落とし込みと今後の展開</h2>
-            <p><a href="/services" class="text-coral underline hover:opacity-80">WeChat</a>小程序の開発は、中国市場へのアクセスを劇的に改善する投資です。初期費用だけでなく、サーバー保守や中国の規制に対応するための運用保守コストも事前に把握しておくことが大切です。</p>
+            <p><a href="/blog/wechat-marketing-guide-2026" class="text-coral underline hover:opacity-80">WeChat</a>小程序の開発は、中国市場へのアクセスを劇的に改善する投資です。初期費用だけでなく、サーバー保守や中国の規制に対応するための運用保守コストも事前に把握しておくことが大切です。</p>
+
+            <div class="article-cta">
+                <p><strong>必要機能を整理して、概算費用を出しませんか。</strong><br>予約・決済・会員・EC・管理画面の必要範囲を切り分け、過剰開発を避けた現実的な見積もりに落とし込みます。</p>
+                <a href="/contact?service=miniprogram&source_path=/blog/miniprogram-cost-period">無料で概算見積もりを相談</a>
+                <a href="/miniprogram">ミニプログラム開発を見る</a>
+            </div>
+
+            <h2 id="section-5">よくある質問</h2>
+            <div class="mini-faq">
+                <details open>
+                    <summary>WeChatミニプログラム開発の費用相場はいくらですか？</summary>
+                    <p>テンプレート活用型は30万〜100万円、予約や会員機能を含む中規模開発は100万〜300万円、POSやCRM連携を含む大規模開発は300万円以上が目安です。</p>
+                </details>
+                <details>
+                    <summary>WeChatミニプログラム開発にはどれくらい期間がかかりますか？</summary>
+                    <p>シンプルな構成なら2〜3ヶ月、予約・決済・会員機能を含む場合は3〜4ヶ月、外部システム連携を含む場合は4ヶ月以上を見込むのが現実的です。</p>
+                </details>
+                <details>
+                    <summary>開発前に準備すべきものは何ですか？</summary>
+                    <p>WeChat公式アカウント、会社書類、機能要件、商品やメニュー情報、中国語コンテンツ、決済や予約の運用ルールを準備します。</p>
+                </details>
+            </div>
 
             <hr>
 
-            <p>PROTECHでは、<a href="/services" class="text-coral underline hover:opacity-80">越境EC</a>や<a href="/blog/inbound-meaning-guide" class="text-coral underline hover:opacity-80">インバウンド</a>予約システムなど、日本企業向けの<strong><a href="/services" class="text-coral underline hover:opacity-80">WeChat</a>小程序（<a href="/services" class="text-coral underline hover:opacity-80">ミニプログラム</a>）開発</strong>を多数手がけています。UI/UXデザインからシステム要件定義まで、お気軽にご相談ください。</p>
+            <p>PROTECHでは、<a href="/blog/cross-border-ec-guide" class="text-coral underline hover:opacity-80">越境EC</a>や<a href="/blog/inbound-meaning-guide" class="text-coral underline hover:opacity-80">インバウンド</a>予約システムなど、日本企業向けの<strong><a href="/blog/wechat-marketing-guide-2026" class="text-coral underline hover:opacity-80">WeChat</a>小程序（<a href="/miniprogram" class="text-coral underline hover:opacity-80">ミニプログラム</a>）開発</strong>を多数手がけています。UI/UXデザインからシステム要件定義まで、お気軽にご相談ください。</p>
 
             <!-- CTA -->
             <div class="mt-12 p-8 bg-slate-50 rounded-2xl text-center">
                 <p class="font-bold text-tech-blue text-lg mb-2">ミニプログラム開発の概算を知りたいですか？</p>
                 <p class="text-sm text-gray-500 mb-6">要件をお伺いし、無料でお見積りを作成いたします。</p>
-                <a href="/contact" class="btn-coral px-8 py-3 rounded-full text-xs font-bold tracking-widest inline-block">無料見積もりを依頼する</a>
+                <a href="/contact?service=miniprogram&source_path=/blog/miniprogram-cost-period" class="btn-coral px-8 py-3 rounded-full text-xs font-bold tracking-widest inline-block">無料見積もりを依頼する</a>
             </div>
 
         <!-- Share -->
@@ -292,7 +397,7 @@
                 <div class="bg-tech-blue rounded-2xl p-6 text-white text-center">
                     <p class="font-bold text-sm mb-2">無料相談受付中</p>
                     <p class="text-xs text-white/60 mb-4 leading-relaxed">ミニプログラム開発について<br>お気軽にご相談ください</p>
-                    <a href="/contact" class="btn-coral px-6 py-2.5 rounded-full text-xs font-bold tracking-widest inline-block">相談する</a>
+                    <a href="/contact?service=miniprogram&source_path=/blog/miniprogram-cost-period" class="btn-coral px-6 py-2.5 rounded-full text-xs font-bold tracking-widest inline-block">相談する</a>
                 </div>
             </div>
         </aside>
@@ -302,15 +407,15 @@
         <h3 class="text-2xl font-bold text-tech-blue mb-8 text-center">関連記事</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a href="/blog/inbound-xiaohongshu-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/case-tourism.jpg" alt="インバウンド集客を小紅書で加速させる方法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/case-tourism.jpg" alt="インバウンド集客を小紅書で加速させる方法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">インバウンド集客を小紅書で加速させる方法</h4></div>
             </a>
             <a href="/blog/kol-koc-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/hero-cityscape.jpg" alt="KOL・KOCマーケティング完全ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/hero-cityscape.jpg" alt="KOL・KOCマーケティング完全ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="1200"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">KOL・KOCマーケティング完全ガイド</h4></div>
             </a>
             <a href="/blog/agency-checklist" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/office.jpg" alt="小紅書運用代行を選ぶ際の7つのチェックポイント" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/office.jpg" alt="小紅書運用代行を選ぶ際の7つのチェックポイント" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="1200"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">小紅書運用代行を選ぶ際の7つのチェックポイント</h4></div>
             </a>
         </div>
@@ -324,7 +429,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a href="/blog/china-sns-inbound-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -335,7 +440,7 @@
             </a>
             <a href="/blog/miniprogram-cost-period" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/blog-miniprogram-cost.jpg" alt="ミニプログラム開発" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="../assets/images/blog-miniprogram-cost.jpg" alt="ミニプログラム開発" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -346,7 +451,7 @@
             </a>
             <a href="/blog/dazhong-dianping-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/dazhong-dianping-inbound.jpg" alt="大衆点評ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/case-tourism.jpg'">
+                    <img src="../assets/images/dazhong-dianping-inbound.jpg" alt="大衆点評ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/case-tourism.jpg'" decoding="async" loading="lazy" width="1200" height="654">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -377,8 +482,8 @@
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
@@ -391,8 +496,10 @@
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/media-kit" class="hover:text-coral transition">メディアキット</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/editorial-policy" class="hover:text-coral transition">コンテンツ制作方針</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
                         <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
                         <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
@@ -470,5 +577,6 @@
             });
         });
     </script>
+    <script defer src="../assets/js/main.js"></script>
 </body>
 </html>

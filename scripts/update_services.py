@@ -1,6 +1,6 @@
 import os
 
-file_path = 'frontend/services.html'
+file_path = 'frontend/services'
 
 with open(file_path, 'r', encoding='utf-8') as f:
     content = f.read()
@@ -23,8 +23,8 @@ nav_replace = '''            <div
                     <div class="absolute top-full left-0 mt-4 w-48 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                         <div class="p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-coral hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
                         </div>
                     </div>
                 </div>'''
@@ -37,8 +37,8 @@ mobile_nav_search = '''            <a href="/" class="text-lg font-bold text-sla
 mobile_nav_replace = '''            <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-coral">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
             </div>'''
 content = content.replace(mobile_nav_search, mobile_nav_replace)
 
@@ -79,7 +79,7 @@ dianping_section = '''    <!-- SERVICE 02: Dianping Marketing -->
                         </div>
                     </div>
                     
-                    <a href="/dianping.html"
+                    <a href="/dianping"
                         class="px-8 py-3 border border-coral text-coral text-xs font-bold tracking-widest rounded-full inline-flex items-center gap-2 hover:bg-coral hover:text-white transition-all">
                         大衆点評マーケティング詳細
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

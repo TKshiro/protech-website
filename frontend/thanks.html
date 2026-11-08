@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+<head>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-7QYC9JLZ1M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7QYC9JLZ1M');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>送信完了 | PROTECH株式会社</title>
+    <meta name="description" content="PROTECHへの送信が完了しました。担当者より順次ご連絡いたします。">
+    <link rel="canonical" href="https://pro-tech.jp/thanks">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <link href="assets/css/tailwind.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family:'Noto Sans JP',sans-serif; -webkit-font-smoothing:antialiased; }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+    <main class="min-h-screen flex items-center justify-center px-6 py-20 bg-gradient-to-br from-white via-coral-light/30 to-white">
+        <section class="max-w-2xl mx-auto text-center">
+            <a href="/" class="inline-block text-2xl font-bold tracking-tighter text-tech-blue mb-12">PROTECH</a>
+            <div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-8">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <p class="text-coral text-[10px] font-black tracking-[0.3em] uppercase mb-4">Thank You</p>
+            <h1 class="text-4xl md:text-5xl font-black text-tech-blue mb-6">送信が完了しました。</h1>
+            <p id="thanksMessage" class="text-slate-500 leading-relaxed mb-8">お問い合わせありがとうございます。内容を確認のうえ、担当者よりご連絡いたします。</p>
+            <div id="nextStepBox" class="mb-10 rounded-2xl border border-slate-100 bg-white p-5 text-left shadow-sm">
+                <p class="text-[10px] font-black tracking-[0.24em] uppercase text-coral mb-3">Next Step</p>
+                <p id="nextStepText" class="text-sm text-slate-600 leading-relaxed mb-4">返信までの間に、関連する事例やサービスページをご確認いただけます。</p>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <a id="primaryNextLink" href="/cases" class="rounded-xl bg-slate-50 px-4 py-3 text-xs font-bold text-tech-blue hover:text-coral transition">導入事例を見る</a>
+                    <a id="secondaryNextLink" href="/services" class="rounded-xl bg-slate-50 px-4 py-3 text-xs font-bold text-tech-blue hover:text-coral transition">サービス一覧を見る</a>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/" class="btn-coral px-8 py-4 rounded-full text-xs font-bold tracking-widest">トップへ戻る</a>
+                <a href="/blog" class="px-8 py-4 rounded-full text-xs font-bold tracking-widest border border-slate-200 text-tech-blue hover:border-coral hover:text-coral transition">関連記事を見る</a>
+            </div>
+        </section>
+    </main>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get('type') || 'contact';
+        const inquiry = params.get('inquiry') || 'contact';
+        const message = document.getElementById('thanksMessage');
+        const nextStepText = document.getElementById('nextStepText');
+        const primaryNextLink = document.getElementById('primaryNextLink');
+        const secondaryNextLink = document.getElementById('secondaryNextLink');
+        const nextStepMap = {
+            restaurant_inbound: {
+                text: '飲食店向けの支援内容と、実際の飲食店事例をあわせてご確認いただけます。',
+                primary: ['/industries/restaurant-inbound', '飲食店向け支援を見る'],
+                secondary: ['/cases/huadiao-zuiji-guo', '飲食店事例を見る']
+            },
+            hotel_inbound: {
+                text: 'ホテル・旅館向けの支援内容と、宿泊施設の事例をあわせてご確認いただけます。',
+                primary: ['/industries/hotel-inbound', 'ホテル・旅館向け支援を見る'],
+                secondary: ['/cases/local-tourism', '宿泊施設事例を見る']
+            },
+            beauty_salon_inbound: {
+                text: '美容サロン向けの支援内容と、美容領域のKOC施策事例をご確認いただけます。',
+                primary: ['/industries/beauty-salon-inbound', '美容サロン向け支援を見る'],
+                secondary: ['/cases/cosmetics-brand', '美容領域の事例を見る']
+            },
+            red_marketing: {
+                text: '小紅書運用代行の費用感と、中国SNS支援の全体像をご確認いただけます。',
+                primary: ['/xiaohongshu-agency-cost', '小紅書費用相場を見る'],
+                secondary: ['/china-sns-marketing-agency', '中国SNS支援を見る']
+            },
+            dianping_marketing: {
+                text: '大衆点評の支援内容と、来店導線に関する記事をご確認いただけます。',
+                primary: ['/dianping', '大衆点評支援を見る'],
+                secondary: ['/blog/dazhong-dianping-guide', '大衆点評ガイドを見る']
+            },
+            douyin_marketing: {
+                text: '抖音支援の内容と、飲食店向けショート動画集客の記事をご確認いただけます。',
+                primary: ['/douyin', '抖音支援を見る'],
+                secondary: ['/blog/douyin-restaurant-inbound', '抖音飲食店記事を見る']
+            },
+            kol_koc: {
+                text: 'KOL/KOC施策の支援内容と、費用・選び方のガイドをご確認いただけます。',
+                primary: ['/kol', 'KOL/KOC支援を見る'],
+                secondary: ['/blog/kol-koc-guide', 'KOL/KOCガイドを見る']
+            }
+        };
+        if (type === 'download') {
+            message.textContent = '資料のお申し込みありがとうございます。担当者より確認のうえ、資料リンクまたは関連情報をお送りします。';
+        }
+        const nextStep = nextStepMap[inquiry];
+        if (nextStep) {
+            nextStepText.textContent = nextStep.text;
+            primaryNextLink.href = nextStep.primary[0];
+            primaryNextLink.textContent = nextStep.primary[1];
+            secondaryNextLink.href = nextStep.secondary[0];
+            secondaryNextLink.textContent = nextStep.secondary[1];
+        }
+        if (typeof gtag === 'function') {
+            gtag('event', type === 'download' ? 'download_thanks_view' : 'contact_thanks_view', {
+                event_category: 'lead',
+                event_label: params.get('resource') || inquiry || type,
+                value: 1
+            });
+        }
+    </script>
+</body>
+</html>

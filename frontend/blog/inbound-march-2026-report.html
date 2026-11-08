@@ -34,7 +34,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
@@ -113,6 +114,7 @@
     }
 }
     </script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
 </head>
 <body class="bg-white text-slate-900">
 
@@ -133,8 +135,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -165,8 +167,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -178,8 +180,6 @@
             <a href="/blog" class="text-lg font-bold text-coral">ブログ</a>
             <a href="/contact" class="text-lg font-bold text-slate-700">お問合せ</a>
         </div>
-    </div>
-    </div>
     </div>
     
     
@@ -202,7 +202,7 @@
                 【2026年3月最新】訪日客361万人で過去最高！桜需要で欧米・東南アジアが急伸長
             </h1>
             <div class="rounded-2xl overflow-hidden shadow-xl mb-0" data-aos="zoom-in">
-                <img src="../assets/images/inbound-march-hero.jpg" alt="2026年3月インバウンド動向" class="w-full h-64 md:h-96 object-cover bg-slate-100">
+                <img src="../assets/images/inbound-march-hero.jpg" alt="2026年3月インバウンド動向" class="w-full h-64 md:h-96 object-cover bg-slate-100" decoding="async" loading="eager" fetchpriority="high" width="1200" height="1200">
             </div>
         </div>
     </div>
@@ -272,7 +272,7 @@
             </div>
 
             <p>また、<a href="/blog/taiwan-inbound-strategy" class="text-coral underline hover:opacity-80">台湾向けにはGoogleマップやFacebook</a>、中国市場（減少しているとはいえ依然として巨大市場）に向けては<a href="/red" class="text-coral underline hover:opacity-80">小紅書（RED）を活用したプロモーション</a>など、ターゲットに合わせたデジタルマーケティングの使い分けが必須となっています。</p>
-            <p>最新のテクノロジーを活用して、どの国の人が自分たちのサービスに合っているのかを分析したい方は、ぜひ当社の<a href="/inbound-ai/index.html" class="text-coral underline hover:opacity-80">INBOUND AI レポート</a>もご活用ください。</p>
+            <p>最新のテクノロジーを活用して、どの国の人が自分たちのサービスに合っているのかを分析したい方は、ぜひ当社の<a href="/inbound-ai" class="text-coral underline hover:opacity-80">INBOUND AI レポート</a>もご活用ください。</p>
 
             <hr>
 
@@ -336,11 +336,11 @@
         <h3 class="text-2xl font-bold text-tech-blue mb-8 text-center">関連記事</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a href="/blog/inbound-calendar-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/inbound_calendar_2026_hero.jpg" alt="【2026年最新：インバウンド祝日カレンダー】外国人観光客が多い時期・月別の動向を徹底解説" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/inbound_calendar_2026_hero.jpg" alt="【2026年最新：インバウンド祝日カレンダー】外国人観光客が多い時期・月別の動向を徹底解説" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="1200"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">【2026年最新：インバウンド祝日カレンダー】外国人観光客が多い時期・月別の動向を徹底解説</h4></div>
             </a>
             <a href="/blog/taiwan-inbound-strategy" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
-                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/taiwan_inbound_hero.jpg" alt="【台湾市場攻略】訪日台湾人観光客の最新動向と集客成功の秘訣" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="h-40 bg-slate-100 overflow-hidden"><img src="../assets/images/taiwan_inbound_hero.jpg" alt="【台湾市場攻略】訪日台湾人観光客の最新動向と集客成功の秘訣" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="1200"></div>
                 <div class="p-6"><h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">【台湾市場攻略】訪日台湾人観光客の最新動向と集客成功の秘訣</h4></div>
             </a>
         </div>
@@ -351,9 +351,9 @@
     <div class="max-w-6xl mx-auto px-6 md:px-8 py-16 border-t border-gray-100">
         <h3 class="text-2xl font-bold text-tech-blue mb-8 text-center">最新の記事</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="/blog/inbound-sns-strategy-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
+            <a href="/blog/china-sns-inbound-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -364,7 +364,7 @@
             </a>
             <a href="/blog/miniprogram-cost-period" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/blog-miniprogram-cost.jpg" alt="ミニプログラム開発" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="../assets/images/blog-miniprogram-cost.jpg" alt="ミニプログラム開発" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" decoding="async" loading="lazy" width="1200" height="669">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -375,7 +375,7 @@
             </a>
             <a href="/blog/dazhong-dianping-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-50">
                 <div class="h-40 bg-slate-100 overflow-hidden">
-                    <img src="../assets/images/大衆点評×中国都市インバウンドマーケティング.jpg" alt="大衆点評ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/case-tourism.jpg'">
+                    <img src="../assets/images/dazhong-dianping-inbound.jpg" alt="大衆点評ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/case-tourism.jpg'" decoding="async" loading="lazy" width="1200" height="654">
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
@@ -406,8 +406,8 @@
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">WeChatミニプログラム開発</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">中国語クリエイティブ制作</a></li>
@@ -420,8 +420,10 @@
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
                     <ul class="space-y-3 text-sm text-white/40">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
+                        <li><a href="/media-kit" class="hover:text-coral transition">メディアキット</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
+                        <li><a href="/editorial-policy" class="hover:text-coral transition">コンテンツ制作方針</a></li>
                         <li><a href="/privacy" class="hover:text-coral transition">プライバシーポリシー</a></li>
                         <li><a href="/tokushoho" class="hover:text-coral transition">特定商取引法に基づく表記</a></li>
                         <li><a href="/terms" class="hover:text-coral transition">利用規約</a></li>
@@ -542,5 +544,6 @@
             }
         });
     </script>
+    <script defer src="../assets/js/main.js"></script>
 </body>
 </html>
