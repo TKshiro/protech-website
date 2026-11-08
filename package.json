@@ -2,12 +2,15 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.2.4",
     "googleapis": "^171.4.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.5",
     "tailwindcss": "^4.2.4",
     "xml2js": "^0.6.2"
   },
   "scripts": {
     "build": "node scripts/generate-sitemap.js && node -e \"console.log('Static frontend ready')\"",
     "sitemap": "node scripts/generate-sitemap.js",
+    "check:site": "node scripts/check-site.js",
     "push-google": "node scripts/push-urls-to-google.js"
   }
 }
