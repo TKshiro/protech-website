@@ -1,0 +1,130 @@
+/* KOL page only: explicit typography and layout, independent of utility generation. */
+.kol-page {
+    --kol-ink: #082238;
+    --kol-gold: #f2bd64;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--kol-ink);
+    background: #fff;
+}
+.kol-page main { overflow: clip; }
+.kol-page main *, .kol-page main *::before, .kol-page main *::after { box-sizing: border-box; }
+.kol-page main p, .kol-page main li { font-size: 1rem; line-height: 1.95; font-weight: 400; letter-spacing: .015em; }
+.kol-page main h2 { font-size: clamp(1.65rem, 3vw, 2.5rem); line-height: 1.55; letter-spacing: .015em; font-weight: 700; }
+.kol-page main h3 { font-size: clamp(1.25rem, 2.3vw, 1.85rem); line-height: 1.6; font-weight: 700; letter-spacing: .01em; }
+.kol-page main p[class*='uppercase'], .kol-page .kol-eyebrow { font-size: .7rem; line-height: 1.7; font-weight: 600; letter-spacing: .16em; }
+.kol-page .kol-section { padding-block: clamp(64px, 7vw, 104px); }
+.kol-page .kol-shell, .kol-page main [class*='max-w-6xl'] { width: min(100%, 1200px); margin-inline: auto; padding-inline: clamp(22px, 4vw, 48px); }
+.kol-page .kol-highlight { color: var(--kol-gold); }
+.kol-page #tiers { scroll-margin-top: 96px; }
+.kol-page .kol-hero { background: var(--kol-ink); color: #fff; padding-block: 148px 76px; }
+.kol-page .kol-hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 54px; align-items: center; }
+.kol-page .kol-hero-copy { min-width: 0; }
+.kol-page .kol-eyebrow { color: var(--kol-gold); margin-bottom: 28px; }
+.kol-page .hero-headline { font-size: clamp(2rem, 3.55vw, 3rem); line-height: 1.5; letter-spacing: .005em; font-weight: 700; margin: 0 0 26px; }
+.kol-page .hero-headline > span { display: block; }
+.kol-page .hero-headline em { color: var(--kol-gold); font-style: normal; }
+.kol-page .kol-hero-description { color: #d4dfe7; max-width: 34em; margin: 0 0 32px; }
+.kol-page .kol-hero-visual { position: relative; min-width: 0; margin: 0; }
+.kol-page .kol-hero-visual img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px 4px 0 0; }
+.kol-page .kol-hero-visual figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding-top: 16px; color: #d4dfe7; font-size: .75rem; letter-spacing: .08em; border-top: 1px solid #ffffff30; margin-top: 16px; }
+.kol-page .kol-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.kol-page .btn-amber, .kol-page .btn-amber-outline { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 52px; padding: 14px 22px; border-radius: 6px; font-size: .875rem; font-weight: 600; line-height: 1.5; letter-spacing: .02em; transition: background .2s, color .2s; }
+.kol-page .btn-amber { background: var(--kol-gold); color: var(--kol-ink); border: 1px solid var(--kol-gold); }
+.kol-page .btn-amber:hover { background: #ffd493; }
+.kol-page .btn-amber-outline { border: 1px solid #ffffff65; color: #fff; }
+.kol-page .btn-amber-outline:hover { background: #ffffff12; }
+.kol-page .kol-stats { padding-block: 48px; border-bottom: 1px solid #e3e9ed; }
+.kol-page .kol-stats .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.kol-page .kol-stats .grid > div { padding: 16px; border-right: 1px solid #e3e9ed; }
+.kol-page .kol-stats .grid > div:last-child { border-right: 0; }
+.kol-page .stat-giant { font-size: clamp(2rem, 4.3vw, 3.6rem); font-weight: 600; line-height: 1.2; letter-spacing: -.045em; font-variant-numeric: tabular-nums; color: var(--kol-ink); }
+.kol-page .kol-stats p { font-size: .8125rem; line-height: 1.8; color: #536574; }
+.kol-page .kol-stats .stat-giant + div { font-size: .875rem; color: #a36515; line-height: 1.2; margin-block: 6px 12px; }
+.kol-page .kol-tiers { background: var(--kol-ink); color: #fff; }
+.kol-page .kol-tier-content { width: 100%; }
+.kol-page .kol-tier-content > h2 { max-width: 25em; margin-bottom: 40px; }
+.kol-page .kol-tier-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.kol-page .tier-badge, .kol-page .tier-badge-active { border: 1px solid #ffffff26; background: #ffffff05; padding: 28px; border-radius: 8px; }
+.kol-page .tier-badge-active { border-color: #f2bd6470; background: #f2bd640b; }
+.kol-page .kol-tier-grid .flex { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 16px; }
+.kol-page .kol-tier-grid span { font-size: .875rem; line-height: 1.6; letter-spacing: .02em; }
+.kol-page .kol-tier-grid span:last-child { color: var(--kol-gold); white-space: nowrap; padding: 4px 10px; background: #ffffff0a; }
+.kol-page .kol-tier-grid p { font-size: .9375rem; color: #d4dfe7; }
+.kol-page .kol-section-intro { max-width: 48rem; margin: 0 auto 52px; }
+.kol-page .kol-section-intro h2 { margin-bottom: 18px; }
+.kol-page .kol-campaign-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; align-items: center; }
+.kol-page .kol-campaign-row:not(:last-child) { margin-bottom: 80px; padding-bottom: 80px; border-bottom: 1px solid #e3e9ed; }
+.kol-page .kol-campaign-row > div { min-width: 0; }
+.kol-page .kol-campaign-row p, .kol-page .kol-process p { color: #526270; }
+.kol-page .kol-campaign-row ul { margin-top: 24px; }
+.kol-page .kol-campaign-row li { font-size: .875rem; line-height: 1.85; }
+.kol-page .kol-campaign-row [class*='border-l-4'] { border: 0; padding-left: 0; }
+.kol-page .campaign-image-wrap { height: auto; aspect-ratio: 5 / 4; overflow: hidden; border-radius: 8px; box-shadow: none; }
+.kol-page .campaign-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.kol-page .kol-process { background: #f5f6f5; }
+.kol-page .kol-process [class*='max-w-5xl'] { max-width: 980px; padding-inline: clamp(22px, 4vw, 48px); }
+.kol-page .kol-process h3 { font-size: 1.125rem; }
+.kol-page .process-step-num { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; flex-shrink: 0; border-radius: 50%; color: #fff; font-size: 1rem; font-weight: 600; box-shadow: none; }
+.kol-page .kol-faq { background: #fff; color: var(--kol-ink); }
+.kol-page .kol-faq [class*='max-w-3xl'] { max-width: 920px; padding-inline: clamp(22px, 4vw, 48px); }
+.kol-page .kol-faq h2 { color: var(--kol-ink); }
+.kol-page .faq-dark-item { border-bottom: 1px solid #dce3e8; border-radius: 0; margin: 0; }
+.kol-page .faq-dark-item:first-child { border-top: 1px solid #dce3e8; }
+.kol-page .faq-dark-item summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer; padding: 24px 0; font-size: 1rem; font-weight: 600; line-height: 1.85; list-style: none; }
+.kol-page .faq-dark-item summary::-webkit-details-marker { display: none; }
+.kol-page .faq-chevron { flex-shrink: 0; color: #a36515; width: 20px; height: 20px; transition: transform .2s; }
+.kol-page .faq-dark-item[open] .faq-chevron { transform: rotate(180deg); }
+.kol-page .faq-dark-answer { padding: 0 36px 26px 0; }
+.kol-page .faq-dark-answer p { color: #526270; font-size: .9375rem; }
+.kol-page .kol-cta { background: var(--kol-ink); }
+.kol-page .kol-cta > .absolute { opacity: .3; }
+.kol-page .kol-cta h2 { line-height: 1.65; }
+.kol-page footer p, .kol-page footer li { font-size: .8125rem; line-height: 1.9; }
+.kol-page footer p, .kol-page footer ul { color: #a9b9c8; }
+.kol-page footer h4 { color: #dbe5ed; }
+@media (max-width: 1023px) {
+    .kol-page .kol-hero-grid { gap: 30px; grid-template-columns: 1.2fr 1fr; }
+    .kol-page .hero-headline { font-size: clamp(1.75rem, 3.4vw, 2.3rem); }
+    .kol-page .kol-campaign-row { gap: 32px; }
+}
+@media (max-width: 767px) {
+    .kol-page .kol-hero { padding-block: 108px 44px; }
+    .kol-page .kol-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+    .kol-page .hero-headline { font-size: clamp(1.7rem, 6.8vw, 2.8rem); line-height: 1.55; }
+    .kol-page .kol-eyebrow { font-size: .625rem; letter-spacing: .1em; margin-bottom: 22px; }
+    .kol-page .kol-hero-visual img { aspect-ratio: 16 / 10; object-position: center 42%; }
+    .kol-page .kol-hero-description { font-size: .9375rem; }
+    .kol-page .kol-actions { display: grid; grid-template-columns: 1fr; }
+    .kol-page .kol-stats { padding-block: 24px; }
+    .kol-page .kol-stats .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .kol-page .kol-stats .grid > div:nth-child(2) { border-right: 0; }
+    .kol-page .kol-stats .grid > div:nth-child(-n+2) { border-bottom: 1px solid #e3e9ed; }
+    .kol-page .kol-stats .grid > div { padding: 24px 10px; }
+    .kol-page .kol-tier-grid, .kol-page .kol-campaign-row { grid-template-columns: 1fr; }
+    .kol-page .tier-badge, .kol-page .tier-badge-active { padding: 22px; }
+    .kol-page .kol-tier-grid .flex { align-items: flex-start; }
+    .kol-page .kol-campaign-row > div { order: initial; }
+    .kol-page .kol-campaign-reverse > div:first-child { order: 2; }
+    .kol-page .kol-campaign-row:not(:last-child) { margin-bottom: 48px; padding-bottom: 48px; }
+    .kol-page .campaign-image-wrap { aspect-ratio: 4 / 3; }
+    .kol-page .kol-process .flex { gap: 16px; }
+    .kol-page .process-step-num { width: 36px; height: 36px; font-size: .875rem; }
+    .kol-page .kol-process h3 { font-size: 1rem; }
+    .kol-page .kol-process p { font-size: .9375rem; }
+    .kol-page .kol-cta h2 { font-size: clamp(1.25rem, 5.2vw, 1.9rem); }
+    .kol-page .faq-dark-item summary { font-size: .9375rem; gap: 14px; }
+    .kol-page .faq-dark-answer { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .kol-page *, .kol-page *::before, .kol-page *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+
+/* Keep the skip link fully offscreen until keyboard focus, regardless of line height. */
+.kol-page .skip-link { top: 0; transform: translateY(-110%); }
+.kol-page .skip-link:focus { transform: translateY(0); }
+.kol-page .kol-highlight { display: inline-block; }
+.kol-page main p[class*='uppercase'] { color: #986018; }
+.kol-page .kol-tiers p[class*='uppercase'], .kol-page .kol-cta p[class*='uppercase'], .kol-page .kol-eyebrow { color: var(--kol-gold); }
+.kol-page .kol-faq > div > .text-center, .kol-page .kol-process > div > .text-center { margin-bottom: 40px; }

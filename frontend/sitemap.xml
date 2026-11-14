@@ -297,7 +297,7 @@
 
   <url>
     <loc>https://pro-tech.jp/kol</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/kol" />
@@ -333,7 +333,7 @@
 
   <url>
     <loc>https://pro-tech.jp/inbound-ai</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/inbound-ai" />
@@ -1052,4 +1052,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel/itinerary/japan-attraction-restaurant-reservation" />
   </url>
   <!-- TRAVEL_GUIDES_I18N_END -->
+  <url>
+    <loc>https://pro-tech.jp/inbound-ai/2026-10-report</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
 </urlset>
