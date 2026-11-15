@@ -1056,4 +1056,10 @@
     <loc>https://pro-tech.jp/inbound-ai/2026-10-report</loc>
     <lastmod>2026-11-14</lastmod>
   </url>
+  <url>
+    <loc>https://pro-tech.jp/blog/dianping-listing-operation-cost</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
