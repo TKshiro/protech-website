@@ -1,0 +1,127 @@
+[
+  {
+    "url": "https://pro-tech.jp/blog.html",
+    "target": "https://pro-tech.jp/blog",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/contact.html",
+    "target": "https://pro-tech.jp/contact",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/inbound-ai/index.html",
+    "target": "https://pro-tech.jp/inbound-ai",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/inbound-ai/",
+    "target": "https://pro-tech.jp/inbound-ai",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/red.html",
+    "target": "https://pro-tech.jp/red",
+    "maxRedirects": 1
+  },
+  {
+    "url": "http://pro-tech.jp/",
+    "target": "https://pro-tech.jp",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/index.html",
+    "target": "https://pro-tech.jp",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://www.pro-tech.jp/",
+    "target": "https://pro-tech.jp",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://www.pro-tech.jp/index.html",
+    "target": "https://pro-tech.jp",
+    "maxRedirects": 2
+  },
+  {
+    "url": "http://www.pro-tech.jp/",
+    "target": "https://pro-tech.jp",
+    "maxRedirects": 2
+  },
+  {
+    "url": "https://pro-tech.jp/en/",
+    "target": "https://pro-tech.jp/en",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/travel/zh-tw/itinerary/japan-family-custom-trip/",
+    "target": "https://pro-tech.jp/travel/zh-tw/itinerary/japan-family-custom-trip",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/cn/",
+    "target": "https://pro-tech.jp/cn",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/travel/zh-tw/itinerary/japan-senior-friendly-itinerary/",
+    "target": "https://pro-tech.jp/travel/zh-tw/itinerary/japan-senior-friendly-itinerary",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/company.html",
+    "target": "https://pro-tech.jp/company",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/travel/zh-tw/itinerary/tokyo-fuji-private-car/",
+    "target": "https://pro-tech.jp/travel/zh-tw/itinerary/tokyo-fuji-private-car",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/travel/zh-tw/itinerary/japan-attraction-restaurant-reservation/",
+    "target": "https://pro-tech.jp/travel/zh-tw/itinerary/japan-attraction-restaurant-reservation",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/travel/zh-tw/itinerary/onsen-ryokan-booking/",
+    "target": "https://pro-tech.jp/travel/zh-tw/itinerary/onsen-ryokan-booking",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/cn/cases/cosmetics-brand",
+    "target": "https://pro-tech.jp/cases/cosmetics-brand",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/dianping.html",
+    "target": "https://pro-tech.jp/dianping",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/travel/itinerary/japan-senior-friendly-itinerary/",
+    "target": "https://pro-tech.jp/travel/itinerary/japan-senior-friendly-itinerary",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://pro-tech.jp/travel/",
+    "target": "https://pro-tech.jp/travel",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://www.pro-tech.jp/contact",
+    "target": "https://pro-tech.jp/contact",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://www.pro-tech.jp/company",
+    "target": "https://pro-tech.jp/company",
+    "maxRedirects": 1
+  },
+  {
+    "url": "https://www.pro-tech.jp/company.html",
+    "target": "https://pro-tech.jp/company",
+    "maxRedirects": 2
+  }
+]

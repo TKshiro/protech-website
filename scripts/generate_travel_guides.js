@@ -1022,8 +1022,8 @@ function navHtml(lang, isArticle, slug = '') {
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="${langPrefix}/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">${labels.allServices}</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">${labels.dianping}</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">${labels.red}</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">${labels.dianping}</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">${labels.red}</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">${labels.douyin}</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">${labels.miniprogram}</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">${labels.creative}</a>
@@ -1056,8 +1056,8 @@ function navHtml(lang, isArticle, slug = '') {
             <a href="${langPrefix}/" class="text-lg font-bold text-slate-700">${labels.top}</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="${langPrefix}/services" class="text-lg font-bold text-slate-700">${labels.services}</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">${labels.dianping}</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">${labels.red}</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">${labels.dianping}</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">${labels.red}</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">${labels.douyin}</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">${labels.miniprogram}</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">${labels.creative}</a>
@@ -1196,8 +1196,8 @@ function footerHtml(lang, isArticle) {
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">${labels.servicesTitle}</h4>
                     <ul class="space-y-3 text-sm text-white/40">
-                        <li><a href="/dianping.html" class="hover:text-coral transition">${labels.dianping}</a></li>
-                        <li><a href="/red.html" class="hover:text-coral transition">${labels.red}</a></li>
+                        <li><a href="/dianping" class="hover:text-coral transition">${labels.dianping}</a></li>
+                        <li><a href="/red" class="hover:text-coral transition">${labels.red}</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">${labels.douyin}</a></li>
                         <li><a href="/miniprogram" class="hover:text-coral transition">${labels.miniprogram}</a></li>
                         <li><a href="/creative" class="hover:text-coral transition">${labels.creative}</a></li>
