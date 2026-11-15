@@ -63,7 +63,7 @@
       event.preventDefault();
       const data = new FormData(form);
       const lang = getPageLanguage();
-      const params = new URLSearchParams(window.location.search);
+      const params = (window.protechInquiryContext?.() || new URLSearchParams(window.location.search));
       const travel = {
         travel_date: data.get('date')?.toString().trim() || '',
         people: data.get('people')?.toString().trim() || '',

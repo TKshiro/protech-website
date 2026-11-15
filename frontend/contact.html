@@ -357,11 +357,14 @@
             btn.innerText = '送信中...';
             btn.disabled = true;
 
+            const context = window.protechInquiryContext?.().toString() || '';
+            const inquiryMessage = document.getElementById('message').value +
+                (context ? '\n\n相談元情報: ' + context : '');
             const templateParams = {
                 name: document.getElementById('name').value,
                 company: document.getElementById('company').value,
                 email: document.getElementById('email').value,
-                message: document.getElementById('message').value
+                message: inquiryMessage
             };
 
             emailjs.send('service_zg0cj56', 'template_9wqf6sc', templateParams)
@@ -377,7 +380,7 @@
                             phone: document.getElementById('phone').value || '',
                             budget: document.getElementById('budget').value || '',
                             referral_source: document.getElementById('referral_source').value || '',
-                            message: document.getElementById('message').value,
+                            message: inquiryMessage,
                             date: new Date().toISOString(),
                             status: '未対応'
                         };

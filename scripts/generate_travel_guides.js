@@ -1312,7 +1312,7 @@ function articleHtml(lang, slug) {
             <h2>FAQ</h2>
             ${faq}
             <div class="travel-callout"><strong>${lang === 'en' ? 'For inquiry:' : lang === 'ja' ? '相談時に共有するとスムーズです：' : lang === 'zh-Hant' ? '諮詢時可以直接提供：' : '准备咨询时可以直接发给我们：'}</strong>${lang === 'en' ? ' Share your dates, group size, hotel location, budget, must-visit places and any senior or child traveler needs.' : lang === 'ja' ? '日程、人数、ホテル位置、予算、行きたい場所、子どもやシニア同行の有無をお知らせください。' : lang === 'zh-Hant' ? '出行日期、人數、酒店位置、預算、想去的點、是否有長輩或小孩同行。' : '出行日期、人数、酒店位置、预算、想去的点、是否有老人或小孩同行。'}</div>
-            <p><a class="travel-btn" href="${travelHomePath}?source=${sourceParam}#inquiry">${c.ctaPrefix}${d.cta}</a></p>
+            <p><a class="travel-btn" href="${travelHomePath}#inquiry?source=${sourceParam}">${c.ctaPrefix}${d.cta}</a></p>
         </main>
     </article>
     ${footerHtml(lang, true)}

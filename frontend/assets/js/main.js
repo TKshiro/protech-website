@@ -1,3 +1,29 @@
+/* Inquiry context belongs in a fragment, not a separate crawlable URL.
+ * Legacy query links remain supported; canonical tags always use clean URLs. */
+(() => {
+  const allowed = ['source', 'source_path', 'service', 'plan', 'type'];
+  function readContext() {
+    const query = new URLSearchParams(window.location.search);
+    const hash = window.location.hash;
+    const fragment = new URLSearchParams(hash.startsWith('#inquiry?') ? hash.slice(9) : '');
+    const context = new URLSearchParams();
+    allowed.forEach(key => {
+      const value = fragment.get(key) || query.get(key);
+      if (value) context.set(key, value.slice(0, 500));
+    });
+    return context;
+  }
+  window.protechInquiryContext = readContext;
+  function scrollToInquiry() {
+    if (window.location.hash.startsWith('#inquiry?')) {
+      const form = document.getElementById('inquiry') || document.getElementById('contactForm');
+      if (form) form.scrollIntoView({ block: 'start' });
+    }
+  }
+  window.addEventListener('hashchange', scrollToInquiry);
+  scrollToInquiry();
+})();
+
 /*
  * PROTECH shared scripts
  * - mobile menu hamburger toggle (with aria-expanded sync)
