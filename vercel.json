@@ -22,6 +22,71 @@
       "source": "/en/cases/local-tourism",
       "destination": "/cases/local-tourism",
       "permanent": true
+    },
+    {
+      "source": "/cn/download",
+      "destination": "/download",
+      "permanent": true
+    },
+    {
+      "source": "/en/download",
+      "destination": "/download",
+      "permanent": true
+    },
+    {
+      "source": "/dianping-store-registration",
+      "destination": "/dianping",
+      "permanent": true
+    },
+    {
+      "source": "/china-sns-marketing-agency",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/en/tokushoho",
+      "destination": "/tokushoho",
+      "permanent": true
+    },
+    {
+      "source": "/en/faq",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/en/pricing",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/cn/inbound-ai",
+      "destination": "/inbound-ai",
+      "permanent": true
+    },
+    {
+      "source": "/cn/tokushoho",
+      "destination": "/tokushoho",
+      "permanent": true
+    },
+    {
+      "source": "/cn/pricing",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/media-kit",
+      "destination": "/download",
+      "permanent": true
+    },
+    {
+      "source": "/xiaohongshu-agency-cost",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/blog/inbound-sns-strategy-2026",
+      "destination": "/blog/china-sns-inbound-guide",
+      "permanent": true
     }
   ]
 }

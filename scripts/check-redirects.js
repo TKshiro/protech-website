@@ -29,7 +29,7 @@ async function inspect(example) {
  const config=JSON.parse(fs.readFileSync(path.join(root,'vercel.json'),'utf8'));
  for (const rule of config.redirects) {
   assert.equal(rule.permanent,true);assert.notEqual(rule.source,rule.destination);
-  assert(fs.existsSync(path.join(root,'frontend',rule.destination+'.html')));
+  assert(fs.existsSync(path.join(root,'frontend',rule.destination+'.html')) || fs.existsSync(path.join(root,'frontend',rule.destination,'index.html')));
  }
  const sitemap=fs.readFileSync(path.join(root,'frontend/sitemap.xml'),'utf8');
  for(const m of sitemap.matchAll(/<loc>(.*?)<\/loc>/g)) {
@@ -43,5 +43,5 @@ async function inspect(example) {
   for(const rule of config.redirects)await inspect({url:'https://pro-tech.jp'+rule.source,target:'https://pro-tech.jp'+rule.destination,maxRedirects:1});
   console.log(JSON.stringify(results,null,2));
  }
- console.log('PASS: redirect rules and sitemap'+(process.argv.includes('--live')?'; 25 reported URLs and all 4 migration redirects reach canonical HTTP 200 pages.':'.'));
+ console.log('PASS: redirect rules and sitemap'+(process.argv.includes('--live')?'; 25 reported URLs and all configured redirects reach canonical HTTP 200 pages.':'.'));
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -5,6 +5,8 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const examples = [
 '/contact?service=kol','/contact?plan=light','/blog?q={search_term_string}',
+'/contact?plan=premium','/contact?plan=standard','/contact?service=creative',
+'/contact?type=document','/contact?source=pricing-hero','/contact?service=miniprogram',
 '/travel/ja?source=onsen-ryokan-booking','/travel/zh-tw?source=japan-family-custom-trip',
 '/travel?source=japan-attraction-restaurant-reservation','/travel/ja?source=japan-senior-friendly-itinerary',
 '/travel/en?source=japan-family-custom-trip','/travel?source=tokyo-fuji-private-car',
@@ -23,7 +25,8 @@ async function run() {
  for (const example of examples) {
   const pathname = example.split('?')[0];
   if (process.argv.includes('--live')) {
-   const response = await fetch('https://pro-tech.jp' + example);
+   const response = await fetch('https://pro-tech.jp' + example, {redirect: 'manual'});
+   assert(!/noindex/i.test(response.headers.get('x-robots-tag') || ''), example);
    assert.equal(response.status, 200, example);
    inspect(await response.text(), pathname);
   } else {
@@ -42,6 +45,17 @@ async function run() {
    assert.equal(window.protechInquiryContext().get('source') || '', want);
    assert.equal(scrolled, hash.startsWith('#inquiry?'));
   }
+  const pricing = fs.readFileSync(path.join(root, 'frontend/pricing.html'), 'utf8');
+  for (const context of ['plan=premium','plan=standard','service=creative','type=document','source=pricing-hero','service=miniprogram']) {
+   assert(pricing.includes('href="/contact#inquiry?' + context + '"'), context + ': clean pricing link');
+   assert(!pricing.includes('/contact?' + context), context + ': legacy pricing link');
+   const [key, value] = context.split('=');
+   for (const fragment of [false, true]) {
+    const window = {location: {search: fragment ? '' : '?' + context, hash: fragment ? '#inquiry?' + context : ''}, addEventListener: () => {}};
+    vm.runInNewContext(helper, {window, URLSearchParams, document: {getElementById: () => null}});
+    assert.equal(window.protechInquiryContext().get(key), value, 'Preserve inquiry attribution');
+   }
+  }
   for (const name of ['index.html','cn/index.html','en/index.html']) {
    const html=fs.readFileSync(path.join(root,'frontend',name),'utf8');
    assert(!html.includes('SearchAction'));
@@ -50,6 +64,6 @@ async function run() {
   const sitemap=fs.readFileSync(path.join(root,'frontend/sitemap.xml'),'utf8');
   for(const m of sitemap.matchAll(/<loc>(.*?)<\/loc>/g)) assert(!/[?#]/.test(m[1]));
  }
- console.log('PASS: 14 URL variants canonicalize to clean pages' + (process.argv.includes('--live') ? ' (live HTTP 200).' : '; fragment context, legacy compatibility, JSON-LD and sitemap checks passed.'));
+ console.log('PASS: ' + examples.length + ' URL variants canonicalize to clean pages' + (process.argv.includes('--live') ? ' (live HTTP 200).' : '; fragment context, legacy compatibility, JSON-LD and sitemap checks passed.'));
 }
 run().catch(e=>{console.error(e);process.exitCode=1;});

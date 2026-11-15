@@ -1,0 +1,21 @@
+{
+  "recover": {
+    "/cn/download": "/download",
+    "/en/download": "/download",
+    "/dianping-store-registration": "/dianping",
+    "/china-sns-marketing-agency": "/services",
+    "/en/tokushoho": "/tokushoho",
+    "/en/faq": "/faq",
+    "/en/pricing": "/pricing",
+    "/cn/inbound-ai": "/inbound-ai",
+    "/cn/tokushoho": "/tokushoho",
+    "/cn/pricing": "/pricing",
+    "/media-kit": "/download",
+    "/xiaohongshu-agency-cost": "/pricing",
+    "/blog/inbound-sns-strategy-2026": "/blog/china-sns-inbound-guide"
+  },
+  "retain404": [
+    "/news-detail",
+    "/cdn-cgi/l/email-protection"
+  ]
+}

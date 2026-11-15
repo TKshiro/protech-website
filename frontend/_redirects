@@ -1,3 +1,4 @@
+# Historical Netlify configuration; Vercel uses the versioned redirects in /vercel.json.
 # 削除済み記事のリダイレクト（301 Permanent Redirect）
 # 削除: inbound-sns-strategy-2026 → 類似記事へ転送
 /blog/inbound-sns-strategy-2026    /blog/china-sns-inbound-guide    301
