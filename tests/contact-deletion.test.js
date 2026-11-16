@@ -1,0 +1,15 @@
+const test=require('node:test'),assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs'),crypto=require('node:crypto');
+function handlerFixture(){
+ const rows=[['id','date','inquiry_type','name','company','email','phone','budget','referral_source','message','status','travel'],['keep','','','Active','','active@example.com','','','','Keep body','未対応',''],['trash','','','Deleted','','deleted@example.com','','','','Deleted body','削除済み','']];
+ const calls=[];const values={get:async()=>({data:{values:rows}}),update:async args=>calls.push(['update',args]),batchClear:async args=>calls.push(['clear',args])};
+ const sheets={spreadsheets:{get:async()=>({data:{sheets:[{properties:{title:'Inquiries'}}]}}),values}};
+ const store={inquiries:async()=>({values:rows,sheet:{title:'Inquiries'}})};
+ const sandbox={module:{exports:{}},console,process:{env:{ADMIN_PASSWORD:'test-password',SPREADSHEET_ID:'fake',GOOGLE_SERVICE_ACCOUNT:'{}'}},require(name){if(name==='googleapis')return {google:{auth:{GoogleAuth:class{}},sheets:()=>sheets}};if(name==='crypto')return crypto;if(name==='../lib/newsletter-store')return {connect:async()=>store,importContacts:async(_,all)=>calls.push(['archive',all])};throw Error('Unexpected dependency '+name);}};
+ vm.runInNewContext(fs.readFileSync(require.resolve('../api/contacts'),'utf8'),sandbox);
+ async function invoke(method,body={},authorized=true){let status,payload;await sandbox.module.exports({method,body,headers:authorized?{authorization:'Bearer '+crypto.createHash('sha256').update('test-password').digest('hex')}:{ }},{setHeader(){},status(n){status=n;return this;},json(x){payload=x;return this;},end(){}});return {status,payload};}
+ return {invoke,calls};
+}
+test('deleted inquiries are excluded from the server response',async()=>{const {invoke}=handlerFixture();const r=await invoke('GET');assert.equal(r.status,200);assert.equal(r.payload.length,1);assert.equal(r.payload[0].id,'keep');});
+test('permanent cleanup archives addresses first and only clears tombstone rows',async()=>{const {invoke,calls}=handlerFixture();const r=await invoke('DELETE',{action:'purge_deleted'});assert.equal(r.status,200);assert.equal(r.payload.purged,1);assert.equal(calls[0][0],'archive');assert.equal(calls[0][1],true);assert.equal(calls[1][0],'clear');assert.equal(calls[1][1].requestBody.ranges.join(','),"'Inquiries'!A3:L3");});
+test('delete requires authentication and an explicit action',async()=>{const {invoke,calls}=handlerFixture();assert.equal((await invoke('DELETE',{action:'purge_deleted'},false)).status,401);assert.equal((await invoke('DELETE',{})).status,400);assert.equal(calls.length,0);});
+test('mark deleted preserves directory first and rejects invalid transitions',async()=>{const {invoke,calls}=handlerFixture();assert.equal((await invoke('PATCH',{id:'keep',status:'invalid'})).status,400);assert.equal((await invoke('PATCH',{id:'keep',status:'削除済み'})).status,200);assert.equal(calls[0][0],'archive');assert.equal(calls[1][0],'update');assert.equal(calls[1][1].valueInputOption,'RAW');});

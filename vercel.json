@@ -88,5 +88,10 @@
       "destination": "/blog/china-sns-inbound-guide",
       "permanent": true
     }
-  ]
+  ],
+  "functions": {
+    "api/newsletter.js": {
+      "maxDuration": 60
+    }
+  }
 }

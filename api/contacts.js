@@ -1,11 +1,13 @@
 const { google } = require('googleapis');
 const crypto = require('crypto');
+const {connect, importContacts} = require('../lib/newsletter-store');
 
 module.exports = async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
   // Enable CORS
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,POST');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,POST,DELETE');
   res.setHeader(
     'Access-Control-Allow-Headers',
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization'
@@ -16,7 +18,7 @@ module.exports = async (req, res) => {
   }
 
   const spreadsheetId = process.env.SPREADSHEET_ID;
-  const adminPassword = process.env.ADMIN_PASSWORD || 'protechadmin2026';
+  const adminPassword = process.env.ADMIN_PASSWORD;
   const googleCredsEnv = process.env.GOOGLE_SERVICE_ACCOUNT;
 
   // Find Google credentials
@@ -56,7 +58,8 @@ module.exports = async (req, res) => {
   }
 
   // 1. Password authentication for administrative routes (GET and PATCH)
-  if (req.method === 'GET' || req.method === 'PATCH') {
+  if (req.method === 'GET' || req.method === 'PATCH' || req.method === 'DELETE') {
+    if (!adminPassword) return res.status(503).json({error: '管理者認証が設定されていません。'});
     const authHeader = req.headers.authorization || '';
     const match = authHeader.match(/^Bearer (.+)$/i);
     if (!match) {
@@ -111,7 +114,7 @@ module.exports = async (req, res) => {
         await sheets.spreadsheets.values.update({
           spreadsheetId,
           range: `${sheetName}!A1:L1`,
-          valueInputOption: 'USER_ENTERED',
+          valueInputOption: 'RAW',
           requestBody: { values: [headers] },
         });
       }
@@ -129,7 +132,7 @@ module.exports = async (req, res) => {
           budget || '',
           referral_source || '',
           message || '',
-          status || '未対応',
+          '未対応',
           travelStr,
         ],
       ];
@@ -137,11 +140,27 @@ module.exports = async (req, res) => {
       await sheets.spreadsheets.values.append({
         spreadsheetId,
         range,
-        valueInputOption: 'USER_ENTERED',
+        valueInputOption: 'RAW',
         requestBody: { values },
       });
 
-      return res.status(200).json({ success: true });
+      let addressSaved = true;
+      try { await importContacts(await connect()); } catch (err) { addressSaved = false; console.error('Address sync failed:', err.message); }
+      return res.status(200).json({ success: true, addressSaved });
+    }
+
+    // Clear only records already marked deleted, without shifting other row numbers.
+    if (req.method === 'DELETE') {
+      if (req.body?.action !== 'purge_deleted') return res.status(400).json({error: 'Invalid action'});
+      const store = await connect();
+      await importContacts(store, true); // Preserve valid addresses independently before cleanup.
+      const {values, sheet} = await store.inquiries();
+      const statusColumn = (values[0] || []).indexOf('status');
+      if (statusColumn < 0) return res.status(409).json({error: 'Missing status column'});
+      const ranges = values.flatMap((row, i) => i > 0 && row[statusColumn] === '削除済み'
+        ? ["'" + sheet.title.replace(/'/g, "''") + "'!A" + (i + 1) + ':L' + (i + 1)] : []);
+      if (ranges.length) await sheets.spreadsheets.values.batchClear({spreadsheetId, requestBody: {ranges}});
+      return res.status(200).json({success: true, purged: ranges.length});
     }
 
     // 3. GET Handler: Retrieve all inquiries
@@ -173,13 +192,13 @@ module.exports = async (req, res) => {
         return item;
       });
 
-      return res.status(200).json(contacts);
+      return res.status(200).json(contacts.filter(item => item.id && item.status !== '削除済み'));
     }
 
     // 4. PATCH Handler: Update the status of a specific inquiry by ID
     if (req.method === 'PATCH') {
       const { id, status } = req.body;
-      if (!id || !status) {
+      if (!id || !['未対応', '対応済み', '削除済み'].includes(status)) {
         return res.status(400).json({ error: 'Missing parameters: id and status are required.' });
       }
 
@@ -191,16 +210,18 @@ module.exports = async (req, res) => {
       const rows = response.data.values || [];
       const rowIndex = rows.findIndex((row) => row[0] === id);
 
-      if (rowIndex === -1) {
+      if (rowIndex < 1) {
         return res.status(404).json({ error: 'Inquiry not found.' });
       }
+
+      if (status === '削除済み') await importContacts(await connect());
 
       // K corresponds to the 11th column (status)
       const cellRange = `${sheetName}!K${rowIndex + 1}`;
       await sheets.spreadsheets.values.update({
         spreadsheetId,
         range: cellRange,
-        valueInputOption: 'USER_ENTERED',
+        valueInputOption: 'RAW',
         requestBody: {
           values: [[status]],
         },

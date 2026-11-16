@@ -49,6 +49,7 @@
 </head>
 <body class="bg-slate-100 text-slate-900 antialiased">
     <div id="app"></div>
+    <script src="/assets/js/admin-newsletter.js"></script>
 
     <script>
         const AUTH_KEY = 'protech_admin_auth';
@@ -223,7 +224,7 @@
                 dashboard: 'ダッシュボード',
                 cases: '導入事例',
                 blogs: 'ブログ記事',
-                contacts: 'お問い合わせ'
+                contacts: 'お問い合わせ', subscribers: 'メールアドレス帳', newsletter: 'メールマガジン'
             }[state.currentSection] || 'ダッシュボード';
         }
 
@@ -265,19 +266,23 @@
         }
 
         async function updateContactStatusApi(id, status) {
-            if (!state.user || !state.user.token) return;
+            if (!state.user?.token) throw new Error('ログインしてください。');
+            const response = await fetch('/api/contacts', {
+                method: 'PATCH',
+                headers: {'Content-Type': 'application/json', Authorization: `Bearer ${state.user.token}`},
+                body: JSON.stringify({id, status})
+            });
+            if (!response.ok) throw new Error('保存できませんでした。再試行してください。');
+        }
+
+        async function changeContactStatus(button, status) {
+            button.disabled = true;
             try {
-                await fetch('/api/contacts', {
-                    method: 'PATCH',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${state.user.token}`
-                    },
-                    body: JSON.stringify({ id, status })
-                });
-            } catch (err) {
-                console.error('Failed to update contact status in API:', err);
-            }
+                const id = button.dataset.contactDone || button.dataset.contactReopen || button.dataset.deleteContact;
+                await updateContactStatusApi(id, status);
+                setContacts(getContacts().map(item => item.id === id ? {...item, status} : item));
+                render();
+            } catch (error) { alert(error.message); button.disabled = false; }
         }
 
         function getStatCards() {
@@ -360,6 +365,7 @@
         }
 
         function logout() {
+            NewsletterAdmin.reset();
             sessionStorage.removeItem(AUTH_KEY);
             state.user = null;
             state.contacts = null;
@@ -424,7 +430,9 @@
                 ['dashboard', 'ダッシュボード'],
                 ['cases', '導入事例'],
                 ['blogs', 'ブログ記事'],
-                ['contacts', 'お問い合わせ']
+                ['contacts', 'お問い合わせ'],
+                ['subscribers', 'メールアドレス帳'],
+                ['newsletter', 'メールマガジン']
             ];
 
             return `
@@ -631,6 +639,7 @@
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                         <div>
                             <h3 class="text-xl font-bold text-slate-900">お問い合わせ一覧</h3>
+                            <button id="purge-deleted-contacts" class="mt-3 text-sm text-rose-600 underline">削除済みデータを完全に整理</button>
                             <p class="text-sm text-slate-500 mt-1">フォームから送信されたお問い合わせを管理します。</p>
                         </div>
                         <div class="flex items-center gap-3">
@@ -676,10 +685,10 @@
                                         </div>
                                         <div class="flex gap-2">
                                             ${isUnread
-                                                ? `<button data-contact-done="${item.id}" class="rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 px-3 py-1.5 text-xs font-bold hover:bg-emerald-100 transition">対応済みにする</button>`
-                                                : `<button data-contact-reopen="${item.id}" class="rounded-lg border border-slate-200 text-slate-500 px-3 py-1.5 text-xs font-medium hover:border-coral hover:text-coral transition">未対応に戻す</button>`
+                                                ? `<button data-contact-done="${escapeHtml(item.id)}" class="rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 px-3 py-1.5 text-xs font-bold hover:bg-emerald-100 transition">対応済みにする</button>`
+                                                : `<button data-contact-reopen="${escapeHtml(item.id)}" class="rounded-lg border border-slate-200 text-slate-500 px-3 py-1.5 text-xs font-medium hover:border-coral hover:text-coral transition">未対応に戻す</button>`
                                             }
-                                            <button data-delete-contact="${item.id}" class="rounded-lg border border-rose-200 text-rose-600 px-3 py-1.5 text-xs font-medium hover:bg-rose-50 transition">削除</button>
+                                            <button data-delete-contact="${escapeHtml(item.id)}" class="rounded-lg border border-rose-200 text-rose-600 px-3 py-1.5 text-xs font-medium hover:bg-rose-50 transition">削除</button>
                                         </div>
                                     </div>
                                     <div class="px-6 py-5 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-sm">
@@ -950,7 +959,7 @@
                     ? renderBlogsSection()
                     : state.currentSection === 'contacts'
                         ? renderContactsSection()
-                        : renderDashboardHome();
+                        : ['subscribers', 'newsletter'].includes(state.currentSection) ? NewsletterAdmin.render(state.currentSection) : renderDashboardHome();
 
             return `
                 <div class="min-h-screen bg-slate-100">
@@ -1110,38 +1119,22 @@
                 });
             });
 
-            document.querySelectorAll('[data-contact-done]').forEach(button => {
-                button.addEventListener('click', async () => {
-                    const id = button.dataset.contactDone;
-                    const items = getContacts().map(item =>
-                        item.id === id ? { ...item, status: '対応済み' } : item
-                    );
-                    setContacts(items);
-                    render();
-                    await updateContactStatusApi(id, '対応済み');
-                });
+            document.querySelectorAll('[data-contact-done]').forEach(button => button.addEventListener('click', () => changeContactStatus(button, '対応済み')));
+            document.querySelectorAll('[data-contact-reopen]').forEach(button => button.addEventListener('click', () => changeContactStatus(button, '未対応')));
+            document.querySelectorAll('[data-delete-contact]').forEach(button => button.addEventListener('click', () => {
+                if (confirm('このお問い合わせを削除しますか？')) changeContactStatus(button, '削除済み');
+            }));
+            document.getElementById('purge-deleted-contacts')?.addEventListener('click', async event => {
+                if (!confirm('削除済みのお問い合わせ本文をサーバーから完全に削除します。連絡先メールアドレスは別の名簿に保存されます。続けますか？')) return;
+                event.target.disabled = true;
+                try {
+                    const response = await fetch('/api/contacts', {method:'DELETE', headers:{'Content-Type':'application/json', Authorization:`Bearer ${state.user.token}`}, body:JSON.stringify({action:'purge_deleted'})});
+                    const result = await response.json();
+                    if (!response.ok) throw new Error(result.error || '削除できませんでした。');
+                    await syncContacts(); render(); alert(`${result.purged} 件の削除済みデータを整理しました。`);
+                } catch(error) { alert(error.message); event.target.disabled = false; }
             });
-            document.querySelectorAll('[data-contact-reopen]').forEach(button => {
-                button.addEventListener('click', async () => {
-                    const id = button.dataset.contactReopen;
-                    const items = getContacts().map(item =>
-                        item.id === id ? { ...item, status: '未対応' } : item
-                    );
-                    setContacts(items);
-                    render();
-                    await updateContactStatusApi(id, '未対応');
-                });
-            });
-            document.querySelectorAll('[data-delete-contact]').forEach(button => {
-                button.addEventListener('click', async () => {
-                    if (!confirm('このお問い合わせを削除しますか？')) return;
-                    const id = button.dataset.deleteContact;
-                    const items = getContacts().filter(item => item.id !== id);
-                    setContacts(items);
-                    render();
-                    await updateContactStatusApi(id, '削除済み');
-                });
-            });
+            if (['subscribers', 'newsletter'].includes(state.currentSection)) NewsletterAdmin.bind(state.user.token);
 
             document.getElementById('modal-close')?.addEventListener('click', closeModal);
             document.getElementById('modal-cancel')?.addEventListener('click', closeModal);
