@@ -5,7 +5,8 @@
     "gray-matter": "^4.0.3",
     "marked": "^18.0.5",
     "tailwindcss": "^4.2.4",
-    "xml2js": "^0.6.2"
+    "xml2js": "^0.6.2",
+    "nodemailer": "10.6.0"
   },
   "scripts": {
     "build": "node -e \"console.log('Static frontend ready')\"",
