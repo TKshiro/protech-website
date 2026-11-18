@@ -5,8 +5,16 @@
     <link>https://pro-tech.jp</link>
     <description>PROTECHの最新ニュース、マーケティング情報、事例紹介</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 17 Nov 2026 01:10:04 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 12:20:38 GMT</lastBuildDate>
     <atom:link href="https://pro-tech.jp/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title><![CDATA[大衆点評の店舗情報を修正したい｜営業時間・住所・店名の変更チェックリスト]]></title>
+      <link>https://pro-tech.jp/blog/dianping-store-information-update</link>
+      <guid isPermaLink="true">https://pro-tech.jp/blog/dianping-store-information-update</guid>
+      <description><![CDATA[大衆点評の営業時間・住所・店名を修正したい日本の店舗向けに、変更前の確認事項、項目別チェックリスト、中国語依頼文、反映後の点検方法を解説します。]]></description>
+      <pubDate>Wed, 18 Nov 2026 12:20:38 GMT</pubDate>
+      <category>サービス</category>
+    </item>
     <item>
       <title><![CDATA[大衆点評に自分の店が勝手に掲載されている？店舗情報の確認と対応方法]]></title>
       <link>https://pro-tech.jp/blog/dianping-store-listed-without-permission</link>
