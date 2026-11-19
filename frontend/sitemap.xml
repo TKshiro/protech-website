@@ -486,7 +486,7 @@
 
   <url>
     <loc>https://pro-tech.jp/blog/inbound-marketing-cost-2026</loc>
-    <lastmod>2026-05-22</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/inbound-marketing-cost-2026" />
@@ -495,7 +495,7 @@
 
   <url>
     <loc>https://pro-tech.jp/blog/wechat-marketing-guide-2026</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/wechat-marketing-guide-2026" />
@@ -531,7 +531,7 @@
 
   <url>
     <loc>https://pro-tech.jp/blog/china-sns-inbound-guide</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/china-sns-inbound-guide" />
@@ -540,7 +540,7 @@
 
   <url>
     <loc>https://pro-tech.jp/blog/xiaohongshu-beauty-salon-2026</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/xiaohongshu-beauty-salon-2026" />
@@ -567,7 +567,7 @@
 
   <url>
     <loc>https://pro-tech.jp/blog/taiwan-inbound-strategy</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/taiwan-inbound-strategy" />
@@ -738,7 +738,7 @@
 
   <url>
     <loc>https://pro-tech.jp/blog/inbound-funnel-design</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/blog/inbound-funnel-design" />
@@ -1073,5 +1073,37 @@
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pro-tech.jp/travel</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel" />
+  </url>
+  <url>
+    <loc>https://pro-tech.jp/travel/zh-tw</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel" />
+  </url>
+  <url>
+    <loc>https://pro-tech.jp/travel/en</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel" />
+  </url>
+  <url>
+    <loc>https://pro-tech.jp/travel/ja</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://pro-tech.jp/travel" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://pro-tech.jp/travel/zh-tw" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pro-tech.jp/travel/en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pro-tech.jp/travel/ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-tech.jp/travel" />
   </url>
 </urlset>
