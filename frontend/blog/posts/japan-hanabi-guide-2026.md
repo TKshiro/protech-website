@@ -323,4 +323,19 @@ image: "/assets/images/blog-hanabi-hero-2026.jpg"
 | 8/29（土） | 大曲の花火 | 秋田 | 18,000発 |
 | 4月末〜10月末 | 洞爺湖ロングラン花火 | 北海道 | 毎夜450発 |
 
-花火大会シーズンのインバウンド集客や、中国人観光客向けのSNSプロモーションをお考えの方は、ぜひ[お問い合わせ](/contact)ください。PROTECHは小紅書・大衆点評・抖音を活用した花火大会×インバウンドマーケティングを、ワンストップでご支援いたします。
+<aside class="dual-cta" aria-label="旅行者と店舗向けの案内">
+<div class="dual-cta-grid">
+<section class="dual-cta-card dual-cta-travel">
+<p class="dual-cta-kicker">旅行者の方へ</p>
+<p class="dual-cta-title">花火大会を旅程に入れる</p>
+<p>日程と移動を一緒に相談したいときは、旅行相談ページをご覧ください。</p>
+<p class="dual-cta-actions"><a class="dual-cta-btn dual-cta-btn-primary" href="/travel">旅行相談を見る</a></p>
+</section>
+<section class="dual-cta-card dual-cta-business">
+<p class="dual-cta-kicker">店舗・事業者の方へ</p>
+<p class="dual-cta-title">花火の時期の来店を準備する</p>
+<p>小紅書、大衆点評、WeChatの役割は各サービスページで確認できます。料金は内容によって変わるため、この記事では金額を掲載していません。</p>
+<p class="dual-cta-actions"><a class="dual-cta-btn" href="/red">小紅書</a><a class="dual-cta-btn" href="/dianping">大衆点評</a><a class="dual-cta-btn" href="/wechat">WeChat</a><a class="dual-cta-btn dual-cta-btn-primary" href="/contact">相談する</a></p>
+</section>
+</div>
+</aside>
