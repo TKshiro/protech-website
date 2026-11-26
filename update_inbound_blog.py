@@ -1,6 +1,6 @@
 import re
 
-with open('frontend/blog/what-is-inbound-demand.html', 'r', encoding='utf-8') as f:
+with open('frontend/blog/inbound-meaning-guide.html', 'r', encoding='utf-8') as f:
     content = f.read()
 
 # Replace Meta tags
@@ -16,7 +16,7 @@ content = re.sub(
 )
 content = re.sub(
     r'<link rel="canonical" href=".*?">',
-    '<link rel="canonical" href="https://pro-tech.jp/blog/what-is-inbound-demand">',
+    '<link rel="canonical" href="https://pro-tech.jp/blog/inbound-meaning-guide">',
     content, flags=re.DOTALL
 )
 content = re.sub(
@@ -139,7 +139,7 @@ article_html = """<article class="lg:w-2/3 article-body" data-aos="fade-up">
 
 content = re.sub(r'<article class="lg:w-2/3 article-body".*?</article>', article_html, content, flags=re.DOTALL)
 
-with open('frontend/blog/what-is-inbound-demand.html', 'w', encoding='utf-8') as f:
+with open('frontend/blog/inbound-meaning-guide.html', 'w', encoding='utf-8') as f:
     f.write(content)
 
 print("Updated what-is-inbound-demand.html")
@@ -150,7 +150,7 @@ with open('frontend/blog.html', 'r', encoding='utf-8') as f:
 
 new_card = """
             <!-- What is Inbound Demand -->
-            <a href="/blog/what-is-inbound-demand"
+            <a href="/blog/inbound-meaning-guide"
                 class="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 data-category="インバウンド" data-aos="fade-up" data-aos-delay="0">
                 <div class="overflow-hidden bg-slate-100 h-48 flex items-center justify-center">

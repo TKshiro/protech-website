@@ -23,6 +23,15 @@ const { marked } = require('marked');
 const ROOT = path.resolve(__dirname, '../../frontend');
 const SITE_URL = 'https://pro-tech.jp';
 
+function withLazyImages(html) {
+    return html.replace(/<img\b([^>]*?)>/gi, (tag) => {
+        let next = tag;
+        if (!/\bloading\s*=/i.test(next)) next = next.replace(/>$/, ' loading="lazy">');
+        if (!/\bdecoding\s*=/i.test(next)) next = next.replace(/>$/, ' decoding="async">');
+        return next;
+    });
+}
+
 // ─── Unification Helpers ────────────────────────────────────
 
 function getNavHTML(lang, isListing, postSlug = '', availableLangs = { ja: true }) {
@@ -673,7 +682,7 @@ function readPosts(postsDir, lang) {
             description: data.description || '',
             image: data.image || '',
             content: content,
-            html: marked(content),
+            html: withLazyImages(marked(content)),
             lang: lang
         };
     });
@@ -736,7 +745,7 @@ function generatePostHTML(post, availableLangs, allPostsOfLang = []) {
                         <a href="${rpUrl}" class="flex gap-4 group">
                             ${rp.image ? `
                             <div class="w-16 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-slate-100">
-                                <img src="${rp.image}" alt="${rp.title.replace(/"/g, '&quot;')}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <img src="${rp.image}" alt="${rp.title.replace(/"/g, '&quot;')}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                             </div>
                             ` : `
                             <div class="w-16 h-12 rounded-lg bg-slate-50 flex items-center justify-center flex-shrink-0 border border-slate-100">
@@ -772,7 +781,7 @@ function generatePostHTML(post, availableLangs, allPostsOfLang = []) {
             <a href="${lpUrl}" class="group block bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 ${lp.image ? `
                 <div class="aspect-video overflow-hidden">
-                    <img src="${lp.image}" alt="${lp.title.replace(/"/g, '&quot;')}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="${lp.image}" alt="${lp.title.replace(/"/g, '&quot;')}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                 </div>
                 ` : `
                 <div class="aspect-video bg-slate-50 flex items-center justify-center border-b border-slate-100">
@@ -936,11 +945,10 @@ ${getNavHTML(post.lang, false, post.slug, availableLangs)}
                 <span
                     class="text-[10px] font-bold text-blue-600 border border-blue-600 px-3 py-1 rounded-full uppercase tracking-widest">${categoryLabel(post.category, post.lang)}</span>
             </div>
-            <h1 class="text-3xl md:text-5xl font-bold serif text-tech-blue leading-tight mb-16" data-aos="fade-up"
-                data-aos-delay="100">
+            <h1 class="text-3xl md:text-5xl font-bold serif text-tech-blue leading-tight mb-16">
                 ${post.title}
             </h1>
-            ${post.image ? `<div class="rounded-3xl overflow-hidden shadow-2xl aspect-video px-4 md:px-0 max-w-4xl mx-auto" data-aos="zoom-in" data-aos-duration="1200">
+            ${post.image ? `<div class="rounded-3xl overflow-hidden shadow-2xl aspect-video px-4 md:px-0 max-w-4xl mx-auto">
                 <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover">
             </div>` : ''}
         </header>
@@ -1149,6 +1157,7 @@ function generateSitemap(postsJa, postsEn, postsCn) {
         { urls: { ja: '/dianping' }, priority: '0.7', changefreq: 'monthly' },
         { urls: { ja: '/douyin' }, priority: '0.7', changefreq: 'monthly' },
         { urls: { ja: '/miniprogram' }, priority: '0.7', changefreq: 'monthly' },
+        { urls: { ja: '/wechat' }, priority: '0.7', changefreq: 'monthly' },
         { urls: { ja: '/creative' }, priority: '0.6', changefreq: 'monthly' },
         { urls: { ja: '/kol' }, priority: '0.6', changefreq: 'monthly' },
         { urls: { ja: '/pricing' }, priority: '0.6', changefreq: 'monthly' },
@@ -1353,7 +1362,7 @@ function generateBlogListingHTML(posts, lang) {
                 class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 data-category="${post.category}" data-aos="fade-up">
                 ${post.image ? `<div class="aspect-video overflow-hidden">
-                    <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                 </div>` : ''}
                 <div class="p-6 md:p-8">
                     <div class="flex items-center gap-3 mb-4">
