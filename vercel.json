@@ -87,6 +87,112 @@
       "source": "/blog/inbound-sns-strategy-2026",
       "destination": "/blog/china-sns-inbound-guide",
       "permanent": true
+    },
+    {
+      "source": "/travel/guides/:slug*",
+      "destination": "/travel/itinerary/:slug*",
+      "permanent": true
+    },
+    {
+      "source": "/travel/en/guides/:slug*",
+      "destination": "/travel/en/itinerary/:slug*",
+      "permanent": true
+    },
+    {
+      "source": "/travel/ja/guides/:slug*",
+      "destination": "/travel/ja/itinerary/:slug*",
+      "permanent": true
+    },
+    {
+      "source": "/travel/zh-tw/guides/:slug*",
+      "destination": "/travel/zh-tw/itinerary/:slug*",
+      "permanent": true
+    },
+    {
+      "source": "/industries/hotel-inbound",
+      "destination": "/blog/xiaohongshu-hotel-marketing-2026",
+      "permanent": true
+    },
+    {
+      "source": "/industries/restaurant-inbound",
+      "destination": "/blog/inbound-xiaohongshu-2026",
+      "permanent": true
+    },
+    {
+      "source": "/industries/beauty-salon-inbound",
+      "destination": "/blog/xiaohongshu-beauty-salon-2026",
+      "permanent": true
+    },
+    {
+      "source": "/news",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/news.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/thanks",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/editorial-policy",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/china-sns-agency-comparison",
+      "destination": "/blog/china-sns-inbound-guide",
+      "permanent": true
+    },
+    {
+      "source": "/xiaohongshu-agency-comparison",
+      "destination": "/blog/agency-checklist",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/blog-post",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/blog-post.html",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/admin",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/admin/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "protech-website-main.vercel.app" }
+      ],
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
     }
   ]
 }

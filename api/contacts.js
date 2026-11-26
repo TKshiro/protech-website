@@ -16,8 +16,29 @@ module.exports = async (req, res) => {
   }
 
   const spreadsheetId = process.env.SPREADSHEET_ID;
-  const adminPassword = process.env.ADMIN_PASSWORD || 'protechadmin2026';
+  const adminPassword = process.env.ADMIN_PASSWORD;
   const googleCredsEnv = process.env.GOOGLE_SERVICE_ACCOUNT;
+
+  // Administrative reads and updates fail closed when no password is configured.
+  // The public contact form (POST) does not use this credential.
+  if (req.method === 'GET' || req.method === 'PATCH') {
+    if (!adminPassword) {
+      return res.status(503).json({
+        error: 'Admin authentication is not configured. Set the ADMIN_PASSWORD environment variable.'
+      });
+    }
+
+    const authHeader = req.headers.authorization || '';
+    const match = authHeader.match(/^Bearer (.+)$/i);
+    if (!match) {
+      return res.status(401).json({ error: 'Unauthorized: Missing token' });
+    }
+    const clientHash = match[1];
+    const expectedHash = crypto.createHash('sha256').update(adminPassword).digest('hex');
+    if (clientHash !== expectedHash) {
+      return res.status(401).json({ error: 'Unauthorized: Invalid token' });
+    }
+  }
 
   // Find Google credentials
   let credentials;
@@ -53,20 +74,6 @@ module.exports = async (req, res) => {
     return res.status(500).json({
       error: 'SPREADSHEET_ID environment variable is missing.'
     });
-  }
-
-  // 1. Password authentication for administrative routes (GET and PATCH)
-  if (req.method === 'GET' || req.method === 'PATCH') {
-    const authHeader = req.headers.authorization || '';
-    const match = authHeader.match(/^Bearer (.+)$/i);
-    if (!match) {
-      return res.status(401).json({ error: 'Unauthorized: Missing token' });
-    }
-    const clientHash = match[1];
-    const expectedHash = crypto.createHash('sha256').update(adminPassword).digest('hex');
-    if (clientHash !== expectedHash) {
-      return res.status(401).json({ error: 'Unauthorized: Invalid token' });
-    }
   }
 
   const auth = new google.auth.GoogleAuth({

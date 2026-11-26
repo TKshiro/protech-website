@@ -27,9 +27,23 @@ async function inspect(example) {
 }
 (async()=>{
  const config=JSON.parse(fs.readFileSync(path.join(root,'vercel.json'),'utf8'));
- for (const rule of config.redirects) {
-  assert.equal(rule.permanent,true);assert.notEqual(rule.source,rule.destination);
-  assert(fs.existsSync(path.join(root,'frontend',rule.destination+'.html')) || fs.existsSync(path.join(root,'frontend',rule.destination,'index.html')));
+ function destinationExists(destination) {
+  const concrete = destination.replace(/\/:[^/]+/g, '');
+  const rel = concrete.replace(/^\//, '');
+  return fs.existsSync(path.join(root,'frontend',rel+'.html')) || fs.existsSync(path.join(root,'frontend',rel,'index.html'));
+ }
+ function expandRule(rule) {
+  if (!rule.source.includes(':')) return [rule];
+  const srcBase = rule.source.replace(/\/:[^/]+$/, '');
+  const destBase = rule.destination.replace(/\/:[^/]+$/, '');
+  const dir = path.join(root,'frontend',destBase.replace(/^\//,''));
+  const slugs = fs.existsSync(dir) ? fs.readdirSync(dir).filter(name => fs.existsSync(path.join(dir,name,'index.html'))) : [];
+  return [{source:srcBase,destination:destBase,permanent:rule.permanent}].concat(slugs.map(slug => ({source:srcBase+'/'+slug,destination:destBase+'/'+slug,permanent:rule.permanent})));
+ }
+ const concreteRedirects = config.redirects.flatMap(expandRule);
+ for (const rule of concreteRedirects) {
+  assert.equal(rule.permanent,true,rule.source);assert.notEqual(rule.source,rule.destination);
+  assert(destinationExists(rule.destination),rule.destination);
  }
  const sitemap=fs.readFileSync(path.join(root,'frontend/sitemap.xml'),'utf8');
  for(const m of sitemap.matchAll(/<loc>(.*?)<\/loc>/g)) {
@@ -40,7 +54,7 @@ async function inspect(example) {
  if(process.argv.includes('--live')) {
   const results=[];
   for(let i=0;i<examples.length;i+=5)results.push(...await Promise.all(examples.slice(i,i+5).map(inspect)));
-  for(const rule of config.redirects)await inspect({url:'https://pro-tech.jp'+rule.source,target:'https://pro-tech.jp'+rule.destination,maxRedirects:1});
+  for(const rule of concreteRedirects)await inspect({url:'https://pro-tech.jp'+rule.source,target:'https://pro-tech.jp'+rule.destination,maxRedirects:1});
   console.log(JSON.stringify(results,null,2));
  }
  console.log('PASS: redirect rules and sitemap'+(process.argv.includes('--live')?'; 25 reported URLs and all configured redirects reach canonical HTTP 200 pages.':'.'));
