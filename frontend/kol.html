@@ -34,17 +34,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "KOL/KOCインフルエンサーマーケティング",
-    "description": "500名以上のKOL/KOCパートナーネットワークで中国市場に最大インパクト。",
-    "provider": {
-        "@type": "Organization",
-        "name": "PROTECH株式会社",
-        "url": "https://pro-tech.jp"
-    }
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "KOL/KOCインフルエンサーマーケティング",
+  "description": "500名以上のKOL/KOCパートナーネットワークで中国市場に最大インパクト。",
+  "provider": {
+    "@type": "Organization",
+    "name": "PROTECH株式会社",
+    "url": "https://pro-tech.jp"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Japan"
+  },
+  "serviceType": "KOL/KOCインフルエンサーマーケティング",
+  "url": "https://pro-tech.jp/kol"
 }
-    </script>
+</script>
 </head>
 
 <body class="kol-page bg-white text-slate-900">
@@ -356,6 +362,19 @@
         </div>
     </section>
 
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-12">
+                <p class="text-amber-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Related Articles</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-tech-blue">KOL/KOCの関連記事</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="/blog/kol-koc-guide" class="group block bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition"><h3 class="font-bold text-sm text-tech-blue group-hover:text-amber-600 transition leading-snug">KOL/KOC施策の進め方</h3><p class="text-xs text-gray-400 mt-2">キャスティングから投稿管理までの流れを整理した解説です。</p></a>
+                <a href="/blog/kol-koc-meaning-fee-2026" class="group block bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition"><h3 class="font-bold text-sm text-tech-blue group-hover:text-amber-600 transition leading-snug">KOLとKOCの違い・費用の目安</h3><p class="text-xs text-gray-400 mt-2">用語の違いと、見積もり前に確認したい費用の考え方です。</p></a>
+            </div>
+        </div>
+    </section>
+
     <!-- ═══════════════════════ CTA: Amber/dark gradient ═══════════════════════ -->
     <section class="kol-cta kol-section relative text-white overflow-hidden">
         <div class="absolute inset-0 z-0">
@@ -433,5 +452,6 @@
 
 
     <script defer src="assets/js/main.js"></script>
+<script defer src="/assets/js/consult-popup.js"></script>
 </body>
 </html>

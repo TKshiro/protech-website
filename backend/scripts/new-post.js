@@ -45,6 +45,7 @@ async function main() {
     const content = `---
 title: "${title}"
 date: "${today}"
+updated: "${today}"
 category: "${category}"
 description: "${description}"
 image: "${image}"

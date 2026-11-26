@@ -61,7 +61,7 @@ const langConfig = {
     read: 'Read guide',
     ctaPrefix: 'Ask about ',
     hub: {
-      title: 'Custom Japan Travel Planning Guides | Private Car, Family Trips, Ryokan | PROTECH Travel',
+        title: 'Japan Trip Guides: Cars, Family, Ryokan | PROTECH',
       description: 'Practical Japan travel planning guides covering private cars, family trips, ryokan booking, attraction reservations and multilingual custom itinerary decisions.',
       kicker: 'Travel Guides',
       h1: 'Japan travel planning guides for decisions that matter.',
@@ -143,8 +143,8 @@ const extraArticles = {
         ]
       },
       en: {
-        title: 'How to Plan a Senior-Friendly Japan Trip: Less Walking, Better Hotels, and Private Cars',
-        description: 'A senior-friendly Japan itinerary guide covering lower-walking routes, hotel location, private cars, ryokan stays, elevators, restaurants, rest stops and planning checklist.',
+        title: 'Senior-Friendly Japan Trip: Less Walking, Private Cars',
+        description: 'Senior-friendly Japan itinerary notes: lower walking, hotel location, private cars, ryokan stays, elevators, and rest stops.',
         meta: 'Senior travel / Low-walking itinerary / 2026.06.20',
         lead: 'For senior travelers, the experience is shaped less by how many sights you visit and more by walking distance, seating, hotel access, transfer complexity and backup options when the pace needs to change.',
         cardText: 'Lower-walking routes, hotel location, private car use cases, rest stops and planning checklist.',
@@ -238,8 +238,8 @@ const extraArticles = {
         ]
       },
       en: {
-        title: 'How to Plan Japan Attraction and Restaurant Reservations: Tickets, Queues, and Timing',
-        description: 'A practical guide to Japan attraction and restaurant reservations covering ticket windows, queue planning, restaurant rules, cancellation policies, language notes and itinerary timing.',
+        title: 'Japan Attraction and Restaurant Reservations Guide',
+        description: 'How to plan Japan attraction and restaurant reservations: ticket windows, queues, cancellation rules, and timing.',
         meta: 'Attraction reservations / Restaurant booking / 2026.06.20',
         lead: 'Many Japan trip problems are not about getting lost. They come from missing reservation windows, timed entry rules, restaurant policies or cancellation terms that should have been checked before the itinerary was fixed.',
         cardText: 'Ticket windows, queue planning, restaurant rules, cancellation policies and language notes.',
@@ -336,8 +336,8 @@ const articles = {
         ]
       },
       en: {
-        title: 'Tokyo to Mt. Fuji by Private Car: Route, Timing, and When It Makes Sense',
-        description: 'A practical guide to planning a Tokyo to Mt. Fuji private car day trip: route order, timing, who needs a car, public transport comparison, seasonal notes and booking checklist.',
+        title: 'Tokyo to Mt. Fuji by Private Car: Route and Timing',
+        description: 'Plan a Tokyo to Mt. Fuji private-car day: route order, timing, who needs a car, and what to book ahead.',
         meta: 'Private car / Mt. Fuji / 2026.06.20',
         lead: 'A private car is useful when you travel with seniors, children, luggage, or want to connect Lake Kawaguchiko, Oshino Hakkai, Chureito Pagoda and Gotemba in one controlled day.',
         cardText: 'Route order, stop timing, cost factors and situations where a car is genuinely useful.',
@@ -411,7 +411,7 @@ const articles = {
       },
       'zh-Hant': {
         title: '日本親子客製旅遊怎麼做路線？主題樂園、酒店和少換乘安排',
-        description: '日本親子客製旅遊路線規劃指南：主題樂園、親子酒店、包車、雨天備案、兒童友善餐廳和少換乘路線。',
+        description: '日本親子客製旅遊路線規劃：主題樂園、親子酒店、包車、雨天備案、兒童友善餐廳與少換乘安排，出發前先確認節奏。',
         meta: '親子旅行 / 日本客製旅遊 / 2026.06.20',
         lead: '親子日本旅行不能只看大人想去哪裡。真正影響體驗的是排隊時間、孩子體力、午睡、餐廳選擇、酒店距離和雨天備案。',
         cardText: '從兒童友善酒店、主題樂園預約、換乘強度和雨天備案開始規劃。',
@@ -431,7 +431,7 @@ const articles = {
         ]
       },
       en: {
-        title: 'How to Plan a Family Trip to Japan: Theme Parks, Hotels, and Easier Transfers',
+        title: 'Family Trip to Japan: Parks, Hotels, Transfers',
         description: 'A practical family Japan trip planning guide covering theme parks, child-friendly hotels, private cars, rainy-day plans, restaurants and lower-transfer routes.',
         meta: 'Family travel / Custom Japan trip / 2026.06.20',
         lead: 'A family trip to Japan should not be planned only around adult preferences. Queue time, children’s energy, hotel distance, restaurant choices and rainy-day alternatives matter just as much.',
@@ -526,8 +526,8 @@ const articles = {
         ]
       },
       en: {
-        title: 'Japan Ryokan Booking Checklist: Rooms, Meals, Private Baths, and Access',
-        description: 'A practical Japan ryokan booking checklist covering meal plans, private baths, public baths, room types, children, transfers, cancellation rules and who ryokan stays suit.',
+        title: 'Japan Ryokan Checklist: Rooms, Meals, Access',
+        description: 'Ryokan booking checklist: meals, private baths, room types, children, transfers, and cancellation rules.',
         meta: 'Ryokan / Hotel booking / 2026.06.20',
         lead: 'A ryokan is not just a hotel with a hot spring. Many disappointing stays happen because travelers did not check room type, meals, access, children’s rules and cancellation terms.',
         cardText: 'Room type, meals, private baths, access and cancellation rules to confirm before booking.',
@@ -1234,6 +1234,83 @@ function footerHtml(lang, isArticle) {
     </footer>`;
 }
 
+function travelHubUrl(lang) {
+  const dir = langConfig[lang].dir;
+  return dir ? `${site}/travel/${dir}` : `${site}/travel`;
+}
+
+function travelJsonLd(lang, slug, title, description, isArticle) {
+  const canonical = urlFor(lang, slug);
+  const image = `${site}/assets/images/travel/${slug && articles[slug] ? articles[slug].image : 'travel-hero-concierge.jpg'}`;
+  const publisher = {
+    '@type': 'Organization',
+    name: 'PROTECH株式会社',
+    url: site,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${site}/assets/images/favicon.png`,
+      width: 974,
+      height: 594
+    }
+  };
+  const labels = {
+    'zh-Hans': { home: '日本定制旅行', guides: '实用指南' },
+    'zh-Hant': { home: '日本客製旅行', guides: '實用指南' },
+    en: { home: 'Japan Travel', guides: 'Planning Guides' },
+    ja: { home: '訪日旅行', guides: '計画ガイド' }
+  }[lang];
+  const crumbs = [
+    { '@type': 'ListItem', position: 1, name: labels.home, item: travelHubUrl(lang) },
+    { '@type': 'ListItem', position: 2, name: labels.guides, item: urlFor(lang, '') }
+  ];
+  if (isArticle) {
+    crumbs.push({ '@type': 'ListItem', position: 3, name: title, item: canonical });
+  }
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs
+  };
+  let main;
+  if (isArticle) {
+    const visibleDate = ((articles[slug]?.data?.[lang]?.meta) || '').match(/20\d{2}\.\d{2}\.\d{2}/);
+    const iso = visibleDate ? visibleDate[0].replace(/\./g, '-') : lastmod;
+    main = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description,
+      image,
+      datePublished: iso,
+      dateModified: iso,
+      inLanguage: langConfig[lang].htmlLang,
+      author: publisher,
+      publisher,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonical }
+    };
+  } else {
+    main = {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: title,
+      description,
+      url: canonical,
+      inLanguage: langConfig[lang].htmlLang,
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: Object.keys(articles).map((articleSlug, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: articles[articleSlug].data[lang].title,
+          url: urlFor(lang, articleSlug)
+        }))
+      }
+    };
+  }
+  return `    <script type="application/ld+json">${JSON.stringify(main)}</script>
+    <script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`;
+}
+
 function headHtml(lang, slug, title, description, assetPrefix, isArticle) {
   const tailwind = `/assets/css/tailwind.css`;
   const css = `/assets/css/travel.css`;
@@ -1256,6 +1333,7 @@ ${alternates(slug)}
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="${tailwind}" rel="stylesheet">
     <link rel="stylesheet" href="${css}">
+${travelJsonLd(lang, slug, title, description, isArticle)}
 </head>`;
 }
 
@@ -1317,6 +1395,7 @@ function articleHtml(lang, slug) {
     </article>
     ${footerHtml(lang, true)}
     <script defer src="/assets/js/main.js"></script>
+    <script defer src="/assets/js/consult-popup.js"></script>
 </body>
 </html>
 `;
@@ -1353,6 +1432,7 @@ function hubHtml(lang) {
     </main>
     ${footerHtml(lang, false)}
     <script defer src="/assets/js/main.js"></script>
+    <script defer src="/assets/js/consult-popup.js"></script>
 </body>
 </html>
 `;
