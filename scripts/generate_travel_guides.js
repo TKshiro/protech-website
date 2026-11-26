@@ -1330,7 +1330,7 @@ ${alternates(slug)}
     <meta property="og:type" content="${isArticle ? 'article' : 'website'}">
     <meta property="og:url" content="${canonical}">
     <meta property="og:image" content="${site}/assets/images/travel/${slug && articles[slug] ? articles[slug].image : 'travel-hero-concierge.jpg'}">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?${lang === 'zh-Hant' ? 'family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;600;700' : lang === 'ja' || lang === 'en' ? 'family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700' : 'family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;600;700'}&display=swap" rel="stylesheet">
     <link href="${tailwind}" rel="stylesheet">
     <link rel="stylesheet" href="${css}">
 ${travelJsonLd(lang, slug, title, description, isArticle)}

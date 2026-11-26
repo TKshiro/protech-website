@@ -4,6 +4,26 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/blog/kol-koc-meaning-fee-2026",
+      "destination": "/blog/kol-koc-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/kol-koc-meaning-fee-2026.html",
+      "destination": "/blog/kol-koc-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-inbound-demand",
+      "destination": "/blog/inbound-meaning-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-inbound-demand.html",
+      "destination": "/blog/inbound-meaning-guide",
+      "permanent": true
+    },
+    {
       "source": "/cn/cases/cosmetics-brand",
       "destination": "/cases/cosmetics-brand",
       "permanent": true
@@ -192,6 +212,26 @@
       ],
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" }
       ]
     }
   ]

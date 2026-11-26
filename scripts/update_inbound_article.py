@@ -46,7 +46,7 @@ article_html = '''
             <p>特に注目すべきは、中国・欧米豪客の<strong>一人あたり消費額の高さ</strong>です。観光庁の調査によると、2025年の訪日外国人旅行消費額は全体で約<strong>8兆円超</strong>に達し、インバウンドは日本の輸出産業に匹敵する規模の経済効果をもたらしています。</p>
 
             <h2 id="section-4">6,000万人達成に向けたJATAの提言</h2>
-            <p>日本旅行業協会（JATA）は2026年5月、観光庁長官に対し<a href="/blog/what-is-inbound-demand" class="text-coral hover:underline font-bold">「第5次観光立国推進基本計画」</a>の目標達成に向けた要望書を提出しました。その核心は<strong>「地方誘客」と「地域周遊の促進」</strong>です。</p>
+            <p>日本旅行業協会（JATA）は2026年5月、観光庁長官に対し<a href="/blog/inbound-meaning-guide" class="text-coral hover:underline font-bold">「第5次観光立国推進基本計画」</a>の目標達成に向けた要望書を提出しました。その核心は<strong>「地方誘客」と「地域周遊の促進」</strong>です。</p>
 
             <div class="point-card">
                 <p class="mb-2 text-sm font-bold text-tech-blue">JATA提言の主要ポイント</p>
@@ -69,7 +69,7 @@ article_html = '''
             <h2 id="section-6">地方が今すぐ取るべきインバウンド集客戦略</h2>
 
             <h3>戦略1：中国SNSでの情報発信（KOL/KOC活用）</h3>
-            <p>中国市場に向けては、現地インフルエンサー（<a href="/blog/kol-koc-meaning-fee-2026" class="text-coral hover:underline font-bold">KOLやKOC</a>）を招待し、地方の自然・食・文化を小紅書や抖音で発信してもらう施策が最も即効性があります。1本のバイラル投稿が数十万人にリーチし、「行きたい場所リスト」への登録を生み出します。</p>
+            <p>中国市場に向けては、現地インフルエンサー（<a href="/blog/kol-koc-guide" class="text-coral hover:underline font-bold">KOLやKOC</a>）を招待し、地方の自然・食・文化を小紅書や抖音で発信してもらう施策が最も即効性があります。1本のバイラル投稿が数十万人にリーチし、「行きたい場所リスト」への登録を生み出します。</p>
 
             <h3>戦略2：大衆点評への店舗登録とコンテンツ最適化</h3>
             <p>訪日中国人の約80%が利用する<a href="/dianping.html" class="text-coral hover:underline font-bold">大衆点評（ダージョンディエンピン）</a>への店舗登録は、地方飲食店・観光施設にとって最も費用対効果が高い施策の一つです。写真・説明文・クーポンを中国語で整備するだけで、訪日前から予約リストに入れてもらえる可能性が大幅に高まります。</p>
