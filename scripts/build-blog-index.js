@@ -177,15 +177,15 @@ function cardHtml(item, context, extra) {
         return `<a href="${esc(tagHref(tag, qualified))}" class="inline-flex max-w-full items-center rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-bold text-slate-600 hover:border-tech-blue hover:text-tech-blue">${esc(tag.label)}</a>`;
     }).join('');
     const date = item.dateLabel
-        ? `<span class="font-mono text-[11px] text-slate-400">${esc(item.dateLabel)}</span>${item.publishedLabel ? `<span class="text-[11px] text-slate-400">${esc(item.publishedLabel)}</span>` : ''}`
-        : '<span class="text-[11px] font-bold text-slate-400">導入事例ページ</span>';
+        ? `<span class="font-mono text-[11px] text-slate-500">${esc(item.dateLabel)}</span>${item.publishedLabel ? `<span class="text-[11px] text-slate-500">${esc(item.publishedLabel)}</span>` : ''}`
+        : '<span class="text-[11px] font-bold text-slate-500">導入事例ページ</span>';
     const cta = item.kind === 'case' ? '事例ページを見る' : '続きを読む';
     return `<article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm${extra ? ' is-extra' : ''}" data-slug="${esc(item.slug)}" data-category="${esc(item.category)}" data-tags="${esc(item.tags.join(' '))}" data-search="${esc(searchText(item, context.tagBySlug))}"${context.hubCard ? ' data-hub-card' : ''}>
         <a href="${esc(item.url)}" class="block aspect-video overflow-hidden bg-slate-100">${picture(item, false)}</a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 ${date}
-                <a href="${esc(category.path)}" class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-tech-blue">${esc(category.label)}</a>
+                <a href="${esc(category.path)}" class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-tech-blue">${esc(category.label)}</a>
             </div>
             <h3 class="mb-3 text-base font-bold leading-snug text-tech-blue"><a href="${esc(item.url)}" class="hover:text-coral">${esc(item.title)}</a></h3>
             <p class="line-clamp-3 text-sm leading-relaxed text-slate-500">${esc(item.excerpt)}</p>
@@ -260,17 +260,18 @@ function pageShell({ title, description, canonical, extraHead, nav, footer, body
     <meta property="og:type" content="website">
     <meta property="og:url" content="${esc(canonical)}">
     <meta property="og:image" content="${SITE}/assets/images/favicon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/ux.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
     <style>
-        :root { --tech-blue: #001A33; --coral: #E86B7A; }
+        :root { --tech-blue: #001A33; --coral: #B4495A; }
         html, body { max-width: 100%; overflow-x: hidden; }
         body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; }
         .serif { font-family: 'Noto Serif JP', serif; }
         .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); }
-        .btn-coral { background-color: #E86B7A !important; color: white !important; }
+        .btn-coral { background-color: #B4495A !important; color: white !important; }
         .nav-link { transition: color 0.2s; }
-        .nav-link:hover { color: #E86B7A !important; }
+        .nav-link:hover { color: #B4495A !important; }
         .hamburger line { transition: all 0.3s ease; transform-origin: center; }
         .hamburger.active #line1 { transform: translateY(7px) rotate(45deg); }
         .hamburger.active #line2 { opacity: 0; }
@@ -281,15 +282,13 @@ function pageShell({ title, description, canonical, extraHead, nav, footer, body
         #category-tabs::-webkit-scrollbar { display: none; }
         .category-tab.is-active, .tag-pill.is-active { background: #001A33; color: #fff; border-color: #001A33; }
     </style>
-    <script>
-        tailwind.config = { theme: { extend: { colors: { 'tech-blue': '#001A33', coral: '#E86B7A' } } } };
-    </script>
 </head>
 <body class="bg-white text-slate-900">
 ${nav}
 ${body}
 ${footer}
 <script defer src="/assets/js/blog-taxonomy.js"></script>
+<script defer src="/assets/js/ux.js"></script>
 <script defer src="/assets/js/consult-popup.js"></script>
 </body>
 </html>
@@ -323,13 +322,13 @@ function renderBlog(context, chrome) {
         .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'ja'))
         .slice(0, 10);
 
-    const tabs = [`<a href="/blog" data-category="all" class="category-tab shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-3 py-2 text-xs font-bold text-slate-600">すべて <span class="ml-1 text-[10px] opacity-70">${items.length}</span></a>`]
+    const tabs = [`<a href="/blog" role="tab" aria-selected="true" data-category="all" class="category-tab shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-3 py-2 text-xs font-bold text-slate-600">すべて <span class="ml-1 text-xs opacity-70">${items.length}</span></a>`]
         .concat(categories.map((category) => {
             const count = context.categoryCounts[category.id] || 0;
-            return `<a href="/blog?category=${esc(category.id)}" data-category="${esc(category.id)}" class="category-tab shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-3 py-2 text-xs font-bold text-slate-600">${esc(category.label)} <span class="ml-1 text-[10px] opacity-70">${count}</span></a>`;
+            return `<a href="/blog?category=${esc(category.id)}" role="tab" aria-selected="false" data-category="${esc(category.id)}" class="category-tab shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-3 py-2 text-xs font-bold text-slate-600">${esc(category.label)} <span class="ml-1 text-xs opacity-70">${count}</span></a>`;
         })).join('');
 
-    const pills = hotTags.map((tag) => `<a href="/blog?tag=${esc(encodeURIComponent(tag.slug))}" data-filter-tag="${esc(tag.slug)}" class="tag-pill inline-flex max-w-full items-center rounded-full border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-600">${esc(tag.label)} <span class="ml-1 text-[10px] opacity-70">${tag.count}</span></a>`).join('');
+    const pills = hotTags.map((tag) => `<a href="/blog?tag=${esc(encodeURIComponent(tag.slug))}" data-filter-tag="${esc(tag.slug)}" class="tag-pill inline-flex max-w-full items-center rounded-full border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-600">${esc(tag.label)} <span class="ml-1 text-xs opacity-70">${tag.count}</span></a>`).join('');
 
     const drawer = data.tagGroups.map((group) => {
         const links = group.tags
@@ -338,16 +337,16 @@ function renderBlog(context, chrome) {
             .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'ja'))
             .map((tag) => {
                 const qualified = tag.count >= data.hubThreshold;
-                const hub = qualified ? `<a href="/blog/tag/${esc(tag.slug)}" class="text-[11px] font-bold text-blue-700 underline">一覧ページ</a>` : '';
-                return `<li class="flex min-w-0 flex-wrap items-center gap-2"><a href="/blog?tag=${esc(encodeURIComponent(tag.slug))}" data-filter-tag="${esc(tag.slug)}" class="tag-pill inline-flex rounded-full border border-slate-200 px-3 py-1 text-xs font-bold text-slate-700">${esc(tag.label)} <span class="ml-1 text-[10px] opacity-70">${tag.count}</span></a>${hub}</li>`;
+                const hub = qualified ? `<a href="/blog/tag/${esc(tag.slug)}" class="text-xs font-bold text-blue-700 underline">一覧ページ</a>` : '';
+                return `<li class="flex min-w-0 flex-wrap items-center gap-2"><a href="/blog?tag=${esc(encodeURIComponent(tag.slug))}" data-filter-tag="${esc(tag.slug)}" class="tag-pill inline-flex rounded-full border border-slate-200 px-3 py-1 text-xs font-bold text-slate-700">${esc(tag.label)} <span class="ml-1 text-xs opacity-70">${tag.count}</span></a>${hub}</li>`;
             }).join('');
-        return `<section class="min-w-0"><h3 class="mb-3 text-xs font-bold tracking-wide text-slate-400">${esc(group.label)}</h3><ul class="flex flex-col gap-2">${links}</ul></section>`;
+        return `<section class="min-w-0"><h3 class="mb-3 text-xs font-bold tracking-wide text-slate-500">${esc(group.label)}</h3><ul class="flex flex-col gap-2">${links}</ul></section>`;
     }).join('');
 
     const spotlight = spotlightItems.map((item, index) => `<a href="${esc(item.url)}" class="block w-[85%] shrink-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm md:w-auto md:min-w-0">
         <div class="aspect-video overflow-hidden bg-slate-100">${picture(item, index === 0)}</div>
         <div class="p-4">
-            ${item.spotlightLabel ? `<p class="mb-2 text-[10px] font-bold tracking-wide text-coral">${esc(item.spotlightLabel)}</p>` : ''}
+            ${item.spotlightLabel ? `<p class="mb-2 text-xs font-bold tracking-wide text-coral">${esc(item.spotlightLabel)}</p>` : ''}
             <h3 class="text-sm font-bold leading-snug text-tech-blue">${esc(item.title)}</h3>
         </div>
     </a>`).join('');
@@ -373,7 +372,7 @@ ${jsonLd(breadcrumb([
 
     const body = `<main class="mx-auto min-w-0 max-w-6xl px-4 pb-20 pt-28 sm:px-6 md:pt-36">
         <header class="mb-8 border-b border-slate-100 pb-8">
-            <p class="mb-3 text-[10px] font-bold tracking-[0.2em] text-tech-blue">BLOG</p>
+            <p class="mb-3 text-xs font-bold tracking-[0.2em] text-tech-blue">BLOG</p>
             <h1 class="serif mb-4 text-3xl font-bold text-tech-blue md:text-5xl">ブログ</h1>
             <p class="max-w-3xl text-sm leading-relaxed text-slate-500">プラットフォーム運用、季節の旅行ガイド、集客ノウハウと費用、市場データ、導入事例から探せます。キーワード検索とタグは、このページの中で記事を絞り込みます。</p>
         </header>
@@ -388,7 +387,7 @@ ${jsonLd(breadcrumb([
             <div class="flex min-w-0 gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible">${spotlight}</div>
         </section>
         <div class="sticky top-16 z-30 -mx-4 mb-6 border-b border-slate-100 bg-white/95 px-4 py-3 backdrop-blur md:top-20">
-            <div id="category-tabs" class="flex max-w-full gap-2 overflow-x-auto" role="navigation" aria-label="カテゴリ">${tabs}</div>
+            <div id="category-tabs" class="flex max-w-full gap-2 overflow-x-auto" role="tablist" aria-label="カテゴリ">${tabs}</div>
         </div>
         <form class="mb-5 min-w-0" role="search" onsubmit="return false">
             <label for="blog-search" class="mb-2 block text-xs font-bold text-slate-500">キーワード検索</label>
@@ -399,7 +398,7 @@ ${jsonLd(breadcrumb([
         <div id="tag-drawer" hidden class="mb-8 rounded-2xl border border-slate-100 bg-slate-50 p-4 sm:p-6">
             <div class="grid min-w-0 gap-6 md:grid-cols-2">${drawer}</div>
         </div>
-        <p id="blog-summary" class="mb-4 text-xs font-bold text-slate-400"></p>
+        <p id="blog-summary" class="mb-4 text-xs font-bold text-slate-500"></p>
         <p id="blog-empty" hidden class="mb-6 rounded-xl bg-slate-50 px-4 py-6 text-sm text-slate-500">該当する記事がありません。カテゴリかタグの条件を変えて探してください。</p>
         <div id="blog-grid" class="grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">${cards}</div>
         <div class="mt-8 text-center"><button id="blog-more" type="button" class="btn-coral rounded-full px-6 py-3 text-sm font-bold">もっと見る</button></div>
@@ -426,7 +425,7 @@ function renderHub(page, items, context, chrome) {
         return current
             ? `<span class="font-bold text-tech-blue" aria-current="page">${esc(category.label)}</span>`
             : `<a href="${esc(category.path)}" class="text-slate-500 hover:text-coral">${esc(category.label)}</a>`;
-    }).join('<span class="text-slate-300" aria-hidden="true"> / </span>');
+    }).join('<span class="text-slate-500" aria-hidden="true"> / </span>');
     const crumbs = [
         { name: 'ホーム', item: `${SITE}/` },
         { name: 'ブログ', item: `${SITE}/blog` },
@@ -434,7 +433,7 @@ function renderHub(page, items, context, chrome) {
     ];
     const visibleCrumbs = crumbs.map((crumb, index) => index === crumbs.length - 1
         ? `<span class="text-slate-700" aria-current="page">${esc(crumb.name)}</span>`
-        : `<a href="${esc(crumb.item.replace(SITE, '') || '/')}" class="text-blue-700">${esc(crumb.name)}</a>`).join('<span class="px-1 text-slate-300" aria-hidden="true">/</span>');
+        : `<a href="${esc(crumb.item.replace(SITE, '') || '/')}" class="text-blue-700">${esc(crumb.name)}</a>`).join('<span class="px-1 text-slate-500" aria-hidden="true">/</span>');
     const extraHead = `<script type="application/ld+json">
 ${jsonLd(collectionPage(page.title, page.description, `${SITE}${page.path}`, sorted))}
     </script>
@@ -444,10 +443,10 @@ ${jsonLd(breadcrumb(crumbs))}
     const body = `<main class="mx-auto min-w-0 max-w-6xl px-4 pb-20 pt-28 sm:px-6 md:pt-36">
         <nav class="mb-6 flex flex-wrap gap-1 text-xs" aria-label="パンくず">${visibleCrumbs}</nav>
         <header class="mb-8 border-b border-slate-100 pb-8">
-            <p class="mb-3 text-[10px] font-bold tracking-[0.2em] text-tech-blue">${esc(page.kicker)}</p>
+            <p class="mb-3 text-xs font-bold tracking-[0.2em] text-tech-blue">${esc(page.kicker)}</p>
             <h1 class="serif mb-4 text-3xl font-bold leading-tight text-tech-blue md:text-4xl">${esc(page.h1)}</h1>
             <p class="max-w-3xl text-sm leading-relaxed text-slate-500">${esc(page.intro)}</p>
-            <p class="mt-4 text-xs font-bold text-slate-400">${sorted.length}件</p>
+            <p class="mt-4 text-xs font-bold text-slate-500">${sorted.length}件</p>
         </header>
         <div class="mb-8 flex min-w-0 flex-wrap gap-x-3 gap-y-2 text-xs">${categoryLinks}</div>
         <div class="grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">${cards}</div>

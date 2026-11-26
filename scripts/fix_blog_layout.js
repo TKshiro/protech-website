@@ -16,7 +16,7 @@ if (heroStart !== -1 && heroEnd !== -1) {
     <div class="pt-24 md:pt-32 pb-0 bg-gradient-to-b from-slate-50 to-white">
         <div class="max-w-3xl mx-auto px-6 md:px-8">
             <!-- Breadcrumb -->
-            <nav class="text-xs text-gray-400 mb-6 flex items-center gap-2" data-aos="fade-up">
+            <nav class="text-xs text-slate-500 mb-6 flex items-center gap-2" data-aos="fade-up">
                 <a href="/" class="hover:text-coral transition">トップ</a>
                 <span>›</span>
                 <a href="/blog" class="hover:text-coral transition">ブログ</a>
@@ -26,8 +26,8 @@ if (heroStart !== -1 && heroEnd !== -1) {
 
             <!-- Category + Date -->
             <div class="flex items-center gap-3 mb-5" data-aos="fade-up">
-                <span class="text-[10px] font-bold bg-coral/10 text-coral px-3 py-1 rounded-full tracking-widest uppercase">DX・AI</span>
-                <span class="text-xs text-gray-400">2026.04.29</span>
+                <span class="text-xs font-bold bg-coral/10 text-coral px-3 py-1 rounded-full tracking-widest uppercase">DX・AI</span>
+                <span class="text-xs text-slate-500">2026.04.29</span>
             </div>
 
             <!-- Title -->

@@ -27,11 +27,12 @@
     <link href="/assets/css/tailwind.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
 
     <style>
-        :root { --tech-blue: #001A33; --coral: #E86B7A; }
+        :root { --tech-blue: #001A33; --coral: #B4495A; }
         body { font-family: 'Inter', sans-serif; font-size: 15px; -webkit-font-smoothing: antialiased; }
         .glass-nav { background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.06); }
         .nav-link { position: relative; padding-bottom: 2px; }
@@ -47,7 +48,7 @@
         .article-body ul li::before { content: '▸'; position: absolute; left: 0; color: var(--coral); font-size: 0.8rem; top: 0.45rem; }
         .article-body strong { color: var(--tech-blue); font-weight: 700; }
         .kpi-card { background: linear-gradient(135deg, #fff5f6 0%, #fff 100%); border: 1px solid #fce7ea; border-radius: 1rem; padding: 1.5rem; text-align: center; }
-        .tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 999px; letter-spacing: .08em; text-transform: uppercase; }
+        .tag { display: inline-block; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; letter-spacing: .08em; text-transform: uppercase; }
     </style>
 <script type="application/ld+json">
 {
@@ -105,6 +106,7 @@
   ]
 }
 </script>
+    <link rel="stylesheet" href="/assets/css/ux.css">
 </head>
 <body class="bg-white text-slate-900">
 
@@ -153,7 +155,7 @@
         <p class="text-gray-500 text-sm leading-relaxed mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
             Huadiao Zuiji Guo, an authentic Chinese hotpot restaurant newly opened in Tokyo's Ueno and Roppongi areas. Despite bringing a popular Chinese cuisine concept to Japan, the challenge was building awareness among Chinese tourists visiting Japan. PROTECH designed and executed an inbound marketing strategy centered on Xiaohongshu (RED), achieving daily full bookings from the very first month.
         </p>
-        <div class="flex flex-wrap items-center gap-6 text-xs text-gray-400" data-aos="fade-up" data-aos-delay="150">
+        <div class="flex flex-wrap items-center gap-6 text-xs text-slate-500" data-aos="fade-up" data-aos-delay="150">
             <span>Industry: Chinese Restaurant (Hotpot)</span>
             <span>Scale: 2 Stores (Ueno & Roppongi)</span>
             <span>Support Period: October 2024–</span>
@@ -165,29 +167,29 @@
     <div class="rounded-2xl overflow-hidden shadow-lg h-72 md:h-96 bg-slate-100">
         <img src="/assets/images/case-restaurant.jpg" alt="huadiao-zuiji-guo" class="w-full h-full object-cover">
     </div>
-    <p class="text-xs text-gray-400 mt-2 text-center">※ Stock image</p>
+    <p class="text-xs text-slate-500 mt-2 text-center">※ Stock image</p>
 </div>
 
 <!-- KPI BAND -->
 <section class="py-12 bg-slate-50 border-y border-gray-100 mb-16">
     <div class="max-w-4xl mx-auto px-6">
-        <p class="text-center text-[10px] font-bold tracking-[0.3em] uppercase text-coral mb-8">Results</p>
+        <p class="text-center text-xs font-bold tracking-[0.3em] uppercase text-coral mb-8">Results</p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="kpi-card">
                 <p class="text-3xl font-black text-coral">Month 1</p>
-                <p class="text-xs text-gray-400 mt-1 leading-tight">Daily Full<br>Bookings</p>
+                <p class="text-xs text-slate-500 mt-1 leading-tight">Daily Full<br>Bookings</p>
             </div>
             <div class="kpi-card">
                 <p class="text-3xl font-black text-coral">2.4×</p>
-                <p class="text-xs text-gray-400 mt-1 leading-tight">Chinese Visitors<br>(After 3 Months)</p>
+                <p class="text-xs text-slate-500 mt-1 leading-tight">Chinese Visitors<br>(After 3 Months)</p>
             </div>
             <div class="kpi-card">
                 <p class="text-3xl font-black text-coral">150K+</p>
-                <p class="text-xs text-gray-400 mt-1 leading-tight">Xiaohongshu<br>Impressions</p>
+                <p class="text-xs text-slate-500 mt-1 leading-tight">Xiaohongshu<br>Impressions</p>
             </div>
             <div class="kpi-card">
                 <p class="text-3xl font-black text-coral">ROI<br><span class="text-xl">320%</span></p>
-                <p class="text-xs text-gray-400 mt-1 leading-tight">Marketing<br>ROI</p>
+                <p class="text-xs text-slate-500 mt-1 leading-tight">Marketing<br>ROI</p>
             </div>
         </div>
     </div>
@@ -255,7 +257,7 @@
 <section class="py-20 bg-tech-blue px-6 relative overflow-hidden">
     <div class="absolute top-0 left-0 w-96 h-96 bg-coral/10 rounded-full blur-[120px]"></div>
     <div class="max-w-3xl mx-auto text-center relative z-10">
-        <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Contact</p>
+        <p class="text-coral text-xs font-bold tracking-[0.3em] uppercase mb-4">Contact</p>
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Want to achieve similar results for your business?</h2>
         <p class="text-white/50 text-sm mb-10 leading-relaxed">For a free consultation about inbound marketing<br class="hidden md:block">using Xiaohongshu and Dianping, contact us today.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -269,16 +271,17 @@
 <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
     <div class="max-w-7xl mx-auto">
         <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+            <p class="text-xs text-white/60">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </div>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 <script>
-    AOS.init({ duration: 800, once: true });
+    (window.protechInitAos||(window.protechInitAos=function(o){var run=function(){if(window.AOS)AOS.init(o)};if(window.AOS)run();else document.addEventListener("DOMContentLoaded",run)}))({ duration: 800, once: true });
 </script>
 <script defer src="/assets/js/main.js"></script>
 <script defer src="/assets/js/consult-popup.js"></script>
+    <script defer src="/assets/js/ux.js"></script>
 </body>
 </html>

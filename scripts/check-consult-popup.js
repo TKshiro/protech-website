@@ -2,7 +2,8 @@
 /**
  * DOM check for the consultation card.
  * The page script is loaded as-is. setTimeout is observed so the test can
- * confirm the delay is 10000ms, then run that callback and inspect the card.
+ * confirm the dwell is 30000ms, then run that callback and inspect the card.
+ * Scroll at 50% must also reveal the card. Dismissal is stored in localStorage.
  */
 
 const { spawn } = require('child_process');
@@ -162,8 +163,8 @@ async function state(client) {
 }
 
 function assertCard(info, href, label, closeWord) {
-  if (!info.scheduled.includes(10000)) throw new Error('timer was not 10000ms: ' + JSON.stringify(info.scheduled));
-  if (info.scheduled.some((ms) => ms !== 10000)) throw new Error('unexpected timer ' + JSON.stringify(info.scheduled));
+  if (!info.scheduled.includes(30000)) throw new Error('timer was not 30000ms: ' + JSON.stringify(info.scheduled));
+  if (info.scheduled.includes(10000)) throw new Error('old 10s timer still present ' + JSON.stringify(info.scheduled));
   if (!info.present) throw new Error('card missing for ' + label);
   if (info.href !== href) throw new Error(label + ' href ' + info.href);
   if (!info.text.includes(label)) throw new Error(label + ' copy ' + info.text);
@@ -171,6 +172,7 @@ function assertCard(info, href, label, closeWord) {
   if (info.role !== 'complementary') throw new Error('card role ' + info.role);
   if (info.position !== 'fixed') throw new Error('card position ' + info.position);
   if (info.height > info.viewportHeight * 0.45) throw new Error(label + ' card is too tall ' + info.height);
+  if (info.viewportWidth <= 420 && info.height > 72) throw new Error(label + ' mobile card exceeds 72px ' + info.height);
   if (info.width > info.viewportWidth - 8) throw new Error(label + ' card spans the viewport');
 }
 
@@ -195,36 +197,63 @@ function assertCard(info, href, label, closeWord) {
     await openPage(client, '/blog/sample');
     const before = await state(client);
     if (before.present) throw new Error('card rendered before the timer callback');
-    if (!before.scheduled.includes(10000)) throw new Error('JA page did not schedule 10000ms');
-    await evaluate(client, 'window.__scheduled.find((item) => item.ms === 10000).fn()');
+    if (!before.scheduled.includes(30000)) throw new Error('JA page did not schedule 30000ms');
+    await evaluate(client, 'window.__scheduled.find((item) => item.ms === 30000).fn()');
+    await sleep(40);
     assertCard(await state(client), '/contact', '無料相談する', '閉じる');
 
     await evaluate(client, `document.querySelector('#protech-consult button').click()`);
-    const dismissed = await evaluate(client, `({
-      gone: document.getElementById('protech-consult') === null,
-      stored: sessionStorage.getItem('protechConsultDismissed')
-    })`);
-    if (!dismissed.gone || dismissed.stored !== '1') throw new Error('dismiss failed ' + JSON.stringify(dismissed));
+    let gone = false;
+    for (let i = 0; i < 20 && !gone; i++) {
+      gone = await evaluate(client, `document.getElementById('protech-consult') === null`);
+      if (!gone) await sleep(40);
+    }
+    const dismissed = await evaluate(client, `(() => {
+      const until = Number(localStorage.getItem('protechConsultCooldown') || 0);
+      return {
+        gone: document.getElementById('protech-consult') === null,
+        days: (until - Date.now()) / 86400000,
+        session: sessionStorage.getItem('protechConsultDismissed')
+      };
+    })()`);
+    if (!dismissed.gone || dismissed.days < 6 || dismissed.days > 8 || dismissed.session) {
+      throw new Error('dismiss failed ' + JSON.stringify(dismissed));
+    }
 
     await openPage(client, '/blog/sample');
     const again = await state(client);
     if (again.present || again.scheduled.length) throw new Error('card was scheduled again after dismiss ' + JSON.stringify(again));
 
-    await evaluate(client, `sessionStorage.removeItem('protechConsultDismissed')`);
+    await evaluate(client, `localStorage.removeItem('protechConsultCooldown')`);
+    await openPage(client, '/blog/sample');
+    await evaluate(client, `document.documentElement.scrollTop = document.documentElement.scrollHeight; document.body.scrollTop = document.body.scrollHeight; window.dispatchEvent(new Event('scroll'));`);
+    const scrolled = await state(client);
+    if (!scrolled.present) throw new Error('card did not open after 50% scroll ' + JSON.stringify(scrolled));
+    await evaluate(client, `localStorage.removeItem('protechConsultCooldown')`);
+
     await client.send('Emulation.setDeviceMetricsOverride', {
       width: 390, height: 844, deviceScaleFactor: 2, mobile: true
     });
 
     await openPage(client, '/en/blog/sample');
-    await evaluate(client, 'window.__scheduled.find((item) => item.ms === 10000).fn()');
+    await evaluate(client, 'window.__scheduled.find((item) => item.ms === 30000).fn()');
+    await sleep(40);
     assertCard(await state(client), '/en/contact', 'Free Consultation', 'Close');
+    const ctaDays = await evaluate(client, `(() => {
+      const link = document.querySelector('#protech-consult a');
+      link.addEventListener('click', (event) => event.preventDefault());
+      link.click();
+      return (Number(localStorage.getItem('protechConsultCooldown') || 0) - Date.now()) / 86400000;
+    })()`);
+    if (ctaDays < 29 || ctaDays > 31) throw new Error('CTA cooldown days ' + ctaDays);
+    await evaluate(client, `localStorage.removeItem('protechConsultCooldown')`);
 
     await openPage(client, '/cn/blog/sample');
-    await evaluate(client, 'window.__scheduled.find((item) => item.ms === 10000).fn()');
+    await evaluate(client, 'window.__scheduled.find((item) => item.ms === 30000).fn()');
     assertCard(await state(client), '/cn/contact', '免费咨询', '关闭');
 
     await openPage(client, '/travel/zh-tw/itinerary/sample');
-    await evaluate(client, 'window.__scheduled.find((item) => item.ms === 10000).fn()');
+    await evaluate(client, 'window.__scheduled.find((item) => item.ms === 30000).fn()');
     assertCard(await state(client), '/cn/contact', '免費諮詢', '關閉');
 
     for (const blocked of ['/contact', '/en/contact', '/cn/contact', '/admin', '/blog-post', '/']) {

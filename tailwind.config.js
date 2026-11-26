@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       colors: {
         'tech-blue': '#001A33',
-        'coral': '#E86B7A',
+        'coral': '#B4495A',
+        'red-brand': '#C8102E',
       }
     },
   },

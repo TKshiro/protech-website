@@ -33,10 +33,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
     
     <style>
-        :root { --tech-blue: #001A33; --coral: #E86B7A; }
+        :root { --tech-blue: #001A33; --coral: #B4495A; }
         body { font-family: 'Noto Sans JP', sans-serif; font-size: 15px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
         .glass-nav { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); }
         .nav-link { transition: color 0.2s; }
@@ -47,7 +48,7 @@
         .hamburger.active #line1 { transform: translateY(7px) rotate(45deg); }
         .hamburger.active #line2 { opacity: 0; }
         .hamburger.active #line3 { transform: translateY(-7px) rotate(-45deg); }
-        .article-body h2 { font-size: 1.4rem; font-weight: 700; color: var(--tech-blue); margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E86B7A; }
+        .article-body h2 { font-size: 1.4rem; font-weight: 700; color: var(--tech-blue); margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #B4495A; }
         .article-body h3 { font-size: 1.1rem; font-weight: 700; color: var(--tech-blue); margin-top: 1.8rem; margin-bottom: 0.6rem; }
         .article-body p { color: #475569; line-height: 2; margin-bottom: 1.4rem; }
         .article-body ul, .article-body ol { color: #475569; line-height: 2; margin-bottom: 1.4rem; padding-left: 1.5rem; list-style: disc; }
@@ -116,6 +117,7 @@
   "dateModified": "2026-04-01"
 }
 </script>
+    <link rel="stylesheet" href="/assets/css/ux.css">
 </head>
 <body class="bg-white text-slate-900">
 
@@ -136,8 +138,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -160,7 +162,7 @@
                         🌐 JA
                     </button>
                     <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
-                        <a href="https://pro-tech.jp/blog/kol-koc-guide" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="https://pro-tech.jp/blog/kol-koc-guide" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
                         
                         
                     </div>
@@ -181,8 +183,8 @@
             <a href="/" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">サービス</a>
-                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ制作</a>
@@ -206,7 +208,7 @@
     <!-- HERO -->
     <div class="pt-24 md:pt-32 pb-0 bg-gradient-to-b from-slate-50 to-white">
         <div class="max-w-3xl mx-auto px-6 md:px-8">
-            <nav class="text-xs text-gray-400 mb-6 flex items-center gap-2" data-aos="fade-up">
+            <nav class="text-xs text-slate-500 mb-6 flex items-center gap-2" data-aos="fade-up">
                 <a href="/" class="hover:text-coral transition">トップ</a>
                 <span>›</span>
                 <a href="/blog" class="hover:text-coral transition">ブログ</a>
@@ -214,8 +216,8 @@
                 <span class="text-gray-600">KOL・KOCガイド</span>
             </nav>
             <div class="flex items-center gap-3 mb-5" data-aos="fade-up">
-                <span class="text-[10px] font-bold bg-purple-50 text-purple-500 px-3 py-1 rounded-full tracking-widest uppercase">マーケティング</span>
-                <span class="text-xs text-gray-400">2026.04.01</span>
+                <span class="text-xs font-bold bg-purple-50 text-purple-500 px-3 py-1 rounded-full tracking-widest uppercase">マーケティング</span>
+                <span class="text-xs text-slate-500">2026.04.01</span>
             </div>
             <h1 class="font-bold text-tech-blue leading-tight mb-8 text-3xl md:text-4xl">
                 KOCとは？KOLとの違いと選び方【2026年】
@@ -307,14 +309,14 @@
             </div>
 
             <div class="mt-12 pt-8 border-t border-gray-100 flex items-center gap-6">
-                <span class="text-xs font-bold text-gray-400 tracking-widest uppercase">Share</span>
-                <a id="x-share" href="#" target="_blank" class="text-gray-400 hover:text-slate-700 transition">
+                <span class="text-xs font-bold text-slate-500 tracking-widest uppercase">Share</span>
+                <a id="x-share" href="#" target="_blank" class="text-slate-500 hover:text-slate-700 transition">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
-                <a id="fb-share" href="#" target="_blank" class="text-gray-400 hover:text-blue-600 transition">
+                <a id="fb-share" href="#" target="_blank" class="text-slate-500 hover:text-blue-600 transition">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
-                <a id="line-share" href="#" target="_blank" class="text-gray-400 hover:text-green-500 transition">
+                <a id="line-share" href="#" target="_blank" class="text-slate-500 hover:text-green-500 transition">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.51 2 9.83c0 2.45 1.45 4.62 3.73 6.02-.19.68-.69 2.46-.79 2.83-.16.58.19.57.4.43.16-.11 2.58-1.75 3.63-2.47.33.05.67.07 1.03.07 5.52 0 10-3.51 10-7.83S17.52 2 12 2z"/></svg>
                 </a>
             </div>
@@ -353,11 +355,11 @@
     </div>
 
     <div class="max-w-3xl mx-auto px-8 pb-20 flex justify-between items-center border-t border-gray-100 pt-8">
-        <a href="/blog" class="flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-coral transition tracking-widest uppercase">
+        <a href="/blog" class="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-coral transition tracking-widest uppercase">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
             ブログ一覧へ
         </a>
-        <a href="/blog/agency-checklist" class="flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-coral transition tracking-widest uppercase">
+        <a href="/blog/agency-checklist" class="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-coral transition tracking-widest uppercase">
             次の記事
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </a>
@@ -388,7 +390,7 @@
                     <img src="../assets/images/blog-sns-strategy-2026.jpg" alt="SNS戦略2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1200" height="669" loading="lazy" decoding="async">
                 </div>
                 <div class="p-6">
-                    <div class="mb-3"><span class="text-[10px] font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded tracking-widest uppercase">マーケティング</span></div>
+                    <div class="mb-3"><span class="text-xs font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded tracking-widest uppercase">マーケティング</span></div>
                     <h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">中国人観光客を集客するSNS戦略2026年版</h4>
                 </div>
             </a>
@@ -397,7 +399,7 @@
                     <img src="../assets/images/blog-miniprogram-cost.jpg" alt="ミニプログラム開発" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1200" height="669" loading="lazy" decoding="async">
                 </div>
                 <div class="p-6">
-                    <div class="mb-3"><span class="text-[10px] font-bold bg-green-50 text-green-600 px-2 py-1 rounded tracking-widest uppercase">開発・費用</span></div>
+                    <div class="mb-3"><span class="text-xs font-bold bg-green-50 text-green-600 px-2 py-1 rounded tracking-widest uppercase">開発・費用</span></div>
                     <h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">WeChat小程序（ミニプログラム）開発の費用と期間の目安</h4>
                 </div>
             </a>
@@ -406,7 +408,7 @@
                     <img src="../assets/images/dazhong-dianping-inbound.jpg" alt="大衆点評ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='../assets/images/case-tourism.jpg'" width="1200" height="654" loading="lazy" decoding="async">
                 </div>
                 <div class="p-6">
-                    <div class="mb-3"><span class="text-[10px] font-bold bg-purple-50 text-purple-500 px-2 py-1 rounded tracking-widest uppercase">マーケティング</span></div>
+                    <div class="mb-3"><span class="text-xs font-bold bg-purple-50 text-purple-500 px-2 py-1 rounded tracking-widest uppercase">マーケティング</span></div>
                     <h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">大衆点評とは？簡単な使い方とインバウンド集客活用法</h4>
                 </div>
             </a>
@@ -419,11 +421,11 @@
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                    <p class="text-white/60 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
                         <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
@@ -436,7 +438,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
@@ -447,7 +449,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
@@ -457,14 +459,14 @@
             </div>
         </div>
         <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+            <p class="text-xs text-white/60">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            AOS.init({ duration: 800, once: true });
+            (window.protechInitAos||(window.protechInitAos=function(o){var run=function(){if(window.AOS)AOS.init(o)};if(window.AOS)run();else document.addEventListener("DOMContentLoaded",run)}))({ duration: 800, once: true });
             const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             if (menuBtn && mobileMenu) {
@@ -489,5 +491,6 @@
         });
     </script>
 <script defer src="/assets/js/consult-popup.js"></script>
+    <script defer src="/assets/js/ux.js"></script>
 </body>
 </html>

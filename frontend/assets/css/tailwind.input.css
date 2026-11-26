@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@source "../../";
+@theme {
+  --color-tech-blue: #001a33;
+  --color-coral: #b4495a;
+  --color-red-brand: #c8102e;
+}
