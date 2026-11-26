@@ -314,49 +314,30 @@
 
         async function login(username, password) {
             const passwordHash = await sha256(password || '');
-            
-            // If online, authenticate using the API
-            if (!isLocalHostname()) {
-                try {
-                    const res = await fetch('/api/contacts', {
-                        headers: {
-                            'Authorization': `Bearer ${passwordHash}`
-                        }
-                    });
-                    if (res.ok) {
-                        const userData = { username, token: passwordHash };
-                        sessionStorage.setItem(AUTH_KEY, JSON.stringify(userData));
-                        state.user = userData;
-                        await syncContacts();
-                        render();
-                        return true;
-                    } else {
-                        if (res.status === 401) {
-                            return false;
-                        }
-                        const errData = await res.json().catch(() => ({}));
-                        throw new Error(errData.error || `サーバーエラー (HTTP ${res.status})。Vercel 后台的环境变量可能配置有误，请确认 SPREADSHEET_ID 和 GOOGLE_SERVICE_ACCOUNT 已正确设置。`);
+
+            try {
+                const res = await fetch('/api/contacts', {
+                    headers: {
+                        'Authorization': `Bearer ${passwordHash}`
                     }
-                } catch (err) {
-                    console.error('API login failed:', err);
-                    throw err;
+                });
+                if (res.ok) {
+                    const userData = { username, token: passwordHash };
+                    sessionStorage.setItem(AUTH_KEY, JSON.stringify(userData));
+                    state.user = userData;
+                    await syncContacts();
+                    render();
+                    return true;
                 }
+                if (res.status === 401) {
+                    return false;
+                }
+                const errData = await res.json().catch(() => ({}));
+                throw new Error(errData.error || `サーバーエラー (HTTP ${res.status})。Vercel の環境変数 ADMIN_PASSWORD、SPREADSHEET_ID、GOOGLE_SERVICE_ACCOUNT を確認してください。`);
+            } catch (err) {
+                console.error('API login failed:', err);
+                throw err;
             }
-
-            // Local fallback
-            const expectedHash = localStorage.getItem(PASSWORD_HASH_KEY);
-            const isDefaultCreds = username === VALID_USER && password === 'protechadmin2026';
-            const isLocalMatch = expectedHash && username === VALID_USER && passwordHash === expectedHash;
-
-            if (isDefaultCreds || isLocalMatch) {
-                const userData = { username, token: passwordHash };
-                sessionStorage.setItem(AUTH_KEY, JSON.stringify(userData));
-                state.user = userData;
-                await syncContacts();
-                render();
-                return true;
-            }
-            return false;
         }
 
         function logout() {
