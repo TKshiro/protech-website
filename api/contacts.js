@@ -1,5 +1,5 @@
-const { google } = require('googleapis');
 const crypto = require('crypto');
+const { validateContactPayload } = require('./contact-validation');
 
 module.exports = async (req, res) => {
   // Enable CORS
@@ -13,6 +13,27 @@ module.exports = async (req, res) => {
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
+  }
+
+  // Reject blank or incomplete contact posts before any spreadsheet access.
+  let validatedContact = null;
+  if (req.method === 'POST') {
+    let payload = req.body;
+    if (typeof payload === 'string') {
+      try {
+        payload = payload ? JSON.parse(payload) : {};
+      } catch (err) {
+        return res.status(400).json({
+          error: 'Request body must be valid JSON.',
+          fields: { body: 'Invalid JSON.' }
+        });
+      }
+    }
+    const validation = validateContactPayload(payload);
+    if (!validation.ok) {
+      return res.status(400).json({ error: validation.error, fields: validation.fields });
+    }
+    validatedContact = validation.value;
   }
 
   const spreadsheetId = process.env.SPREADSHEET_ID;
@@ -76,6 +97,7 @@ module.exports = async (req, res) => {
     });
   }
 
+  const { google } = require('googleapis');
   const auth = new google.auth.GoogleAuth({
     credentials,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
@@ -98,7 +120,7 @@ module.exports = async (req, res) => {
   try {
     // 2. POST Handler: Append a new inquiry
     if (req.method === 'POST') {
-      const { id, date, inquiry_type, name, company, email, phone, budget, referral_source, message, status, travel } = req.body;
+      const { id, date, inquiry_type, name, company, email, phone, budget, referral_source, message, status, travel } = validatedContact;
 
       // Check if Sheet exists and is blank. If so, write headers first.
       let currentRows;

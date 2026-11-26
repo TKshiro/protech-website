@@ -612,7 +612,7 @@ const BLOG_I18N = {
         },
         listing: {
             title: '博客 - PROTECH 株式会社',
-            description: 'PROTECH 博客。为您带来关于小红书营销、网页开发和数字化战略的最新资讯与行业见解。',
+            description: 'PROTECH博客整理小红书营销、网页开发与数字战略文章，供关注日本市场与访日集客的读者参考，欢迎阅读。',
             heading: '博客',
             kicker: '博客',
             subheading: '小红书营销、访日集客与技术开发的专业内容',
@@ -668,6 +668,7 @@ function readPosts(postsDir, lang) {
             slug: slugFromFilename(file),
             title: data.title || 'Untitled',
             date: data.date || '2026-01-01',
+            updated: data.updated || data.dateModified || data.date || '2026-01-01',
             category: data.category || 'news',
             description: data.description || '',
             image: data.image || '',
@@ -793,6 +794,53 @@ function generatePostHTML(post, availableLangs, allPostsOfLang = []) {
     </section>`;
     }
 
+    const publishedIso = isoDate(post.date);
+    const modifiedIso = isoDate(post.updated || post.date);
+    const crumbHome = {
+        ja: { name: 'ホーム', item: `${SITE_URL}/` },
+        en: { name: 'Home', item: `${SITE_URL}/en` },
+        cn: { name: '首页', item: `${SITE_URL}/cn` }
+    }[post.lang] || { name: 'Home', item: `${SITE_URL}/en` };
+    const crumbBlog = {
+        ja: { name: 'ブログ', item: `${SITE_URL}/blog` },
+        en: { name: 'Blog', item: `${SITE_URL}/en/blog` },
+        cn: { name: '博客', item: `${SITE_URL}/cn/blog` }
+    }[post.lang] || { name: 'Blog', item: `${SITE_URL}/blog` };
+    const publisherLogo = {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/assets/images/favicon.png`,
+        width: 974,
+        height: 594
+    };
+    const articleLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: post.title,
+        description: post.description,
+        datePublished: publishedIso,
+        dateModified: modifiedIso,
+        author: { '@type': 'Organization', name: 'PROTECH株式会社', url: SITE_URL },
+        publisher: {
+            '@type': 'Organization',
+            name: 'PROTECH株式会社',
+            url: SITE_URL,
+            logo: publisherLogo
+        },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl }
+    };
+    if (ogImgUrl) articleLd.image = ogImgUrl;
+    const breadcrumbLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: crumbHome.name, item: crumbHome.item },
+            { '@type': 'ListItem', position: 2, name: crumbBlog.name, item: crumbBlog.item },
+            { '@type': 'ListItem', position: 3, name: post.title, item: canonicalUrl }
+        ]
+    };
+    const articleJson = JSON.stringify(articleLd, null, 4);
+    const breadcrumbJson = JSON.stringify(breadcrumbLd, null, 4);
+
     return `<!DOCTYPE html>
 <html lang="${post.lang === 'cn' ? 'zh-CN' : post.lang}" translate="no">
 
@@ -870,29 +918,10 @@ function generatePostHTML(post, availableLangs, allPostsOfLang = []) {
 
     <!-- Structured Data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "${post.title.replace(/"/g, '\\"')}",
-        "description": "${post.description.replace(/"/g, '\\"')}",
-        "datePublished": "${isoDate(post.date)}",
-        "dateModified": "${isoDate(post.date)}",
-        ${ogImgUrl ? `"image": "${ogImgUrl}",` : ''}
-        "author": {
-            "@type": "Organization",
-            "name": "PROTECH株式会社",
-            "url": "${SITE_URL}"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "PROTECH株式会社",
-            "url": "${SITE_URL}"
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "${canonicalUrl}"
-        }
-    }
+${articleJson}
+    </script>
+    <script type="application/ld+json">
+${breadcrumbJson}
     </script>
 </head>
 
@@ -1094,6 +1123,7 @@ ${getFooterHTML(post.lang)}
             if (fbShare) fbShare.href = \`https://www.facebook.com/sharer/sharer.php?u=\${currentUrl}\`;
         });
     </script>
+    <script defer src="/assets/js/consult-popup.js"></script>
 
 </body>
 
@@ -1339,6 +1369,51 @@ function generateBlogListingHTML(posts, lang) {
             </a>`;
     }
 
+    const listingUrl = `${SITE_URL}${langPrefix}/blog`;
+    const listingItems = posts.map((post, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${SITE_URL}${langPrefix}/blog/${post.slug}`,
+        name: post.title
+    }));
+    const listingHome = {
+        ja: { name: 'ホーム', item: `${SITE_URL}/` },
+        en: { name: 'Home', item: `${SITE_URL}/en` },
+        cn: { name: '首页', item: `${SITE_URL}/cn` }
+    }[lang] || { name: 'Home', item: `${SITE_URL}/en` };
+    const listingBlogName = { ja: 'ブログ', en: 'Blog', cn: '博客' }[lang] || 'Blog';
+    const listingLd = {
+        '@context': 'https://schema.org',
+        '@type': ['CollectionPage', 'Blog'],
+        name: translations.title,
+        description: translations.description,
+        url: listingUrl,
+        inLanguage: lang === 'cn' ? 'zh-CN' : lang,
+        isPartOf: { '@type': 'WebSite', name: 'PROTECH', url: SITE_URL },
+        publisher: {
+            '@type': 'Organization',
+            name: 'PROTECH株式会社',
+            url: SITE_URL,
+            logo: {
+                '@type': 'ImageObject',
+                url: `${SITE_URL}/assets/images/favicon.png`,
+                width: 974,
+                height: 594
+            }
+        },
+        mainEntity: { '@type': 'ItemList', itemListElement: listingItems }
+    };
+    const listingBreadcrumbLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: listingHome.name, item: listingHome.item },
+            { '@type': 'ListItem', position: 2, name: listingBlogName, item: listingUrl }
+        ]
+    };
+    const listingJson = JSON.stringify(listingLd, null, 4);
+    const listingBreadcrumbJson = JSON.stringify(listingBreadcrumbLd, null, 4);
+
     return `<!DOCTYPE html>
 <html lang="${lang === 'cn' ? 'zh-CN' : lang}" translate="no">
 
@@ -1400,6 +1475,12 @@ function generateBlogListingHTML(posts, lang) {
                 }
             }
         }
+    </script>
+    <script type="application/ld+json">
+${listingJson}
+    </script>
+    <script type="application/ld+json">
+${listingBreadcrumbJson}
     </script>
 </head>
 
@@ -1478,6 +1559,7 @@ ${getFooterHTML(lang)}
             });
         });
     </script>
+    <script defer src="/assets/js/consult-popup.js"></script>
 
 </body>
 

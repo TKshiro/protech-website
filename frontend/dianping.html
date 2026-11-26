@@ -208,17 +208,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "大衆点評(Dianping)マーケティング運用代行",
-    "description": "中国最大の口コミ・グルメ予約プラットフォーム「大衆点評」を活用したインバウンド集客支援。",
-    "provider": {
-        "@type": "Organization",
-        "name": "PROTECH株式会社",
-        "url": "https://pro-tech.jp"
-    }
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "大衆点評(Dianping)マーケティング運用代行",
+  "description": "中国最大の口コミ・グルメ予約プラットフォーム「大衆点評」を活用したインバウンド集客支援。",
+  "provider": {
+    "@type": "Organization",
+    "name": "PROTECH株式会社",
+    "url": "https://pro-tech.jp"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Japan"
+  },
+  "serviceType": "大衆点評(Dianping)マーケティング運用代行",
+  "url": "https://pro-tech.jp/dianping"
 }
-    </script>
+</script>
 </head>
 
 <body class="bg-white text-slate-900">
@@ -811,6 +817,23 @@
         </div>
     </section>
 
+    <!-- dianping-cluster-links -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-[#FF6600] text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Dianping Guides</p>
+                <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue mb-4">大衆点評の困りごと別ガイド</h2>
+                <p class="text-gray-400 text-sm max-w-xl mx-auto">掲載状況、情報修正、費用の見方は、状況ごとの記事で確認できます。</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6" data-aos="fade-up">
+                <a href="/blog/dianping-store-not-found" class="group block bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition"><h3 class="font-bold text-sm text-tech-blue group-hover:text-[#FF6600] transition leading-snug">自店が見つからないときの確認手順</h3></a>
+                <a href="/blog/dianping-store-listed-without-permission" class="group block bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition"><h3 class="font-bold text-sm text-tech-blue group-hover:text-[#FF6600] transition leading-snug">勝手に掲載されている場合の確認</h3></a>
+                <a href="/blog/dianping-store-information-update" class="group block bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition"><h3 class="font-bold text-sm text-tech-blue group-hover:text-[#FF6600] transition leading-snug">営業時間・住所・店名の更新チェックリスト</h3></a>
+                <a href="/blog/dianping-listing-operation-cost" class="group block bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition"><h3 class="font-bold text-sm text-tech-blue group-hover:text-[#FF6600] transition leading-snug">掲載・運用費用の内訳と確認事項</h3></a>
+            </div>
+        </div>
+    </section>
+
     <!-- ═══════════════════════ RELATED BLOG ═══════════════════════ -->
     <section class="py-16 md:py-20 bg-white">
         <div class="max-w-6xl mx-auto px-8">
@@ -979,6 +1002,7 @@
 
     </script>
     <script defer src="assets/js/main.js"></script>
+<script defer src="/assets/js/consult-popup.js"></script>
 </body>
 
 </html>
