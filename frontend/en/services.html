@@ -35,7 +35,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
     <link rel="stylesheet" href="/assets/css/shared.css">
     <style>
 
@@ -89,6 +90,7 @@
     "url": "https://pro-tech.jp/services"
 }
     </script>
+    <link rel="stylesheet" href="/assets/css/ux.css">
 </head>
 
 <body class="bg-white text-slate-900">
@@ -111,8 +113,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/en/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">All Services</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">Dianping</a>
-                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">Xiaohongshu (RED)</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">Dianping</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">Xiaohongshu (RED)</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">Douyin</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">WeChat Mini-Program</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">Creative Production</a>
@@ -135,9 +137,9 @@
                         🌐 EN
                     </button>
                     <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
-                        <a href="/en/services" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
-                        <a href="/en/services" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
-                        <a href="/cn/services" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                        <a href="/en/services" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="/en/services" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="/cn/services" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
                     </div>
                 </div>
             </div>
@@ -156,8 +158,8 @@
             <a href="/en" class="text-lg font-bold text-slate-700">Home</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/en/services" class="text-lg font-bold text-coral">Services</a>
-                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">Dianping</a>
-                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">Xiaohongshu (RED)</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">Dianping</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">Xiaohongshu (RED)</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">Douyin</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">WeChat Mini-Program</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">Creative Production</a>
@@ -185,9 +187,9 @@
         class="pt-32 md:pt-40 pb-20 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
         <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
-            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">Services</span>
+            <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase block mb-4">Services</span>
             <h1 class="text-4xl md:text-6xl font-bold serif text-tech-blue mb-6">SERVICES</h1>
-            <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+            <p class="text-slate-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
                 China SNS operations (RED/Douyin), Chinese LPs, WeChat app development.<br class="hidden md:block">
                 We support all your China-Japan marketing needs in one place.
             </p>
@@ -214,19 +216,19 @@
                     <div class="grid grid-cols-2 gap-4 mb-8">
                         <div class="p-5 bg-warm-gray rounded-xl">
                             <h4 class="font-bold text-sm mb-1">RED Agency Operations</h4>
-                            <p class="text-[11px] text-gray-400">The most powerful pre-travel channel. Perfect for cosmetics, fashion, gourmet, and sightseeing.</p>
+                            <p class="text-[11px] text-slate-500">The most powerful pre-travel channel. Perfect for cosmetics, fashion, gourmet, and sightseeing.</p>
                         </div>
                         <div class="p-5 bg-warm-gray rounded-xl">
                             <h4 class="font-bold text-sm mb-1">Douyin Agency Operations</h4>
-                            <p class="text-[11px] text-gray-400">The Chinese version of TikTok. Build massive brand awareness for restaurants and entertainment facilities via massive viral reach.</p>
+                            <p class="text-[11px] text-slate-500">The Chinese version of TikTok. Build massive brand awareness for restaurants and entertainment facilities via massive viral reach.</p>
                         </div>
                         <div class="p-5 bg-warm-gray rounded-xl">
                             <h4 class="font-bold text-sm mb-1">KOL/KOC Promotions</h4>
-                            <p class="text-[11px] text-gray-400">Cast influential creators to generate high-quality word-of-mouth (UGC) posts.</p>
+                            <p class="text-[11px] text-slate-500">Cast influential creators to generate high-quality word-of-mouth (UGC) posts.</p>
                         </div>
                         <div class="p-5 bg-warm-gray rounded-xl">
                             <h4 class="font-bold text-sm mb-1">Data Analysis</h4>
-                            <p class="text-[11px] text-gray-400">Analyze engagement metrics per post to rapidly refine social marketing strategies via PDCA.</p>
+                            <p class="text-[11px] text-slate-500">Analyze engagement metrics per post to rapidly refine social marketing strategies via PDCA.</p>
                         </div>
                     </div>
 
@@ -278,19 +280,19 @@
                     <div class="grid grid-cols-2 gap-4 mb-8">
                         <div class="p-5 bg-white rounded-xl shadow-sm border border-gray-50">
                             <h4 class="font-bold text-sm mb-1 text-tech-blue">Official Store Claim</h4>
-                            <p class="text-[11px] text-gray-400">We handle complex verification procedures to obtain the official V-badge for your store.</p>
+                            <p class="text-[11px] text-slate-500">We handle complex verification procedures to obtain the official V-badge for your store.</p>
                         </div>
                         <div class="p-5 bg-white rounded-xl shadow-sm border border-gray-50">
                             <h4 class="font-bold text-sm mb-1 text-tech-blue">Coupon & Booking Setup</h4>
-                            <p class="text-[11px] text-gray-400">Set up group-buying coupons and reservation systems that users can complete within the app.</p>
+                            <p class="text-[11px] text-slate-500">Set up group-buying coupons and reservation systems that users can complete within the app.</p>
                         </div>
                         <div class="p-5 bg-white rounded-xl shadow-sm border border-gray-50">
                             <h4 class="font-bold text-sm mb-1 text-tech-blue">Review (UGC) Management</h4>
-                            <p class="text-[11px] text-gray-400">Encourage customer reviews to improve store ratings and rank high on local listings.</p>
+                            <p class="text-[11px] text-slate-500">Encourage customer reviews to improve store ratings and rank high on local listings.</p>
                         </div>
                         <div class="p-5 bg-white rounded-xl shadow-sm border border-gray-50">
                             <h4 class="font-bold text-sm mb-1 text-tech-blue">Official Ad Operations</h4>
-                            <p class="text-[11px] text-gray-400">Run ads targeting users near your store to maximize exposure and attraction.</p>
+                            <p class="text-[11px] text-slate-500">Run ads targeting users near your store to maximize exposure and attraction.</p>
                         </div>
                     </div>
 
@@ -308,7 +310,7 @@
                             class="absolute inset-0 bg-gradient-to-t from-tech-blue/80 to-transparent z-10 flex items-end p-8">
                             <div>
                                 <span
-                                    class="bg-[#FF6600] text-white text-[10px] font-bold px-2 py-1 rounded mb-2 inline-block">Dianping</span>
+                                    class="bg-[#C2410C] text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">Dianping</span>
                                 <h3 class="text-white font-bold text-lg">Inbound Brick-and-Mortar Attraction</h3>
                             </div>
                         </div>
@@ -340,11 +342,11 @@
                     <div class="grid grid-cols-2 gap-4 mb-8">
                         <div class="p-5 bg-white rounded-xl shadow-sm border border-gray-50">
                             <h4 class="font-bold text-sm mb-1 text-tech-blue">Chinese LP Production</h4>
-                            <p class="text-[11px] text-gray-400">Build high-converting LPs with compelling copy and custom layouts designed to drive EC sales and bookings.</p>
+                            <p class="text-[11px] text-slate-500">Build high-converting LPs with compelling copy and custom layouts designed to drive EC sales and bookings.</p>
                         </div>
                         <div class="p-5 bg-white rounded-xl shadow-sm border border-gray-50">
                             <h4 class="font-bold text-sm mb-1 text-tech-blue">Inbound Video Production</h4>
-                            <p class="text-[11px] text-gray-400">Shoot and edit engaging promotional videos with the tempo and structure preferred on Douyin and RED.</p>
+                            <p class="text-[11px] text-slate-500">Shoot and edit engaging promotional videos with the tempo and structure preferred on Douyin and RED.</p>
                         </div>
                     </div>
 
@@ -362,7 +364,7 @@
                             class="absolute inset-0 bg-gradient-to-t from-tech-blue/80 to-transparent z-10 flex items-end p-8">
                             <div>
                                 <span
-                                    class="bg-coral text-white text-[10px] font-bold px-2 py-1 rounded mb-2 inline-block">Design
+                                    class="bg-coral text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">Design
                                     & Video</span>
                                 <h3 class="text-white font-bold text-lg">Creative Team Strong in Localization</h3>
                             </div>
@@ -435,7 +437,7 @@
                             class="absolute inset-0 bg-gradient-to-t from-tech-blue/80 to-transparent z-10 flex items-end p-8">
                             <div>
                                 <span
-                                    class="bg-coral text-white text-[10px] font-bold px-2 py-1 rounded mb-2 inline-block">Mini
+                                    class="bg-coral text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">Mini
                                     Program</span>
                                 <h3 class="text-white font-bold text-lg">WeChat App Development</h3>
                             </div>
@@ -466,19 +468,19 @@
                     <div class="grid grid-cols-2 gap-4 mb-8">
                         <div class="p-5 bg-warm-gray rounded-xl">
                             <h4 class="font-bold text-sm mb-1">Private Cars</h4>
-                            <p class="text-[11px] text-gray-400">Custom routes for Mt. Fuji, Hakone, Kyoto outskirts, etc., with fewer transfers.</p>
+                            <p class="text-[11px] text-slate-500">Custom routes for Mt. Fuji, Hakone, Kyoto outskirts, etc., with fewer transfers.</p>
                         </div>
                         <div class="p-5 bg-warm-gray rounded-xl">
                             <h4 class="font-bold text-sm mb-1">Stays & Lodges</h4>
-                            <p class="text-[11px] text-gray-400">Carefully selected hotels, hot spring ryokan, family suites, and anniversary stays.</p>
+                            <p class="text-[11px] text-slate-500">Carefully selected hotels, hot spring ryokan, family suites, and anniversary stays.</p>
                         </div>
                         <div class="p-5 bg-warm-gray rounded-xl">
                             <h4 class="font-bold text-sm mb-1">Booking Support</h4>
-                            <p class="text-[11px] text-gray-400">Advance verification of ticketing, restaurant rules, activities, and wait times.</p>
+                            <p class="text-[11px] text-slate-500">Advance verification of ticketing, restaurant rules, activities, and wait times.</p>
                         </div>
                         <div class="p-5 bg-warm-gray rounded-xl">
                             <h4 class="font-bold text-sm mb-1">Multilingual Support</h4>
-                            <p class="text-[11px] text-gray-400">Support communication in Chinese, English, and Japanese before and during your trip.</p>
+                            <p class="text-[11px] text-slate-500">Support communication in Chinese, English, and Japanese before and during your trip.</p>
                         </div>
                     </div>
                     <a href="/travel"
@@ -503,7 +505,7 @@
     <section class="py-20 md:py-24 px-8 bg-warm-gray seigaiha-pattern">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">CASES</span>
+                <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase block mb-3">CASES</span>
                 <h2 class="text-2xl md:text-3xl font-bold serif text-tech-blue">Case Studies</h2>
             </div>
 
@@ -514,10 +516,10 @@
                             class="w-full h-full object-cover" decoding="async">
                     </div>
                     <div class="p-8">
-                        <span class="text-[10px] text-coral font-bold uppercase tracking-widest block mb-2">Food &
+                        <span class="text-xs text-coral font-bold uppercase tracking-widest block mb-2">Food &
                             Beverage</span>
                         <h3 class="font-bold text-lg mb-3 text-tech-blue">Huariao Drunken Chicken Pot Shibuya Launch PR</h3>
-                        <p class="text-xs text-gray-400 leading-loose">From social media strategy to driving store visits. Succeeded in building a brand that generated lines from month one.</p>
+                        <p class="text-xs text-slate-500 leading-loose">From social media strategy to driving store visits. Succeeded in building a brand that generated lines from month one.</p>
                     </div>
                 </div>
                 <div class="case-card bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
@@ -527,9 +529,9 @@
                     </div>
                     <div class="p-8">
                         <span
-                            class="text-[10px] text-coral font-bold uppercase tracking-widest block mb-2">Lifestyle</span>
+                            class="text-xs text-coral font-bold uppercase tracking-widest block mb-2">Lifestyle</span>
                         <h3 class="font-bold text-lg mb-3 text-tech-blue">Domestic Brand China Market Expansion</h3>
-                        <p class="text-xs text-gray-400 leading-loose">We support brand awareness expansion through KOL/KOC marketing and the maximization of e-commerce sales.</p>
+                        <p class="text-xs text-slate-500 leading-loose">We support brand awareness expansion through KOL/KOC marketing and the maximization of e-commerce sales.</p>
                     </div>
                 </div>
                 <div class="case-card bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
@@ -539,9 +541,9 @@
                     </div>
                     <div class="p-8">
                         <span
-                            class="text-[10px] text-coral font-bold uppercase tracking-widest block mb-2">Inbound</span>
+                            class="text-xs text-coral font-bold uppercase tracking-widest block mb-2">Inbound</span>
                         <h3 class="font-bold text-lg mb-3 text-tech-blue">Tourist Spots Attraction Support</h3>
-                        <p class="text-xs text-gray-400 leading-loose">Location-based social media promotions targeting inbound Chinese tourists.</p>
+                        <p class="text-xs text-slate-500 leading-loose">Location-based social media promotions targeting inbound Chinese tourists.</p>
                     </div>
                 </div>
             </div>
@@ -554,7 +556,7 @@
     <section class="py-20 md:py-24 px-8 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-aos="fade-up">
-                <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">BLOG</span>
+                <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase block mb-3">BLOG</span>
                 <h2 class="text-2xl md:text-3xl font-bold serif text-tech-blue">Related Blog Articles</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -563,9 +565,9 @@
                         <img src="/assets/images/blog-xiaohongshu-guide.jpg" alt="What is RED?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='/assets/images/red-marketing.jpg'" loading="lazy" decoding="async">
                     </div>
                     <div class="p-6">
-                        <span class="text-[9px] font-bold bg-red-50 text-red-500 px-2 py-1 rounded uppercase tracking-wider">RED Operations</span>
+                        <span class="text-xs font-bold bg-red-50 text-red-500 px-2 py-1 rounded uppercase tracking-wider">RED Operations</span>
                         <h3 class="font-bold text-sm text-tech-blue mt-3 mb-1 leading-snug group-hover:text-coral transition">What is Xiaohongshu (RED)? Why Japanese Brands Should Use it for Marketing</h3>
-                        <p class="text-xs text-gray-400">2026.04.12</p>
+                        <p class="text-xs text-slate-500">2026.04.12</p>
                     </div>
                 </a>
                 <a href="/blog/dazhong-dianping-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 duration-300" data-aos="fade-up" data-aos-delay="200">
@@ -573,9 +575,9 @@
                         <img src="/assets/images/dazhong-dianping-inbound.jpg" alt="What is Dianping?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='/assets/images/hero-data.jpg'" loading="lazy" decoding="async">
                     </div>
                     <div class="p-6">
-                        <span class="text-[9px] font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded uppercase tracking-wider">Marketing</span>
+                        <span class="text-xs font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded uppercase tracking-wider">Marketing</span>
                         <h3 class="font-bold text-sm text-tech-blue mt-3 mb-1 leading-snug group-hover:text-coral transition">What is Dianping? Usage, Inbound Marketing, and Promotion Strategies</h3>
-                        <p class="text-xs text-gray-400">2026.04.25</p>
+                        <p class="text-xs text-slate-500">2026.04.25</p>
                     </div>
                 </a>
                 <a href="/blog/kol-koc-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 duration-300" data-aos="fade-up" data-aos-delay="300">
@@ -583,9 +585,9 @@
                         <img src="/assets/images/blog-kol-koc-1.jpg" alt="What are KOL and KOC?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='/assets/images/case-restaurant.jpg'" loading="lazy" decoding="async">
                     </div>
                     <div class="p-6">
-                        <span class="text-[9px] font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded uppercase tracking-wider">Marketing</span>
+                        <span class="text-xs font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded uppercase tracking-wider">Marketing</span>
                         <h3 class="font-bold text-sm text-tech-blue mt-3 mb-1 leading-snug group-hover:text-coral transition">What is KOL? Key Differences from KOC, Casting Benefits, and Pricing Guide</h3>
-                        <p class="text-xs text-gray-400">2026.04.03</p>
+                        <p class="text-xs text-slate-500">2026.04.03</p>
                     </div>
                 </a>
             </div>
@@ -602,9 +604,9 @@
     <section class="py-24 md:py-32 bg-tech-blue px-6 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-96 h-96 bg-coral/10 rounded-full blur-[120px]"></div>
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <span class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase block mb-4">Contact</span>
+            <span class="text-coral text-xs font-bold tracking-[0.3em] uppercase block mb-4">Contact</span>
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 serif">Feel free to contact us</h2>
-            <p class="text-white/40 text-sm mb-10 max-w-lg mx-auto leading-relaxed">
+            <p class="text-white/60 text-sm mb-10 max-w-lg mx-auto leading-relaxed">
                 Please feel free to contact us with any questions regarding our services, requests for quotes, or brochures.
             </p>
             <a href="/en/contact"
@@ -623,11 +625,11 @@
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">Crossing business boundaries with<br>technology and marketing.</p>
+                    <p class="text-white/60 text-xs leading-relaxed">Crossing business boundaries with<br>technology and marketing.</p>
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">Dianping Store Attraction</a></li>
                         <li><a href="/red" class="hover:text-coral transition">RED (Xiaohongshu) Marketing</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">Douyin Operations</a></li>
@@ -641,7 +643,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company Info</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/en/company" class="hover:text-coral transition">Company</a></li>
                         <li><a href="/en/cases" class="hover:text-coral transition">Case Studies</a></li>
                         <li><a href="/en/blog" class="hover:text-coral transition">Blog</a></li>
@@ -652,7 +654,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Resources</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">Download Whitepapers</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">FAQ</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">Inbound AI</a></li>
@@ -662,13 +664,13 @@
             </div>
         </div>
         <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+            <p class="text-xs text-white/60">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
-        AOS.init({ duration: 800, once: true, offset: 80 });
+        (window.protechInitAos||(window.protechInitAos=function(o){var run=function(){if(window.AOS)AOS.init(o)};if(window.AOS)run();else document.addEventListener("DOMContentLoaded",run)}))({ duration: 800, once: true, offset: 80 });
 
         document.querySelectorAll('.expand-btn').forEach(button => {
             button.addEventListener('click', () => {
@@ -684,6 +686,7 @@
     </script>
     <script defer src="/assets/js/main.js"></script>
 <script defer src="/assets/js/consult-popup.js"></script>
+    <script defer src="/assets/js/ux.js"></script>
 </body>
 
 </html>

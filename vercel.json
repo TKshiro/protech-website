@@ -188,6 +188,24 @@
       ]
     },
     {
+      "source": "/contact/thanks",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/en/contact/thanks",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/cn/contact/thanks",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
       "source": "/admin",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" }

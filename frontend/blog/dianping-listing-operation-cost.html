@@ -32,12 +32,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
 
     
 
     <style>
-        :root { --tech-blue: #001A33; --coral: #E86B7A; --font-h1: 48px; --font-h2: 24px; --font-body: 15px; --font-button: 12px; }
+        :root { --tech-blue: #001A33; --coral: #B4495A; --font-h1: 48px; --font-h2: 24px; --font-body: 15px; --font-button: 12px; }
         body { font-family: 'Noto Sans JP', sans-serif; font-size: var(--font-body); -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
         h1 { font-size: clamp(28px, 4vw, var(--font-h1)); }
         h2 { font-size: var(--font-h2); }
@@ -52,7 +53,7 @@
         .hamburger.active #line3 { transform: translateY(-7px) rotate(-45deg); }
 
         /* Article typography */
-        .article-body h2 { font-size: var(--font-h2); font-weight: 700; color: var(--tech-blue); margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E86B7A; }
+        .article-body h2 { font-size: var(--font-h2); font-weight: 700; color: var(--tech-blue); margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #B4495A; }
         .article-body h3 { font-size: 1.1rem; font-weight: 700; color: var(--tech-blue); margin-top: 1.8rem; margin-bottom: 0.6rem; }
         .article-body p { color: #475569; line-height: 2; margin-bottom: 1.4rem; }
         .article-body ul, .article-body ol { color: #475569; line-height: 2; margin-bottom: 1.4rem; padding-left: 1.5rem; }
@@ -116,6 +117,7 @@
 }</script>
 <meta property="article:published_time" content="2026-11-15T10:09:09+09:00">
 <meta property="article:modified_time" content="2026-11-15T10:09:09+09:00">
+    <link rel="stylesheet" href="/assets/css/ux.css">
 </head>
 
 <body class="bg-white text-slate-900">
@@ -137,8 +139,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -161,7 +163,7 @@
                         🌐 JA
                     </button>
                     <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
-                        <a href="https://pro-tech.jp/blog/dazhong-dianping-guide" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="https://pro-tech.jp/blog/dazhong-dianping-guide" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
                         
                         
                     </div>
@@ -182,8 +184,8 @@
             <a href="/" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">サービス</a>
-                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ制作</a>
@@ -207,7 +209,7 @@
     <div class="pt-24 md:pt-32 pb-0 bg-gradient-to-b from-slate-50 to-white">
         <div class="max-w-3xl mx-auto px-6 md:px-8">
             <!-- Breadcrumb -->
-            <nav class="text-xs text-gray-400 mb-6 flex items-center gap-2" data-aos="fade-up">
+            <nav class="text-xs text-slate-500 mb-6 flex items-center gap-2" data-aos="fade-up">
                 <a href="/" class="hover:text-coral transition">トップ</a>
                 <span>›</span>
                 <a href="/blog" class="hover:text-coral transition">ブログ</a>
@@ -217,8 +219,8 @@
 
             <!-- Category + Date -->
             <div class="flex items-center gap-3 mb-5" data-aos="fade-up">
-                <span class="text-[10px] font-bold bg-blue-50 text-blue-500 px-3 py-1 rounded-full tracking-widest uppercase">マーケティング</span>
-                <span class="text-xs text-gray-400">2026.11.15 公開</span>
+                <span class="text-xs font-bold bg-blue-50 text-blue-500 px-3 py-1 rounded-full tracking-widest uppercase">マーケティング</span>
+                <span class="text-xs text-slate-500">2026.11.15 公開</span>
             </div>
 
             <!-- Title -->
@@ -345,7 +347,7 @@
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
-                        <span class="text-[10px] font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded tracking-widest uppercase">マーケティング</span>
+                        <span class="text-xs font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded tracking-widest uppercase">マーケティング</span>
                     </div>
                     <h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">中国人観光客を集客するSNS戦略2026年版</h4>
                 </div>
@@ -356,7 +358,7 @@
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
-                        <span class="text-[10px] font-bold bg-green-50 text-green-600 px-2 py-1 rounded tracking-widest uppercase">開発・費用</span>
+                        <span class="text-xs font-bold bg-green-50 text-green-600 px-2 py-1 rounded tracking-widest uppercase">開発・費用</span>
                     </div>
                     <h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">WeChat小程序（ミニプログラム）開発の費用と期間の目安</h4>
                 </div>
@@ -367,7 +369,7 @@
                 </div>
                 <div class="p-6">
                     <div class="mb-3">
-                        <span class="text-[10px] font-bold bg-purple-50 text-purple-500 px-2 py-1 rounded tracking-widest uppercase">マーケティング</span>
+                        <span class="text-xs font-bold bg-purple-50 text-purple-500 px-2 py-1 rounded tracking-widest uppercase">マーケティング</span>
                     </div>
                     <h4 class="font-bold text-sm text-tech-blue group-hover:text-coral transition leading-snug">大衆点評（Dianping）とは？読み方・使い方と日本の店舗での活用法</h4>
                 </div>
@@ -377,11 +379,11 @@
 
     <!-- Back to blog -->
     <div class="max-w-3xl mx-auto px-8 pb-20 flex justify-between items-center border-t border-gray-100 pt-8">
-        <a href="/blog" class="flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-coral transition tracking-widest uppercase">
+        <a href="/blog" class="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-coral transition tracking-widest uppercase">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
             ブログ一覧へ
         </a>
-        <a href="/blog/red-account-basics" class="flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-coral transition tracking-widest uppercase">
+        <a href="/blog/red-account-basics" class="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-coral transition tracking-widest uppercase">
             次の記事
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </a>
@@ -393,11 +395,11 @@
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                    <p class="text-white/60 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
                         <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
@@ -410,7 +412,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
@@ -421,7 +423,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
@@ -431,14 +433,14 @@
             </div>
         </div>
         <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+            <p class="text-xs text-white/60">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            AOS.init({ duration: 800, once: true });
+            (window.protechInitAos||(window.protechInitAos=function(o){var run=function(){if(window.AOS)AOS.init(o)};if(window.AOS)run();else document.addEventListener("DOMContentLoaded",run)}))({ duration: 800, once: true });
             const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             if (menuBtn && mobileMenu) {
@@ -472,7 +474,7 @@
                             let sub = lastH2Li.querySelector('ol');
                             if (!sub) {
                                 sub = document.createElement('ol');
-                                sub.className = 'mt-1 ml-3 space-y-0.5 text-xs text-gray-400';
+                                sub.className = 'mt-1 ml-3 space-y-0.5 text-xs text-slate-500';
                                 lastH2Li.appendChild(sub);
                             }
                             const subLi = document.createElement('li');
@@ -494,5 +496,6 @@
         });
     </script>
 <script defer src="/assets/js/consult-popup.js"></script>
+    <script defer src="/assets/js/ux.js"></script>
 </body>
 </html>

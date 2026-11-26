@@ -23,18 +23,19 @@
     <meta property="og:url" content="https://pro-tech.jp/en/blog">
     <meta property="og:image" content="https://pro-tech.jp/assets/images/favicon.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+<link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap"
         rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
 
     <style>
-        :root { --tech-blue: #001A33; --coral: #E86B7A; }
-        .btn-coral { background-color: #E86B7A !important; color: white !important; transition: opacity 0.2s; }
+        :root { --tech-blue: #001A33; --coral: #B4495A; }
+        .btn-coral { background-color: #B4495A !important; color: white !important; transition: opacity 0.2s; }
         .btn-coral:hover { opacity: 0.85; }
         .nav-link { transition: color 0.2s; }
-        .nav-link:hover { color: #E86B7A !important; }
+        .nav-link:hover { color: #B4495A !important; }
         body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         .serif { font-family: 'Noto Serif JP', serif; }
         .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); }
@@ -48,19 +49,7 @@
         .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     </style>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: { 
-                        'tech-blue': '#001A33',
-                        'coral': '#E86B7A'
-                    }
-                }
-            }
-        }
-    </script>
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": [
@@ -126,6 +115,7 @@
   ]
 }
 </script>
+    <link rel="stylesheet" href="/assets/css/ux.css">
 </head>
 
 <body class="bg-white text-slate-900">
@@ -147,8 +137,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/en/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">All Services</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">Dianping</a>
-                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">Xiaohongshu (RED)</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">Dianping</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">Xiaohongshu (RED)</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">Douyin</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">WeChat Mini-Program</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">Creative Production</a>
@@ -171,9 +161,9 @@
                         🌐 EN
                     </button>
                     <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
-                        <a href="https://pro-tech.jp/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
-                        <a href="https://pro-tech.jp/en/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
-                        <a href="https://pro-tech.jp/cn/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                        <a href="https://pro-tech.jp/blog" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="https://pro-tech.jp/en/blog" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="https://pro-tech.jp/cn/blog" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
                     </div>
                 </div>
             </div>
@@ -192,8 +182,8 @@
             <a href="/en" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">Home</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/en/services" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">Services</a>
-                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">Dianping</a>
-                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">Xiaohongshu (RED)</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">Dianping</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">Xiaohongshu (RED)</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">Douyin</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">WeChat Mini-Program</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">Creative Production</a>
@@ -217,18 +207,18 @@
 
     <main class="max-w-6xl mx-auto px-8 pt-40 md:pt-48 pb-20">
         <header class="mb-16 border-b border-gray-100 pb-16" data-aos="fade-up">
-            <p class="text-tech-blue text-[10px] font-bold tracking-[0.3em] uppercase mb-4">BLOG</p>
+            <p class="text-tech-blue text-xs font-bold tracking-[0.3em] uppercase mb-4">BLOG</p>
             <h1 class="text-4xl md:text-5xl font-bold serif text-tech-blue mb-6 uppercase tracking-widest">Insights & Knowledge</h1>
-            <p class="text-gray-400 text-xs tracking-[0.2em] font-light">Marketing & Development Insights</p>
+            <p class="text-slate-500 text-xs tracking-[0.2em] font-light">Marketing & Development Insights</p>
         </header>
 
-        <div id="filter-controls"
-            class="flex gap-10 text-[10px] tracking-[0.2em] uppercase mb-12 border-b border-gray-100 pb-4"
+        <div id="filter-controls" role="tablist" aria-label="Categories"
+            class="flex gap-10 text-xs tracking-[0.2em] uppercase mb-12 border-b border-gray-100 pb-4"
             data-aos="fade-up">
-            <button data-filter="all" class="filter-btn active">All</button>
-            <button data-filter="news" class="filter-btn">News</button>
-            <button data-filter="service" class="filter-btn">Service</button>
-            <button data-filter="case" class="filter-btn">Case Study</button>
+            <button type="button" role="tab" aria-selected="true" data-filter="all" class="filter-btn active">All</button>
+            <button type="button" role="tab" aria-selected="false" data-filter="news" class="filter-btn">News</button>
+            <button type="button" role="tab" aria-selected="false" data-filter="service" class="filter-btn">Service</button>
+            <button type="button" role="tab" aria-selected="false" data-filter="case" class="filter-btn">Case Study</button>
         </div>
 
         <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -241,11 +231,11 @@
                 </div>
                 <div class="p-6 md:p-8">
                     <div class="flex items-center gap-3 mb-4">
-                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.08.20</span>
-                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">Service</span>
+                        <span class="text-xs text-slate-500 font-mono tracking-tighter">2026.08.20</span>
+                        <span class="text-xs font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">Service</span>
                     </div>
                     <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">Japan Autumn Foliage Guide 2026: Top 10 Must-Visit Spots</h3>
-                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">Discover the best places to visit in Japan in autumn 2026. Explore stunning fall foliage, historic temples, and scenic gorges with our detailed guide including access and peak season tips.</p>
+                    <p class="text-sm text-slate-500 line-clamp-2 leading-relaxed">Discover the best places to visit in Japan in autumn 2026. Explore stunning fall foliage, historic temples, and scenic gorges with our detailed guide including access and peak season tips.</p>
                     <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
                         Read More <span class="group-hover:translate-x-1 transition-transform">→</span>
                     </div>
@@ -259,11 +249,11 @@
                 </div>
                 <div class="p-6 md:p-8">
                     <div class="flex items-center gap-3 mb-4">
-                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.06.18</span>
-                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">Service</span>
+                        <span class="text-xs text-slate-500 font-mono tracking-tighter">2026.06.18</span>
+                        <span class="text-xs font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">Service</span>
                     </div>
                     <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【2026 Edition】15 Best Fireworks Festivals in Japan | Schedules, Launch Counts & Access Guide</h3>
-                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">A comprehensive guide to the top 15 fireworks festivals in Japan in summer 2026, including Sumida River, Nagaoka, and Omagari. Details on schedules, launch counts, ticket reservations, and access info.</p>
+                    <p class="text-sm text-slate-500 line-clamp-2 leading-relaxed">A comprehensive guide to the top 15 fireworks festivals in Japan in summer 2026, including Sumida River, Nagaoka, and Omagari. Details on schedules, launch counts, ticket reservations, and access info.</p>
                     <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
                         Read More <span class="group-hover:translate-x-1 transition-transform">→</span>
                     </div>
@@ -277,11 +267,11 @@
                 </div>
                 <div class="p-6 md:p-8">
                     <div class="flex items-center gap-3 mb-4">
-                        <span class="text-xs text-gray-400 font-mono tracking-tighter">2026.06.18</span>
-                        <span class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">Service</span>
+                        <span class="text-xs text-slate-500 font-mono tracking-tighter">2026.06.18</span>
+                        <span class="text-xs font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded uppercase tracking-widest">Service</span>
                     </div>
                     <h3 class="font-bold text-lg text-tech-blue group-hover:text-blue-600 transition mb-3 leading-snug">【Summer 2026】15 Best Places to Visit in Japan | Complete Summer Travel Guide</h3>
-                    <p class="text-sm text-gray-400 line-clamp-2 leading-relaxed">Discover the top 15 destinations in Japan for summer 2026. From spectacular fireworks and crystal-clear beaches to cool mountain resorts and dynamic festivals, read our complete guide with access tips and best seasons.</p>
+                    <p class="text-sm text-slate-500 line-clamp-2 leading-relaxed">Discover the top 15 destinations in Japan for summer 2026. From spectacular fireworks and crystal-clear beaches to cool mountain resorts and dynamic festivals, read our complete guide with access tips and best seasons.</p>
                     <div class="mt-6 text-xs font-bold text-blue-600 tracking-widest uppercase flex items-center gap-2">
                         Read More <span class="group-hover:translate-x-1 transition-transform">→</span>
                     </div>
@@ -296,11 +286,11 @@
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">Crossing business boundaries with<br>technology and marketing.</p>
+                    <p class="text-white/60 text-xs leading-relaxed">Crossing business boundaries with<br>technology and marketing.</p>
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">Dianping Store Attraction</a></li>
                         <li><a href="/red" class="hover:text-coral transition">RED (Xiaohongshu) Marketing</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">Douyin Operations</a></li>
@@ -314,7 +304,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company Info</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/en/company" class="hover:text-coral transition">Company</a></li>
                         <li><a href="/en/cases" class="hover:text-coral transition">Case Studies</a></li>
                         <li><a href="/en/blog" class="hover:text-coral transition">Blog</a></li>
@@ -325,7 +315,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Resources</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">Download Whitepapers</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">FAQ</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">Inbound AI</a></li>
@@ -335,14 +325,14 @@
             </div>
         </div>
         <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+            <p class="text-xs text-white/60">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            AOS.init({ duration: 1000, once: true });
+            (window.protechInitAos||(window.protechInitAos=function(o){var run=function(){if(window.AOS)AOS.init(o)};if(window.AOS)run();else document.addEventListener("DOMContentLoaded",run)}))({ duration: 1000, once: true });
 
             const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -371,8 +361,9 @@
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    filterButtons.forEach(btn => { btn.classList.remove('active'); btn.setAttribute('aria-selected', 'false'); });
                     button.classList.add('active');
+                    button.setAttribute('aria-selected', 'true');
                     const filterValue = button.getAttribute('data-filter');
                     blogItems.forEach(item => {
                         const itemCategory = item.getAttribute('data-category');
@@ -389,6 +380,7 @@
     </script>
 
 <script defer src="/assets/js/consult-popup.js"></script>
+    <script defer src="/assets/js/ux.js"></script>
 </body>
 
 </html>

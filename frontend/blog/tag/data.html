@@ -123,17 +123,18 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pro-tech.jp/blog/tag/data">
     <meta property="og:image" content="https://pro-tech.jp/assets/images/favicon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/ux.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
     <style>
-        :root { --tech-blue: #001A33; --coral: #E86B7A; }
+        :root { --tech-blue: #001A33; --coral: #B4495A; }
         html, body { max-width: 100%; overflow-x: hidden; }
         body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; }
         .serif { font-family: 'Noto Serif JP', serif; }
         .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); }
-        .btn-coral { background-color: #E86B7A !important; color: white !important; }
+        .btn-coral { background-color: #B4495A !important; color: white !important; }
         .nav-link { transition: color 0.2s; }
-        .nav-link:hover { color: #E86B7A !important; }
+        .nav-link:hover { color: #B4495A !important; }
         .hamburger line { transition: all 0.3s ease; transform-origin: center; }
         .hamburger.active #line1 { transform: translateY(7px) rotate(45deg); }
         .hamburger.active #line2 { opacity: 0; }
@@ -144,9 +145,6 @@
         #category-tabs::-webkit-scrollbar { display: none; }
         .category-tab.is-active, .tag-pill.is-active { background: #001A33; color: #fff; border-color: #001A33; }
     </style>
-    <script>
-        tailwind.config = { theme: { extend: { colors: { 'tech-blue': '#001A33', coral: '#E86B7A' } } } };
-    </script>
 </head>
 <body class="bg-white text-slate-900">
 <!-- NAV -->
@@ -166,8 +164,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -190,9 +188,9 @@
                         🌐 JA
                     </button>
                     <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
-                        <a href="https://pro-tech.jp/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
-                        <a href="https://pro-tech.jp/en/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
-                        <a href="https://pro-tech.jp/cn/blog" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                        <a href="https://pro-tech.jp/blog" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="https://pro-tech.jp/en/blog" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="https://pro-tech.jp/cn/blog" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
                     </div>
                 </div>
             </div>
@@ -211,8 +209,8 @@
             <a href="/" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700 hover:text-coral transition-colors">サービス</a>
-                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ制作</a>
@@ -234,20 +232,20 @@
         </div>
     </div>
 <main class="mx-auto min-w-0 max-w-6xl px-4 pb-20 pt-28 sm:px-6 md:pt-36">
-        <nav class="mb-6 flex flex-wrap gap-1 text-xs" aria-label="パンくず"><a href="/" class="text-blue-700">ホーム</a><span class="px-1 text-slate-300" aria-hidden="true">/</span><a href="/blog" class="text-blue-700">ブログ</a><span class="px-1 text-slate-300" aria-hidden="true">/</span><span class="text-slate-700" aria-current="page">データ・統計の記事</span></nav>
+        <nav class="mb-6 flex flex-wrap gap-1 text-xs" aria-label="パンくず"><a href="/" class="text-blue-700">ホーム</a><span class="px-1 text-slate-500" aria-hidden="true">/</span><a href="/blog" class="text-blue-700">ブログ</a><span class="px-1 text-slate-500" aria-hidden="true">/</span><span class="text-slate-700" aria-current="page">データ・統計の記事</span></nav>
         <header class="mb-8 border-b border-slate-100 pb-8">
-            <p class="mb-3 text-[10px] font-bold tracking-[0.2em] text-tech-blue">市場</p>
+            <p class="mb-3 text-xs font-bold tracking-[0.2em] text-tech-blue">市場</p>
             <h1 class="serif mb-4 text-3xl font-bold leading-tight text-tech-blue md:text-4xl">データ・統計の記事</h1>
             <p class="max-w-3xl text-sm leading-relaxed text-slate-500">統計の読み方と、月次の訪日動向、消費、市場規模を整理した記事です。数値の出典と時点は各記事に書いています。</p>
-            <p class="mt-4 text-xs font-bold text-slate-400">9件</p>
+            <p class="mt-4 text-xs font-bold text-slate-500">9件</p>
         </header>
-        <div class="mb-8 flex min-w-0 flex-wrap gap-x-3 gap-y-2 text-xs"><a href="/blog/category/platform" class="text-slate-500 hover:text-coral">プラットフォーム運用</a><span class="text-slate-300" aria-hidden="true"> / </span><a href="/blog/category/seasonal" class="text-slate-500 hover:text-coral">季節・旅行ガイド</a><span class="text-slate-300" aria-hidden="true"> / </span><a href="/blog/category/growth" class="text-slate-500 hover:text-coral">集客ノウハウ・費用</a><span class="text-slate-300" aria-hidden="true"> / </span><a href="/blog/category/market" class="text-slate-500 hover:text-coral">市場データ・トレンド</a><span class="text-slate-300" aria-hidden="true"> / </span><a href="/blog/category/cases" class="text-slate-500 hover:text-coral">導入事例</a></div>
+        <div class="mb-8 flex min-w-0 flex-wrap gap-x-3 gap-y-2 text-xs"><a href="/blog/category/platform" class="text-slate-500 hover:text-coral">プラットフォーム運用</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/seasonal" class="text-slate-500 hover:text-coral">季節・旅行ガイド</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/growth" class="text-slate-500 hover:text-coral">集客ノウハウ・費用</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/market" class="text-slate-500 hover:text-coral">市場データ・トレンド</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/cases" class="text-slate-500 hover:text-coral">導入事例</a></div>
         <div class="grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"><article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="taiwan-inbound-strategy" data-category="growth" data-tags="taiwan data preparation checklist" data-search="台湾からの訪日客を迎える集客準備｜統計の読み方・繁体字案内・予約導線 台湾市場向けの集客を、jnto統計の読み方、繁体字の店舗案内、予約対応、媒体選定から整理。訪問回数を実人数と混同しないための確認表付き。 台湾市場 データ・統計 集客準備 チェックリスト" data-hub-card>
         <a href="/blog/taiwan-inbound-strategy" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/taiwan_inbound_hero.webp" type="image/webp"><img src="/assets/images/taiwan_inbound_hero.jpg" alt="台湾からの訪日客を迎える集客準備｜統計の読み方・繁体字案内・予約導線" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
-                <span class="font-mono text-[11px] text-slate-400">更新 2026.11.19</span><span class="text-[11px] text-slate-400">初回 2026.05.03</span>
-                <a href="/blog/category/growth" class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-tech-blue">集客ノウハウ・費用</a>
+                <span class="font-mono text-[11px] text-slate-500">更新 2026.11.19</span><span class="text-[11px] text-slate-500">初回 2026.05.03</span>
+                <a href="/blog/category/growth" class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-tech-blue">集客ノウハウ・費用</a>
             </div>
             <h3 class="mb-3 text-base font-bold leading-snug text-tech-blue"><a href="/blog/taiwan-inbound-strategy" class="hover:text-coral">台湾からの訪日客を迎える集客準備｜統計の読み方・繁体字案内・予約導線</a></h3>
             <p class="line-clamp-3 text-sm leading-relaxed text-slate-500">台湾市場向けの集客を、JNTO統計の読み方、繁体字の店舗案内、予約対応、媒体選定から整理。訪問回数を実人数と混同しないための確認表付き。</p>
@@ -259,8 +257,8 @@
         <a href="/blog/korea-inbound-strategy-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-korea-inbound-hero.webp" type="image/webp"><img src="/assets/images/blog-korea-inbound-hero.jpeg" alt="訪日韓国人向けインバウンドマーケティング戦略【2026年最新】NaverブログとInstagramを活用した集客方法" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
-                <span class="font-mono text-[11px] text-slate-400">2026.06.01</span>
-                <a href="/blog/category/growth" class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-tech-blue">集客ノウハウ・費用</a>
+                <span class="font-mono text-[11px] text-slate-500">2026.06.01</span>
+                <a href="/blog/category/growth" class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-tech-blue">集客ノウハウ・費用</a>
             </div>
             <h3 class="mb-3 text-base font-bold leading-snug text-tech-blue"><a href="/blog/korea-inbound-strategy-2026" class="hover:text-coral">訪日韓国人向けインバウンドマーケティング戦略【2026年最新】NaverブログとInstagramを活用した集客方法</a></h3>
             <p class="line-clamp-3 text-sm leading-relaxed text-slate-500">訪日外国人数2位の韓国人観光客を集客するインバウンドマーケティング戦略を解説。NaverブログやInstagram・KakaoTalkの活用法、韓国人旅行者の消費行動データ・おすすめ施策まで2026年最新情報をお届け。</p>
@@ -272,8 +270,8 @@
         <a href="/blog/inbound-foreign-tourist-trends-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/hero-landscape2.webp" type="image/webp"><img src="/assets/images/hero-landscape2.jpg" alt="【2026年最新】訪日外国人旅行の現状と課題：6,000万人達成に向けた地方誘客とインバウンド戦略" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
-                <span class="font-mono text-[11px] text-slate-400">2026.05.11</span>
-                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-tech-blue">市場データ・トレンド</a>
+                <span class="font-mono text-[11px] text-slate-500">2026.05.11</span>
+                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-tech-blue">市場データ・トレンド</a>
             </div>
             <h3 class="mb-3 text-base font-bold leading-snug text-tech-blue"><a href="/blog/inbound-foreign-tourist-trends-2026" class="hover:text-coral">【2026年最新】訪日外国人旅行の現状と課題：6,000万人達成に向けた地方誘客とインバウンド戦略</a></h3>
             <p class="line-clamp-3 text-sm leading-relaxed text-slate-500">訪日外国人旅行客（インバウンド）の最新動向と、7都道府県に集中するオーバーツーリズムの課題。6,000万人達成に向けたJATAの提言と、地方誘客のための具体的なSNS集客戦略を解説します。</p>
@@ -285,8 +283,8 @@
         <a href="/blog/inbound-march-2026-report" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/inbound-march-hero.webp" type="image/webp"><img src="/assets/images/inbound-march-hero.jpg" alt="【2026年3月最新】訪日客361万人で過去最高！桜需要で欧米・東南アジアが急伸長" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
-                <span class="font-mono text-[11px] text-slate-400">2026.05.04</span>
-                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-tech-blue">市場データ・トレンド</a>
+                <span class="font-mono text-[11px] text-slate-500">2026.05.04</span>
+                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-tech-blue">市場データ・トレンド</a>
             </div>
             <h3 class="mb-3 text-base font-bold leading-snug text-tech-blue"><a href="/blog/inbound-march-2026-report" class="hover:text-coral">【2026年3月最新】訪日客361万人で過去最高！桜需要で欧米・東南アジアが急伸長</a></h3>
             <p class="line-clamp-3 text-sm leading-relaxed text-slate-500">JNTOの最新統計をもとに、2026年3月の訪日外国人動向を徹底解説。累計1000万人突破の背景や、欧米・東南アジア市場の伸び、中国市場の現状など、インバウンド集客に必要なデータをお届けします。</p>
@@ -298,8 +296,8 @@
         <a href="/blog/inbound-calendar-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/inbound_calendar_2026_hero.webp" type="image/webp"><img src="/assets/images/inbound_calendar_2026_hero.jpg" alt="【2026年最新：インバウンド祝日カレンダー】外国人観光客が多い時期・月別の動向を徹底解説" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
-                <span class="font-mono text-[11px] text-slate-400">2026.05.01</span>
-                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-tech-blue">市場データ・トレンド</a>
+                <span class="font-mono text-[11px] text-slate-500">2026.05.01</span>
+                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-tech-blue">市場データ・トレンド</a>
             </div>
             <h3 class="mb-3 text-base font-bold leading-snug text-tech-blue"><a href="/blog/inbound-calendar-2026" class="hover:text-coral">【2026年最新：インバウンド祝日カレンダー】外国人観光客が多い時期・月別の動向を徹底解説</a></h3>
             <p class="line-clamp-3 text-sm leading-relaxed text-slate-500">インバウンド集客を成功させるには「いつ、どの国の人が来るか」を知ることが重要です。2026年の主要国の祝日カレンダーと月別の旅行動向をまとめました。</p>
@@ -311,8 +309,8 @@
         <a href="/blog/inbound-data-ai-dx-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/inbound-data-ai-hero.jpeg" alt="【2026年最新】AIとデータで勝つインバウンド集客：量から質への転換・DX戦略の正解" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
-                <span class="font-mono text-[11px] text-slate-400">2026.04.28</span>
-                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-tech-blue">市場データ・トレンド</a>
+                <span class="font-mono text-[11px] text-slate-500">2026.04.28</span>
+                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-tech-blue">市場データ・トレンド</a>
             </div>
             <h3 class="mb-3 text-base font-bold leading-snug text-tech-blue"><a href="/blog/inbound-data-ai-dx-2026" class="hover:text-coral">【2026年最新】AIとデータで勝つインバウンド集客：量から質への転換・DX戦略の正解</a></h3>
             <p class="line-clamp-3 text-sm leading-relaxed text-slate-500">2026年、日本のインバウンド市場は「集客数」から「消費単価」への転換点を迎えました。テクノロジーを活用した高単価マーケティングやDX戦略の正解を解説します。</p>
@@ -324,8 +322,8 @@
         <a href="/blog/inbound-spending-behavior-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-inbound-spending-data.jpeg" alt="訪日外国人の消費行動データ分析【2026年最新】国籍別・カテゴリ別の傾向と集客への活かし方" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
-                <span class="font-mono text-[11px] text-slate-400">2026.04.24</span>
-                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-tech-blue">市場データ・トレンド</a>
+                <span class="font-mono text-[11px] text-slate-500">2026.04.24</span>
+                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-tech-blue">市場データ・トレンド</a>
             </div>
             <h3 class="mb-3 text-base font-bold leading-snug text-tech-blue"><a href="/blog/inbound-spending-behavior-2026" class="hover:text-coral">訪日外国人の消費行動データ分析【2026年最新】国籍別・カテゴリ別の傾向と集客への活かし方</a></h3>
             <p class="line-clamp-3 text-sm leading-relaxed text-slate-500">訪日外国人の消費行動を国籍別・カテゴリ別に徹底分析。中国・韓国・台湾・欧米別の購買傾向・消費額データから、インバウンド集客戦略に活かすポイントまで2026年最新情報。</p>
@@ -337,8 +335,8 @@
         <a href="/blog/inbound-meaning-guide" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/inbound-tourist-image.webp" type="image/webp"><img src="/assets/images/inbound-tourist-image.jpg" alt="インバウンドとは？意味・訪日外国人動向・中国向けマーケティング戦略まで完全解説【2026年】" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
-                <span class="font-mono text-[11px] text-slate-400">2026.04.20</span>
-                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-tech-blue">市場データ・トレンド</a>
+                <span class="font-mono text-[11px] text-slate-500">2026.04.20</span>
+                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-tech-blue">市場データ・トレンド</a>
             </div>
             <h3 class="mb-3 text-base font-bold leading-snug text-tech-blue"><a href="/blog/inbound-meaning-guide" class="hover:text-coral">インバウンドとは？意味・訪日外国人動向・中国向けマーケティング戦略まで完全解説【2026年】</a></h3>
             <p class="line-clamp-3 text-sm leading-relaxed text-slate-500">ニュースでよく聞く「インバウンド」の本来の意味や使い方、さらに日本企業の成長に欠かせない中国向けインバウンド対策の基本を詳しく解説します。</p>
@@ -350,8 +348,8 @@
         <a href="/blog/cross-border-ec-market-size-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-douyin-restaurant.webp" type="image/webp"><img src="/assets/images/blog-douyin-restaurant.jpg" alt="【2026年最新版】越境EC市場規模のまとめ！日本・中国・アメリカの動向" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
-                <span class="font-mono text-[11px] text-slate-400">2026.04.05</span>
-                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-tech-blue">市場データ・トレンド</a>
+                <span class="font-mono text-[11px] text-slate-500">2026.04.05</span>
+                <a href="/blog/category/market" class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-tech-blue">市場データ・トレンド</a>
             </div>
             <h3 class="mb-3 text-base font-bold leading-snug text-tech-blue"><a href="/blog/cross-border-ec-market-size-2026" class="hover:text-coral">【2026年最新版】越境EC市場規模のまとめ！日本・中国・アメリカの動向</a></h3>
             <p class="line-clamp-3 text-sm leading-relaxed text-slate-500">世界中で拡大し続ける越境EC市場。2026年最新のデータに基づき、日本・中国・アメリカの3大市場の規模や特徴、トレンドを徹底比較・解説します。企業のグローバル戦略に必見の市場レポートです。</p>
@@ -368,11 +366,11 @@
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                    <p class="text-white/60 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
                         <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
@@ -385,7 +383,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
@@ -396,7 +394,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
@@ -406,10 +404,11 @@
             </div>
         </div>
         <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+            <p class="text-xs text-white/60">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
 <script defer src="/assets/js/blog-taxonomy.js"></script>
+<script defer src="/assets/js/ux.js"></script>
 <script defer src="/assets/js/consult-popup.js"></script>
 </body>
 </html>

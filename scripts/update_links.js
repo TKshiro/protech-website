@@ -32,19 +32,19 @@ htmlFiles.forEach(filePath => {
 
     // 1. Update Desktop Header Dropdown
     const oldDropdown = `<a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>`;
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">小紅書</a>`;
     
     const newDropdown = `<a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
-                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red.html" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>`;
 
     if (content.includes(oldDropdown)) {
         content = content.replace(oldDropdown, newDropdown);
         changed = true;
     } else {
-        const regexDropdown = /<a\s+href="\/services"\s+class="px-4\s+py-2\s+hover:bg-gray-50\s+rounded-lg\s+text-slate-600\s+hover:text-coral\s+transition-colors\s+text-xs\s+font-bold">すべてのサービス<\/a>\s*<a\s+href="\/dianping\.html"\s+class="px-4\s+py-2\s+hover:bg-gray-50\s+rounded-lg\s+text-slate-600\s+hover:text-\[#FF6600\]\s+transition-colors\s+text-xs\s+font-bold">大衆点評<\/a>\s*<a\s+href="\/red\.html"\s+class="px-4\s+py-2\s+hover:bg-gray-50\s+rounded-lg\s+text-slate-600\s+hover:text-\[#FF2442\]\s+transition-colors\s+text-xs\s+font-bold">小紅書<\/a>/g;
+        const regexDropdown = /<a\s+href="\/services"\s+class="px-4\s+py-2\s+hover:bg-gray-50\s+rounded-lg\s+text-slate-600\s+hover:text-coral\s+transition-colors\s+text-xs\s+font-bold">すべてのサービス<\/a>\s*<a\s+href="\/dianping\.html"\s+class="px-4\s+py-2\s+hover:bg-gray-50\s+rounded-lg\s+text-slate-600\s+hover:text-\[#C2410C\]\s+transition-colors\s+text-xs\s+font-bold">大衆点評<\/a>\s*<a\s+href="\/red\.html"\s+class="px-4\s+py-2\s+hover:bg-gray-50\s+rounded-lg\s+text-slate-600\s+hover:text-\[#C8102E\]\s+transition-colors\s+text-xs\s+font-bold">小紅書<\/a>/g;
         if (regexDropdown.test(content)) {
             content = content.replace(regexDropdown, (match) => {
                 return match + `\n                            <a href="/pricing" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">料金プラン</a>`;
@@ -55,21 +55,21 @@ htmlFiles.forEach(filePath => {
 
     // 2. Update Mobile Menu Dropdown
     const oldMobile = `<a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>`;
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">小紅書</a>`;
     
     const newMobile = `<a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">小紅書</a>
                 <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>`;
 
     const oldMobileCoral = `<a href="/services" class="text-lg font-bold text-coral">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>`;
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">小紅書</a>`;
     
     const newMobileCoral = `<a href="/services" class="text-lg font-bold text-coral">サービス</a>
-                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping.html" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">大衆点評</a>
+                <a href="/red.html" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">小紅書</a>
                 <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>`;
 
     if (content.includes(oldMobile)) {
@@ -79,7 +79,7 @@ htmlFiles.forEach(filePath => {
         content = content.replace(oldMobileCoral, newMobileCoral);
         changed = true;
     } else {
-        const regexMobile = /<a\s+href="\/services"\s+class="text-lg\s+font-bold\s+text-(?:slate-700|coral)">サービス<\/a>\s*<a\s+href="\/dianping\.html"\s+class="text-sm\s+font-bold\s+text-slate-500\s+hover:text-\[#FF6600\]">大衆点評<\/a>\s*<a\s+href="\/red\.html"\s+class="text-sm\s+font-bold\s+text-slate-500\s+hover:text-\[#FF2442\]">小紅書<\/a>/g;
+        const regexMobile = /<a\s+href="\/services"\s+class="text-lg\s+font-bold\s+text-(?:slate-700|coral)">サービス<\/a>\s*<a\s+href="\/dianping\.html"\s+class="text-sm\s+font-bold\s+text-slate-500\s+hover:text-\[#C2410C\]">大衆点評<\/a>\s*<a\s+href="\/red\.html"\s+class="text-sm\s+font-bold\s+text-slate-500\s+hover:text-\[#C8102E\]">小紅書<\/a>/g;
         if (regexMobile.test(content)) {
             content = content.replace(regexMobile, (match) => {
                 return match + `\n                <a href="/pricing" class="text-sm font-bold text-slate-500 hover:text-coral">料金プラン</a>`;

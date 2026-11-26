@@ -1,15 +1,14 @@
 (() => {
   'use strict';
 
-  const CONTACTS_KEY = 'protech_contacts';
   const forms = document.querySelectorAll('[data-travel-inquiry]');
 
   const labels = {
     saved: {
-      zh: '已收到你的旅行需求，内容已经保存到后台咨询列表。',
-      zht: '已收到你的旅行需求，內容已經保存到後台諮詢列表。',
-      en: 'Your travel request has been saved to the inquiry dashboard.',
-      ja: '旅行相談の内容を管理画面に保存しました。'
+      zh: '已收到你的旅行需求，负责人会与你联系。',
+      zht: '已收到你的旅行需求，負責人會與你聯繫。',
+      en: 'Your travel request has been received. We will be in touch.',
+      ja: '旅行相談を受け付けました。担当者よりご連絡します。'
     },
     failed: {
       zh: '提交失败，请稍后重试，或直接联系 support@pro-tech.jp。',
@@ -25,18 +24,6 @@
     if (lang.startsWith('ja')) return 'ja';
     if (lang.toLowerCase().startsWith('zh-hant')) return 'zht';
     return 'zh';
-  }
-
-  function getContacts() {
-    try {
-      return JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
-    } catch (_) {
-      return [];
-    }
-  }
-
-  function setContacts(items) {
-    localStorage.setItem(CONTACTS_KEY, JSON.stringify(items));
   }
 
   function makeId() {
@@ -59,7 +46,7 @@
   }
 
   forms.forEach((form) => {
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
       const data = new FormData(form);
       const lang = getPageLanguage();
@@ -100,17 +87,12 @@
       };
 
       try {
-        const contacts = getContacts();
-        contacts.unshift(contact);
-        setContacts(contacts);
-
-        // Save to Google Sheets API
-        fetch('/api/contacts', {
+        const response = await fetch('/api/contacts', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(contact)
-        }).catch(err => console.error('Failed to save travel inquiry to database API:', err));
-
+        });
+        if (!response.ok) throw new Error('save');
         showStatus(form, 'success', labels.saved[lang]);
         form.reset();
       } catch (_) {

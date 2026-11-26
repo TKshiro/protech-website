@@ -13,10 +13,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
 
 <style>
-:root{--tech-blue:#001A33;--coral:#E86B7A}
+:root{--tech-blue:#001A33;--coral:#B4495A}
 body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
 .glass-nav{background:rgba(255,255,255,.95);backdrop-filter:blur(20px)}
 .nav-link:hover{color:var(--coral)}
@@ -51,6 +52,7 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
     "url": "https://pro-tech.jp/inbound-ai"
 }
     </script>
+    <link rel="stylesheet" href="/assets/css/ux.css">
 </head>
 <body class="bg-white text-slate-900">
                                 <!-- NAV -->
@@ -70,8 +72,8 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -102,8 +104,8 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -133,7 +135,7 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
         <div class="max-w-3xl" data-aos="fade-right">
-            <span class="inline-block text-[10px] font-bold tracking-[0.3em] uppercase bg-coral/20 text-coral border border-coral/30 px-4 py-1.5 rounded-full mb-6">PROTECH INBOUND AI</span>
+            <span class="inline-block text-xs font-bold tracking-[0.3em] uppercase bg-coral/20 text-coral border border-coral/30 px-4 py-1.5 rounded-full mb-6">PROTECH INBOUND AI</span>
             <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
                 複雑なデータを、<br><span class="text-coral">誰にでも</span>わかる<br>インサイトへ。
             </h1>
@@ -171,7 +173,7 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
     </div>
     <div class="relative max-w-6xl mx-auto px-6">
         <div class="text-center mb-20" data-aos="fade-up">
-            <span class="inline-block text-[10px] font-black tracking-[0.35em] uppercase text-coral mb-4">PROTECH ANALYSIS</span>
+            <span class="inline-block text-xs font-black tracking-[0.35em] uppercase text-coral mb-4">PROTECH ANALYSIS</span>
             <h2 class="text-3xl md:text-5xl font-black leading-tight mb-6">
                 インバウンド市場の「今」を、<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-coral to-cyan-300">最もわかりやすく</span>届けます。
             </h2>
@@ -239,7 +241,7 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
 <section id="reports" class="py-24 bg-slate-50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16" data-aos="fade-up">
-            <span class="text-[10px] font-black tracking-[0.35em] uppercase text-coral">PROTECH REPORT</span>
+            <span class="text-xs font-black tracking-[0.35em] uppercase text-coral">PROTECH REPORT</span>
             <h2 class="text-3xl md:text-4xl font-black text-tech-blue mt-4">レポートでわかること</h2>
             <p class="text-slate-500 mt-4 max-w-xl mx-auto">毎月のレポートには、インバウンドビジネスに関わるすべての方が知っておくべき情報を凝縮しています。</p>
         </div>
@@ -271,7 +273,7 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
                   <!-- eyes --><rect x="16" y="10" width="4" height="4" fill="#1A0D00"/><rect x="28" y="10" width="4" height="4" fill="#1A0D00"/>
                   <!-- mouth --><rect x="20" y="16" width="8" height="4" fill="#E07070"/>
                   <!-- neck --><rect x="20" y="20" width="8" height="4" fill="#FFCBA4"/>
-                  <!-- coral shirt --><rect x="12" y="24" width="24" height="4" fill="#E86B7A"/><rect x="4" y="28" width="40" height="8" fill="#E86B7A"/><rect x="12" y="36" width="24" height="4" fill="#E86B7A"/>
+                  <!-- coral shirt --><rect x="12" y="24" width="24" height="4" fill="#B4495A"/><rect x="4" y="28" width="40" height="8" fill="#B4495A"/><rect x="12" y="36" width="24" height="4" fill="#B4495A"/>
                   <!-- hands --><rect x="0" y="28" width="4" height="8" fill="#FFCBA4"/><rect x="44" y="28" width="4" height="8" fill="#FFCBA4"/>
                   <!-- pants --><rect x="12" y="40" width="10" height="8" fill="#1E3A5F"/><rect x="26" y="40" width="10" height="8" fill="#1E3A5F"/>
                   <!-- shoes --><rect x="8" y="48" width="14" height="4" fill="#1A0D00"/><rect x="26" y="48" width="14" height="4" fill="#1A0D00"/>
@@ -333,7 +335,7 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
 <section class="py-24 bg-slate-50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16" data-aos="fade-up">
-            <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-coral">DATA HUB</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-coral">DATA HUB</span>
             <h2 class="text-3xl md:text-4xl font-black text-tech-blue mt-3">週次・月次データレポート</h2>
             <p class="text-gray-500 mt-4 max-w-xl mx-auto">公的統計に基づく訪日インバウンド市場データと、PROTECHによるビジネス考察。</p>
         </div>
@@ -346,7 +348,7 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
                     <span style="font-size:28px;line-height:1.6;font-weight:700">訪日市場の変化を、<br>次の集客施策へ。</span>
                 </div>
                 <div class="p-6">
-                    <p class="text-xs text-gray-400 mb-3">2026年10月版｜10月21日公表統計</p>
+                    <p class="text-xs text-slate-500 mb-3">2026年10月版｜10月21日公表統計</p>
                     <h3 class="text-lg font-bold text-tech-blue mb-3">9月の訪日外客数・7〜9月期の消費動向レポート</h3>
                     <p class="text-sm text-gray-500 leading-relaxed mb-4">9月の訪日客数は310.37万人（前年比−5.0%）。7〜9月期の旅行消費額は2兆2,076億円（＋3.2%）。市場別の変化と施策への示唆を整理。</p>
                     <span class="text-coral text-sm font-bold">10月版レポートを読む →</span>
@@ -360,8 +362,8 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
                 </div>
                 <div class="p-6">
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="text-[9px] font-bold bg-blue-50 text-blue-600 px-2 py-1 rounded tracking-widest uppercase">MONTHLY REPORT</span>
-                        <span class="text-xs text-gray-400">訪日外客数 / 消費動向</span>
+                        <span class="text-xs font-bold bg-blue-50 text-blue-600 px-2 py-1 rounded tracking-widest uppercase">MONTHLY REPORT</span>
+                        <span class="text-xs text-slate-500">訪日外客数 / 消費動向</span>
                     </div>
                     <h3 class="text-lg font-bold text-tech-blue mb-3 group-hover:text-coral transition">2026年1-3月期 訪日インバウンド市場動向 AI解析レポート</h3>
                     <p class="text-sm text-gray-500 leading-relaxed mb-4">訪日客数361万人突破（3月過去最高）。消費額は2.3兆円に到達。韓国・台湾の好調と中国市場の動向についてAIが徹底解析。</p>
@@ -395,11 +397,11 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                    <p class="text-white/60 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
                         <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
@@ -412,7 +414,7 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
@@ -423,7 +425,7 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
@@ -433,13 +435,13 @@ body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;sc
             </div>
         </div>
         <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+            <p class="text-xs text-white/60">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
-    AOS.init({duration:800,once:true});
+    (window.protechInitAos||(window.protechInitAos=function(o){var run=function(){if(window.AOS)AOS.init(o)};if(window.AOS)run();else document.addEventListener("DOMContentLoaded",run)}))({duration:800,once:true});
     const menuBtn=document.getElementById("menu-btn");
     const mobileMenu=document.getElementById("mobile-menu");
     if(menuBtn&&mobileMenu){
@@ -449,5 +451,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 });
 </script>
 <script defer src="/assets/js/consult-popup.js"></script>
+    <script defer src="/assets/js/ux.js"></script>
 </body>
 </html>

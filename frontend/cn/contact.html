@@ -28,8 +28,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
     <link rel="stylesheet" href="/assets/css/shared.css">
     <style>
 
@@ -66,6 +66,7 @@
     "url": "https://pro-tech.jp/contact"
 }
     </script>
+    <link rel="stylesheet" href="/assets/css/ux.css">
 </head>
 
 <body class="bg-white text-slate-900">
@@ -88,8 +89,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/cn/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">全部服务</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大众点评</a>
-                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小红书</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">大众点评</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">小红书</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">中文视觉与内容制作</a>
@@ -111,9 +112,9 @@
                         🌐 CN
                     </button>
                     <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
-                        <a href="/cn/contact" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
-                        <a href="/en/contact" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
-                        <a href="/cn/contact" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                        <a href="/cn/contact" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="/en/contact" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="/cn/contact" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
                     </div>
                 </div>
             </div>
@@ -132,8 +133,8 @@
             <a href="/cn" class="text-lg font-bold text-slate-700">首页</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/cn/services" class="text-lg font-bold text-slate-700">服务介绍</a>
-                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大众点评</a>
-                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小红书</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">大众点评</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">小红书</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">内容制作</a>
@@ -161,9 +162,9 @@
     <section class="pt-32 md:pt-40 pb-16 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
         <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
-            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">联系我们</span>
+            <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase block mb-4">联系我们</span>
             <h1 class="text-4xl md:text-6xl font-bold serif text-tech-blue mb-6">联系我们</h1>
-            <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            <p class="text-slate-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
                 如果您对我们的服务有任何疑问或需要报价评估，<br class="hidden md:block">
                 欢迎随时联系我们。
             </p>
@@ -208,91 +209,49 @@
 
                 <div class="lg:col-span-7">
                     <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 md:p-12">
-                        <div id="successMessage"
-                            class="hidden mb-8 bg-emerald-50 border border-emerald-200 text-emerald-700 px-6 py-4 rounded-xl">
-                            <p class="font-bold text-sm">✅ 信息已成功发送。我们的专属顾问将尽快与您联系。</p>
-                        </div>
-
-                        <form id="contactForm" class="space-y-6">
+                        <form id="contactForm" class="space-y-6" novalidate data-contact-form data-thanks="/cn/contact/thanks" data-label-send="提交内容" data-label-sending="提交中..." data-error-name="请输入您的姓名。" data-error-email="请输入有效的电子邮件地址。" data-error-message="请输入咨询内容。" data-error-send="提交失败，请稍后再试。">
+                            <fieldset>
+                                <legend class="block text-xs font-bold text-tech-blue mb-3 tracking-widest">咨询类型（选填）</legend>
+                                <div class="inquiry-grid"><label class="inquiry-card"><input type="radio" name="inquiry_type" value="red_marketing"><span>小红书 (RED) 整合营销</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="web_development"><span>官网落地页与移动端开发</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="ui_ux_design"><span>UI / UX 界面设计</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="consultation"><span>服务整体咨询</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="estimate"><span>报价评估请求</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="other"><span>其他咨询</span></label></div>
+                            </fieldset>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">咨询类别 *</label>
-                                <select id="inquiry_type" name="inquiry_type" required
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                    <option value="">请选择</option>
-                                    <option value="red_marketing">小红书 (RED) 整合营销</option>
-                                    <option value="web_development">官网落地页与移动端开发</option>
-                                    <option value="ui_ux_design">UI / UX 界面设计</option>
-                                    <option value="consultation">服务整体咨询</option>
-                                    <option value="estimate">报价评估请求</option>
-                                    <option value="other">其他咨询</option>
-                                </select>
-                            </div>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">您的姓名 *</label>
-                                    <input type="text" id="name" name="name" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">公司名称 *</label>
-                                    <input type="text" id="company" name="company" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">电子邮件 *</label>
-                                    <input type="email" id="email" name="email" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">电话号码</label>
-                                    <input type="tel" id="phone" name="phone"
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm"
-                                        placeholder="03-1234-5678">
-                                </div>
+                                <label for="name" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">您的姓名 *</label>
+                                <input type="text" id="name" name="name" required autocomplete="name" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                <p class="field-error" data-error-for="name" hidden></p>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">预估预算</label>
-                                <select id="budget" name="budget"
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                    <option value="">请选择</option>
-                                    <option value="under_500k">50万日元以下</option>
-                                    <option value="500k_1m">50万〜100万日元</option>
-                                    <option value="1m_3m">100万〜300万日元</option>
-                                    <option value="3m_5m">300万〜500万日元</option>
-                                    <option value="over_5m">500万日元以上</option>
-                                    <option value="undecided">未定 / 需商讨</option>
-                                </select>
+                                <label for="email" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">电子邮件 *</label>
+                                <input type="email" id="email" name="email" required autocomplete="email" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                <p class="field-error" data-error-for="email" hidden></p>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">您是如何得知 PROTECH 的？</label>
-                                <select id="referral_source" name="referral_source"
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                    <option value="">请选择</option>
-                                    <option value="web_search">搜索引擎</option>
-                                    <option value="sns">社交媒体 (小红书、X、Instagram等)</option>
-                                    <option value="referral">朋友介绍</option>
-                                    <option value="event">行业展会/宣讲会</option>
-                                    <option value="media">新闻媒体/行业报道</option>
-                                    <option value="other">其他咨询</option>
-                                </select>
+                                <label for="company" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">公司（选填）</label>
+                                <input type="text" id="company" name="company" autocomplete="organization" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">咨询详情 *</label>
-                                <textarea id="message" name="message" rows="6" required
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm resize-none"
-                                    placeholder="请输入具体的咨询与合作诉求"></textarea>
+                                <label for="message" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">咨询详情 *</label>
+                                <textarea id="message" name="message" rows="6" required class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm resize-none" placeholder="请输入具体的咨询与合作诉求"></textarea>
+                                <p class="field-error" data-error-for="message" hidden></p>
                             </div>
-
-                            <button type="submit" id="submitBtn"
-                                class="w-full py-5 btn-coral font-bold rounded-xl tracking-[0.2em] text-xs uppercase shadow-lg">
-                                提交内容
-                            </button>
-
-                            <p class="text-center text-[10px] text-gray-400 mt-6">
-                                点击提交即代表您同意我们的<a href="/privacy" class="underline text-coral">隐私政策</a>。
-                            </p>
+                            <details class="optional-details">
+                                <summary>添加详细信息（选填）</summary>
+                                <div class="space-y-6">
+                                    <div>
+                                        <label for="phone" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">电话号码</label>
+                                        <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm" placeholder="03-1234-5678">
+                                    </div>
+                                    <div>
+                                        <label for="budget" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">预估预算</label>
+                                        <select id="budget" name="budget" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm"><option value="">请选择</option><option value="under_500k">50万日元以下</option><option value="500k_1m">50万〜100万日元</option><option value="1m_3m">100万〜300万日元</option><option value="3m_5m">300万〜500万日元</option><option value="over_5m">500万日元以上</option><option value="undecided">未定 / 需商讨</option></select>
+                                    </div>
+                                    <div>
+                                        <label for="referral_source" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">您是如何得知 PROTECH 的？</label>
+                                        <select id="referral_source" name="referral_source" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm"><option value="">请选择</option><option value="web_search">搜索引擎</option><option value="sns">社交媒体 (小红书、X、Instagram等)</option><option value="referral">朋友介绍</option><option value="event">行业展会/宣讲会</option><option value="media">新闻媒体/行业报道</option><option value="other">其他</option></select>
+                                    </div>
+                                </div>
+                            </details>
+                            <button type="submit" id="submitBtn" class="w-full py-5 btn-coral font-bold rounded-xl tracking-[0.2em] text-xs uppercase shadow-lg">提交内容</button>
+                            <p class="text-center text-xs text-slate-500 mt-6">点击提交即代表您同意我们的<a href="/privacy" class="underline text-coral">隐私政策</a>。</p>
                         </form>
                     </div>
                 </div>
@@ -307,11 +266,11 @@
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">用科技与营销，<br>跨越商业的边界。</p>
+                    <p class="text-white/60 text-xs leading-relaxed">用科技与营销，<br>跨越商业的边界。</p>
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">服务介绍</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">大众点评引流</a></li>
                         <li><a href="/red" class="hover:text-coral transition">小红书 (RED) 整合营销</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音 (Douyin) 代运营</a></li>
@@ -324,7 +283,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">公司信息</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/cn/company" class="hover:text-coral transition">公司概要</a></li>
                         <li><a href="/cn/cases" class="hover:text-coral transition">客户案例</a></li>
                         <li><a href="/cn/blog" class="hover:text-coral transition">博客文章</a></li>
@@ -335,7 +294,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">资源中心</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">干货资料下载</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">常见问题 (FAQ)</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">入境营销 AI</a></li>
@@ -345,88 +304,22 @@
             </div>
         </div>
         <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. 版权所有</p>
+            <p class="text-xs text-white/60">© 2026 PROTECH Inc. 版权所有</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
-        AOS.init({ duration: 800, once: true, offset: 80 });
+        (window.protechInitAos||(window.protechInitAos=function(o){var run=function(){if(window.AOS)AOS.init(o)};if(window.AOS)run();else document.addEventListener("DOMContentLoaded",run)}))({ duration: 800, once: true, offset: 80 });
 
         // Apply seigaiha SVG pattern via JS to avoid CSS linter issues with data URI
         document.querySelectorAll('.seigaiha-pattern').forEach(function(el) {
             el.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 C20 40 20 20 40 20 C60 20 60 40 80 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M-40 40 C-20 40 -20 20 0 20 C20 20 20 40 40 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M40 40 C60 40 60 20 80 20 C100 20 100 40 120 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3C/svg%3E\")";
         });
 
-        (function () { emailjs.init("Oa3PmeXJ7kwYjIls0"); })();
-
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const btn = document.getElementById('submitBtn');
-            const originalBtnText = btn.innerText;
-
-            btn.innerText = '发送中...';
-            btn.disabled = true;
-
-            const templateParams = {
-                name: document.getElementById('name').value,
-                company: document.getElementById('company').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-
-            emailjs.send('service_zg0cj56', 'template_9wqf6sc', templateParams)
-                .then(function () {
-                    // Save to localStorage for admin panel
-                    try {
-                        const contactData = {
-                            id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
-                            inquiry_type: document.getElementById('inquiry_type').value,
-                            name: document.getElementById('name').value,
-                            company: document.getElementById('company').value,
-                            email: document.getElementById('email').value,
-                            phone: document.getElementById('phone').value || '',
-                            budget: document.getElementById('budget').value || '',
-                            referral_source: document.getElementById('referral_source').value || '',
-                            message: document.getElementById('message').value,
-                            date: new Date().toISOString(),
-                            status: '未対応'
-                        };
-                        const stored = JSON.parse(localStorage.getItem('protech_contacts') || '[]');
-                        stored.unshift(contactData);
-                        localStorage.setItem('protech_contacts', JSON.stringify(stored));
-
-                        // Save to Google Sheets API
-                        fetch('/api/contacts', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(contactData)
-                        }).catch(err => console.error('Failed to save to database API:', err));
-                    } catch (err) {
-                        console.error('Failed to save contact to localStorage:', err);
-                    }
-
-                    document.getElementById('successMessage').classList.remove('hidden');
-                    document.getElementById('contactForm').reset();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                    setTimeout(() => {
-                        document.getElementById('successMessage').classList.add('hidden');
-                    }, 5000);
-
-                    btn.innerText = originalBtnText;
-                    btn.disabled = false;
-                }, function (error) {
-                    alert('发送失败，请稍后重试。');
-                    console.error('EmailJS Error:', error);
-
-                    btn.innerText = originalBtnText;
-                    btn.disabled = false;
-                });
-        });
-    </script>
+        </script>
     <script defer src="/assets/js/main.js"></script>
+    <script defer src="/assets/js/ux.js"></script>
 </body>
 
 </html>

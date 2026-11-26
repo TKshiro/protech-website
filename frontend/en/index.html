@@ -43,9 +43,10 @@
 
     
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
     <link rel="stylesheet" href="/assets/css/shared.css">
     <style>
 
@@ -189,7 +190,7 @@
             display: inline-block;
             padding: 2px 10px;
             border-radius: 4px;
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 700;
         }
 
@@ -346,7 +347,8 @@
       "url": "https://pro-tech.jp/"
     }
     </script>
-    </head>
+        <link rel="stylesheet" href="/assets/css/ux.css">
+</head>
 
 <body class="bg-white text-slate-900">
 
@@ -369,8 +371,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/en/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">All Services</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">Dianping</a>
-                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">Xiaohongshu (RED)</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">Dianping</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">Xiaohongshu (RED)</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">Douyin</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">WeChat Mini-Program</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">Creative Production</a>
@@ -393,9 +395,9 @@
                         🌐 EN
                     </button>
                     <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
-                        <a href="/en" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
-                        <a href="/en" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
-                        <a href="/cn" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                        <a href="/en" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="/en" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="/cn" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
                     </div>
                 </div>
             </div>
@@ -414,8 +416,8 @@
             <a href="/en" class="text-lg font-bold text-slate-700">Home</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/en/services" class="text-lg font-bold text-slate-700">Services</a>
-                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">Dianping</a>
-                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">Xiaohongshu (RED)</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">Dianping</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">Xiaohongshu (RED)</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">Douyin</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">WeChat Mini-Program</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">Creative Production</a>
@@ -480,7 +482,7 @@
                 <!-- Thin top rule line - Japanese editorial style -->
                 <div class="hero-eyebrow flex items-center gap-4 mb-10">
                     <div class="h-px bg-white/25 w-12"></div>
-                    <p class="text-white/50 tracking-[0.4em] text-[10px] font-light"
+                    <p class="text-white/50 tracking-[0.4em] text-xs font-light"
                         style="font-family:'Noto Sans JP',sans-serif;">
                         Chinese Social Media Operations &nbsp;×&nbsp; Creative &nbsp;×&nbsp; Development
                     </p>
@@ -537,7 +539,7 @@
                 <div class="absolute right-10 bottom-24 hidden xl:flex flex-col items-center gap-3 opacity-20">
                     <div class="w-px h-20 bg-white"></div>
                     <p
-                        style="writing-mode: vertical-rl; font-size: 10px; letter-spacing: 0.3em; color: white; font-family:'Noto Sans JP',sans-serif; font-weight:300;">
+                        style="writing-mode: vertical-rl; font-size: 12px; letter-spacing: 0.3em; color: white; font-family:'Noto Sans JP',sans-serif; font-weight:300;">
                         SCROLL</p>
                     <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
                 </div>
@@ -571,7 +573,7 @@
 
     <!-- MARQUEE TICKER -->
     <div class="bg-tech-blue py-4 overflow-hidden border-y border-white/5">
-        <div class="marquee-inner flex gap-16 whitespace-nowrap text-white/70 text-[10px] font-bold tracking-[0.25em] uppercase"
+        <div class="marquee-inner flex gap-16 whitespace-nowrap text-white/70 text-xs font-bold tracking-[0.25em] uppercase"
             style="width: max-content;">
             <span>RED Agency Operations</span><span class="text-coral">—</span>
             <span>Douyin / TikTok</span><span class="text-coral">—</span>
@@ -596,7 +598,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex items-end justify-between mb-12" data-aos="fade-up">
                 <div>
-                    <span class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase block mb-2">News</span>
+                    <span class="text-coral text-xs font-bold tracking-[0.3em] uppercase block mb-2">News</span>
                     <h2 class="text-2xl md:text-3xl font-bold serif text-tech-blue">Xiaohongshu & Dianping Latest Info</h2>
                 </div>
                 <a href="/en/blog"
@@ -621,7 +623,7 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-3 mb-3">
-                            <span class="text-[10px] text-gray-400">2026.04.25</span>
+                            <span class="text-xs text-slate-500">2026.04.25</span>
                             <span class="badge bg-coral/10 text-coral">Blog</span>
                         </div>
                         <h3 class="font-medium text-sm text-tech-blue leading-relaxed">What is Dianping? Simple Usage and Inbound Attraction Methods</h3>
@@ -639,7 +641,7 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-3 mb-3">
-                            <span class="text-[10px] text-gray-400">2026.04.22</span>
+                            <span class="text-xs text-slate-500">2026.04.22</span>
                             <span class="badge bg-coral/10 text-coral">Blog</span>
                         </div>
                         <h3 class="font-medium text-sm text-tech-blue leading-relaxed">How to Increase Restaurant Inbound Customers via Douyin/TikTok
@@ -658,7 +660,7 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-3 mb-3">
-                            <span class="text-[10px] text-gray-400">2026.04.18</span>
+                            <span class="text-xs text-slate-500">2026.04.18</span>
                             <span class="badge bg-purple-50 text-purple-600">Dev & Cost</span>
                         </div>
                         <h3 class="font-medium text-sm text-tech-blue leading-relaxed">Typical Costs and Timeline for WeChat Mini-Program Development
@@ -677,7 +679,7 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-3 mb-3">
-                            <span class="text-[10px] text-gray-400">2026.04.15</span>
+                            <span class="text-xs text-slate-500">2026.04.15</span>
                             <span class="badge bg-blue-50 text-blue-600">Marketing</span>
                         </div>
                         <h3 class="font-medium text-sm text-tech-blue leading-relaxed">2026 Social Media Strategy for Attracting Chinese Tourists</h3>
@@ -691,7 +693,7 @@
     <!--
     <section class="py-16 md:py-20 bg-white border-b border-gray-100">
         <div class="max-w-5xl mx-auto px-6 text-center">
-            <p class="text-gray-400 text-xs font-bold tracking-wider mb-10" data-aos="fade-up">
+            <p class="text-slate-500 text-xs font-bold tracking-wider mb-10" data-aos="fade-up">
                 Trusted by companies in marketing, tech development, and other fields</p>
             <div class="logo-wall flex flex-wrap items-center justify-center gap-8 md:gap-14" data-aos="fade-up"
                 data-aos-delay="100">
@@ -705,7 +707,7 @@
         <div class="absolute top-0 right-0 w-64 h-64 seigaiha-pattern opacity-30"></div>
         <div class="max-w-6xl mx-auto relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">What is Xiaohongshu (RED)?</span>
+                <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase block mb-4">What is Xiaohongshu (RED)?</span>
                 <h2 class="text-2xl md:text-4xl font-medium serif text-tech-blue mb-6" style="letter-spacing: 0.04em;">
                     Xiaohongshu (RED) — China's Largest Lifestyle Social Platform
                 </h2>
@@ -787,10 +789,10 @@
         </svg>
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">SERVICES</span>
+                <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase block mb-3">SERVICES</span>
                 <h2 class="text-2xl md:text-4xl font-medium serif text-tech-blue" style="letter-spacing: 0.04em;">
                     Xiaohongshu & Dianping Agency: What do we do?</h2>
-                <p class="text-gray-400 text-sm mt-4 max-w-xl mx-auto">
+                <p class="text-slate-500 text-sm mt-4 max-w-xl mx-auto">
                     Leave everything to PROTECH, from account creation to monthly reporting.
                 </p>
             </div>
@@ -798,42 +800,42 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-coral/15"
                     data-aos="fade-up" data-aos-delay="0">
-                    <span class="text-[10px] font-bold text-coral tracking-widest uppercase block mb-4">STEP 01</span>
+                    <span class="text-xs font-bold text-coral tracking-widest uppercase block mb-4">STEP 01</span>
                     <h3 class="font-bold text-tech-blue text-lg mb-3">Strategy & Account Creation</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         We conduct target audience analysis, competitor research, and brand positioning to formulate the optimal strategy. We also handle official account registration and verification.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-coral/15"
                     data-aos="fade-up" data-aos-delay="80">
-                    <span class="text-[10px] font-bold text-coral tracking-widest uppercase block mb-4">STEP 02</span>
+                    <span class="text-xs font-bold text-coral tracking-widest uppercase block mb-4">STEP 02</span>
                     <h3 class="font-bold text-tech-blue text-lg mb-3">Content Creation & Posting</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         Native Chinese writers craft photos, videos, and texts optimized for the RED algorithm. We schedule regular distributions aligned with a monthly posting calendar.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-coral/15"
                     data-aos="fade-up" data-aos-delay="160">
-                    <span class="text-[10px] font-bold text-coral tracking-widest uppercase block mb-4">STEP 03</span>
+                    <span class="text-xs font-bold text-coral tracking-widest uppercase block mb-4">STEP 03</span>
                     <h3 class="font-bold text-tech-blue text-lg mb-3">KOL & KOC Influencer Promotion</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         We select, negotiate with, and manage KOLs/KOCs aligned with your industry, budget, and goals. We handle everything from content quality control to performance evaluation.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-coral/15"
                     data-aos="fade-up" data-aos-delay="240">
-                    <span class="text-[10px] font-bold text-coral tracking-widest uppercase block mb-4">STEP 04</span>
+                    <span class="text-xs font-bold text-coral tracking-widest uppercase block mb-4">STEP 04</span>
                     <h3 class="font-bold text-tech-blue text-lg mb-3">Ad Operations (Feed Ads)</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         Maximize reach to target groups using RED's native ads (feed and search ads). We improve ROI via budget optimization and systematic A/B testing.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-coral/15"
                     data-aos="fade-up" data-aos-delay="320">
-                    <span class="text-[10px] font-bold text-coral tracking-widest uppercase block mb-4">STEP 05</span>
+                    <span class="text-xs font-bold text-coral tracking-widest uppercase block mb-4">STEP 05</span>
                     <h3 class="font-bold text-tech-blue text-lg mb-3">Comments & DM Management</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         We handle replies to comments and direct messages in Chinese, building user engagement to drive visits, bookings, and purchases.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-coral/15"
                     data-aos="fade-up" data-aos-delay="400">
-                    <span class="text-[10px] font-bold text-coral tracking-widest uppercase block mb-4">STEP 06</span>
+                    <span class="text-xs font-bold text-coral tracking-widest uppercase block mb-4">STEP 06</span>
                     <h3 class="font-bold text-tech-blue text-lg mb-3">Monthly Reports & Recommendations</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         Visualize data on followers, impressions, engagement, and foot traffic. We deliver monthly suggestions to continuously boost results.</p>
@@ -881,11 +883,11 @@
                         <!-- head -->
                         <circle cx="28" cy="14" r="10" fill="#FBBF8C" />
                         <!-- hair bun -->
-                        <circle cx="28" cy="6" r="7" fill="#E86B7A" />
+                        <circle cx="28" cy="6" r="7" fill="#B4495A" />
                         <!-- body -->
                         <rect x="16" y="24" width="24" height="26" rx="8" fill="#F59E0B" />
                         <!-- megaphone -->
-                        <polygon points="42,28 60,20 60,46 42,40" fill="#E86B7A" />
+                        <polygon points="42,28 60,20 60,46 42,40" fill="#B4495A" />
                         <rect x="36" y="30" width="8" height="10" rx="2" fill="#DC2626" />
                         <!-- sound waves -->
                         <path d="M62,24 Q68,33 62,42" fill="none" stroke="#E86B7A" stroke-width="2.5"
@@ -907,7 +909,7 @@
                     </svg>
                 </div>
                 <div class="text-center">
-                    <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">Target Industries</span>
+                    <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase block mb-3">Target Industries</span>
                     <h2 class="text-2xl md:text-4xl font-medium serif text-tech-blue" style="letter-spacing: 0.04em;">
                         Industries Suited for RED & Dianping Marketing</h2>
                 </div>
@@ -925,7 +927,7 @@
                         <rect x="18" y="28" width="6" height="4" rx="1" fill="#6366F1" />
                         <!-- bar chart inside -->
                         <rect x="13" y="46" width="4" height="6" fill="#10B981" />
-                        <rect x="19" y="42" width="4" height="10" fill="#E86B7A" />
+                        <rect x="19" y="42" width="4" height="10" fill="#B4495A" />
                         <rect x="25" y="38" width="4" height="14" fill="#F59E0B" />
                         <line x1="13" y1="52" x2="29" y2="52" stroke="#6B7280" stroke-width="1" />
                         <!-- right arm pointing -->
@@ -1080,7 +1082,7 @@
         </svg>
         <div class="max-w-6xl mx-auto relative z-10">
             <div class="text-center mb-16 md:mb-20 relative" data-aos="fade-up">
-                <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">STRENGTHS</span>
+                <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase block mb-3">STRENGTHS</span>
                 <h2 class="text-2xl md:text-4xl font-medium serif text-tech-blue" style="letter-spacing: 0.04em;">
                     Why Choose PROTECH for Xiaohongshu & Dianping Agency Operations</h2>
                 <div class="absolute right-0 top-0 w-12 h-16 opacity-80 hidden lg:block">
@@ -1088,7 +1090,7 @@
                         <!-- head -->
                         <circle cx="30" cy="14" r="10" fill="#FBBF8C" />
                         <!-- hair -->
-                        <ellipse cx="30" cy="7" rx="10" ry="5" fill="#E86B7A" />
+                        <ellipse cx="30" cy="7" rx="10" ry="5" fill="#B4495A" />
                         <!-- body -->
                         <rect x="18" y="24" width="24" height="28" rx="8" fill="#6366F1" />
                         <!-- phone -->
@@ -1108,8 +1110,8 @@
                         <ellipse cx="19" cy="70" rx="6" ry="3" fill="#1e293b" />
                         <ellipse cx="41" cy="70" rx="6" ry="3" fill="#1e293b" />
                         <!-- speech bubble -->
-                        <ellipse cx="10" cy="20" rx="10" ry="7" fill="#E86B7A" opacity="0.9" />
-                        <polygon points="15,26 12,32 20,27" fill="#E86B7A" opacity="0.9" />
+                        <ellipse cx="10" cy="20" rx="10" ry="7" fill="#B4495A" opacity="0.9" />
+                        <polygon points="15,26 12,32 20,27" fill="#B4495A" opacity="0.9" />
                         <text x="5" y="23" font-size="7" fill="white" font-family="sans-serif">SNS</text>
                     </svg>
                 </div>
@@ -1126,7 +1128,7 @@
                         </svg>
                     </div>
                     <h4 class="font-bold text-tech-blue text-lg mb-3">Bilingual Native<br>Team</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">Our bilingual team bridges cultural gaps to design the most effective strategies.</p>
+                    <p class="text-sm text-slate-500 leading-relaxed">Our bilingual team bridges cultural gaps to design the most effective strategies.</p>
                 </div>
                 <div class="text-center p-8 rounded-2xl hover:bg-warm-gray transition-all duration-300 group"
                     data-aos="fade-up" data-aos-delay="100">
@@ -1138,7 +1140,7 @@
                         </svg>
                     </div>
                     <h4 class="font-bold text-tech-blue text-lg mb-3">Tech & Marketing<br>Integration</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">We leverage proprietary data analysis and automation tools to deliver highly precise campaigns.</p>
+                    <p class="text-sm text-slate-500 leading-relaxed">We leverage proprietary data analysis and automation tools to deliver highly precise campaigns.</p>
                 </div>
                 <div class="text-center p-8 rounded-2xl hover:bg-warm-gray transition-all duration-300 group"
                     data-aos="fade-up" data-aos-delay="200">
@@ -1150,7 +1152,7 @@
                         </svg>
                     </div>
                     <h4 class="font-bold text-tech-blue text-lg mb-3">One-Stop Support</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">From strategy planning to execution and reporting, we handle everything under one roof.</p>
+                    <p class="text-sm text-slate-500 leading-relaxed">From strategy planning to execution and reporting, we handle everything under one roof.</p>
                 </div>
                 <div class="text-center p-8 rounded-2xl hover:bg-warm-gray transition-all duration-300 group"
                     data-aos="fade-up" data-aos-delay="300">
@@ -1162,7 +1164,7 @@
                         </svg>
                     </div>
                     <h4 class="font-bold text-tech-blue text-lg mb-3">Data-Driven<br>Optimization</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">We maximize results by running a PDCA cycle based on rigorous data analysis rather than intuition.</p>
+                    <p class="text-sm text-slate-500 leading-relaxed">We maximize results by running a PDCA cycle based on rigorous data analysis rather than intuition.</p>
                 </div>
             </div>
         </div>
@@ -1174,7 +1176,7 @@
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="flex items-end justify-between mb-12" data-aos="fade-up">
                 <div>
-                    <span class="text-coral font-bold text-[10px] tracking-[0.3em] uppercase mb-3 block">Case Studies</span>
+                    <span class="text-coral font-bold text-xs tracking-[0.3em] uppercase mb-3 block">Case Studies</span>
                     <h2 class="text-2xl md:text-4xl font-medium serif text-tech-blue" style="letter-spacing: 0.04em;">
                         RED & Dianping Success Stories</h2>
                 </div>
@@ -1196,12 +1198,12 @@
                     </div>
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="text-[9px] font-bold bg-blue-50 text-blue-600 px-2 py-1 rounded">Food & Beverage</span>
+                            <span class="text-xs font-bold bg-blue-50 text-blue-600 px-2 py-1 rounded">Food & Beverage</span>
                             <span
-                                class="text-[9px] font-bold bg-emerald-50 text-emerald-600 px-2 py-1 rounded">KOL Marketing</span>
+                                class="text-xs font-bold bg-emerald-50 text-emerald-600 px-2 py-1 rounded">KOL Marketing</span>
                         </div>
                         <h3 class="font-bold text-tech-blue text-base leading-snug mb-2">Fully Booked in Month One. Attracting Chinese Tourists via RED</h3>
-                        <p class="text-xs text-gray-400">Huadiao Drunken Chicken Shibuya</p>
+                        <p class="text-xs text-slate-500">Huadiao Drunken Chicken Shibuya</p>
                     </div>
                 </a>
                 <a href="/en/cases"
@@ -1213,13 +1215,13 @@
                     </div>
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="text-[9px] font-bold bg-pink-50 text-pink-600 px-2 py-1 rounded">Beauty</span>
+                            <span class="text-xs font-bold bg-pink-50 text-pink-600 px-2 py-1 rounded">Beauty</span>
                             <span
-                                class="text-[9px] font-bold bg-orange-50 text-orange-600 px-2 py-1 rounded">E-Commerce Integration</span>
+                                class="text-xs font-bold bg-orange-50 text-orange-600 px-2 py-1 rounded">E-Commerce Integration</span>
                         </div>
                         <h3 class="font-bold text-tech-blue text-base leading-snug mb-2">Over 50K followers in 3 months. Cross-border E-commerce sales up 300%
                         </h3>
-                        <p class="text-xs text-gray-400">A Japanese Cosmetics Brand</p>
+                        <p class="text-xs text-slate-500">A Japanese Cosmetics Brand</p>
                     </div>
                 </a>
                 <a href="/en/cases"
@@ -1231,11 +1233,11 @@
                     </div>
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="text-[9px] font-bold bg-green-50 text-green-600 px-2 py-1 rounded">Sightseeing</span>
-                            <span class="text-[9px] font-bold bg-blue-50 text-blue-600 px-2 py-1 rounded">Inbound</span>
+                            <span class="text-xs font-bold bg-green-50 text-green-600 px-2 py-1 rounded">Sightseeing</span>
+                            <span class="text-xs font-bold bg-blue-50 text-blue-600 px-2 py-1 rounded">Inbound</span>
                         </div>
                         <h3 class="font-bold text-tech-blue text-base leading-snug mb-2">Tourist visits up 250% YoY. A local sightseeing success case</h3>
-                        <p class="text-xs text-gray-400">A Local Tourist Attraction</p>
+                        <p class="text-xs text-slate-500">A Local Tourist Attraction</p>
                     </div>
                 </a>
             </div>
@@ -1266,15 +1268,15 @@
     </style>
     <section class="py-16 md:py-20 px-6 bg-slate-50 relative overflow-hidden">
         <div class="absolute inset-0 pointer-events-none">
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#FF2442]/5 rounded-full blur-[120px]"></div>
-            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-[#FF6600]/5 rounded-full blur-[120px]"></div>
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#C8102E]/5 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-[#C2410C]/5 rounded-full blur-[120px]"></div>
         </div>
 
         <div class="max-w-6xl mx-auto space-y-6 relative z-10">
 
             <!-- ── Xiaohongshu (RED) promo ── -->
             <div class="relative rounded-3xl overflow-hidden flex flex-col md:flex-row items-stretch" data-aos="fade-up"
-                style="background: linear-gradient(135deg, #FF2442 0%, #c8102e 60%, #8b0000 100%);">
+                style="background: linear-gradient(135deg, #C8102E 0%, #c8102e 60%, #8b0000 100%);">
 
                 <!-- Background Decoration -->
                 <div class="absolute inset-0 pointer-events-none overflow-hidden" style="z-index:0;">
@@ -1294,7 +1296,7 @@
                         <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                             <span class="text-white font-black text-xs">RED</span>
                         </div>
-                        <span class="text-white/70 text-[10px] font-bold tracking-[0.3em] uppercase">Xiaohongshu (RED) / RedNote</span>
+                        <span class="text-white/70 text-xs font-bold tracking-[0.3em] uppercase">Xiaohongshu (RED) / RedNote</span>
                     </div>
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 leading-snug">
                         Accelerate Inbound Attraction on the SNS<br><span class="text-white/80">First Opened</span> by Chinese Tourists Before Traveling
@@ -1303,7 +1305,7 @@
                         RED is China's largest lifestyle social platform. 70% of Chinese tourists search on RED before visiting Japan. PROTECH provides end-to-end support from account management to KOL campaigns and advertising.
                     </p>
                     <div>
-                        <a href="/red" class="inline-flex items-center gap-2 bg-white text-[#FF2442] text-xs font-bold px-8 py-3.5 rounded-full hover:bg-white/90 transition-all shadow-lg">
+                        <a href="/red" class="inline-flex items-center gap-2 bg-white text-[#C8102E] text-xs font-bold px-8 py-3.5 rounded-full hover:bg-white/90 transition-all shadow-lg">
                             View RED Services
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </a>
@@ -1315,15 +1317,15 @@
                     <div class="grid grid-cols-2 gap-3 w-full">
                         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10">
                             <p class="text-3xl font-black text-white">300M+</p>
-                            <p class="text-white/50 text-[10px] mt-1 leading-tight">Monthly Active<br>Users</p>
+                            <p class="text-white/50 text-xs mt-1 leading-tight">Monthly Active<br>Users</p>
                         </div>
                         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10">
                             <p class="text-3xl font-black text-white">70%</p>
-                            <p class="text-white/50 text-[10px] mt-1 leading-tight">Chinese Users<br>Researching Pre-travel</p>
+                            <p class="text-white/50 text-xs mt-1 leading-tight">Chinese Users<br>Researching Pre-travel</p>
                         </div>
                         <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/15 col-span-2">
                             <p class="text-2xl font-black text-white">No.1</p>
-                            <p class="text-white/50 text-[10px] mt-1">Travel Info SNS Used by Chinese Tourists</p>
+                            <p class="text-white/50 text-xs mt-1">Travel Info SNS Used by Chinese Tourists</p>
                         </div>
                     </div>
                 </div>
@@ -1331,7 +1333,7 @@
 
             <!-- ── Dianping promo ── -->
             <div class="relative rounded-3xl overflow-hidden flex flex-col md:flex-row-reverse items-stretch" data-aos="fade-up" data-aos-delay="100"
-                style="background: linear-gradient(135deg, #FF6600 0%, #e05500 60%, #993300 100%);">
+                style="background: linear-gradient(135deg, #C2410C 0%, #e05500 60%, #993300 100%);">
 
                 <!-- Background Decoration -->
                 <div class="absolute inset-0 pointer-events-none overflow-hidden" style="z-index:0;">
@@ -1351,7 +1353,7 @@
                         <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                             <span class="text-white font-black text-xs">Dianping</span>
                         </div>
-                        <span class="text-white/70 text-[10px] font-bold tracking-[0.3em] uppercase">Dianping / Dianping</span>
+                        <span class="text-white/70 text-xs font-bold tracking-[0.3em] uppercase">Dianping / Dianping</span>
                     </div>
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 leading-snug">
                         Strengthen Foot Traffic with the Review App Used by <span class="text-white/80">80%</span> of Chinese Tourists
@@ -1360,7 +1362,7 @@
                         Dianping is China's largest review and navigation app. PROTECH provides one-stop support, from official store claim to coupon setup and review management, covering F&B, tourism, and retail.
                     </p>
                     <div>
-                        <a href="/dianping" class="inline-flex items-center gap-2 bg-white text-[#FF6600] text-xs font-bold px-8 py-3.5 rounded-full hover:bg-white/90 transition-all shadow-lg">
+                        <a href="/dianping" class="inline-flex items-center gap-2 bg-white text-[#C2410C] text-xs font-bold px-8 py-3.5 rounded-full hover:bg-white/90 transition-all shadow-lg">
                             View Dianping Services
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </a>
@@ -1372,15 +1374,15 @@
                     <div class="grid grid-cols-2 gap-3 w-full">
                         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10">
                             <p class="text-3xl font-black text-white">700M+</p>
-                            <p class="text-white/50 text-[10px] mt-1 leading-tight">Registered<br>Users</p>
+                            <p class="text-white/50 text-xs mt-1 leading-tight">Registered<br>Users</p>
                         </div>
                         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10">
                             <p class="text-3xl font-black text-white">80%</p>
-                            <p class="text-white/50 text-[10px] mt-1 leading-tight">Chinese Tourists<br>Usage Rate</p>
+                            <p class="text-white/50 text-xs mt-1 leading-tight">Chinese Tourists<br>Usage Rate</p>
                         </div>
                         <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/15 col-span-2">
                             <p class="text-2xl font-black text-white">No.1</p>
-                            <p class="text-white/50 text-[10px] mt-1">China's Leading Review App</p>
+                            <p class="text-white/50 text-xs mt-1">China's Leading Review App</p>
                         </div>
                     </div>
                 </div>
@@ -1395,27 +1397,27 @@
             style="background-image: radial-gradient(circle at 20% 50%, rgba(232,107,122,0.12) 0%, transparent 60%), radial-gradient(circle at 80% 50%, rgba(59,130,246,0.08) 0%, transparent 60%);">
         </div>
         <div class="max-w-6xl mx-auto px-6 relative z-10">
-            <p class="text-center text-white/40 text-[10px] tracking-[0.3em] uppercase font-bold mb-10"
+            <p class="text-center text-white/60 text-xs tracking-[0.3em] uppercase font-bold mb-10"
                 data-aos="fade-up">Results by the Numbers</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-white/10">
                 <div class="text-center py-4" data-aos="fade-up" data-aos-delay="0">
                     <p class="text-4xl md:text-5xl font-bold text-coral mb-2" data-target="50000" data-suffix="+">
                         50,000+</p>
-                    <p class="text-white/40 text-xs tracking-widest">KOL Campaign Cumulative Reach</p>
+                    <p class="text-white/60 text-xs tracking-widest">KOL Campaign Cumulative Reach</p>
                 </div>
                 <div class="text-center py-4" data-aos="fade-up" data-aos-delay="80">
                     <p class="text-4xl md:text-5xl font-bold text-white mb-2">3<span
                             class="text-coral text-2xl">Months</span></p>
-                    <p class="text-white/40 text-xs tracking-widest">Avg. Time to See Results</p>
+                    <p class="text-white/60 text-xs tracking-widest">Avg. Time to See Results</p>
                 </div>
                 <div class="text-center py-4" data-aos="fade-up" data-aos-delay="160">
                     <p class="text-4xl md:text-5xl font-bold text-coral mb-2" data-target="98" data-suffix="%">98%</p>
-                    <p class="text-white/40 text-xs tracking-widest">Client Retention Rate</p>
+                    <p class="text-white/60 text-xs tracking-widest">Client Retention Rate</p>
                 </div>
                 <div class="text-center py-4" data-aos="fade-up" data-aos-delay="240">
                     <p class="text-4xl md:text-5xl font-bold text-white mb-2">5<span
                             class="text-coral text-2xl">Languages</span></p>
-                    <p class="text-white/40 text-xs tracking-widest">Dedicated Bilingual Staff</p>
+                    <p class="text-white/60 text-xs tracking-widest">Dedicated Bilingual Staff</p>
                 </div>
             </div>
         </div>
@@ -1424,7 +1426,7 @@
     <section class="py-24 md:py-32 px-6 bg-white relative">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">Frequently Asked Questions</span>
+                <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase block mb-3">Frequently Asked Questions</span>
                 <h2 class="text-2xl md:text-4xl font-medium serif text-tech-blue" style="letter-spacing: 0.04em;">FAQ
                 </h2>
             </div>
@@ -1542,7 +1544,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex items-end justify-between mb-12" data-aos="fade-up">
                 <div>
-                    <span class="text-coral font-bold text-[10px] tracking-[0.3em] uppercase mb-2 block">Blog</span>
+                    <span class="text-coral font-bold text-xs tracking-[0.3em] uppercase mb-2 block">Blog</span>
                     <h2 class="text-2xl md:text-3xl font-medium serif text-tech-blue">Inbound Marketing Tips for RED & Dianping</h2>
                 </div>
                 <a href="/en/blog" class="text-coral text-xs font-bold tracking-wider hover:underline inline-flex items-center gap-1">
@@ -1556,9 +1558,9 @@
                         <picture style="display:contents"><source srcset="/assets/images/hero-landscape2.webp" type="image/webp"><img src="/assets/images/hero-landscape2.jpg" alt="Current Status and Challenges of Inbound Travel to Japan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='/assets/images/inbound-tourist-image.jpg'" loading="lazy" decoding="async" width="1200" height="1200"></picture>
                     </div>
                     <div class="p-6">
-                        <span class="text-[9px] font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded uppercase tracking-wider">Inbound</span>
+                        <span class="text-xs font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded uppercase tracking-wider">Inbound</span>
                         <h3 class="font-bold text-sm text-tech-blue mt-3 mb-1 leading-snug group-hover:text-coral transition">[2026 Latest] Current Status and Challenges of Inbound Tourism in Japan</h3>
-                        <p class="text-xs text-gray-400">2026.05.11</p>
+                        <p class="text-xs text-slate-500">2026.05.11</p>
                     </div>
                 </a>
                 <a href="/blog/inbound-meaning-guide" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 duration-300" data-aos="fade-up" data-aos-delay="100">
@@ -1566,9 +1568,9 @@
                         <img src="/assets/images/blog-what-is-inbound-demand.jpg" alt="What is Inbound Demand?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='/assets/images/inbound-tourist-image.jpg'" loading="lazy" decoding="async">
                     </div>
                     <div class="p-6">
-                        <span class="text-[9px] font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded uppercase tracking-wider">Inbound</span>
+                        <span class="text-xs font-bold bg-blue-50 text-blue-500 px-2 py-1 rounded uppercase tracking-wider">Inbound</span>
                         <h3 class="font-bold text-sm text-tech-blue mt-3 mb-1 leading-snug group-hover:text-coral transition">What is Inbound Demand? 2026 Trends, Economic Effects, and Importance</h3>
-                        <p class="text-xs text-gray-400">2026.05.09</p>
+                        <p class="text-xs text-slate-500">2026.05.09</p>
                     </div>
                 </a>
                 <a href="/blog/xiaohongshu-guide-2026" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 duration-300" data-aos="fade-up" data-aos-delay="200">
@@ -1576,9 +1578,9 @@
                         <img src="/assets/images/blog-xiaohongshu-guide.jpg" alt="What is Xiaohongshu (RED)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='/assets/images/red-marketing.jpg'" loading="lazy" decoding="async">
                     </div>
                     <div class="p-6">
-                        <span class="text-[9px] font-bold bg-red-50 text-red-500 px-2 py-1 rounded uppercase tracking-wider">RED Operations</span>
+                        <span class="text-xs font-bold bg-red-50 text-red-500 px-2 py-1 rounded uppercase tracking-wider">RED Operations</span>
                         <h3 class="font-bold text-sm text-tech-blue mt-3 mb-1 leading-snug group-hover:text-coral transition">What is Xiaohongshu (RED)? Why Japanese Brands Should Use It</h3>
-                        <p class="text-xs text-gray-400">2026.04.12</p>
+                        <p class="text-xs text-slate-500">2026.04.12</p>
                     </div>
                 </a>
             </div>
@@ -1592,7 +1594,7 @@
 
         <div class="max-w-5xl mx-auto relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase block mb-4">Contact</span>
+                <span class="text-coral text-xs font-bold tracking-[0.3em] uppercase block mb-4">Contact</span>
                 <h2 class="text-3xl md:text-4xl font-medium text-white mb-4 serif" style="letter-spacing: 0.04em;">Contact
                 </h2>
                 <p class="text-white/50 text-sm">Contact Us or Request Information Regarding PROTECH</p>
@@ -1607,7 +1609,7 @@
                                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg></div>
                     <h3 class="text-white font-bold text-xl mb-3">Online Consultation</h3>
-                    <p class="text-white/40 text-sm leading-relaxed mb-8">
+                    <p class="text-white/60 text-sm leading-relaxed mb-8">
                         We consult online anywhere, with the same level of support as in-person.
                     </p>
                     <a href="/en/contact"
@@ -1623,7 +1625,7 @@
                                 d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg></div>
                     <h3 class="text-white font-bold text-xl mb-3">Request Brochure</h3>
-                    <p class="text-white/40 text-sm leading-relaxed mb-8">
+                    <p class="text-white/60 text-sm leading-relaxed mb-8">
                         We have prepared a document that summarizes our service overview. Please use it for consideration.
                     </p>
                     <a href="/en/contact"
@@ -1635,7 +1637,7 @@
 
             <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="200">
                 <a href="/en/contact"
-                    class="text-white/40 text-xs font-bold tracking-wider hover:text-white transition inline-flex items-center gap-2">
+                    class="text-white/60 text-xs font-bold tracking-wider hover:text-white transition inline-flex items-center gap-2">
                     For other inquiries, please contact us here.
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -1652,11 +1654,11 @@
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">Crossing business boundaries with<br>technology and marketing.</p>
+                    <p class="text-white/60 text-xs leading-relaxed">Crossing business boundaries with<br>technology and marketing.</p>
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">Dianping Store Attraction</a></li>
                         <li><a href="/red" class="hover:text-coral transition">RED (Xiaohongshu) Marketing</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">Douyin Operations</a></li>
@@ -1670,7 +1672,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company Info</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/en/company" class="hover:text-coral transition">Company</a></li>
                         <li><a href="/en/cases" class="hover:text-coral transition">Case Studies</a></li>
                         <li><a href="/en/blog" class="hover:text-coral transition">Blog</a></li>
@@ -1681,7 +1683,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Resources</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">Download Whitepapers</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">FAQ</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">Inbound AI</a></li>
@@ -1691,42 +1693,23 @@
             </div>
         </div>
         <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+            <p class="text-xs text-white/60">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
-        AOS.init({
+        (window.protechInitAos||(window.protechInitAos=function(o){var run=function(){if(window.AOS)AOS.init(o)};if(window.AOS)run();else document.addEventListener("DOMContentLoaded",run)}))({
             duration: 900,
             once: true,
             offset: 60,
             easing: 'ease-out-cubic',
         });
 
-        // Counter animation for stats
-        function animateCounter(el) {
-            const target = parseFloat(el.dataset.target);
-            const suffix = el.dataset.suffix || '';
-            const duration = 1800;
-            const start = performance.now();
-            const update = (now) => {
-                const elapsed = now - start;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                el.textContent = Math.round(target * eased) + suffix;
-                if (progress < 1) requestAnimationFrame(update);
-            };
-            requestAnimationFrame(update);
-        }
-        const statObserver = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); statObserver.unobserve(e.target); } });
-        }, { threshold: 0.5 });
-        document.querySelectorAll('[data-target]').forEach(el => statObserver.observe(el));
-
     </script>
 
     <script defer src="/assets/js/main.js"></script>
+    <script defer src="/assets/js/ux.js"></script>
 </body>
 
 </html>

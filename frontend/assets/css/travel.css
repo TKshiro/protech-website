@@ -1117,7 +1117,7 @@ body.travel-page {
         display: flex;
         margin-left: auto;
         gap: 5px;
-        font-size: 10px;
+        font-size: 12px;
         letter-spacing: 0.04em;
         padding: 4px 6px;
         border: 1px solid rgba(33, 72, 61, 0.12);

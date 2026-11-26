@@ -78,6 +78,7 @@
                 var active = node.getAttribute(attr) === value && value !== '';
                 node.classList.toggle('is-active', active);
                 if (attr === 'data-category') {
+                    node.setAttribute('aria-selected', active ? 'true' : 'false');
                     if (active) node.setAttribute('aria-current', 'page');
                     else node.removeAttribute('aria-current');
                 } else if (active) {
@@ -165,12 +166,28 @@
         }
 
         if (drawer && drawerToggle) {
+            var drawerToken = 0;
             drawerToggle.addEventListener('click', function () {
-                var open = drawer.hasAttribute('hidden');
-                if (open) drawer.removeAttribute('hidden');
-                else drawer.setAttribute('hidden', '');
+                var open = !drawer.classList.contains('is-open');
+                var token = ++drawerToken;
                 drawerToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
                 drawerToggle.textContent = open ? 'タグを閉じる' : 'すべてのタグを見る';
+                if (open) {
+                    drawer.removeAttribute('hidden');
+                    requestAnimationFrame(function () { drawer.classList.add('is-open'); });
+                    return;
+                }
+                drawer.classList.remove('is-open');
+                var finish = function () {
+                    if (token !== drawerToken) return;
+                    drawer.setAttribute('hidden', '');
+                    drawer.removeEventListener('transitionend', finish);
+                };
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) finish();
+                else {
+                    drawer.addEventListener('transitionend', finish);
+                    window.setTimeout(finish, 360);
+                }
             });
         }
 

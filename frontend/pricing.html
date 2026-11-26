@@ -30,7 +30,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
     <link rel="stylesheet" href="assets/css/shared.css">
     <style>
 
@@ -82,7 +83,7 @@
             align-items: center;
             gap: 10px;
             color: var(--coral);
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 800;
             letter-spacing: 0.24em;
             text-transform: uppercase;
@@ -150,7 +151,7 @@
             right: 18px;
             background: var(--tech-blue);
             color: white;
-            font-size: 9px;
+            font-size: 12px;
             font-weight: 800;
             letter-spacing: 0.15em;
             padding: 6px 12px;
@@ -293,6 +294,7 @@
     "url": "https://pro-tech.jp/pricing"
 }
     </script>
+    <link rel="stylesheet" href="/assets/css/ux.css">
 </head>
 
 <body class="bg-white text-slate-900">
@@ -316,8 +318,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -348,8 +350,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-coral">サービス</a>
-                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -393,7 +395,7 @@
                 <div class="hero-panel p-6 md:p-8" data-aos="fade-up" data-aos-delay="120">
                     <div class="flex items-center justify-between mb-7">
                         <div>
-                            <p class="text-white/45 text-[10px] font-bold tracking-[0.24em] uppercase mb-2">Estimated Budget</p>
+                            <p class="text-white/45 text-xs font-bold tracking-[0.24em] uppercase mb-2">Estimated Budget</p>
                             <h2 class="text-2xl md:text-3xl font-black">料金レンジ早見表</h2>
                         </div>
                         <div class="w-11 h-11 border border-white/20 flex items-center justify-center text-coral font-black">¥</div>
@@ -437,7 +439,7 @@
             <div class="grid md:grid-cols-3 gap-5">
                 <!-- Value 1 -->
                 <div class="metric-tile p-7" data-aos="fade-up">
-                    <p class="text-coral text-[10px] font-black tracking-[0.22em] uppercase mb-5">01 / Scope</p>
+                    <p class="text-coral text-xs font-black tracking-[0.22em] uppercase mb-5">01 / Scope</p>
                     <h3 class="font-bold text-lg text-tech-blue mb-3">費用範囲を事前定義</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         投稿本数、返信件数、広告管理、レポート範囲を契約前に明文化。追加費用の発生条件も明確にします。
@@ -445,7 +447,7 @@
                 </div>
                 <!-- Value 2 -->
                 <div class="metric-tile p-7" data-aos="fade-up" data-aos-delay="100">
-                    <p class="text-coral text-[10px] font-black tracking-[0.22em] uppercase mb-5">02 / Native</p>
+                    <p class="text-coral text-xs font-black tracking-[0.22em] uppercase mb-5">02 / Native</p>
                     <h3 class="font-bold text-lg text-tech-blue mb-3">日中チームで運用</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         日本語で要件整理し、中国語ネイティブが投稿・返信・口コミ導線を最適化。翻訳だけで終わらせません。
@@ -453,7 +455,7 @@
                 </div>
                 <!-- Value 3 -->
                 <div class="metric-tile p-7" data-aos="fade-up" data-aos-delay="200">
-                    <p class="text-coral text-[10px] font-black tracking-[0.22em] uppercase mb-5">03 / Improve</p>
+                    <p class="text-coral text-xs font-black tracking-[0.22em] uppercase mb-5">03 / Improve</p>
                     <h3 class="font-bold text-lg text-tech-blue mb-3">改善前提の月次運用</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         投稿して終わりではなく、検索語・保存率・問い合わせ内容を見て改善。月額費用を投資として管理します。
@@ -486,29 +488,29 @@
                 <div class="pricing-card p-8 md:p-10 flex flex-col justify-between" data-aos="fade-up">
                     <div>
                         <div class="mb-6">
-                            <span class="inline-block bg-slate-100 text-slate-600 text-[10px] font-bold px-3 py-1 uppercase tracking-wider mb-4">ライト</span>
+                            <span class="inline-block bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 uppercase tracking-wider mb-4">ライト</span>
                             <h3 class="text-2xl font-bold text-tech-blue">基本プラン</h3>
-                            <p class="text-gray-400 text-xs mt-2">最小限のコストでSNS発信をスタートしたい店舗・事業主様へ</p>
+                            <p class="text-slate-500 text-xs mt-2">最小限のコストでSNS発信をスタートしたい店舗・事業主様へ</p>
                         </div>
                         <div class="border-t border-b border-gray-100 py-6 mb-6">
                             <div class="flex items-baseline">
                                 <span class="text-3xl font-black text-tech-blue">¥50,000</span>
-                                <span class="text-xs text-gray-400 font-bold ml-2">/ 月（税別）</span>
+                                <span class="text-xs text-slate-500 font-bold ml-2">/ 月（税別）</span>
                             </div>
-                            <span class="text-[10px] text-coral font-bold tracking-widest block mt-2">最低契約期間：3ヶ月</span>
+                            <span class="text-xs text-coral font-bold tracking-widest block mt-2">最低契約期間：3ヶ月</span>
                         </div>
                         <ul class="space-y-4 mb-8 text-sm text-gray-600">
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span>毎月<strong>3本</strong>の関連投稿（記事）<br><span class="text-gray-400 text-xs">または動画1本の編集・投稿</span></span>
+                                <span>毎月<strong>3本</strong>の関連投稿（記事）<br><span class="text-slate-500 text-xs">または動画1本の編集・投稿</span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span>お問合せ対応：最大<strong>100件</strong> / 月<br><span class="text-gray-400 text-xs">（ネイティブによる丁寧な代理返信）</span></span>
+                                <span>お問合せ対応：最大<strong>100件</strong> / 月<br><span class="text-slate-500 text-xs">（ネイティブによる丁寧な代理返信）</span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span>キーワード最適化：<strong>随時対応</strong><br><span class="text-gray-400 text-xs">（プラットフォーム内の検索キーワード設計）</span></span>
+                                <span>キーワード最適化：<strong>随時対応</strong><br><span class="text-slate-500 text-xs">（プラットフォーム内の検索キーワード設計）</span></span>
                             </li>
                             <li class="flex items-start gap-3 text-gray-300">
                                 <span>✕</span>
@@ -529,33 +531,33 @@
                 <div class="pricing-card pricing-card-popular p-8 md:p-10 flex flex-col justify-between shadow-lg" data-aos="fade-up" data-aos-delay="100">
                     <div>
                         <div class="mb-6">
-                            <span class="inline-block bg-coral/10 text-coral text-[10px] font-bold px-3 py-1 uppercase tracking-wider mb-4">スタンダード</span>
+                            <span class="inline-block bg-coral/10 text-coral text-xs font-bold px-3 py-1 uppercase tracking-wider mb-4">スタンダード</span>
                             <h3 class="text-2xl font-bold text-tech-blue">推奨プラン</h3>
-                            <p class="text-gray-400 text-xs mt-2">インサイト分析や競合調査、KOC起用で集客成果を本格化したい企業様へ</p>
+                            <p class="text-slate-500 text-xs mt-2">インサイト分析や競合調査、KOC起用で集客成果を本格化したい企業様へ</p>
                         </div>
                         <div class="border-t border-b border-gray-100 py-6 mb-6">
                             <div class="flex items-baseline">
                                 <span class="text-4xl font-black text-tech-blue">¥120,000</span>
-                                <span class="text-xs text-gray-400 font-bold ml-2">/ 月（税別）</span>
+                                <span class="text-xs text-slate-500 font-bold ml-2">/ 月（税別）</span>
                             </div>
-                            <span class="text-[10px] text-coral font-bold tracking-widest block mt-2">最低契約期間：3ヶ月</span>
+                            <span class="text-xs text-coral font-bold tracking-widest block mt-2">最低契約期間：3ヶ月</span>
                         </div>
                         <ul class="space-y-4 mb-8 text-sm text-gray-600">
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span>毎月<strong>6本</strong>の高品質記事投稿<br><span class="text-gray-400 text-xs">または動画2本の企画・編集・投稿</span></span>
+                                <span>毎月<strong>6本</strong>の高品質記事投稿<br><span class="text-slate-500 text-xs">または動画2本の企画・編集・投稿</span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span>お問合せ対応：最大<strong>250件</strong> / 月<br><span class="text-gray-400 text-xs">（24時間以内ネイティブ返信）</span></span>
+                                <span>お問合せ対応：最大<strong>250件</strong> / 月<br><span class="text-slate-500 text-xs">（24時間以内ネイティブ返信）</span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span>キーワード & ハッシュタグ最適化<br><span class="text-gray-400 text-xs">（競合・ホットトレンド分析を含む）</span></span>
+                                <span>キーワード & ハッシュタグ最適化<br><span class="text-slate-500 text-xs">（競合・ホットトレンド分析を含む）</span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span><strong>詳細インサイト分析レポート</strong>提供<br><span class="text-gray-400 text-xs">（毎月1回のオンライン定例ミーティング）</span></span>
+                                <span><strong>詳細インサイト分析レポート</strong>提供<br><span class="text-slate-500 text-xs">（毎月1回のオンライン定例ミーティング）</span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
@@ -577,25 +579,25 @@
                 <div class="pricing-card p-8 md:p-10 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
                     <div>
                         <div class="mb-6">
-                            <span class="inline-block bg-slate-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-wider mb-4">プレミアム</span>
+                            <span class="inline-block bg-slate-900 text-white text-xs font-bold px-3 py-1 uppercase tracking-wider mb-4">プレミアム</span>
                             <h3 class="text-2xl font-bold text-tech-blue">エンタープライズ</h3>
-                            <p class="text-gray-400 text-xs mt-2">複数チャネル展開やKOLコラボ、広告の最適化で市場シェアを狙うブランドへ</p>
+                            <p class="text-slate-500 text-xs mt-2">複数チャネル展開やKOLコラボ、広告の最適化で市場シェアを狙うブランドへ</p>
                         </div>
                         <div class="border-t border-b border-gray-100 py-6 mb-6">
                             <div class="flex items-baseline">
                                 <span class="text-3xl font-black text-tech-blue">¥250,000</span>
-                                <span class="text-xs text-gray-400 font-bold ml-2">/ 月（税別）</span>
+                                <span class="text-xs text-slate-500 font-bold ml-2">/ 月（税別）</span>
                             </div>
-                            <span class="text-[10px] text-coral font-bold tracking-widest block mt-2">最低契約期間：3ヶ月</span>
+                            <span class="text-xs text-coral font-bold tracking-widest block mt-2">最低契約期間：3ヶ月</span>
                         </div>
                         <ul class="space-y-4 mb-8 text-sm text-gray-600">
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span>毎月<strong>10本</strong>のハイクオリティ記事投稿<br><span class="text-gray-400 text-xs">または動画4本のフル編集（台本・素材対応）</span></span>
+                                <span>毎月<strong>10本</strong>のハイクオリティ記事投稿<br><span class="text-slate-500 text-xs">または動画4本のフル編集（台本・素材対応）</span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
-                                <span>お問合せ・コメント対応：<strong>無制限</strong><br><span class="text-gray-400 text-xs">（緊急対応用ホットラインの開設）</span></span>
+                                <span>お問合せ・コメント対応：<strong>無制限</strong><br><span class="text-slate-500 text-xs">（緊急対応用ホットラインの開設）</span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-coral font-bold">✓</span>
@@ -636,20 +638,20 @@
                     </thead>
                     <tbody class="divide-y divide-slate-100 text-slate-600">
                         <tr>
-                            <td class="px-6 py-5 font-bold text-tech-blue">月間投稿</td>
+                            <td class="px-6 py-5 font-bold text-tech-blue">月間投稿<button type="button" class="glossary-tip" data-tip="1ヶ月に公開する記事または動画の本数です。" aria-label="月間投稿の説明" aria-expanded="false">?</button></td>
                             <td class="px-6 py-5">記事3本 または 動画1本</td>
                             <td class="px-6 py-5 font-bold text-tech-blue">記事6本 または 動画2本</td>
                             <td class="px-6 py-5">記事10本 または 動画4本</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-5 font-bold text-tech-blue">問い合わせ対応</td>
+                            <td class="px-6 py-5 font-bold text-tech-blue">問い合わせ対応<button type="button" class="glossary-tip" data-tip="コメントやメッセージへの月間の一次返信件数です。" aria-label="問い合わせ対応の説明" aria-expanded="false">?</button></td>
                             <td class="px-6 py-5">100件 / 月</td>
                             <td class="px-6 py-5 font-bold text-tech-blue">250件 / 月</td>
                             <td class="px-6 py-5">無制限</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-5 font-bold text-tech-blue">月次レポート</td>
-                            <td class="px-6 py-5 text-slate-300">なし</td>
+                            <td class="px-6 py-5 font-bold text-tech-blue">月次レポート<button type="button" class="glossary-tip" data-tip="数値と次月の打ち手をまとめた報告書です。" aria-label="月次レポートの説明" aria-expanded="false">?</button></td>
+                            <td class="px-6 py-5 text-slate-500">なし</td>
                             <td class="px-6 py-5 font-bold text-tech-blue">詳細レポート + 定例1回</td>
                             <td class="px-6 py-5">詳細レポート + 定例2回</td>
                         </tr>
@@ -694,7 +696,7 @@
                         </p>
                     </div>
                     <div class="border-t border-gray-100 pt-6 mt-6 flex items-center justify-between">
-                        <span class="text-xs text-gray-400 font-bold">目安費用：要お見積もり</span>
+                        <span class="text-xs text-slate-500 font-bold">目安費用：要お見積もり</span>
                         <a href="/contact#inquiry?service=miniprogram" class="text-coral text-xs font-bold hover:underline inline-flex items-center gap-1">
                             詳細を聞く →
                         </a>
@@ -711,7 +713,7 @@
                         </p>
                     </div>
                     <div class="border-t border-gray-100 pt-6 mt-6 flex items-center justify-between">
-                        <span class="text-xs text-gray-400 font-bold">目安費用：要お見積もり</span>
+                        <span class="text-xs text-slate-500 font-bold">目安費用：要お見積もり</span>
                         <a href="/contact#inquiry?service=creative" class="text-coral text-xs font-bold hover:underline inline-flex items-center gap-1">
                             詳細を聞く →
                         </a>
@@ -728,7 +730,7 @@
                         </p>
                     </div>
                     <div class="border-t border-gray-100 pt-6 mt-6 flex items-center justify-between">
-                        <span class="text-xs text-gray-400 font-bold">目安費用：要お見積もり</span>
+                        <span class="text-xs text-slate-500 font-bold">目安費用：要お見積もり</span>
                         <a href="/contact#inquiry?service=kol" class="text-coral text-xs font-bold hover:underline inline-flex items-center gap-1">
                             詳細を聞く →
                         </a>
@@ -749,7 +751,7 @@
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-2xl md:text-3xl font-bold serif mb-6">プロジェクトごとに料金が変わる理由</h2>
                 <div class="h-px bg-white/20 w-24 mx-auto mb-6"></div>
-                <p class="text-slate-300 text-sm leading-relaxed max-w-2xl mx-auto font-light">
+                <p class="text-slate-500 text-sm leading-relaxed max-w-2xl mx-auto font-light">
                     私たちは一社ごとに完全に最適化された中国マーケティングソリューションを提供しています。画一的なプランを押し付けるのではなく、お客様の事業形態、ターゲット属性、求める開発要件、人員稼働スケジュールに合わせて無駄を排除した個別見積もりを提示いたします。それにより、費用対効果の最大化をお約束します。
                 </p>
             </div>
@@ -771,7 +773,7 @@
     <section class="py-16 md:py-24 bg-white relative">
         <div class="max-w-3xl mx-auto px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <p class="text-coral text-[10px] font-bold tracking-[0.3em] uppercase mb-4">FAQ</p>
+                <p class="text-coral text-xs font-bold tracking-[0.3em] uppercase mb-4">FAQ</p>
                 <h2 class="text-3xl md:text-4xl font-bold serif text-tech-blue">料金に関するよくある質問</h2>
             </div>
 
@@ -865,7 +867,7 @@
             <h2 class="text-3xl md:text-5xl font-bold serif mb-6" data-aos="fade-up">
                 まずは無料相談・アカウント診断から
             </h2>
-            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-10 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
+            <p class="text-slate-500 text-sm md:text-base max-w-xl mx-auto mb-10 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
                 貴社の業種や課題に合わせた最適な集客シミュレーションを無料で提示いたします。まずはお気軽にお問合せください。
             </p>
 
@@ -887,11 +889,11 @@
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                    <p class="text-white/60 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
                         <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
@@ -904,7 +906,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
@@ -915,7 +917,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
@@ -925,13 +927,13 @@
             </div>
         </div>
         <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+            <p class="text-xs text-white/60">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
-        AOS.init({
+        (window.protechInitAos||(window.protechInitAos=function(o){var run=function(){if(window.AOS)AOS.init(o)};if(window.AOS)run();else document.addEventListener("DOMContentLoaded",run)}))({
             duration: 900,
             once: true,
             offset: 60,
@@ -943,6 +945,7 @@
     </script>
     <script defer src="assets/js/main.js"></script>
 <script defer src="/assets/js/consult-popup.js"></script>
+    <script defer src="/assets/js/ux.js"></script>
 </body>
 
 </html>

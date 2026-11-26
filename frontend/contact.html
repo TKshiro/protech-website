@@ -28,8 +28,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
     <link rel="stylesheet" href="assets/css/shared.css">
     <style>
 
@@ -66,6 +66,7 @@
     "url": "https://pro-tech.jp/contact"
 }
     </script>
+    <link rel="stylesheet" href="/assets/css/ux.css">
 </head>
 
 <body class="bg-white text-slate-900">
@@ -88,8 +89,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">すべてのサービス</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">大衆点評</a>
-                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">小紅書</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">大衆点評</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">小紅書</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">抖音 (Douyin)</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">微信小程序</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">クリエイティブ制作</a>
@@ -120,8 +121,8 @@
             <a href="/" class="text-lg font-bold text-slate-700">トップ</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/services" class="text-lg font-bold text-slate-700">サービス</a>
-                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">大衆点評</a>
-                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">小紅書</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">大衆点評</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">小紅書</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">抖音 (Douyin)</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">微信小程序</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">クリエイティブ</a>
@@ -147,9 +148,9 @@
     <section class="pt-32 md:pt-40 pb-16 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
         <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
-            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">お問い合わせ</span>
+            <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase block mb-4">お問い合わせ</span>
             <h1 class="text-4xl md:text-6xl font-bold serif text-tech-blue mb-6">お問い合わせ</h1>
-            <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            <p class="text-slate-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
                 サービスに関するご質問やお見積もりなど、<br class="hidden md:block">
                 お気軽にお問い合わせください。
             </p>
@@ -194,95 +195,49 @@
 
                 <div class="lg:col-span-7">
                     <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 md:p-12">
-                        <div id="successMessage"
-                            class="hidden mb-8 bg-emerald-50 border border-emerald-200 text-emerald-700 px-6 py-4 rounded-xl">
-                            <p class="font-bold text-sm">✅ 送信が完了しました。担当者よりご連絡いたします。</p>
-                        </div>
-
-                        <form id="contactForm" class="space-y-6">
+                        <form id="contactForm" class="space-y-6" novalidate data-contact-form data-thanks="/contact/thanks" data-label-send="送信する" data-label-sending="送信中..." data-error-name="お名前を入力してください" data-error-email="メールアドレスを正しく入力してください" data-error-message="お問い合わせ内容を入力してください" data-error-send="送信できませんでした。時間をおいて再度お試しください。">
+                            <fieldset>
+                                <legend class="block text-xs font-bold text-tech-blue mb-3 tracking-widest">お問い合わせ種別（任意）</legend>
+                                <div class="inquiry-grid"><label class="inquiry-card"><input type="radio" name="inquiry_type" value="red_marketing"><span>小紅書(RED)マーケティング</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="web_development"><span>Web・App開発</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="ui_ux_design"><span>UI/UXデザイン</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="consultation"><span>サービス全般のご相談</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="estimate"><span>お見積もり依頼</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="other"><span>その他</span></label></div>
+                            </fieldset>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お問い合わせ種別 *</label>
-                                <select id="inquiry_type" name="inquiry_type" required
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                    <option value="">選択してください</option>
-                                    <option value="red_marketing">小紅書(RED)マーケティング</option>
-                                    <option value="web_development">Web・App開発</option>
-                                    <option value="ui_ux_design">UI/UXデザイン</option>
-                                    <option value="consultation">サービス全般のご相談</option>
-                                    <option value="estimate">お見積もり依頼</option>
-                                    <option value="other">その他</option>
-                                </select>
-                            </div>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お名前
-                                        *</label>
-                                    <input type="text" id="name" name="name" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">会社名
-                                        *</label>
-                                    <input type="text" id="company" name="company" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">メールアドレス
-                                        *</label>
-                                    <input type="email" id="email" name="email" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">電話番号</label>
-                                    <input type="tel" id="phone" name="phone"
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm"
-                                        placeholder="03-1234-5678">
-                                </div>
+                                <label for="name" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お名前 *</label>
+                                <input type="text" id="name" name="name" required autocomplete="name" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                <p class="field-error" data-error-for="name" hidden></p>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">ご予算</label>
-                                <select id="budget" name="budget"
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                    <option value="">選択してください</option>
-                                    <option value="under_500k">50万円未満</option>
-                                    <option value="500k_1m">50万円〜100万円</option>
-                                    <option value="1m_3m">100万円〜300万円</option>
-                                    <option value="3m_5m">300万円〜500万円</option>
-                                    <option value="over_5m">500万円以上</option>
-                                    <option value="undecided">未定・相談したい</option>
-                                </select>
+                                <label for="email" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">メールアドレス *</label>
+                                <input type="email" id="email" name="email" required autocomplete="email" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                <p class="field-error" data-error-for="email" hidden></p>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">PROTECHを知ったきっかけ</label>
-                                <select id="referral_source" name="referral_source"
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                    <option value="">選択してください</option>
-                                    <option value="web_search">Web検索</option>
-                                    <option value="sns">SNS（小紅書・X・Instagram等）</option>
-                                    <option value="referral">知人の紹介</option>
-                                    <option value="event">イベント・セミナー</option>
-                                    <option value="media">メディア・記事</option>
-                                    <option value="other">その他</option>
-                                </select>
+                                <label for="company" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">会社名（任意）</label>
+                                <input type="text" id="company" name="company" autocomplete="organization" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お問い合わせ内容
-                                    *</label>
-                                <textarea id="message" name="message" rows="6" required
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm resize-none"
-                                    placeholder="具体的なご相談内容をご記入ください"></textarea>
+                                <label for="message" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">お問い合わせ内容 *</label>
+                                <textarea id="message" name="message" rows="6" required class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm resize-none" placeholder="具体的なご相談内容をご記入ください"></textarea>
+                                <p class="field-error" data-error-for="message" hidden></p>
                             </div>
-
-                            <button type="submit" id="submitBtn"
-                                class="w-full py-5 btn-coral font-bold rounded-xl tracking-[0.2em] text-xs uppercase shadow-lg">
-                                送信する
-                            </button>
-
-                            <p class="text-center text-[10px] text-gray-400 mt-6">
-                                送信することで、当社の<a href="/privacy" class="underline text-coral">プライバシーポリシー</a>に同意したものとみなされます。
-                            </p>
+                            <details class="optional-details">
+                                <summary>詳細を追加（任意）</summary>
+                                <div class="space-y-6">
+                                    <div>
+                                        <label for="phone" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">電話番号</label>
+                                        <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm" placeholder="03-1234-5678">
+                                    </div>
+                                    <div>
+                                        <label for="budget" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">ご予算</label>
+                                        <select id="budget" name="budget" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm"><option value="">選択してください</option><option value="under_500k">50万円未満</option><option value="500k_1m">50万円〜100万円</option><option value="1m_3m">100万円〜300万円</option><option value="3m_5m">300万円〜500万円</option><option value="over_5m">500万円以上</option><option value="undecided">未定・相談したい</option></select>
+                                    </div>
+                                    <div>
+                                        <label for="referral_source" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">PROTECHを知ったきっかけ</label>
+                                        <select id="referral_source" name="referral_source" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm"><option value="">選択してください</option><option value="web_search">Web検索</option><option value="sns">SNS（小紅書・X・Instagram等）</option><option value="referral">知人の紹介</option><option value="event">イベント・セミナー</option><option value="media">メディア・記事</option><option value="other">その他</option></select>
+                                    </div>
+                                </div>
+                            </details>
+                            <button type="submit" id="submitBtn" class="w-full py-5 btn-coral font-bold rounded-xl tracking-[0.2em] text-xs uppercase shadow-lg">送信する</button>
+                            <p class="text-center text-xs text-slate-500 mt-6">送信することで、当社の<a href="/privacy" class="underline text-coral">プライバシーポリシー</a>に同意したものとみなされます。</p>
                         </form>
                     </div>
                 </div>
@@ -297,11 +252,11 @@
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
+                    <p class="text-white/60 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
                         <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">抖音(Douyin)マーケティング</a></li>
@@ -314,7 +269,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
                         <li><a href="/blog" class="hover:text-coral transition">ブログ</a></li>
@@ -325,7 +280,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">インバウンドAI</a></li>
@@ -335,91 +290,22 @@
             </div>
         </div>
         <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+            <p class="text-xs text-white/60">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
-        AOS.init({ duration: 800, once: true, offset: 80 });
+        (window.protechInitAos||(window.protechInitAos=function(o){var run=function(){if(window.AOS)AOS.init(o)};if(window.AOS)run();else document.addEventListener("DOMContentLoaded",run)}))({ duration: 800, once: true, offset: 80 });
 
         // Apply seigaiha SVG pattern via JS to avoid CSS linter issues with data URI
         document.querySelectorAll('.seigaiha-pattern').forEach(function(el) {
             el.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 C20 40 20 20 40 20 C60 20 60 40 80 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M-40 40 C-20 40 -20 20 0 20 C20 20 20 40 40 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M40 40 C60 40 60 20 80 20 C100 20 100 40 120 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3C/svg%3E\")";
         });
 
-        (function () { emailjs.init("Oa3PmeXJ7kwYjIls0"); })();
-
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const btn = document.getElementById('submitBtn');
-            const originalBtnText = btn.innerText;
-
-            btn.innerText = '送信中...';
-            btn.disabled = true;
-
-            const context = window.protechInquiryContext?.().toString() || '';
-            const inquiryMessage = document.getElementById('message').value +
-                (context ? '\n\n相談元情報: ' + context : '');
-            const templateParams = {
-                name: document.getElementById('name').value,
-                company: document.getElementById('company').value,
-                email: document.getElementById('email').value,
-                message: inquiryMessage
-            };
-
-            emailjs.send('service_zg0cj56', 'template_9wqf6sc', templateParams)
-                .then(function () {
-                    // Save to localStorage for admin panel
-                    try {
-                        const contactData = {
-                            id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
-                            inquiry_type: document.getElementById('inquiry_type').value,
-                            name: document.getElementById('name').value,
-                            company: document.getElementById('company').value,
-                            email: document.getElementById('email').value,
-                            phone: document.getElementById('phone').value || '',
-                            budget: document.getElementById('budget').value || '',
-                            referral_source: document.getElementById('referral_source').value || '',
-                            message: inquiryMessage,
-                            date: new Date().toISOString(),
-                            status: '未対応'
-                        };
-                        const stored = JSON.parse(localStorage.getItem('protech_contacts') || '[]');
-                        stored.unshift(contactData);
-                        localStorage.setItem('protech_contacts', JSON.stringify(stored));
-
-                        // Save to Google Sheets API
-                        fetch('/api/contacts', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(contactData)
-                        }).catch(err => console.error('Failed to save to database API:', err));
-                    } catch (err) {
-                        console.error('Failed to save contact to localStorage:', err);
-                    }
-
-                    document.getElementById('successMessage').classList.remove('hidden');
-                    document.getElementById('contactForm').reset();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                    setTimeout(() => {
-                        document.getElementById('successMessage').classList.add('hidden');
-                    }, 5000);
-
-                    btn.innerText = originalBtnText;
-                    btn.disabled = false;
-                }, function (error) {
-                    alert('送信に失敗しました。後でもう一度お試しください。');
-                    console.error('EmailJS Error:', error);
-
-                    btn.innerText = originalBtnText;
-                    btn.disabled = false;
-                });
-        });
-    </script>
+        </script>
     <script defer src="assets/js/main.js"></script>
+    <script defer src="/assets/js/ux.js"></script>
 </body>
 
 </html>

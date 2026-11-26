@@ -5,7 +5,7 @@
 
 :root {
     --tech-blue: #001A33;
-    --coral: #E86B7A;
+    --coral: #B4495A;
     --font-h1: 48px;
     --font-h2: 24px;
     --font-body: 15px;
@@ -103,9 +103,8 @@ p, body { font-size: var(--font-body); }
     transition: all 0.3s ease;
 }
 .btn-coral:hover {
-    background: #d15b6a;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(232, 107, 122, 0.3);
+    background: #9a3d4c;
+    box-shadow: 0 8px 25px rgba(180, 73, 90, 0.28);
 }
 
 /* a11y helper: visually hidden but available to AT */
@@ -137,8 +136,8 @@ p, body { font-size: var(--font-body); }
 
 /* Focus ring (visible only via keyboard) */
 :focus-visible {
-    outline: 2px solid var(--coral);
-    outline-offset: 2px;
+    outline: 2px solid #001A33;
+    outline-offset: 3px;
 }
 
 @media (max-width: 767px) {
@@ -173,7 +172,7 @@ p, body { font-size: var(--font-body); }
     }
 
     .hero-heading span:first-child {
-        font-size: 0.72rem !important;
+        font-size: 0.75rem !important;
         letter-spacing: 0.08em !important;
         line-height: 1.7 !important;
     }

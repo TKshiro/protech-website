@@ -54,7 +54,7 @@ const TOC_JS = `
                             let sub = lastH2Li.querySelector('ol');
                             if (!sub) {
                                 sub = document.createElement('ol');
-                                sub.className = 'mt-1 ml-3 space-y-0.5 text-xs text-gray-400';
+                                sub.className = 'mt-1 ml-3 space-y-0.5 text-xs text-slate-500';
                                 lastH2Li.appendChild(sub);
                             }
                             const subLi = document.createElement('li');

@@ -28,8 +28,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
     <link rel="stylesheet" href="/assets/css/shared.css">
     <style>
 
@@ -66,6 +66,7 @@
     "url": "https://pro-tech.jp/contact"
 }
     </script>
+    <link rel="stylesheet" href="/assets/css/ux.css">
 </head>
 
 <body class="bg-white text-slate-900">
@@ -88,8 +89,8 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 flex flex-col space-y-1">
                             <a href="/en/services" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-coral transition-colors text-xs font-bold">All Services</a>
                             <div class="h-px bg-gray-100 mx-2 my-1"></div>
-                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF6600] transition-colors text-xs font-bold">Dianping</a>
-                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#FF2442] transition-colors text-xs font-bold">Xiaohongshu (RED)</a>
+                            <a href="/dianping" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C2410C] transition-colors text-xs font-bold">Dianping</a>
+                            <a href="/red" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#C8102E] transition-colors text-xs font-bold">Xiaohongshu (RED)</a>
                             <a href="/douyin" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#00f2fe] transition-colors text-xs font-bold">Douyin</a>
                             <a href="/miniprogram" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-[#07C160] transition-colors text-xs font-bold">WeChat Mini-Program</a>
                             <a href="/creative" class="px-4 py-2 hover:bg-gray-50 rounded-lg text-slate-600 hover:text-violet-600 transition-colors text-xs font-bold">Creative Production</a>
@@ -111,9 +112,9 @@
                         🌐 EN
                     </button>
                     <div class="absolute right-0 top-full mt-2 w-28 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
-                        <a href="/en/contact" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
-                        <a href="/en/contact" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
-                        <a href="/cn/contact" class="block px-4 py-2 text-[10px] font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
+                        <a href="/en/contact" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">日本語</a>
+                        <a href="/en/contact" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">English</a>
+                        <a href="/cn/contact" class="block px-4 py-2 text-xs font-bold text-gray-700 hover:bg-slate-50 transition">简体中文</a>
                     </div>
                 </div>
             </div>
@@ -132,8 +133,8 @@
             <a href="/en" class="text-lg font-bold text-slate-700">Home</a>
             <div class="flex flex-col items-center space-y-4">
                 <a href="/en/services" class="text-lg font-bold text-slate-700">Services</a>
-                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#FF6600]">Dianping</a>
-                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#FF2442]">Xiaohongshu (RED)</a>
+                <a href="/dianping" class="text-sm font-bold text-slate-500 hover:text-[#C2410C]">Dianping</a>
+                <a href="/red" class="text-sm font-bold text-slate-500 hover:text-[#C8102E]">Xiaohongshu (RED)</a>
                 <a href="/douyin" class="text-sm font-bold text-slate-500 hover:text-[#00f2fe]">Douyin</a>
                 <a href="/miniprogram" class="text-sm font-bold text-slate-500 hover:text-[#07C160]">WeChat Mini-Program</a>
                 <a href="/creative" class="text-sm font-bold text-slate-500 hover:text-violet-600">Creative Production</a>
@@ -161,9 +162,9 @@
     <section class="pt-32 md:pt-40 pb-16 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
         <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
-            <span class="text-coral font-bold tracking-[0.2em] text-[10px] uppercase block mb-4">Contact Us</span>
+            <span class="text-coral font-bold tracking-[0.2em] text-xs uppercase block mb-4">Contact Us</span>
             <h1 class="text-4xl md:text-6xl font-bold serif text-tech-blue mb-6">Contact Us</h1>
-            <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            <p class="text-slate-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
                 Please feel free to contact us regarding<br class="hidden md:block">
                 service inquiries, quotes, or any consultations.
             </p>
@@ -208,91 +209,49 @@
 
                 <div class="lg:col-span-7">
                     <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 md:p-12">
-                        <div id="successMessage"
-                            class="hidden mb-8 bg-emerald-50 border border-emerald-200 text-emerald-700 px-6 py-4 rounded-xl">
-                            <p class="font-bold text-sm">✅ Your message has been sent successfully. Our representative will contact you shortly.</p>
-                        </div>
-
-                        <form id="contactForm" class="space-y-6">
+                        <form id="contactForm" class="space-y-6" novalidate data-contact-form data-thanks="/en/contact/thanks" data-label-send="Send message" data-label-sending="Sending..." data-error-name="Please enter your name." data-error-email="Please enter a valid email address." data-error-message="Please enter a message." data-error-send="We could not send your message. Please try again.">
+                            <fieldset>
+                                <legend class="block text-xs font-bold text-tech-blue mb-3 tracking-widest">Inquiry type (optional)</legend>
+                                <div class="inquiry-grid"><label class="inquiry-card"><input type="radio" name="inquiry_type" value="red_marketing"><span>RED (Xiaohongshu) Marketing</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="web_development"><span>Web & App Development</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="ui_ux_design"><span>UI/UX Design</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="consultation"><span>General Inquiries</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="estimate"><span>Request a Quote</span></label><label class="inquiry-card"><input type="radio" name="inquiry_type" value="other"><span>Other</span></label></div>
+                            </fieldset>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Inquiry Type *</label>
-                                <select id="inquiry_type" name="inquiry_type" required
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                    <option value="">Please select</option>
-                                    <option value="red_marketing">RED (Xiaohongshu) Marketing</option>
-                                    <option value="web_development">Web & App Development</option>
-                                    <option value="ui_ux_design">UI/UX Design</option>
-                                    <option value="consultation">General Inquiries</option>
-                                    <option value="estimate">Request a Quote</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Your Name *</label>
-                                    <input type="text" id="name" name="name" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Company Name *</label>
-                                    <input type="text" id="company" name="company" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Email Address *</label>
-                                    <input type="email" id="email" name="email" required
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone"
-                                        class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm"
-                                        placeholder="03-1234-5678">
-                                </div>
+                                <label for="name" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Your name *</label>
+                                <input type="text" id="name" name="name" required autocomplete="name" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                <p class="field-error" data-error-for="name" hidden></p>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Budget</label>
-                                <select id="budget" name="budget"
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                    <option value="">Please select</option>
-                                    <option value="under_500k">Under ¥500,000</option>
-                                    <option value="500k_1m">¥500,000 - ¥1,000,000</option>
-                                    <option value="1m_3m">¥1,000,000 - ¥3,000,000</option>
-                                    <option value="3m_5m">¥3,000,000 - ¥5,000,000</option>
-                                    <option value="over_5m">Over ¥5,000,000</option>
-                                    <option value="undecided">Undecided / Discuss</option>
-                                </select>
+                                <label for="email" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Email address *</label>
+                                <input type="email" id="email" name="email" required autocomplete="email" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
+                                <p class="field-error" data-error-for="email" hidden></p>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">How did you hear about PROTECH?</label>
-                                <select id="referral_source" name="referral_source"
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
-                                    <option value="">Please select</option>
-                                    <option value="web_search">Web Search</option>
-                                    <option value="sns">SNS (RED, X, Instagram, etc.)</option>
-                                    <option value="referral">Referral</option>
-                                    <option value="event">Event / Seminar</option>
-                                    <option value="media">Media Article</option>
-                                    <option value="other">Other</option>
-                                </select>
+                                <label for="company" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Company (optional)</label>
+                                <input type="text" id="company" name="company" autocomplete="organization" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Message *</label>
-                                <textarea id="message" name="message" rows="6" required
-                                    class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm resize-none"
-                                    placeholder="Please write the details of your inquiry."></textarea>
+                                <label for="message" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Message *</label>
+                                <textarea id="message" name="message" rows="6" required class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm resize-none" placeholder="Please write the details of your inquiry."></textarea>
+                                <p class="field-error" data-error-for="message" hidden></p>
                             </div>
-
-                            <button type="submit" id="submitBtn"
-                                class="w-full py-5 btn-coral font-bold rounded-xl tracking-[0.2em] text-xs uppercase shadow-lg">
-                                Send Message
-                            </button>
-
-                            <p class="text-center text-[10px] text-gray-400 mt-6">
-                                By submitting, you agree to our <a href="/privacy" class="underline text-coral">privacy policy</a>.
-                            </p>
+                            <details class="optional-details">
+                                <summary>Add details (optional)</summary>
+                                <div class="space-y-6">
+                                    <div>
+                                        <label for="phone" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Phone number</label>
+                                        <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm" placeholder="03-1234-5678">
+                                    </div>
+                                    <div>
+                                        <label for="budget" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">Budget</label>
+                                        <select id="budget" name="budget" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm"><option value="">Please select</option><option value="under_500k">Under ¥500,000</option><option value="500k_1m">¥500,000 - ¥1,000,000</option><option value="1m_3m">¥1,000,000 - ¥3,000,000</option><option value="3m_5m">¥3,000,000 - ¥5,000,000</option><option value="over_5m">Over ¥5,000,000</option><option value="undecided">Undecided / Discuss</option></select>
+                                    </div>
+                                    <div>
+                                        <label for="referral_source" class="block text-xs font-bold text-tech-blue mb-2 tracking-widest">How did you hear about PROTECH?</label>
+                                        <select id="referral_source" name="referral_source" class="w-full px-5 py-4 bg-warm-gray border border-transparent rounded-xl focus:ring-2 focus:ring-coral/50 focus:border-coral outline-none transition text-sm"><option value="">Please select</option><option value="web_search">Web Search</option><option value="sns">SNS (RED, X, Instagram, etc.)</option><option value="referral">Referral</option><option value="event">Event / Seminar</option><option value="media">Media Article</option><option value="other">Other</option></select>
+                                    </div>
+                                </div>
+                            </details>
+                            <button type="submit" id="submitBtn" class="w-full py-5 btn-coral font-bold rounded-xl tracking-[0.2em] text-xs uppercase shadow-lg">Send message</button>
+                            <p class="text-center text-xs text-slate-500 mt-6">By submitting, you agree to our <a href="/privacy" class="underline text-coral">privacy policy</a>.</p>
                         </form>
                     </div>
                 </div>
@@ -307,11 +266,11 @@
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
                 <div class="md:col-span-1">
                     <div class="text-2xl font-bold tracking-tighter mb-4">PROTECH</div>
-                    <p class="text-white/30 text-xs leading-relaxed">Crossing business boundaries with<br>technology and marketing.</p>
+                    <p class="text-white/60 text-xs leading-relaxed">Crossing business boundaries with<br>technology and marketing.</p>
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">Dianping Store Attraction</a></li>
                         <li><a href="/red" class="hover:text-coral transition">RED (Xiaohongshu) Marketing</a></li>
                         <li><a href="/douyin" class="hover:text-coral transition">Douyin Operations</a></li>
@@ -324,7 +283,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company Info</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/en/company" class="hover:text-coral transition">Company</a></li>
                         <li><a href="/en/cases" class="hover:text-coral transition">Case Studies</a></li>
                         <li><a href="/en/blog" class="hover:text-coral transition">Blog</a></li>
@@ -335,7 +294,7 @@
                 </div>
                 <div>
                     <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Resources</h4>
-                    <ul class="space-y-3 text-sm text-white/40">
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">Download Whitepapers</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">FAQ</a></li>
                         <li><a href="/inbound-ai" class="hover:text-coral transition">Inbound AI</a></li>
@@ -345,88 +304,22 @@
             </div>
         </div>
         <div class="border-t border-white/10 pt-8 text-center">
-            <p class="text-[10px] text-white/30">© 2026 PROTECH Inc. All Rights Reserved.</p>
+            <p class="text-xs text-white/60">© 2026 PROTECH Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
-        AOS.init({ duration: 800, once: true, offset: 80 });
+        (window.protechInitAos||(window.protechInitAos=function(o){var run=function(){if(window.AOS)AOS.init(o)};if(window.AOS)run();else document.addEventListener("DOMContentLoaded",run)}))({ duration: 800, once: true, offset: 80 });
 
         // Apply seigaiha SVG pattern via JS to avoid CSS linter issues with data URI
         document.querySelectorAll('.seigaiha-pattern').forEach(function(el) {
             el.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 C20 40 20 20 40 20 C60 20 60 40 80 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M-40 40 C-20 40 -20 20 0 20 C20 20 20 40 40 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3Cpath d='M40 40 C60 40 60 20 80 20 C100 20 100 40 120 40' fill='none' stroke='%23E86B7A' stroke-width='0.5' opacity='0.12'/%3E%3C/svg%3E\")";
         });
 
-        (function () { emailjs.init("Oa3PmeXJ7kwYjIls0"); })();
-
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const btn = document.getElementById('submitBtn');
-            const originalBtnText = btn.innerText;
-
-            btn.innerText = 'Sending...';
-            btn.disabled = true;
-
-            const templateParams = {
-                name: document.getElementById('name').value,
-                company: document.getElementById('company').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-
-            emailjs.send('service_zg0cj56', 'template_9wqf6sc', templateParams)
-                .then(function () {
-                    // Save to localStorage for admin panel
-                    try {
-                        const contactData = {
-                            id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
-                            inquiry_type: document.getElementById('inquiry_type').value,
-                            name: document.getElementById('name').value,
-                            company: document.getElementById('company').value,
-                            email: document.getElementById('email').value,
-                            phone: document.getElementById('phone').value || '',
-                            budget: document.getElementById('budget').value || '',
-                            referral_source: document.getElementById('referral_source').value || '',
-                            message: document.getElementById('message').value,
-                            date: new Date().toISOString(),
-                            status: '未対応'
-                        };
-                        const stored = JSON.parse(localStorage.getItem('protech_contacts') || '[]');
-                        stored.unshift(contactData);
-                        localStorage.setItem('protech_contacts', JSON.stringify(stored));
-
-                        // Save to Google Sheets API
-                        fetch('/api/contacts', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(contactData)
-                        }).catch(err => console.error('Failed to save to database API:', err));
-                    } catch (err) {
-                        console.error('Failed to save contact to localStorage:', err);
-                    }
-
-                    document.getElementById('successMessage').classList.remove('hidden');
-                    document.getElementById('contactForm').reset();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                    setTimeout(() => {
-                        document.getElementById('successMessage').classList.add('hidden');
-                    }, 5000);
-
-                    btn.innerText = originalBtnText;
-                    btn.disabled = false;
-                }, function (error) {
-                    alert('Failed to send message. Please try again later.');
-                    console.error('EmailJS Error:', error);
-
-                    btn.innerText = originalBtnText;
-                    btn.disabled = false;
-                });
-        });
-    </script>
+        </script>
     <script defer src="/assets/js/main.js"></script>
+    <script defer src="/assets/js/ux.js"></script>
 </body>
 
 </html>
