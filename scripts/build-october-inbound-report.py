@@ -13,7 +13,8 @@ for tag in re.finditer(r'<(/?)div\b[^>]*>', old[menu_start:]):
         menu_end=menu_start+tag.end()
         break
 nav=old[old.index('    <nav '):menu_end]
-nav=nav.replace('<button id="menu-btn"','<button aria-label="メニュー" aria-controls="mobile-menu" aria-expanded="false" id="menu-btn"')
+if 'aria-label=' not in nav[max(0, nav.find('id="menu-btn"')-180):nav.find('id="menu-btn"')+80]:
+    nav=nav.replace('<button id="menu-btn"','<button type="button" aria-label="メニューを開く" aria-controls="mobile-menu" aria-expanded="false" id="menu-btn"',1)
 footer=old[old.index('    <footer '):old.index('</footer>')+9]
 fmt=lambda n:f'{n:,}'
 signed=lambda n:f'{n:+.1f}%'

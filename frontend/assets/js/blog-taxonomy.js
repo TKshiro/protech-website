@@ -81,10 +81,10 @@
                     node.setAttribute('aria-selected', active ? 'true' : 'false');
                     if (active) node.setAttribute('aria-current', 'page');
                     else node.removeAttribute('aria-current');
-                } else if (active) {
-                    node.setAttribute('aria-pressed', 'true');
                 } else {
-                    node.setAttribute('aria-pressed', 'false');
+                    node.removeAttribute('aria-pressed');
+                    if (active) node.setAttribute('aria-current', 'page');
+                    else node.removeAttribute('aria-current');
                 }
             });
         }

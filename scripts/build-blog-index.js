@@ -11,6 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { execFileSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const FRONTEND = path.join(ROOT, 'frontend');
@@ -145,19 +146,74 @@ function sortItems(items) {
     });
 }
 
+const dimensionCache = new Map();
+
+function imageDimensions(absPath) {
+    if (dimensionCache.has(absPath)) return dimensionCache.get(absPath);
+    let size = null;
+    try {
+        const out = execFileSync('ffprobe', [
+            '-v', 'error',
+            '-select_streams', 'v:0',
+            '-show_entries', 'stream=width,height',
+            '-of', 'csv=p=0:s=x',
+            absPath
+        ], { encoding: 'utf8' }).trim();
+        const [width, height] = out.split('x').map((value) => Number(value));
+        if (width > 0 && height > 0) size = { width, height };
+    } catch (error) {
+        size = null;
+    }
+    dimensionCache.set(absPath, size);
+    return size;
+}
+
 function picture(item, eager) {
     const alt = esc(item.title);
     const loading = eager ? 'eager' : 'lazy';
+    const priority = eager ? ' fetchpriority="high"' : ' fetchpriority="low"';
     const imgClass = 'w-full h-full object-cover';
-    if (/^https?:/i.test(item.image)) {
-        return `<img src="${esc(item.image)}" alt="${alt}" class="${imgClass}" loading="${loading}" decoding="async">`;
+    const remote = /^https?:/i.test(item.image);
+    let dims = '';
+    if (!remote) {
+        const size = imageDimensions(path.join(FRONTEND, item.image.replace(/^\//, '')));
+        if (size) dims = ` width="${size.width}" height="${size.height}"`;
     }
+    const img = (src) => `<img src="${esc(src)}" alt="${alt}" class="${imgClass}"${dims} loading="${loading}"${priority} decoding="async">`;
+    if (remote) return img(item.image);
     const webp = item.image.replace(/\.(jpe?g|png)$/i, '.webp');
-    const webpExists = webp !== item.image && fs.existsSync(path.join(FRONTEND, webp.replace(/^\//, '')));
-    if (!webpExists) {
-        return `<img src="${esc(item.image)}" alt="${alt}" class="${imgClass}" loading="${loading}" decoding="async">`;
+    const webpAbs = path.join(FRONTEND, webp.replace(/^\//, ''));
+    const webpExists = webp !== item.image && fs.existsSync(webpAbs);
+    if (!webpExists) return img(item.image);
+    const mobile = eager ? responsiveWebp(item.image) : null;
+    const full = mobile ? imageDimensions(webpAbs) : null;
+    const small = mobile ? imageDimensions(mobile.abs) : null;
+    if (mobile && full && small) {
+        const srcset = `${esc(mobile.rel)} ${small.width}w, ${esc(webp)} ${full.width}w`;
+        return `<picture class="block h-full w-full"><source srcset="${srcset}" sizes="(max-width: 767px) 85vw, 360px" type="image/webp">${img(item.image)}</picture>`;
     }
-    return `<picture class="block h-full w-full"><source srcset="${esc(webp)}" type="image/webp"><img src="${esc(item.image)}" alt="${alt}" class="${imgClass}" loading="${loading}" decoding="async"></picture>`;
+    return `<picture class="block h-full w-full"><source srcset="${esc(webp)}" type="image/webp">${img(item.image)}</picture>`;
+}
+
+function responsiveWebp(image) {
+    const rel = image.replace(/\.(jpe?g|png)$/i, '-640.webp');
+    if (rel === image) return null;
+    const abs = path.join(FRONTEND, rel.replace(/^\//, ''));
+    return fs.existsSync(abs) ? { rel, abs } : null;
+}
+
+function preloadFor(item) {
+    if (!item || /^https?:/i.test(item.image)) return '';
+    const webp = item.image.replace(/\.(jpe?g|png)$/i, '.webp');
+    const useWebp = webp !== item.image && fs.existsSync(path.join(FRONTEND, webp.replace(/^\//, '')));
+    const href = useWebp ? webp : item.image;
+    const type = useWebp ? 'image/webp' : (/\.png$/i.test(href) ? 'image/png' : 'image/jpeg');
+    const mobile = useWebp ? responsiveWebp(item.image) : null;
+    if (mobile) {
+        return `<link rel="preload" as="image" href="${esc(mobile.rel)}" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
+    <link rel="preload" as="image" href="${esc(href)}" type="image/webp" media="(min-width: 768px)" fetchpriority="high">`;
+    }
+    return `<link rel="preload" as="image" href="${esc(href)}" type="${type}" fetchpriority="high">`;
 }
 
 function searchText(item, tagBySlug) {
@@ -260,9 +316,12 @@ function pageShell({ title, description, canonical, extraHead, nav, footer, body
     <meta property="og:type" content="website">
     <meta property="og:url" content="${esc(canonical)}">
     <meta property="og:image" content="${SITE}/assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/assets/css/tailwind.css">
     <link rel="stylesheet" href="/assets/css/ux.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap"></noscript>
     <style>
         :root { --tech-blue: #001A33; --coral: #B4495A; }
         html, body { max-width: 100%; overflow-x: hidden; }
@@ -322,13 +381,13 @@ function renderBlog(context, chrome) {
         .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'ja'))
         .slice(0, 10);
 
-    const tabs = [`<a href="/blog" role="tab" aria-selected="true" data-category="all" class="category-tab shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-3 py-2 text-xs font-bold text-slate-600">すべて <span class="ml-1 text-xs opacity-70">${items.length}</span></a>`]
+    const tabs = [`<a href="/blog" role="tab" aria-selected="true" data-category="all" class="category-tab shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-3 py-2 text-xs font-bold text-slate-600">すべて <span class="ml-1 text-xs opacity-90">${items.length}</span></a>`]
         .concat(categories.map((category) => {
             const count = context.categoryCounts[category.id] || 0;
-            return `<a href="/blog?category=${esc(category.id)}" role="tab" aria-selected="false" data-category="${esc(category.id)}" class="category-tab shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-3 py-2 text-xs font-bold text-slate-600">${esc(category.label)} <span class="ml-1 text-xs opacity-70">${count}</span></a>`;
+            return `<a href="/blog?category=${esc(category.id)}" role="tab" aria-selected="false" data-category="${esc(category.id)}" class="category-tab shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-3 py-2 text-xs font-bold text-slate-600">${esc(category.label)} <span class="ml-1 text-xs opacity-90">${count}</span></a>`;
         })).join('');
 
-    const pills = hotTags.map((tag) => `<a href="/blog?tag=${esc(encodeURIComponent(tag.slug))}" data-filter-tag="${esc(tag.slug)}" class="tag-pill inline-flex max-w-full items-center rounded-full border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-600">${esc(tag.label)} <span class="ml-1 text-xs opacity-70">${tag.count}</span></a>`).join('');
+    const pills = hotTags.map((tag) => `<a href="/blog?tag=${esc(encodeURIComponent(tag.slug))}" data-filter-tag="${esc(tag.slug)}" class="tag-pill inline-flex max-w-full items-center rounded-full border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-600">${esc(tag.label)} <span class="ml-1 text-xs opacity-90">${tag.count}</span></a>`).join('');
 
     const drawer = data.tagGroups.map((group) => {
         const links = group.tags
@@ -338,7 +397,7 @@ function renderBlog(context, chrome) {
             .map((tag) => {
                 const qualified = tag.count >= data.hubThreshold;
                 const hub = qualified ? `<a href="/blog/tag/${esc(tag.slug)}" class="text-xs font-bold text-blue-700 underline">一覧ページ</a>` : '';
-                return `<li class="flex min-w-0 flex-wrap items-center gap-2"><a href="/blog?tag=${esc(encodeURIComponent(tag.slug))}" data-filter-tag="${esc(tag.slug)}" class="tag-pill inline-flex rounded-full border border-slate-200 px-3 py-1 text-xs font-bold text-slate-700">${esc(tag.label)} <span class="ml-1 text-xs opacity-70">${tag.count}</span></a>${hub}</li>`;
+                return `<li class="flex min-w-0 flex-wrap items-center gap-2"><a href="/blog?tag=${esc(encodeURIComponent(tag.slug))}" data-filter-tag="${esc(tag.slug)}" class="tag-pill inline-flex rounded-full border border-slate-200 px-3 py-1 text-xs font-bold text-slate-700">${esc(tag.label)} <span class="ml-1 text-xs opacity-90">${tag.count}</span></a>${hub}</li>`;
             }).join('');
         return `<section class="min-w-0"><h3 class="mb-3 text-xs font-bold tracking-wide text-slate-500">${esc(group.label)}</h3><ul class="flex flex-col gap-2">${links}</ul></section>`;
     }).join('');
@@ -355,7 +414,8 @@ function renderBlog(context, chrome) {
     const blogSchema = collectionPage(title, description, `${SITE}/blog`, sorted);
     blogSchema['@type'] = ['CollectionPage', 'Blog'];
 
-    const extraHead = `<link rel="alternate" type="application/rss+xml" title="PROTECH Blog RSS" href="${SITE}/rss.xml">
+    const extraHead = `${preloadFor(spotlightItems[0])}
+    <link rel="alternate" type="application/rss+xml" title="PROTECH Blog RSS" href="${SITE}/rss.xml">
     <link rel="alternate" hreflang="ja" href="${SITE}/blog">
     <link rel="alternate" hreflang="en" href="${SITE}/en/blog">
     <link rel="alternate" hreflang="zh-Hans" href="${SITE}/cn/blog">

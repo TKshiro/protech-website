@@ -111,9 +111,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pro-tech.jp/blog/tag/inbound-trends">
     <meta property="og:image" content="https://pro-tech.jp/assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/assets/css/tailwind.css">
     <link rel="stylesheet" href="/assets/css/ux.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap"></noscript>
     <style>
         :root { --tech-blue: #001A33; --coral: #B4495A; }
         html, body { max-width: 100%; overflow-x: hidden; }
@@ -182,8 +185,8 @@
                     </div>
                 </div>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" type="button" aria-label="メニューを開く">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
                     <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
                     <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
@@ -229,7 +232,7 @@
         </header>
         <div class="mb-8 flex min-w-0 flex-wrap gap-x-3 gap-y-2 text-xs"><a href="/blog/category/platform" class="text-slate-500 hover:text-coral">プラットフォーム運用</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/seasonal" class="text-slate-500 hover:text-coral">季節・旅行ガイド</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/growth" class="text-slate-500 hover:text-coral">集客ノウハウ・費用</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/market" class="text-slate-500 hover:text-coral">市場データ・トレンド</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/cases" class="text-slate-500 hover:text-coral">導入事例</a></div>
         <div class="grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"><article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="inbound-foreign-tourist-trends-2026" data-category="market" data-tags="data inbound-trends china" data-search="【2026年最新】訪日外国人旅行の現状と課題：6,000万人達成に向けた地方誘客とインバウンド戦略 訪日外国人旅行客（インバウンド）の最新動向と、7都道府県に集中するオーバーツーリズムの課題。6,000万人達成に向けたjataの提言と、地方誘客のための具体的なsns集客戦略を解説します。 データ・統計 訪日トレンド 中国市場" data-hub-card>
-        <a href="/blog/inbound-foreign-tourist-trends-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/hero-landscape2.webp" type="image/webp"><img src="/assets/images/hero-landscape2.jpg" alt="【2026年最新】訪日外国人旅行の現状と課題：6,000万人達成に向けた地方誘客とインバウンド戦略" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/inbound-foreign-tourist-trends-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/hero-landscape2.webp" type="image/webp"><img src="/assets/images/hero-landscape2.jpg" alt="【2026年最新】訪日外国人旅行の現状と課題：6,000万人達成に向けた地方誘客とインバウンド戦略" class="w-full h-full object-cover" width="1200" height="1200" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.05.11</span>
@@ -242,7 +245,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="inbound-march-2026-report" data-category="market" data-tags="data inbound-trends calendar" data-search="【2026年3月最新】訪日客361万人で過去最高！桜需要で欧米・東南アジアが急伸長 jntoの最新統計をもとに、2026年3月の訪日外国人動向を徹底解説。累計1000万人突破の背景や、欧米・東南アジア市場の伸び、中国市場の現状など、インバウンド集客に必要なデータをお届けします。 データ・統計 訪日トレンド 季節カレンダー" data-hub-card>
-        <a href="/blog/inbound-march-2026-report" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/inbound-march-hero.webp" type="image/webp"><img src="/assets/images/inbound-march-hero.jpg" alt="【2026年3月最新】訪日客361万人で過去最高！桜需要で欧米・東南アジアが急伸長" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/inbound-march-2026-report" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/inbound-march-hero.webp" type="image/webp"><img src="/assets/images/inbound-march-hero.jpg" alt="【2026年3月最新】訪日客361万人で過去最高！桜需要で欧米・東南アジアが急伸長" class="w-full h-full object-cover" width="1200" height="1200" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.05.04</span>
@@ -255,7 +258,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="inbound-calendar-2026" data-category="market" data-tags="data calendar inbound-trends" data-search="【2026年最新：インバウンド祝日カレンダー】外国人観光客が多い時期・月別の動向を徹底解説 インバウンド集客を成功させるには「いつ、どの国の人が来るか」を知ることが重要です。2026年の主要国の祝日カレンダーと月別の旅行動向をまとめました。 データ・統計 季節カレンダー 訪日トレンド" data-hub-card>
-        <a href="/blog/inbound-calendar-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/inbound_calendar_2026_hero.webp" type="image/webp"><img src="/assets/images/inbound_calendar_2026_hero.jpg" alt="【2026年最新：インバウンド祝日カレンダー】外国人観光客が多い時期・月別の動向を徹底解説" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/inbound-calendar-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/inbound_calendar_2026_hero.webp" type="image/webp"><img src="/assets/images/inbound_calendar_2026_hero.jpg" alt="【2026年最新：インバウンド祝日カレンダー】外国人観光客が多い時期・月別の動向を徹底解説" class="w-full h-full object-cover" width="1200" height="1200" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.05.01</span>
@@ -268,7 +271,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="inbound-data-ai-dx-2026" data-category="market" data-tags="data inbound-trends" data-search="【2026年最新】aiとデータで勝つインバウンド集客：量から質への転換・dx戦略の正解 2026年、日本のインバウンド市場は「集客数」から「消費単価」への転換点を迎えました。テクノロジーを活用した高単価マーケティングやdx戦略の正解を解説します。 データ・統計 訪日トレンド" data-hub-card>
-        <a href="/blog/inbound-data-ai-dx-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/inbound-data-ai-hero.jpeg" alt="【2026年最新】AIとデータで勝つインバウンド集客：量から質への転換・DX戦略の正解" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/inbound-data-ai-dx-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/inbound-data-ai-hero.jpeg" alt="【2026年最新】AIとデータで勝つインバウンド集客：量から質への転換・DX戦略の正解" class="w-full h-full object-cover" width="2000" height="1116" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.04.28</span>
@@ -281,7 +284,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="inbound-spending-behavior-2026" data-category="market" data-tags="data inbound-trends china" data-search="訪日外国人の消費行動データ分析【2026年最新】国籍別・カテゴリ別の傾向と集客への活かし方 訪日外国人の消費行動を国籍別・カテゴリ別に徹底分析。中国・韓国・台湾・欧米別の購買傾向・消費額データから、インバウンド集客戦略に活かすポイントまで2026年最新情報。 データ・統計 訪日トレンド 中国市場" data-hub-card>
-        <a href="/blog/inbound-spending-behavior-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-inbound-spending-data.jpeg" alt="訪日外国人の消費行動データ分析【2026年最新】国籍別・カテゴリ別の傾向と集客への活かし方" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/inbound-spending-behavior-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-inbound-spending-data.jpeg" alt="訪日外国人の消費行動データ分析【2026年最新】国籍別・カテゴリ別の傾向と集客への活かし方" class="w-full h-full object-cover" width="1600" height="872" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.04.24</span>
@@ -294,7 +297,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="inbound-meaning-guide" data-category="market" data-tags="data inbound-trends china" data-search="インバウンドとは？意味・訪日外国人動向・中国向けマーケティング戦略まで完全解説【2026年】 ニュースでよく聞く「インバウンド」の本来の意味や使い方、さらに日本企業の成長に欠かせない中国向けインバウンド対策の基本を詳しく解説します。 データ・統計 訪日トレンド 中国市場" data-hub-card>
-        <a href="/blog/inbound-meaning-guide" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/inbound-tourist-image.webp" type="image/webp"><img src="/assets/images/inbound-tourist-image.jpg" alt="インバウンドとは？意味・訪日外国人動向・中国向けマーケティング戦略まで完全解説【2026年】" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/inbound-meaning-guide" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/inbound-tourist-image.webp" type="image/webp"><img src="/assets/images/inbound-tourist-image.jpg" alt="インバウンドとは？意味・訪日外国人動向・中国向けマーケティング戦略まで完全解説【2026年】" class="w-full h-full object-cover" width="1200" height="669" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.04.20</span>
@@ -307,7 +310,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="red-marketing-trends-2026" data-category="market" data-tags="xiaohongshu inbound-trends china" data-search="小紅書マーケティング2026年最新トレンド：日本企業が知るべき5つのポイント 2026年の小紅書（red）マーケティング最新トレンドを解説。日本企業が中国市場で成功するために押さえるべき5つの重要ポイントをprotechが詳しくご紹介します。 小紅書 訪日トレンド 中国市場" data-hub-card>
-        <a href="/blog/red-marketing-trends-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600" alt="小紅書マーケティング2026年最新トレンド：日本企業が知るべき5つのポイント" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/red-marketing-trends-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600" alt="小紅書マーケティング2026年最新トレンド：日本企業が知るべき5つのポイント" class="w-full h-full object-cover" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.03.04</span>

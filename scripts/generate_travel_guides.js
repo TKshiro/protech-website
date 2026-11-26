@@ -1041,8 +1041,8 @@ function navHtml(lang, isArticle, slug = '') {
                 <a href="${langPrefix}/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">${labels.contact}</a>
                 ${langDropdownHtml}
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <button id="menu-btn" type="button" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" aria-label="${isEn ? 'Open menu' : (isZht ? '打開選單' : (isJa ? 'メニューを開く' : '打开菜单'))}">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
                     <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
                     <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>

@@ -119,8 +119,8 @@
                     </div>
                 </div>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" type="button" aria-label="Open menu">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
                     <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
                     <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
@@ -160,7 +160,8 @@
     
 
     <!-- HERO -->
-    <section id="main-content"
+    <main id="main-content">
+    <section
         class="pt-32 md:pt-40 pb-20 px-8 bg-gradient-to-br from-white via-coral-light/30 to-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-48 h-full seigaiha-pattern opacity-40"></div>
         <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
@@ -346,7 +347,9 @@
         </div>
     </section>
 
-                        <!-- FOOTER -->
+                        </main>
+
+    <!-- FOOTER -->
     <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">
@@ -355,7 +358,7 @@
                     <p class="text-white/60 text-xs leading-relaxed">Crossing business boundaries with<br>technology and marketing.</p>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h4>
+                    <h3 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Services</h3>
                     <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">Dianping Store Attraction</a></li>
                         <li><a href="/red" class="hover:text-coral transition">RED (Xiaohongshu) Marketing</a></li>
@@ -368,7 +371,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company Info</h4>
+                    <h3 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Company Info</h3>
                     <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/en/company" class="hover:text-coral transition">Company</a></li>
                         <li><a href="/en/cases" class="hover:text-coral transition">Case Studies</a></li>
@@ -379,7 +382,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Resources</h4>
+                    <h3 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">Resources</h3>
                     <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">Download Whitepapers</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">FAQ</a></li>
