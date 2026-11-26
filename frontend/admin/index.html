@@ -417,8 +417,8 @@
                                     <p class="text-xs font-bold tracking-[0.35em] text-coral uppercase">PROTECH</p>
                                     <h2 class="mt-2 text-xl font-bold">Admin Panel</h2>
                                 </div>
-                                <button id="close-sidebar" class="lg:hidden rounded-lg border border-white/15 p-2 hover:bg-white/10" aria-label="Close sidebar">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <button id="close-sidebar" type="button" class="lg:hidden rounded-lg border border-white/15 p-2 hover:bg-white/10" aria-label="Close sidebar">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
                                     </svg>
                                 </button>
@@ -799,8 +799,8 @@
                                 <p class="text-xs font-bold tracking-[0.3em] text-coral uppercase">PROTECH</p>
                                 <h3 class="text-xl font-bold mt-1">${isCase ? (state.modal.mode === 'edit' ? '導入事例を編集' : '導入事例を追加') : (state.modal.mode === 'edit' ? 'ブログ記事を編集' : 'ブログ記事を追加')}</h3>
                             </div>
-                            <button id="modal-close" class="rounded-xl border border-white/10 p-2 hover:bg-white/10 transition" aria-label="Close modal">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <button id="modal-close" type="button" class="rounded-xl border border-white/10 p-2 hover:bg-white/10 transition" aria-label="Close modal">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>

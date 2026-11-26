@@ -87,9 +87,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pro-tech.jp/blog/category/seasonal">
     <meta property="og:image" content="https://pro-tech.jp/assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/assets/css/tailwind.css">
     <link rel="stylesheet" href="/assets/css/ux.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap"></noscript>
     <style>
         :root { --tech-blue: #001A33; --coral: #B4495A; }
         html, body { max-width: 100%; overflow-x: hidden; }
@@ -158,8 +161,8 @@
                     </div>
                 </div>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" type="button" aria-label="メニューを開く">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
                     <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
                     <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
@@ -205,7 +208,7 @@
         </header>
         <div class="mb-8 flex min-w-0 flex-wrap gap-x-3 gap-y-2 text-xs"><a href="/blog/category/platform" class="text-slate-500 hover:text-coral">プラットフォーム運用</a><span class="text-slate-500" aria-hidden="true"> / </span><span class="font-bold text-tech-blue" aria-current="page">季節・旅行ガイド</span><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/growth" class="text-slate-500 hover:text-coral">集客ノウハウ・費用</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/market" class="text-slate-500 hover:text-coral">市場データ・トレンド</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/cases" class="text-slate-500 hover:text-coral">導入事例</a></div>
         <div class="grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"><article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="japan-autumn-spots-2026" data-category="seasonal" data-tags="autumn foliage tourism" data-search="【2026年秋】日本で絶対行くべき紅葉・観光スポット10選｜秋の絶景完全ガイド 2026年秋に訪日観光客が絶対に訪れるべき日本の観光スポット10選を厳選。京都の歴史ある寺院から、北海道の大自然、息をのむ峡谷美まで、見どころ・アクセス・ベストシーズンを徹底解説します。 秋 紅葉 観光・地方" data-hub-card>
-        <a href="/blog/japan-autumn-spots-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600" alt="【2026年秋】日本で絶対行くべき紅葉・観光スポット10選｜秋の絶景完全ガイド" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/japan-autumn-spots-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-autumn-arashiyama.webp" type="image/webp"><img src="/assets/images/blog-autumn-arashiyama.jpg" alt="【2026年秋】日本で絶対行くべき紅葉・観光スポット10選｜秋の絶景完全ガイド" class="w-full h-full object-cover" width="840" height="560" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.08.20</span>
@@ -218,7 +221,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="japan-hanabi-guide-2026" data-category="seasonal" data-tags="summer hanabi tourism" data-search="【2026年保存版】日本の花火大会おすすめ15選｜開催日程・打上数・アクセスを完全網羅 2026年夏に開催される日本全国の花火大会おすすめ15選を厳選紹介。隅田川・長岡・大曲など、開催日時・打上数・有料席・アクセス情報を完全網羅。インバウンド観光客にも人気の花火イベント情報。 夏 花火 観光・地方" data-hub-card>
-        <a href="/blog/japan-hanabi-guide-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-hanabi-hero-2026.jpg" alt="【2026年保存版】日本の花火大会おすすめ15選｜開催日程・打上数・アクセスを完全網羅" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/japan-hanabi-guide-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-hanabi-hero-2026.jpg" alt="【2026年保存版】日本の花火大会おすすめ15選｜開催日程・打上数・アクセスを完全網羅" class="w-full h-full object-cover" width="1600" height="872" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.06.18</span>
@@ -231,7 +234,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="japan-summer-spots-2026" data-category="seasonal" data-tags="summer tourism calendar" data-search="【2026年夏】日本で絶対行くべき観光スポット15選｜穴場から定番まで完全ガイド 2026年夏に訪日観光客が絶対に訪れるべき日本の観光スポット15選を厳選。花火大会・絶景ビーチ・避暑地・夏祭りなど、エリア別に見どころ・アクセス・ベストシーズンを徹底解説します。 夏 観光・地方 季節カレンダー" data-hub-card>
-        <a href="/blog/japan-summer-spots-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-summer-furano-lavender.webp" type="image/webp"><img src="/assets/images/blog-summer-furano-lavender.jpg" alt="【2026年夏】日本で絶対行くべき観光スポット15選｜穴場から定番まで完全ガイド" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/japan-summer-spots-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-summer-furano-lavender.webp" type="image/webp"><img src="/assets/images/blog-summer-furano-lavender.jpg" alt="【2026年夏】日本で絶対行くべき観光スポット15選｜穴場から定番まで完全ガイド" class="w-full h-full object-cover" width="1600" height="678" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.06.18</span>

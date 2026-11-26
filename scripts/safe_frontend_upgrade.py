@@ -113,8 +113,11 @@ def fix_hamburger_aria(html: str) -> tuple[str, dict]:
         attrs = m.group(1)
         new_attrs = attrs
         added = False
+        if not has_attr(attrs, "type"):
+            new_attrs = new_attrs.rstrip() + ' type="button"'
+            added = True
         if not has_attr(attrs, "aria-label"):
-            new_attrs = new_attrs.rstrip() + ' aria-label="メニュー"'
+            new_attrs = new_attrs.rstrip() + ' aria-label="メニューを開く"'
             added = True
         if not has_attr(attrs, "aria-expanded"):
             new_attrs = new_attrs.rstrip() + ' aria-expanded="false"'

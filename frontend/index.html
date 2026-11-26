@@ -402,8 +402,8 @@
                 <a href="/blog" class="nav-link ">ブログ</a>
                 <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" type="button" aria-label="メニューを開く">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
                     <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
                     <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
@@ -439,7 +439,8 @@
     </div>
 
     <!-- ═══════════════════════ HERO ═══════════════════════ -->
-    <section id="main-content" class="relative min-h-screen overflow-hidden wave-divider">
+    <main id="main-content">
+    <section class="relative min-h-screen overflow-hidden wave-divider">
         <!-- Photo collage background -->
         <div class="absolute inset-0">
             <div class="hero-bg-grid grid grid-cols-4 grid-rows-2 h-full gap-1">
@@ -1126,7 +1127,7 @@
                                 d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <h4 class="font-bold text-tech-blue text-lg mb-3">中日ネイティブ<br>チーム</h4>
+                    <h3 class="font-bold text-tech-blue text-lg mb-3">中日ネイティブ<br>チーム</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">日中両言語のバイリンガルスタッフが、文化の壁を越えた最適な戦略を策定します。</p>
                 </div>
                 <div class="text-center p-8 rounded-2xl hover:bg-warm-gray transition-all duration-300 group"
@@ -1138,7 +1139,7 @@
                                 d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </div>
-                    <h4 class="font-bold text-tech-blue text-lg mb-3">Tech×Marketing<br>融合</h4>
+                    <h3 class="font-bold text-tech-blue text-lg mb-3">Tech×Marketing<br>融合</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">IT企業ならではのデータ分析・自動化ツールで、他社にはない精度の高い運用を実現。</p>
                 </div>
                 <div class="text-center p-8 rounded-2xl hover:bg-warm-gray transition-all duration-300 group"
@@ -1150,7 +1151,7 @@
                                 d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                         </svg>
                     </div>
-                    <h4 class="font-bold text-tech-blue text-lg mb-3">ワンストップ<br>対応</h4>
+                    <h3 class="font-bold text-tech-blue text-lg mb-3">ワンストップ<br>対応</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">戦略立案から実行・分析まで、すべてを一社で完結。複数外注の必要がありません。</p>
                 </div>
                 <div class="text-center p-8 rounded-2xl hover:bg-warm-gray transition-all duration-300 group"
@@ -1162,7 +1163,7 @@
                                 d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
                         </svg>
                     </div>
-                    <h4 class="font-bold text-tech-blue text-lg mb-3">データ駆動型<br>改善</h4>
+                    <h3 class="font-bold text-tech-blue text-lg mb-3">データ駆動型<br>改善</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">直感に頼らない、緻密なデータ分析に基づくPDCA運用で成果を最大化します。</p>
                 </div>
             </div>
@@ -1647,7 +1648,9 @@
     </section>
 
     <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
-                                    <!-- FOOTER -->
+    </main>
+
+    <!-- FOOTER -->
     <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 md:gap-8 mb-16">

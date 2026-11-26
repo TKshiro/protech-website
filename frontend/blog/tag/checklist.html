@@ -135,9 +135,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pro-tech.jp/blog/tag/checklist">
     <meta property="og:image" content="https://pro-tech.jp/assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/assets/css/tailwind.css">
     <link rel="stylesheet" href="/assets/css/ux.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap"></noscript>
     <style>
         :root { --tech-blue: #001A33; --coral: #B4495A; }
         html, body { max-width: 100%; overflow-x: hidden; }
@@ -206,8 +209,8 @@
                     </div>
                 </div>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" type="button" aria-label="メニューを開く">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
                     <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
                     <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
@@ -253,7 +256,7 @@
         </header>
         <div class="mb-8 flex min-w-0 flex-wrap gap-x-3 gap-y-2 text-xs"><a href="/blog/category/platform" class="text-slate-500 hover:text-coral">プラットフォーム運用</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/seasonal" class="text-slate-500 hover:text-coral">季節・旅行ガイド</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/growth" class="text-slate-500 hover:text-coral">集客ノウハウ・費用</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/market" class="text-slate-500 hover:text-coral">市場データ・トレンド</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/cases" class="text-slate-500 hover:text-coral">導入事例</a></div>
         <div class="grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"><article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="dianping-store-not-found" data-category="platform" data-tags="dianping store-ops checklist" data-search="大衆点評で自店が見つからないときは？掲載状況と検索条件の確認手順 大衆点評で自店が検索に出ない日本の店舗向けに、直接リンク、都市・検索語・絞り込み、住所と地図、掲載状態を切り分ける確認手順を紹介。記録シートと中国語の問い合わせ文例付き。 大衆点評 店舗運営 チェックリスト" data-hub-card>
-        <a href="/blog/dianping-store-not-found" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/dianping-store-not-found-hero-20261122.webp" type="image/webp"><img src="/assets/images/dianping-store-not-found-hero-20261122.png" alt="大衆点評で自店が見つからないときは？掲載状況と検索条件の確認手順" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/dianping-store-not-found" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/dianping-store-not-found-hero-20261122.webp" type="image/webp"><img src="/assets/images/dianping-store-not-found-hero-20261122.png" alt="大衆点評で自店が見つからないときは？掲載状況と検索条件の確認手順" class="w-full h-full object-cover" width="1672" height="941" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.11.23</span>
@@ -266,7 +269,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="inbound-funnel-design" data-category="growth" data-tags="xiaohongshu dianping funnel checklist" data-search="小紅書・大衆点評から来店につなぐ導線設計｜日本の店舗向けチェックリスト 小紅書での発見から店舗情報の比較、予約、来店までを点検。リンク先、住所、予約完了、計測の抜けを確認できる導線チェックリストと記入例を紹介します。 小紅書 大衆点評 導線設計 チェックリスト" data-hub-card>
-        <a href="/blog/inbound-funnel-design" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-inbound-funnel.webp" type="image/webp"><img src="/assets/images/blog-inbound-funnel.jpg" alt="小紅書・大衆点評から来店につなぐ導線設計｜日本の店舗向けチェックリスト" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/inbound-funnel-design" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-inbound-funnel.webp" type="image/webp"><img src="/assets/images/blog-inbound-funnel.jpg" alt="小紅書・大衆点評から来店につなぐ導線設計｜日本の店舗向けチェックリスト" class="w-full h-full object-cover" width="1200" height="654" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">更新 2026.11.19</span><span class="text-[11px] text-slate-500">初回 2026.03.14</span>
@@ -279,7 +282,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="xiaohongshu-beauty-salon-2026" data-category="growth" data-tags="xiaohongshu beauty checklist funnel" data-search="美容サロンの小紅書集客｜施術情報・中国語案内・予約導線の整え方 美容室・ネイル・エステの小紅書運用で、施術の見せ方、料金と所要時間、中国語予約案内、撮影の確認事項を整理。投稿前チェックリスト付き。 小紅書 美容 チェックリスト 導線設計" data-hub-card>
-        <a href="/blog/xiaohongshu-beauty-salon-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-beauty-salon-xiaohongshu.jpg" alt="美容サロンの小紅書集客｜施術情報・中国語案内・予約導線の整え方" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/xiaohongshu-beauty-salon-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-beauty-salon-xiaohongshu.jpg" alt="美容サロンの小紅書集客｜施術情報・中国語案内・予約導線の整え方" class="w-full h-full object-cover" width="1200" height="633" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">更新 2026.11.19</span><span class="text-[11px] text-slate-500">初回 2026.05.06</span>
@@ -292,7 +295,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="inbound-marketing-cost-2026" data-category="growth" data-tags="cost xiaohongshu kol checklist" data-search="インバウンド集客の費用は何で決まる？中国sns・kolの見積もり比較ガイド 中国sns運用・kol・制作・開発の費用を、初期費用、月額、実費、追加費用に分けて比較。見積もり依頼テンプレートと契約前の確認表を紹介します。 費用・料金 小紅書 kol/koc チェックリスト" data-hub-card>
-        <a href="/blog/inbound-marketing-cost-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-inbound-cost-hero.jpeg" alt="インバウンド集客の費用は何で決まる？中国SNS・KOLの見積もり比較ガイド" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/inbound-marketing-cost-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-inbound-cost-hero.jpeg" alt="インバウンド集客の費用は何で決まる？中国SNS・KOLの見積もり比較ガイド" class="w-full h-full object-cover" width="1600" height="872" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">更新 2026.11.19</span><span class="text-[11px] text-slate-500">初回 2026.05.22</span>
@@ -305,7 +308,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="taiwan-inbound-strategy" data-category="growth" data-tags="taiwan data preparation checklist" data-search="台湾からの訪日客を迎える集客準備｜統計の読み方・繁体字案内・予約導線 台湾市場向けの集客を、jnto統計の読み方、繁体字の店舗案内、予約対応、媒体選定から整理。訪問回数を実人数と混同しないための確認表付き。 台湾市場 データ・統計 集客準備 チェックリスト" data-hub-card>
-        <a href="/blog/taiwan-inbound-strategy" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/taiwan_inbound_hero.webp" type="image/webp"><img src="/assets/images/taiwan_inbound_hero.jpg" alt="台湾からの訪日客を迎える集客準備｜統計の読み方・繁体字案内・予約導線" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/taiwan-inbound-strategy" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/taiwan_inbound_hero.webp" type="image/webp"><img src="/assets/images/taiwan_inbound_hero.jpg" alt="台湾からの訪日客を迎える集客準備｜統計の読み方・繁体字案内・予約導線" class="w-full h-full object-cover" width="1200" height="1200" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">更新 2026.11.19</span><span class="text-[11px] text-slate-500">初回 2026.05.03</span>
@@ -318,7 +321,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="dianping-store-information-update" data-category="platform" data-tags="dianping store-ops checklist" data-search="大衆点評の店舗情報を修正したい｜営業時間・住所・店名の変更チェックリスト 大衆点評の営業時間・住所・店名を修正したい日本の店舗向けに、変更前の確認事項、項目別チェックリスト、中国語依頼文、反映後の点検方法を解説します。 大衆点評 店舗運営 チェックリスト" data-hub-card>
-        <a href="/blog/dianping-store-information-update" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/dianping-information-hero-20261118.jpg" alt="大衆点評の店舗情報を修正したい｜営業時間・住所・店名の変更チェックリスト" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/dianping-store-information-update" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/dianping-information-hero-20261118.jpg" alt="大衆点評の店舗情報を修正したい｜営業時間・住所・店名の変更チェックリスト" class="w-full h-full object-cover" width="1200" height="675" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.11.19</span>
@@ -331,7 +334,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="dianping-store-listed-without-permission" data-category="platform" data-tags="dianping store-ops checklist" data-search="大衆点評に自分の店が勝手に掲載されている？店舗情報の確認と対応方法 大衆点評に自店のページを見つけた日本の店舗向けに、掲載情報と管理権限の確認、問題の切り分け、公式窓口への相談準備を解説。記録シートと日中問い合わせ文例付き。 大衆点評 店舗運営 チェックリスト" data-hub-card>
-        <a href="/blog/dianping-store-listed-without-permission" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/dianping-listed-hero-20261117.jpg" alt="大衆点評に自分の店が勝手に掲載されている？店舗情報の確認と対応方法" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/dianping-store-listed-without-permission" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/dianping-listed-hero-20261117.jpg" alt="大衆点評に自分の店が勝手に掲載されている？店舗情報の確認と対応方法" class="w-full h-full object-cover" width="1200" height="675" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.11.17</span>
@@ -344,7 +347,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="dianping-listing-operation-cost" data-category="growth" data-tags="dianping cost checklist" data-search="大衆点評の掲載・運用にかかる費用は？見積もりの内訳と確認事項 大衆点評の掲載・運用費を検討する日本の店舗向けに、プラットフォーム費、申請支援、翻訳制作、月次運用を分け、見積もり比較と追加料金の確認方法を解説します。 大衆点評 費用・料金 チェックリスト" data-hub-card>
-        <a href="/blog/dianping-listing-operation-cost" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/dianping-cost-hero-20261115.jpg" alt="大衆点評の掲載・運用にかかる費用は？見積もりの内訳と確認事項" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/dianping-listing-operation-cost" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/dianping-cost-hero-20261115.jpg" alt="大衆点評の掲載・運用にかかる費用は？見積もりの内訳と確認事項" class="w-full h-full object-cover" width="1200" height="675" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.11.15</span>
@@ -357,7 +360,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="agency-checklist" data-category="growth" data-tags="xiaohongshu checklist cost" data-search="小紅書運用代行を選ぶ際の7つのチェックポイント 小紅書の運用を外部に委託する際、失敗しないために確認すべき7つのポイントを解説。実績・体制・レポーティングなど、代理店選びで見落としがちな観点を整理しました。 小紅書 チェックリスト 費用・料金" data-hub-card>
-        <a href="/blog/agency-checklist" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/office.webp" type="image/webp"><img src="/assets/images/office.jpg" alt="小紅書運用代行を選ぶ際の7つのチェックポイント" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/agency-checklist" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/office.webp" type="image/webp"><img src="/assets/images/office.jpg" alt="小紅書運用代行を選ぶ際の7つのチェックポイント" class="w-full h-full object-cover" width="1200" height="1200" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.04.10</span>
@@ -370,7 +373,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="content-operation-flow" data-category="platform" data-tags="xiaohongshu account-ops checklist" data-search="小紅書コンテンツ運用フローの作り方【2026年版】少人数チームでも続けられる仕組みづくり 企画、制作、レビュー、公開までを属人化させないためのフローとテンプレート活用法を紹介します。 小紅書 アカウント運用 チェックリスト" data-hub-card>
-        <a href="/blog/content-operation-flow" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-content-operation.jpg" alt="小紅書コンテンツ運用フローの作り方【2026年版】少人数チームでも続けられる仕組みづくり" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/content-operation-flow" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-content-operation.jpg" alt="小紅書コンテンツ運用フローの作り方【2026年版】少人数チームでも続けられる仕組みづくり" class="w-full h-full object-cover" width="1200" height="669" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.04.01</span>
@@ -383,7 +386,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="red-account-basics" data-category="platform" data-tags="xiaohongshu account-ops checklist" data-search="小紅書アカウント運用の基本【2026年版】開設から投稿・分析まで日本企業向け完全ガイド 小紅書（red）のアカウント開設・プロフィール設定・投稿ルール・ハッシュタグ戦略・分析まで、日本企業向けに2026年最新の運用基本を徹底解説します。 小紅書 アカウント運用 チェックリスト" data-hub-card>
-        <a href="/blog/red-account-basics" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/red-marketing.webp" type="image/webp"><img src="/assets/images/red-marketing.jpg" alt="小紅書アカウント運用の基本【2026年版】開設から投稿・分析まで日本企業向け完全ガイド" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/red-account-basics" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/red-marketing.webp" type="image/webp"><img src="/assets/images/red-marketing.jpg" alt="小紅書アカウント運用の基本【2026年版】開設から投稿・分析まで日本企業向け完全ガイド" class="w-full h-full object-cover" width="1200" height="1200" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.03.04</span>

@@ -135,9 +135,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pro-tech.jp/blog/category/growth">
     <meta property="og:image" content="https://pro-tech.jp/assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/assets/css/tailwind.css">
     <link rel="stylesheet" href="/assets/css/ux.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap"></noscript>
     <style>
         :root { --tech-blue: #001A33; --coral: #B4495A; }
         html, body { max-width: 100%; overflow-x: hidden; }
@@ -206,8 +209,8 @@
                     </div>
                 </div>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" type="button" aria-label="メニューを開く">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
                     <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
                     <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
@@ -253,7 +256,7 @@
         </header>
         <div class="mb-8 flex min-w-0 flex-wrap gap-x-3 gap-y-2 text-xs"><a href="/blog/category/platform" class="text-slate-500 hover:text-coral">プラットフォーム運用</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/seasonal" class="text-slate-500 hover:text-coral">季節・旅行ガイド</a><span class="text-slate-500" aria-hidden="true"> / </span><span class="font-bold text-tech-blue" aria-current="page">集客ノウハウ・費用</span><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/market" class="text-slate-500 hover:text-coral">市場データ・トレンド</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/cases" class="text-slate-500 hover:text-coral">導入事例</a></div>
         <div class="grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"><article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="inbound-funnel-design" data-category="growth" data-tags="xiaohongshu dianping funnel checklist" data-search="小紅書・大衆点評から来店につなぐ導線設計｜日本の店舗向けチェックリスト 小紅書での発見から店舗情報の比較、予約、来店までを点検。リンク先、住所、予約完了、計測の抜けを確認できる導線チェックリストと記入例を紹介します。 小紅書 大衆点評 導線設計 チェックリスト" data-hub-card>
-        <a href="/blog/inbound-funnel-design" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-inbound-funnel.webp" type="image/webp"><img src="/assets/images/blog-inbound-funnel.jpg" alt="小紅書・大衆点評から来店につなぐ導線設計｜日本の店舗向けチェックリスト" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/inbound-funnel-design" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-inbound-funnel.webp" type="image/webp"><img src="/assets/images/blog-inbound-funnel.jpg" alt="小紅書・大衆点評から来店につなぐ導線設計｜日本の店舗向けチェックリスト" class="w-full h-full object-cover" width="1200" height="654" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">更新 2026.11.19</span><span class="text-[11px] text-slate-500">初回 2026.03.14</span>
@@ -266,7 +269,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="xiaohongshu-beauty-salon-2026" data-category="growth" data-tags="xiaohongshu beauty checklist funnel" data-search="美容サロンの小紅書集客｜施術情報・中国語案内・予約導線の整え方 美容室・ネイル・エステの小紅書運用で、施術の見せ方、料金と所要時間、中国語予約案内、撮影の確認事項を整理。投稿前チェックリスト付き。 小紅書 美容 チェックリスト 導線設計" data-hub-card>
-        <a href="/blog/xiaohongshu-beauty-salon-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-beauty-salon-xiaohongshu.jpg" alt="美容サロンの小紅書集客｜施術情報・中国語案内・予約導線の整え方" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/xiaohongshu-beauty-salon-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-beauty-salon-xiaohongshu.jpg" alt="美容サロンの小紅書集客｜施術情報・中国語案内・予約導線の整え方" class="w-full h-full object-cover" width="1200" height="633" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">更新 2026.11.19</span><span class="text-[11px] text-slate-500">初回 2026.05.06</span>
@@ -279,7 +282,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="inbound-marketing-cost-2026" data-category="growth" data-tags="cost xiaohongshu kol checklist" data-search="インバウンド集客の費用は何で決まる？中国sns・kolの見積もり比較ガイド 中国sns運用・kol・制作・開発の費用を、初期費用、月額、実費、追加費用に分けて比較。見積もり依頼テンプレートと契約前の確認表を紹介します。 費用・料金 小紅書 kol/koc チェックリスト" data-hub-card>
-        <a href="/blog/inbound-marketing-cost-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-inbound-cost-hero.jpeg" alt="インバウンド集客の費用は何で決まる？中国SNS・KOLの見積もり比較ガイド" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/inbound-marketing-cost-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-inbound-cost-hero.jpeg" alt="インバウンド集客の費用は何で決まる？中国SNS・KOLの見積もり比較ガイド" class="w-full h-full object-cover" width="1600" height="872" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">更新 2026.11.19</span><span class="text-[11px] text-slate-500">初回 2026.05.22</span>
@@ -292,7 +295,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="taiwan-inbound-strategy" data-category="growth" data-tags="taiwan data preparation checklist" data-search="台湾からの訪日客を迎える集客準備｜統計の読み方・繁体字案内・予約導線 台湾市場向けの集客を、jnto統計の読み方、繁体字の店舗案内、予約対応、媒体選定から整理。訪問回数を実人数と混同しないための確認表付き。 台湾市場 データ・統計 集客準備 チェックリスト" data-hub-card>
-        <a href="/blog/taiwan-inbound-strategy" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/taiwan_inbound_hero.webp" type="image/webp"><img src="/assets/images/taiwan_inbound_hero.jpg" alt="台湾からの訪日客を迎える集客準備｜統計の読み方・繁体字案内・予約導線" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/taiwan-inbound-strategy" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/taiwan_inbound_hero.webp" type="image/webp"><img src="/assets/images/taiwan_inbound_hero.jpg" alt="台湾からの訪日客を迎える集客準備｜統計の読み方・繁体字案内・予約導線" class="w-full h-full object-cover" width="1200" height="1200" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">更新 2026.11.19</span><span class="text-[11px] text-slate-500">初回 2026.05.03</span>
@@ -305,7 +308,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="dianping-listing-operation-cost" data-category="growth" data-tags="dianping cost checklist" data-search="大衆点評の掲載・運用にかかる費用は？見積もりの内訳と確認事項 大衆点評の掲載・運用費を検討する日本の店舗向けに、プラットフォーム費、申請支援、翻訳制作、月次運用を分け、見積もり比較と追加料金の確認方法を解説します。 大衆点評 費用・料金 チェックリスト" data-hub-card>
-        <a href="/blog/dianping-listing-operation-cost" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/dianping-cost-hero-20261115.jpg" alt="大衆点評の掲載・運用にかかる費用は？見積もりの内訳と確認事項" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/dianping-listing-operation-cost" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/dianping-cost-hero-20261115.jpg" alt="大衆点評の掲載・運用にかかる費用は？見積もりの内訳と確認事項" class="w-full h-full object-cover" width="1200" height="675" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.11.15</span>
@@ -318,7 +321,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="korea-inbound-strategy-2026" data-category="growth" data-tags="korea data preparation" data-search="訪日韓国人向けインバウンドマーケティング戦略【2026年最新】naverブログとinstagramを活用した集客方法 訪日外国人数2位の韓国人観光客を集客するインバウンドマーケティング戦略を解説。naverブログやinstagram・kakaotalkの活用法、韓国人旅行者の消費行動データ・おすすめ施策まで2026年最新情報をお届け。 韓国市場 データ・統計 集客準備" data-hub-card>
-        <a href="/blog/korea-inbound-strategy-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-korea-inbound-hero.webp" type="image/webp"><img src="/assets/images/blog-korea-inbound-hero.jpeg" alt="訪日韓国人向けインバウンドマーケティング戦略【2026年最新】NaverブログとInstagramを活用した集客方法" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/korea-inbound-strategy-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-korea-inbound-hero.webp" type="image/webp"><img src="/assets/images/blog-korea-inbound-hero.jpeg" alt="訪日韓国人向けインバウンドマーケティング戦略【2026年最新】NaverブログとInstagramを活用した集客方法" class="w-full h-full object-cover" width="1600" height="872" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.06.01</span>
@@ -331,7 +334,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="xiaohongshu-local-tourism-2026" data-category="growth" data-tags="xiaohongshu tourism preparation kol" data-search="小紅書で観光地・地方創生集客【2026年最新】中国人旅行者を地方に呼ぶ戦略と成功事例 小紅書（red）を使って地方観光地・地域資源の魅力を中国人旅行者に伝える集客戦略を解説。コンテンツ作成のコツ・kol活用・地方自治体の成功事例まで2026年最新情報。 小紅書 観光・地方 集客準備 kol/koc" data-hub-card>
-        <a href="/blog/xiaohongshu-local-tourism-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-xiaohongshu-local-tourism.webp" type="image/webp"><img src="/assets/images/blog-xiaohongshu-local-tourism.jpeg" alt="小紅書で観光地・地方創生集客【2026年最新】中国人旅行者を地方に呼ぶ戦略と成功事例" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/xiaohongshu-local-tourism-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-xiaohongshu-local-tourism.webp" type="image/webp"><img src="/assets/images/blog-xiaohongshu-local-tourism.jpeg" alt="小紅書で観光地・地方創生集客【2026年最新】中国人旅行者を地方に呼ぶ戦略と成功事例" class="w-full h-full object-cover" width="1600" height="872" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.05.08</span>
@@ -344,7 +347,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="xiaohongshu-hotel-marketing-2026" data-category="growth" data-tags="xiaohongshu hotel account-ops" data-search="小紅書でホテル集客【2026年版】開設から投稿・分析まで日本企業向け完全ガイド 小紅書（red）のアカウント開設・プロフィール設定・投稿ルール・ハッシュタグ戦略・分析まで、日本企業向けに2026年最新の運用基本を徹底解説します。 小紅書 ホテル・旅館 アカウント運用" data-hub-card>
-        <a href="/blog/xiaohongshu-hotel-marketing-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-hotel-xiaohongshu.jpg" alt="小紅書でホテル集客【2026年版】開設から投稿・分析まで日本企業向け完全ガイド" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/blog/xiaohongshu-hotel-marketing-2026" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/blog-hotel-xiaohongshu.jpg" alt="小紅書でホテル集客【2026年版】開設から投稿・分析まで日本企業向け完全ガイド" class="w-full h-full object-cover" width="1200" height="633" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.05.05</span>
@@ -357,7 +360,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="douyin-restaurant-inbound" data-category="growth" data-tags="douyin food preparation" data-search="抖音・tiktok運営で飲食店のインバウンド集客を増やす方法 飲食店にとって中国版tiktok「抖音・tiktok（douyin）」は強力なインバウンド集客ツールです。抖音・tiktokの特徴と、飲食店が実践すべき運営ノウハウを解説します。 抖音 飲食 集客準備" data-hub-card>
-        <a href="/blog/douyin-restaurant-inbound" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-douyin-restaurant.webp" type="image/webp"><img src="/assets/images/blog-douyin-restaurant.jpg" alt="抖音・TikTok運営で飲食店のインバウンド集客を増やす方法" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/douyin-restaurant-inbound" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/blog-douyin-restaurant.webp" type="image/webp"><img src="/assets/images/blog-douyin-restaurant.jpg" alt="抖音・TikTok運営で飲食店のインバウンド集客を増やす方法" class="w-full h-full object-cover" width="1200" height="669" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.04.22</span>
@@ -370,7 +373,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="agency-checklist" data-category="growth" data-tags="xiaohongshu checklist cost" data-search="小紅書運用代行を選ぶ際の7つのチェックポイント 小紅書の運用を外部に委託する際、失敗しないために確認すべき7つのポイントを解説。実績・体制・レポーティングなど、代理店選びで見落としがちな観点を整理しました。 小紅書 チェックリスト 費用・料金" data-hub-card>
-        <a href="/blog/agency-checklist" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/office.webp" type="image/webp"><img src="/assets/images/office.jpg" alt="小紅書運用代行を選ぶ際の7つのチェックポイント" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/agency-checklist" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/office.webp" type="image/webp"><img src="/assets/images/office.jpg" alt="小紅書運用代行を選ぶ際の7つのチェックポイント" class="w-full h-full object-cover" width="1200" height="1200" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.04.10</span>
@@ -383,7 +386,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="inbound-xiaohongshu-2026" data-category="growth" data-tags="xiaohongshu food preparation dianping" data-search="小紅書で飲食店集客する方法【2026年最新】中国人観光客をリピーターにする実践ガイド 小紅書（red）を使って飲食店のインバウンド集客を成功させる具体的な方法を解説。訪日中国人の約80%が飲食情報を小紅書で収集。アカウント設計・投稿戦略・koc活用・大衆点評との連携まで、プロの実践ノウハウを公開します。 小紅書 飲食 集客準備 大衆点評" data-hub-card>
-        <a href="/blog/inbound-xiaohongshu-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/case-tourism.webp" type="image/webp"><img src="/assets/images/case-tourism.jpg" alt="小紅書で飲食店集客する方法【2026年最新】中国人観光客をリピーターにする実践ガイド" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/blog/inbound-xiaohongshu-2026" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/case-tourism.webp" type="image/webp"><img src="/assets/images/case-tourism.jpg" alt="小紅書で飲食店集客する方法【2026年最新】中国人観光客をリピーターにする実践ガイド" class="w-full h-full object-cover" width="1200" height="669" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="font-mono text-[11px] text-slate-500">2026.03.20</span>

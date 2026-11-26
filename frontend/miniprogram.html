@@ -253,8 +253,8 @@
                 <a href="/blog" class="nav-link ">ブログ</a>
                 <a href="/contact" class="btn-coral px-6 py-2.5 text-xs tracking-widest rounded-full font-bold">お問合せ</a>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" type="button" aria-label="メニューを開く">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
                     <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
                     <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
@@ -289,7 +289,8 @@
     </div>
 
     <!-- ═══════════════════════ HERO: Soft white-green gradient ═══════════════════════ -->
-    <section id="main-content" class="relative pt-28 md:pt-36 pb-20 md:pb-32 overflow-hidden" style="background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 40%, #ecfdf5 70%, #f0fdf4 100%);">
+    <main id="main-content">
+    <section class="relative pt-28 md:pt-36 pb-20 md:pb-32 overflow-hidden" style="background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 40%, #ecfdf5 70%, #f0fdf4 100%);">
         <!-- Subtle grid pattern -->
         <div class="absolute inset-0 z-0 opacity-30" style="background-image: linear-gradient(rgba(7,193,96,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(7,193,96,0.06) 1px, transparent 1px); background-size: 48px 48px;"></div>
 
@@ -393,7 +394,7 @@
                 <!-- Pain Point 1 -->
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-start">
                     <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-6 text-emerald-600 text-xl font-bold">✕</div>
-                    <h4 class="text-tech-blue font-bold mb-3">決済や事前予約のシステム構築が困難</h4>
+                    <h3 class="text-tech-blue font-bold mb-3">決済や事前予約のシステム構築が困難</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
                         WeChat Payを用いたオンライン決済や、インバウンド観光客からの直接予約を受け付ける仕組みを作りたいが、API仕様書がすべて中国語で開発できない。
                     </p>
@@ -401,7 +402,7 @@
                 <!-- Pain Point 2 -->
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-start">
                     <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-6 text-emerald-600 text-xl font-bold">✕</div>
-                    <h4 class="text-tech-blue font-bold mb-3">公式認証やデータ保護法等の規制への不安</h4>
+                    <h3 class="text-tech-blue font-bold mb-3">公式認証やデータ保護法等の規制への不安</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
                         中国本土でのサーバー配置、ICP登録、あるいは日本の個人情報保護法や中国の個人情報保護法（PIPL）をクリアする設計が自社だけでは対応不可能。
                     </p>
@@ -409,7 +410,7 @@
                 <!-- Pain Point 3 -->
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-start">
                     <div class="pain-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-6 text-emerald-600 text-xl font-bold">✕</div>
-                    <h4 class="text-tech-blue font-bold mb-3">アプリストアの登録ハードルの高さ</h4>
+                    <h3 class="text-tech-blue font-bold mb-3">アプリストアの登録ハードルの高さ</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
                         自社のインバウンド用スマホアプリを作りたいが、中国の多種多様なAndroidストアやApp Storeの登録申請要件が複雑すぎて断念している。
                     </p>
@@ -538,28 +539,28 @@
                         <div class="flex gap-4 items-start">
                             <div class="w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
                             <div>
-                                <h4 class="text-tech-blue font-bold text-sm mb-1">戦略・要件定義と画面設計（ワイヤーフレーム）</h4>
+                                <h3 class="text-tech-blue font-bold text-sm mb-1">戦略・要件定義と画面設計（ワイヤーフレーム）</h3>
                                 <p class="text-xs text-gray-600">実現したい機能、既存システム（POS等）とのデータ連携スコープをクリアにし、設計図（ワイヤーフレーム）を作成します。</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-start">
                             <div class="w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
                             <div>
-                                <h4 class="text-tech-blue font-bold text-sm mb-1">中国ユーザーの行動特性に沿ったUI/UXデザイン</h4>
+                                <h3 class="text-tech-blue font-bold text-sm mb-1">中国ユーザーの行動特性に沿ったUI/UXデザイン</h3>
                                 <p class="text-xs text-gray-600">現地のトレンドや直感的な動線を計算した、洗練されたビジュアルデザインを制作。モックアップで実際の操作感を確認可能です。</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-start">
                             <div class="w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
                             <div>
-                                <h4 class="text-tech-blue font-bold text-sm mb-1">実装・API連携と徹底した検証</h4>
+                                <h3 class="text-tech-blue font-bold text-sm mb-1">実装・API連携と徹底した検証</h3>
                                 <p class="text-xs text-gray-600">WeChat APIの仕様に準拠したセキュアな開発。WeChat Pay決済テストや、複数端末（iPhone/Android）での動作検証を繰り返します。</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-start">
                             <div class="w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
                             <div>
-                                <h4 class="text-tech-blue font-bold text-sm mb-1">テンセント公式審査・リリースと運用保守</h4>
+                                <h3 class="text-tech-blue font-bold text-sm mb-1">テンセント公式審査・リリースと運用保守</h3>
                                 <p class="text-xs text-gray-600">非常に難易度の高いテンセント（腾讯）への公式審査申請・ライセンス関連の手続きを代行。無事リリース後のサーバー運用保守もお任せください。</p>
                             </div>
                         </div>
@@ -622,7 +623,7 @@
                 <!-- FAQ 1 -->
                 <div class="faq-item py-6 px-4 cursor-pointer rounded-xl bg-white mb-2 shadow-sm" onclick="this.classList.toggle('open')">
                     <div class="flex justify-between items-center gap-4">
-                        <h4 class="font-bold text-tech-blue text-sm">日本法人だけでもWeChatミニプログラムを開設・リリースすることは可能ですか？</h4>
+                        <h3 class="font-bold text-tech-blue text-sm">日本法人だけでもWeChatミニプログラムを開設・リリースすることは可能ですか？</h3>
                         <svg class="faq-chevron w-5 h-5 text-green-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
@@ -637,7 +638,7 @@
                 <!-- FAQ 2 -->
                 <div class="faq-item py-6 px-4 cursor-pointer rounded-xl bg-white mb-2 shadow-sm" onclick="this.classList.toggle('open')">
                     <div class="flex justify-between items-center gap-4">
-                        <h4 class="font-bold text-tech-blue text-sm">決済の仕組みはどうなりますか？売上金は日本円で受け取れますか？</h4>
+                        <h3 class="font-bold text-tech-blue text-sm">決済の仕組みはどうなりますか？売上金は日本円で受け取れますか？</h3>
                         <svg class="faq-chevron w-5 h-5 text-green-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
@@ -652,7 +653,7 @@
                 <!-- FAQ 3 -->
                 <div class="faq-item py-6 px-4 cursor-pointer rounded-xl bg-white mb-2 shadow-sm" onclick="this.classList.toggle('open')">
                     <div class="flex justify-between items-center gap-4">
-                        <h4 class="font-bold text-tech-blue text-sm">開発期間とコストはどのくらいかかりますか？</h4>
+                        <h3 class="font-bold text-tech-blue text-sm">開発期間とコストはどのくらいかかりますか？</h3>
                         <svg class="faq-chevron w-5 h-5 text-green-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
@@ -667,7 +668,7 @@
                 <!-- FAQ 4 -->
                 <div class="faq-item py-6 px-4 cursor-pointer rounded-xl bg-white mb-2 shadow-sm" onclick="this.classList.toggle('open')">
                     <div class="flex justify-between items-center gap-4">
-                        <h4 class="font-bold text-tech-blue text-sm">日本国内で現在使用しているPOSレジやCRMシステムと連携することはできますか？</h4>
+                        <h3 class="font-bold text-tech-blue text-sm">日本国内で現在使用しているPOSレジやCRMシステムと連携することはできますか？</h3>
                         <svg class="faq-chevron w-5 h-5 text-green-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
@@ -679,7 +680,7 @@
         
                 <div class="faq-item py-6 px-4 cursor-pointer rounded-xl bg-white mb-2 shadow-sm" onclick="this.classList.toggle('open')">
                     <div class="flex justify-between items-center gap-4">
-                        <h4 class="font-bold text-tech-blue text-sm">ウィチャットのミニプログラム開発と、費用記事はどう使い分けますか？</h4>
+                        <h3 class="font-bold text-tech-blue text-sm">ウィチャットのミニプログラム開発と、費用記事はどう使い分けますか？</h3>
                         <svg class="faq-chevron w-5 h-5 text-green-500/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
@@ -721,7 +722,9 @@
     </section>
 
     <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
-                            <!-- FOOTER -->
+                            </main>
+
+    <!-- FOOTER -->
     <div class="max-w-6xl mx-auto px-6 py-8"><p class="text-sm text-gray-500">導入前の参考：<a class="text-coral underline" href="/blog/wechat-marketing-guide-2026">WeChat・ミニプログラムの導入前チェック</a> ／ <a class="text-coral underline" href="/blog/miniprogram-cost-period">開発の費用と期間の目安</a></p></div>
 <footer class="bg-[#0a1628] text-white pt-16 md:pt-20 pb-8 px-6">
         <div class="max-w-7xl mx-auto">
@@ -731,7 +734,7 @@
                     <p class="text-white/60 text-xs leading-relaxed">テクノロジーとマーケティングで、<br>ビジネスの境界を越える。</p>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h4>
+                    <h3 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">サービス</h3>
                     <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/dianping" class="hover:text-coral transition">大衆点評(Dianping)集客</a></li>
                         <li><a href="/red" class="hover:text-coral transition">小紅書(RED)マーケティング</a></li>
@@ -744,7 +747,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h4>
+                    <h3 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">会社情報</h3>
                     <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/company" class="hover:text-coral transition">会社概要</a></li>
                         <li><a href="/cases" class="hover:text-coral transition">導入事例</a></li>
@@ -755,7 +758,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h4>
+                    <h3 class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-6">リソース</h3>
                     <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/download" class="hover:text-coral transition">お役立ち資料ダウンロード</a></li>
                         <li><a href="/faq" class="hover:text-coral transition">よくある質問(FAQ)</a></li>

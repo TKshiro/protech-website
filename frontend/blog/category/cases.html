@@ -87,9 +87,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pro-tech.jp/blog/category/cases">
     <meta property="og:image" content="https://pro-tech.jp/assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/assets/css/tailwind.css">
     <link rel="stylesheet" href="/assets/css/ux.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap"></noscript>
     <style>
         :root { --tech-blue: #001A33; --coral: #B4495A; }
         html, body { max-width: 100%; overflow-x: hidden; }
@@ -158,8 +161,8 @@
                     </div>
                 </div>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <button id="menu-btn" class="md:hidden p-2 text-tech-blue z-50 relative focus:outline-none hamburger" type="button" aria-label="メニューを開く">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <line id="line1" x1="4" y1="6" x2="20" y2="6"></line>
                     <line id="line2" x1="4" y1="12" x2="20" y2="12"></line>
                     <line id="line3" x1="4" y1="18" x2="20" y2="18"></line>
@@ -205,7 +208,7 @@
         </header>
         <div class="mb-8 flex min-w-0 flex-wrap gap-x-3 gap-y-2 text-xs"><a href="/blog/category/platform" class="text-slate-500 hover:text-coral">プラットフォーム運用</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/seasonal" class="text-slate-500 hover:text-coral">季節・旅行ガイド</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/growth" class="text-slate-500 hover:text-coral">集客ノウハウ・費用</a><span class="text-slate-500" aria-hidden="true"> / </span><a href="/blog/category/market" class="text-slate-500 hover:text-coral">市場データ・トレンド</a><span class="text-slate-500" aria-hidden="true"> / </span><span class="font-bold text-tech-blue" aria-current="page">導入事例</span></div>
         <div class="grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"><article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="huadiao-zuiji-guo" data-category="cases" data-tags="xiaohongshu food kol" data-search="日本進出初月から満席達成。小紅書で中国人観光客を集客 上野・六本木の中華料理店「花雕酔鶏鍋」の導入事例です。アカウント運用、コンテンツ制作、kol施策の内容は事例ページに掲載しています。 小紅書 飲食 kol/koc" data-hub-card>
-        <a href="/cases/huadiao-zuiji-guo" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/case-huadiao-food.jpg" alt="日本進出初月から満席達成。小紅書で中国人観光客を集客" class="w-full h-full object-cover" loading="lazy" decoding="async"></a>
+        <a href="/cases/huadiao-zuiji-guo" class="block aspect-video overflow-hidden bg-slate-100"><img src="/assets/images/case-huadiao-food.jpg" alt="日本進出初月から満席達成。小紅書で中国人観光客を集客" class="w-full h-full object-cover" width="1200" height="773" loading="lazy" fetchpriority="low" decoding="async"></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="text-[11px] font-bold text-slate-500">導入事例ページ</span>
@@ -218,7 +221,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="cosmetics-brand" data-category="cases" data-tags="xiaohongshu kol retail cross-border-ec" data-search="koc施策×越境ec連携で小紅書フォロワー3万人・月商300%増 日本のコスメブランドの導入事例です。小紅書運用、koc施策、越境ecの内容は事例ページに掲載しています。 小紅書 kol/koc 小売・コスメ 越境ec" data-hub-card>
-        <a href="/cases/cosmetics-brand" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/case-beauty.webp" type="image/webp"><img src="/assets/images/case-beauty.jpg" alt="KOC施策×越境EC連携で小紅書フォロワー3万人・月商300%増" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/cases/cosmetics-brand" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/case-beauty.webp" type="image/webp"><img src="/assets/images/case-beauty.jpg" alt="KOC施策×越境EC連携で小紅書フォロワー3万人・月商300%増" class="w-full h-full object-cover" width="1200" height="669" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="text-[11px] font-bold text-slate-500">導入事例ページ</span>
@@ -231,7 +234,7 @@
         </div>
     </article>
 <article class="blog-card min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm" data-slug="local-tourism" data-category="cases" data-tags="xiaohongshu dianping hotel tourism" data-search="地方温泉旅館が大衆点評×小紅書の連携で訪日中国人予約が前年比160% 地方の温泉旅館の導入事例です。大衆点評、小紅書、中国語ページの内容は事例ページに掲載しています。 小紅書 大衆点評 ホテル・旅館 観光・地方" data-hub-card>
-        <a href="/cases/local-tourism" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/case-tourism.webp" type="image/webp"><img src="/assets/images/case-tourism.jpg" alt="地方温泉旅館が大衆点評×小紅書の連携で訪日中国人予約が前年比160%" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></a>
+        <a href="/cases/local-tourism" class="block aspect-video overflow-hidden bg-slate-100"><picture class="block h-full w-full"><source srcset="/assets/images/case-tourism.webp" type="image/webp"><img src="/assets/images/case-tourism.jpg" alt="地方温泉旅館が大衆点評×小紅書の連携で訪日中国人予約が前年比160%" class="w-full h-full object-cover" width="1200" height="669" loading="lazy" fetchpriority="low" decoding="async"></picture></a>
         <div class="p-5 sm:p-6">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <span class="text-[11px] font-bold text-slate-500">導入事例ページ</span>
