@@ -1,0 +1,689 @@
+{
+  "hubThreshold": 6,
+  "pageSize": 12,
+  "spotlight": {
+    "title": "旬の特集",
+    "intro": "11月下旬は紅葉の季節です。秋のガイドを先頭に、夏と花火の記事もこの欄にまとめています。",
+    "slugs": [
+      "japan-autumn-spots-2026",
+      "japan-hanabi-guide-2026",
+      "japan-summer-spots-2026"
+    ]
+  },
+  "categories": [
+    {
+      "id": "platform",
+      "label": "プラットフォーム運用",
+      "path": "/blog/category/platform",
+      "title": "プラットフォーム運用の記事一覧 | PROTECHブログ",
+      "h1": "プラットフォーム運用",
+      "description": "小紅書、大衆点評、WeChat、抖音、決済など、媒体の仕組みと店舗での運用手順をまとめたPROTECHの記事一覧です。",
+      "intro": "媒体そのものの仕組み、アカウントの扱い、店舗情報の直し方、決済の導入前に確認することをまとめています。費用の話が中心の記事は「集客ノウハウ・費用」に分けています。"
+    },
+    {
+      "id": "seasonal",
+      "label": "季節・旅行ガイド",
+      "path": "/blog/category/seasonal",
+      "title": "季節・旅行ガイド | PROTECHブログ",
+      "h1": "季節・旅行ガイド",
+      "description": "花火、夏、紅葉など、季節ごとの日本の行き先を整理したPROTECHの旅行ガイド一覧です。",
+      "intro": "花火、夏、紅葉の行き先を季節ごとに整理したガイドです。各記事の末尾から、旅行相談と店舗向けのサービスページへ進めます。"
+    },
+    {
+      "id": "growth",
+      "label": "集客ノウハウ・費用",
+      "path": "/blog/category/growth",
+      "title": "集客ノウハウ・費用の記事一覧 | PROTECHブログ",
+      "h1": "集客ノウハウ・費用",
+      "description": "来店導線、業種別の集客の進め方、見積もりで確認したい費用の内訳を扱うPROTECHの記事一覧です。金額は案件ごとに異なります。",
+      "intro": "来店までの導線、業種ごとの進め方、見積もりで分けて確認したい費用の内訳を扱います。この一覧には料金表を載せていません。金額は内容によって変わるため、各記事の確認項目を見たうえで相談してください。"
+    },
+    {
+      "id": "market",
+      "label": "市場データ・トレンド",
+      "path": "/blog/category/market",
+      "title": "市場データ・トレンドの記事一覧 | PROTECHブログ",
+      "h1": "市場データ・トレンド",
+      "description": "訪日動向、消費行動、越境EC、媒体トレンドなど、市場の読み方を扱うPROTECHの記事一覧です。",
+      "intro": "訪日動向、消費の傾向、越境EC、媒体の変化を、公開されている統計や市場の読み方として整理した記事です。数値は各記事が参照している時点のものです。"
+    },
+    {
+      "id": "cases",
+      "label": "導入事例",
+      "path": "/blog/category/cases",
+      "title": "導入事例 | PROTECHブログ",
+      "h1": "導入事例",
+      "description": "PROTECHの導入事例をブログから探せます。各カードは事例の掲載ページへ移動します。",
+      "intro": "ブログの一覧から導入事例を探せます。カードのリンク先は各事例の掲載ページです。ブログ記事の中には入れ替えていません。"
+    }
+  ],
+  "tagGroups": [
+    {
+      "id": "platform",
+      "label": "プラットフォーム",
+      "tags": [
+        {
+          "slug": "xiaohongshu",
+          "label": "小紅書",
+          "seo": {
+            "title": "小紅書の記事一覧 | PROTECHブログ",
+            "h1": "小紅書の記事",
+            "description": "小紅書（RED）の仕組み、アカウント運用、業種別の集客、トレンドを扱うPROTECHの記事一覧です。",
+            "intro": "小紅書の読み方、運用の手順、店舗での使い方、市場の変化を、主題に小紅書を含む記事としてまとめています。"
+          }
+        },
+        {
+          "slug": "dianping",
+          "label": "大衆点評",
+          "seo": {
+            "title": "大衆点評の記事一覧 | PROTECHブログ",
+            "h1": "大衆点評の記事",
+            "description": "大衆点評の読み方、店舗情報の確認、掲載と運用で見る費用の内訳を扱うPROTECHの記事一覧です。",
+            "intro": "大衆点評の基本、店舗ページの確認、情報の修正、見積もりで分ける費用をまとめています。"
+          }
+        },
+        { "slug": "wechat", "label": "微信" },
+        { "slug": "douyin", "label": "抖音" },
+        { "slug": "kol", "label": "KOL/KOC" },
+        { "slug": "cross-border-ec", "label": "越境EC" },
+        { "slug": "payment", "label": "決済" }
+      ]
+    },
+    {
+      "id": "scene",
+      "label": "業種・シーン",
+      "tags": [
+        { "slug": "food", "label": "飲食" },
+        { "slug": "beauty", "label": "美容" },
+        { "slug": "hotel", "label": "ホテル・旅館" },
+        { "slug": "tourism", "label": "観光・地方" },
+        { "slug": "retail", "label": "小売・コスメ" },
+        { "slug": "store-ops", "label": "店舗運営" }
+      ]
+    },
+    {
+      "id": "market",
+      "label": "市場",
+      "tags": [
+        {
+          "slug": "data",
+          "label": "データ・統計",
+          "seo": {
+            "title": "データ・統計の記事一覧 | PROTECHブログ",
+            "h1": "データ・統計の記事",
+            "description": "訪日統計の読み方、月次の動向、消費行動、市場規模の整理を扱うPROTECHの記事一覧です。",
+            "intro": "統計の読み方と、月次の訪日動向、消費、市場規模を整理した記事です。数値の出典と時点は各記事に書いています。"
+          }
+        },
+        {
+          "slug": "china",
+          "label": "中国市場",
+          "seo": {
+            "title": "中国市場の記事一覧 | PROTECHブログ",
+            "h1": "中国市場の記事",
+            "description": "中国向けSNS、越境EC、訪日需要の読み方を扱うPROTECHの記事一覧です。",
+            "intro": "中国向けの媒体選定、越境EC、訪日需要の読み方を主題に含む記事をまとめています。"
+          }
+        },
+        { "slug": "korea", "label": "韓国市場" },
+        { "slug": "taiwan", "label": "台湾市場" },
+        {
+          "slug": "inbound-trends",
+          "label": "訪日トレンド",
+          "seo": {
+            "title": "訪日トレンドの記事一覧 | PROTECHブログ",
+            "h1": "訪日トレンドの記事",
+            "description": "訪日外国人旅行の動向、月次レポート、消費傾向、媒体トレンドを扱うPROTECHの記事一覧です。",
+            "intro": "訪日旅行の動向と、季節の山、消費の傾向、媒体側の変化をまとめた記事です。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "season",
+      "label": "季節・イベント",
+      "tags": [
+        { "slug": "summer", "label": "夏" },
+        { "slug": "autumn", "label": "秋" },
+        { "slug": "hanabi", "label": "花火" },
+        { "slug": "foliage", "label": "紅葉" },
+        { "slug": "calendar", "label": "季節カレンダー" }
+      ]
+    },
+    {
+      "id": "goal",
+      "label": "目的",
+      "tags": [
+        {
+          "slug": "cost",
+          "label": "費用・料金",
+          "seo": {
+            "title": "費用・料金の記事一覧 | PROTECHブログ",
+            "h1": "費用・料金の記事",
+            "description": "インバウンド集客や媒体運用の見積もりで確認したい費用の内訳を扱うPROTECHの記事一覧です。",
+            "intro": "見積もりを初期費用、月額、実費、追加費用に分けて確認するための記事です。この一覧には料金表を載せていません。"
+          }
+        },
+        {
+          "slug": "checklist",
+          "label": "チェックリスト",
+          "seo": {
+            "title": "チェックリストの記事一覧 | PROTECHブログ",
+            "h1": "チェックリストの記事",
+            "description": "店舗情報、来店導線、見積もり、代理店選定の確認項目を扱うPROTECHの記事一覧です。",
+            "intro": "公開前や発注前に埋める確認表、記録シート、チェック項目を含む記事をまとめています。"
+          }
+        },
+        {
+          "slug": "account-ops",
+          "label": "アカウント運用",
+          "seo": {
+            "title": "アカウント運用の記事一覧 | PROTECHブログ",
+            "h1": "アカウント運用の記事",
+            "description": "小紅書やWeChatのアカウント開設、投稿、分析、権限確認を扱うPROTECHの記事一覧です。",
+            "intro": "アカウントの開設、プロフィール、投稿、分析、管理権限の確認を扱う記事です。"
+          }
+        },
+        { "slug": "funnel", "label": "導線設計" },
+        {
+          "slug": "preparation",
+          "label": "集客準備",
+          "seo": {
+            "title": "集客準備の記事一覧 | PROTECHブログ",
+            "h1": "集客準備の記事",
+            "description": "媒体選定、店舗案内、予約導線など、集客を始める前の準備を扱うPROTECHの記事一覧です。",
+            "intro": "どの媒体を使うか、店頭と予約の案内をどう揃えるかなど、集客を始める前の準備を扱う記事です。"
+          }
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "slug": "dianping-store-not-found",
+      "kind": "post",
+      "url": "/blog/dianping-store-not-found",
+      "title": "大衆点評で自店が見つからないときは？掲載状況と検索条件の確認手順",
+      "excerpt": "大衆点評で自店が検索に出ない日本の店舗向けに、直接リンク、都市・検索語・絞り込み、住所と地図、掲載状態を切り分ける確認手順を紹介。記録シートと中国語の問い合わせ文例付き。",
+      "image": "/assets/images/dianping-store-not-found-hero-20261122.png",
+      "dateLabel": "2026.11.23",
+      "sortDate": "2026-11-23",
+      "category": "platform",
+      "tags": ["dianping", "store-ops", "checklist"]
+    },
+    {
+      "slug": "inbound-funnel-design",
+      "kind": "post",
+      "url": "/blog/inbound-funnel-design",
+      "title": "小紅書・大衆点評から来店につなぐ導線設計｜日本の店舗向けチェックリスト",
+      "excerpt": "小紅書での発見から店舗情報の比較、予約、来店までを点検。リンク先、住所、予約完了、計測の抜けを確認できる導線チェックリストと記入例を紹介します。",
+      "image": "/assets/images/blog-inbound-funnel.jpg",
+      "dateLabel": "更新 2026.11.19",
+      "publishedLabel": "初回 2026.03.14",
+      "sortDate": "2026-11-19",
+      "category": "growth",
+      "tags": ["xiaohongshu", "dianping", "funnel", "checklist"]
+    },
+    {
+      "slug": "xiaohongshu-beauty-salon-2026",
+      "kind": "post",
+      "url": "/blog/xiaohongshu-beauty-salon-2026",
+      "title": "美容サロンの小紅書集客｜施術情報・中国語案内・予約導線の整え方",
+      "excerpt": "美容室・ネイル・エステの小紅書運用で、施術の見せ方、料金と所要時間、中国語予約案内、撮影の確認事項を整理。投稿前チェックリスト付き。",
+      "image": "/assets/images/blog-beauty-salon-xiaohongshu.jpg",
+      "dateLabel": "更新 2026.11.19",
+      "publishedLabel": "初回 2026.05.06",
+      "sortDate": "2026-11-19",
+      "category": "growth",
+      "tags": ["xiaohongshu", "beauty", "checklist", "funnel"]
+    },
+    {
+      "slug": "inbound-marketing-cost-2026",
+      "kind": "post",
+      "url": "/blog/inbound-marketing-cost-2026",
+      "title": "インバウンド集客の費用は何で決まる？中国SNS・KOLの見積もり比較ガイド",
+      "excerpt": "中国SNS運用・KOL・制作・開発の費用を、初期費用、月額、実費、追加費用に分けて比較。見積もり依頼テンプレートと契約前の確認表を紹介します。",
+      "image": "/assets/images/blog-inbound-cost-hero.jpeg",
+      "dateLabel": "更新 2026.11.19",
+      "publishedLabel": "初回 2026.05.22",
+      "sortDate": "2026-11-19",
+      "category": "growth",
+      "tags": ["cost", "xiaohongshu", "kol", "checklist"]
+    },
+    {
+      "slug": "taiwan-inbound-strategy",
+      "kind": "post",
+      "url": "/blog/taiwan-inbound-strategy",
+      "title": "台湾からの訪日客を迎える集客準備｜統計の読み方・繁体字案内・予約導線",
+      "excerpt": "台湾市場向けの集客を、JNTO統計の読み方、繁体字の店舗案内、予約対応、媒体選定から整理。訪問回数を実人数と混同しないための確認表付き。",
+      "image": "/assets/images/taiwan_inbound_hero.jpg",
+      "dateLabel": "更新 2026.11.19",
+      "publishedLabel": "初回 2026.05.03",
+      "sortDate": "2026-11-19",
+      "category": "growth",
+      "tags": ["taiwan", "data", "preparation", "checklist"]
+    },
+    {
+      "slug": "wechat-marketing-guide-2026",
+      "kind": "post",
+      "url": "/blog/wechat-marketing-guide-2026",
+      "title": "WeChatを日本企業が活用するには？公式アカウント・ミニプログラム・決済の違い",
+      "excerpt": "WeChat活用を情報発信、問い合わせ、予約システム、決済に分けて検討。日本企業が導入前に確認したい主体・管理権限・費用・運用体制を整理します。",
+      "image": "/assets/images/blog-wechat-marketing-hero.jpeg",
+      "dateLabel": "更新 2026.11.19",
+      "publishedLabel": "初回 2026.05.15",
+      "sortDate": "2026-11-19",
+      "category": "platform",
+      "tags": ["wechat", "cost", "account-ops", "payment"]
+    },
+    {
+      "slug": "dianping-store-information-update",
+      "kind": "post",
+      "url": "/blog/dianping-store-information-update",
+      "title": "大衆点評の店舗情報を修正したい｜営業時間・住所・店名の変更チェックリスト",
+      "excerpt": "大衆点評の営業時間・住所・店名を修正したい日本の店舗向けに、変更前の確認事項、項目別チェックリスト、中国語依頼文、反映後の点検方法を解説します。",
+      "image": "/assets/images/dianping-information-hero-20261118.jpg",
+      "dateLabel": "2026.11.19",
+      "sortDate": "2026-11-19",
+      "category": "platform",
+      "tags": ["dianping", "store-ops", "checklist"]
+    },
+    {
+      "slug": "dianping-store-listed-without-permission",
+      "kind": "post",
+      "url": "/blog/dianping-store-listed-without-permission",
+      "title": "大衆点評に自分の店が勝手に掲載されている？店舗情報の確認と対応方法",
+      "excerpt": "大衆点評に自店のページを見つけた日本の店舗向けに、掲載情報と管理権限の確認、問題の切り分け、公式窓口への相談準備を解説。記録シートと日中問い合わせ文例付き。",
+      "image": "/assets/images/dianping-listed-hero-20261117.jpg",
+      "dateLabel": "2026.11.17",
+      "sortDate": "2026-11-17",
+      "category": "platform",
+      "tags": ["dianping", "store-ops", "checklist"]
+    },
+    {
+      "slug": "dianping-listing-operation-cost",
+      "kind": "post",
+      "url": "/blog/dianping-listing-operation-cost",
+      "title": "大衆点評の掲載・運用にかかる費用は？見積もりの内訳と確認事項",
+      "excerpt": "大衆点評の掲載・運用費を検討する日本の店舗向けに、プラットフォーム費、申請支援、翻訳制作、月次運用を分け、見積もり比較と追加料金の確認方法を解説します。",
+      "image": "/assets/images/dianping-cost-hero-20261115.jpg",
+      "dateLabel": "2026.11.15",
+      "sortDate": "2026-11-15",
+      "category": "growth",
+      "tags": ["dianping", "cost", "checklist"]
+    },
+    {
+      "slug": "dazhong-dianping-guide",
+      "kind": "post",
+      "url": "/blog/dazhong-dianping-guide",
+      "title": "大衆点評（Dianping）とは？読み方・使い方と日本の店舗での活用法",
+      "excerpt": "大衆点評（Dianping）の読み方と基本的な使い方を解説。利用者の店探しと日本の店舗の情報管理を分け、掲載状況・管理権限・写真・メニューの確認項目を整理します。",
+      "image": "/assets/images/dianping-guide-hero-20261109.jpg",
+      "dateLabel": "2026.11.09 更新",
+      "sortDate": "2026-11-09",
+      "category": "platform",
+      "tags": ["dianping", "store-ops", "account-ops"]
+    },
+    {
+      "slug": "japan-autumn-spots-2026",
+      "kind": "post",
+      "url": "/blog/japan-autumn-spots-2026",
+      "title": "【2026年秋】日本で絶対行くべき紅葉・観光スポット10選｜秋の絶景完全ガイド",
+      "excerpt": "2026年秋に訪日観光客が絶対に訪れるべき日本の観光スポット10選を厳選。京都の歴史ある寺院から、北海道の大自然、息をのむ峡谷美まで、見どころ・アクセス・ベストシーズンを徹底解説します。",
+      "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600",
+      "dateLabel": "2026.08.20",
+      "sortDate": "2026-08-20",
+      "category": "seasonal",
+      "tags": ["autumn", "foliage", "tourism"],
+      "spotlightLabel": "今の季節"
+    },
+    {
+      "slug": "japan-hanabi-guide-2026",
+      "kind": "post",
+      "url": "/blog/japan-hanabi-guide-2026",
+      "title": "【2026年保存版】日本の花火大会おすすめ15選｜開催日程・打上数・アクセスを完全網羅",
+      "excerpt": "2026年夏に開催される日本全国の花火大会おすすめ15選を厳選紹介。隅田川・長岡・大曲など、開催日時・打上数・有料席・アクセス情報を完全網羅。インバウンド観光客にも人気の花火イベント情報。",
+      "image": "/assets/images/blog-hanabi-hero-2026.jpg",
+      "dateLabel": "2026.06.18",
+      "sortDate": "2026-06-18",
+      "category": "seasonal",
+      "tags": ["summer", "hanabi", "tourism"]
+    },
+    {
+      "slug": "japan-summer-spots-2026",
+      "kind": "post",
+      "url": "/blog/japan-summer-spots-2026",
+      "title": "【2026年夏】日本で絶対行くべき観光スポット15選｜穴場から定番まで完全ガイド",
+      "excerpt": "2026年夏に訪日観光客が絶対に訪れるべき日本の観光スポット15選を厳選。花火大会・絶景ビーチ・避暑地・夏祭りなど、エリア別に見どころ・アクセス・ベストシーズンを徹底解説します。",
+      "image": "/assets/images/blog-summer-furano-lavender.jpg",
+      "dateLabel": "2026.06.18",
+      "sortDate": "2026-06-18",
+      "category": "seasonal",
+      "tags": ["summer", "tourism", "calendar"]
+    },
+    {
+      "slug": "korea-inbound-strategy-2026",
+      "kind": "post",
+      "url": "/blog/korea-inbound-strategy-2026",
+      "title": "訪日韓国人向けインバウンドマーケティング戦略【2026年最新】NaverブログとInstagramを活用した集客方法",
+      "excerpt": "訪日外国人数2位の韓国人観光客を集客するインバウンドマーケティング戦略を解説。NaverブログやInstagram・KakaoTalkの活用法、韓国人旅行者の消費行動データ・おすすめ施策まで2026年最新情報をお届け。",
+      "image": "/assets/images/blog-korea-inbound-hero.jpeg",
+      "dateLabel": "2026.06.01",
+      "sortDate": "2026-06-01",
+      "category": "growth",
+      "tags": ["korea", "data", "preparation"]
+    },
+    {
+      "slug": "inbound-foreign-tourist-trends-2026",
+      "kind": "post",
+      "url": "/blog/inbound-foreign-tourist-trends-2026",
+      "title": "【2026年最新】訪日外国人旅行の現状と課題：6,000万人達成に向けた地方誘客とインバウンド戦略",
+      "excerpt": "訪日外国人旅行客（インバウンド）の最新動向と、7都道府県に集中するオーバーツーリズムの課題。6,000万人達成に向けたJATAの提言と、地方誘客のための具体的なSNS集客戦略を解説します。",
+      "image": "/assets/images/hero-landscape2.jpg",
+      "dateLabel": "2026.05.11",
+      "sortDate": "2026-05-11",
+      "category": "market",
+      "tags": ["data", "inbound-trends", "china"]
+    },
+    {
+      "slug": "xiaohongshu-local-tourism-2026",
+      "kind": "post",
+      "url": "/blog/xiaohongshu-local-tourism-2026",
+      "title": "小紅書で観光地・地方創生集客【2026年最新】中国人旅行者を地方に呼ぶ戦略と成功事例",
+      "excerpt": "小紅書（RED）を使って地方観光地・地域資源の魅力を中国人旅行者に伝える集客戦略を解説。コンテンツ作成のコツ・KOL活用・地方自治体の成功事例まで2026年最新情報。",
+      "image": "/assets/images/blog-xiaohongshu-local-tourism.jpeg",
+      "dateLabel": "2026.05.08",
+      "sortDate": "2026-05-08",
+      "category": "growth",
+      "tags": ["xiaohongshu", "tourism", "preparation", "kol"]
+    },
+    {
+      "slug": "china-sns-inbound-guide",
+      "kind": "post",
+      "url": "/blog/china-sns-inbound-guide",
+      "title": "中国SNS6選を比較｜日本企業の訪日集客に合う媒体の選び方",
+      "excerpt": "小紅書・抖音・WeChat・微博・大衆点評・Bilibiliを紹介する中国SNS比較記事。自社の読者、制作体制、予約導線に合う媒体を検討します。",
+      "image": "/assets/images/blog-sns-strategy-2026.jpg",
+      "dateLabel": "2026.05.07",
+      "sortDate": "2026-05-07",
+      "category": "platform",
+      "tags": ["xiaohongshu", "dianping", "douyin", "wechat", "china"]
+    },
+    {
+      "slug": "xiaohongshu-hotel-marketing-2026",
+      "kind": "post",
+      "url": "/blog/xiaohongshu-hotel-marketing-2026",
+      "title": "小紅書でホテル集客【2026年版】開設から投稿・分析まで日本企業向け完全ガイド",
+      "excerpt": "小紅書（RED）のアカウント開設・プロフィール設定・投稿ルール・ハッシュタグ戦略・分析まで、日本企業向けに2026年最新の運用基本を徹底解説します。",
+      "image": "/assets/images/blog-hotel-xiaohongshu.jpg",
+      "dateLabel": "2026.05.05",
+      "sortDate": "2026-05-05",
+      "category": "growth",
+      "tags": ["xiaohongshu", "hotel", "account-ops"]
+    },
+    {
+      "slug": "inbound-march-2026-report",
+      "kind": "post",
+      "url": "/blog/inbound-march-2026-report",
+      "title": "【2026年3月最新】訪日客361万人で過去最高！桜需要で欧米・東南アジアが急伸長",
+      "excerpt": "JNTOの最新統計をもとに、2026年3月の訪日外国人動向を徹底解説。累計1000万人突破の背景や、欧米・東南アジア市場の伸び、中国市場の現状など、インバウンド集客に必要なデータをお届けします。",
+      "image": "/assets/images/inbound-march-hero.jpg",
+      "dateLabel": "2026.05.04",
+      "sortDate": "2026-05-04",
+      "category": "market",
+      "tags": ["data", "inbound-trends", "calendar"]
+    },
+    {
+      "slug": "inbound-calendar-2026",
+      "kind": "post",
+      "url": "/blog/inbound-calendar-2026",
+      "title": "【2026年最新：インバウンド祝日カレンダー】外国人観光客が多い時期・月別の動向を徹底解説",
+      "excerpt": "インバウンド集客を成功させるには「いつ、どの国の人が来るか」を知ることが重要です。2026年の主要国の祝日カレンダーと月別の旅行動向をまとめました。",
+      "image": "/assets/images/inbound_calendar_2026_hero.jpg",
+      "dateLabel": "2026.05.01",
+      "sortDate": "2026-05-01",
+      "category": "market",
+      "tags": ["data", "calendar", "inbound-trends"]
+    },
+    {
+      "slug": "xiaohongshu-algorithm-ec-2026",
+      "kind": "post",
+      "url": "/blog/xiaohongshu-algorithm-ec-2026",
+      "title": "【2026年最新】小紅書(RED)アルゴリズム変更とEC強化を徹底解説！",
+      "excerpt": "2026年の小紅書（RED）はどう変わった？「検索エンジン化」するアルゴリズムや強化された越境EC機能など、中国マーケティングの最新動向をわかりやすく徹底解説します。",
+      "image": "/assets/images/hero-data.jpg",
+      "dateLabel": "2026.04.29",
+      "sortDate": "2026-04-29",
+      "category": "platform",
+      "tags": ["xiaohongshu", "cross-border-ec", "china"]
+    },
+    {
+      "slug": "inbound-data-ai-dx-2026",
+      "kind": "post",
+      "url": "/blog/inbound-data-ai-dx-2026",
+      "title": "【2026年最新】AIとデータで勝つインバウンド集客：量から質への転換・DX戦略の正解",
+      "excerpt": "2026年、日本のインバウンド市場は「集客数」から「消費単価」への転換点を迎えました。テクノロジーを活用した高単価マーケティングやDX戦略の正解を解説します。",
+      "image": "/assets/images/inbound-data-ai-hero.jpeg",
+      "dateLabel": "2026.04.28",
+      "sortDate": "2026-04-28",
+      "category": "market",
+      "tags": ["data", "inbound-trends"]
+    },
+    {
+      "slug": "inbound-spending-behavior-2026",
+      "kind": "post",
+      "url": "/blog/inbound-spending-behavior-2026",
+      "title": "訪日外国人の消費行動データ分析【2026年最新】国籍別・カテゴリ別の傾向と集客への活かし方",
+      "excerpt": "訪日外国人の消費行動を国籍別・カテゴリ別に徹底分析。中国・韓国・台湾・欧米別の購買傾向・消費額データから、インバウンド集客戦略に活かすポイントまで2026年最新情報。",
+      "image": "/assets/images/blog-inbound-spending-data.jpeg",
+      "dateLabel": "2026.04.24",
+      "sortDate": "2026-04-24",
+      "category": "market",
+      "tags": ["data", "inbound-trends", "china"]
+    },
+    {
+      "slug": "douyin-restaurant-inbound",
+      "kind": "post",
+      "url": "/blog/douyin-restaurant-inbound",
+      "title": "抖音・TikTok運営で飲食店のインバウンド集客を増やす方法",
+      "excerpt": "飲食店にとって中国版TikTok「抖音・TikTok（Douyin）」は強力なインバウンド集客ツールです。抖音・TikTokの特徴と、飲食店が実践すべき運営ノウハウを解説します。",
+      "image": "/assets/images/blog-douyin-restaurant.jpg",
+      "dateLabel": "2026.04.22",
+      "sortDate": "2026-04-22",
+      "category": "growth",
+      "tags": ["douyin", "food", "preparation"]
+    },
+    {
+      "slug": "inbound-meaning-guide",
+      "kind": "post",
+      "url": "/blog/inbound-meaning-guide",
+      "title": "インバウンドとは？意味・訪日外国人動向・中国向けマーケティング戦略まで完全解説【2026年】",
+      "excerpt": "ニュースでよく聞く「インバウンド」の本来の意味や使い方、さらに日本企業の成長に欠かせない中国向けインバウンド対策の基本を詳しく解説します。",
+      "image": "/assets/images/inbound-tourist-image.jpg",
+      "dateLabel": "2026.04.20",
+      "sortDate": "2026-04-20",
+      "category": "market",
+      "tags": ["data", "inbound-trends", "china"]
+    },
+    {
+      "slug": "miniprogram-cost-period",
+      "kind": "post",
+      "url": "/blog/miniprogram-cost-period",
+      "title": "WeChat小程序（ミニプログラム）開発の費用と期間の目安",
+      "excerpt": "日本企業がWeChat小程序（ミニプログラム）を開発する際の費用相場や期間、必要な準備について解説します。インバウンド集客や越境ECに必須のツールです。",
+      "image": "/assets/images/blog-miniprogram-cost.jpg",
+      "dateLabel": "2026.04.18",
+      "sortDate": "2026-04-18",
+      "category": "platform",
+      "tags": ["wechat", "cost", "account-ops"]
+    },
+    {
+      "slug": "xiaohongshu-guide-2026",
+      "kind": "post",
+      "url": "/blog/xiaohongshu-guide-2026",
+      "title": "小紅書（RED）とは？完全ガイド【2026年】特徴・使い方・日本企業の活用法まで徹底解説",
+      "excerpt": "小紅書（RED）とは何か、基本的な仕組みから月間3億人超のユーザー層、アルゴリズム、インバウンド集客・中国向けマーケティングへの活用法まで完全解説。日本企業が今すぐ始めるべき理由とは。",
+      "image": "/assets/images/blog-xiaohongshu-guide.jpg",
+      "dateLabel": "2026.04.12",
+      "sortDate": "2026-04-12",
+      "category": "platform",
+      "tags": ["xiaohongshu", "account-ops", "china"]
+    },
+    {
+      "slug": "agency-checklist",
+      "kind": "post",
+      "url": "/blog/agency-checklist",
+      "title": "小紅書運用代行を選ぶ際の7つのチェックポイント",
+      "excerpt": "小紅書の運用を外部に委託する際、失敗しないために確認すべき7つのポイントを解説。実績・体制・レポーティングなど、代理店選びで見落としがちな観点を整理しました。",
+      "image": "/assets/images/office.jpg",
+      "dateLabel": "2026.04.10",
+      "sortDate": "2026-04-10",
+      "category": "growth",
+      "tags": ["xiaohongshu", "checklist", "cost"]
+    },
+    {
+      "slug": "cross-border-ec-success-cases",
+      "kind": "post",
+      "url": "/blog/cross-border-ec-success-cases",
+      "title": "越境ECで成功するためのポイントとは？日本の成功事例とおすすめの決済・物流手法",
+      "excerpt": "越境ECを成功に導くための具体的なポイントや、日本企業の実際の成功事例を詳しく解説。失敗しないための決済システム・物流手法の選び方からSNS集客まで、実践的なノウハウをお届けします。",
+      "image": "/assets/images/blog-douyin-restaurant.jpg",
+      "dateLabel": "2026.04.08",
+      "sortDate": "2026-04-08",
+      "category": "market",
+      "tags": ["cross-border-ec", "china", "retail"]
+    },
+    {
+      "slug": "cashless-payment-inbound-2026",
+      "kind": "post",
+      "url": "/blog/cashless-payment-inbound-2026",
+      "title": "Alipay・WeChat Pay導入ガイド【2026年最新】インバウンド向けキャッシュレス決済の始め方と費用",
+      "excerpt": "訪日外国人向けにAlipay（支付宝）・WeChat Pay（微信支付）を導入する手順・費用・審査を徹底解説。中国人観光客の9割が使うQR決済を導入しないと起きる機会損失も。2026年最新情報。",
+      "image": "/assets/images/blog-cashless-payment-hero.jpeg",
+      "dateLabel": "2026.04.07",
+      "sortDate": "2026-04-07",
+      "category": "platform",
+      "tags": ["payment", "wechat", "cost"]
+    },
+    {
+      "slug": "cross-border-ec-market-size-2026",
+      "kind": "post",
+      "url": "/blog/cross-border-ec-market-size-2026",
+      "title": "【2026年最新版】越境EC市場規模のまとめ！日本・中国・アメリカの動向",
+      "excerpt": "世界中で拡大し続ける越境EC市場。2026年最新のデータに基づき、日本・中国・アメリカの3大市場の規模や特徴、トレンドを徹底比較・解説します。企業のグローバル戦略に必見の市場レポートです。",
+      "image": "/assets/images/blog-douyin-restaurant.jpg",
+      "dateLabel": "2026.04.05",
+      "sortDate": "2026-04-05",
+      "category": "market",
+      "tags": ["cross-border-ec", "data", "china"]
+    },
+    {
+      "slug": "cross-border-ec-guide",
+      "kind": "post",
+      "url": "/blog/cross-border-ec-guide",
+      "title": "越境ECとは？【2026年版】メリット・デメリット・始め方・必要な準備を徹底解説",
+      "excerpt": "越境EC（越境Eコマース）とは何か？基本的な意味から、日本企業が取り組むべきメリット・デメリット、そして始めるための具体的な準備や手順まで、2026年最新の情報を網羅して徹底解説します。",
+      "image": "/assets/images/blog-douyin-restaurant.jpg",
+      "dateLabel": "2026.04.02",
+      "sortDate": "2026-04-02",
+      "category": "market",
+      "tags": ["cross-border-ec", "china", "preparation"]
+    },
+    {
+      "slug": "content-operation-flow",
+      "kind": "post",
+      "url": "/blog/content-operation-flow",
+      "title": "小紅書コンテンツ運用フローの作り方【2026年版】少人数チームでも続けられる仕組みづくり",
+      "excerpt": "企画、制作、レビュー、公開までを属人化させないためのフローとテンプレート活用法を紹介します。",
+      "image": "/assets/images/blog-content-operation.jpg",
+      "dateLabel": "2026.04.01",
+      "sortDate": "2026-04-01",
+      "category": "platform",
+      "tags": ["xiaohongshu", "account-ops", "checklist"]
+    },
+    {
+      "slug": "kol-koc-guide",
+      "kind": "post",
+      "url": "/blog/kol-koc-guide",
+      "title": "KOLとKOCの違いとは？【2026年最新】小紅書マーケティング完全ガイド・費用相場まで",
+      "excerpt": "KOLとKOCの違いとは何か？定義・選定基準・費用相場・効果測定まで徹底解説。小紅書（RED）を活用したインフルエンサーマーケティングを日本企業が成功させるための実践ガイド。",
+      "image": "/assets/images/hero-cityscape.jpg",
+      "dateLabel": "2026.04.01",
+      "sortDate": "2026-04-01",
+      "category": "platform",
+      "tags": ["xiaohongshu", "kol", "cost"]
+    },
+    {
+      "slug": "inbound-xiaohongshu-2026",
+      "kind": "post",
+      "url": "/blog/inbound-xiaohongshu-2026",
+      "title": "小紅書で飲食店集客する方法【2026年最新】中国人観光客をリピーターにする実践ガイド",
+      "excerpt": "小紅書（RED）を使って飲食店のインバウンド集客を成功させる具体的な方法を解説。訪日中国人の約80%が飲食情報を小紅書で収集。アカウント設計・投稿戦略・KOC活用・大衆点評との連携まで、プロの実践ノウハウを公開します。",
+      "image": "/assets/images/case-tourism.jpg",
+      "dateLabel": "2026.03.20",
+      "sortDate": "2026-03-20",
+      "category": "growth",
+      "tags": ["xiaohongshu", "food", "preparation", "dianping"]
+    },
+    {
+      "slug": "red-marketing-trends-2026",
+      "kind": "post",
+      "url": "/blog/red-marketing-trends-2026",
+      "title": "小紅書マーケティング2026年最新トレンド：日本企業が知るべき5つのポイント",
+      "excerpt": "2026年の小紅書（RED）マーケティング最新トレンドを解説。日本企業が中国市場で成功するために押さえるべき5つの重要ポイントをPROTECHが詳しくご紹介します。",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600",
+      "dateLabel": "2026.03.04",
+      "sortDate": "2026-03-04",
+      "category": "market",
+      "tags": ["xiaohongshu", "inbound-trends", "china"]
+    },
+    {
+      "slug": "red-account-basics",
+      "kind": "post",
+      "url": "/blog/red-account-basics",
+      "title": "小紅書アカウント運用の基本【2026年版】開設から投稿・分析まで日本企業向け完全ガイド",
+      "excerpt": "小紅書（RED）のアカウント開設・プロフィール設定・投稿ルール・ハッシュタグ戦略・分析まで、日本企業向けに2026年最新の運用基本を徹底解説します。",
+      "image": "/assets/images/red-marketing.jpg",
+      "dateLabel": "2026.03.04",
+      "sortDate": "2026-03-04",
+      "category": "platform",
+      "tags": ["xiaohongshu", "account-ops", "checklist"]
+    },
+    {
+      "slug": "huadiao-zuiji-guo",
+      "kind": "case",
+      "url": "/cases/huadiao-zuiji-guo",
+      "title": "日本進出初月から満席達成。小紅書で中国人観光客を集客",
+      "excerpt": "上野・六本木の中華料理店「花雕酔鶏鍋」の導入事例です。アカウント運用、コンテンツ制作、KOL施策の内容は事例ページに掲載しています。",
+      "image": "/assets/images/case-huadiao-food.jpg",
+      "dateLabel": "",
+      "sortDate": null,
+      "category": "cases",
+      "tags": ["xiaohongshu", "food", "kol"]
+    },
+    {
+      "slug": "cosmetics-brand",
+      "kind": "case",
+      "url": "/cases/cosmetics-brand",
+      "title": "KOC施策×越境EC連携で小紅書フォロワー3万人・月商300%増",
+      "excerpt": "日本のコスメブランドの導入事例です。小紅書運用、KOC施策、越境ECの内容は事例ページに掲載しています。",
+      "image": "/assets/images/case-beauty.jpg",
+      "dateLabel": "",
+      "sortDate": null,
+      "category": "cases",
+      "tags": ["xiaohongshu", "kol", "retail", "cross-border-ec"]
+    },
+    {
+      "slug": "local-tourism",
+      "kind": "case",
+      "url": "/cases/local-tourism",
+      "title": "地方温泉旅館が大衆点評×小紅書の連携で訪日中国人予約が前年比160%",
+      "excerpt": "地方の温泉旅館の導入事例です。大衆点評、小紅書、中国語ページの内容は事例ページに掲載しています。",
+      "image": "/assets/images/case-tourism.jpg",
+      "dateLabel": "",
+      "sortDate": null,
+      "category": "cases",
+      "tags": ["xiaohongshu", "dianping", "hotel", "tourism"]
+    }
+  ]
+}

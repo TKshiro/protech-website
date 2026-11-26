@@ -260,4 +260,19 @@ image: "/assets/images/blog-summer-furano-lavender.jpg"
 - 交通手段はJRパスの活用がコスパ◎
 - 小紅書（RED）や大衆点評で最新のクチコミ情報をチェック
 
-日本への旅行プロモーションや、中国人観光客向けのインバウンドマーケティングをお考えの方は、ぜひ[お問い合わせ](/contact)ください。PROTECHは小紅書・大衆点評・抖音を活用した訪日観光客の集客を、ワンストップでご支援いたします。
+<aside class="dual-cta" aria-label="旅行者と店舗向けの案内">
+<div class="dual-cta-grid">
+<section class="dual-cta-card dual-cta-travel">
+<p class="dual-cta-kicker">旅行者の方へ</p>
+<p class="dual-cta-title">夏の行き先を旅程にまとめる</p>
+<p>見どころと移動を一緒に相談したいときは、旅行相談ページをご覧ください。</p>
+<p class="dual-cta-actions"><a class="dual-cta-btn dual-cta-btn-primary" href="/travel">旅行相談を見る</a></p>
+</section>
+<section class="dual-cta-card dual-cta-business">
+<p class="dual-cta-kicker">店舗・事業者の方へ</p>
+<p class="dual-cta-title">夏の観光需要を店舗で受け止める</p>
+<p>小紅書、大衆点評、WeChatの役割は各サービスページで確認できます。料金は内容によって変わるため、この記事では金額を掲載していません。</p>
+<p class="dual-cta-actions"><a class="dual-cta-btn" href="/red">小紅書</a><a class="dual-cta-btn" href="/dianping">大衆点評</a><a class="dual-cta-btn" href="/wechat">WeChat</a><a class="dual-cta-btn dual-cta-btn-primary" href="/contact">相談する</a></p>
+</section>
+</div>
+</aside>
