@@ -20,7 +20,17 @@ image: "/assets/images/blog-koyo-lightup-late-2026.webp"
 
 表の列は、スポット、エリア、見頃目安、ライトアップ期間・時間、予約要否、公式URLです。詳細と出典URLは本文の各節にあります。
 
+<figure>
+<img src="/assets/images/koyo-2026-dec-timeline.webp" alt="2026年12月の紅葉ライトアップ開催スケジュール一覧（関東5・関西7スポットの最終日と時間）" width="1280" height="800" loading="lazy" decoding="async">
+<figcaption>12月まで開催の12スポットの最終日と時間帯（2026年11月27日 公式サイト確認）</figcaption>
+</figure>
+
 ## 関東
+
+<figure>
+<img src="/assets/images/koyo-2026-dec-kanto-guide.webp" alt="関東5スポットの夜紅葉ライトアップ攻略ガイド（六義園・三溪園・高尾山・長谷寺・旧古河庭園）" width="1280" height="800" loading="lazy" decoding="async">
+<figcaption>関東はエリア別に、期間・時間・おすすめの回り方を整理</figcaption>
+</figure>
 
 ### 六義園（東京都文京区）
 
@@ -42,11 +52,26 @@ image: "/assets/images/blog-koyo-lightup-late-2026.webp"
 
 「紅葉とバラ、和と洋の秋」は11月7日〜12月6日、9:00〜17:00（最終入園16:30）。このイベントページに夜間ライトアップの案内はありません。入園料の金額は公式サイトで最新情報をご確認ください。出典: [東京都公園協会](https://www.tokyo-park.or.jp/park/kyu-furukawa/news/2026/11_12.html)
 
+<figure>
+<img src="/assets/images/koyo-2026-dec-kanto-garden.webp" alt="夜の日本庭園で池に映るライトアップされた紅葉と石灯籠（イメージ）" width="1280" height="720" loading="lazy" decoding="async">
+<figcaption>東京の日本庭園の夜紅葉（AI生成イメージ）</figcaption>
+</figure>
+
 ## 関西
+
+<figure>
+<img src="/assets/images/koyo-2026-dec-kansai-guide.webp" alt="京都7スポットのエリア別・夜紅葉回り方マップ（東寺・高台寺・二条城・永観堂・北野天満宮もみじ苑・青蓮院・知恩院）" width="1280" height="800" loading="lazy" decoding="async">
+<figcaption>受付終了時刻から逆算した京都の巡回ルート</figcaption>
+</figure>
 
 ### 東寺（京都市南区）
 
 紅葉ライトアップと金堂・講堂の夜間特別拝観は10月31日〜12月13日、18:00〜21:30（受付21:00まで）、会期中無休。大人・高校生1,000円、中学生以下500円。共通券はありません。事前予約の記載はありません。出典: [東寺](https://toji.or.jp/exhibition/2026_autumn/)
+
+<figure>
+<img src="/assets/images/koyo-2026-dec-kyoto-pagoda.webp" alt="夕暮れの五重塔とライトアップされた紅葉が池に映る京都の寺院（イメージ）" width="1280" height="720" loading="lazy" decoding="async">
+<figcaption>京都の古寺の夜紅葉（AI生成イメージ）</figcaption>
+</figure>
 
 ### 高台寺（京都市東山区）
 
@@ -59,6 +84,11 @@ image: "/assets/images/blog-koyo-lightup-late-2026.webp"
 ### 永観堂（京都市左京区）
 
 ライトアップは11月20日〜12月6日。受付17:30〜20:30、21:00閉門。中高生以上1,000円。前売券はなく、当日窓口です。寺宝展とライトアップは入替制です。出典: [永観堂](https://www.eikando.or.jp/haikan.html)
+
+<figure>
+<img src="/assets/images/koyo-2026-dec-moss-pathway.webp" alt="散り紅葉が積もる苔と石畳の小径を照らす灯り（イメージ）" width="1280" height="720" loading="lazy" decoding="async">
+<figcaption>散り紅葉の小径（AI生成イメージ）</figcaption>
+</figure>
 
 ### 北野天満宮 史跡御土居のもみじ苑（京都市上京区）
 
@@ -90,6 +120,11 @@ image: "/assets/images/blog-koyo-lightup-late-2026.webp"
 東福寺の夜間貸切は、公式ページの時間帯が読み分けにくいため、この記事の表には入れていません。公式サイトで最新情報をご確認ください。
 
 ## アクセスと混雑
+
+<figure>
+<img src="/assets/images/koyo-2026-dec-checklist.webp" alt="12月の夜紅葉お出かけ準備＆混雑回避チェックリスト（防寒・予約受付・時間帯・マナー）" width="1280" height="800" loading="lazy" decoding="async">
+<figcaption>出発前に確認したい4つのポイント</figcaption>
+</figure>
 
 永観堂は期間中、自家用車と観光バスの境内乗り入れを止めています。六義園の前売券には優先レーンがあります。高尾山の沿線ライトアップは金土日祝だけです。二条城は昼と夜で券も順路も別です。東寺の夜間は東門から入ります。
 
