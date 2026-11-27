@@ -77,6 +77,41 @@
         .blog-content .dual-cta a.dual-cta-btn { display: inline-flex; align-items: center; margin: 0 0.4rem 0.4rem 0; padding: 0.45rem 0.8rem; border-radius: 999px; border: 1px solid #cbd5e1; background: #fff; color: #001A33; text-decoration: none; font-size: 0.8125rem; font-weight: 700; line-height: 1.4; }
         .blog-content .dual-cta a.dual-cta-btn-primary { background: #B4495A; border-color: #B4495A; color: #fff; }
         .dual-cta-actions { margin-bottom: 0 !important; }
+    
+        .toc-link { transition: color 0.2s; }
+        .toc-link:hover { color: var(--coral); }
+        .toc-link.active { color: var(--coral); font-weight: 700; }
+        .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
+        @media (min-width: 1024px) {
+            .sidebar-sticky {
+                position: sticky;
+                top: 7rem;
+                max-height: calc(100vh - 8.5rem);
+                z-index: 20;
+            }
+            .sidebar-sticky .author-card,
+            .sidebar-sticky .cta-card { flex-shrink: 0; }
+            .sidebar-sticky .toc-card {
+                flex: 1 1 auto;
+                min-height: 0;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+            .sidebar-sticky .toc-card > h3 { flex-shrink: 0; }
+            .sidebar-sticky .toc-scroll {
+                flex: 1 1 auto;
+                min-height: 0;
+                overflow-y: auto;
+                overscroll-behavior: contain;
+                scrollbar-width: thin;
+                scrollbar-color: #cbd5e1 transparent;
+                padding-right: 0.35rem;
+            }
+            .sidebar-sticky .toc-scroll::-webkit-scrollbar { width: 6px; }
+            .sidebar-sticky .toc-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+        }
+
     </style>
 
     <!-- Structured Data -->
@@ -410,88 +445,28 @@
             </div>
 
             <!-- Right Column: Sidebar -->
-            <aside class="w-full lg:w-1/3 space-y-10">
-                <!-- Editor Info Card -->
-                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                    <h3 class="text-xs font-bold tracking-widest text-tech-blue uppercase mb-4 flex items-center gap-2">
-                        <span class="w-1.5 h-3 bg-blue-600 rounded-full"></span>
-                        編集者
-                    </h3>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600 text-lg">
-                            PT
+            <aside class="w-full lg:w-1/3">
+                <div class="sidebar-sticky">
+                    <div class="author-card bg-slate-50 rounded-xl p-6 border border-gray-100">
+                        <h3 class="font-bold text-tech-blue mb-4 pb-2 border-b border-gray-200">編集者</h3>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-tech-blue flex items-center justify-center text-white font-bold">PR</div>
+                            <div>
+                                <p class="font-bold text-sm">PROTECH 編集部</p>
+                                <p class="text-xs text-gray-500">インバウンド・DX専門チーム</p>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-sm text-tech-blue">PROTECH 編集部</h4>
-                            <p class="text-xs text-slate-500 font-medium">インバウンド・DX専門チーム</p>
-                        </div>
+                        <p class="text-xs text-gray-600">日本の店舗・企業向けに、中国SNSや訪日集客に関する情報を発信しています。</p>
                     </div>
-                    <p class="text-xs text-slate-500 leading-relaxed">中国をはじめとするアジア市場や、欧米市場向けのインバウンドマーケティングをワンストップで支援。テクノロジーと独自のデータを活用し、数多くの企業の海外進出を成功に導いています。</p>
-                </div>
-
-                <!-- Table of Contents Card (Sticky) -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-100 sticky top-28 shadow-sm">
-                    <h3 class="text-xs font-bold tracking-widest text-tech-blue uppercase mb-4 flex items-center gap-2">
-                        <span class="w-1.5 h-3 bg-blue-600 rounded-full"></span>
-                        目次
-                    </h3>
-                    <ul id="auto-toc" class="space-y-3 text-xs text-slate-500">
-                        <!-- Populated by JS -->
-                    </ul>
-                </div>
-
-                
-                <!-- Related Articles Card -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-                    <h3 class="text-xs font-bold tracking-widest text-tech-blue uppercase mb-4 flex items-center gap-2">
-                        <span class="w-1.5 h-3 bg-blue-600 rounded-full"></span>
-                        関連記事
-                    </h3>
-                    <div class="space-y-4">
-                        <a href="/blog/japan-hanabi-guide-2026" class="flex gap-4 group">
-                            
-                            <div class="w-16 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-slate-100">
-                                <img src="/assets/images/blog-hanabi-hero-2026.jpg" alt="【2026年保存版】日本の花火大会おすすめ15選｜開催日程・打上数・アクセスを完全網羅" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="1600" height="872">
-                            </div>
-                            
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-xs text-tech-blue line-clamp-2 group-hover:text-blue-600 transition leading-snug mb-1">【2026年保存版】日本の花火大会おすすめ15選｜開催日程・打上数・アクセスを完全網羅</h4>
-                                <span class="text-xs font-bold bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded uppercase tracking-widest">サービス</span>
-                            </div>
-                        </a>
-                        <a href="/blog/japan-summer-spots-2026" class="flex gap-4 group">
-                            
-                            <div class="w-16 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-slate-100">
-                                <picture style="display:contents"><source srcset="/assets/images/blog-summer-furano-lavender.webp" type="image/webp"><img src="/assets/images/blog-summer-furano-lavender.jpg" alt="【2026年夏】日本で絶対行くべき観光スポット15選｜穴場から定番まで完全ガイド" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="1600" height="678"></picture>
-                            </div>
-                            
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-xs text-tech-blue line-clamp-2 group-hover:text-blue-600 transition leading-snug mb-1">【2026年夏】日本で絶対行くべき観光スポット15選｜穴場から定番まで完全ガイド</h4>
-                                <span class="text-xs font-bold bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded uppercase tracking-widest">サービス</span>
-                            </div>
-                        </a>
-                        <a href="/blog/korea-inbound-strategy-2026" class="flex gap-4 group">
-                            
-                            <div class="w-16 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-slate-100">
-                                <picture style="display:contents"><source srcset="/assets/images/blog-korea-inbound-hero.webp" type="image/webp"><img src="/assets/images/blog-korea-inbound-hero.jpeg" alt="訪日韓国人向けインバウンドマーケティング戦略【2026年最新】NaverブログとInstagramを活用した集客方法" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="1600" height="872"></picture>
-                            </div>
-                            
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-xs text-tech-blue line-clamp-2 group-hover:text-blue-600 transition leading-snug mb-1">訪日韓国人向けインバウンドマーケティング戦略【2026年最新】NaverブログとInstagramを活用した集客方法</h4>
-                                <span class="text-xs font-bold bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded uppercase tracking-widest">サービス</span>
-                            </div>
-                        </a>
+                    <div class="toc-card bg-slate-50 rounded-2xl p-6">
+                        <h3 class="font-bold text-tech-blue text-sm mb-4 tracking-wider">目次</h3>
+                        <ol id="auto-toc" class="toc-scroll space-y-2 text-sm text-gray-500"></ol>
                     </div>
-                </div>
-
-                <!-- CTA Card -->
-                <div class="bg-gradient-to-br from-tech-blue to-blue-900 rounded-2xl p-6 text-white relative overflow-hidden shadow-lg group">
-                    <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-blue-600/20 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500"></div>
-                    <h3 class="font-bold text-lg mb-2 relative z-10">無料相談受付中</h3>
-                    <p class="text-xs text-blue-200/90 leading-relaxed mb-6 relative z-10">小紅書運用のお悩みをプロに相談してみませんか？</p>
-                    <a href="/contact" class="btn-coral inline-flex items-center justify-center w-full py-3 bg-white text-tech-blue hover:bg-blue-50 text-xs font-bold tracking-widest uppercase rounded-xl transition duration-300 relative z-10 shadow-sm">
-                        相談する →
-                    </a>
+                    <div class="cta-card bg-tech-blue rounded-2xl p-6 text-white text-center">
+                        <p class="font-bold text-sm mb-2">無料相談受付中</p>
+                        <p class="text-xs text-white/60 mb-4 leading-relaxed">インバウンド集客のお悩みを<br>プロに相談してみませんか？</p>
+                        <a href="/contact" class="btn-coral px-6 py-2.5 rounded-full text-xs font-bold tracking-widest inline-block">相談する</a>
+                    </div>
                 </div>
             </aside>
         </div>
@@ -622,61 +597,65 @@
                 });
             }
 
-            // Auto TOC Generation
-            const tocContainer = document.getElementById('auto-toc');
-            const headings = document.querySelectorAll('.blog-content h2, .blog-content h3');
-            
-            if (tocContainer && headings.length > 0) {
-                let h2Counter = 0;
-                headings.forEach((h, index) => {
-                    if (!h.id) {
-                        h.id = 'section-' + (++h2Counter) + '-' + index;
-                    }
-                    
-                    const li = document.createElement('li');
-                    li.className = 'toc-item';
-                    
-                    const a = document.createElement('a');
-                    a.href = '#' + h.id;
-                    a.textContent = h.textContent;
-                    a.className = 'hover:text-blue-600 transition duration-200 block py-1';
-                    
-                    if (h.tagName.toLowerCase() === 'h3') {
-                        a.className += ' pl-4 text-[11px] text-slate-500';
-                    } else {
-                        a.className += ' font-medium';
-                    }
-                    
-                    li.appendChild(a);
-                    tocContainer.appendChild(li);
-                });
-
-                // Highlight Active TOC Item on scroll
-                const observerOptions = {
-                    root: null,
-                    rootMargin: '-10% 0px -70% 0px',
-                    threshold: 0
-                };
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const id = entry.target.id;
-                            const activeLink = document.querySelector('#auto-toc a[href="#' + id + '"]');
-                            if (activeLink) {
-                                document.querySelectorAll('#auto-toc a').forEach(link => {
-                                    link.classList.remove('text-blue-600', 'font-bold');
-                                    link.classList.add('text-slate-500');
-                                });
-                                activeLink.classList.add('text-blue-600', 'font-bold');
-                                activeLink.classList.remove('text-slate-500');
-                            }
+            // Auto-generate TOC from article h2 / h3
+            const tocList = document.getElementById('auto-toc');
+            const article = document.querySelector('.blog-content');
+            if (tocList && article) {
+                let h3Counter = 0;
+                article.querySelectorAll('h2, h3').forEach(h => {
+                    if (!h.id) h.id = (h.tagName === 'H2' ? 'section-' : 'h3-') + (++h3Counter);
+                    if (h.tagName === 'H2') {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = '#' + h.id;
+                        a.className = 'toc-link hover:text-coral font-medium block py-0.5';
+                        a.textContent = h.textContent;
+                        li.appendChild(a);
+                        tocList.appendChild(li);
+                    } else if (h.tagName === 'H3') {
+                        const lastH2Li = tocList.lastElementChild;
+                        if (!lastH2Li) return;
+                        let sub = lastH2Li.querySelector('ol');
+                        if (!sub) {
+                            sub = document.createElement('ol');
+                            sub.className = 'mt-1 ml-3 space-y-0.5 text-xs text-slate-500';
+                            lastH2Li.appendChild(sub);
                         }
-                    });
-                }, observerOptions);
-
-                headings.forEach(h => observer.observe(h));
+                        const subLi = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = '#' + h.id;
+                        a.className = 'toc-link hover:text-coral block py-0.5 pl-1 border-l border-gray-200';
+                        a.textContent = h.textContent;
+                        subLi.appendChild(a);
+                        sub.appendChild(subLi);
+                    }
+                });
             }
+
+            const sections = document.querySelectorAll('.blog-content h2[id]');
+            const tocLinks = document.querySelectorAll('#auto-toc .toc-link');
+            const revealInToc = (link) => {
+                const scroller = link.closest('.toc-scroll');
+                if (!scroller || scroller.scrollHeight <= scroller.clientHeight + 1) return;
+                const linkRect = link.getBoundingClientRect();
+                const box = scroller.getBoundingClientRect();
+                if (linkRect.top < box.top + 4) scroller.scrollTop -= (box.top + 4 - linkRect.top);
+                else if (linkRect.bottom > box.bottom - 4) scroller.scrollTop += (linkRect.bottom - (box.bottom - 4));
+            };
+            const syncToc = () => {
+                let current = '';
+                sections.forEach(s => {
+                    const top = s.getBoundingClientRect().top + window.scrollY;
+                    if (window.scrollY >= top - 120) current = s.id;
+                });
+                tocLinks.forEach(link => {
+                    const active = link.getAttribute('href') === '#' + current;
+                    link.classList.toggle('active', active);
+                    if (active) revealInToc(link);
+                });
+            };
+            window.addEventListener('scroll', syncToc, { passive: true });
+            syncToc();
 
             // Social share
             const currentUrl = encodeURIComponent(window.location.href);
