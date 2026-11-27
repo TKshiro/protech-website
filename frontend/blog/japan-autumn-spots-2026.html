@@ -81,6 +81,7 @@
         .toc-link { transition: color 0.2s; }
         .toc-link:hover { color: var(--coral); }
         .toc-link.active { color: var(--coral); font-weight: 700; }
+        #auto-toc a.toc-sublink { display: flex; align-items: center; box-sizing: border-box; min-height: 24px; padding-top: 0.25rem; padding-bottom: 0.25rem; line-height: 1.4; }
         .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
         @media (min-width: 1024px) {
             .sidebar-sticky {
@@ -624,7 +625,7 @@
                         const subLi = document.createElement('li');
                         const a = document.createElement('a');
                         a.href = '#' + h.id;
-                        a.className = 'toc-link hover:text-coral block py-0.5 pl-1 border-l border-gray-200';
+                        a.className = 'toc-link toc-sublink hover:text-coral block pl-1 border-l border-gray-200';
                         a.textContent = h.textContent;
                         subLi.appendChild(a);
                         sub.appendChild(subLi);
