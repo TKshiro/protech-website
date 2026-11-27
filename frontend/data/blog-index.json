@@ -3,11 +3,11 @@
   "pageSize": 12,
   "spotlight": {
     "title": "旬の特集",
-    "intro": "11月下旬は紅葉の季節です。秋のガイドを先頭に、夏と花火の記事もこの欄にまとめています。",
+    "intro": "12月に入る前の紅葉終盤です。夜間ライトアップの記事を先頭に、秋と花火のガイドもこの欄にまとめています。",
     "slugs": [
+      "koyo-lightup-december-2026",
       "japan-autumn-spots-2026",
-      "japan-hanabi-guide-2026",
-      "japan-summer-spots-2026"
+      "japan-hanabi-guide-2026"
     ]
   },
   "categories": [
@@ -96,7 +96,16 @@
         { "slug": "food", "label": "飲食" },
         { "slug": "beauty", "label": "美容" },
         { "slug": "hotel", "label": "ホテル・旅館" },
-        { "slug": "tourism", "label": "観光・地方" },
+        {
+          "slug": "tourism",
+          "label": "観光・地方",
+          "seo": {
+            "title": "観光・地方の記事一覧 | PROTECHブログ",
+            "h1": "観光・地方の記事",
+            "description": "紅葉や花火などの季節の行き先と、地方の観光施設が中国からのお客さまを迎える準備を扱うPROTECHの記事一覧です。",
+            "intro": "季節の行き先と、地方の店・旅館・施設がインバウンドの来訪に備える記事をまとめています。開催日や見頃は、各記事が参照した公式情報の時点のものです。"
+          }
+        },
         { "slug": "retail", "label": "小売・コスメ" },
         { "slug": "store-ops", "label": "店舗運営" }
       ]
@@ -325,6 +334,19 @@
       "tags": ["dianping", "store-ops", "account-ops"]
     },
     {
+      "slug": "koyo-lightup-december-2026",
+      "kind": "post",
+      "url": "/blog/koyo-lightup-december-2026",
+      "title": "【12月最新】2026年の紅葉ライトアップ見頃終盤｜関東・関西",
+      "excerpt": "2026年11月27日時点の公式発表をもとに、12月まで開いている関東・関西の紅葉ライトアップを比較します。期間、時間、予約の有無と、混雑を避ける回り方を公式リンク付きでまとめています。",
+      "image": "/assets/images/blog-koyo-lightup-late-2026.webp",
+      "dateLabel": "2026.11.27",
+      "sortDate": "2026-11-27",
+      "category": "seasonal",
+      "tags": ["foliage", "tourism", "autumn"],
+      "spotlightLabel": "今の季節"
+    },
+    {
       "slug": "japan-autumn-spots-2026",
       "kind": "post",
       "url": "/blog/japan-autumn-spots-2026",
@@ -334,8 +356,7 @@
       "dateLabel": "2026.08.20",
       "sortDate": "2026-08-20",
       "category": "seasonal",
-      "tags": ["autumn", "foliage", "tourism"],
-      "spotlightLabel": "今の季節"
+      "tags": ["autumn", "foliage", "tourism"]
     },
     {
       "slug": "japan-hanabi-guide-2026",
