@@ -210,7 +210,7 @@ function preloadFor(item) {
     const webp = item.image.replace(/\.(jpe?g|png)$/i, '.webp');
     const useWebp = webp !== item.image && fs.existsSync(path.join(FRONTEND, webp.replace(/^\//, '')));
     const href = useWebp ? webp : item.image;
-    const type = useWebp ? 'image/webp' : (/\.png$/i.test(href) ? 'image/png' : 'image/jpeg');
+    const type = /\.webp$/i.test(href) ? 'image/webp' : (/\.png$/i.test(href) ? 'image/png' : 'image/jpeg');
     const mobile = useWebp ? responsiveWebp(item.image) : null;
     if (mobile) {
         return `<link rel="preload" as="image" href="${esc(mobile.rel)}" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
