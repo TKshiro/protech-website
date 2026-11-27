@@ -19,6 +19,7 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 const { marked } = require('marked');
+const { stampAssets, withAssetVersion } = require('../../scripts/stamp-asset-versions');
 
 const ROOT = path.resolve(__dirname, '../../frontend');
 const SITE_URL = 'https://pro-tech.jp';
@@ -1134,7 +1135,7 @@ ${getFooterHTML(post.lang)}
             if (fbShare) fbShare.href = \`https://www.facebook.com/sharer/sharer.php?u=\${currentUrl}\`;
         });
     </script>
-    <script defer src="/assets/js/consult-popup.js"></script>
+    <script defer src="${withAssetVersion('/assets/js/consult-popup.js')}"></script>
 
 </body>
 
@@ -1571,7 +1572,7 @@ ${getFooterHTML(lang)}
             });
         });
     </script>
-    <script defer src="/assets/js/consult-popup.js"></script>
+    <script defer src="${withAssetVersion('/assets/js/consult-popup.js')}"></script>
 
 </body>
 
@@ -1657,6 +1658,9 @@ function build() {
 
     // 7. Inject Japanese entries into news.html
     injectIntoNews(postsJa);
+
+    // Regenerated pages pick up ?v=<hash> even when a template string is missed.
+    stampAssets();
 
     console.log('\n✨ Build complete!\n');
 

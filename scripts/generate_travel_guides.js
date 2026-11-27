@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { printReport, stampAssets, withAssetVersion } = require('./stamp-asset-versions');
 
 const root = path.resolve(__dirname, '..');
 const outRoot = path.join(root, 'frontend', 'travel');
@@ -1312,8 +1313,8 @@ function travelJsonLd(lang, slug, title, description, isArticle) {
 }
 
 function headHtml(lang, slug, title, description, assetPrefix, isArticle) {
-  const tailwind = `/assets/css/tailwind.css`;
-  const css = `/assets/css/travel.css`;
+  const tailwind = withAssetVersion('/assets/css/tailwind.css');
+  const css = withAssetVersion('/assets/css/travel.css');
   const canonical = urlFor(lang, slug);
   return `<!DOCTYPE html>
 <html lang="${langConfig[lang].htmlLang}">
@@ -1394,8 +1395,8 @@ function articleHtml(lang, slug) {
         </main>
     </article>
     ${footerHtml(lang, true)}
-    <script defer src="/assets/js/main.js"></script>
-    <script defer src="/assets/js/consult-popup.js"></script>
+    <script defer src="${withAssetVersion('/assets/js/main.js')}"></script>
+    <script defer src="${withAssetVersion('/assets/js/consult-popup.js')}"></script>
 </body>
 </html>
 `;
@@ -1431,8 +1432,8 @@ function hubHtml(lang) {
         </section>
     </main>
     ${footerHtml(lang, false)}
-    <script defer src="/assets/js/main.js"></script>
-    <script defer src="/assets/js/consult-popup.js"></script>
+    <script defer src="${withAssetVersion('/assets/js/main.js')}"></script>
+    <script defer src="${withAssetVersion('/assets/js/consult-popup.js')}"></script>
 </body>
 </html>
 `;
@@ -1503,3 +1504,4 @@ if (sitemap.includes(start) && sitemap.includes(end)) {
 fs.writeFileSync(sitemapPath, sitemap);
 
 console.log('Generated travel guide pages:', langOrder.length * (Object.keys(articles).length + 1));
+printReport(stampAssets());
