@@ -4,14 +4,17 @@
  * Build the Japanese /blog index, category hubs, and qualified tag hubs
  * from frontend/data/blog-index.json.
  *
- * Does not render individual articles, does not rewrite frontend/index.html,
- * and only adds or replaces /blog/category/* and /blog/tag/* sitemap URLs.
+ * Does not render individual articles. The renderer does not rewrite homepage
+ * body content and only adds or replaces /blog/category/* and /blog/tag/*
+ * sitemap URLs. After that, local CSS/JS references are stamped with
+ * ?v=<content hash> so regenerated blog and hub pages stay cache-busted.
  */
 
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { execFileSync } = require('child_process');
+const { printReport, stampAssets, withAssetVersion } = require('./stamp-asset-versions');
 
 const ROOT = path.resolve(__dirname, '..');
 const FRONTEND = path.join(ROOT, 'frontend');
@@ -318,8 +321,8 @@ function pageShell({ title, description, canonical, extraHead, nav, footer, body
     <meta property="og:image" content="${SITE}/assets/images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/assets/css/tailwind.css">
-    <link rel="stylesheet" href="/assets/css/ux.css">
+    <link rel="stylesheet" href="${withAssetVersion('/assets/css/tailwind.css')}">
+    <link rel="stylesheet" href="${withAssetVersion('/assets/css/ux.css')}">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600&display=swap"></noscript>
     <style>
@@ -346,9 +349,9 @@ function pageShell({ title, description, canonical, extraHead, nav, footer, body
 ${nav}
 ${body}
 ${footer}
-<script defer src="/assets/js/blog-taxonomy.js"></script>
-<script defer src="/assets/js/ux.js"></script>
-<script defer src="/assets/js/consult-popup.js"></script>
+<script defer src="${withAssetVersion('/assets/js/blog-taxonomy.js')}"></script>
+<script defer src="${withAssetVersion('/assets/js/ux.js')}"></script>
+<script defer src="${withAssetVersion('/assets/js/consult-popup.js')}"></script>
 </body>
 </html>
 `;
@@ -648,6 +651,9 @@ function main() {
         queryOnlyTags: thin,
         hubs: pages.map((page) => page.path)
     }, null, 2));
+    // Query-string stamps run after the homepage guard. They do not change
+    // homepage copy; they only add ?v=<hash> on local CSS and JS URLs.
+    printReport(stampAssets());
 }
 
 main();
