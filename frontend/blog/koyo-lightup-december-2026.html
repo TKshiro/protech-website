@@ -99,6 +99,7 @@
         .toc-link { transition: color 0.2s; }
         .toc-link:hover { color: var(--coral); }
         .toc-link.active { color: var(--coral); font-weight: 700; }
+        #auto-toc a.toc-sublink { display: flex; align-items: center; box-sizing: border-box; min-height: 24px; padding-top: 0.25rem; padding-bottom: 0.25rem; line-height: 1.4; }
         .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
         @media (min-width: 1024px) {
             .sidebar-sticky {
@@ -606,7 +607,7 @@
 
 <h2 id="summary">まとめ</h2>
 <p>12月まで公式の夜間開催が残るのは、東寺（12月13日）、高台寺（12月13日）、二条城（12月5日）、永観堂、北野天満宮、青蓮院、知恩院、六義園、長谷寺（いずれも12月6日）、三溪園の夜奏（12月20日までの金土日祝）、高尾山の沿線（12月6日までの金土日祝）です。旧古河庭園は12月6日まで昼の紅葉と秋バラがありますが、夜間ライトアップの公式案内はありません。</p>
-<p>神宮外苑のイチョウ並木と昭和記念公園の夜は11月29日まで、清水寺の夜間は11月30日まで、相楽園の夜間開園は11月28日までです。平等院の夜、将軍塚、嵐山花灯路、小石川後楽園と浜離宮の夜間は、今年の終盤の予定には入りません。全国の秋の行き先は、<a href="/blog/japan-autumn-spots-2026">秋のスポットガイド</a>にまとまっています。</p>
+<p>神宮外苑のイチョウ並木と昭和記念公園の夜は11月29日まで、清水寺の夜間は11月30日まで、相楽園の夜間開園は11月28日までです。平等院の夜、将軍塚、嵐山花灯路、小石川後楽園と浜離宮の夜間は、今年の終盤の予定には入りません。全国の秋の行き先は、<a href="/blog/japan-autumn-spots-2026">秋のスポットガイド</a>にまとまっています。街路樹や庭の冬のイルミネーションは紅葉とは別の催しで、<a href="/blog/illumination-2026-2027">冬のイルミネーション2026-2027</a>にまとめています。</p>
 <aside class="dual-cta" aria-label="旅行者と店舗向けの案内">
 <div class="dual-cta-grid">
 <section class="dual-cta-card dual-cta-travel">
@@ -813,7 +814,7 @@
                         const subLi = document.createElement('li');
                         const a = document.createElement('a');
                         a.href = '#' + h.id;
-                        a.className = 'toc-link hover:text-coral block py-0.5 pl-1 border-l border-gray-200';
+                        a.className = 'toc-link toc-sublink hover:text-coral block pl-1 border-l border-gray-200';
                         a.textContent = h.textContent;
                         subLi.appendChild(a);
                         sub.appendChild(subLi);

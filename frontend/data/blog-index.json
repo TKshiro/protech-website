@@ -3,11 +3,11 @@
   "pageSize": 12,
   "spotlight": {
     "title": "旬の特集",
-    "intro": "12月に入る前の紅葉終盤です。夜間ライトアップの記事を先頭に、秋と花火のガイドもこの欄にまとめています。",
+    "intro": "冬のイルミネーションを先頭に、紅葉の終盤と秋のガイドもこの欄にまとめています。",
     "slugs": [
+      "illumination-2026-2027",
       "koyo-lightup-december-2026",
-      "japan-autumn-spots-2026",
-      "japan-hanabi-guide-2026"
+      "japan-autumn-spots-2026"
     ]
   },
   "categories": [
@@ -26,8 +26,8 @@
       "path": "/blog/category/seasonal",
       "title": "季節・旅行ガイド | PROTECHブログ",
       "h1": "季節・旅行ガイド",
-      "description": "花火、夏、紅葉など、季節ごとの日本の行き先を整理したPROTECHの旅行ガイド一覧です。",
-      "intro": "花火、夏、紅葉の行き先を季節ごとに整理したガイドです。各記事の末尾から、旅行相談と店舗向けのサービスページへ進めます。"
+      "description": "花火、夏、紅葉、冬のイルミネーションなど、季節ごとの日本の行き先を整理したPROTECHの旅行ガイド一覧です。",
+      "intro": "花火、夏、紅葉、冬のイルミネーションの行き先を季節ごとに整理したガイドです。各記事の末尾から、旅行相談と店舗向けのサービスページへ進めます。"
     },
     {
       "id": "growth",
@@ -154,8 +154,10 @@
       "tags": [
         { "slug": "summer", "label": "夏" },
         { "slug": "autumn", "label": "秋" },
+        { "slug": "winter", "label": "冬" },
         { "slug": "hanabi", "label": "花火" },
         { "slug": "foliage", "label": "紅葉" },
+        { "slug": "illumination", "label": "イルミネーション" },
         { "slug": "calendar", "label": "季節カレンダー" }
       ]
     },
@@ -332,6 +334,19 @@
       "sortDate": "2026-11-09",
       "category": "platform",
       "tags": ["dianping", "store-ops", "account-ops"]
+    },
+    {
+      "slug": "illumination-2026-2027",
+      "kind": "post",
+      "url": "/blog/illumination-2026-2027",
+      "title": "冬のイルミネーション2026-2027｜関東・関西・東京",
+      "excerpt": "2026年11月28日時点の公式発表をもとに、東京のクリスマスイルミネーションと関東・関西の冬のイルミネーションを比較します。期間、点灯時間、予約の有無と回り方を公式リンク付きでまとめています。",
+      "image": "/assets/images/illumination-2026-cover.webp",
+      "dateLabel": "2026.11.28",
+      "sortDate": "2026-11-28",
+      "category": "seasonal",
+      "tags": ["illumination", "tourism", "winter"],
+      "spotlightLabel": "今の季節"
     },
     {
       "slug": "koyo-lightup-december-2026",
